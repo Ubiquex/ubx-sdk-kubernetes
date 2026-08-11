@@ -1,0 +1,14 @@
+[project]
+name = "ubx-sdk-kubernetes"
+version = "0.2.0"
+description = "Generated Python bindings for hashicorp/kubernetes@3.2.1 (ubx sdk gen). DO NOT EDIT."
+dependencies = ["ubx_sdk>=0.1.0,<0.2.0"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ubx*"]
+namespaces = true

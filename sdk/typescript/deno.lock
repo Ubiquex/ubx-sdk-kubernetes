@@ -1,0 +1,21 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@ubx/sdk@0.1": "0.1.0"
+  },
+  "jsr": {
+    "@ubx/sdk@0.1.0": {
+      "integrity": "044bc070240a3aebaef557bc1852983d7a232b49173dc21eb038bee9f88b6bfe"
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@ubx/sdk@0.1"
+    ],
+    "packageJson": {
+      "dependencies": [
+        "npm:@ubx/sdk@0.0.0"
+      ]
+    }
+  }
+}
