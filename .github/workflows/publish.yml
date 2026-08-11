@@ -1,0 +1,172 @@
+name: publish
+
+# Manual-trigger only (UBI-135, scoped down): after a regen PR merges,
+# someone clicks "Run workflow" here to actually publish. The workflow
+# still computes the correct version bump automatically -- diffing
+# sdk/{go,typescript,python}/ between the last published state and
+# current main -- so the human step is a confirmation click, not a
+# manual version decision.
+#
+# UBI-138: this repo publishes ONE unified version number across all
+# three registries + the Go module tag, matching the corrected
+# ubx-sdk-aws/ubx-sdk-google's own real precedent, not three
+# independently-bumped versions. Version truth is the REAL live
+# registries (PyPI's JSON API, JSR's meta.json), not git tags alone --
+# ported directly from ubx-sdk-google's own publish.yml, which itself
+# closed a real bug the pre-consolidation ubx-sdk-kubernetes-ts repo's
+# own publish.yml would otherwise have carried forward (blind git-tag
+# diffing, never checking the real JSR state).
+#
+# Go modules need no registry publish action beyond a pushed, correctly
+# path-prefixed semver tag (sdk/go/vX.Y.Z -- the module proxy resolves
+# it directly from GitHub); the tag itself IS the Go "publish" step.
+#
+# Requires PYPI_TOKEN and JSR_TOKEN repo secrets (Settings -> Secrets
+# and variables -> Actions). Deliberately NOT the one-off tokens used
+# for this session's own manual 0.2.0 publish -- dedicated CI tokens,
+# scoped to this repo/package.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out ubx-sdk-kubernetes
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - uses: denoland/setup-deno@v2.0.5
+        with:
+          deno-version: "2.x"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Determine version to publish
+        id: bump
+        run: |
+          set -euo pipefail
+          committed_ts="$(python3 -c "import json; print(json.load(open('sdk/typescript/package.json'))['version'])")"
+          committed_py="$(python3 -c "import tomllib; print(tomllib.load(open('sdk/python/pyproject.toml','rb'))['project']['version'])")"
+          if [ "$committed_ts" != "$committed_py" ]; then
+            echo "sdk/typescript/package.json ($committed_ts) and sdk/python/pyproject.toml ($committed_py) disagree -- this repo publishes ONE unified version across all registries, fix the drift by hand before running this workflow again" >&2
+            exit 1
+          fi
+          committed="$committed_ts"
+
+          # Real, live registry state -- never trust git tags alone.
+          live_pypi="$(curl -sf https://pypi.org/pypi/ubx-sdk-kubernetes/json | python3 -c "import json,sys; print(json.load(sys.stdin)['info']['version'])" || echo "")"
+          live_jsr="$(curl -sf https://jsr.io/@ubx/sdk-kubernetes/meta.json | python3 -c "import json,sys; v=json.load(sys.stdin).get('latest'); print(v or '')" || echo "")"
+          echo "committed=$committed, live PyPI=${live_pypi:-<none>}, live JSR=${live_jsr:-<none>}"
+
+          # Highest of the two live registries -- tolerates real, one-off
+          # manual drift between them rather than failing outright on a
+          # mismatch.
+          live="$live_pypi"
+          if [ -n "$live_jsr" ] && { [ -z "$live" ] || [ "$(printf '%s\n%s\n' "$live" "$live_jsr" | sort -V | tail -1)" = "$live_jsr" ]; }; then
+            live="$live_jsr"
+          fi
+
+          if [ -n "$live" ] && [ "$committed" != "$live" ] && [ "$(printf '%s\n%s\n' "$committed" "$live" | sort -V | tail -1)" = "$committed" ]; then
+            # Committed version is already ahead of both live registries
+            # -- a real, deliberate in-repo decision -- publish it AS-IS,
+            # no further auto-bump on top.
+            new_version="$committed"
+            echo "committed version ($committed) already ahead of live ($live) -- publishing as-is"
+          else
+            # Routine regen-triggered publish, no explicit version
+            # decision made yet. MINOR if sdk/{go,typescript,python}
+            # gained new files since the last published tag (a new
+            # resource type or new Kubernetes API group) -- PATCH if
+            # only existing files changed (an existing resource's schema
+            # changed).
+            base="${live:-$committed}"
+            latest_tag="$(git tag -l 'sdk/go/v*' --sort=-v:refname | head -1)"
+            added_count=0
+            if [ -n "$latest_tag" ]; then
+              added_count="$(git diff --name-status "$latest_tag" HEAD -- sdk/go/ sdk/typescript/ sdk/python/ | awk '$1=="A"' | wc -l | tr -d ' ')"
+            fi
+            IFS='.' read -r major minor patch <<< "$base"
+            if [ "$added_count" -gt 0 ]; then
+              new_version="${major}.$((minor + 1)).0"
+            else
+              new_version="${major}.${minor}.$((patch + 1))"
+            fi
+            echo "base=$base, latest_tag=${latest_tag:-<none>}, new files since then: $added_count -> $new_version"
+          fi
+          echo "new_version=$new_version" >> "$GITHUB_OUTPUT"
+
+      - name: Bump version in package.json / deno.json / pyproject.toml
+        run: |
+          set -euo pipefail
+          v="${{ steps.bump.outputs.new_version }}"
+          python3 -c "
+          import json
+          for f in ('sdk/typescript/package.json', 'sdk/typescript/deno.json'):
+              d = json.load(open(f))
+              d['version'] = '$v'
+              json.dump(d, open(f, 'w'), indent=2)
+              open(f, 'a').write('\n')
+          "
+          python3 -c "
+          import re
+          f = 'sdk/python/pyproject.toml'
+          content = open(f).read()
+          content = re.sub(r'version = \"[^\"]+\"', 'version = \"$v\"', content, count=1)
+          open(f, 'w').write(content)
+          "
+
+      - name: Commit version bump
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- sdk/typescript/package.json sdk/typescript/deno.json sdk/python/pyproject.toml; then
+            echo "already at ${{ steps.bump.outputs.new_version }} -- nothing to commit"
+          else
+            git config user.name "ubx-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add sdk/typescript/package.json sdk/typescript/deno.json sdk/python/pyproject.toml
+            git commit -m "sdk: bump to v${{ steps.bump.outputs.new_version }}"
+            git push origin main
+          fi
+
+      - name: Publish to JSR
+        working-directory: sdk/typescript
+        run: deno publish --token "${{ secrets.JSR_TOKEN }}"
+
+      - name: Build Python distribution
+        working-directory: sdk/python
+        run: |
+          set -euo pipefail
+          pip install build
+          python3 -m build
+
+      - name: Publish to PyPI
+        working-directory: sdk/python
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          set -euo pipefail
+          pip install twine
+          twine upload "dist/ubx_sdk_kubernetes-${{ steps.bump.outputs.new_version }}"*
+
+      - name: Tag the published commit (Go module, sdk/go/ subdirectory)
+        run: |
+          set -euo pipefail
+          git config user.name "ubx-bot"
+          git config user.email "actions@users.noreply.github.com"
+          # Tag prefix must exactly match the module's own subdirectory
+          # path (Go's subdirectory-module tagging rule) -- the module
+          # lives at sdk/go/go.mod, so the tag is sdk/go/vX.Y.Z, never a
+          # bare vX.Y.Z or kubernetes-go/vX.Y.Z.
+          v="sdk/go/v${{ steps.bump.outputs.new_version }}"
+          git tag -a "$v" -m "$v"
+          git push origin "$v"
