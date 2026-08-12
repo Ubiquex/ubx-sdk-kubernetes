@@ -2,38 +2,38 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Env_Env_ValueFrom_ConfigMapKeyRef {
-  key: string;
-  name: string;
-  optional: boolean;
+  key?: string | Computed<string>;
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
 }
 
 export interface Env_Env_ValueFrom_FieldRef {
-  apiVersion: string;
-  fieldPath: string;
+  apiVersion?: string | Computed<string>;
+  fieldPath?: string | Computed<string>;
 }
 
 export interface Env_Env_ValueFrom_ResourceFieldRef {
-  containerName: string;
-  divisor: string;
-  resource: string;
+  containerName?: string | Computed<string>;
+  divisor?: string | Computed<string>;
+  resource: string | Computed<string>;
 }
 
 export interface Env_Env_ValueFrom {
-  configMapKeyRef: Env_Env_ValueFrom_ConfigMapKeyRef[];
-  fieldRef: Env_Env_ValueFrom_FieldRef[];
-  resourceFieldRef: Env_Env_ValueFrom_ResourceFieldRef[];
-  secretKeyRef: Env_Env_ValueFrom_ConfigMapKeyRef[];
+  configMapKeyRef?: Env_Env_ValueFrom_ConfigMapKeyRef[] | Computed<Env_Env_ValueFrom_ConfigMapKeyRef[]>;
+  fieldRef?: Env_Env_ValueFrom_FieldRef[] | Computed<Env_Env_ValueFrom_FieldRef[]>;
+  resourceFieldRef?: Env_Env_ValueFrom_ResourceFieldRef[] | Computed<Env_Env_ValueFrom_ResourceFieldRef[]>;
+  secretKeyRef?: Env_Env_ValueFrom_ConfigMapKeyRef[] | Computed<Env_Env_ValueFrom_ConfigMapKeyRef[]>;
 }
 
 export interface Env_Env {
-  name: string;
-  value: string;
-  valueFrom: Env_Env_ValueFrom[];
+  name: string | Computed<string>;
+  value?: string | Computed<string>;
+  valueFrom?: Env_Env_ValueFrom[] | Computed<Env_Env_ValueFrom[]>;
 }
 
 export interface Env_Metadata {
-  name: string;
-  namespace: string;
+  name: string | Computed<string>;
+  namespace?: string | Computed<string>;
 }
 
 const Env_Env_ValueFrom_ConfigMapKeyRefFields: FieldMap = {

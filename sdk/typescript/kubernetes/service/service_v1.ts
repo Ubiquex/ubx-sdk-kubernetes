@@ -2,71 +2,71 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceV1_Status_LoadBalancer_Ingress {
-  hostname: string;
-  ip: string;
-  ipMode: string;
+  hostname?: string | Computed<string>;
+  ip?: string | Computed<string>;
+  ipMode?: string | Computed<string>;
 }
 
 export interface ServiceV1_Status_LoadBalancer {
-  ingress: ServiceV1_Status_LoadBalancer_Ingress[];
+  ingress?: ServiceV1_Status_LoadBalancer_Ingress[] | Computed<ServiceV1_Status_LoadBalancer_Ingress[]>;
 }
 
 export interface ServiceV1_Status {
-  loadBalancer: ServiceV1_Status_LoadBalancer[];
+  loadBalancer?: ServiceV1_Status_LoadBalancer[] | Computed<ServiceV1_Status_LoadBalancer[]>;
 }
 
 export interface ServiceV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface ServiceV1_Spec_Port {
-  appProtocol: string;
-  name: string;
-  nodePort: number;
-  port: number;
-  protocol: string;
-  targetPort: string;
+  appProtocol?: string | Computed<string>;
+  name?: string | Computed<string>;
+  nodePort?: number | Computed<number>;
+  port: number | Computed<number>;
+  protocol?: string | Computed<string>;
+  targetPort?: string | Computed<string>;
 }
 
 export interface ServiceV1_Spec_SessionAffinityConfig_ClientIp {
-  timeoutSeconds: number;
+  timeoutSeconds?: number | Computed<number>;
 }
 
 export interface ServiceV1_Spec_SessionAffinityConfig {
-  clientIp: ServiceV1_Spec_SessionAffinityConfig_ClientIp[];
+  clientIp?: ServiceV1_Spec_SessionAffinityConfig_ClientIp[] | Computed<ServiceV1_Spec_SessionAffinityConfig_ClientIp[]>;
 }
 
 export interface ServiceV1_Spec {
-  allocateLoadBalancerNodePorts: boolean;
-  clusterIp: string;
-  clusterIps: string[];
-  externalIps: string[];
-  externalName: string;
-  externalTrafficPolicy: string;
-  healthCheckNodePort: number;
-  internalTrafficPolicy: string;
-  ipFamilies: string[];
-  ipFamilyPolicy: string;
-  loadBalancerClass: string;
-  loadBalancerIp: string;
-  loadBalancerSourceRanges: string[];
-  publishNotReadyAddresses: boolean;
-  selector: Record<string, string>;
-  sessionAffinity: string;
-  type: string;
-  port: ServiceV1_Spec_Port[];
-  sessionAffinityConfig: ServiceV1_Spec_SessionAffinityConfig[];
+  allocateLoadBalancerNodePorts?: boolean | Computed<boolean>;
+  clusterIp?: string | Computed<string>;
+  clusterIps?: string[] | Computed<string[]>;
+  externalIps?: string[] | Computed<string[]>;
+  externalName?: string | Computed<string>;
+  externalTrafficPolicy?: string | Computed<string>;
+  healthCheckNodePort?: number | Computed<number>;
+  internalTrafficPolicy?: string | Computed<string>;
+  ipFamilies?: string[] | Computed<string[]>;
+  ipFamilyPolicy?: string | Computed<string>;
+  loadBalancerClass?: string | Computed<string>;
+  loadBalancerIp?: string | Computed<string>;
+  loadBalancerSourceRanges?: string[] | Computed<string[]>;
+  publishNotReadyAddresses?: boolean | Computed<boolean>;
+  selector?: Record<string, string> | Computed<Record<string, string>>;
+  sessionAffinity?: string | Computed<string>;
+  type?: string | Computed<string>;
+  port?: ServiceV1_Spec_Port[] | Computed<ServiceV1_Spec_Port[]>;
+  sessionAffinityConfig?: ServiceV1_Spec_SessionAffinityConfig[] | Computed<ServiceV1_Spec_SessionAffinityConfig[]>;
 }
 
 export interface ServiceV1_Timeouts {
-  create: string;
+  create?: string | Computed<string>;
 }
 
 const ServiceV1_MetadataFields: FieldMap = {

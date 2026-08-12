@@ -2,43 +2,43 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VolumeClaim_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface VolumeClaim_Spec_Resources {
-  limits: Record<string, string>;
-  requests: Record<string, string>;
+  limits?: Record<string, string> | Computed<Record<string, string>>;
+  requests?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface VolumeClaim_Spec_Selector_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface VolumeClaim_Spec_Selector {
-  matchLabels: Record<string, string>;
-  matchExpressions: VolumeClaim_Spec_Selector_MatchExpressions[];
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
+  matchExpressions?: VolumeClaim_Spec_Selector_MatchExpressions[] | Computed<VolumeClaim_Spec_Selector_MatchExpressions[]>;
 }
 
 export interface VolumeClaim_Spec {
-  accessModes: string[];
-  storageClassName: string;
-  volumeMode: string;
-  volumeName: string;
-  resources: VolumeClaim_Spec_Resources[];
-  selector: VolumeClaim_Spec_Selector[];
+  accessModes: string[] | Computed<string[]>;
+  storageClassName?: string | Computed<string>;
+  volumeMode?: string | Computed<string>;
+  volumeName?: string | Computed<string>;
+  resources?: VolumeClaim_Spec_Resources[] | Computed<VolumeClaim_Spec_Resources[]>;
+  selector?: VolumeClaim_Spec_Selector[] | Computed<VolumeClaim_Spec_Selector[]>;
 }
 
 export interface VolumeClaim_Timeouts {
-  create: string;
+  create?: string | Computed<string>;
 }
 
 const VolumeClaim_MetadataFields: FieldMap = {

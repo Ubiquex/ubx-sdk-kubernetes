@@ -2,85 +2,85 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AdmissionPolicyV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface AdmissionPolicyV1_Spec_AuditAnnotations {
-  key: string;
-  valueExpression: string;
+  key?: string | Computed<string>;
+  valueExpression?: string | Computed<string>;
 }
 
 export interface AdmissionPolicyV1_Spec_MatchConditions {
-  expression: string;
-  name: string;
+  expression?: string | Computed<string>;
+  name?: string | Computed<string>;
 }
 
 export interface AdmissionPolicyV1_Spec_MatchConstraints_ExcludeResourceRules {
-  apiGroups: string[];
-  apiVersions: string[];
-  operations: string[];
-  resourceNames: string[];
-  resources: string[];
-  scope: string;
+  apiGroups?: string[] | Computed<string[]>;
+  apiVersions?: string[] | Computed<string[]>;
+  operations?: string[] | Computed<string[]>;
+  resourceNames?: string[] | Computed<string[]>;
+  resources?: string[] | Computed<string[]>;
+  scope?: string | Computed<string>;
 }
 
 export interface AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector {
-  matchExpressions: AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector_MatchExpressions[];
-  matchLabels: Record<string, string>;
+  matchExpressions?: AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector_MatchExpressions[] | Computed<AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector_MatchExpressions[]>;
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface AdmissionPolicyV1_Spec_MatchConstraints_ObjectSelector {
-  labelSelector: AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector;
+  labelSelector?: AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector | Computed<AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector>;
 }
 
 export interface AdmissionPolicyV1_Spec_MatchConstraints {
-  excludeResourceRules: AdmissionPolicyV1_Spec_MatchConstraints_ExcludeResourceRules[];
-  matchPolicy: string;
-  namespaceSelector: AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector;
-  objectSelector: AdmissionPolicyV1_Spec_MatchConstraints_ObjectSelector;
-  resourceRules: AdmissionPolicyV1_Spec_MatchConstraints_ExcludeResourceRules[];
+  excludeResourceRules?: AdmissionPolicyV1_Spec_MatchConstraints_ExcludeResourceRules[] | Computed<AdmissionPolicyV1_Spec_MatchConstraints_ExcludeResourceRules[]>;
+  matchPolicy?: string | Computed<string>;
+  namespaceSelector?: AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector | Computed<AdmissionPolicyV1_Spec_MatchConstraints_NamespaceSelector>;
+  objectSelector?: AdmissionPolicyV1_Spec_MatchConstraints_ObjectSelector | Computed<AdmissionPolicyV1_Spec_MatchConstraints_ObjectSelector>;
+  resourceRules?: AdmissionPolicyV1_Spec_MatchConstraints_ExcludeResourceRules[] | Computed<AdmissionPolicyV1_Spec_MatchConstraints_ExcludeResourceRules[]>;
 }
 
 export interface AdmissionPolicyV1_Spec_ParamKind {
-  apiVersion: string;
-  kind: string;
+  apiVersion?: string | Computed<string>;
+  kind?: string | Computed<string>;
 }
 
 export interface AdmissionPolicyV1_Spec_Validations {
-  expression: string;
-  message: string;
-  messageExpression: string;
-  reason: string;
+  expression?: string | Computed<string>;
+  message?: string | Computed<string>;
+  messageExpression?: string | Computed<string>;
+  reason?: string | Computed<string>;
 }
 
 export interface AdmissionPolicyV1_Spec {
-  auditAnnotations: AdmissionPolicyV1_Spec_AuditAnnotations[];
-  failurePolicy: string;
-  matchConditions: AdmissionPolicyV1_Spec_MatchConditions[];
-  matchConstraints: AdmissionPolicyV1_Spec_MatchConstraints;
-  paramKind: AdmissionPolicyV1_Spec_ParamKind;
-  validations: AdmissionPolicyV1_Spec_Validations[];
-  variables: AdmissionPolicyV1_Spec_MatchConditions[];
+  auditAnnotations?: AdmissionPolicyV1_Spec_AuditAnnotations[] | Computed<AdmissionPolicyV1_Spec_AuditAnnotations[]>;
+  failurePolicy?: string | Computed<string>;
+  matchConditions?: AdmissionPolicyV1_Spec_MatchConditions[] | Computed<AdmissionPolicyV1_Spec_MatchConditions[]>;
+  matchConstraints?: AdmissionPolicyV1_Spec_MatchConstraints | Computed<AdmissionPolicyV1_Spec_MatchConstraints>;
+  paramKind?: AdmissionPolicyV1_Spec_ParamKind | Computed<AdmissionPolicyV1_Spec_ParamKind>;
+  validations?: AdmissionPolicyV1_Spec_Validations[] | Computed<AdmissionPolicyV1_Spec_Validations[]>;
+  variables?: AdmissionPolicyV1_Spec_MatchConditions[] | Computed<AdmissionPolicyV1_Spec_MatchConditions[]>;
 }
 
 export interface AdmissionPolicyV1_Timeouts {
-  create: string;
-  delete: string;
-  read: string;
-  update: string;
+  create?: string | Computed<string>;
+  delete?: string | Computed<string>;
+  read?: string | Computed<string>;
+  update?: string | Computed<string>;
 }
 
 const AdmissionPolicyV1_MetadataFields: FieldMap = {

@@ -2,32 +2,32 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EndpointsV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface EndpointsV1_Subset_Address {
-  hostname: string;
-  ip: string;
-  nodeName: string;
+  hostname?: string | Computed<string>;
+  ip: string | Computed<string>;
+  nodeName?: string | Computed<string>;
 }
 
 export interface EndpointsV1_Subset_Port {
-  name: string;
-  port: number;
-  protocol: string;
+  name?: string | Computed<string>;
+  port: number | Computed<number>;
+  protocol?: string | Computed<string>;
 }
 
 export interface EndpointsV1_Subset {
-  address: EndpointsV1_Subset_Address[];
-  notReadyAddress: EndpointsV1_Subset_Address[];
-  port: EndpointsV1_Subset_Port[];
+  address?: EndpointsV1_Subset_Address[] | Computed<EndpointsV1_Subset_Address[]>;
+  notReadyAddress?: EndpointsV1_Subset_Address[] | Computed<EndpointsV1_Subset_Address[]>;
+  port?: EndpointsV1_Subset_Port[] | Computed<EndpointsV1_Subset_Port[]>;
 }
 
 const EndpointsV1_MetadataFields: FieldMap = {

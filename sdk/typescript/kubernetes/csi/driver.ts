@@ -2,19 +2,19 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Driver_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface Driver_Spec {
-  attachRequired: boolean;
-  podInfoOnMount: boolean;
-  volumeLifecycleModes: string[];
+  attachRequired: boolean | Computed<boolean>;
+  podInfoOnMount?: boolean | Computed<boolean>;
+  volumeLifecycleModes?: string[] | Computed<string[]>;
 }
 
 const Driver_MetadataFields: FieldMap = {

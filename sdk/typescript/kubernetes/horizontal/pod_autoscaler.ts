@@ -2,100 +2,100 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PodAutoscaler_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface PodAutoscaler_Spec_Behavior_ScaleDown_Policy {
-  periodSeconds: number;
-  type: string;
-  value: number;
+  periodSeconds: number | Computed<number>;
+  type: string | Computed<string>;
+  value: number | Computed<number>;
 }
 
 export interface PodAutoscaler_Spec_Behavior_ScaleDown {
-  selectPolicy: string;
-  stabilizationWindowSeconds: number;
-  policy: PodAutoscaler_Spec_Behavior_ScaleDown_Policy[];
+  selectPolicy?: string | Computed<string>;
+  stabilizationWindowSeconds?: number | Computed<number>;
+  policy?: PodAutoscaler_Spec_Behavior_ScaleDown_Policy[] | Computed<PodAutoscaler_Spec_Behavior_ScaleDown_Policy[]>;
 }
 
 export interface PodAutoscaler_Spec_Behavior {
-  scaleDown: PodAutoscaler_Spec_Behavior_ScaleDown[];
-  scaleUp: PodAutoscaler_Spec_Behavior_ScaleDown[];
+  scaleDown?: PodAutoscaler_Spec_Behavior_ScaleDown[] | Computed<PodAutoscaler_Spec_Behavior_ScaleDown[]>;
+  scaleUp?: PodAutoscaler_Spec_Behavior_ScaleDown[] | Computed<PodAutoscaler_Spec_Behavior_ScaleDown[]>;
 }
 
 export interface PodAutoscaler_Spec_Metric_ContainerResource_Target {
-  averageUtilization: number;
-  averageValue: string;
-  type: string;
-  value: string;
+  averageUtilization?: number | Computed<number>;
+  averageValue?: string | Computed<string>;
+  type: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface PodAutoscaler_Spec_Metric_ContainerResource {
-  container: string;
-  name: string;
-  target: PodAutoscaler_Spec_Metric_ContainerResource_Target[];
+  container: string | Computed<string>;
+  name: string | Computed<string>;
+  target?: PodAutoscaler_Spec_Metric_ContainerResource_Target[] | Computed<PodAutoscaler_Spec_Metric_ContainerResource_Target[]>;
 }
 
 export interface PodAutoscaler_Spec_Metric_External_Metric_Selector_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface PodAutoscaler_Spec_Metric_External_Metric_Selector {
-  matchLabels: Record<string, string>;
-  matchExpressions: PodAutoscaler_Spec_Metric_External_Metric_Selector_MatchExpressions[];
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
+  matchExpressions?: PodAutoscaler_Spec_Metric_External_Metric_Selector_MatchExpressions[] | Computed<PodAutoscaler_Spec_Metric_External_Metric_Selector_MatchExpressions[]>;
 }
 
 export interface PodAutoscaler_Spec_Metric_External_Metric {
-  name: string;
-  selector: PodAutoscaler_Spec_Metric_External_Metric_Selector[];
+  name: string | Computed<string>;
+  selector?: PodAutoscaler_Spec_Metric_External_Metric_Selector[] | Computed<PodAutoscaler_Spec_Metric_External_Metric_Selector[]>;
 }
 
 export interface PodAutoscaler_Spec_Metric_External {
-  metric: PodAutoscaler_Spec_Metric_External_Metric[];
-  target: PodAutoscaler_Spec_Metric_ContainerResource_Target[];
+  metric?: PodAutoscaler_Spec_Metric_External_Metric[] | Computed<PodAutoscaler_Spec_Metric_External_Metric[]>;
+  target?: PodAutoscaler_Spec_Metric_ContainerResource_Target[] | Computed<PodAutoscaler_Spec_Metric_ContainerResource_Target[]>;
 }
 
 export interface PodAutoscaler_Spec_Metric_Object_DescribedObject {
-  apiVersion: string;
-  kind: string;
-  name: string;
+  apiVersion: string | Computed<string>;
+  kind: string | Computed<string>;
+  name: string | Computed<string>;
 }
 
 export interface PodAutoscaler_Spec_Metric_Object {
-  describedObject: PodAutoscaler_Spec_Metric_Object_DescribedObject[];
-  metric: PodAutoscaler_Spec_Metric_External_Metric[];
-  target: PodAutoscaler_Spec_Metric_ContainerResource_Target[];
+  describedObject?: PodAutoscaler_Spec_Metric_Object_DescribedObject[] | Computed<PodAutoscaler_Spec_Metric_Object_DescribedObject[]>;
+  metric?: PodAutoscaler_Spec_Metric_External_Metric[] | Computed<PodAutoscaler_Spec_Metric_External_Metric[]>;
+  target?: PodAutoscaler_Spec_Metric_ContainerResource_Target[] | Computed<PodAutoscaler_Spec_Metric_ContainerResource_Target[]>;
 }
 
 export interface PodAutoscaler_Spec_Metric_Resource {
-  name: string;
-  target: PodAutoscaler_Spec_Metric_ContainerResource_Target[];
+  name: string | Computed<string>;
+  target?: PodAutoscaler_Spec_Metric_ContainerResource_Target[] | Computed<PodAutoscaler_Spec_Metric_ContainerResource_Target[]>;
 }
 
 export interface PodAutoscaler_Spec_Metric {
-  type: string;
-  containerResource: PodAutoscaler_Spec_Metric_ContainerResource[];
-  external: PodAutoscaler_Spec_Metric_External[];
-  object: PodAutoscaler_Spec_Metric_Object[];
-  pods: PodAutoscaler_Spec_Metric_External[];
-  resource: PodAutoscaler_Spec_Metric_Resource[];
+  type: string | Computed<string>;
+  containerResource?: PodAutoscaler_Spec_Metric_ContainerResource[] | Computed<PodAutoscaler_Spec_Metric_ContainerResource[]>;
+  external?: PodAutoscaler_Spec_Metric_External[] | Computed<PodAutoscaler_Spec_Metric_External[]>;
+  object?: PodAutoscaler_Spec_Metric_Object[] | Computed<PodAutoscaler_Spec_Metric_Object[]>;
+  pods?: PodAutoscaler_Spec_Metric_External[] | Computed<PodAutoscaler_Spec_Metric_External[]>;
+  resource?: PodAutoscaler_Spec_Metric_Resource[] | Computed<PodAutoscaler_Spec_Metric_Resource[]>;
 }
 
 export interface PodAutoscaler_Spec {
-  maxReplicas: number;
-  minReplicas: number;
-  targetCpuUtilizationPercentage: number;
-  behavior: PodAutoscaler_Spec_Behavior[];
-  metric: PodAutoscaler_Spec_Metric[];
-  scaleTargetRef: PodAutoscaler_Spec_Metric_Object_DescribedObject[];
+  maxReplicas: number | Computed<number>;
+  minReplicas?: number | Computed<number>;
+  targetCpuUtilizationPercentage?: number | Computed<number>;
+  behavior?: PodAutoscaler_Spec_Behavior[] | Computed<PodAutoscaler_Spec_Behavior[]>;
+  metric?: PodAutoscaler_Spec_Metric[] | Computed<PodAutoscaler_Spec_Metric[]>;
+  scaleTargetRef?: PodAutoscaler_Spec_Metric_Object_DescribedObject[] | Computed<PodAutoscaler_Spec_Metric_Object_DescribedObject[]>;
 }
 
 const PodAutoscaler_MetadataFields: FieldMap = {

@@ -2,629 +2,629 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Deployment_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Selector_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface Deployment_Spec_Selector {
-  matchLabels: Record<string, string>;
-  matchExpressions: Deployment_Spec_Selector_MatchExpressions[];
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
+  matchExpressions?: Deployment_Spec_Selector_MatchExpressions[] | Computed<Deployment_Spec_Selector_MatchExpressions[]>;
 }
 
 export interface Deployment_Spec_Strategy_RollingUpdate {
-  maxSurge: string;
-  maxUnavailable: string;
+  maxSurge?: string | Computed<string>;
+  maxUnavailable?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Strategy {
-  type: string;
-  rollingUpdate: Deployment_Spec_Strategy_RollingUpdate[];
+  type?: string | Computed<string>;
+  rollingUpdate?: Deployment_Spec_Strategy_RollingUpdate[] | Computed<Deployment_Spec_Strategy_RollingUpdate[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference {
-  matchExpressions: Deployment_Spec_Selector_MatchExpressions[];
-  matchFields: Deployment_Spec_Selector_MatchExpressions[];
+  matchExpressions?: Deployment_Spec_Selector_MatchExpressions[] | Computed<Deployment_Spec_Selector_MatchExpressions[]>;
+  matchFields?: Deployment_Spec_Selector_MatchExpressions[] | Computed<Deployment_Spec_Selector_MatchExpressions[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution {
-  weight: number;
-  preference: Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[];
+  weight: number | Computed<number>;
+  preference?: Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[] | Computed<Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution {
-  nodeSelectorTerm: Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[];
+  nodeSelectorTerm?: Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[] | Computed<Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Affinity_NodeAffinity {
-  preferredDuringSchedulingIgnoredDuringExecution: Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[];
-  requiredDuringSchedulingIgnoredDuringExecution: Deployment_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[];
+  preferredDuringSchedulingIgnoredDuringExecution?: Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[] | Computed<Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[]>;
+  requiredDuringSchedulingIgnoredDuringExecution?: Deployment_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[] | Computed<Deployment_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm {
-  namespaces: string[];
-  topologyKey: string;
-  labelSelector: Deployment_Spec_Selector[];
-  namespaceSelector: Deployment_Spec_Selector[];
+  namespaces?: string[] | Computed<string[]>;
+  topologyKey: string | Computed<string>;
+  labelSelector?: Deployment_Spec_Selector[] | Computed<Deployment_Spec_Selector[]>;
+  namespaceSelector?: Deployment_Spec_Selector[] | Computed<Deployment_Spec_Selector[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution {
-  weight: number;
-  podAffinityTerm: Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[];
+  weight: number | Computed<number>;
+  podAffinityTerm?: Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[] | Computed<Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Affinity_PodAffinity {
-  preferredDuringSchedulingIgnoredDuringExecution: Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[];
-  requiredDuringSchedulingIgnoredDuringExecution: Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[];
+  preferredDuringSchedulingIgnoredDuringExecution?: Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[] | Computed<Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[]>;
+  requiredDuringSchedulingIgnoredDuringExecution?: Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[] | Computed<Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Affinity {
-  nodeAffinity: Deployment_Spec_Template_Spec_Affinity_NodeAffinity[];
-  podAffinity: Deployment_Spec_Template_Spec_Affinity_PodAffinity[];
-  podAntiAffinity: Deployment_Spec_Template_Spec_Affinity_PodAffinity[];
+  nodeAffinity?: Deployment_Spec_Template_Spec_Affinity_NodeAffinity[] | Computed<Deployment_Spec_Template_Spec_Affinity_NodeAffinity[]>;
+  podAffinity?: Deployment_Spec_Template_Spec_Affinity_PodAffinity[] | Computed<Deployment_Spec_Template_Spec_Affinity_PodAffinity[]>;
+  podAntiAffinity?: Deployment_Spec_Template_Spec_Affinity_PodAffinity[] | Computed<Deployment_Spec_Template_Spec_Affinity_PodAffinity[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef {
-  key: string;
-  name: string;
-  optional: boolean;
+  key?: string | Computed<string>;
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef {
-  apiVersion: string;
-  fieldPath: string;
+  apiVersion?: string | Computed<string>;
+  fieldPath?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef {
-  containerName: string;
-  divisor: string;
-  resource: string;
+  containerName?: string | Computed<string>;
+  divisor?: string | Computed<string>;
+  resource: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Env_ValueFrom {
-  configMapKeyRef: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[];
-  fieldRef: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[];
-  resourceFieldRef: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[];
-  secretKeyRef: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[];
+  configMapKeyRef?: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[] | Computed<Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[]>;
+  fieldRef?: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[] | Computed<Deployment_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[]>;
+  resourceFieldRef?: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[] | Computed<Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[]>;
+  secretKeyRef?: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[] | Computed<Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Env {
-  name: string;
-  value: string;
-  valueFrom: Deployment_Spec_Template_Spec_Container_Env_ValueFrom[];
+  name: string | Computed<string>;
+  value?: string | Computed<string>;
+  valueFrom?: Deployment_Spec_Template_Spec_Container_Env_ValueFrom[] | Computed<Deployment_Spec_Template_Spec_Container_Env_ValueFrom[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef {
-  name: string;
-  optional: boolean;
+  name: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_EnvFrom {
-  prefix: string;
-  configMapRef: Deployment_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[];
-  secretRef: Deployment_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[];
+  prefix?: string | Computed<string>;
+  configMapRef?: Deployment_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[] | Computed<Deployment_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[]>;
+  secretRef?: Deployment_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[] | Computed<Deployment_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec {
-  command: string[];
+  command?: string[] | Computed<string[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader {
-  name: string;
-  value: string;
+  name?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet {
-  host: string;
-  path: string;
-  port: string;
-  scheme: string;
-  httpHeader: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
+  host?: string | Computed<string>;
+  path?: string | Computed<string>;
+  port?: string | Computed<string>;
+  scheme?: string | Computed<string>;
+  httpHeader?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket {
-  port: string;
+  port: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart {
-  exec: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[];
-  httpGet: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[];
-  tcpSocket: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[];
+  exec?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[]>;
+  httpGet?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[]>;
+  tcpSocket?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Lifecycle {
-  postStart: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart[];
-  preStop: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart[];
+  postStart?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart[]>;
+  preStop?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_LivenessProbe_Grpc {
-  port: number;
-  service: string;
+  port: number | Computed<number>;
+  service?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_LivenessProbe {
-  failureThreshold: number;
-  initialDelaySeconds: number;
-  periodSeconds: number;
-  successThreshold: number;
-  timeoutSeconds: number;
-  exec: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[];
-  grpc: Deployment_Spec_Template_Spec_Container_LivenessProbe_Grpc[];
-  httpGet: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[];
-  tcpSocket: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[];
+  failureThreshold?: number | Computed<number>;
+  initialDelaySeconds?: number | Computed<number>;
+  periodSeconds?: number | Computed<number>;
+  successThreshold?: number | Computed<number>;
+  timeoutSeconds?: number | Computed<number>;
+  exec?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[]>;
+  grpc?: Deployment_Spec_Template_Spec_Container_LivenessProbe_Grpc[] | Computed<Deployment_Spec_Template_Spec_Container_LivenessProbe_Grpc[]>;
+  httpGet?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[]>;
+  tcpSocket?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Port {
-  containerPort: number;
-  hostIp: string;
-  hostPort: number;
-  name: string;
-  protocol: string;
+  containerPort: number | Computed<number>;
+  hostIp?: string | Computed<string>;
+  hostPort?: number | Computed<number>;
+  name?: string | Computed<string>;
+  protocol?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_Resources {
-  limits: Record<string, string>;
-  requests: Record<string, string>;
+  limits?: Record<string, string> | Computed<Record<string, string>>;
+  requests?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_SecurityContext_Capabilities {
-  add: string[];
-  drop: string[];
+  add?: string[] | Computed<string[]>;
+  drop?: string[] | Computed<string[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions {
-  level: string;
-  role: string;
-  type: string;
-  user: string;
+  level?: string | Computed<string>;
+  role?: string | Computed<string>;
+  type?: string | Computed<string>;
+  user?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_SecurityContext_SeccompProfile {
-  localhostProfile: string;
-  type: string;
+  localhostProfile?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_SecurityContext {
-  allowPrivilegeEscalation: boolean;
-  privileged: boolean;
-  readOnlyRootFilesystem: boolean;
-  runAsGroup: string;
-  runAsNonRoot: boolean;
-  runAsUser: string;
-  capabilities: Deployment_Spec_Template_Spec_Container_SecurityContext_Capabilities[];
-  seLinuxOptions: Deployment_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[];
-  seccompProfile: Deployment_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[];
+  allowPrivilegeEscalation?: boolean | Computed<boolean>;
+  privileged?: boolean | Computed<boolean>;
+  readOnlyRootFilesystem?: boolean | Computed<boolean>;
+  runAsGroup?: string | Computed<string>;
+  runAsNonRoot?: boolean | Computed<boolean>;
+  runAsUser?: string | Computed<string>;
+  capabilities?: Deployment_Spec_Template_Spec_Container_SecurityContext_Capabilities[] | Computed<Deployment_Spec_Template_Spec_Container_SecurityContext_Capabilities[]>;
+  seLinuxOptions?: Deployment_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[] | Computed<Deployment_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[]>;
+  seccompProfile?: Deployment_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[] | Computed<Deployment_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_VolumeDevice {
-  devicePath: string;
-  name: string;
+  devicePath: string | Computed<string>;
+  name: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container_VolumeMount {
-  mountPath: string;
-  mountPropagation: string;
-  name: string;
-  readOnly: boolean;
-  subPath: string;
-  subPathExpr: string;
+  mountPath: string | Computed<string>;
+  mountPropagation?: string | Computed<string>;
+  name: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  subPath?: string | Computed<string>;
+  subPathExpr?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Container {
-  args: string[];
-  command: string[];
-  image: string;
-  imagePullPolicy: string;
-  name: string;
-  restartPolicy: string;
-  stdin: boolean;
-  stdinOnce: boolean;
-  terminationMessagePath: string;
-  terminationMessagePolicy: string;
-  tty: boolean;
-  workingDir: string;
-  env: Deployment_Spec_Template_Spec_Container_Env[];
-  envFrom: Deployment_Spec_Template_Spec_Container_EnvFrom[];
-  lifecycle: Deployment_Spec_Template_Spec_Container_Lifecycle[];
-  livenessProbe: Deployment_Spec_Template_Spec_Container_LivenessProbe[];
-  port: Deployment_Spec_Template_Spec_Container_Port[];
-  readinessProbe: Deployment_Spec_Template_Spec_Container_LivenessProbe[];
-  resources: Deployment_Spec_Template_Spec_Container_Resources[];
-  securityContext: Deployment_Spec_Template_Spec_Container_SecurityContext[];
-  startupProbe: Deployment_Spec_Template_Spec_Container_LivenessProbe[];
-  volumeDevice: Deployment_Spec_Template_Spec_Container_VolumeDevice[];
-  volumeMount: Deployment_Spec_Template_Spec_Container_VolumeMount[];
+  args?: string[] | Computed<string[]>;
+  command?: string[] | Computed<string[]>;
+  image?: string | Computed<string>;
+  imagePullPolicy?: string | Computed<string>;
+  name: string | Computed<string>;
+  restartPolicy?: string | Computed<string>;
+  stdin?: boolean | Computed<boolean>;
+  stdinOnce?: boolean | Computed<boolean>;
+  terminationMessagePath?: string | Computed<string>;
+  terminationMessagePolicy?: string | Computed<string>;
+  tty?: boolean | Computed<boolean>;
+  workingDir?: string | Computed<string>;
+  env?: Deployment_Spec_Template_Spec_Container_Env[] | Computed<Deployment_Spec_Template_Spec_Container_Env[]>;
+  envFrom?: Deployment_Spec_Template_Spec_Container_EnvFrom[] | Computed<Deployment_Spec_Template_Spec_Container_EnvFrom[]>;
+  lifecycle?: Deployment_Spec_Template_Spec_Container_Lifecycle[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle[]>;
+  livenessProbe?: Deployment_Spec_Template_Spec_Container_LivenessProbe[] | Computed<Deployment_Spec_Template_Spec_Container_LivenessProbe[]>;
+  port?: Deployment_Spec_Template_Spec_Container_Port[] | Computed<Deployment_Spec_Template_Spec_Container_Port[]>;
+  readinessProbe?: Deployment_Spec_Template_Spec_Container_LivenessProbe[] | Computed<Deployment_Spec_Template_Spec_Container_LivenessProbe[]>;
+  resources?: Deployment_Spec_Template_Spec_Container_Resources[] | Computed<Deployment_Spec_Template_Spec_Container_Resources[]>;
+  securityContext?: Deployment_Spec_Template_Spec_Container_SecurityContext[] | Computed<Deployment_Spec_Template_Spec_Container_SecurityContext[]>;
+  startupProbe?: Deployment_Spec_Template_Spec_Container_LivenessProbe[] | Computed<Deployment_Spec_Template_Spec_Container_LivenessProbe[]>;
+  volumeDevice?: Deployment_Spec_Template_Spec_Container_VolumeDevice[] | Computed<Deployment_Spec_Template_Spec_Container_VolumeDevice[]>;
+  volumeMount?: Deployment_Spec_Template_Spec_Container_VolumeMount[] | Computed<Deployment_Spec_Template_Spec_Container_VolumeMount[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_DnsConfig {
-  nameservers: string[];
-  searches: string[];
-  option: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
+  nameservers?: string[] | Computed<string[]>;
+  searches?: string[] | Computed<string[]>;
+  option?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_HostAliases {
-  hostnames: string[];
-  ip: string;
+  hostnames: string[] | Computed<string[]>;
+  ip: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_ImagePullSecrets {
-  name: string;
+  name: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_ReadinessGate {
-  conditionType: string;
+  conditionType: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_SecurityContext_WindowsOptions {
-  gmsaCredentialSpec: string;
-  gmsaCredentialSpecName: string;
-  hostProcess: boolean;
-  runAsUsername: string;
+  gmsaCredentialSpec?: string | Computed<string>;
+  gmsaCredentialSpecName?: string | Computed<string>;
+  hostProcess?: boolean | Computed<boolean>;
+  runAsUsername?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_SecurityContext {
-  fsGroup: string;
-  fsGroupChangePolicy: string;
-  runAsGroup: string;
-  runAsNonRoot: boolean;
-  runAsUser: string;
-  supplementalGroups: number[];
-  seLinuxOptions: Deployment_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[];
-  seccompProfile: Deployment_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[];
-  sysctl: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
-  windowsOptions: Deployment_Spec_Template_Spec_SecurityContext_WindowsOptions[];
+  fsGroup?: string | Computed<string>;
+  fsGroupChangePolicy?: string | Computed<string>;
+  runAsGroup?: string | Computed<string>;
+  runAsNonRoot?: boolean | Computed<boolean>;
+  runAsUser?: string | Computed<string>;
+  supplementalGroups?: number[] | Computed<number[]>;
+  seLinuxOptions?: Deployment_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[] | Computed<Deployment_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[]>;
+  seccompProfile?: Deployment_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[] | Computed<Deployment_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[]>;
+  sysctl?: Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<Deployment_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
+  windowsOptions?: Deployment_Spec_Template_Spec_SecurityContext_WindowsOptions[] | Computed<Deployment_Spec_Template_Spec_SecurityContext_WindowsOptions[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Toleration {
-  effect: string;
-  key: string;
-  operator: string;
-  tolerationSeconds: string;
-  value: string;
+  effect?: string | Computed<string>;
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  tolerationSeconds?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_TopologySpreadConstraint {
-  matchLabelKeys: string[];
-  maxSkew: number;
-  minDomains: number;
-  nodeAffinityPolicy: string;
-  nodeTaintsPolicy: string;
-  topologyKey: string;
-  whenUnsatisfiable: string;
-  labelSelector: Deployment_Spec_Selector[];
+  matchLabelKeys?: string[] | Computed<string[]>;
+  maxSkew?: number | Computed<number>;
+  minDomains?: number | Computed<number>;
+  nodeAffinityPolicy?: string | Computed<string>;
+  nodeTaintsPolicy?: string | Computed<string>;
+  topologyKey?: string | Computed<string>;
+  whenUnsatisfiable?: string | Computed<string>;
+  labelSelector?: Deployment_Spec_Selector[] | Computed<Deployment_Spec_Selector[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_AwsElasticBlockStore {
-  fsType: string;
-  partition: number;
-  readOnly: boolean;
-  volumeId: string;
+  fsType?: string | Computed<string>;
+  partition?: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeId: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_AzureDisk {
-  cachingMode: string;
-  dataDiskUri: string;
-  diskName: string;
-  fsType: string;
-  kind: string;
-  readOnly: boolean;
+  cachingMode: string | Computed<string>;
+  dataDiskUri: string | Computed<string>;
+  diskName: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  kind?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_AzureFile {
-  readOnly: boolean;
-  secretName: string;
-  secretNamespace: string;
-  shareName: string;
+  readOnly?: boolean | Computed<boolean>;
+  secretName: string | Computed<string>;
+  secretNamespace?: string | Computed<string>;
+  shareName: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_CephFs_SecretRef {
-  name: string;
-  namespace: string;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_CephFs {
-  monitors: string[];
-  path: string;
-  readOnly: boolean;
-  secretFile: string;
-  user: string;
-  secretRef: Deployment_Spec_Template_Spec_Volume_CephFs_SecretRef[];
+  monitors: string[] | Computed<string[]>;
+  path?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  secretFile?: string | Computed<string>;
+  user?: string | Computed<string>;
+  secretRef?: Deployment_Spec_Template_Spec_Volume_CephFs_SecretRef[] | Computed<Deployment_Spec_Template_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Cinder {
-  fsType: string;
-  readOnly: boolean;
-  volumeId: string;
+  fsType?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeId: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_ConfigMap_Items {
-  key: string;
-  mode: string;
-  path: string;
+  key?: string | Computed<string>;
+  mode?: string | Computed<string>;
+  path?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_ConfigMap {
-  defaultMode: string;
-  name: string;
-  optional: boolean;
-  items: Deployment_Spec_Template_Spec_Volume_ConfigMap_Items[];
+  defaultMode?: string | Computed<string>;
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  items?: Deployment_Spec_Template_Spec_Volume_ConfigMap_Items[] | Computed<Deployment_Spec_Template_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Csi {
-  driver: string;
-  fsType: string;
-  readOnly: boolean;
-  volumeAttributes: Record<string, string>;
-  nodePublishSecretRef: Deployment_Spec_Template_Spec_ImagePullSecrets[];
+  driver: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeAttributes?: Record<string, string> | Computed<Record<string, string>>;
+  nodePublishSecretRef?: Deployment_Spec_Template_Spec_ImagePullSecrets[] | Computed<Deployment_Spec_Template_Spec_ImagePullSecrets[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_DownwardApi_Items {
-  mode: string;
-  path: string;
-  fieldRef: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[];
-  resourceFieldRef: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[];
+  mode?: string | Computed<string>;
+  path: string | Computed<string>;
+  fieldRef?: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[] | Computed<Deployment_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[]>;
+  resourceFieldRef?: Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[] | Computed<Deployment_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_DownwardApi {
-  defaultMode: string;
-  items: Deployment_Spec_Template_Spec_Volume_DownwardApi_Items[];
+  defaultMode?: string | Computed<string>;
+  items?: Deployment_Spec_Template_Spec_Volume_DownwardApi_Items[] | Computed<Deployment_Spec_Template_Spec_Volume_DownwardApi_Items[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_EmptyDir {
-  medium: string;
-  sizeLimit: string;
+  medium?: string | Computed<string>;
+  sizeLimit?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata {
-  annotations: Record<string, string>;
-  labels: Record<string, string>;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec {
-  accessModes: string[];
-  storageClassName: string;
-  volumeMode: string;
-  volumeName: string;
-  resources: Deployment_Spec_Template_Spec_Container_Resources[];
-  selector: Deployment_Spec_Selector[];
+  accessModes: string[] | Computed<string[]>;
+  storageClassName?: string | Computed<string>;
+  volumeMode?: string | Computed<string>;
+  volumeName?: string | Computed<string>;
+  resources?: Deployment_Spec_Template_Spec_Container_Resources[] | Computed<Deployment_Spec_Template_Spec_Container_Resources[]>;
+  selector?: Deployment_Spec_Selector[] | Computed<Deployment_Spec_Selector[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate {
-  metadata: Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[];
-  spec: Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[];
+  metadata?: Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[] | Computed<Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[]>;
+  spec?: Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[] | Computed<Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Ephemeral {
-  volumeClaimTemplate: Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate[];
+  volumeClaimTemplate?: Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate[] | Computed<Deployment_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Fc {
-  fsType: string;
-  lun: number;
-  readOnly: boolean;
-  targetWwNs: string[];
+  fsType?: string | Computed<string>;
+  lun: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  targetWwNs: string[] | Computed<string[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_FlexVolume {
-  driver: string;
-  fsType: string;
-  options: Record<string, string>;
-  readOnly: boolean;
-  secretRef: Deployment_Spec_Template_Spec_Volume_CephFs_SecretRef[];
+  driver: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  options?: Record<string, string> | Computed<Record<string, string>>;
+  readOnly?: boolean | Computed<boolean>;
+  secretRef?: Deployment_Spec_Template_Spec_Volume_CephFs_SecretRef[] | Computed<Deployment_Spec_Template_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Flocker {
-  datasetName: string;
-  datasetUuid: string;
+  datasetName?: string | Computed<string>;
+  datasetUuid?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_GcePersistentDisk {
-  fsType: string;
-  partition: number;
-  pdName: string;
-  readOnly: boolean;
+  fsType?: string | Computed<string>;
+  partition?: number | Computed<number>;
+  pdName: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_GitRepo {
-  directory: string;
-  repository: string;
-  revision: string;
+  directory?: string | Computed<string>;
+  repository?: string | Computed<string>;
+  revision?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Glusterfs {
-  endpointsName: string;
-  path: string;
-  readOnly: boolean;
+  endpointsName: string | Computed<string>;
+  path: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_HostPath {
-  path: string;
-  type: string;
+  path?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Iscsi {
-  fsType: string;
-  iqn: string;
-  iscsiInterface: string;
-  lun: number;
-  readOnly: boolean;
-  targetPortal: string;
+  fsType?: string | Computed<string>;
+  iqn: string | Computed<string>;
+  iscsiInterface?: string | Computed<string>;
+  lun?: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  targetPortal: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Local {
-  path: string;
+  path?: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Nfs {
-  path: string;
-  readOnly: boolean;
-  server: string;
+  path: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  server: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_PersistentVolumeClaim {
-  claimName: string;
-  readOnly: boolean;
+  claimName?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_PhotonPersistentDisk {
-  fsType: string;
-  pdId: string;
+  fsType?: string | Computed<string>;
+  pdId: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap {
-  name: string;
-  optional: boolean;
-  items: Deployment_Spec_Template_Spec_Volume_ConfigMap_Items[];
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  items?: Deployment_Spec_Template_Spec_Volume_ConfigMap_Items[] | Computed<Deployment_Spec_Template_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi {
-  items: Deployment_Spec_Template_Spec_Volume_DownwardApi_Items[];
+  items?: Deployment_Spec_Template_Spec_Volume_DownwardApi_Items[] | Computed<Deployment_Spec_Template_Spec_Volume_DownwardApi_Items[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken {
-  audience: string;
-  expirationSeconds: number;
-  path: string;
+  audience?: string | Computed<string>;
+  expirationSeconds?: number | Computed<number>;
+  path: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Projected_Sources {
-  configMap: Deployment_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[];
-  downwardApi: Deployment_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi[];
-  secret: Deployment_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[];
-  serviceAccountToken: Deployment_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken[];
+  configMap?: Deployment_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[] | Computed<Deployment_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[]>;
+  downwardApi?: Deployment_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi[] | Computed<Deployment_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi[]>;
+  secret?: Deployment_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[] | Computed<Deployment_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[]>;
+  serviceAccountToken?: Deployment_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken[] | Computed<Deployment_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Projected {
-  defaultMode: string;
-  sources: Deployment_Spec_Template_Spec_Volume_Projected_Sources[];
+  defaultMode?: string | Computed<string>;
+  sources?: Deployment_Spec_Template_Spec_Volume_Projected_Sources[] | Computed<Deployment_Spec_Template_Spec_Volume_Projected_Sources[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Quobyte {
-  group: string;
-  readOnly: boolean;
-  registry: string;
-  user: string;
-  volume: string;
+  group?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  registry: string | Computed<string>;
+  user?: string | Computed<string>;
+  volume: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Rbd {
-  cephMonitors: string[];
-  fsType: string;
-  keyring: string;
-  radosUser: string;
-  rbdImage: string;
-  rbdPool: string;
-  readOnly: boolean;
-  secretRef: Deployment_Spec_Template_Spec_Volume_CephFs_SecretRef[];
+  cephMonitors: string[] | Computed<string[]>;
+  fsType?: string | Computed<string>;
+  keyring?: string | Computed<string>;
+  radosUser?: string | Computed<string>;
+  rbdImage: string | Computed<string>;
+  rbdPool?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  secretRef?: Deployment_Spec_Template_Spec_Volume_CephFs_SecretRef[] | Computed<Deployment_Spec_Template_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_Secret {
-  defaultMode: string;
-  optional: boolean;
-  secretName: string;
-  items: Deployment_Spec_Template_Spec_Volume_ConfigMap_Items[];
+  defaultMode?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  secretName?: string | Computed<string>;
+  items?: Deployment_Spec_Template_Spec_Volume_ConfigMap_Items[] | Computed<Deployment_Spec_Template_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume_VsphereVolume {
-  fsType: string;
-  volumePath: string;
+  fsType?: string | Computed<string>;
+  volumePath: string | Computed<string>;
 }
 
 export interface Deployment_Spec_Template_Spec_Volume {
-  name: string;
-  awsElasticBlockStore: Deployment_Spec_Template_Spec_Volume_AwsElasticBlockStore[];
-  azureDisk: Deployment_Spec_Template_Spec_Volume_AzureDisk[];
-  azureFile: Deployment_Spec_Template_Spec_Volume_AzureFile[];
-  cephFs: Deployment_Spec_Template_Spec_Volume_CephFs[];
-  cinder: Deployment_Spec_Template_Spec_Volume_Cinder[];
-  configMap: Deployment_Spec_Template_Spec_Volume_ConfigMap[];
-  csi: Deployment_Spec_Template_Spec_Volume_Csi[];
-  downwardApi: Deployment_Spec_Template_Spec_Volume_DownwardApi[];
-  emptyDir: Deployment_Spec_Template_Spec_Volume_EmptyDir[];
-  ephemeral: Deployment_Spec_Template_Spec_Volume_Ephemeral[];
-  fc: Deployment_Spec_Template_Spec_Volume_Fc[];
-  flexVolume: Deployment_Spec_Template_Spec_Volume_FlexVolume[];
-  flocker: Deployment_Spec_Template_Spec_Volume_Flocker[];
-  gcePersistentDisk: Deployment_Spec_Template_Spec_Volume_GcePersistentDisk[];
-  gitRepo: Deployment_Spec_Template_Spec_Volume_GitRepo[];
-  glusterfs: Deployment_Spec_Template_Spec_Volume_Glusterfs[];
-  hostPath: Deployment_Spec_Template_Spec_Volume_HostPath[];
-  iscsi: Deployment_Spec_Template_Spec_Volume_Iscsi[];
-  local: Deployment_Spec_Template_Spec_Volume_Local[];
-  nfs: Deployment_Spec_Template_Spec_Volume_Nfs[];
-  persistentVolumeClaim: Deployment_Spec_Template_Spec_Volume_PersistentVolumeClaim[];
-  photonPersistentDisk: Deployment_Spec_Template_Spec_Volume_PhotonPersistentDisk[];
-  projected: Deployment_Spec_Template_Spec_Volume_Projected[];
-  quobyte: Deployment_Spec_Template_Spec_Volume_Quobyte[];
-  rbd: Deployment_Spec_Template_Spec_Volume_Rbd[];
-  secret: Deployment_Spec_Template_Spec_Volume_Secret[];
-  vsphereVolume: Deployment_Spec_Template_Spec_Volume_VsphereVolume[];
+  name?: string | Computed<string>;
+  awsElasticBlockStore?: Deployment_Spec_Template_Spec_Volume_AwsElasticBlockStore[] | Computed<Deployment_Spec_Template_Spec_Volume_AwsElasticBlockStore[]>;
+  azureDisk?: Deployment_Spec_Template_Spec_Volume_AzureDisk[] | Computed<Deployment_Spec_Template_Spec_Volume_AzureDisk[]>;
+  azureFile?: Deployment_Spec_Template_Spec_Volume_AzureFile[] | Computed<Deployment_Spec_Template_Spec_Volume_AzureFile[]>;
+  cephFs?: Deployment_Spec_Template_Spec_Volume_CephFs[] | Computed<Deployment_Spec_Template_Spec_Volume_CephFs[]>;
+  cinder?: Deployment_Spec_Template_Spec_Volume_Cinder[] | Computed<Deployment_Spec_Template_Spec_Volume_Cinder[]>;
+  configMap?: Deployment_Spec_Template_Spec_Volume_ConfigMap[] | Computed<Deployment_Spec_Template_Spec_Volume_ConfigMap[]>;
+  csi?: Deployment_Spec_Template_Spec_Volume_Csi[] | Computed<Deployment_Spec_Template_Spec_Volume_Csi[]>;
+  downwardApi?: Deployment_Spec_Template_Spec_Volume_DownwardApi[] | Computed<Deployment_Spec_Template_Spec_Volume_DownwardApi[]>;
+  emptyDir?: Deployment_Spec_Template_Spec_Volume_EmptyDir[] | Computed<Deployment_Spec_Template_Spec_Volume_EmptyDir[]>;
+  ephemeral?: Deployment_Spec_Template_Spec_Volume_Ephemeral[] | Computed<Deployment_Spec_Template_Spec_Volume_Ephemeral[]>;
+  fc?: Deployment_Spec_Template_Spec_Volume_Fc[] | Computed<Deployment_Spec_Template_Spec_Volume_Fc[]>;
+  flexVolume?: Deployment_Spec_Template_Spec_Volume_FlexVolume[] | Computed<Deployment_Spec_Template_Spec_Volume_FlexVolume[]>;
+  flocker?: Deployment_Spec_Template_Spec_Volume_Flocker[] | Computed<Deployment_Spec_Template_Spec_Volume_Flocker[]>;
+  gcePersistentDisk?: Deployment_Spec_Template_Spec_Volume_GcePersistentDisk[] | Computed<Deployment_Spec_Template_Spec_Volume_GcePersistentDisk[]>;
+  gitRepo?: Deployment_Spec_Template_Spec_Volume_GitRepo[] | Computed<Deployment_Spec_Template_Spec_Volume_GitRepo[]>;
+  glusterfs?: Deployment_Spec_Template_Spec_Volume_Glusterfs[] | Computed<Deployment_Spec_Template_Spec_Volume_Glusterfs[]>;
+  hostPath?: Deployment_Spec_Template_Spec_Volume_HostPath[] | Computed<Deployment_Spec_Template_Spec_Volume_HostPath[]>;
+  iscsi?: Deployment_Spec_Template_Spec_Volume_Iscsi[] | Computed<Deployment_Spec_Template_Spec_Volume_Iscsi[]>;
+  local?: Deployment_Spec_Template_Spec_Volume_Local[] | Computed<Deployment_Spec_Template_Spec_Volume_Local[]>;
+  nfs?: Deployment_Spec_Template_Spec_Volume_Nfs[] | Computed<Deployment_Spec_Template_Spec_Volume_Nfs[]>;
+  persistentVolumeClaim?: Deployment_Spec_Template_Spec_Volume_PersistentVolumeClaim[] | Computed<Deployment_Spec_Template_Spec_Volume_PersistentVolumeClaim[]>;
+  photonPersistentDisk?: Deployment_Spec_Template_Spec_Volume_PhotonPersistentDisk[] | Computed<Deployment_Spec_Template_Spec_Volume_PhotonPersistentDisk[]>;
+  projected?: Deployment_Spec_Template_Spec_Volume_Projected[] | Computed<Deployment_Spec_Template_Spec_Volume_Projected[]>;
+  quobyte?: Deployment_Spec_Template_Spec_Volume_Quobyte[] | Computed<Deployment_Spec_Template_Spec_Volume_Quobyte[]>;
+  rbd?: Deployment_Spec_Template_Spec_Volume_Rbd[] | Computed<Deployment_Spec_Template_Spec_Volume_Rbd[]>;
+  secret?: Deployment_Spec_Template_Spec_Volume_Secret[] | Computed<Deployment_Spec_Template_Spec_Volume_Secret[]>;
+  vsphereVolume?: Deployment_Spec_Template_Spec_Volume_VsphereVolume[] | Computed<Deployment_Spec_Template_Spec_Volume_VsphereVolume[]>;
 }
 
 export interface Deployment_Spec_Template_Spec {
-  activeDeadlineSeconds: number;
-  automountServiceAccountToken: boolean;
-  dnsPolicy: string;
-  enableServiceLinks: boolean;
-  hostIpc: boolean;
-  hostNetwork: boolean;
-  hostPid: boolean;
-  hostname: string;
-  nodeName: string;
-  nodeSelector: Record<string, string>;
-  priorityClassName: string;
-  restartPolicy: string;
-  runtimeClassName: string;
-  schedulerName: string;
-  serviceAccountName: string;
-  shareProcessNamespace: boolean;
-  subdomain: string;
-  terminationGracePeriodSeconds: number;
-  affinity: Deployment_Spec_Template_Spec_Affinity[];
-  container: Deployment_Spec_Template_Spec_Container[];
-  dnsConfig: Deployment_Spec_Template_Spec_DnsConfig[];
-  hostAliases: Deployment_Spec_Template_Spec_HostAliases[];
-  imagePullSecrets: Deployment_Spec_Template_Spec_ImagePullSecrets[];
-  initContainer: Deployment_Spec_Template_Spec_Container[];
-  os: Deployment_Spec_Template_Spec_ImagePullSecrets[];
-  readinessGate: Deployment_Spec_Template_Spec_ReadinessGate[];
-  securityContext: Deployment_Spec_Template_Spec_SecurityContext[];
-  toleration: Deployment_Spec_Template_Spec_Toleration[];
-  topologySpreadConstraint: Deployment_Spec_Template_Spec_TopologySpreadConstraint[];
-  volume: Deployment_Spec_Template_Spec_Volume[];
+  activeDeadlineSeconds?: number | Computed<number>;
+  automountServiceAccountToken?: boolean | Computed<boolean>;
+  dnsPolicy?: string | Computed<string>;
+  enableServiceLinks?: boolean | Computed<boolean>;
+  hostIpc?: boolean | Computed<boolean>;
+  hostNetwork?: boolean | Computed<boolean>;
+  hostPid?: boolean | Computed<boolean>;
+  hostname?: string | Computed<string>;
+  nodeName?: string | Computed<string>;
+  nodeSelector?: Record<string, string> | Computed<Record<string, string>>;
+  priorityClassName?: string | Computed<string>;
+  restartPolicy?: string | Computed<string>;
+  runtimeClassName?: string | Computed<string>;
+  schedulerName?: string | Computed<string>;
+  serviceAccountName?: string | Computed<string>;
+  shareProcessNamespace?: boolean | Computed<boolean>;
+  subdomain?: string | Computed<string>;
+  terminationGracePeriodSeconds?: number | Computed<number>;
+  affinity?: Deployment_Spec_Template_Spec_Affinity[] | Computed<Deployment_Spec_Template_Spec_Affinity[]>;
+  container?: Deployment_Spec_Template_Spec_Container[] | Computed<Deployment_Spec_Template_Spec_Container[]>;
+  dnsConfig?: Deployment_Spec_Template_Spec_DnsConfig[] | Computed<Deployment_Spec_Template_Spec_DnsConfig[]>;
+  hostAliases?: Deployment_Spec_Template_Spec_HostAliases[] | Computed<Deployment_Spec_Template_Spec_HostAliases[]>;
+  imagePullSecrets?: Deployment_Spec_Template_Spec_ImagePullSecrets[] | Computed<Deployment_Spec_Template_Spec_ImagePullSecrets[]>;
+  initContainer?: Deployment_Spec_Template_Spec_Container[] | Computed<Deployment_Spec_Template_Spec_Container[]>;
+  os?: Deployment_Spec_Template_Spec_ImagePullSecrets[] | Computed<Deployment_Spec_Template_Spec_ImagePullSecrets[]>;
+  readinessGate?: Deployment_Spec_Template_Spec_ReadinessGate[] | Computed<Deployment_Spec_Template_Spec_ReadinessGate[]>;
+  securityContext?: Deployment_Spec_Template_Spec_SecurityContext[] | Computed<Deployment_Spec_Template_Spec_SecurityContext[]>;
+  toleration?: Deployment_Spec_Template_Spec_Toleration[] | Computed<Deployment_Spec_Template_Spec_Toleration[]>;
+  topologySpreadConstraint?: Deployment_Spec_Template_Spec_TopologySpreadConstraint[] | Computed<Deployment_Spec_Template_Spec_TopologySpreadConstraint[]>;
+  volume?: Deployment_Spec_Template_Spec_Volume[] | Computed<Deployment_Spec_Template_Spec_Volume[]>;
 }
 
 export interface Deployment_Spec_Template {
-  metadata: Deployment_Metadata[];
-  spec: Deployment_Spec_Template_Spec[];
+  metadata?: Deployment_Metadata[] | Computed<Deployment_Metadata[]>;
+  spec?: Deployment_Spec_Template_Spec[] | Computed<Deployment_Spec_Template_Spec[]>;
 }
 
 export interface Deployment_Spec {
-  minReadySeconds: number;
-  paused: boolean;
-  progressDeadlineSeconds: number;
-  replicas: string;
-  revisionHistoryLimit: number;
-  selector: Deployment_Spec_Selector[];
-  strategy: Deployment_Spec_Strategy[];
-  template: Deployment_Spec_Template[];
+  minReadySeconds?: number | Computed<number>;
+  paused?: boolean | Computed<boolean>;
+  progressDeadlineSeconds?: number | Computed<number>;
+  replicas?: string | Computed<string>;
+  revisionHistoryLimit?: number | Computed<number>;
+  selector?: Deployment_Spec_Selector[] | Computed<Deployment_Spec_Selector[]>;
+  strategy?: Deployment_Spec_Strategy[] | Computed<Deployment_Spec_Strategy[]>;
+  template?: Deployment_Spec_Template[] | Computed<Deployment_Spec_Template[]>;
 }
 
 export interface Deployment_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  create?: string | Computed<string>;
+  delete?: string | Computed<string>;
+  update?: string | Computed<string>;
 }
 
 const Deployment_MetadataFields: FieldMap = {

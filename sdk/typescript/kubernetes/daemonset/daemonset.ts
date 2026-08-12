@@ -2,626 +2,626 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Daemonset_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Selector_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface Daemonset_Spec_Selector {
-  matchLabels: Record<string, string>;
-  matchExpressions: Daemonset_Spec_Selector_MatchExpressions[];
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
+  matchExpressions?: Daemonset_Spec_Selector_MatchExpressions[] | Computed<Daemonset_Spec_Selector_MatchExpressions[]>;
 }
 
 export interface Daemonset_Spec_Strategy_RollingUpdate {
-  maxSurge: string;
-  maxUnavailable: string;
+  maxSurge?: string | Computed<string>;
+  maxUnavailable?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Strategy {
-  type: string;
-  rollingUpdate: Daemonset_Spec_Strategy_RollingUpdate[];
+  type?: string | Computed<string>;
+  rollingUpdate?: Daemonset_Spec_Strategy_RollingUpdate[] | Computed<Daemonset_Spec_Strategy_RollingUpdate[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference {
-  matchExpressions: Daemonset_Spec_Selector_MatchExpressions[];
-  matchFields: Daemonset_Spec_Selector_MatchExpressions[];
+  matchExpressions?: Daemonset_Spec_Selector_MatchExpressions[] | Computed<Daemonset_Spec_Selector_MatchExpressions[]>;
+  matchFields?: Daemonset_Spec_Selector_MatchExpressions[] | Computed<Daemonset_Spec_Selector_MatchExpressions[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution {
-  weight: number;
-  preference: Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[];
+  weight: number | Computed<number>;
+  preference?: Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[] | Computed<Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution {
-  nodeSelectorTerm: Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[];
+  nodeSelectorTerm?: Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[] | Computed<Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Affinity_NodeAffinity {
-  preferredDuringSchedulingIgnoredDuringExecution: Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[];
-  requiredDuringSchedulingIgnoredDuringExecution: Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[];
+  preferredDuringSchedulingIgnoredDuringExecution?: Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[] | Computed<Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[]>;
+  requiredDuringSchedulingIgnoredDuringExecution?: Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[] | Computed<Daemonset_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm {
-  namespaces: string[];
-  topologyKey: string;
-  labelSelector: Daemonset_Spec_Selector[];
-  namespaceSelector: Daemonset_Spec_Selector[];
+  namespaces?: string[] | Computed<string[]>;
+  topologyKey: string | Computed<string>;
+  labelSelector?: Daemonset_Spec_Selector[] | Computed<Daemonset_Spec_Selector[]>;
+  namespaceSelector?: Daemonset_Spec_Selector[] | Computed<Daemonset_Spec_Selector[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution {
-  weight: number;
-  podAffinityTerm: Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[];
+  weight: number | Computed<number>;
+  podAffinityTerm?: Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[] | Computed<Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Affinity_PodAffinity {
-  preferredDuringSchedulingIgnoredDuringExecution: Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[];
-  requiredDuringSchedulingIgnoredDuringExecution: Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[];
+  preferredDuringSchedulingIgnoredDuringExecution?: Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[] | Computed<Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[]>;
+  requiredDuringSchedulingIgnoredDuringExecution?: Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[] | Computed<Daemonset_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Affinity {
-  nodeAffinity: Daemonset_Spec_Template_Spec_Affinity_NodeAffinity[];
-  podAffinity: Daemonset_Spec_Template_Spec_Affinity_PodAffinity[];
-  podAntiAffinity: Daemonset_Spec_Template_Spec_Affinity_PodAffinity[];
+  nodeAffinity?: Daemonset_Spec_Template_Spec_Affinity_NodeAffinity[] | Computed<Daemonset_Spec_Template_Spec_Affinity_NodeAffinity[]>;
+  podAffinity?: Daemonset_Spec_Template_Spec_Affinity_PodAffinity[] | Computed<Daemonset_Spec_Template_Spec_Affinity_PodAffinity[]>;
+  podAntiAffinity?: Daemonset_Spec_Template_Spec_Affinity_PodAffinity[] | Computed<Daemonset_Spec_Template_Spec_Affinity_PodAffinity[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef {
-  key: string;
-  name: string;
-  optional: boolean;
+  key?: string | Computed<string>;
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef {
-  apiVersion: string;
-  fieldPath: string;
+  apiVersion?: string | Computed<string>;
+  fieldPath?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef {
-  containerName: string;
-  divisor: string;
-  resource: string;
+  containerName?: string | Computed<string>;
+  divisor?: string | Computed<string>;
+  resource: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Env_ValueFrom {
-  configMapKeyRef: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[];
-  fieldRef: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[];
-  resourceFieldRef: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[];
-  secretKeyRef: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[];
+  configMapKeyRef?: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[] | Computed<Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[]>;
+  fieldRef?: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[] | Computed<Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[]>;
+  resourceFieldRef?: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[] | Computed<Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[]>;
+  secretKeyRef?: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[] | Computed<Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Env {
-  name: string;
-  value: string;
-  valueFrom: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom[];
+  name: string | Computed<string>;
+  value?: string | Computed<string>;
+  valueFrom?: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom[] | Computed<Daemonset_Spec_Template_Spec_Container_Env_ValueFrom[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef {
-  name: string;
-  optional: boolean;
+  name: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_EnvFrom {
-  prefix: string;
-  configMapRef: Daemonset_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[];
-  secretRef: Daemonset_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[];
+  prefix?: string | Computed<string>;
+  configMapRef?: Daemonset_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[] | Computed<Daemonset_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[]>;
+  secretRef?: Daemonset_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[] | Computed<Daemonset_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec {
-  command: string[];
+  command?: string[] | Computed<string[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader {
-  name: string;
-  value: string;
+  name?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet {
-  host: string;
-  path: string;
-  port: string;
-  scheme: string;
-  httpHeader: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
+  host?: string | Computed<string>;
+  path?: string | Computed<string>;
+  port?: string | Computed<string>;
+  scheme?: string | Computed<string>;
+  httpHeader?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket {
-  port: string;
+  port: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart {
-  exec: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[];
-  httpGet: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[];
-  tcpSocket: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[];
+  exec?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[]>;
+  httpGet?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[]>;
+  tcpSocket?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Lifecycle {
-  postStart: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart[];
-  preStop: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart[];
+  postStart?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart[]>;
+  preStop?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_LivenessProbe_Grpc {
-  port: number;
-  service: string;
+  port: number | Computed<number>;
+  service?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_LivenessProbe {
-  failureThreshold: number;
-  initialDelaySeconds: number;
-  periodSeconds: number;
-  successThreshold: number;
-  timeoutSeconds: number;
-  exec: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[];
-  grpc: Daemonset_Spec_Template_Spec_Container_LivenessProbe_Grpc[];
-  httpGet: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[];
-  tcpSocket: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[];
+  failureThreshold?: number | Computed<number>;
+  initialDelaySeconds?: number | Computed<number>;
+  periodSeconds?: number | Computed<number>;
+  successThreshold?: number | Computed<number>;
+  timeoutSeconds?: number | Computed<number>;
+  exec?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[]>;
+  grpc?: Daemonset_Spec_Template_Spec_Container_LivenessProbe_Grpc[] | Computed<Daemonset_Spec_Template_Spec_Container_LivenessProbe_Grpc[]>;
+  httpGet?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[]>;
+  tcpSocket?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Port {
-  containerPort: number;
-  hostIp: string;
-  hostPort: number;
-  name: string;
-  protocol: string;
+  containerPort: number | Computed<number>;
+  hostIp?: string | Computed<string>;
+  hostPort?: number | Computed<number>;
+  name?: string | Computed<string>;
+  protocol?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_Resources {
-  limits: Record<string, string>;
-  requests: Record<string, string>;
+  limits?: Record<string, string> | Computed<Record<string, string>>;
+  requests?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_SecurityContext_Capabilities {
-  add: string[];
-  drop: string[];
+  add?: string[] | Computed<string[]>;
+  drop?: string[] | Computed<string[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions {
-  level: string;
-  role: string;
-  type: string;
-  user: string;
+  level?: string | Computed<string>;
+  role?: string | Computed<string>;
+  type?: string | Computed<string>;
+  user?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_SecurityContext_SeccompProfile {
-  localhostProfile: string;
-  type: string;
+  localhostProfile?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_SecurityContext {
-  allowPrivilegeEscalation: boolean;
-  privileged: boolean;
-  readOnlyRootFilesystem: boolean;
-  runAsGroup: string;
-  runAsNonRoot: boolean;
-  runAsUser: string;
-  capabilities: Daemonset_Spec_Template_Spec_Container_SecurityContext_Capabilities[];
-  seLinuxOptions: Daemonset_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[];
-  seccompProfile: Daemonset_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[];
+  allowPrivilegeEscalation?: boolean | Computed<boolean>;
+  privileged?: boolean | Computed<boolean>;
+  readOnlyRootFilesystem?: boolean | Computed<boolean>;
+  runAsGroup?: string | Computed<string>;
+  runAsNonRoot?: boolean | Computed<boolean>;
+  runAsUser?: string | Computed<string>;
+  capabilities?: Daemonset_Spec_Template_Spec_Container_SecurityContext_Capabilities[] | Computed<Daemonset_Spec_Template_Spec_Container_SecurityContext_Capabilities[]>;
+  seLinuxOptions?: Daemonset_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[] | Computed<Daemonset_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[]>;
+  seccompProfile?: Daemonset_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[] | Computed<Daemonset_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_VolumeDevice {
-  devicePath: string;
-  name: string;
+  devicePath: string | Computed<string>;
+  name: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container_VolumeMount {
-  mountPath: string;
-  mountPropagation: string;
-  name: string;
-  readOnly: boolean;
-  subPath: string;
-  subPathExpr: string;
+  mountPath: string | Computed<string>;
+  mountPropagation?: string | Computed<string>;
+  name: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  subPath?: string | Computed<string>;
+  subPathExpr?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Container {
-  args: string[];
-  command: string[];
-  image: string;
-  imagePullPolicy: string;
-  name: string;
-  restartPolicy: string;
-  stdin: boolean;
-  stdinOnce: boolean;
-  terminationMessagePath: string;
-  terminationMessagePolicy: string;
-  tty: boolean;
-  workingDir: string;
-  env: Daemonset_Spec_Template_Spec_Container_Env[];
-  envFrom: Daemonset_Spec_Template_Spec_Container_EnvFrom[];
-  lifecycle: Daemonset_Spec_Template_Spec_Container_Lifecycle[];
-  livenessProbe: Daemonset_Spec_Template_Spec_Container_LivenessProbe[];
-  port: Daemonset_Spec_Template_Spec_Container_Port[];
-  readinessProbe: Daemonset_Spec_Template_Spec_Container_LivenessProbe[];
-  resources: Daemonset_Spec_Template_Spec_Container_Resources[];
-  securityContext: Daemonset_Spec_Template_Spec_Container_SecurityContext[];
-  startupProbe: Daemonset_Spec_Template_Spec_Container_LivenessProbe[];
-  volumeDevice: Daemonset_Spec_Template_Spec_Container_VolumeDevice[];
-  volumeMount: Daemonset_Spec_Template_Spec_Container_VolumeMount[];
+  args?: string[] | Computed<string[]>;
+  command?: string[] | Computed<string[]>;
+  image?: string | Computed<string>;
+  imagePullPolicy?: string | Computed<string>;
+  name: string | Computed<string>;
+  restartPolicy?: string | Computed<string>;
+  stdin?: boolean | Computed<boolean>;
+  stdinOnce?: boolean | Computed<boolean>;
+  terminationMessagePath?: string | Computed<string>;
+  terminationMessagePolicy?: string | Computed<string>;
+  tty?: boolean | Computed<boolean>;
+  workingDir?: string | Computed<string>;
+  env?: Daemonset_Spec_Template_Spec_Container_Env[] | Computed<Daemonset_Spec_Template_Spec_Container_Env[]>;
+  envFrom?: Daemonset_Spec_Template_Spec_Container_EnvFrom[] | Computed<Daemonset_Spec_Template_Spec_Container_EnvFrom[]>;
+  lifecycle?: Daemonset_Spec_Template_Spec_Container_Lifecycle[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle[]>;
+  livenessProbe?: Daemonset_Spec_Template_Spec_Container_LivenessProbe[] | Computed<Daemonset_Spec_Template_Spec_Container_LivenessProbe[]>;
+  port?: Daemonset_Spec_Template_Spec_Container_Port[] | Computed<Daemonset_Spec_Template_Spec_Container_Port[]>;
+  readinessProbe?: Daemonset_Spec_Template_Spec_Container_LivenessProbe[] | Computed<Daemonset_Spec_Template_Spec_Container_LivenessProbe[]>;
+  resources?: Daemonset_Spec_Template_Spec_Container_Resources[] | Computed<Daemonset_Spec_Template_Spec_Container_Resources[]>;
+  securityContext?: Daemonset_Spec_Template_Spec_Container_SecurityContext[] | Computed<Daemonset_Spec_Template_Spec_Container_SecurityContext[]>;
+  startupProbe?: Daemonset_Spec_Template_Spec_Container_LivenessProbe[] | Computed<Daemonset_Spec_Template_Spec_Container_LivenessProbe[]>;
+  volumeDevice?: Daemonset_Spec_Template_Spec_Container_VolumeDevice[] | Computed<Daemonset_Spec_Template_Spec_Container_VolumeDevice[]>;
+  volumeMount?: Daemonset_Spec_Template_Spec_Container_VolumeMount[] | Computed<Daemonset_Spec_Template_Spec_Container_VolumeMount[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_DnsConfig {
-  nameservers: string[];
-  searches: string[];
-  option: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
+  nameservers?: string[] | Computed<string[]>;
+  searches?: string[] | Computed<string[]>;
+  option?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_HostAliases {
-  hostnames: string[];
-  ip: string;
+  hostnames: string[] | Computed<string[]>;
+  ip: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_ImagePullSecrets {
-  name: string;
+  name: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_ReadinessGate {
-  conditionType: string;
+  conditionType: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_SecurityContext_WindowsOptions {
-  gmsaCredentialSpec: string;
-  gmsaCredentialSpecName: string;
-  hostProcess: boolean;
-  runAsUsername: string;
+  gmsaCredentialSpec?: string | Computed<string>;
+  gmsaCredentialSpecName?: string | Computed<string>;
+  hostProcess?: boolean | Computed<boolean>;
+  runAsUsername?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_SecurityContext {
-  fsGroup: string;
-  fsGroupChangePolicy: string;
-  runAsGroup: string;
-  runAsNonRoot: boolean;
-  runAsUser: string;
-  supplementalGroups: number[];
-  seLinuxOptions: Daemonset_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[];
-  seccompProfile: Daemonset_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[];
-  sysctl: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
-  windowsOptions: Daemonset_Spec_Template_Spec_SecurityContext_WindowsOptions[];
+  fsGroup?: string | Computed<string>;
+  fsGroupChangePolicy?: string | Computed<string>;
+  runAsGroup?: string | Computed<string>;
+  runAsNonRoot?: boolean | Computed<boolean>;
+  runAsUser?: string | Computed<string>;
+  supplementalGroups?: number[] | Computed<number[]>;
+  seLinuxOptions?: Daemonset_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[] | Computed<Daemonset_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[]>;
+  seccompProfile?: Daemonset_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[] | Computed<Daemonset_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[]>;
+  sysctl?: Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<Daemonset_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
+  windowsOptions?: Daemonset_Spec_Template_Spec_SecurityContext_WindowsOptions[] | Computed<Daemonset_Spec_Template_Spec_SecurityContext_WindowsOptions[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Toleration {
-  effect: string;
-  key: string;
-  operator: string;
-  tolerationSeconds: string;
-  value: string;
+  effect?: string | Computed<string>;
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  tolerationSeconds?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_TopologySpreadConstraint {
-  matchLabelKeys: string[];
-  maxSkew: number;
-  minDomains: number;
-  nodeAffinityPolicy: string;
-  nodeTaintsPolicy: string;
-  topologyKey: string;
-  whenUnsatisfiable: string;
-  labelSelector: Daemonset_Spec_Selector[];
+  matchLabelKeys?: string[] | Computed<string[]>;
+  maxSkew?: number | Computed<number>;
+  minDomains?: number | Computed<number>;
+  nodeAffinityPolicy?: string | Computed<string>;
+  nodeTaintsPolicy?: string | Computed<string>;
+  topologyKey?: string | Computed<string>;
+  whenUnsatisfiable?: string | Computed<string>;
+  labelSelector?: Daemonset_Spec_Selector[] | Computed<Daemonset_Spec_Selector[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_AwsElasticBlockStore {
-  fsType: string;
-  partition: number;
-  readOnly: boolean;
-  volumeId: string;
+  fsType?: string | Computed<string>;
+  partition?: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeId: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_AzureDisk {
-  cachingMode: string;
-  dataDiskUri: string;
-  diskName: string;
-  fsType: string;
-  kind: string;
-  readOnly: boolean;
+  cachingMode: string | Computed<string>;
+  dataDiskUri: string | Computed<string>;
+  diskName: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  kind?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_AzureFile {
-  readOnly: boolean;
-  secretName: string;
-  secretNamespace: string;
-  shareName: string;
+  readOnly?: boolean | Computed<boolean>;
+  secretName: string | Computed<string>;
+  secretNamespace?: string | Computed<string>;
+  shareName: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_CephFs_SecretRef {
-  name: string;
-  namespace: string;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_CephFs {
-  monitors: string[];
-  path: string;
-  readOnly: boolean;
-  secretFile: string;
-  user: string;
-  secretRef: Daemonset_Spec_Template_Spec_Volume_CephFs_SecretRef[];
+  monitors: string[] | Computed<string[]>;
+  path?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  secretFile?: string | Computed<string>;
+  user?: string | Computed<string>;
+  secretRef?: Daemonset_Spec_Template_Spec_Volume_CephFs_SecretRef[] | Computed<Daemonset_Spec_Template_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Cinder {
-  fsType: string;
-  readOnly: boolean;
-  volumeId: string;
+  fsType?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeId: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_ConfigMap_Items {
-  key: string;
-  mode: string;
-  path: string;
+  key?: string | Computed<string>;
+  mode?: string | Computed<string>;
+  path?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_ConfigMap {
-  defaultMode: string;
-  name: string;
-  optional: boolean;
-  items: Daemonset_Spec_Template_Spec_Volume_ConfigMap_Items[];
+  defaultMode?: string | Computed<string>;
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  items?: Daemonset_Spec_Template_Spec_Volume_ConfigMap_Items[] | Computed<Daemonset_Spec_Template_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Csi {
-  driver: string;
-  fsType: string;
-  readOnly: boolean;
-  volumeAttributes: Record<string, string>;
-  nodePublishSecretRef: Daemonset_Spec_Template_Spec_ImagePullSecrets[];
+  driver: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeAttributes?: Record<string, string> | Computed<Record<string, string>>;
+  nodePublishSecretRef?: Daemonset_Spec_Template_Spec_ImagePullSecrets[] | Computed<Daemonset_Spec_Template_Spec_ImagePullSecrets[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_DownwardApi_Items {
-  mode: string;
-  path: string;
-  fieldRef: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[];
-  resourceFieldRef: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[];
+  mode?: string | Computed<string>;
+  path: string | Computed<string>;
+  fieldRef?: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[] | Computed<Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[]>;
+  resourceFieldRef?: Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[] | Computed<Daemonset_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_DownwardApi {
-  defaultMode: string;
-  items: Daemonset_Spec_Template_Spec_Volume_DownwardApi_Items[];
+  defaultMode?: string | Computed<string>;
+  items?: Daemonset_Spec_Template_Spec_Volume_DownwardApi_Items[] | Computed<Daemonset_Spec_Template_Spec_Volume_DownwardApi_Items[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_EmptyDir {
-  medium: string;
-  sizeLimit: string;
+  medium?: string | Computed<string>;
+  sizeLimit?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata {
-  annotations: Record<string, string>;
-  labels: Record<string, string>;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec {
-  accessModes: string[];
-  storageClassName: string;
-  volumeMode: string;
-  volumeName: string;
-  resources: Daemonset_Spec_Template_Spec_Container_Resources[];
-  selector: Daemonset_Spec_Selector[];
+  accessModes: string[] | Computed<string[]>;
+  storageClassName?: string | Computed<string>;
+  volumeMode?: string | Computed<string>;
+  volumeName?: string | Computed<string>;
+  resources?: Daemonset_Spec_Template_Spec_Container_Resources[] | Computed<Daemonset_Spec_Template_Spec_Container_Resources[]>;
+  selector?: Daemonset_Spec_Selector[] | Computed<Daemonset_Spec_Selector[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate {
-  metadata: Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[];
-  spec: Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[];
+  metadata?: Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[] | Computed<Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[]>;
+  spec?: Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[] | Computed<Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Ephemeral {
-  volumeClaimTemplate: Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate[];
+  volumeClaimTemplate?: Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate[] | Computed<Daemonset_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Fc {
-  fsType: string;
-  lun: number;
-  readOnly: boolean;
-  targetWwNs: string[];
+  fsType?: string | Computed<string>;
+  lun: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  targetWwNs: string[] | Computed<string[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_FlexVolume {
-  driver: string;
-  fsType: string;
-  options: Record<string, string>;
-  readOnly: boolean;
-  secretRef: Daemonset_Spec_Template_Spec_Volume_CephFs_SecretRef[];
+  driver: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  options?: Record<string, string> | Computed<Record<string, string>>;
+  readOnly?: boolean | Computed<boolean>;
+  secretRef?: Daemonset_Spec_Template_Spec_Volume_CephFs_SecretRef[] | Computed<Daemonset_Spec_Template_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Flocker {
-  datasetName: string;
-  datasetUuid: string;
+  datasetName?: string | Computed<string>;
+  datasetUuid?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_GcePersistentDisk {
-  fsType: string;
-  partition: number;
-  pdName: string;
-  readOnly: boolean;
+  fsType?: string | Computed<string>;
+  partition?: number | Computed<number>;
+  pdName: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_GitRepo {
-  directory: string;
-  repository: string;
-  revision: string;
+  directory?: string | Computed<string>;
+  repository?: string | Computed<string>;
+  revision?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Glusterfs {
-  endpointsName: string;
-  path: string;
-  readOnly: boolean;
+  endpointsName: string | Computed<string>;
+  path: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_HostPath {
-  path: string;
-  type: string;
+  path?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Iscsi {
-  fsType: string;
-  iqn: string;
-  iscsiInterface: string;
-  lun: number;
-  readOnly: boolean;
-  targetPortal: string;
+  fsType?: string | Computed<string>;
+  iqn: string | Computed<string>;
+  iscsiInterface?: string | Computed<string>;
+  lun?: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  targetPortal: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Local {
-  path: string;
+  path?: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Nfs {
-  path: string;
-  readOnly: boolean;
-  server: string;
+  path: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  server: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_PersistentVolumeClaim {
-  claimName: string;
-  readOnly: boolean;
+  claimName?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_PhotonPersistentDisk {
-  fsType: string;
-  pdId: string;
+  fsType?: string | Computed<string>;
+  pdId: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap {
-  name: string;
-  optional: boolean;
-  items: Daemonset_Spec_Template_Spec_Volume_ConfigMap_Items[];
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  items?: Daemonset_Spec_Template_Spec_Volume_ConfigMap_Items[] | Computed<Daemonset_Spec_Template_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi {
-  items: Daemonset_Spec_Template_Spec_Volume_DownwardApi_Items[];
+  items?: Daemonset_Spec_Template_Spec_Volume_DownwardApi_Items[] | Computed<Daemonset_Spec_Template_Spec_Volume_DownwardApi_Items[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken {
-  audience: string;
-  expirationSeconds: number;
-  path: string;
+  audience?: string | Computed<string>;
+  expirationSeconds?: number | Computed<number>;
+  path: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Projected_Sources {
-  configMap: Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[];
-  downwardApi: Daemonset_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi[];
-  secret: Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[];
-  serviceAccountToken: Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken[];
+  configMap?: Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[] | Computed<Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[]>;
+  downwardApi?: Daemonset_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi[] | Computed<Daemonset_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi[]>;
+  secret?: Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[] | Computed<Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[]>;
+  serviceAccountToken?: Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken[] | Computed<Daemonset_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Projected {
-  defaultMode: string;
-  sources: Daemonset_Spec_Template_Spec_Volume_Projected_Sources[];
+  defaultMode?: string | Computed<string>;
+  sources?: Daemonset_Spec_Template_Spec_Volume_Projected_Sources[] | Computed<Daemonset_Spec_Template_Spec_Volume_Projected_Sources[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Quobyte {
-  group: string;
-  readOnly: boolean;
-  registry: string;
-  user: string;
-  volume: string;
+  group?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  registry: string | Computed<string>;
+  user?: string | Computed<string>;
+  volume: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Rbd {
-  cephMonitors: string[];
-  fsType: string;
-  keyring: string;
-  radosUser: string;
-  rbdImage: string;
-  rbdPool: string;
-  readOnly: boolean;
-  secretRef: Daemonset_Spec_Template_Spec_Volume_CephFs_SecretRef[];
+  cephMonitors: string[] | Computed<string[]>;
+  fsType?: string | Computed<string>;
+  keyring?: string | Computed<string>;
+  radosUser?: string | Computed<string>;
+  rbdImage: string | Computed<string>;
+  rbdPool?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  secretRef?: Daemonset_Spec_Template_Spec_Volume_CephFs_SecretRef[] | Computed<Daemonset_Spec_Template_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_Secret {
-  defaultMode: string;
-  optional: boolean;
-  secretName: string;
-  items: Daemonset_Spec_Template_Spec_Volume_ConfigMap_Items[];
+  defaultMode?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  secretName?: string | Computed<string>;
+  items?: Daemonset_Spec_Template_Spec_Volume_ConfigMap_Items[] | Computed<Daemonset_Spec_Template_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume_VsphereVolume {
-  fsType: string;
-  volumePath: string;
+  fsType?: string | Computed<string>;
+  volumePath: string | Computed<string>;
 }
 
 export interface Daemonset_Spec_Template_Spec_Volume {
-  name: string;
-  awsElasticBlockStore: Daemonset_Spec_Template_Spec_Volume_AwsElasticBlockStore[];
-  azureDisk: Daemonset_Spec_Template_Spec_Volume_AzureDisk[];
-  azureFile: Daemonset_Spec_Template_Spec_Volume_AzureFile[];
-  cephFs: Daemonset_Spec_Template_Spec_Volume_CephFs[];
-  cinder: Daemonset_Spec_Template_Spec_Volume_Cinder[];
-  configMap: Daemonset_Spec_Template_Spec_Volume_ConfigMap[];
-  csi: Daemonset_Spec_Template_Spec_Volume_Csi[];
-  downwardApi: Daemonset_Spec_Template_Spec_Volume_DownwardApi[];
-  emptyDir: Daemonset_Spec_Template_Spec_Volume_EmptyDir[];
-  ephemeral: Daemonset_Spec_Template_Spec_Volume_Ephemeral[];
-  fc: Daemonset_Spec_Template_Spec_Volume_Fc[];
-  flexVolume: Daemonset_Spec_Template_Spec_Volume_FlexVolume[];
-  flocker: Daemonset_Spec_Template_Spec_Volume_Flocker[];
-  gcePersistentDisk: Daemonset_Spec_Template_Spec_Volume_GcePersistentDisk[];
-  gitRepo: Daemonset_Spec_Template_Spec_Volume_GitRepo[];
-  glusterfs: Daemonset_Spec_Template_Spec_Volume_Glusterfs[];
-  hostPath: Daemonset_Spec_Template_Spec_Volume_HostPath[];
-  iscsi: Daemonset_Spec_Template_Spec_Volume_Iscsi[];
-  local: Daemonset_Spec_Template_Spec_Volume_Local[];
-  nfs: Daemonset_Spec_Template_Spec_Volume_Nfs[];
-  persistentVolumeClaim: Daemonset_Spec_Template_Spec_Volume_PersistentVolumeClaim[];
-  photonPersistentDisk: Daemonset_Spec_Template_Spec_Volume_PhotonPersistentDisk[];
-  projected: Daemonset_Spec_Template_Spec_Volume_Projected[];
-  quobyte: Daemonset_Spec_Template_Spec_Volume_Quobyte[];
-  rbd: Daemonset_Spec_Template_Spec_Volume_Rbd[];
-  secret: Daemonset_Spec_Template_Spec_Volume_Secret[];
-  vsphereVolume: Daemonset_Spec_Template_Spec_Volume_VsphereVolume[];
+  name?: string | Computed<string>;
+  awsElasticBlockStore?: Daemonset_Spec_Template_Spec_Volume_AwsElasticBlockStore[] | Computed<Daemonset_Spec_Template_Spec_Volume_AwsElasticBlockStore[]>;
+  azureDisk?: Daemonset_Spec_Template_Spec_Volume_AzureDisk[] | Computed<Daemonset_Spec_Template_Spec_Volume_AzureDisk[]>;
+  azureFile?: Daemonset_Spec_Template_Spec_Volume_AzureFile[] | Computed<Daemonset_Spec_Template_Spec_Volume_AzureFile[]>;
+  cephFs?: Daemonset_Spec_Template_Spec_Volume_CephFs[] | Computed<Daemonset_Spec_Template_Spec_Volume_CephFs[]>;
+  cinder?: Daemonset_Spec_Template_Spec_Volume_Cinder[] | Computed<Daemonset_Spec_Template_Spec_Volume_Cinder[]>;
+  configMap?: Daemonset_Spec_Template_Spec_Volume_ConfigMap[] | Computed<Daemonset_Spec_Template_Spec_Volume_ConfigMap[]>;
+  csi?: Daemonset_Spec_Template_Spec_Volume_Csi[] | Computed<Daemonset_Spec_Template_Spec_Volume_Csi[]>;
+  downwardApi?: Daemonset_Spec_Template_Spec_Volume_DownwardApi[] | Computed<Daemonset_Spec_Template_Spec_Volume_DownwardApi[]>;
+  emptyDir?: Daemonset_Spec_Template_Spec_Volume_EmptyDir[] | Computed<Daemonset_Spec_Template_Spec_Volume_EmptyDir[]>;
+  ephemeral?: Daemonset_Spec_Template_Spec_Volume_Ephemeral[] | Computed<Daemonset_Spec_Template_Spec_Volume_Ephemeral[]>;
+  fc?: Daemonset_Spec_Template_Spec_Volume_Fc[] | Computed<Daemonset_Spec_Template_Spec_Volume_Fc[]>;
+  flexVolume?: Daemonset_Spec_Template_Spec_Volume_FlexVolume[] | Computed<Daemonset_Spec_Template_Spec_Volume_FlexVolume[]>;
+  flocker?: Daemonset_Spec_Template_Spec_Volume_Flocker[] | Computed<Daemonset_Spec_Template_Spec_Volume_Flocker[]>;
+  gcePersistentDisk?: Daemonset_Spec_Template_Spec_Volume_GcePersistentDisk[] | Computed<Daemonset_Spec_Template_Spec_Volume_GcePersistentDisk[]>;
+  gitRepo?: Daemonset_Spec_Template_Spec_Volume_GitRepo[] | Computed<Daemonset_Spec_Template_Spec_Volume_GitRepo[]>;
+  glusterfs?: Daemonset_Spec_Template_Spec_Volume_Glusterfs[] | Computed<Daemonset_Spec_Template_Spec_Volume_Glusterfs[]>;
+  hostPath?: Daemonset_Spec_Template_Spec_Volume_HostPath[] | Computed<Daemonset_Spec_Template_Spec_Volume_HostPath[]>;
+  iscsi?: Daemonset_Spec_Template_Spec_Volume_Iscsi[] | Computed<Daemonset_Spec_Template_Spec_Volume_Iscsi[]>;
+  local?: Daemonset_Spec_Template_Spec_Volume_Local[] | Computed<Daemonset_Spec_Template_Spec_Volume_Local[]>;
+  nfs?: Daemonset_Spec_Template_Spec_Volume_Nfs[] | Computed<Daemonset_Spec_Template_Spec_Volume_Nfs[]>;
+  persistentVolumeClaim?: Daemonset_Spec_Template_Spec_Volume_PersistentVolumeClaim[] | Computed<Daemonset_Spec_Template_Spec_Volume_PersistentVolumeClaim[]>;
+  photonPersistentDisk?: Daemonset_Spec_Template_Spec_Volume_PhotonPersistentDisk[] | Computed<Daemonset_Spec_Template_Spec_Volume_PhotonPersistentDisk[]>;
+  projected?: Daemonset_Spec_Template_Spec_Volume_Projected[] | Computed<Daemonset_Spec_Template_Spec_Volume_Projected[]>;
+  quobyte?: Daemonset_Spec_Template_Spec_Volume_Quobyte[] | Computed<Daemonset_Spec_Template_Spec_Volume_Quobyte[]>;
+  rbd?: Daemonset_Spec_Template_Spec_Volume_Rbd[] | Computed<Daemonset_Spec_Template_Spec_Volume_Rbd[]>;
+  secret?: Daemonset_Spec_Template_Spec_Volume_Secret[] | Computed<Daemonset_Spec_Template_Spec_Volume_Secret[]>;
+  vsphereVolume?: Daemonset_Spec_Template_Spec_Volume_VsphereVolume[] | Computed<Daemonset_Spec_Template_Spec_Volume_VsphereVolume[]>;
 }
 
 export interface Daemonset_Spec_Template_Spec {
-  activeDeadlineSeconds: number;
-  automountServiceAccountToken: boolean;
-  dnsPolicy: string;
-  enableServiceLinks: boolean;
-  hostIpc: boolean;
-  hostNetwork: boolean;
-  hostPid: boolean;
-  hostname: string;
-  nodeName: string;
-  nodeSelector: Record<string, string>;
-  priorityClassName: string;
-  restartPolicy: string;
-  runtimeClassName: string;
-  schedulerName: string;
-  serviceAccountName: string;
-  shareProcessNamespace: boolean;
-  subdomain: string;
-  terminationGracePeriodSeconds: number;
-  affinity: Daemonset_Spec_Template_Spec_Affinity[];
-  container: Daemonset_Spec_Template_Spec_Container[];
-  dnsConfig: Daemonset_Spec_Template_Spec_DnsConfig[];
-  hostAliases: Daemonset_Spec_Template_Spec_HostAliases[];
-  imagePullSecrets: Daemonset_Spec_Template_Spec_ImagePullSecrets[];
-  initContainer: Daemonset_Spec_Template_Spec_Container[];
-  os: Daemonset_Spec_Template_Spec_ImagePullSecrets[];
-  readinessGate: Daemonset_Spec_Template_Spec_ReadinessGate[];
-  securityContext: Daemonset_Spec_Template_Spec_SecurityContext[];
-  toleration: Daemonset_Spec_Template_Spec_Toleration[];
-  topologySpreadConstraint: Daemonset_Spec_Template_Spec_TopologySpreadConstraint[];
-  volume: Daemonset_Spec_Template_Spec_Volume[];
+  activeDeadlineSeconds?: number | Computed<number>;
+  automountServiceAccountToken?: boolean | Computed<boolean>;
+  dnsPolicy?: string | Computed<string>;
+  enableServiceLinks?: boolean | Computed<boolean>;
+  hostIpc?: boolean | Computed<boolean>;
+  hostNetwork?: boolean | Computed<boolean>;
+  hostPid?: boolean | Computed<boolean>;
+  hostname?: string | Computed<string>;
+  nodeName?: string | Computed<string>;
+  nodeSelector?: Record<string, string> | Computed<Record<string, string>>;
+  priorityClassName?: string | Computed<string>;
+  restartPolicy?: string | Computed<string>;
+  runtimeClassName?: string | Computed<string>;
+  schedulerName?: string | Computed<string>;
+  serviceAccountName?: string | Computed<string>;
+  shareProcessNamespace?: boolean | Computed<boolean>;
+  subdomain?: string | Computed<string>;
+  terminationGracePeriodSeconds?: number | Computed<number>;
+  affinity?: Daemonset_Spec_Template_Spec_Affinity[] | Computed<Daemonset_Spec_Template_Spec_Affinity[]>;
+  container?: Daemonset_Spec_Template_Spec_Container[] | Computed<Daemonset_Spec_Template_Spec_Container[]>;
+  dnsConfig?: Daemonset_Spec_Template_Spec_DnsConfig[] | Computed<Daemonset_Spec_Template_Spec_DnsConfig[]>;
+  hostAliases?: Daemonset_Spec_Template_Spec_HostAliases[] | Computed<Daemonset_Spec_Template_Spec_HostAliases[]>;
+  imagePullSecrets?: Daemonset_Spec_Template_Spec_ImagePullSecrets[] | Computed<Daemonset_Spec_Template_Spec_ImagePullSecrets[]>;
+  initContainer?: Daemonset_Spec_Template_Spec_Container[] | Computed<Daemonset_Spec_Template_Spec_Container[]>;
+  os?: Daemonset_Spec_Template_Spec_ImagePullSecrets[] | Computed<Daemonset_Spec_Template_Spec_ImagePullSecrets[]>;
+  readinessGate?: Daemonset_Spec_Template_Spec_ReadinessGate[] | Computed<Daemonset_Spec_Template_Spec_ReadinessGate[]>;
+  securityContext?: Daemonset_Spec_Template_Spec_SecurityContext[] | Computed<Daemonset_Spec_Template_Spec_SecurityContext[]>;
+  toleration?: Daemonset_Spec_Template_Spec_Toleration[] | Computed<Daemonset_Spec_Template_Spec_Toleration[]>;
+  topologySpreadConstraint?: Daemonset_Spec_Template_Spec_TopologySpreadConstraint[] | Computed<Daemonset_Spec_Template_Spec_TopologySpreadConstraint[]>;
+  volume?: Daemonset_Spec_Template_Spec_Volume[] | Computed<Daemonset_Spec_Template_Spec_Volume[]>;
 }
 
 export interface Daemonset_Spec_Template {
-  metadata: Daemonset_Metadata[];
-  spec: Daemonset_Spec_Template_Spec[];
+  metadata?: Daemonset_Metadata[] | Computed<Daemonset_Metadata[]>;
+  spec?: Daemonset_Spec_Template_Spec[] | Computed<Daemonset_Spec_Template_Spec[]>;
 }
 
 export interface Daemonset_Spec {
-  minReadySeconds: number;
-  revisionHistoryLimit: number;
-  selector: Daemonset_Spec_Selector[];
-  strategy: Daemonset_Spec_Strategy[];
-  template: Daemonset_Spec_Template[];
+  minReadySeconds?: number | Computed<number>;
+  revisionHistoryLimit?: number | Computed<number>;
+  selector?: Daemonset_Spec_Selector[] | Computed<Daemonset_Spec_Selector[]>;
+  strategy?: Daemonset_Spec_Strategy[] | Computed<Daemonset_Spec_Strategy[]>;
+  template?: Daemonset_Spec_Template[] | Computed<Daemonset_Spec_Template[]>;
 }
 
 export interface Daemonset_Timeouts {
-  create: string;
-  delete: string;
-  update: string;
+  create?: string | Computed<string>;
+  delete?: string | Computed<string>;
+  update?: string | Computed<string>;
 }
 
 const Daemonset_MetadataFields: FieldMap = {

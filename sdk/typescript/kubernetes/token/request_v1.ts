@@ -2,27 +2,27 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RequestV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface RequestV1_Spec_BoundObjectRef {
-  apiVersion: string;
-  kind: string;
-  name: string;
-  uid: string;
+  apiVersion?: string | Computed<string>;
+  kind?: string | Computed<string>;
+  name?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface RequestV1_Spec {
-  audiences: string[];
-  expirationSeconds: number;
-  boundObjectRef: RequestV1_Spec_BoundObjectRef[];
+  audiences?: string[] | Computed<string[]>;
+  expirationSeconds?: number | Computed<number>;
+  boundObjectRef?: RequestV1_Spec_BoundObjectRef[] | Computed<RequestV1_Spec_BoundObjectRef[]>;
 }
 
 const RequestV1_MetadataFields: FieldMap = {

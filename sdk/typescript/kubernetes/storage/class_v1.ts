@@ -2,22 +2,22 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ClassV1_AllowedTopologies_MatchLabelExpressions {
-  key: string;
-  values: string[];
+  key?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface ClassV1_AllowedTopologies {
-  matchLabelExpressions: ClassV1_AllowedTopologies_MatchLabelExpressions[];
+  matchLabelExpressions?: ClassV1_AllowedTopologies_MatchLabelExpressions[] | Computed<ClassV1_AllowedTopologies_MatchLabelExpressions[]>;
 }
 
 export interface ClassV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 const ClassV1_AllowedTopologies_MatchLabelExpressionsFields: FieldMap = {

@@ -2,668 +2,668 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface JobV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule_OnExitCodes {
-  containerName: string;
-  operator: string;
-  values: number[];
+  containerName?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values: number[] | Computed<number[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule_OnPodCondition {
-  status: string;
-  type: string;
+  status?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule {
-  action: string;
-  onExitCodes: JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule_OnExitCodes[];
-  onPodCondition: JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule_OnPodCondition[];
+  action?: string | Computed<string>;
+  onExitCodes?: JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule_OnExitCodes[] | Computed<JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule_OnExitCodes[]>;
+  onPodCondition?: JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule_OnPodCondition[] | Computed<JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule_OnPodCondition[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_PodFailurePolicy {
-  rule: JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule[];
+  rule?: JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule[] | Computed<JobV1_Spec_JobTemplate_Spec_PodFailurePolicy_Rule[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Selector_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Selector {
-  matchLabels: Record<string, string>;
-  matchExpressions: JobV1_Spec_JobTemplate_Spec_Selector_MatchExpressions[];
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
+  matchExpressions?: JobV1_Spec_JobTemplate_Spec_Selector_MatchExpressions[] | Computed<JobV1_Spec_JobTemplate_Spec_Selector_MatchExpressions[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference {
-  matchExpressions: JobV1_Spec_JobTemplate_Spec_Selector_MatchExpressions[];
-  matchFields: JobV1_Spec_JobTemplate_Spec_Selector_MatchExpressions[];
+  matchExpressions?: JobV1_Spec_JobTemplate_Spec_Selector_MatchExpressions[] | Computed<JobV1_Spec_JobTemplate_Spec_Selector_MatchExpressions[]>;
+  matchFields?: JobV1_Spec_JobTemplate_Spec_Selector_MatchExpressions[] | Computed<JobV1_Spec_JobTemplate_Spec_Selector_MatchExpressions[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution {
-  weight: number;
-  preference: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[];
+  weight: number | Computed<number>;
+  preference?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution {
-  nodeSelectorTerm: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[];
+  nodeSelectorTerm?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity {
-  preferredDuringSchedulingIgnoredDuringExecution: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[];
-  requiredDuringSchedulingIgnoredDuringExecution: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[];
+  preferredDuringSchedulingIgnoredDuringExecution?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[]>;
+  requiredDuringSchedulingIgnoredDuringExecution?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm {
-  namespaces: string[];
-  topologyKey: string;
-  labelSelector: JobV1_Spec_JobTemplate_Spec_Selector[];
-  namespaceSelector: JobV1_Spec_JobTemplate_Spec_Selector[];
+  namespaces?: string[] | Computed<string[]>;
+  topologyKey: string | Computed<string>;
+  labelSelector?: JobV1_Spec_JobTemplate_Spec_Selector[] | Computed<JobV1_Spec_JobTemplate_Spec_Selector[]>;
+  namespaceSelector?: JobV1_Spec_JobTemplate_Spec_Selector[] | Computed<JobV1_Spec_JobTemplate_Spec_Selector[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution {
-  weight: number;
-  podAffinityTerm: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[];
+  weight: number | Computed<number>;
+  podAffinityTerm?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity {
-  preferredDuringSchedulingIgnoredDuringExecution: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[];
-  requiredDuringSchedulingIgnoredDuringExecution: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[];
+  preferredDuringSchedulingIgnoredDuringExecution?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[]>;
+  requiredDuringSchedulingIgnoredDuringExecution?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity {
-  nodeAffinity: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity[];
-  podAffinity: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity[];
-  podAntiAffinity: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity[];
+  nodeAffinity?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_NodeAffinity[]>;
+  podAffinity?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity[]>;
+  podAntiAffinity?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity_PodAffinity[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef {
-  key: string;
-  name: string;
-  optional: boolean;
+  key?: string | Computed<string>;
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef {
-  apiVersion: string;
-  fieldPath: string;
+  apiVersion?: string | Computed<string>;
+  fieldPath?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef {
-  containerName: string;
-  divisor: string;
-  resource: string;
+  containerName?: string | Computed<string>;
+  divisor?: string | Computed<string>;
+  resource: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom {
-  configMapKeyRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[];
-  fieldRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[];
-  resourceFieldRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[];
-  secretKeyRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[];
+  configMapKeyRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[]>;
+  fieldRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[]>;
+  resourceFieldRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[]>;
+  secretKeyRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env {
-  name: string;
-  value: string;
-  valueFrom: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom[];
+  name: string | Computed<string>;
+  value?: string | Computed<string>;
+  valueFrom?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef {
-  name: string;
-  optional: boolean;
+  name: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom {
-  prefix: string;
-  configMapRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[];
-  secretRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[];
+  prefix?: string | Computed<string>;
+  configMapRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[]>;
+  secretRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom_ConfigMapRef[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec {
-  command: string[];
+  command?: string[] | Computed<string[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader {
-  name: string;
-  value: string;
+  name?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet {
-  host: string;
-  path: string;
-  port: string;
-  scheme: string;
-  httpHeader: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
+  host?: string | Computed<string>;
+  path?: string | Computed<string>;
+  port?: string | Computed<string>;
+  scheme?: string | Computed<string>;
+  httpHeader?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket {
-  port: string;
+  port: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart {
-  exec: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[];
-  httpGet: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[];
-  tcpSocket: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[];
+  exec?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[]>;
+  httpGet?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[]>;
+  tcpSocket?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle {
-  postStart: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart[];
-  preStop: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart[];
+  postStart?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart[]>;
+  preStop?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe_Grpc {
-  port: number;
-  service: string;
+  port: number | Computed<number>;
+  service?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe {
-  failureThreshold: number;
-  initialDelaySeconds: number;
-  periodSeconds: number;
-  successThreshold: number;
-  timeoutSeconds: number;
-  exec: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[];
-  grpc: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe_Grpc[];
-  httpGet: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[];
-  tcpSocket: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[];
+  failureThreshold?: number | Computed<number>;
+  initialDelaySeconds?: number | Computed<number>;
+  periodSeconds?: number | Computed<number>;
+  successThreshold?: number | Computed<number>;
+  timeoutSeconds?: number | Computed<number>;
+  exec?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_Exec[]>;
+  grpc?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe_Grpc[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe_Grpc[]>;
+  httpGet?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet[]>;
+  tcpSocket?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_TcpSocket[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Port {
-  containerPort: number;
-  hostIp: string;
-  hostPort: number;
-  name: string;
-  protocol: string;
+  containerPort: number | Computed<number>;
+  hostIp?: string | Computed<string>;
+  hostPort?: number | Computed<number>;
+  name?: string | Computed<string>;
+  protocol?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Resources {
-  limits: Record<string, string>;
-  requests: Record<string, string>;
+  limits?: Record<string, string> | Computed<Record<string, string>>;
+  requests?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_Capabilities {
-  add: string[];
-  drop: string[];
+  add?: string[] | Computed<string[]>;
+  drop?: string[] | Computed<string[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions {
-  level: string;
-  role: string;
-  type: string;
-  user: string;
+  level?: string | Computed<string>;
+  role?: string | Computed<string>;
+  type?: string | Computed<string>;
+  user?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeccompProfile {
-  localhostProfile: string;
-  type: string;
+  localhostProfile?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext {
-  allowPrivilegeEscalation: boolean;
-  privileged: boolean;
-  readOnlyRootFilesystem: boolean;
-  runAsGroup: string;
-  runAsNonRoot: boolean;
-  runAsUser: string;
-  capabilities: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_Capabilities[];
-  seLinuxOptions: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[];
-  seccompProfile: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[];
+  allowPrivilegeEscalation?: boolean | Computed<boolean>;
+  privileged?: boolean | Computed<boolean>;
+  readOnlyRootFilesystem?: boolean | Computed<boolean>;
+  runAsGroup?: string | Computed<string>;
+  runAsNonRoot?: boolean | Computed<boolean>;
+  runAsUser?: string | Computed<string>;
+  capabilities?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_Capabilities[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_Capabilities[]>;
+  seLinuxOptions?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[]>;
+  seccompProfile?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_VolumeDevice {
-  devicePath: string;
-  name: string;
+  devicePath: string | Computed<string>;
+  name: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_VolumeMount {
-  mountPath: string;
-  mountPropagation: string;
-  name: string;
-  readOnly: boolean;
-  subPath: string;
-  subPathExpr: string;
+  mountPath: string | Computed<string>;
+  mountPropagation?: string | Computed<string>;
+  name: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  subPath?: string | Computed<string>;
+  subPathExpr?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Container {
-  args: string[];
-  command: string[];
-  image: string;
-  imagePullPolicy: string;
-  name: string;
-  restartPolicy: string;
-  stdin: boolean;
-  stdinOnce: boolean;
-  terminationMessagePath: string;
-  terminationMessagePolicy: string;
-  tty: boolean;
-  workingDir: string;
-  env: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env[];
-  envFrom: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom[];
-  lifecycle: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle[];
-  livenessProbe: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe[];
-  port: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Port[];
-  readinessProbe: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe[];
-  resources: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Resources[];
-  securityContext: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext[];
-  startupProbe: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe[];
-  volumeDevice: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_VolumeDevice[];
-  volumeMount: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_VolumeMount[];
+  args?: string[] | Computed<string[]>;
+  command?: string[] | Computed<string[]>;
+  image?: string | Computed<string>;
+  imagePullPolicy?: string | Computed<string>;
+  name: string | Computed<string>;
+  restartPolicy?: string | Computed<string>;
+  stdin?: boolean | Computed<boolean>;
+  stdinOnce?: boolean | Computed<boolean>;
+  terminationMessagePath?: string | Computed<string>;
+  terminationMessagePolicy?: string | Computed<string>;
+  tty?: boolean | Computed<boolean>;
+  workingDir?: string | Computed<string>;
+  env?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env[]>;
+  envFrom?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_EnvFrom[]>;
+  lifecycle?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle[]>;
+  livenessProbe?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe[]>;
+  port?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Port[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Port[]>;
+  readinessProbe?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe[]>;
+  resources?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Resources[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Resources[]>;
+  securityContext?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext[]>;
+  startupProbe?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_LivenessProbe[]>;
+  volumeDevice?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_VolumeDevice[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_VolumeDevice[]>;
+  volumeMount?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_VolumeMount[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_VolumeMount[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_DnsConfig {
-  nameservers: string[];
-  searches: string[];
-  option: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
+  nameservers?: string[] | Computed<string[]>;
+  searches?: string[] | Computed<string[]>;
+  option?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_HostAliases {
-  hostnames: string[];
-  ip: string;
+  hostnames: string[] | Computed<string[]>;
+  ip: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_ImagePullSecrets {
-  name: string;
+  name: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_ReadinessGate {
-  conditionType: string;
+  conditionType: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_SecurityContext_WindowsOptions {
-  gmsaCredentialSpec: string;
-  gmsaCredentialSpecName: string;
-  hostProcess: boolean;
-  runAsUsername: string;
+  gmsaCredentialSpec?: string | Computed<string>;
+  gmsaCredentialSpecName?: string | Computed<string>;
+  hostProcess?: boolean | Computed<boolean>;
+  runAsUsername?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_SecurityContext {
-  fsGroup: string;
-  fsGroupChangePolicy: string;
-  runAsGroup: string;
-  runAsNonRoot: boolean;
-  runAsUser: string;
-  supplementalGroups: number[];
-  seLinuxOptions: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[];
-  seccompProfile: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[];
-  sysctl: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
-  windowsOptions: JobV1_Spec_JobTemplate_Spec_Template_Spec_SecurityContext_WindowsOptions[];
+  fsGroup?: string | Computed<string>;
+  fsGroupChangePolicy?: string | Computed<string>;
+  runAsGroup?: string | Computed<string>;
+  runAsNonRoot?: boolean | Computed<boolean>;
+  runAsUser?: string | Computed<string>;
+  supplementalGroups?: number[] | Computed<number[]>;
+  seLinuxOptions?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeLinuxOptions[]>;
+  seccompProfile?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_SecurityContext_SeccompProfile[]>;
+  sysctl?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
+  windowsOptions?: JobV1_Spec_JobTemplate_Spec_Template_Spec_SecurityContext_WindowsOptions[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_SecurityContext_WindowsOptions[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Toleration {
-  effect: string;
-  key: string;
-  operator: string;
-  tolerationSeconds: string;
-  value: string;
+  effect?: string | Computed<string>;
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  tolerationSeconds?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_TopologySpreadConstraint {
-  matchLabelKeys: string[];
-  maxSkew: number;
-  minDomains: number;
-  nodeAffinityPolicy: string;
-  nodeTaintsPolicy: string;
-  topologyKey: string;
-  whenUnsatisfiable: string;
-  labelSelector: JobV1_Spec_JobTemplate_Spec_Selector[];
+  matchLabelKeys?: string[] | Computed<string[]>;
+  maxSkew?: number | Computed<number>;
+  minDomains?: number | Computed<number>;
+  nodeAffinityPolicy?: string | Computed<string>;
+  nodeTaintsPolicy?: string | Computed<string>;
+  topologyKey?: string | Computed<string>;
+  whenUnsatisfiable?: string | Computed<string>;
+  labelSelector?: JobV1_Spec_JobTemplate_Spec_Selector[] | Computed<JobV1_Spec_JobTemplate_Spec_Selector[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AwsElasticBlockStore {
-  fsType: string;
-  partition: number;
-  readOnly: boolean;
-  volumeId: string;
+  fsType?: string | Computed<string>;
+  partition?: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeId: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AzureDisk {
-  cachingMode: string;
-  dataDiskUri: string;
-  diskName: string;
-  fsType: string;
-  kind: string;
-  readOnly: boolean;
+  cachingMode: string | Computed<string>;
+  dataDiskUri: string | Computed<string>;
+  diskName: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  kind?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AzureFile {
-  readOnly: boolean;
-  secretName: string;
-  secretNamespace: string;
-  shareName: string;
+  readOnly?: boolean | Computed<boolean>;
+  secretName: string | Computed<string>;
+  secretNamespace?: string | Computed<string>;
+  shareName: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs_SecretRef {
-  name: string;
-  namespace: string;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs {
-  monitors: string[];
-  path: string;
-  readOnly: boolean;
-  secretFile: string;
-  user: string;
-  secretRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs_SecretRef[];
+  monitors: string[] | Computed<string[]>;
+  path?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  secretFile?: string | Computed<string>;
+  user?: string | Computed<string>;
+  secretRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs_SecretRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Cinder {
-  fsType: string;
-  readOnly: boolean;
-  volumeId: string;
+  fsType?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeId: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap_Items {
-  key: string;
-  mode: string;
-  path: string;
+  key?: string | Computed<string>;
+  mode?: string | Computed<string>;
+  path?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap {
-  defaultMode: string;
-  name: string;
-  optional: boolean;
-  items: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap_Items[];
+  defaultMode?: string | Computed<string>;
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  items?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap_Items[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Csi {
-  driver: string;
-  fsType: string;
-  readOnly: boolean;
-  volumeAttributes: Record<string, string>;
-  nodePublishSecretRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_ImagePullSecrets[];
+  driver: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeAttributes?: Record<string, string> | Computed<Record<string, string>>;
+  nodePublishSecretRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_ImagePullSecrets[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_ImagePullSecrets[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi_Items {
-  mode: string;
-  path: string;
-  fieldRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[];
-  resourceFieldRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[];
+  mode?: string | Computed<string>;
+  path: string | Computed<string>;
+  fieldRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_FieldRef[]>;
+  resourceFieldRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Env_ValueFrom_ResourceFieldRef[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi {
-  defaultMode: string;
-  items: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi_Items[];
+  defaultMode?: string | Computed<string>;
+  items?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi_Items[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi_Items[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_EmptyDir {
-  medium: string;
-  sizeLimit: string;
+  medium?: string | Computed<string>;
+  sizeLimit?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata {
-  annotations: Record<string, string>;
-  labels: Record<string, string>;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec {
-  accessModes: string[];
-  storageClassName: string;
-  volumeMode: string;
-  volumeName: string;
-  resources: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Resources[];
-  selector: JobV1_Spec_JobTemplate_Spec_Selector[];
+  accessModes: string[] | Computed<string[]>;
+  storageClassName?: string | Computed<string>;
+  volumeMode?: string | Computed<string>;
+  volumeName?: string | Computed<string>;
+  resources?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Resources[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container_Resources[]>;
+  selector?: JobV1_Spec_JobTemplate_Spec_Selector[] | Computed<JobV1_Spec_JobTemplate_Spec_Selector[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate {
-  metadata: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[];
-  spec: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[];
+  metadata?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[]>;
+  spec?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral {
-  volumeClaimTemplate: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate[];
+  volumeClaimTemplate?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral_VolumeClaimTemplate[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Fc {
-  fsType: string;
-  lun: number;
-  readOnly: boolean;
-  targetWwNs: string[];
+  fsType?: string | Computed<string>;
+  lun: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  targetWwNs: string[] | Computed<string[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_FlexVolume {
-  driver: string;
-  fsType: string;
-  options: Record<string, string>;
-  readOnly: boolean;
-  secretRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs_SecretRef[];
+  driver: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  options?: Record<string, string> | Computed<Record<string, string>>;
+  readOnly?: boolean | Computed<boolean>;
+  secretRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs_SecretRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Flocker {
-  datasetName: string;
-  datasetUuid: string;
+  datasetName?: string | Computed<string>;
+  datasetUuid?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_GcePersistentDisk {
-  fsType: string;
-  partition: number;
-  pdName: string;
-  readOnly: boolean;
+  fsType?: string | Computed<string>;
+  partition?: number | Computed<number>;
+  pdName: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_GitRepo {
-  directory: string;
-  repository: string;
-  revision: string;
+  directory?: string | Computed<string>;
+  repository?: string | Computed<string>;
+  revision?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Glusterfs {
-  endpointsName: string;
-  path: string;
-  readOnly: boolean;
+  endpointsName: string | Computed<string>;
+  path: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_HostPath {
-  path: string;
-  type: string;
+  path?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Iscsi {
-  fsType: string;
-  iqn: string;
-  iscsiInterface: string;
-  lun: number;
-  readOnly: boolean;
-  targetPortal: string;
+  fsType?: string | Computed<string>;
+  iqn: string | Computed<string>;
+  iscsiInterface?: string | Computed<string>;
+  lun?: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  targetPortal: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Local {
-  path: string;
+  path?: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Nfs {
-  path: string;
-  readOnly: boolean;
-  server: string;
+  path: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  server: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_PersistentVolumeClaim {
-  claimName: string;
-  readOnly: boolean;
+  claimName?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_PhotonPersistentDisk {
-  fsType: string;
-  pdId: string;
+  fsType?: string | Computed<string>;
+  pdId: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap {
-  name: string;
-  optional: boolean;
-  items: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap_Items[];
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  items?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap_Items[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi {
-  items: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi_Items[];
+  items?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi_Items[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi_Items[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken {
-  audience: string;
-  expirationSeconds: number;
-  path: string;
+  audience?: string | Computed<string>;
+  expirationSeconds?: number | Computed<number>;
+  path: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources {
-  configMap: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[];
-  downwardApi: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi[];
-  secret: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[];
-  serviceAccountToken: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken[];
+  configMap?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[]>;
+  downwardApi?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_DownwardApi[]>;
+  secret?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ConfigMap[]>;
+  serviceAccountToken?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources_ServiceAccountToken[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected {
-  defaultMode: string;
-  sources: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources[];
+  defaultMode?: string | Computed<string>;
+  sources?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected_Sources[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Quobyte {
-  group: string;
-  readOnly: boolean;
-  registry: string;
-  user: string;
-  volume: string;
+  group?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  registry: string | Computed<string>;
+  user?: string | Computed<string>;
+  volume: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Rbd {
-  cephMonitors: string[];
-  fsType: string;
-  keyring: string;
-  radosUser: string;
-  rbdImage: string;
-  rbdPool: string;
-  readOnly: boolean;
-  secretRef: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs_SecretRef[];
+  cephMonitors: string[] | Computed<string[]>;
+  fsType?: string | Computed<string>;
+  keyring?: string | Computed<string>;
+  radosUser?: string | Computed<string>;
+  rbdImage: string | Computed<string>;
+  rbdPool?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  secretRef?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs_SecretRef[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Secret {
-  defaultMode: string;
-  optional: boolean;
-  secretName: string;
-  items: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap_Items[];
+  defaultMode?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  secretName?: string | Computed<string>;
+  items?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap_Items[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_VsphereVolume {
-  fsType: string;
-  volumePath: string;
+  fsType?: string | Computed<string>;
+  volumePath: string | Computed<string>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume {
-  name: string;
-  awsElasticBlockStore: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AwsElasticBlockStore[];
-  azureDisk: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AzureDisk[];
-  azureFile: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AzureFile[];
-  cephFs: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs[];
-  cinder: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Cinder[];
-  configMap: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap[];
-  csi: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Csi[];
-  downwardApi: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi[];
-  emptyDir: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_EmptyDir[];
-  ephemeral: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral[];
-  fc: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Fc[];
-  flexVolume: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_FlexVolume[];
-  flocker: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Flocker[];
-  gcePersistentDisk: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_GcePersistentDisk[];
-  gitRepo: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_GitRepo[];
-  glusterfs: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Glusterfs[];
-  hostPath: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_HostPath[];
-  iscsi: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Iscsi[];
-  local: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Local[];
-  nfs: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Nfs[];
-  persistentVolumeClaim: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_PersistentVolumeClaim[];
-  photonPersistentDisk: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_PhotonPersistentDisk[];
-  projected: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected[];
-  quobyte: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Quobyte[];
-  rbd: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Rbd[];
-  secret: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Secret[];
-  vsphereVolume: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_VsphereVolume[];
+  name?: string | Computed<string>;
+  awsElasticBlockStore?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AwsElasticBlockStore[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AwsElasticBlockStore[]>;
+  azureDisk?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AzureDisk[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AzureDisk[]>;
+  azureFile?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AzureFile[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_AzureFile[]>;
+  cephFs?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_CephFs[]>;
+  cinder?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Cinder[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Cinder[]>;
+  configMap?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_ConfigMap[]>;
+  csi?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Csi[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Csi[]>;
+  downwardApi?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_DownwardApi[]>;
+  emptyDir?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_EmptyDir[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_EmptyDir[]>;
+  ephemeral?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Ephemeral[]>;
+  fc?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Fc[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Fc[]>;
+  flexVolume?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_FlexVolume[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_FlexVolume[]>;
+  flocker?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Flocker[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Flocker[]>;
+  gcePersistentDisk?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_GcePersistentDisk[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_GcePersistentDisk[]>;
+  gitRepo?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_GitRepo[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_GitRepo[]>;
+  glusterfs?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Glusterfs[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Glusterfs[]>;
+  hostPath?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_HostPath[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_HostPath[]>;
+  iscsi?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Iscsi[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Iscsi[]>;
+  local?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Local[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Local[]>;
+  nfs?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Nfs[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Nfs[]>;
+  persistentVolumeClaim?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_PersistentVolumeClaim[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_PersistentVolumeClaim[]>;
+  photonPersistentDisk?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_PhotonPersistentDisk[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_PhotonPersistentDisk[]>;
+  projected?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Projected[]>;
+  quobyte?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Quobyte[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Quobyte[]>;
+  rbd?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Rbd[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Rbd[]>;
+  secret?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Secret[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_Secret[]>;
+  vsphereVolume?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_VsphereVolume[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume_VsphereVolume[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template_Spec {
-  activeDeadlineSeconds: number;
-  automountServiceAccountToken: boolean;
-  dnsPolicy: string;
-  enableServiceLinks: boolean;
-  hostIpc: boolean;
-  hostNetwork: boolean;
-  hostPid: boolean;
-  hostname: string;
-  nodeName: string;
-  nodeSelector: Record<string, string>;
-  priorityClassName: string;
-  restartPolicy: string;
-  runtimeClassName: string;
-  schedulerName: string;
-  serviceAccountName: string;
-  shareProcessNamespace: boolean;
-  subdomain: string;
-  terminationGracePeriodSeconds: number;
-  affinity: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity[];
-  container: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container[];
-  dnsConfig: JobV1_Spec_JobTemplate_Spec_Template_Spec_DnsConfig[];
-  hostAliases: JobV1_Spec_JobTemplate_Spec_Template_Spec_HostAliases[];
-  imagePullSecrets: JobV1_Spec_JobTemplate_Spec_Template_Spec_ImagePullSecrets[];
-  initContainer: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container[];
-  os: JobV1_Spec_JobTemplate_Spec_Template_Spec_ImagePullSecrets[];
-  readinessGate: JobV1_Spec_JobTemplate_Spec_Template_Spec_ReadinessGate[];
-  securityContext: JobV1_Spec_JobTemplate_Spec_Template_Spec_SecurityContext[];
-  toleration: JobV1_Spec_JobTemplate_Spec_Template_Spec_Toleration[];
-  topologySpreadConstraint: JobV1_Spec_JobTemplate_Spec_Template_Spec_TopologySpreadConstraint[];
-  volume: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume[];
+  activeDeadlineSeconds?: number | Computed<number>;
+  automountServiceAccountToken?: boolean | Computed<boolean>;
+  dnsPolicy?: string | Computed<string>;
+  enableServiceLinks?: boolean | Computed<boolean>;
+  hostIpc?: boolean | Computed<boolean>;
+  hostNetwork?: boolean | Computed<boolean>;
+  hostPid?: boolean | Computed<boolean>;
+  hostname?: string | Computed<string>;
+  nodeName?: string | Computed<string>;
+  nodeSelector?: Record<string, string> | Computed<Record<string, string>>;
+  priorityClassName?: string | Computed<string>;
+  restartPolicy?: string | Computed<string>;
+  runtimeClassName?: string | Computed<string>;
+  schedulerName?: string | Computed<string>;
+  serviceAccountName?: string | Computed<string>;
+  shareProcessNamespace?: boolean | Computed<boolean>;
+  subdomain?: string | Computed<string>;
+  terminationGracePeriodSeconds?: number | Computed<number>;
+  affinity?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Affinity[]>;
+  container?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container[]>;
+  dnsConfig?: JobV1_Spec_JobTemplate_Spec_Template_Spec_DnsConfig[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_DnsConfig[]>;
+  hostAliases?: JobV1_Spec_JobTemplate_Spec_Template_Spec_HostAliases[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_HostAliases[]>;
+  imagePullSecrets?: JobV1_Spec_JobTemplate_Spec_Template_Spec_ImagePullSecrets[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_ImagePullSecrets[]>;
+  initContainer?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Container[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Container[]>;
+  os?: JobV1_Spec_JobTemplate_Spec_Template_Spec_ImagePullSecrets[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_ImagePullSecrets[]>;
+  readinessGate?: JobV1_Spec_JobTemplate_Spec_Template_Spec_ReadinessGate[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_ReadinessGate[]>;
+  securityContext?: JobV1_Spec_JobTemplate_Spec_Template_Spec_SecurityContext[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_SecurityContext[]>;
+  toleration?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Toleration[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Toleration[]>;
+  topologySpreadConstraint?: JobV1_Spec_JobTemplate_Spec_Template_Spec_TopologySpreadConstraint[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_TopologySpreadConstraint[]>;
+  volume?: JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec_Volume[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec_Template {
-  metadata: JobV1_Spec_JobTemplate_Spec_Template_Metadata[];
-  spec: JobV1_Spec_JobTemplate_Spec_Template_Spec[];
+  metadata?: JobV1_Spec_JobTemplate_Spec_Template_Metadata[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Metadata[]>;
+  spec?: JobV1_Spec_JobTemplate_Spec_Template_Spec[] | Computed<JobV1_Spec_JobTemplate_Spec_Template_Spec[]>;
 }
 
 export interface JobV1_Spec_JobTemplate_Spec {
-  activeDeadlineSeconds: number;
-  backoffLimit: number;
-  backoffLimitPerIndex: number;
-  completionMode: string;
-  completions: number;
-  manualSelector: boolean;
-  maxFailedIndexes: number;
-  parallelism: number;
-  ttlSecondsAfterFinished: string;
-  podFailurePolicy: JobV1_Spec_JobTemplate_Spec_PodFailurePolicy[];
-  selector: JobV1_Spec_JobTemplate_Spec_Selector[];
-  template: JobV1_Spec_JobTemplate_Spec_Template[];
+  activeDeadlineSeconds?: number | Computed<number>;
+  backoffLimit?: number | Computed<number>;
+  backoffLimitPerIndex?: number | Computed<number>;
+  completionMode?: string | Computed<string>;
+  completions?: number | Computed<number>;
+  manualSelector?: boolean | Computed<boolean>;
+  maxFailedIndexes?: number | Computed<number>;
+  parallelism?: number | Computed<number>;
+  ttlSecondsAfterFinished?: string | Computed<string>;
+  podFailurePolicy?: JobV1_Spec_JobTemplate_Spec_PodFailurePolicy[] | Computed<JobV1_Spec_JobTemplate_Spec_PodFailurePolicy[]>;
+  selector?: JobV1_Spec_JobTemplate_Spec_Selector[] | Computed<JobV1_Spec_JobTemplate_Spec_Selector[]>;
+  template?: JobV1_Spec_JobTemplate_Spec_Template[] | Computed<JobV1_Spec_JobTemplate_Spec_Template[]>;
 }
 
 export interface JobV1_Spec_JobTemplate {
-  metadata: JobV1_Metadata[];
-  spec: JobV1_Spec_JobTemplate_Spec[];
+  metadata?: JobV1_Metadata[] | Computed<JobV1_Metadata[]>;
+  spec?: JobV1_Spec_JobTemplate_Spec[] | Computed<JobV1_Spec_JobTemplate_Spec[]>;
 }
 
 export interface JobV1_Spec {
-  concurrencyPolicy: string;
-  failedJobsHistoryLimit: number;
-  schedule: string;
-  startingDeadlineSeconds: number;
-  successfulJobsHistoryLimit: number;
-  suspend: boolean;
-  timezone: string;
-  jobTemplate: JobV1_Spec_JobTemplate[];
+  concurrencyPolicy?: string | Computed<string>;
+  failedJobsHistoryLimit?: number | Computed<number>;
+  schedule: string | Computed<string>;
+  startingDeadlineSeconds?: number | Computed<number>;
+  successfulJobsHistoryLimit?: number | Computed<number>;
+  suspend?: boolean | Computed<boolean>;
+  timezone?: string | Computed<string>;
+  jobTemplate?: JobV1_Spec_JobTemplate[] | Computed<JobV1_Spec_JobTemplate[]>;
 }
 
 export interface JobV1_Timeouts {
-  delete: string;
+  delete?: string | Computed<string>;
 }
 
 const JobV1_MetadataFields: FieldMap = {

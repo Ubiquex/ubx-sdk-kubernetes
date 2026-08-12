@@ -2,59 +2,59 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Policy_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface Policy_Spec_Egress_Ports {
-  endPort: number;
-  port: string;
-  protocol: string;
+  endPort?: number | Computed<number>;
+  port?: string | Computed<string>;
+  protocol?: string | Computed<string>;
 }
 
 export interface Policy_Spec_Egress_To_IpBlock {
-  cidr: string;
-  except: string[];
+  cidr?: string | Computed<string>;
+  except?: string[] | Computed<string[]>;
 }
 
 export interface Policy_Spec_Egress_To_NamespaceSelector_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface Policy_Spec_Egress_To_NamespaceSelector {
-  matchLabels: Record<string, string>;
-  matchExpressions: Policy_Spec_Egress_To_NamespaceSelector_MatchExpressions[];
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
+  matchExpressions?: Policy_Spec_Egress_To_NamespaceSelector_MatchExpressions[] | Computed<Policy_Spec_Egress_To_NamespaceSelector_MatchExpressions[]>;
 }
 
 export interface Policy_Spec_Egress_To {
-  ipBlock: Policy_Spec_Egress_To_IpBlock[];
-  namespaceSelector: Policy_Spec_Egress_To_NamespaceSelector[];
-  podSelector: Policy_Spec_Egress_To_NamespaceSelector[];
+  ipBlock?: Policy_Spec_Egress_To_IpBlock[] | Computed<Policy_Spec_Egress_To_IpBlock[]>;
+  namespaceSelector?: Policy_Spec_Egress_To_NamespaceSelector[] | Computed<Policy_Spec_Egress_To_NamespaceSelector[]>;
+  podSelector?: Policy_Spec_Egress_To_NamespaceSelector[] | Computed<Policy_Spec_Egress_To_NamespaceSelector[]>;
 }
 
 export interface Policy_Spec_Egress {
-  ports: Policy_Spec_Egress_Ports[];
-  to: Policy_Spec_Egress_To[];
+  ports?: Policy_Spec_Egress_Ports[] | Computed<Policy_Spec_Egress_Ports[]>;
+  to?: Policy_Spec_Egress_To[] | Computed<Policy_Spec_Egress_To[]>;
 }
 
 export interface Policy_Spec_Ingress {
-  from: Policy_Spec_Egress_To[];
-  ports: Policy_Spec_Egress_Ports[];
+  from?: Policy_Spec_Egress_To[] | Computed<Policy_Spec_Egress_To[]>;
+  ports?: Policy_Spec_Egress_Ports[] | Computed<Policy_Spec_Egress_Ports[]>;
 }
 
 export interface Policy_Spec {
-  policyTypes: string[];
-  egress: Policy_Spec_Egress[];
-  ingress: Policy_Spec_Ingress[];
-  podSelector: Policy_Spec_Egress_To_NamespaceSelector[];
+  policyTypes: string[] | Computed<string[]>;
+  egress?: Policy_Spec_Egress[] | Computed<Policy_Spec_Egress[]>;
+  ingress?: Policy_Spec_Ingress[] | Computed<Policy_Spec_Ingress[]>;
+  podSelector?: Policy_Spec_Egress_To_NamespaceSelector[] | Computed<Policy_Spec_Egress_To_NamespaceSelector[]>;
 }
 
 const Policy_MetadataFields: FieldMap = {

@@ -2,36 +2,36 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RoleV1_AggregationRule_ClusterRoleSelectors_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface RoleV1_AggregationRule_ClusterRoleSelectors {
-  matchLabels: Record<string, string>;
-  matchExpressions: RoleV1_AggregationRule_ClusterRoleSelectors_MatchExpressions[];
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
+  matchExpressions?: RoleV1_AggregationRule_ClusterRoleSelectors_MatchExpressions[] | Computed<RoleV1_AggregationRule_ClusterRoleSelectors_MatchExpressions[]>;
 }
 
 export interface RoleV1_AggregationRule {
-  clusterRoleSelectors: RoleV1_AggregationRule_ClusterRoleSelectors[];
+  clusterRoleSelectors?: RoleV1_AggregationRule_ClusterRoleSelectors[] | Computed<RoleV1_AggregationRule_ClusterRoleSelectors[]>;
 }
 
 export interface RoleV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface RoleV1_Rule {
-  apiGroups: string[];
-  nonResourceUrls: string[];
-  resourceNames: string[];
-  resources: string[];
-  verbs: string[];
+  apiGroups?: string[] | Computed<string[]>;
+  nonResourceUrls?: string[] | Computed<string[]>;
+  resourceNames?: string[] | Computed<string[]>;
+  resources?: string[] | Computed<string[]>;
+  verbs: string[] | Computed<string[]>;
 }
 
 const RoleV1_AggregationRule_ClusterRoleSelectors_MatchExpressionsFields: FieldMap = {

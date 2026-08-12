@@ -2,8 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1Data_Metadata {
-  name: string;
-  namespace: string;
+  name: string | Computed<string>;
+  namespace?: string | Computed<string>;
 }
 
 const V1Data_MetadataFields: FieldMap = {

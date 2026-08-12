@@ -2,35 +2,35 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QuotaV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface QuotaV1_Spec_ScopeSelector_MatchExpression {
-  operator: string;
-  scopeName: string;
-  values: string[];
+  operator: string | Computed<string>;
+  scopeName: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface QuotaV1_Spec_ScopeSelector {
-  matchExpression: QuotaV1_Spec_ScopeSelector_MatchExpression[];
+  matchExpression?: QuotaV1_Spec_ScopeSelector_MatchExpression[] | Computed<QuotaV1_Spec_ScopeSelector_MatchExpression[]>;
 }
 
 export interface QuotaV1_Spec {
-  hard: Record<string, string>;
-  scopes: string[];
-  scopeSelector: QuotaV1_Spec_ScopeSelector[];
+  hard?: Record<string, string> | Computed<Record<string, string>>;
+  scopes?: string[] | Computed<string[]>;
+  scopeSelector?: QuotaV1_Spec_ScopeSelector[] | Computed<QuotaV1_Spec_ScopeSelector[]>;
 }
 
 export interface QuotaV1_Timeouts {
-  create: string;
-  update: string;
+  create?: string | Computed<string>;
+  update?: string | Computed<string>;
 }
 
 const QuotaV1_MetadataFields: FieldMap = {
