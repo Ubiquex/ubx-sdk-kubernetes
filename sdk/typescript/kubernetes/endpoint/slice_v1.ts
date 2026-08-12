@@ -2,44 +2,44 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SliceV1_Endpoint_Condition {
-  ready: boolean;
-  serving: boolean;
-  terminating: boolean;
+  ready?: boolean | Computed<boolean>;
+  serving?: boolean | Computed<boolean>;
+  terminating?: boolean | Computed<boolean>;
 }
 
 export interface SliceV1_Endpoint_TargetRef {
-  fieldPath: string;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  fieldPath?: string | Computed<string>;
+  name: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface SliceV1_Endpoint {
-  addresses: string[];
-  hostname: string;
-  nodeName: string;
-  zone: string;
-  condition: SliceV1_Endpoint_Condition[];
-  targetRef: SliceV1_Endpoint_TargetRef[];
+  addresses: string[] | Computed<string[]>;
+  hostname?: string | Computed<string>;
+  nodeName?: string | Computed<string>;
+  zone?: string | Computed<string>;
+  condition?: SliceV1_Endpoint_Condition[] | Computed<SliceV1_Endpoint_Condition[]>;
+  targetRef?: SliceV1_Endpoint_TargetRef[] | Computed<SliceV1_Endpoint_TargetRef[]>;
 }
 
 export interface SliceV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface SliceV1_Port {
-  appProtocol: string;
-  name: string;
-  port: string;
-  protocol: string;
+  appProtocol: string | Computed<string>;
+  name?: string | Computed<string>;
+  port: string | Computed<string>;
+  protocol?: string | Computed<string>;
 }
 
 const SliceV1_Endpoint_ConditionFields: FieldMap = {

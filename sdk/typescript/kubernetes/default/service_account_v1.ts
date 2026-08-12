@@ -2,21 +2,21 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceAccountV1_ImagePullSecret {
-  name: string;
+  name?: string | Computed<string>;
 }
 
 export interface ServiceAccountV1_Metadata {
-  annotations: Record<string, string>;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface ServiceAccountV1_Timeouts {
-  create: string;
+  create?: string | Computed<string>;
 }
 
 const ServiceAccountV1_ImagePullSecretFields: FieldMap = {

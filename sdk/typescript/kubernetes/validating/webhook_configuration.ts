@@ -2,58 +2,58 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface WebhookConfiguration_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface WebhookConfiguration_Webhook_ClientConfig_Service {
-  name: string;
-  namespace: string;
-  path: string;
-  port: number;
+  name: string | Computed<string>;
+  namespace: string | Computed<string>;
+  path?: string | Computed<string>;
+  port?: number | Computed<number>;
 }
 
 export interface WebhookConfiguration_Webhook_ClientConfig {
-  caBundle: string;
-  url: string;
-  service: WebhookConfiguration_Webhook_ClientConfig_Service[];
+  caBundle?: string | Computed<string>;
+  url?: string | Computed<string>;
+  service?: WebhookConfiguration_Webhook_ClientConfig_Service[] | Computed<WebhookConfiguration_Webhook_ClientConfig_Service[]>;
 }
 
 export interface WebhookConfiguration_Webhook_NamespaceSelector_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface WebhookConfiguration_Webhook_NamespaceSelector {
-  matchLabels: Record<string, string>;
-  matchExpressions: WebhookConfiguration_Webhook_NamespaceSelector_MatchExpressions[];
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
+  matchExpressions?: WebhookConfiguration_Webhook_NamespaceSelector_MatchExpressions[] | Computed<WebhookConfiguration_Webhook_NamespaceSelector_MatchExpressions[]>;
 }
 
 export interface WebhookConfiguration_Webhook_Rule {
-  apiGroups: string[];
-  apiVersions: string[];
-  operations: string[];
-  resources: string[];
-  scope: string;
+  apiGroups: string[] | Computed<string[]>;
+  apiVersions: string[] | Computed<string[]>;
+  operations: string[] | Computed<string[]>;
+  resources: string[] | Computed<string[]>;
+  scope?: string | Computed<string>;
 }
 
 export interface WebhookConfiguration_Webhook {
-  admissionReviewVersions: string[];
-  failurePolicy: string;
-  matchPolicy: string;
-  name: string;
-  sideEffects: string;
-  timeoutSeconds: number;
-  clientConfig: WebhookConfiguration_Webhook_ClientConfig[];
-  namespaceSelector: WebhookConfiguration_Webhook_NamespaceSelector[];
-  objectSelector: WebhookConfiguration_Webhook_NamespaceSelector[];
-  rule: WebhookConfiguration_Webhook_Rule[];
+  admissionReviewVersions?: string[] | Computed<string[]>;
+  failurePolicy?: string | Computed<string>;
+  matchPolicy?: string | Computed<string>;
+  name: string | Computed<string>;
+  sideEffects?: string | Computed<string>;
+  timeoutSeconds?: number | Computed<number>;
+  clientConfig?: WebhookConfiguration_Webhook_ClientConfig[] | Computed<WebhookConfiguration_Webhook_ClientConfig[]>;
+  namespaceSelector?: WebhookConfiguration_Webhook_NamespaceSelector[] | Computed<WebhookConfiguration_Webhook_NamespaceSelector[]>;
+  objectSelector?: WebhookConfiguration_Webhook_NamespaceSelector[] | Computed<WebhookConfiguration_Webhook_NamespaceSelector[]>;
+  rule?: WebhookConfiguration_Webhook_Rule[] | Computed<WebhookConfiguration_Webhook_Rule[]>;
 }
 
 const WebhookConfiguration_MetadataFields: FieldMap = {

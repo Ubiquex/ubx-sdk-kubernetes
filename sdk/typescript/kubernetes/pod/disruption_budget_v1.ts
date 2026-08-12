@@ -2,31 +2,31 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DisruptionBudgetV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface DisruptionBudgetV1_Spec_Selector_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface DisruptionBudgetV1_Spec_Selector {
-  matchLabels: Record<string, string>;
-  matchExpressions: DisruptionBudgetV1_Spec_Selector_MatchExpressions[];
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
+  matchExpressions?: DisruptionBudgetV1_Spec_Selector_MatchExpressions[] | Computed<DisruptionBudgetV1_Spec_Selector_MatchExpressions[]>;
 }
 
 export interface DisruptionBudgetV1_Spec {
-  maxUnavailable: string;
-  minAvailable: string;
-  selector: DisruptionBudgetV1_Spec_Selector[];
+  maxUnavailable?: string | Computed<string>;
+  minAvailable?: string | Computed<string>;
+  selector?: DisruptionBudgetV1_Spec_Selector[] | Computed<DisruptionBudgetV1_Spec_Selector[]>;
 }
 
 const DisruptionBudgetV1_MetadataFields: FieldMap = {

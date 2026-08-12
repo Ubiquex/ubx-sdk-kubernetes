@@ -2,26 +2,26 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Class_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface Class_Spec_Parameters {
-  apiGroup: string;
-  kind: string;
-  name: string;
-  namespace: string;
-  scope: string;
+  apiGroup?: string | Computed<string>;
+  kind: string | Computed<string>;
+  name: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  scope?: string | Computed<string>;
 }
 
 export interface Class_Spec {
-  controller: string;
-  parameters: Class_Spec_Parameters[];
+  controller?: string | Computed<string>;
+  parameters?: Class_Spec_Parameters[] | Computed<Class_Spec_Parameters[]>;
 }
 
 const Class_MetadataFields: FieldMap = {

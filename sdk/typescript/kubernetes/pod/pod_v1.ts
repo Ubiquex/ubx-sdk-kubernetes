@@ -2,602 +2,602 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PodV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference {
-  matchExpressions: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions[];
-  matchFields: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions[];
+  matchExpressions?: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions[] | Computed<PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions[]>;
+  matchFields?: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions[] | Computed<PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions[]>;
 }
 
 export interface PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution {
-  weight: number;
-  preference: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[];
+  weight: number | Computed<number>;
+  preference?: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[] | Computed<PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[]>;
 }
 
 export interface PodV1_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution {
-  nodeSelectorTerm: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[];
+  nodeSelectorTerm?: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[] | Computed<PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference[]>;
 }
 
 export interface PodV1_Spec_Affinity_NodeAffinity {
-  preferredDuringSchedulingIgnoredDuringExecution: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[];
-  requiredDuringSchedulingIgnoredDuringExecution: PodV1_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[];
+  preferredDuringSchedulingIgnoredDuringExecution?: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[] | Computed<PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution[]>;
+  requiredDuringSchedulingIgnoredDuringExecution?: PodV1_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[] | Computed<PodV1_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution[]>;
 }
 
 export interface PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector {
-  matchLabels: Record<string, string>;
-  matchExpressions: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions[];
+  matchLabels?: Record<string, string> | Computed<Record<string, string>>;
+  matchExpressions?: PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions[] | Computed<PodV1_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions[]>;
 }
 
 export interface PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm {
-  namespaces: string[];
-  topologyKey: string;
-  labelSelector: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[];
-  namespaceSelector: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[];
+  namespaces?: string[] | Computed<string[]>;
+  topologyKey: string | Computed<string>;
+  labelSelector?: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[] | Computed<PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[]>;
+  namespaceSelector?: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[] | Computed<PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[]>;
 }
 
 export interface PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution {
-  weight: number;
-  podAffinityTerm: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[];
+  weight: number | Computed<number>;
+  podAffinityTerm?: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[] | Computed<PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[]>;
 }
 
 export interface PodV1_Spec_Affinity_PodAffinity {
-  preferredDuringSchedulingIgnoredDuringExecution: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[];
-  requiredDuringSchedulingIgnoredDuringExecution: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[];
+  preferredDuringSchedulingIgnoredDuringExecution?: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[] | Computed<PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution[]>;
+  requiredDuringSchedulingIgnoredDuringExecution?: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[] | Computed<PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm[]>;
 }
 
 export interface PodV1_Spec_Affinity {
-  nodeAffinity: PodV1_Spec_Affinity_NodeAffinity[];
-  podAffinity: PodV1_Spec_Affinity_PodAffinity[];
-  podAntiAffinity: PodV1_Spec_Affinity_PodAffinity[];
+  nodeAffinity?: PodV1_Spec_Affinity_NodeAffinity[] | Computed<PodV1_Spec_Affinity_NodeAffinity[]>;
+  podAffinity?: PodV1_Spec_Affinity_PodAffinity[] | Computed<PodV1_Spec_Affinity_PodAffinity[]>;
+  podAntiAffinity?: PodV1_Spec_Affinity_PodAffinity[] | Computed<PodV1_Spec_Affinity_PodAffinity[]>;
 }
 
 export interface PodV1_Spec_Container_Env_ValueFrom_ConfigMapKeyRef {
-  key: string;
-  name: string;
-  optional: boolean;
+  key?: string | Computed<string>;
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
 }
 
 export interface PodV1_Spec_Container_Env_ValueFrom_FieldRef {
-  apiVersion: string;
-  fieldPath: string;
+  apiVersion?: string | Computed<string>;
+  fieldPath?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Container_Env_ValueFrom_ResourceFieldRef {
-  containerName: string;
-  divisor: string;
-  resource: string;
+  containerName?: string | Computed<string>;
+  divisor?: string | Computed<string>;
+  resource: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Container_Env_ValueFrom {
-  configMapKeyRef: PodV1_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[];
-  fieldRef: PodV1_Spec_Container_Env_ValueFrom_FieldRef[];
-  resourceFieldRef: PodV1_Spec_Container_Env_ValueFrom_ResourceFieldRef[];
-  secretKeyRef: PodV1_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[];
+  configMapKeyRef?: PodV1_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[] | Computed<PodV1_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[]>;
+  fieldRef?: PodV1_Spec_Container_Env_ValueFrom_FieldRef[] | Computed<PodV1_Spec_Container_Env_ValueFrom_FieldRef[]>;
+  resourceFieldRef?: PodV1_Spec_Container_Env_ValueFrom_ResourceFieldRef[] | Computed<PodV1_Spec_Container_Env_ValueFrom_ResourceFieldRef[]>;
+  secretKeyRef?: PodV1_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[] | Computed<PodV1_Spec_Container_Env_ValueFrom_ConfigMapKeyRef[]>;
 }
 
 export interface PodV1_Spec_Container_Env {
-  name: string;
-  value: string;
-  valueFrom: PodV1_Spec_Container_Env_ValueFrom[];
+  name: string | Computed<string>;
+  value?: string | Computed<string>;
+  valueFrom?: PodV1_Spec_Container_Env_ValueFrom[] | Computed<PodV1_Spec_Container_Env_ValueFrom[]>;
 }
 
 export interface PodV1_Spec_Container_EnvFrom_ConfigMapRef {
-  name: string;
-  optional: boolean;
+  name: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
 }
 
 export interface PodV1_Spec_Container_EnvFrom {
-  prefix: string;
-  configMapRef: PodV1_Spec_Container_EnvFrom_ConfigMapRef[];
-  secretRef: PodV1_Spec_Container_EnvFrom_ConfigMapRef[];
+  prefix?: string | Computed<string>;
+  configMapRef?: PodV1_Spec_Container_EnvFrom_ConfigMapRef[] | Computed<PodV1_Spec_Container_EnvFrom_ConfigMapRef[]>;
+  secretRef?: PodV1_Spec_Container_EnvFrom_ConfigMapRef[] | Computed<PodV1_Spec_Container_EnvFrom_ConfigMapRef[]>;
 }
 
 export interface PodV1_Spec_Container_Lifecycle_PostStart_Exec {
-  command: string[];
+  command?: string[] | Computed<string[]>;
 }
 
 export interface PodV1_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader {
-  name: string;
-  value: string;
+  name?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Container_Lifecycle_PostStart_HttpGet {
-  host: string;
-  path: string;
-  port: string;
-  scheme: string;
-  httpHeader: PodV1_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
+  host?: string | Computed<string>;
+  path?: string | Computed<string>;
+  port?: string | Computed<string>;
+  scheme?: string | Computed<string>;
+  httpHeader?: PodV1_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
 }
 
 export interface PodV1_Spec_Container_Lifecycle_PostStart_TcpSocket {
-  port: string;
+  port: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Container_Lifecycle_PostStart {
-  exec: PodV1_Spec_Container_Lifecycle_PostStart_Exec[];
-  httpGet: PodV1_Spec_Container_Lifecycle_PostStart_HttpGet[];
-  tcpSocket: PodV1_Spec_Container_Lifecycle_PostStart_TcpSocket[];
+  exec?: PodV1_Spec_Container_Lifecycle_PostStart_Exec[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart_Exec[]>;
+  httpGet?: PodV1_Spec_Container_Lifecycle_PostStart_HttpGet[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart_HttpGet[]>;
+  tcpSocket?: PodV1_Spec_Container_Lifecycle_PostStart_TcpSocket[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart_TcpSocket[]>;
 }
 
 export interface PodV1_Spec_Container_Lifecycle {
-  postStart: PodV1_Spec_Container_Lifecycle_PostStart[];
-  preStop: PodV1_Spec_Container_Lifecycle_PostStart[];
+  postStart?: PodV1_Spec_Container_Lifecycle_PostStart[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart[]>;
+  preStop?: PodV1_Spec_Container_Lifecycle_PostStart[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart[]>;
 }
 
 export interface PodV1_Spec_Container_LivenessProbe_Grpc {
-  port: number;
-  service: string;
+  port: number | Computed<number>;
+  service?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Container_LivenessProbe {
-  failureThreshold: number;
-  initialDelaySeconds: number;
-  periodSeconds: number;
-  successThreshold: number;
-  timeoutSeconds: number;
-  exec: PodV1_Spec_Container_Lifecycle_PostStart_Exec[];
-  grpc: PodV1_Spec_Container_LivenessProbe_Grpc[];
-  httpGet: PodV1_Spec_Container_Lifecycle_PostStart_HttpGet[];
-  tcpSocket: PodV1_Spec_Container_Lifecycle_PostStart_TcpSocket[];
+  failureThreshold?: number | Computed<number>;
+  initialDelaySeconds?: number | Computed<number>;
+  periodSeconds?: number | Computed<number>;
+  successThreshold?: number | Computed<number>;
+  timeoutSeconds?: number | Computed<number>;
+  exec?: PodV1_Spec_Container_Lifecycle_PostStart_Exec[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart_Exec[]>;
+  grpc?: PodV1_Spec_Container_LivenessProbe_Grpc[] | Computed<PodV1_Spec_Container_LivenessProbe_Grpc[]>;
+  httpGet?: PodV1_Spec_Container_Lifecycle_PostStart_HttpGet[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart_HttpGet[]>;
+  tcpSocket?: PodV1_Spec_Container_Lifecycle_PostStart_TcpSocket[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart_TcpSocket[]>;
 }
 
 export interface PodV1_Spec_Container_Port {
-  containerPort: number;
-  hostIp: string;
-  hostPort: number;
-  name: string;
-  protocol: string;
+  containerPort: number | Computed<number>;
+  hostIp?: string | Computed<string>;
+  hostPort?: number | Computed<number>;
+  name?: string | Computed<string>;
+  protocol?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Container_Resources {
-  limits: Record<string, string>;
-  requests: Record<string, string>;
+  limits?: Record<string, string> | Computed<Record<string, string>>;
+  requests?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface PodV1_Spec_Container_SecurityContext_Capabilities {
-  add: string[];
-  drop: string[];
+  add?: string[] | Computed<string[]>;
+  drop?: string[] | Computed<string[]>;
 }
 
 export interface PodV1_Spec_Container_SecurityContext_SeLinuxOptions {
-  level: string;
-  role: string;
-  type: string;
-  user: string;
+  level?: string | Computed<string>;
+  role?: string | Computed<string>;
+  type?: string | Computed<string>;
+  user?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Container_SecurityContext_SeccompProfile {
-  localhostProfile: string;
-  type: string;
+  localhostProfile?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Container_SecurityContext {
-  allowPrivilegeEscalation: boolean;
-  privileged: boolean;
-  readOnlyRootFilesystem: boolean;
-  runAsGroup: string;
-  runAsNonRoot: boolean;
-  runAsUser: string;
-  capabilities: PodV1_Spec_Container_SecurityContext_Capabilities[];
-  seLinuxOptions: PodV1_Spec_Container_SecurityContext_SeLinuxOptions[];
-  seccompProfile: PodV1_Spec_Container_SecurityContext_SeccompProfile[];
+  allowPrivilegeEscalation?: boolean | Computed<boolean>;
+  privileged?: boolean | Computed<boolean>;
+  readOnlyRootFilesystem?: boolean | Computed<boolean>;
+  runAsGroup?: string | Computed<string>;
+  runAsNonRoot?: boolean | Computed<boolean>;
+  runAsUser?: string | Computed<string>;
+  capabilities?: PodV1_Spec_Container_SecurityContext_Capabilities[] | Computed<PodV1_Spec_Container_SecurityContext_Capabilities[]>;
+  seLinuxOptions?: PodV1_Spec_Container_SecurityContext_SeLinuxOptions[] | Computed<PodV1_Spec_Container_SecurityContext_SeLinuxOptions[]>;
+  seccompProfile?: PodV1_Spec_Container_SecurityContext_SeccompProfile[] | Computed<PodV1_Spec_Container_SecurityContext_SeccompProfile[]>;
 }
 
 export interface PodV1_Spec_Container_VolumeDevice {
-  devicePath: string;
-  name: string;
+  devicePath: string | Computed<string>;
+  name: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Container_VolumeMount {
-  mountPath: string;
-  mountPropagation: string;
-  name: string;
-  readOnly: boolean;
-  subPath: string;
-  subPathExpr: string;
+  mountPath: string | Computed<string>;
+  mountPropagation?: string | Computed<string>;
+  name: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  subPath?: string | Computed<string>;
+  subPathExpr?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Container {
-  args: string[];
-  command: string[];
-  image: string;
-  imagePullPolicy: string;
-  name: string;
-  restartPolicy: string;
-  stdin: boolean;
-  stdinOnce: boolean;
-  terminationMessagePath: string;
-  terminationMessagePolicy: string;
-  tty: boolean;
-  workingDir: string;
-  env: PodV1_Spec_Container_Env[];
-  envFrom: PodV1_Spec_Container_EnvFrom[];
-  lifecycle: PodV1_Spec_Container_Lifecycle[];
-  livenessProbe: PodV1_Spec_Container_LivenessProbe[];
-  port: PodV1_Spec_Container_Port[];
-  readinessProbe: PodV1_Spec_Container_LivenessProbe[];
-  resources: PodV1_Spec_Container_Resources[];
-  securityContext: PodV1_Spec_Container_SecurityContext[];
-  startupProbe: PodV1_Spec_Container_LivenessProbe[];
-  volumeDevice: PodV1_Spec_Container_VolumeDevice[];
-  volumeMount: PodV1_Spec_Container_VolumeMount[];
+  args?: string[] | Computed<string[]>;
+  command?: string[] | Computed<string[]>;
+  image?: string | Computed<string>;
+  imagePullPolicy?: string | Computed<string>;
+  name: string | Computed<string>;
+  restartPolicy?: string | Computed<string>;
+  stdin?: boolean | Computed<boolean>;
+  stdinOnce?: boolean | Computed<boolean>;
+  terminationMessagePath?: string | Computed<string>;
+  terminationMessagePolicy?: string | Computed<string>;
+  tty?: boolean | Computed<boolean>;
+  workingDir?: string | Computed<string>;
+  env?: PodV1_Spec_Container_Env[] | Computed<PodV1_Spec_Container_Env[]>;
+  envFrom?: PodV1_Spec_Container_EnvFrom[] | Computed<PodV1_Spec_Container_EnvFrom[]>;
+  lifecycle?: PodV1_Spec_Container_Lifecycle[] | Computed<PodV1_Spec_Container_Lifecycle[]>;
+  livenessProbe?: PodV1_Spec_Container_LivenessProbe[] | Computed<PodV1_Spec_Container_LivenessProbe[]>;
+  port?: PodV1_Spec_Container_Port[] | Computed<PodV1_Spec_Container_Port[]>;
+  readinessProbe?: PodV1_Spec_Container_LivenessProbe[] | Computed<PodV1_Spec_Container_LivenessProbe[]>;
+  resources?: PodV1_Spec_Container_Resources[] | Computed<PodV1_Spec_Container_Resources[]>;
+  securityContext?: PodV1_Spec_Container_SecurityContext[] | Computed<PodV1_Spec_Container_SecurityContext[]>;
+  startupProbe?: PodV1_Spec_Container_LivenessProbe[] | Computed<PodV1_Spec_Container_LivenessProbe[]>;
+  volumeDevice?: PodV1_Spec_Container_VolumeDevice[] | Computed<PodV1_Spec_Container_VolumeDevice[]>;
+  volumeMount?: PodV1_Spec_Container_VolumeMount[] | Computed<PodV1_Spec_Container_VolumeMount[]>;
 }
 
 export interface PodV1_Spec_DnsConfig {
-  nameservers: string[];
-  searches: string[];
-  option: PodV1_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
+  nameservers?: string[] | Computed<string[]>;
+  searches?: string[] | Computed<string[]>;
+  option?: PodV1_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
 }
 
 export interface PodV1_Spec_HostAliases {
-  hostnames: string[];
-  ip: string;
+  hostnames: string[] | Computed<string[]>;
+  ip: string | Computed<string>;
 }
 
 export interface PodV1_Spec_ImagePullSecrets {
-  name: string;
+  name: string | Computed<string>;
 }
 
 export interface PodV1_Spec_ReadinessGate {
-  conditionType: string;
+  conditionType: string | Computed<string>;
 }
 
 export interface PodV1_Spec_SecurityContext_WindowsOptions {
-  gmsaCredentialSpec: string;
-  gmsaCredentialSpecName: string;
-  hostProcess: boolean;
-  runAsUsername: string;
+  gmsaCredentialSpec?: string | Computed<string>;
+  gmsaCredentialSpecName?: string | Computed<string>;
+  hostProcess?: boolean | Computed<boolean>;
+  runAsUsername?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_SecurityContext {
-  fsGroup: string;
-  fsGroupChangePolicy: string;
-  runAsGroup: string;
-  runAsNonRoot: boolean;
-  runAsUser: string;
-  supplementalGroups: number[];
-  seLinuxOptions: PodV1_Spec_Container_SecurityContext_SeLinuxOptions[];
-  seccompProfile: PodV1_Spec_Container_SecurityContext_SeccompProfile[];
-  sysctl: PodV1_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[];
-  windowsOptions: PodV1_Spec_SecurityContext_WindowsOptions[];
+  fsGroup?: string | Computed<string>;
+  fsGroupChangePolicy?: string | Computed<string>;
+  runAsGroup?: string | Computed<string>;
+  runAsNonRoot?: boolean | Computed<boolean>;
+  runAsUser?: string | Computed<string>;
+  supplementalGroups?: number[] | Computed<number[]>;
+  seLinuxOptions?: PodV1_Spec_Container_SecurityContext_SeLinuxOptions[] | Computed<PodV1_Spec_Container_SecurityContext_SeLinuxOptions[]>;
+  seccompProfile?: PodV1_Spec_Container_SecurityContext_SeccompProfile[] | Computed<PodV1_Spec_Container_SecurityContext_SeccompProfile[]>;
+  sysctl?: PodV1_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[] | Computed<PodV1_Spec_Container_Lifecycle_PostStart_HttpGet_HttpHeader[]>;
+  windowsOptions?: PodV1_Spec_SecurityContext_WindowsOptions[] | Computed<PodV1_Spec_SecurityContext_WindowsOptions[]>;
 }
 
 export interface PodV1_Spec_Toleration {
-  effect: string;
-  key: string;
-  operator: string;
-  tolerationSeconds: string;
-  value: string;
+  effect?: string | Computed<string>;
+  key?: string | Computed<string>;
+  operator?: string | Computed<string>;
+  tolerationSeconds?: string | Computed<string>;
+  value?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_TopologySpreadConstraint {
-  matchLabelKeys: string[];
-  maxSkew: number;
-  minDomains: number;
-  nodeAffinityPolicy: string;
-  nodeTaintsPolicy: string;
-  topologyKey: string;
-  whenUnsatisfiable: string;
-  labelSelector: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[];
+  matchLabelKeys?: string[] | Computed<string[]>;
+  maxSkew?: number | Computed<number>;
+  minDomains?: number | Computed<number>;
+  nodeAffinityPolicy?: string | Computed<string>;
+  nodeTaintsPolicy?: string | Computed<string>;
+  topologyKey?: string | Computed<string>;
+  whenUnsatisfiable?: string | Computed<string>;
+  labelSelector?: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[] | Computed<PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[]>;
 }
 
 export interface PodV1_Spec_Volume_AwsElasticBlockStore {
-  fsType: string;
-  partition: number;
-  readOnly: boolean;
-  volumeId: string;
+  fsType?: string | Computed<string>;
+  partition?: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeId: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_AzureDisk {
-  cachingMode: string;
-  dataDiskUri: string;
-  diskName: string;
-  fsType: string;
-  kind: string;
-  readOnly: boolean;
+  cachingMode: string | Computed<string>;
+  dataDiskUri: string | Computed<string>;
+  diskName: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  kind?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface PodV1_Spec_Volume_AzureFile {
-  readOnly: boolean;
-  secretName: string;
-  secretNamespace: string;
-  shareName: string;
+  readOnly?: boolean | Computed<boolean>;
+  secretName: string | Computed<string>;
+  secretNamespace?: string | Computed<string>;
+  shareName: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_CephFs_SecretRef {
-  name: string;
-  namespace: string;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_CephFs {
-  monitors: string[];
-  path: string;
-  readOnly: boolean;
-  secretFile: string;
-  user: string;
-  secretRef: PodV1_Spec_Volume_CephFs_SecretRef[];
+  monitors: string[] | Computed<string[]>;
+  path?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  secretFile?: string | Computed<string>;
+  user?: string | Computed<string>;
+  secretRef?: PodV1_Spec_Volume_CephFs_SecretRef[] | Computed<PodV1_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface PodV1_Spec_Volume_Cinder {
-  fsType: string;
-  readOnly: boolean;
-  volumeId: string;
+  fsType?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeId: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_ConfigMap_Items {
-  key: string;
-  mode: string;
-  path: string;
+  key?: string | Computed<string>;
+  mode?: string | Computed<string>;
+  path?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_ConfigMap {
-  defaultMode: string;
-  name: string;
-  optional: boolean;
-  items: PodV1_Spec_Volume_ConfigMap_Items[];
+  defaultMode?: string | Computed<string>;
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  items?: PodV1_Spec_Volume_ConfigMap_Items[] | Computed<PodV1_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface PodV1_Spec_Volume_Csi {
-  driver: string;
-  fsType: string;
-  readOnly: boolean;
-  volumeAttributes: Record<string, string>;
-  nodePublishSecretRef: PodV1_Spec_ImagePullSecrets[];
+  driver: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeAttributes?: Record<string, string> | Computed<Record<string, string>>;
+  nodePublishSecretRef?: PodV1_Spec_ImagePullSecrets[] | Computed<PodV1_Spec_ImagePullSecrets[]>;
 }
 
 export interface PodV1_Spec_Volume_DownwardApi_Items {
-  mode: string;
-  path: string;
-  fieldRef: PodV1_Spec_Container_Env_ValueFrom_FieldRef[];
-  resourceFieldRef: PodV1_Spec_Container_Env_ValueFrom_ResourceFieldRef[];
+  mode?: string | Computed<string>;
+  path: string | Computed<string>;
+  fieldRef?: PodV1_Spec_Container_Env_ValueFrom_FieldRef[] | Computed<PodV1_Spec_Container_Env_ValueFrom_FieldRef[]>;
+  resourceFieldRef?: PodV1_Spec_Container_Env_ValueFrom_ResourceFieldRef[] | Computed<PodV1_Spec_Container_Env_ValueFrom_ResourceFieldRef[]>;
 }
 
 export interface PodV1_Spec_Volume_DownwardApi {
-  defaultMode: string;
-  items: PodV1_Spec_Volume_DownwardApi_Items[];
+  defaultMode?: string | Computed<string>;
+  items?: PodV1_Spec_Volume_DownwardApi_Items[] | Computed<PodV1_Spec_Volume_DownwardApi_Items[]>;
 }
 
 export interface PodV1_Spec_Volume_EmptyDir {
-  medium: string;
-  sizeLimit: string;
+  medium?: string | Computed<string>;
+  sizeLimit?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata {
-  annotations: Record<string, string>;
-  labels: Record<string, string>;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec {
-  accessModes: string[];
-  storageClassName: string;
-  volumeMode: string;
-  volumeName: string;
-  resources: PodV1_Spec_Container_Resources[];
-  selector: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[];
+  accessModes: string[] | Computed<string[]>;
+  storageClassName?: string | Computed<string>;
+  volumeMode?: string | Computed<string>;
+  volumeName?: string | Computed<string>;
+  resources?: PodV1_Spec_Container_Resources[] | Computed<PodV1_Spec_Container_Resources[]>;
+  selector?: PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[] | Computed<PodV1_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector[]>;
 }
 
 export interface PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate {
-  metadata: PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[];
-  spec: PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[];
+  metadata?: PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[] | Computed<PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate_Metadata[]>;
+  spec?: PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[] | Computed<PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate_Spec[]>;
 }
 
 export interface PodV1_Spec_Volume_Ephemeral {
-  volumeClaimTemplate: PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate[];
+  volumeClaimTemplate?: PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate[] | Computed<PodV1_Spec_Volume_Ephemeral_VolumeClaimTemplate[]>;
 }
 
 export interface PodV1_Spec_Volume_Fc {
-  fsType: string;
-  lun: number;
-  readOnly: boolean;
-  targetWwNs: string[];
+  fsType?: string | Computed<string>;
+  lun: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  targetWwNs: string[] | Computed<string[]>;
 }
 
 export interface PodV1_Spec_Volume_FlexVolume {
-  driver: string;
-  fsType: string;
-  options: Record<string, string>;
-  readOnly: boolean;
-  secretRef: PodV1_Spec_Volume_CephFs_SecretRef[];
+  driver: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  options?: Record<string, string> | Computed<Record<string, string>>;
+  readOnly?: boolean | Computed<boolean>;
+  secretRef?: PodV1_Spec_Volume_CephFs_SecretRef[] | Computed<PodV1_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface PodV1_Spec_Volume_Flocker {
-  datasetName: string;
-  datasetUuid: string;
+  datasetName?: string | Computed<string>;
+  datasetUuid?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_GcePersistentDisk {
-  fsType: string;
-  partition: number;
-  pdName: string;
-  readOnly: boolean;
+  fsType?: string | Computed<string>;
+  partition?: number | Computed<number>;
+  pdName: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface PodV1_Spec_Volume_GitRepo {
-  directory: string;
-  repository: string;
-  revision: string;
+  directory?: string | Computed<string>;
+  repository?: string | Computed<string>;
+  revision?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_Glusterfs {
-  endpointsName: string;
-  path: string;
-  readOnly: boolean;
+  endpointsName: string | Computed<string>;
+  path: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface PodV1_Spec_Volume_HostPath {
-  path: string;
-  type: string;
+  path?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_Iscsi {
-  fsType: string;
-  iqn: string;
-  iscsiInterface: string;
-  lun: number;
-  readOnly: boolean;
-  targetPortal: string;
+  fsType?: string | Computed<string>;
+  iqn: string | Computed<string>;
+  iscsiInterface?: string | Computed<string>;
+  lun?: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  targetPortal: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_Local {
-  path: string;
+  path?: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_Nfs {
-  path: string;
-  readOnly: boolean;
-  server: string;
+  path: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  server: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_PersistentVolumeClaim {
-  claimName: string;
-  readOnly: boolean;
+  claimName?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface PodV1_Spec_Volume_PhotonPersistentDisk {
-  fsType: string;
-  pdId: string;
+  fsType?: string | Computed<string>;
+  pdId: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_Projected_Sources_ConfigMap {
-  name: string;
-  optional: boolean;
-  items: PodV1_Spec_Volume_ConfigMap_Items[];
+  name?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  items?: PodV1_Spec_Volume_ConfigMap_Items[] | Computed<PodV1_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface PodV1_Spec_Volume_Projected_Sources_DownwardApi {
-  items: PodV1_Spec_Volume_DownwardApi_Items[];
+  items?: PodV1_Spec_Volume_DownwardApi_Items[] | Computed<PodV1_Spec_Volume_DownwardApi_Items[]>;
 }
 
 export interface PodV1_Spec_Volume_Projected_Sources_ServiceAccountToken {
-  audience: string;
-  expirationSeconds: number;
-  path: string;
+  audience?: string | Computed<string>;
+  expirationSeconds?: number | Computed<number>;
+  path: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_Projected_Sources {
-  configMap: PodV1_Spec_Volume_Projected_Sources_ConfigMap[];
-  downwardApi: PodV1_Spec_Volume_Projected_Sources_DownwardApi[];
-  secret: PodV1_Spec_Volume_Projected_Sources_ConfigMap[];
-  serviceAccountToken: PodV1_Spec_Volume_Projected_Sources_ServiceAccountToken[];
+  configMap?: PodV1_Spec_Volume_Projected_Sources_ConfigMap[] | Computed<PodV1_Spec_Volume_Projected_Sources_ConfigMap[]>;
+  downwardApi?: PodV1_Spec_Volume_Projected_Sources_DownwardApi[] | Computed<PodV1_Spec_Volume_Projected_Sources_DownwardApi[]>;
+  secret?: PodV1_Spec_Volume_Projected_Sources_ConfigMap[] | Computed<PodV1_Spec_Volume_Projected_Sources_ConfigMap[]>;
+  serviceAccountToken?: PodV1_Spec_Volume_Projected_Sources_ServiceAccountToken[] | Computed<PodV1_Spec_Volume_Projected_Sources_ServiceAccountToken[]>;
 }
 
 export interface PodV1_Spec_Volume_Projected {
-  defaultMode: string;
-  sources: PodV1_Spec_Volume_Projected_Sources[];
+  defaultMode?: string | Computed<string>;
+  sources?: PodV1_Spec_Volume_Projected_Sources[] | Computed<PodV1_Spec_Volume_Projected_Sources[]>;
 }
 
 export interface PodV1_Spec_Volume_Quobyte {
-  group: string;
-  readOnly: boolean;
-  registry: string;
-  user: string;
-  volume: string;
+  group?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  registry: string | Computed<string>;
+  user?: string | Computed<string>;
+  volume: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume_Rbd {
-  cephMonitors: string[];
-  fsType: string;
-  keyring: string;
-  radosUser: string;
-  rbdImage: string;
-  rbdPool: string;
-  readOnly: boolean;
-  secretRef: PodV1_Spec_Volume_CephFs_SecretRef[];
+  cephMonitors: string[] | Computed<string[]>;
+  fsType?: string | Computed<string>;
+  keyring?: string | Computed<string>;
+  radosUser?: string | Computed<string>;
+  rbdImage: string | Computed<string>;
+  rbdPool?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  secretRef?: PodV1_Spec_Volume_CephFs_SecretRef[] | Computed<PodV1_Spec_Volume_CephFs_SecretRef[]>;
 }
 
 export interface PodV1_Spec_Volume_Secret {
-  defaultMode: string;
-  optional: boolean;
-  secretName: string;
-  items: PodV1_Spec_Volume_ConfigMap_Items[];
+  defaultMode?: string | Computed<string>;
+  optional?: boolean | Computed<boolean>;
+  secretName?: string | Computed<string>;
+  items?: PodV1_Spec_Volume_ConfigMap_Items[] | Computed<PodV1_Spec_Volume_ConfigMap_Items[]>;
 }
 
 export interface PodV1_Spec_Volume_VsphereVolume {
-  fsType: string;
-  volumePath: string;
+  fsType?: string | Computed<string>;
+  volumePath: string | Computed<string>;
 }
 
 export interface PodV1_Spec_Volume {
-  name: string;
-  awsElasticBlockStore: PodV1_Spec_Volume_AwsElasticBlockStore[];
-  azureDisk: PodV1_Spec_Volume_AzureDisk[];
-  azureFile: PodV1_Spec_Volume_AzureFile[];
-  cephFs: PodV1_Spec_Volume_CephFs[];
-  cinder: PodV1_Spec_Volume_Cinder[];
-  configMap: PodV1_Spec_Volume_ConfigMap[];
-  csi: PodV1_Spec_Volume_Csi[];
-  downwardApi: PodV1_Spec_Volume_DownwardApi[];
-  emptyDir: PodV1_Spec_Volume_EmptyDir[];
-  ephemeral: PodV1_Spec_Volume_Ephemeral[];
-  fc: PodV1_Spec_Volume_Fc[];
-  flexVolume: PodV1_Spec_Volume_FlexVolume[];
-  flocker: PodV1_Spec_Volume_Flocker[];
-  gcePersistentDisk: PodV1_Spec_Volume_GcePersistentDisk[];
-  gitRepo: PodV1_Spec_Volume_GitRepo[];
-  glusterfs: PodV1_Spec_Volume_Glusterfs[];
-  hostPath: PodV1_Spec_Volume_HostPath[];
-  iscsi: PodV1_Spec_Volume_Iscsi[];
-  local: PodV1_Spec_Volume_Local[];
-  nfs: PodV1_Spec_Volume_Nfs[];
-  persistentVolumeClaim: PodV1_Spec_Volume_PersistentVolumeClaim[];
-  photonPersistentDisk: PodV1_Spec_Volume_PhotonPersistentDisk[];
-  projected: PodV1_Spec_Volume_Projected[];
-  quobyte: PodV1_Spec_Volume_Quobyte[];
-  rbd: PodV1_Spec_Volume_Rbd[];
-  secret: PodV1_Spec_Volume_Secret[];
-  vsphereVolume: PodV1_Spec_Volume_VsphereVolume[];
+  name?: string | Computed<string>;
+  awsElasticBlockStore?: PodV1_Spec_Volume_AwsElasticBlockStore[] | Computed<PodV1_Spec_Volume_AwsElasticBlockStore[]>;
+  azureDisk?: PodV1_Spec_Volume_AzureDisk[] | Computed<PodV1_Spec_Volume_AzureDisk[]>;
+  azureFile?: PodV1_Spec_Volume_AzureFile[] | Computed<PodV1_Spec_Volume_AzureFile[]>;
+  cephFs?: PodV1_Spec_Volume_CephFs[] | Computed<PodV1_Spec_Volume_CephFs[]>;
+  cinder?: PodV1_Spec_Volume_Cinder[] | Computed<PodV1_Spec_Volume_Cinder[]>;
+  configMap?: PodV1_Spec_Volume_ConfigMap[] | Computed<PodV1_Spec_Volume_ConfigMap[]>;
+  csi?: PodV1_Spec_Volume_Csi[] | Computed<PodV1_Spec_Volume_Csi[]>;
+  downwardApi?: PodV1_Spec_Volume_DownwardApi[] | Computed<PodV1_Spec_Volume_DownwardApi[]>;
+  emptyDir?: PodV1_Spec_Volume_EmptyDir[] | Computed<PodV1_Spec_Volume_EmptyDir[]>;
+  ephemeral?: PodV1_Spec_Volume_Ephemeral[] | Computed<PodV1_Spec_Volume_Ephemeral[]>;
+  fc?: PodV1_Spec_Volume_Fc[] | Computed<PodV1_Spec_Volume_Fc[]>;
+  flexVolume?: PodV1_Spec_Volume_FlexVolume[] | Computed<PodV1_Spec_Volume_FlexVolume[]>;
+  flocker?: PodV1_Spec_Volume_Flocker[] | Computed<PodV1_Spec_Volume_Flocker[]>;
+  gcePersistentDisk?: PodV1_Spec_Volume_GcePersistentDisk[] | Computed<PodV1_Spec_Volume_GcePersistentDisk[]>;
+  gitRepo?: PodV1_Spec_Volume_GitRepo[] | Computed<PodV1_Spec_Volume_GitRepo[]>;
+  glusterfs?: PodV1_Spec_Volume_Glusterfs[] | Computed<PodV1_Spec_Volume_Glusterfs[]>;
+  hostPath?: PodV1_Spec_Volume_HostPath[] | Computed<PodV1_Spec_Volume_HostPath[]>;
+  iscsi?: PodV1_Spec_Volume_Iscsi[] | Computed<PodV1_Spec_Volume_Iscsi[]>;
+  local?: PodV1_Spec_Volume_Local[] | Computed<PodV1_Spec_Volume_Local[]>;
+  nfs?: PodV1_Spec_Volume_Nfs[] | Computed<PodV1_Spec_Volume_Nfs[]>;
+  persistentVolumeClaim?: PodV1_Spec_Volume_PersistentVolumeClaim[] | Computed<PodV1_Spec_Volume_PersistentVolumeClaim[]>;
+  photonPersistentDisk?: PodV1_Spec_Volume_PhotonPersistentDisk[] | Computed<PodV1_Spec_Volume_PhotonPersistentDisk[]>;
+  projected?: PodV1_Spec_Volume_Projected[] | Computed<PodV1_Spec_Volume_Projected[]>;
+  quobyte?: PodV1_Spec_Volume_Quobyte[] | Computed<PodV1_Spec_Volume_Quobyte[]>;
+  rbd?: PodV1_Spec_Volume_Rbd[] | Computed<PodV1_Spec_Volume_Rbd[]>;
+  secret?: PodV1_Spec_Volume_Secret[] | Computed<PodV1_Spec_Volume_Secret[]>;
+  vsphereVolume?: PodV1_Spec_Volume_VsphereVolume[] | Computed<PodV1_Spec_Volume_VsphereVolume[]>;
 }
 
 export interface PodV1_Spec {
-  activeDeadlineSeconds: number;
-  automountServiceAccountToken: boolean;
-  dnsPolicy: string;
-  enableServiceLinks: boolean;
-  hostIpc: boolean;
-  hostNetwork: boolean;
-  hostPid: boolean;
-  hostname: string;
-  nodeName: string;
-  nodeSelector: Record<string, string>;
-  priorityClassName: string;
-  restartPolicy: string;
-  runtimeClassName: string;
-  schedulerName: string;
-  serviceAccountName: string;
-  shareProcessNamespace: boolean;
-  subdomain: string;
-  terminationGracePeriodSeconds: number;
-  affinity: PodV1_Spec_Affinity[];
-  container: PodV1_Spec_Container[];
-  dnsConfig: PodV1_Spec_DnsConfig[];
-  hostAliases: PodV1_Spec_HostAliases[];
-  imagePullSecrets: PodV1_Spec_ImagePullSecrets[];
-  initContainer: PodV1_Spec_Container[];
-  os: PodV1_Spec_ImagePullSecrets[];
-  readinessGate: PodV1_Spec_ReadinessGate[];
-  securityContext: PodV1_Spec_SecurityContext[];
-  toleration: PodV1_Spec_Toleration[];
-  topologySpreadConstraint: PodV1_Spec_TopologySpreadConstraint[];
-  volume: PodV1_Spec_Volume[];
+  activeDeadlineSeconds?: number | Computed<number>;
+  automountServiceAccountToken?: boolean | Computed<boolean>;
+  dnsPolicy?: string | Computed<string>;
+  enableServiceLinks?: boolean | Computed<boolean>;
+  hostIpc?: boolean | Computed<boolean>;
+  hostNetwork?: boolean | Computed<boolean>;
+  hostPid?: boolean | Computed<boolean>;
+  hostname?: string | Computed<string>;
+  nodeName?: string | Computed<string>;
+  nodeSelector?: Record<string, string> | Computed<Record<string, string>>;
+  priorityClassName?: string | Computed<string>;
+  restartPolicy?: string | Computed<string>;
+  runtimeClassName?: string | Computed<string>;
+  schedulerName?: string | Computed<string>;
+  serviceAccountName?: string | Computed<string>;
+  shareProcessNamespace?: boolean | Computed<boolean>;
+  subdomain?: string | Computed<string>;
+  terminationGracePeriodSeconds?: number | Computed<number>;
+  affinity?: PodV1_Spec_Affinity[] | Computed<PodV1_Spec_Affinity[]>;
+  container?: PodV1_Spec_Container[] | Computed<PodV1_Spec_Container[]>;
+  dnsConfig?: PodV1_Spec_DnsConfig[] | Computed<PodV1_Spec_DnsConfig[]>;
+  hostAliases?: PodV1_Spec_HostAliases[] | Computed<PodV1_Spec_HostAliases[]>;
+  imagePullSecrets?: PodV1_Spec_ImagePullSecrets[] | Computed<PodV1_Spec_ImagePullSecrets[]>;
+  initContainer?: PodV1_Spec_Container[] | Computed<PodV1_Spec_Container[]>;
+  os?: PodV1_Spec_ImagePullSecrets[] | Computed<PodV1_Spec_ImagePullSecrets[]>;
+  readinessGate?: PodV1_Spec_ReadinessGate[] | Computed<PodV1_Spec_ReadinessGate[]>;
+  securityContext?: PodV1_Spec_SecurityContext[] | Computed<PodV1_Spec_SecurityContext[]>;
+  toleration?: PodV1_Spec_Toleration[] | Computed<PodV1_Spec_Toleration[]>;
+  topologySpreadConstraint?: PodV1_Spec_TopologySpreadConstraint[] | Computed<PodV1_Spec_TopologySpreadConstraint[]>;
+  volume?: PodV1_Spec_Volume[] | Computed<PodV1_Spec_Volume[]>;
 }
 
 export interface PodV1_Timeouts {
-  create: string;
-  delete: string;
+  create?: string | Computed<string>;
+  delete?: string | Computed<string>;
 }
 
 const PodV1_MetadataFields: FieldMap = {

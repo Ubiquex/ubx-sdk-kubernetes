@@ -2,58 +2,58 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Ingress_Status_LoadBalancer_Ingress {
-  hostname: string;
-  ip: string;
+  hostname?: string | Computed<string>;
+  ip?: string | Computed<string>;
 }
 
 export interface Ingress_Status_LoadBalancer {
-  ingress: Ingress_Status_LoadBalancer_Ingress[];
+  ingress?: Ingress_Status_LoadBalancer_Ingress[] | Computed<Ingress_Status_LoadBalancer_Ingress[]>;
 }
 
 export interface Ingress_Status {
-  loadBalancer: Ingress_Status_LoadBalancer[];
+  loadBalancer?: Ingress_Status_LoadBalancer[] | Computed<Ingress_Status_LoadBalancer[]>;
 }
 
 export interface Ingress_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface Ingress_Spec_Backend {
-  serviceName: string;
-  servicePort: string;
+  serviceName?: string | Computed<string>;
+  servicePort?: string | Computed<string>;
 }
 
 export interface Ingress_Spec_Rule_Http_Path {
-  path: string;
-  backend: Ingress_Spec_Backend[];
+  path?: string | Computed<string>;
+  backend?: Ingress_Spec_Backend[] | Computed<Ingress_Spec_Backend[]>;
 }
 
 export interface Ingress_Spec_Rule_Http {
-  path: Ingress_Spec_Rule_Http_Path[];
+  path?: Ingress_Spec_Rule_Http_Path[] | Computed<Ingress_Spec_Rule_Http_Path[]>;
 }
 
 export interface Ingress_Spec_Rule {
-  host: string;
-  http: Ingress_Spec_Rule_Http[];
+  host?: string | Computed<string>;
+  http?: Ingress_Spec_Rule_Http[] | Computed<Ingress_Spec_Rule_Http[]>;
 }
 
 export interface Ingress_Spec_Tls {
-  hosts: string[];
-  secretName: string;
+  hosts?: string[] | Computed<string[]>;
+  secretName?: string | Computed<string>;
 }
 
 export interface Ingress_Spec {
-  ingressClassName: string;
-  backend: Ingress_Spec_Backend[];
-  rule: Ingress_Spec_Rule[];
-  tls: Ingress_Spec_Tls[];
+  ingressClassName?: string | Computed<string>;
+  backend?: Ingress_Spec_Backend[] | Computed<Ingress_Spec_Backend[]>;
+  rule?: Ingress_Spec_Rule[] | Computed<Ingress_Spec_Rule[]>;
+  tls?: Ingress_Spec_Tls[] | Computed<Ingress_Spec_Tls[]>;
 }
 
 const Ingress_MetadataFields: FieldMap = {

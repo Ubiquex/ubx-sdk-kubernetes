@@ -2,8 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Labels_Metadata {
-  name: string;
-  namespace: string;
+  name: string | Computed<string>;
+  namespace?: string | Computed<string>;
 }
 
 const Labels_MetadataFields: FieldMap = {

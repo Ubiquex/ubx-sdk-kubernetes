@@ -2,27 +2,27 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PodAutoscalerV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface PodAutoscalerV1_Spec_ScaleTargetRef {
-  apiVersion: string;
-  kind: string;
-  name: string;
+  apiVersion?: string | Computed<string>;
+  kind: string | Computed<string>;
+  name: string | Computed<string>;
 }
 
 export interface PodAutoscalerV1_Spec {
-  maxReplicas: number;
-  minReplicas: number;
-  targetCpuUtilizationPercentage: number;
-  scaleTargetRef: PodAutoscalerV1_Spec_ScaleTargetRef[];
+  maxReplicas: number | Computed<number>;
+  minReplicas?: number | Computed<number>;
+  targetCpuUtilizationPercentage?: number | Computed<number>;
+  scaleTargetRef?: PodAutoscalerV1_Spec_ScaleTargetRef[] | Computed<PodAutoscalerV1_Spec_ScaleTargetRef[]>;
 }
 
 const PodAutoscalerV1_MetadataFields: FieldMap = {

@@ -2,210 +2,210 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface VolumeV1_Metadata {
-  annotations: Record<string, string>;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_ClaimRef {
-  name: string;
-  namespace: string;
+  name: string | Computed<string>;
+  namespace?: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm_MatchExpressions {
-  key: string;
-  operator: string;
-  values: string[];
+  key: string | Computed<string>;
+  operator: string | Computed<string>;
+  values?: string[] | Computed<string[]>;
 }
 
 export interface VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm {
-  matchExpressions: VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm_MatchExpressions[];
-  matchFields: VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm_MatchExpressions[];
+  matchExpressions?: VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm_MatchExpressions[] | Computed<VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm_MatchExpressions[]>;
+  matchFields?: VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm_MatchExpressions[] | Computed<VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm_MatchExpressions[]>;
 }
 
 export interface VolumeV1_Spec_NodeAffinity_Required {
-  nodeSelectorTerm: VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm[];
+  nodeSelectorTerm?: VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm[] | Computed<VolumeV1_Spec_NodeAffinity_Required_NodeSelectorTerm[]>;
 }
 
 export interface VolumeV1_Spec_NodeAffinity {
-  required: VolumeV1_Spec_NodeAffinity_Required[];
+  required?: VolumeV1_Spec_NodeAffinity_Required[] | Computed<VolumeV1_Spec_NodeAffinity_Required[]>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_AwsElasticBlockStore {
-  fsType: string;
-  partition: number;
-  readOnly: boolean;
-  volumeId: string;
+  fsType?: string | Computed<string>;
+  partition?: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeId: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_AzureDisk {
-  cachingMode: string;
-  dataDiskUri: string;
-  diskName: string;
-  fsType: string;
-  kind: string;
-  readOnly: boolean;
+  cachingMode: string | Computed<string>;
+  dataDiskUri: string | Computed<string>;
+  diskName: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  kind?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_AzureFile {
-  readOnly: boolean;
-  secretName: string;
-  secretNamespace: string;
-  shareName: string;
+  readOnly?: boolean | Computed<boolean>;
+  secretName: string | Computed<string>;
+  secretNamespace?: string | Computed<string>;
+  shareName: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_CephFs {
-  monitors: string[];
-  path: string;
-  readOnly: boolean;
-  secretFile: string;
-  user: string;
-  secretRef: VolumeV1_Spec_ClaimRef[];
+  monitors: string[] | Computed<string[]>;
+  path?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  secretFile?: string | Computed<string>;
+  user?: string | Computed<string>;
+  secretRef?: VolumeV1_Spec_ClaimRef[] | Computed<VolumeV1_Spec_ClaimRef[]>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_Cinder {
-  fsType: string;
-  readOnly: boolean;
-  volumeId: string;
+  fsType?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeId: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_Csi {
-  driver: string;
-  fsType: string;
-  readOnly: boolean;
-  volumeAttributes: Record<string, string>;
-  volumeHandle: string;
-  controllerExpandSecretRef: VolumeV1_Spec_ClaimRef[];
-  controllerPublishSecretRef: VolumeV1_Spec_ClaimRef[];
-  nodePublishSecretRef: VolumeV1_Spec_ClaimRef[];
-  nodeStageSecretRef: VolumeV1_Spec_ClaimRef[];
+  driver: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  volumeAttributes?: Record<string, string> | Computed<Record<string, string>>;
+  volumeHandle: string | Computed<string>;
+  controllerExpandSecretRef?: VolumeV1_Spec_ClaimRef[] | Computed<VolumeV1_Spec_ClaimRef[]>;
+  controllerPublishSecretRef?: VolumeV1_Spec_ClaimRef[] | Computed<VolumeV1_Spec_ClaimRef[]>;
+  nodePublishSecretRef?: VolumeV1_Spec_ClaimRef[] | Computed<VolumeV1_Spec_ClaimRef[]>;
+  nodeStageSecretRef?: VolumeV1_Spec_ClaimRef[] | Computed<VolumeV1_Spec_ClaimRef[]>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_Fc {
-  fsType: string;
-  lun: number;
-  readOnly: boolean;
-  targetWwNs: string[];
+  fsType?: string | Computed<string>;
+  lun: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  targetWwNs: string[] | Computed<string[]>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_FlexVolume {
-  driver: string;
-  fsType: string;
-  options: Record<string, string>;
-  readOnly: boolean;
-  secretRef: VolumeV1_Spec_ClaimRef[];
+  driver: string | Computed<string>;
+  fsType?: string | Computed<string>;
+  options?: Record<string, string> | Computed<Record<string, string>>;
+  readOnly?: boolean | Computed<boolean>;
+  secretRef?: VolumeV1_Spec_ClaimRef[] | Computed<VolumeV1_Spec_ClaimRef[]>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_Flocker {
-  datasetName: string;
-  datasetUuid: string;
+  datasetName?: string | Computed<string>;
+  datasetUuid?: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_GcePersistentDisk {
-  fsType: string;
-  partition: number;
-  pdName: string;
-  readOnly: boolean;
+  fsType?: string | Computed<string>;
+  partition?: number | Computed<number>;
+  pdName: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_Glusterfs {
-  endpointsName: string;
-  path: string;
-  readOnly: boolean;
+  endpointsName: string | Computed<string>;
+  path: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_HostPath {
-  path: string;
-  type: string;
+  path?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_Iscsi {
-  fsType: string;
-  iqn: string;
-  iscsiInterface: string;
-  lun: number;
-  readOnly: boolean;
-  targetPortal: string;
+  fsType?: string | Computed<string>;
+  iqn: string | Computed<string>;
+  iscsiInterface?: string | Computed<string>;
+  lun?: number | Computed<number>;
+  readOnly?: boolean | Computed<boolean>;
+  targetPortal: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_Local {
-  path: string;
+  path?: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_Nfs {
-  path: string;
-  readOnly: boolean;
-  server: string;
+  path: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  server: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_PhotonPersistentDisk {
-  fsType: string;
-  pdId: string;
+  fsType?: string | Computed<string>;
+  pdId: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_Quobyte {
-  group: string;
-  readOnly: boolean;
-  registry: string;
-  user: string;
-  volume: string;
+  group?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  registry: string | Computed<string>;
+  user?: string | Computed<string>;
+  volume: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_Rbd {
-  cephMonitors: string[];
-  fsType: string;
-  keyring: string;
-  radosUser: string;
-  rbdImage: string;
-  rbdPool: string;
-  readOnly: boolean;
-  secretRef: VolumeV1_Spec_ClaimRef[];
+  cephMonitors: string[] | Computed<string[]>;
+  fsType?: string | Computed<string>;
+  keyring?: string | Computed<string>;
+  radosUser?: string | Computed<string>;
+  rbdImage: string | Computed<string>;
+  rbdPool?: string | Computed<string>;
+  readOnly?: boolean | Computed<boolean>;
+  secretRef?: VolumeV1_Spec_ClaimRef[] | Computed<VolumeV1_Spec_ClaimRef[]>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource_VsphereVolume {
-  fsType: string;
-  volumePath: string;
+  fsType?: string | Computed<string>;
+  volumePath: string | Computed<string>;
 }
 
 export interface VolumeV1_Spec_PersistentVolumeSource {
-  awsElasticBlockStore: VolumeV1_Spec_PersistentVolumeSource_AwsElasticBlockStore[];
-  azureDisk: VolumeV1_Spec_PersistentVolumeSource_AzureDisk[];
-  azureFile: VolumeV1_Spec_PersistentVolumeSource_AzureFile[];
-  cephFs: VolumeV1_Spec_PersistentVolumeSource_CephFs[];
-  cinder: VolumeV1_Spec_PersistentVolumeSource_Cinder[];
-  csi: VolumeV1_Spec_PersistentVolumeSource_Csi[];
-  fc: VolumeV1_Spec_PersistentVolumeSource_Fc[];
-  flexVolume: VolumeV1_Spec_PersistentVolumeSource_FlexVolume[];
-  flocker: VolumeV1_Spec_PersistentVolumeSource_Flocker[];
-  gcePersistentDisk: VolumeV1_Spec_PersistentVolumeSource_GcePersistentDisk[];
-  glusterfs: VolumeV1_Spec_PersistentVolumeSource_Glusterfs[];
-  hostPath: VolumeV1_Spec_PersistentVolumeSource_HostPath[];
-  iscsi: VolumeV1_Spec_PersistentVolumeSource_Iscsi[];
-  local: VolumeV1_Spec_PersistentVolumeSource_Local[];
-  nfs: VolumeV1_Spec_PersistentVolumeSource_Nfs[];
-  photonPersistentDisk: VolumeV1_Spec_PersistentVolumeSource_PhotonPersistentDisk[];
-  quobyte: VolumeV1_Spec_PersistentVolumeSource_Quobyte[];
-  rbd: VolumeV1_Spec_PersistentVolumeSource_Rbd[];
-  vsphereVolume: VolumeV1_Spec_PersistentVolumeSource_VsphereVolume[];
+  awsElasticBlockStore?: VolumeV1_Spec_PersistentVolumeSource_AwsElasticBlockStore[] | Computed<VolumeV1_Spec_PersistentVolumeSource_AwsElasticBlockStore[]>;
+  azureDisk?: VolumeV1_Spec_PersistentVolumeSource_AzureDisk[] | Computed<VolumeV1_Spec_PersistentVolumeSource_AzureDisk[]>;
+  azureFile?: VolumeV1_Spec_PersistentVolumeSource_AzureFile[] | Computed<VolumeV1_Spec_PersistentVolumeSource_AzureFile[]>;
+  cephFs?: VolumeV1_Spec_PersistentVolumeSource_CephFs[] | Computed<VolumeV1_Spec_PersistentVolumeSource_CephFs[]>;
+  cinder?: VolumeV1_Spec_PersistentVolumeSource_Cinder[] | Computed<VolumeV1_Spec_PersistentVolumeSource_Cinder[]>;
+  csi?: VolumeV1_Spec_PersistentVolumeSource_Csi[] | Computed<VolumeV1_Spec_PersistentVolumeSource_Csi[]>;
+  fc?: VolumeV1_Spec_PersistentVolumeSource_Fc[] | Computed<VolumeV1_Spec_PersistentVolumeSource_Fc[]>;
+  flexVolume?: VolumeV1_Spec_PersistentVolumeSource_FlexVolume[] | Computed<VolumeV1_Spec_PersistentVolumeSource_FlexVolume[]>;
+  flocker?: VolumeV1_Spec_PersistentVolumeSource_Flocker[] | Computed<VolumeV1_Spec_PersistentVolumeSource_Flocker[]>;
+  gcePersistentDisk?: VolumeV1_Spec_PersistentVolumeSource_GcePersistentDisk[] | Computed<VolumeV1_Spec_PersistentVolumeSource_GcePersistentDisk[]>;
+  glusterfs?: VolumeV1_Spec_PersistentVolumeSource_Glusterfs[] | Computed<VolumeV1_Spec_PersistentVolumeSource_Glusterfs[]>;
+  hostPath?: VolumeV1_Spec_PersistentVolumeSource_HostPath[] | Computed<VolumeV1_Spec_PersistentVolumeSource_HostPath[]>;
+  iscsi?: VolumeV1_Spec_PersistentVolumeSource_Iscsi[] | Computed<VolumeV1_Spec_PersistentVolumeSource_Iscsi[]>;
+  local?: VolumeV1_Spec_PersistentVolumeSource_Local[] | Computed<VolumeV1_Spec_PersistentVolumeSource_Local[]>;
+  nfs?: VolumeV1_Spec_PersistentVolumeSource_Nfs[] | Computed<VolumeV1_Spec_PersistentVolumeSource_Nfs[]>;
+  photonPersistentDisk?: VolumeV1_Spec_PersistentVolumeSource_PhotonPersistentDisk[] | Computed<VolumeV1_Spec_PersistentVolumeSource_PhotonPersistentDisk[]>;
+  quobyte?: VolumeV1_Spec_PersistentVolumeSource_Quobyte[] | Computed<VolumeV1_Spec_PersistentVolumeSource_Quobyte[]>;
+  rbd?: VolumeV1_Spec_PersistentVolumeSource_Rbd[] | Computed<VolumeV1_Spec_PersistentVolumeSource_Rbd[]>;
+  vsphereVolume?: VolumeV1_Spec_PersistentVolumeSource_VsphereVolume[] | Computed<VolumeV1_Spec_PersistentVolumeSource_VsphereVolume[]>;
 }
 
 export interface VolumeV1_Spec {
-  accessModes: string[];
-  capacity: Record<string, string>;
-  mountOptions: string[];
-  persistentVolumeReclaimPolicy: string;
-  storageClassName: string;
-  volumeMode: string;
-  claimRef: VolumeV1_Spec_ClaimRef[];
-  nodeAffinity: VolumeV1_Spec_NodeAffinity[];
-  persistentVolumeSource: VolumeV1_Spec_PersistentVolumeSource[];
+  accessModes: string[] | Computed<string[]>;
+  capacity: Record<string, string> | Computed<Record<string, string>>;
+  mountOptions?: string[] | Computed<string[]>;
+  persistentVolumeReclaimPolicy?: string | Computed<string>;
+  storageClassName?: string | Computed<string>;
+  volumeMode?: string | Computed<string>;
+  claimRef?: VolumeV1_Spec_ClaimRef[] | Computed<VolumeV1_Spec_ClaimRef[]>;
+  nodeAffinity?: VolumeV1_Spec_NodeAffinity[] | Computed<VolumeV1_Spec_NodeAffinity[]>;
+  persistentVolumeSource?: VolumeV1_Spec_PersistentVolumeSource[] | Computed<VolumeV1_Spec_PersistentVolumeSource[]>;
 }
 
 export interface VolumeV1_Timeouts {
-  create: string;
+  create?: string | Computed<string>;
 }
 
 const VolumeV1_MetadataFields: FieldMap = {

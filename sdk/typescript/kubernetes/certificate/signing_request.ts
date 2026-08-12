@@ -2,23 +2,23 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SigningRequest_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface SigningRequest_Spec {
-  request: string;
-  signerName: string;
-  usages: string[];
+  request: string | Computed<string>;
+  signerName?: string | Computed<string>;
+  usages?: string[] | Computed<string[]>;
 }
 
 export interface SigningRequest_Timeouts {
-  create: string;
+  create?: string | Computed<string>;
 }
 
 const SigningRequest_MetadataFields: FieldMap = {

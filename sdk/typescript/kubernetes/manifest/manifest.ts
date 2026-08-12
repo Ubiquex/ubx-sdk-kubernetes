@@ -2,29 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Manifest_WaitFor {
-  fields: Record<string, string>;
+  fields?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface Manifest_Timeouts {
-  create: string;
-  update: string;
-  delete: string;
+  create?: string | Computed<string>;
+  update?: string | Computed<string>;
+  delete?: string | Computed<string>;
 }
 
 export interface Manifest_FieldManager {
-  name: string;
-  forceConflicts: boolean;
+  name?: string | Computed<string>;
+  forceConflicts?: boolean | Computed<boolean>;
 }
 
 export interface Manifest_Wait_Condition {
-  status: string;
-  type: string;
+  status?: string | Computed<string>;
+  type?: string | Computed<string>;
 }
 
 export interface Manifest_Wait {
-  rollout: boolean;
-  fields: Record<string, string>;
-  condition: Manifest_Wait_Condition[];
+  rollout?: boolean | Computed<boolean>;
+  fields?: Record<string, string> | Computed<Record<string, string>>;
+  condition?: Manifest_Wait_Condition[] | Computed<Manifest_Wait_Condition[]>;
 }
 
 const Manifest_WaitForFields: FieldMap = {

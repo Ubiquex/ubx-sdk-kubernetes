@@ -2,27 +2,27 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Range_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface Range_Spec_Limit {
-  default: Record<string, string>;
-  defaultRequest: Record<string, string>;
-  max: Record<string, string>;
-  maxLimitRequestRatio: Record<string, string>;
-  min: Record<string, string>;
-  type: string;
+  default?: Record<string, string> | Computed<Record<string, string>>;
+  defaultRequest?: Record<string, string> | Computed<Record<string, string>>;
+  max?: Record<string, string> | Computed<Record<string, string>>;
+  maxLimitRequestRatio?: Record<string, string> | Computed<Record<string, string>>;
+  min?: Record<string, string> | Computed<Record<string, string>>;
+  type?: string | Computed<string>;
 }
 
 export interface Range_Spec {
-  limit: Range_Spec_Limit[];
+  limit?: Range_Spec_Limit[] | Computed<Range_Spec_Limit[]>;
 }
 
 const Range_MetadataFields: FieldMap = {

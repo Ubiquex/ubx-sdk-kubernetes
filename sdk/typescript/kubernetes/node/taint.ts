@@ -2,13 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Taint_Metadata {
-  name: string;
+  name: string | Computed<string>;
 }
 
 export interface Taint_Taint {
-  effect: string;
-  key: string;
-  value: string;
+  effect: string | Computed<string>;
+  key: string | Computed<string>;
+  value: string | Computed<string>;
 }
 
 const Taint_MetadataFields: FieldMap = {

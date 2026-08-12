@@ -2,26 +2,26 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RoleBindingV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface RoleBindingV1_RoleRef {
-  apiGroup: string;
-  kind: string;
-  name: string;
+  apiGroup: string | Computed<string>;
+  kind: string | Computed<string>;
+  name: string | Computed<string>;
 }
 
 export interface RoleBindingV1_Subject {
-  apiGroup: string;
-  kind: string;
-  name: string;
-  namespace: string;
+  apiGroup?: string | Computed<string>;
+  kind: string | Computed<string>;
+  name: string | Computed<string>;
+  namespace?: string | Computed<string>;
 }
 
 const RoleBindingV1_MetadataFields: FieldMap = {

@@ -2,29 +2,29 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface ServiceV1_Spec_Service {
-  name: string;
-  namespace: string;
-  port: number;
+  name: string | Computed<string>;
+  namespace: string | Computed<string>;
+  port?: number | Computed<number>;
 }
 
 export interface ServiceV1_Spec {
-  caBundle: string;
-  group: string;
-  groupPriorityMinimum: number;
-  insecureSkipTlsVerify: boolean;
-  version: string;
-  versionPriority: number;
-  service: ServiceV1_Spec_Service[];
+  caBundle?: string | Computed<string>;
+  group: string | Computed<string>;
+  groupPriorityMinimum: number | Computed<number>;
+  insecureSkipTlsVerify?: boolean | Computed<boolean>;
+  version: string | Computed<string>;
+  versionPriority: number | Computed<number>;
+  service?: ServiceV1_Spec_Service[] | Computed<ServiceV1_Spec_Service[]>;
 }
 
 const ServiceV1_MetadataFields: FieldMap = {

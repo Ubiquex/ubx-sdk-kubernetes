@@ -2,80 +2,80 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IngressV1_Status_LoadBalancer_Ingress {
-  hostname: string;
-  ip: string;
+  hostname?: string | Computed<string>;
+  ip?: string | Computed<string>;
 }
 
 export interface IngressV1_Status_LoadBalancer {
-  ingress: IngressV1_Status_LoadBalancer_Ingress[];
+  ingress?: IngressV1_Status_LoadBalancer_Ingress[] | Computed<IngressV1_Status_LoadBalancer_Ingress[]>;
 }
 
 export interface IngressV1_Status {
-  loadBalancer: IngressV1_Status_LoadBalancer[];
+  loadBalancer?: IngressV1_Status_LoadBalancer[] | Computed<IngressV1_Status_LoadBalancer[]>;
 }
 
 export interface IngressV1_Metadata {
-  annotations: Record<string, string>;
-  generateName: string;
-  generation: number;
-  labels: Record<string, string>;
-  name: string;
-  namespace: string;
-  resourceVersion: string;
-  uid: string;
+  annotations?: Record<string, string> | Computed<Record<string, string>>;
+  generateName?: string | Computed<string>;
+  generation?: number | Computed<number>;
+  labels?: Record<string, string> | Computed<Record<string, string>>;
+  name?: string | Computed<string>;
+  namespace?: string | Computed<string>;
+  resourceVersion?: string | Computed<string>;
+  uid?: string | Computed<string>;
 }
 
 export interface IngressV1_Spec_DefaultBackend_Resource {
-  apiGroup: string;
-  kind: string;
-  name: string;
+  apiGroup: string | Computed<string>;
+  kind: string | Computed<string>;
+  name: string | Computed<string>;
 }
 
 export interface IngressV1_Spec_DefaultBackend_Service_Port {
-  name: string;
-  number: number;
+  name?: string | Computed<string>;
+  number?: number | Computed<number>;
 }
 
 export interface IngressV1_Spec_DefaultBackend_Service {
-  name: string;
-  port: IngressV1_Spec_DefaultBackend_Service_Port[];
+  name: string | Computed<string>;
+  port?: IngressV1_Spec_DefaultBackend_Service_Port[] | Computed<IngressV1_Spec_DefaultBackend_Service_Port[]>;
 }
 
 export interface IngressV1_Spec_DefaultBackend {
-  resource: IngressV1_Spec_DefaultBackend_Resource[];
-  service: IngressV1_Spec_DefaultBackend_Service[];
+  resource?: IngressV1_Spec_DefaultBackend_Resource[] | Computed<IngressV1_Spec_DefaultBackend_Resource[]>;
+  service?: IngressV1_Spec_DefaultBackend_Service[] | Computed<IngressV1_Spec_DefaultBackend_Service[]>;
 }
 
 export interface IngressV1_Spec_Rule_Http_Path {
-  path: string;
-  pathType: string;
-  backend: IngressV1_Spec_DefaultBackend[];
+  path?: string | Computed<string>;
+  pathType?: string | Computed<string>;
+  backend?: IngressV1_Spec_DefaultBackend[] | Computed<IngressV1_Spec_DefaultBackend[]>;
 }
 
 export interface IngressV1_Spec_Rule_Http {
-  path: IngressV1_Spec_Rule_Http_Path[];
+  path?: IngressV1_Spec_Rule_Http_Path[] | Computed<IngressV1_Spec_Rule_Http_Path[]>;
 }
 
 export interface IngressV1_Spec_Rule {
-  host: string;
-  http: IngressV1_Spec_Rule_Http[];
+  host?: string | Computed<string>;
+  http?: IngressV1_Spec_Rule_Http[] | Computed<IngressV1_Spec_Rule_Http[]>;
 }
 
 export interface IngressV1_Spec_Tls {
-  hosts: string[];
-  secretName: string;
+  hosts?: string[] | Computed<string[]>;
+  secretName?: string | Computed<string>;
 }
 
 export interface IngressV1_Spec {
-  ingressClassName: string;
-  defaultBackend: IngressV1_Spec_DefaultBackend[];
-  rule: IngressV1_Spec_Rule[];
-  tls: IngressV1_Spec_Tls[];
+  ingressClassName?: string | Computed<string>;
+  defaultBackend?: IngressV1_Spec_DefaultBackend[] | Computed<IngressV1_Spec_DefaultBackend[]>;
+  rule?: IngressV1_Spec_Rule[] | Computed<IngressV1_Spec_Rule[]>;
+  tls?: IngressV1_Spec_Tls[] | Computed<IngressV1_Spec_Tls[]>;
 }
 
 export interface IngressV1_Timeouts {
-  create: string;
-  delete: string;
+  create?: string | Computed<string>;
+  delete?: string | Computed<string>;
 }
 
 const IngressV1_MetadataFields: FieldMap = {
