@@ -155,6 +155,23 @@ jobs:
           own_ts_version="$(python3 -c "import json; print(json.load(open('sdk/typescript/package.json'))['version'])")"
           own_py_version="$(python3 -c "import tomllib; print(tomllib.load(open('sdk/python/pyproject.toml','rb'))['project']['version'])")"
 
+          # UBI-153: seed the scratch output's own go.mod with this
+          # repo's real, already-checked-out go.mod BEFORE generation
+          # runs, so `ubx sdk gen`'s own real-value-preservation fix
+          # (cli/sdk.go's resolveGoDirective) has something real to read
+          # at its own real target path -- without this, `--out out`
+          # always starts from a genuinely empty scratch dir every run,
+          # and the fix's own fallback (the real go toolchain that built
+          # that run's own ubx binary) silently wins instead, recreating
+          # UBI-151's exact bug the moment this repo's own go.mod is
+          # ever legitimately bumped ahead of it. Seeding happens
+          # entirely within the scratch dir ($RUNNER_TEMP/ubxgen,
+          # already outside this repo's own checkout, per this file's
+          # own real rsync self-overlap precedent above) -- does not
+          # touch that boundary at all.
+          mkdir -p "$gendir/out/hashicorp-kubernetes/sdk/go"
+          cp sdk/go/go.mod "$gendir/out/hashicorp-kubernetes/sdk/go/go.mod"
+
           ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --lang go --out out )
           ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --lang ts --out out )
           ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --lang py --out out )
