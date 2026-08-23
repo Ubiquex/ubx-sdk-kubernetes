@@ -75,7 +75,19 @@ jobs:
             live="$live_jsr"
           fi
 
-          if [ -n "$live" ] && [ "$committed" != "$live" ] && [ "$(printf '%s\n%s\n' "$committed" "$live" | sort -V | tail -1)" = "$committed" ]; then
+          if [ -z "$live" ]; then
+            # No live registry entry at all -- a real first publish, not
+            # a bump off some prior version. Publish the committed
+            # version as-is; the routine MINOR/PATCH bump logic below is
+            # for bumping off an EXISTING live version, and would
+            # otherwise silently turn a fresh first release into an
+            # off-by-one PATCH bump with nothing real to bump from
+            # (caught before ubx-sdk-datadog/ubx-sdk-github's own first
+            # publish: 1.0.0 would have become 1.0.1, disagreeing with
+            # what the repo itself says its version is).
+            new_version="$committed"
+            echo "no live registry entry yet -- publishing committed version ($committed) as-is"
+          elif [ "$committed" != "$live" ] && [ "$(printf '%s\n%s\n' "$committed" "$live" | sort -V | tail -1)" = "$committed" ]; then
             # Committed version is already ahead of both live registries
             # -- a real, deliberate in-repo decision -- publish it AS-IS,
             # no further auto-bump on top.
