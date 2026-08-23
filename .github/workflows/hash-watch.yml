@@ -1,0 +1,278 @@
+name: hash-watch
+
+# Replaces version-watch.yml as of v1.0.0's source change: this repo no
+# longer generates from the hashicorp/kubernetes Terraform provider, so
+# polling the Terraform Registry for a hashicorp/kubernetes version bump
+# would watch the wrong thing entirely. The real source since 1.0.0 is
+# Kubernetes' own OpenAPI/Swagger API description, pinned to the
+# release-1.37 branch -- a real, live branch, not a tag, with no
+# discrete pinnable release the way a tag would give. Instead: re-fetch
+# the same URL, hash it, and compare against VERSION's committed
+# spec-sha256. On a hash change: bumps VERSION, re-runs
+# `ubx sdk gen --lang go|ts|py --out .` against it (all three languages,
+# one PR), and opens a PR with the combined diff for review. Never
+# auto-merges, same as every other repo in this org.
+#
+# Ported from ubx-sdk-aws's own hash-watch.yml (the real, working
+# reference for this content-hash-based pattern on a dynamic provider
+# with no discrete pinnable release). release-1.37 is a real, live
+# Kubernetes branch, not a tag, so its content can still drift between
+# now and Kubernetes' next minor release -- this workflow only detects
+# that drift; moving to a newer release-1.NN branch is a separate,
+# manual edit to [dynamic_providers.kubernetes]'s own schema_url in
+# ubiquex. Same ubx-provider-dynamic checkout requirement as every
+# dynamic-provider entry (cli/dynamicprovider.go's
+# UBX_PROVIDER_DYNAMIC_REPO convention).
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # every Monday, 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-and-regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out ubx-sdk-kubernetes
+        uses: actions/checkout@v4
+
+      - name: Fetch the real Kubernetes OpenAPI/Swagger spec and hash it
+        id: spec
+        run: |
+          set -euo pipefail
+          url="https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.37/api/openapi-spec/swagger.json"
+          curl -sf "$url" -o /tmp/spec.bin
+          hash="$(sha256sum /tmp/spec.bin | awk '{print $1}')"
+          echo "hash=$hash" >> "$GITHUB_OUTPUT"
+          echo "Live schema zip sha256: $hash"
+
+      - name: Compare against this repo's committed hash
+        id: compare
+        run: |
+          set -euo pipefail
+          current="$(grep '^spec-sha256:' VERSION | awk '{print $2}')"
+          echo "current=$current" >> "$GITHUB_OUTPUT"
+          echo "This repo was last generated from spec-sha256: $current"
+          if [ "$current" = "${{ steps.spec.outputs.hash }}" ]; then
+            echo "newer=false" >> "$GITHUB_OUTPUT"
+            echo "Already current -- nothing to do."
+          else
+            echo "newer=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # --- everything below only runs when the schema content changed ---
+
+      - name: Check out ubiquex (to build ubx from source)
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          # Fine-grained PAT, contents:read on BOTH Ubiquex/ubiquex and
+          # Ubiquex/ubx-provider-dynamic.
+          git clone --depth=1 \
+            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubiquex.git" \
+            "${{ runner.temp }}/ubiquex-src"
+          git clone --depth=1 \
+            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubx-provider-dynamic.git" \
+            "${{ runner.temp }}/ubx-provider-dynamic-src"
+
+      - name: Set up Go
+        if: steps.compare.outputs.newer == 'true'
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: ${{ runner.temp }}/ubiquex-src/go.mod
+
+      - name: Set up Deno
+        if: steps.compare.outputs.newer == 'true'
+        uses: denoland/setup-deno@v2.0.5
+        with:
+          deno-version: "2.x"
+
+      - name: Set up Python
+        if: steps.compare.outputs.newer == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Build ubx
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
+          "${{ runner.temp }}/ubx" version
+
+      - name: Regenerate bindings (all three languages)
+        if: steps.compare.outputs.newer == 'true'
+        env:
+          UBX_PROVIDER_DYNAMIC_REPO: ${{ runner.temp }}/ubx-provider-dynamic-src
+        run: |
+          set -euo pipefail
+          gendir="${{ runner.temp }}/ubxgen"
+          mkdir -p "$gendir/.ubx"
+          cat > "$gendir/.ubx/config" <<EOF
+          [dynamic_providers.kubernetes]
+          schema_source = "openapi"
+          schema_url = "https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.37/api/openapi-spec/swagger.json"
+          base_url = "https://kubernetes.example.invalid"
+          EOF
+
+          # Each language's own semver `version` field is owned by
+          # publish.yml, not by codegen -- codegen always writes "0.0.0".
+          # Capture the real, currently-committed values before regen
+          # overwrites them, restore after.
+          own_ts_version="$(python3 -c "import json; print(json.load(open('sdk/typescript/package.json'))['version'])")"
+          own_py_version="$(python3 -c "import tomllib; print(tomllib.load(open('sdk/python/pyproject.toml','rb'))['project']['version'])")"
+
+          mkdir -p "$gendir/out/kubernetes/sdk/go"
+          cp sdk/go/go.mod "$gendir/out/kubernetes/sdk/go/go.mod"
+
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang go --out out )
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang ts --out out )
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang py --out out )
+
+          rsync -a --delete \
+            --exclude='go.sum' \
+            "$gendir/out/kubernetes/sdk/go/" sdk/go/
+          rsync -a --delete \
+            --exclude='deno.json' --exclude='deno.lock' \
+            "$gendir/out/kubernetes/sdk/typescript/" sdk/typescript/
+          rsync -a --delete \
+            "$gendir/out/kubernetes/sdk/python/" sdk/python/
+
+          python3 -c "
+          import json
+          p = 'sdk/typescript/package.json'
+          d = json.load(open(p))
+          d['version'] = '$own_ts_version'
+          json.dump(d, open(p, 'w'), indent=2)
+          open(p, 'a').write('\n')
+          "
+          python3 -c "
+          import re
+          p = 'sdk/python/pyproject.toml'
+          content = open(p).read()
+          content = re.sub(r'version = \"[^\"]+\"', 'version = \"$own_py_version\"', content, count=1)
+          open(p, 'w').write(content)
+          "
+
+          cat > VERSION <<EOF
+          spec-sha256: ${{ steps.spec.outputs.hash }}
+          fetched: $(date -u +%Y-%m-%d)
+          source: https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.37/api/openapi-spec/swagger.json
+          EOF
+
+      - name: Refresh sdk/typescript/deno.json's exports map for the regenerated tree
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          python3 - <<'PYEOF'
+          import json, os
+
+          with open("sdk/typescript/deno.json") as fh:
+              cfg = json.load(fh)
+
+          exports = {}
+          for dirpath, _, filenames in os.walk("sdk/typescript/kubernetes"):
+              for f in sorted(filenames):
+                  if not f.endswith(".ts"):
+                      continue
+                  rel = os.path.relpath(os.path.join(dirpath, f), "sdk/typescript")
+                  exports["./" + rel[:-3]] = "./" + rel
+
+          cfg["exports"] = exports
+
+          with open("sdk/typescript/deno.json", "w") as fh:
+              json.dump(cfg, fh, indent=2)
+              fh.write("\n")
+
+          print(f"sdk/typescript/deno.json exports: {len(exports)} entries")
+          PYEOF
+
+      - name: Regenerate sdk/go/go.sum
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          cd sdk/go
+          go mod tidy
+
+      - name: Sanity-check the regenerated Go tree still builds
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          cd sdk/go
+          go build ./...
+          go vet ./...
+
+      - name: Sanity-check the regenerated TS tree still typechecks
+        if: steps.compare.outputs.newer == 'true'
+        run: |
+          set -euo pipefail
+          cd sdk/typescript
+          find . -name "*.ts" -print0 | xargs -0 deno cache
+          find . -name "*.ts" -print0 | xargs -0 deno check --frozen
+
+      - name: Sanity-check the regenerated Python tree -- real import of every module
+        if: steps.compare.outputs.newer == 'true'
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: |
+          set -euo pipefail
+          deps="$(cd sdk/python && python3 -c "import tomllib; print(' '.join(tomllib.load(open('pyproject.toml','rb'))['project']['dependencies']))")"
+          pip install $deps
+          python3 - <<'PYEOF'
+          import os, sys, importlib
+
+          repo_root = os.path.join(os.getcwd(), "sdk", "python")
+          sys.path.insert(0, repo_root)
+
+          count = 0
+          errors = []
+          for dirpath, dirnames, filenames in os.walk(repo_root):
+              for f in filenames:
+                  if not f.endswith(".py"):
+                      continue
+                  rel = os.path.relpath(os.path.join(dirpath, f), repo_root)
+                  mod = rel[:-3].replace(os.sep, ".")
+                  if mod.endswith(".__init__"):
+                      mod = mod[: -len(".__init__")]
+                  try:
+                      importlib.import_module(mod)
+                      count += 1
+                  except Exception as e:
+                      errors.append((mod, str(e)))
+
+          print(f"imported {count} modules OK")
+          if errors:
+              print(f"{len(errors)} ERRORS:")
+              for m, e in errors:
+                  print(f"  {m}: {e}")
+              sys.exit(1)
+          print("ZERO errors")
+          PYEOF
+
+      - name: Open PR
+        if: steps.compare.outputs.newer == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "ubx-bot"
+          git config user.email "actions@users.noreply.github.com"
+          short="$(echo "${{ steps.spec.outputs.hash }}" | cut -c1-12)"
+          branch="sdk-regen/kubernetes-$short"
+          git checkout -b "$branch"
+          git add -A
+          git commit -m "sdk: regenerate from Kubernetes OpenAPI spec $short"
+          git push origin "$branch" --force
+          gh pr create \
+            --title "sdk: regenerate from Kubernetes OpenAPI spec $short" \
+            --body "Automated regeneration (\`.github/workflows/hash-watch.yml\`) triggered by a schema content change on Kubernetes' live release-1.37 branch OpenAPI/Swagger description -- all three languages (sdk/go/, sdk/typescript/, sdk/python/) regenerated together in this one PR.
+
+          Previous spec-sha256: \`${{ steps.compare.outputs.current }}\`
+          New spec-sha256: \`${{ steps.spec.outputs.hash }}\`
+
+          New files = new resource type. Modified files = an existing resource's schema changed. This never auto-merges -- review the diff before merging." \
+            --base main --head "$branch"
