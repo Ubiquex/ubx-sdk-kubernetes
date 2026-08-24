@@ -13,6 +13,39 @@ name: hash-watch
 # one PR), and opens a PR with the combined diff for review. Never
 # auto-merges, same as every other repo in this org.
 #
+# 1.1.0: switched from raw-byte hashing to the same canonicalized-content
+# hashing used by ubx-sdk-datadog/-github/-azure/-google, so all six repos
+# in this org watch drift the same way. This repo and ubx-sdk-aws were
+# built alongside the original four but never actually converted to this
+# method -- both still hashed raw fetched bytes directly, found only when
+# asked to confirm all six matched. Kubernetes' own swagger.json is a
+# single static document (closer to GitHub's own shape than a multi-member
+# group), so this reuses GitHub's single-document canonicalize() rather
+# than the multi-member merge logic Datadog/Azure/Google need. Confirmed
+# live this session that re-serializing changes the byte representation
+# even though this document's raw bytes were already stable and already
+# matched the prior committed hash -- so this VERSION's spec-sha256 value
+# moves here even though the underlying spec content has not.
+#
+# Also carries the other two real, found-live fixes already applied to
+# the other four repos this session:
+#
+# 1. UBIQUEX_SOURCE_TOKEN removed. ubiquex and ubx-provider-dynamic are
+#    now public repos -- a plain, unauthenticated clone needs no token.
+#    (Formerly a fine-grained PAT; that secret was never actually set on
+#    this repo, confirmed directly via the API, so this checkout always
+#    failed here regardless of whether a real change was ever found.)
+#
+# 2. --recurse-submodules added to the ubiquex clone. ubiquex's own
+#    sdk/go, sdk/py, sdk/ts are real git submodules (its own Makefile
+#    runs `git submodule update --init --recursive` before every build);
+#    a bare clone leaves them empty and `go build ./cmd/ubx` below fails
+#    ("no required module provides package .../sdk/py"). Applied here
+#    even though this repo's own regen path has never actually run yet
+#    (this repo's compare step has always found the corpus unchanged in
+#    every real test so far) -- the dependency is identical to the other
+#    repos where this was caught live.
+#
 # Ported from ubx-sdk-aws's own hash-watch.yml (the real, working
 # reference for this content-hash-based pattern on a dynamic provider
 # with no discrete pinnable release). release-1.37 is a real, live
@@ -40,15 +73,69 @@ jobs:
       - name: Check out ubx-sdk-kubernetes
         uses: actions/checkout@v4
 
-      - name: Fetch the real Kubernetes OpenAPI/Swagger spec and hash it
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up PyYAML
+        run: pip install --quiet pyyaml
+
+      - name: Fetch the real Kubernetes OpenAPI/Swagger spec and compute its canonicalized-content spec-sha256
         id: spec
         run: |
           set -euo pipefail
-          url="https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.37/api/openapi-spec/swagger.json"
-          curl -sf "$url" -o /tmp/spec.bin
-          hash="$(sha256sum /tmp/spec.bin | awk '{print $1}')"
-          echo "hash=$hash" >> "$GITHUB_OUTPUT"
-          echo "Live schema zip sha256: $hash"
+          python3 - <<'PYEOF'
+          import hashlib, json, os, time, urllib.error, urllib.request, yaml, datetime
+
+          URL = "https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.37/api/openapi-spec/swagger.json"
+
+          def fetch(url, retries=5):
+              # Same Retry-After-aware backoff as every other repo's own
+              # fetch() this session, kept here for consistency even
+              # though a single-document fetch is lower 429 risk than the
+              # multi-member loops that first surfaced this bug.
+              req = urllib.request.Request(url, headers={"User-Agent": "ubx-hash-watch"})
+              for i in range(retries):
+                  try:
+                      with urllib.request.urlopen(req, timeout=30) as resp:
+                          return resp.read()
+                  except urllib.error.HTTPError as e:
+                      if i == retries - 1:
+                          raise
+                      retry_after = e.headers.get("Retry-After") if e.code == 429 else None
+                      time.sleep(float(retry_after) if retry_after else 5 * (2 ** i))
+                  except Exception:
+                      if i == retries - 1:
+                          raise
+                      time.sleep(5 * (2 ** i))
+
+          def json_default(o):
+              if isinstance(o, (datetime.date, datetime.datetime)):
+                  return o.isoformat()
+              raise TypeError(f"not JSON serializable: {o!r}")
+
+          def canonicalize(raw_bytes):
+              text = raw_bytes.decode("utf-8")
+              try:
+                  doc = json.loads(text)
+              except json.JSONDecodeError:
+                  doc = yaml.safe_load(text)
+              # Same revision-key strip as every other repo's own
+              # canonicalize() this session -- a real no-op here (checked
+              # directly: this document has no top-level "revision" key),
+              # kept only so all six repos run identical logic.
+              if isinstance(doc, dict) and "revision" in doc:
+                  doc = {k: v for k, v in doc.items() if k != "revision"}
+              return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
+
+          h = hashlib.sha256()
+          h.update(canonicalize(fetch(URL)))
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+              out.write(f"hash={h.hexdigest()}\n")
+          print(f"Live canonicalized spec-sha256: {h.hexdigest()}")
+          PYEOF
 
       - name: Compare against this repo's committed hash
         id: compare
@@ -70,13 +157,11 @@ jobs:
         if: steps.compare.outputs.newer == 'true'
         run: |
           set -euo pipefail
-          # Fine-grained PAT, contents:read on BOTH Ubiquex/ubiquex and
-          # Ubiquex/ubx-provider-dynamic.
-          git clone --depth=1 \
-            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubiquex.git" \
+          git clone --depth=1 --recurse-submodules \
+            "https://github.com/Ubiquex/ubiquex.git" \
             "${{ runner.temp }}/ubiquex-src"
           git clone --depth=1 \
-            "https://x-access-token:${{ secrets.UBIQUEX_SOURCE_TOKEN }}@github.com/Ubiquex/ubx-provider-dynamic.git" \
+            "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
             "${{ runner.temp }}/ubx-provider-dynamic-src"
 
       - name: Set up Go
@@ -90,12 +175,6 @@ jobs:
         uses: denoland/setup-deno@v2.0.5
         with:
           deno-version: "2.x"
-
-      - name: Set up Python
-        if: steps.compare.outputs.newer == 'true'
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.x"
 
       - name: Build ubx
         if: steps.compare.outputs.newer == 'true'
