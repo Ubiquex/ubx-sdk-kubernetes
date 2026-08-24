@@ -136,19 +136,6 @@ jobs:
           open(f, 'w').write(content)
           "
 
-      - name: Commit version bump
-        run: |
-          set -euo pipefail
-          if git diff --quiet -- sdk/typescript/package.json sdk/typescript/deno.json sdk/python/pyproject.toml; then
-            echo "already at ${{ steps.bump.outputs.new_version }} -- nothing to commit"
-          else
-            git config user.name "ubx-bot"
-            git config user.email "actions@users.noreply.github.com"
-            git add sdk/typescript/package.json sdk/typescript/deno.json sdk/python/pyproject.toml
-            git commit -m "sdk: bump to v${{ steps.bump.outputs.new_version }}"
-            git push origin main
-          fi
-
       - name: Publish to JSR
         working-directory: sdk/typescript
         run: deno publish --token "${{ secrets.JSR_TOKEN }}"
@@ -170,7 +157,7 @@ jobs:
           pip install twine
           twine upload "dist/ubx_sdk_kubernetes-${{ steps.bump.outputs.new_version }}"*
 
-      - name: Tag the published commit (Go module, sdk/go/ subdirectory)
+      - name: Tag the source commit (Go module, sdk/go/ subdirectory)
         run: |
           set -euo pipefail
           git config user.name "ubx-bot"
@@ -182,3 +169,61 @@ jobs:
           v="sdk/go/v${{ steps.bump.outputs.new_version }}"
           git tag -a "$v" -m "$v"
           git push origin "$v"
+
+      - name: Commit version bump
+        # Deliberately runs LAST, after JSR + PyPI + the Go tag have all
+        # already succeeded -- moved here from right after the in-place
+        # file bump (UBI-143). Previously this committed and pushed the
+        # new version to main BEFORE any registry publish was attempted,
+        # so a downstream failure (JSR/PyPI/tag) left main claiming a
+        # version that existed on no registry at all -- this is exactly
+        # how all six repos drifted (AWS's main claimed 1.0.0 while every
+        # registry was still at 0.3.1; Datadog/GitHub's main claimed
+        # 1.1.0/1.0.0 having never published anywhere). Committing only
+        # after every publish step above has already succeeded means a
+        # partial failure leaves nothing committed, so main can never
+        # claim a release that does not exist.
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- sdk/typescript/package.json sdk/typescript/deno.json sdk/python/pyproject.toml; then
+            echo "already at ${{ steps.bump.outputs.new_version }} -- nothing to commit"
+          else
+            git config user.name "ubx-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add sdk/typescript/package.json sdk/typescript/deno.json sdk/python/pyproject.toml
+            git commit -m "sdk: bump to v${{ steps.bump.outputs.new_version }}"
+            git push origin main
+          fi
+
+      - name: Verify registries agree
+        # UBI-143: a partial success (e.g. JSR and the Go tag land but
+        # PyPI silently fails after retries, or vice versa) must be
+        # visible, not silent. Re-query all three registries for real,
+        # live state -- same method used to determine the version above,
+        # never trust the previous steps' own exit status -- and fail the
+        # job if any of the three disagree with the version just
+        # published, or with each other. A short retry loop tolerates
+        # normal propagation lag (the Go proxy in particular can take a
+        # few seconds to resolve a freshly pushed tag).
+        run: |
+          set -euo pipefail
+          v="${{ steps.bump.outputs.new_version }}"
+          live_pypi=""
+          live_jsr=""
+          live_go=""
+          for attempt in 1 2 3 4 5; do
+            live_pypi="$(curl -sf https://pypi.org/pypi/ubx-sdk-kubernetes/json | python3 -c "import json,sys; print(json.load(sys.stdin)['info']['version'])" || echo "")"
+            live_jsr="$(curl -sf https://jsr.io/@ubx/sdk-kubernetes/meta.json | python3 -c "import json,sys; v=json.load(sys.stdin).get('latest'); print(v or '')" || echo "")"
+            live_go="$(curl -sf https://proxy.golang.org/github.com/ubiquex/ubx-sdk-kubernetes/sdk/go/@latest | python3 -c "import json,sys; print(json.load(sys.stdin).get('Version','').lstrip('v'))" || echo "")"
+            if [ "$live_pypi" = "$v" ] && [ "$live_jsr" = "$v" ] && [ "$live_go" = "$v" ]; then
+              break
+            fi
+            echo "attempt $attempt: PyPI=${live_pypi:-<none>} JSR=${live_jsr:-<none>} Go=${live_go:-<none>}, expected $v -- retrying in 5s"
+            sleep 5
+          done
+          echo "final: PyPI=${live_pypi:-<none>} JSR=${live_jsr:-<none>} Go=${live_go:-<none>}, expected $v"
+          if [ "$live_pypi" != "$v" ] || [ "$live_jsr" != "$v" ] || [ "$live_go" != "$v" ]; then
+            echo "registries disagree after publish -- PyPI=${live_pypi:-<none>} JSR=${live_jsr:-<none>} Go=${live_go:-<none>}, expected $v -- this is a partial success, investigate directly rather than re-running blindly" >&2
+            exit 1
+          fi
+          echo "all three registries agree at $v"
