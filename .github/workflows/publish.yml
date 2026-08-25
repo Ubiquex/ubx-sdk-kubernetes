@@ -8,29 +8,46 @@ name: publish
 # manual version decision.
 #
 # UBI-138: this repo publishes ONE unified version number across all
-# three registries + the Go module tag, matching the corrected
-# ubx-sdk-aws/ubx-sdk-google's own real precedent, not three
-# independently-bumped versions. Version truth is the REAL live
-# registries (PyPI's JSON API, JSR's meta.json), not git tags alone --
-# ported directly from ubx-sdk-google's own publish.yml, which itself
-# closed a real bug the pre-consolidation ubx-sdk-kubernetes-ts repo's
-# own publish.yml would otherwise have carried forward (blind git-tag
-# diffing, never checking the real JSR state).
+# three registries + the Go module tag, not three independently-bumped
+# versions. Version truth is the REAL live registries (PyPI's JSON API,
+# npm's registry API), not git tags alone.
+#
+# UBI-143: the TypeScript leg publishes to npm, not JSR. JSR enforces a
+# real, hard 20MB package-size cap and a 95-character path-component
+# cap, both real policy limits (not something inherent to publishing
+# TypeScript) -- Google's real package is 25.3MB, Azure's is 28.9MB and
+# also hits the path cap, and AWS at 15.8MB would cross the same line as
+# coverage keeps growing the way it has all session. npm has neither
+# limit (confirmed live: this exact package publishes clean at ~3.6MB
+# packed / 26MB unpacked). npm does not accept raw TypeScript, so a real
+# build step now compiles sdk/typescript/ (isolatedDeclarations, no
+# bundling -- one .js + one .d.ts per source file, matching this
+# package's own one-export-per-file shape) via
+# .github/scripts/build-npm.mjs before publish; the checked-in
+# sdk/typescript/package.json stays exactly what `ubx sdk gen` writes
+# (a stub, "DO NOT EDIT") -- the REAL, publishable manifest is written
+# fresh into dist/ by that script, derived from deno.json's own
+# name/version/exports (already the single source of truth). This
+# package depends on the real, separately-published @ubx/sdk npm
+# package (github.com/Ubiquex/ubx-sdk-typescript) -- never vendored;
+# the generated code's only external reference is one type-only import
+# (Computed/FieldMap/ResourceBinding), and six vendored copies would
+# just drift.
 #
 # Go modules need no registry publish action beyond a pushed, correctly
 # path-prefixed semver tag (sdk/go/vX.Y.Z -- the module proxy resolves
 # it directly from GitHub); the tag itself IS the Go "publish" step.
 #
-# Requires PYPI_TOKEN and JSR_TOKEN repo secrets (Settings -> Secrets
-# and variables -> Actions). Deliberately NOT the one-off tokens used
-# for this session's own manual 0.2.0 publish -- dedicated CI tokens,
-# scoped to this repo/package.
+# Requires PYPI_TOKEN and NPM_TOKEN repo secrets (Settings -> Secrets
+# and variables -> Actions) -- dedicated CI tokens, scoped to this
+# repo/package.
 
 on:
   workflow_dispatch: {}
 
 permissions:
   contents: write
+  id-token: write
 
 jobs:
   publish:
@@ -42,9 +59,10 @@ jobs:
           fetch-depth: 0
           ref: main
 
-      - uses: denoland/setup-deno@v2.0.5
+      - uses: actions/setup-node@v4
         with:
-          deno-version: "2.x"
+          node-version: "22.x"
+          registry-url: "https://registry.npmjs.org"
 
       - uses: actions/setup-python@v5
         with:
@@ -64,15 +82,15 @@ jobs:
 
           # Real, live registry state -- never trust git tags alone.
           live_pypi="$(curl -sf https://pypi.org/pypi/ubx-sdk-kubernetes/json | python3 -c "import json,sys; print(json.load(sys.stdin)['info']['version'])" || echo "")"
-          live_jsr="$(curl -sf https://jsr.io/@ubx/sdk-kubernetes/meta.json | python3 -c "import json,sys; v=json.load(sys.stdin).get('latest'); print(v or '')" || echo "")"
-          echo "committed=$committed, live PyPI=${live_pypi:-<none>}, live JSR=${live_jsr:-<none>}"
+          live_npm="$(curl -sf https://registry.npmjs.org/@ubx%2fsdk-kubernetes | python3 -c "import json,sys; d=json.load(sys.stdin); print(d.get('dist-tags',{}).get('latest') or '')" || echo "")"
+          echo "committed=$committed, live PyPI=${live_pypi:-<none>}, live npm=${live_npm:-<none>}"
 
           # Highest of the two live registries -- tolerates real, one-off
           # manual drift between them rather than failing outright on a
           # mismatch.
           live="$live_pypi"
-          if [ -n "$live_jsr" ] && { [ -z "$live" ] || [ "$(printf '%s\n%s\n' "$live" "$live_jsr" | sort -V | tail -1)" = "$live_jsr" ]; }; then
-            live="$live_jsr"
+          if [ -n "$live_npm" ] && { [ -z "$live" ] || [ "$(printf '%s\n%s\n' "$live" "$live_npm" | sort -V | tail -1)" = "$live_npm" ]; }; then
+            live="$live_npm"
           fi
 
           if [ -z "$live" ]; then
@@ -96,8 +114,7 @@ jobs:
           else
             # Routine regen-triggered publish, no explicit version
             # decision made yet. MINOR if sdk/{go,typescript,python}
-            # gained new files since the last published tag (a new
-            # resource type or new Kubernetes API group) -- PATCH if
+            # gained new files since the last published tag -- PATCH if
             # only existing files changed (an existing resource's schema
             # changed).
             base="${live:-$committed}"
@@ -136,9 +153,16 @@ jobs:
           open(f, 'w').write(content)
           "
 
-      - name: Publish to JSR
-        working-directory: sdk/typescript
-        run: deno publish --token "${{ secrets.JSR_TOKEN }}"
+      - name: Build for npm
+        run: node .github/scripts/build-npm.mjs
+        env:
+          UBX_SDK_RUNTIME_VERSION: "^0.1.0"
+
+      - name: Publish to npm
+        working-directory: sdk/typescript/dist
+        run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Build Python distribution
         working-directory: sdk/python
@@ -171,16 +195,14 @@ jobs:
           git push origin "$v"
 
       - name: Commit version bump
-        # Deliberately runs LAST, after JSR + PyPI + the Go tag have all
+        # Deliberately runs LAST, after npm + PyPI + the Go tag have all
         # already succeeded -- moved here from right after the in-place
         # file bump (UBI-143). Previously this committed and pushed the
         # new version to main BEFORE any registry publish was attempted,
-        # so a downstream failure (JSR/PyPI/tag) left main claiming a
-        # version that existed on no registry at all -- this is exactly
-        # how all six repos drifted (AWS's main claimed 1.0.0 while every
-        # registry was still at 0.3.1; Datadog/GitHub's main claimed
-        # 1.1.0/1.0.0 having never published anywhere). Committing only
-        # after every publish step above has already succeeded means a
+        # so a downstream failure left main claiming a version that
+        # existed on no registry at all -- this is exactly how all six
+        # repos drifted earlier this session. Committing only after
+        # every publish step above has already succeeded means a
         # partial failure leaves nothing committed, so main can never
         # claim a release that does not exist.
         run: |
@@ -196,34 +218,38 @@ jobs:
           fi
 
       - name: Verify registries agree
-        # UBI-143: a partial success (e.g. JSR and the Go tag land but
-        # PyPI silently fails after retries, or vice versa) must be
-        # visible, not silent. Re-query all three registries for real,
-        # live state -- same method used to determine the version above,
-        # never trust the previous steps' own exit status -- and fail the
-        # job if any of the three disagree with the version just
-        # published, or with each other. A short retry loop tolerates
-        # normal propagation lag (the Go proxy in particular can take a
-        # few seconds to resolve a freshly pushed tag).
+        # UBI-143: a partial success must be visible, not silent.
+        # Re-query all three registries for real, live state -- never
+        # trust the previous steps' own exit status -- and fail the job
+        # if any of the three disagree with the version just published,
+        # or with each other. Queries the SPECIFIC version on each
+        # registry (never npm's dist-tags.latest, never the Go proxy's
+        # @latest) -- both lag on a first-ever publish (confirmed live
+        # this session: PyPI took longer than 25s to propagate on
+        # Datadog/GitHub's first publish, and the Go proxy's @latest
+        # returned a stale pseudo-version while @v/<version>.info
+        # resolved correctly from the first query) -- and a wider
+        # 10x10s retry window than the 5x5s that produced those two
+        # false negatives.
         run: |
           set -euo pipefail
           v="${{ steps.bump.outputs.new_version }}"
           live_pypi=""
-          live_jsr=""
+          live_npm=""
           live_go=""
-          for attempt in 1 2 3 4 5; do
+          for attempt in $(seq 1 10); do
             live_pypi="$(curl -sf https://pypi.org/pypi/ubx-sdk-kubernetes/json | python3 -c "import json,sys; print(json.load(sys.stdin)['info']['version'])" || echo "")"
-            live_jsr="$(curl -sf https://jsr.io/@ubx/sdk-kubernetes/meta.json | python3 -c "import json,sys; v=json.load(sys.stdin).get('latest'); print(v or '')" || echo "")"
-            live_go="$(curl -sf https://proxy.golang.org/github.com/ubiquex/ubx-sdk-kubernetes/sdk/go/@latest | python3 -c "import json,sys; print(json.load(sys.stdin).get('Version','').lstrip('v'))" || echo "")"
-            if [ "$live_pypi" = "$v" ] && [ "$live_jsr" = "$v" ] && [ "$live_go" = "$v" ]; then
+            live_npm="$(curl -sf "https://registry.npmjs.org/@ubx%2fsdk-kubernetes/$v" | python3 -c "import json,sys; print(json.load(sys.stdin).get('version') or '')" || echo "")"
+            live_go="$(curl -sf "https://proxy.golang.org/github.com/ubiquex/ubx-sdk-kubernetes/sdk/go/@v/v$v.info" | python3 -c "import json,sys; print(json.load(sys.stdin).get('Version','').lstrip('v'))" || echo "")"
+            if [ "$live_pypi" = "$v" ] && [ "$live_npm" = "$v" ] && [ "$live_go" = "$v" ]; then
               break
             fi
-            echo "attempt $attempt: PyPI=${live_pypi:-<none>} JSR=${live_jsr:-<none>} Go=${live_go:-<none>}, expected $v -- retrying in 5s"
-            sleep 5
+            echo "attempt $attempt: PyPI=${live_pypi:-<none>} npm=${live_npm:-<none>} Go=${live_go:-<none>}, expected $v -- retrying in 10s"
+            sleep 10
           done
-          echo "final: PyPI=${live_pypi:-<none>} JSR=${live_jsr:-<none>} Go=${live_go:-<none>}, expected $v"
-          if [ "$live_pypi" != "$v" ] || [ "$live_jsr" != "$v" ] || [ "$live_go" != "$v" ]; then
-            echo "registries disagree after publish -- PyPI=${live_pypi:-<none>} JSR=${live_jsr:-<none>} Go=${live_go:-<none>}, expected $v -- this is a partial success, investigate directly rather than re-running blindly" >&2
+          echo "final: PyPI=${live_pypi:-<none>} npm=${live_npm:-<none>} Go=${live_go:-<none>}, expected $v"
+          if [ "$live_pypi" != "$v" ] || [ "$live_npm" != "$v" ] || [ "$live_go" != "$v" ]; then
+            echo "registries disagree after publish -- PyPI=${live_pypi:-<none>} npm=${live_npm:-<none>} Go=${live_go:-<none>}, expected $v -- this is a partial success, investigate directly rather than re-running blindly" >&2
             exit 1
           fi
           echo "all three registries agree at $v"
