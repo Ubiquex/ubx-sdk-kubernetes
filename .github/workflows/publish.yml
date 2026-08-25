@@ -156,7 +156,7 @@ jobs:
       - name: Build for npm
         run: node .github/scripts/build-npm.mjs
         env:
-          UBX_SDK_RUNTIME_VERSION: "^0.1.0"
+          UBX_SDK_RUNTIME_VERSION: "^1.0.0"
 
       - name: Publish to npm
         working-directory: sdk/typescript/dist
