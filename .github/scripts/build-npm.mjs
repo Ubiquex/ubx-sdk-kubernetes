@@ -30,6 +30,18 @@ if (!name || !version || !exportMap) {
 // 1. Real dependency resolution -- installs the ACTUAL @ubx/sdk package
 //    (never a local stub) so tsc type-checks the type-only import for
 //    real, the same way a downstream consumer will.
+//
+// npm install mutates the real, committed package.json as a side
+// effect even with --no-save (confirmed live, UBI-185: a bare
+// rmSync here -- this script's own original version -- staged a real
+// DELETION of the committed stub once the full publish pipeline
+// finally ran successfully end to end for the first time, since
+// nothing downstream ever restored it before "Commit version bump"
+// git-added whatever was left on disk). Saved and restored verbatim
+// below instead of discarded -- this file is real, checked-in
+// scaffolding (`ubx sdk gen` output, kept in sync by the workflow's
+// own earlier version-bump step), not a build artifact.
+const originalPackageJson = readFileSync(join(root, "package.json"), "utf8");
 rmSync(join(root, "node_modules"), { recursive: true, force: true });
 writeFileSync(
   join(root, "package.json.build-tmp"),
@@ -39,7 +51,7 @@ execSync(`npm install --prefix ${root} --package-lock=false --no-save --silent $
   stdio: "inherit",
 });
 rmSync(join(root, "package.json.build-tmp"), { force: true });
-rmSync(join(root, "package.json"), { force: true }); // npm install regenerates a package.json here; discard, dist/ gets the real one below.
+writeFileSync(join(root, "package.json"), originalPackageJson);
 
 // 2. Compile: isolatedDeclarations, one .js + one .d.ts per source file --
 //    no bundling, matches deno.json's own one-export-per-file shape.
