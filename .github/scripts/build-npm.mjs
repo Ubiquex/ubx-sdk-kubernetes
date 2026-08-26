@@ -80,11 +80,24 @@ for (const [subpath, tsRelPath] of Object.entries(exportMap)) {
   const stem = tsRelPath.replace(/^\.\//, "").replace(/\.ts$/, "");
   npmExports[subpath] = { types: `./${stem}.d.ts`, default: `./${stem}.js` };
 }
+// npm's provenance verification (publish.yml's own `--provenance` flag)
+// cross-checks this package.json's own repository.url against the
+// REAL GitHub Actions run's own repo -- confirmed live, a real E422
+// ("Error verifying sigstore provenance bundle: Failed to validate
+// repository information: package.json: repository.url is ''") from
+// dist/package.json never carrying one at all until now. @ubx/sdk
+// (ubx-sdk-typescript, published successfully first) already commits
+// this field directly in its own checked-in package.json; the six
+// provider repos' own dist/package.json is built fresh here instead,
+// so it needs writing here, not copied from a stub that deliberately
+// carries none of the real publishable fields.
+const repoSlug = name === "@ubx/sdk" ? "ubx-sdk-typescript" : `ubx-sdk-${name.split("/")[1].replace(/^sdk-/, "")}`;
 const pkg = {
   name,
   version,
   license: license || "Apache-2.0",
   type: "module",
+  repository: { type: "git", url: `git+https://github.com/Ubiquex/${repoSlug}.git` },
   exports: npmExports,
   dependencies: { "@ubx/sdk": runtimeVersion },
 };

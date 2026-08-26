@@ -105,6 +105,16 @@ jobs:
             # what the repo itself says its version is).
             new_version="$committed"
             echo "no live registry entry yet -- publishing committed version ($committed) as-is"
+          elif git rev-parse --verify --quiet "refs/tags/sdk/go/v$committed" >/dev/null 2>&1; then
+            # The committed version was already tagged/published
+            # before -- a prior run got PyPI/the Go tag live but not
+            # npm, or some other partial-registry gap -- backfill
+            # whichever registry is missing at the SAME already-real
+            # version rather than bumping past a version that already
+            # exists. Confirmed live (UBI-185): datadog/github/
+            # kubernetes each had this exact shape.
+            new_version="$committed"
+            echo "sdk/go/v$committed already tagged -- backfilling any missing registry at the same committed version, not bumping"
           elif [ "$committed" != "$live" ] && [ "$(printf '%s\n%s\n' "$committed" "$live" | sort -V | tail -1)" = "$committed" ]; then
             # Committed version is already ahead of both live registries
             # -- a real, deliberate in-repo decision -- publish it AS-IS,
@@ -160,9 +170,16 @@ jobs:
 
       - name: Publish to npm
         working-directory: sdk/typescript/dist
-        run: npm publish --access public --provenance
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -euo pipefail
+          v="${{ steps.bump.outputs.new_version }}"
+          if curl -sf "https://registry.npmjs.org/@ubx%2fsdk-kubernetes/$v" > /dev/null 2>&1; then
+            echo "npm already has $v -- skipping (backfilling a different registry)"
+          else
+            npm publish --access public --provenance
+          fi
 
       - name: Build Python distribution
         working-directory: sdk/python
@@ -178,21 +195,30 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
         run: |
           set -euo pipefail
-          pip install twine
-          twine upload "dist/ubx_sdk_kubernetes-${{ steps.bump.outputs.new_version }}"*
+          v="${{ steps.bump.outputs.new_version }}"
+          if curl -sf "https://pypi.org/pypi/ubx-sdk-kubernetes/$v/json" > /dev/null 2>&1; then
+            echo "PyPI already has $v -- skipping (backfilling a different registry)"
+          else
+            pip install twine
+            twine upload "dist/ubx_sdk_kubernetes-${v}"*
+          fi
 
       - name: Tag the source commit (Go module, sdk/go/ subdirectory)
         run: |
           set -euo pipefail
-          git config user.name "ubx-bot"
-          git config user.email "actions@users.noreply.github.com"
           # Tag prefix must exactly match the module's own subdirectory
           # path (Go's subdirectory-module tagging rule) -- the module
           # lives at sdk/go/go.mod, so the tag is sdk/go/vX.Y.Z, never a
           # bare vX.Y.Z or kubernetes-go/vX.Y.Z.
           v="sdk/go/v${{ steps.bump.outputs.new_version }}"
-          git tag -a "$v" -m "$v"
-          git push origin "$v"
+          if git rev-parse --verify --quiet "refs/tags/$v" > /dev/null; then
+            echo "$v already tagged -- skipping (backfilling a different registry)"
+          else
+            git config user.name "ubx-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git tag -a "$v" -m "$v"
+            git push origin "$v"
+          fi
 
       - name: Commit version bump
         # Deliberately runs LAST, after npm + PyPI + the Go tag have all
