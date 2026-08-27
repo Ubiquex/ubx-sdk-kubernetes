@@ -2,7 +2,7 @@
 name = "ubx-sdk-kubernetes"
 version = "1.0.0"
 description = "Generated Python bindings for kubernetes@dynamic (ubx sdk gen). DO NOT EDIT."
-dependencies = ["ubx_sdk>=0.1.0,<0.2.0"]
+dependencies = ["ubx_sdk>=0.2.0,<0.3.0"]
 
 [build-system]
 requires = ["setuptools>=61"]

@@ -4,6 +4,6 @@
   "description": "Generated TypeScript bindings for kubernetes@dynamic (ubx sdk gen). DO NOT EDIT.",
   "type": "module",
   "dependencies": {
-    "@ubx/sdk": "0.0.0"
+    "@ubx/sdk": "^1.0.0"
   }
 }
