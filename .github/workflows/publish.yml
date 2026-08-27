@@ -105,16 +105,32 @@ jobs:
             # what the repo itself says its version is).
             new_version="$committed"
             echo "no live registry entry yet -- publishing committed version ($committed) as-is"
-          elif git rev-parse --verify --quiet "refs/tags/sdk/go/v$committed" >/dev/null 2>&1; then
+          elif git rev-parse --verify --quiet "refs/tags/sdk/go/v$committed" >/dev/null 2>&1 && \
+               git diff --quiet "refs/tags/sdk/go/v$committed" HEAD -- sdk/go/ sdk/typescript/ sdk/python/; then
             # The committed version was already tagged/published
-            # before -- a prior run got PyPI/the Go tag live but not
-            # npm, or some other partial-registry gap -- backfill
-            # whichever registry is missing at the SAME already-real
-            # version rather than bumping past a version that already
-            # exists. Confirmed live (UBI-185): datadog/github/
-            # kubernetes each had this exact shape.
+            # before, AND real content hasn't changed since that tag --
+            # a prior run got PyPI/the Go tag live but not npm, or some
+            # other partial-registry gap -- backfill whichever registry
+            # is missing at the SAME already-real version rather than
+            # bumping past a version that already exists. Confirmed live
+            # (UBI-185): datadog/github/kubernetes each had this exact
+            # shape.
+            #
+            # UBI-196 fix: the content-diff check is real, not
+            # decorative -- the original version of this branch matched
+            # on the version STRING alone, which also matches the
+            # ordinary post-regeneration shape (codegen deliberately
+            # leaves the version number unbumped, publish.yml's own job
+            # to bump it) and silently no-opped a real regeneration
+            # while still reporting success. Confirmed live on this
+            # repo's own first publish attempt after a real
+            # DataSourceBinding regeneration: sdk/go/v1.0.0 was already
+            # tagged, this branch fired, and the tag kept pointing at
+            # the pre-regeneration commit even after the run "succeeded"
+            # -- caught only by querying the real registries directly
+            # afterward, not from this workflow's own exit status.
             new_version="$committed"
-            echo "sdk/go/v$committed already tagged -- backfilling any missing registry at the same committed version, not bumping"
+            echo "sdk/go/v$committed already tagged and content unchanged -- backfilling any missing registry, not bumping"
           elif [ "$committed" != "$live" ] && [ "$(printf '%s\n%s\n' "$committed" "$live" | sort -V | tail -1)" = "$committed" ]; then
             # Committed version is already ahead of both live registries
             # -- a real, deliberate in-repo decision -- publish it AS-IS,
