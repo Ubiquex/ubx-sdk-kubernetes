@@ -208,9 +208,16 @@ jobs:
           mkdir -p "$gendir/out/kubernetes/sdk/go"
           cp sdk/go/go.mod "$gendir/out/kubernetes/sdk/go/go.mod"
 
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang go --out out )
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang ts --out out )
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang py --out out )
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang go --out out --require-clean-provenance )
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang ts --out out --require-clean-provenance )
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang py --out out --require-clean-provenance )
+
+          # UBI-197: real ubx-provider-dynamic provenance (source, commit,
+          # dirty, unpushed) -- --require-clean-provenance above already
+          # refuses on anything but a clean, pushed commit, so this is
+          # real confirmation, not just a record of an unverified claim.
+          # Committed to this repo's own root, sibling to VERSION.
+          cp "$gendir/out/kubernetes/PROVENANCE.json" PROVENANCE.json
 
           rsync -a --delete \
             --exclude='go.sum' \
