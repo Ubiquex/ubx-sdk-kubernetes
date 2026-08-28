@@ -16,6 +16,14 @@ SDK languages in one combined repo:
 One package per Kubernetes API group boundary (`apps/`, `core/`, ...),
 one file per resource type, in every language.
 
+## Install
+
+```
+go get github.com/ubiquex/ubx-sdk-kubernetes/sdk/go
+npm install @ubx/sdk-kubernetes
+pip install ubx-sdk-kubernetes
+```
+
 ## v1.0.0: source change, not just a version bump
 
 Every version before `1.0.0` was generated from the `hashicorp/kubernetes`
@@ -54,3 +62,18 @@ schema changes.
 Depends on the shared runtime: [ubx-sdk-go](https://github.com/ubiquex/ubx-sdk-go) (Go),
 [`jsr:@ubx/sdk`](https://jsr.io/@ubx/sdk) (TypeScript),
 [`ubx-sdk`](https://pypi.org/project/ubx-sdk/) (Python, imported as `ubx_sdk`).
+
+<!-- README-GEN:BEGIN -->
+**Real, current counts** (`ubx sdk gen --dump-ir`): 92 resource types, 116 data source types.
+
+**Real, current published versions:**
+- Go: `v1.1.0`
+- npm (`@ubx/sdk-kubernetes`): `1.1.0`
+- PyPI (`ubx-sdk-kubernetes`): `1.1.0`
+
+## Links
+
+- Docs: https://docs.ubiquex.io
+- Internals (architecture and design): https://github.com/Ubiquex/ubiquex-internals
+- Linear board: https://linear.app/ubiquex
+<!-- README-GEN:END -->
