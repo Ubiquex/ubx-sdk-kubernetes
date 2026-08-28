@@ -56,3 +56,14 @@ whatever's currently checked in, not a semantic version.
   `ubiquex`'s own `sdk/codegen/` (or the upstream schema, if the bug is in
   what's being generated FROM, see `ubx-schema-kubernetes`), then
   regenerated here, never hand-patched in the generated output directly.
+
+## Architecture documentation
+
+Bindings here are generated, never hand-authored — an architectural
+change never originates in this repo. If a fix here traces back to a
+real architectural gap in `ubiquex`'s own codegen or
+`ubx-provider-dynamic`'s own schema handling, documenting that change in
+`ubiquex-internals` (the developer documentation site) belongs to
+wherever the real change lands, in the same body of work as that
+change — not to this repo's own regeneration commit. Matches `ubiquex`
+CLAUDE.md rule 10.
