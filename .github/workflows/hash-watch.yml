@@ -65,6 +65,10 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
+
+env:
+  ERROR_ISSUE_LABEL: hash-watch-error
 
 jobs:
   check-and-regenerate:
@@ -129,12 +133,18 @@ jobs:
                   doc = {k: v for k, v in doc.items() if k != "revision"}
               return json.dumps(doc, sort_keys=True, separators=(",", ":"), default=json_default).encode("utf-8")
 
-          h = hashlib.sha256()
-          h.update(canonicalize(fetch(URL)))
-
-          with open(os.environ["GITHUB_OUTPUT"], "a") as out:
-              out.write(f"hash={h.hexdigest()}\n")
-          print(f"Live canonicalized spec-sha256: {h.hexdigest()}")
+          try:
+              h = hashlib.sha256()
+              h.update(canonicalize(fetch(URL)))
+              with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+                  out.write("ok=true\n")
+                  out.write(f"hash={h.hexdigest()}\n")
+              print(f"Live canonicalized spec-sha256: {h.hexdigest()}")
+          except Exception as e:
+              with open(os.environ["GITHUB_OUTPUT"], "a") as out:
+                  out.write("ok=false\n")
+                  out.write(f"error={e!r}\n")
+              print(f"FAILED to fetch/hash the real live spec: {e!r}")
           PYEOF
 
       - name: Compare against this repo's committed hash
@@ -144,17 +154,65 @@ jobs:
           current="$(grep '^spec-sha256:' VERSION | awk '{print $2}')"
           echo "current=$current" >> "$GITHUB_OUTPUT"
           echo "This repo was last generated from spec-sha256: $current"
-          if [ "$current" = "${{ steps.spec.outputs.hash }}" ]; then
-            echo "newer=false" >> "$GITHUB_OUTPUT"
+          if [ "${{ steps.spec.outputs.ok }}" != "true" ]; then
+            echo "state=error" >> "$GITHUB_OUTPUT"
+            echo "detail=could not fetch/hash the real live spec: ${{ steps.spec.outputs.error }}" >> "$GITHUB_OUTPUT"
+          elif [ "$current" = "${{ steps.spec.outputs.hash }}" ]; then
+            echo "state=clean" >> "$GITHUB_OUTPUT"
+            echo "detail=live spec-sha256 matches VERSION." >> "$GITHUB_OUTPUT"
             echo "Already current -- nothing to do."
           else
-            echo "newer=true" >> "$GITHUB_OUTPUT"
+            echo "state=drift" >> "$GITHUB_OUTPUT"
+            echo "detail=live spec-sha256 ${{ steps.spec.outputs.hash }} does not match VERSION's own $current." >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Find any existing error tracking issue
+        id: existing
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          error_number="$(gh issue list --label "$ERROR_ISSUE_LABEL" --state open --json number --jq '.[0].number // empty')"
+          echo "error_number=$error_number" >> "$GITHUB_OUTPUT"
+
+      - name: Surface an error state -- never allowed to look like "nothing to report"
+        if: steps.compare.outputs.state == 'error'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          run_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          body="**hash-watch could not check this repo for drift.**
+
+          ${{ steps.compare.outputs.detail }}
+
+          Full workflow run: $run_url"
+          if [ -n "${{ steps.existing.outputs.error_number }}" ]; then
+            gh issue comment "${{ steps.existing.outputs.error_number }}" --body "$body"
+          else
+            gh issue create --title "hash-watch: unable to check for drift" --label "$ERROR_ISSUE_LABEL" --body "$body"
+          fi
+
+      - name: Close a stale error tracking issue once checking works again
+        if: steps.compare.outputs.state != 'error' && steps.existing.outputs.error_number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh issue close "${{ steps.existing.outputs.error_number }}" \
+            --comment "hash-watch checked successfully on this run (state: ${{ steps.compare.outputs.state }}) -- closing."
+
+      - name: Fail this run's own status on error, so it never shows green by accident
+        if: steps.compare.outputs.state == 'error'
+        run: |
+          echo "state: error -- ${{ steps.compare.outputs.detail }}"
+          exit 1
 
       # --- everything below only runs when the schema content changed ---
 
       - name: Check out ubiquex (to build ubx from source)
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         run: |
           set -euo pipefail
           git clone --depth=1 --recurse-submodules \
@@ -165,26 +223,26 @@ jobs:
             "${{ runner.temp }}/ubx-provider-dynamic-src"
 
       - name: Set up Go
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         uses: actions/setup-go@v5
         with:
           go-version-file: ${{ runner.temp }}/ubiquex-src/go.mod
 
       - name: Set up Deno
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         uses: denoland/setup-deno@v2.0.5
         with:
           deno-version: "2.x"
 
       - name: Build ubx
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         run: |
           set -euo pipefail
           go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
           "${{ runner.temp }}/ubx" version
 
       - name: Regenerate bindings (all three languages)
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         env:
           UBX_PROVIDER_DYNAMIC_REPO: ${{ runner.temp }}/ubx-provider-dynamic-src
         run: |
@@ -251,7 +309,7 @@ jobs:
           EOF
 
       - name: Refresh sdk/typescript/deno.json's exports map for the regenerated tree
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         run: |
           set -euo pipefail
           python3 - <<'PYEOF'
@@ -278,14 +336,14 @@ jobs:
           PYEOF
 
       - name: Regenerate sdk/go/go.sum
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         run: |
           set -euo pipefail
           cd sdk/go
           go mod tidy
 
       - name: Sanity-check the regenerated Go tree still builds
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         run: |
           set -euo pipefail
           cd sdk/go
@@ -293,7 +351,7 @@ jobs:
           go vet ./...
 
       - name: Sanity-check the regenerated TS tree still typechecks
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         run: |
           set -euo pipefail
           cd sdk/typescript
@@ -301,7 +359,7 @@ jobs:
           find . -name "*.ts" -print0 | xargs -0 deno check --frozen
 
       - name: Sanity-check the regenerated Python tree -- real import of every module
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
@@ -340,7 +398,7 @@ jobs:
           PYEOF
 
       - name: Open PR
-        if: steps.compare.outputs.newer == 'true'
+        if: steps.compare.outputs.state == 'drift'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
