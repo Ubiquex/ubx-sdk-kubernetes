@@ -1,0 +1,62 @@
+name: ci
+
+# Generated bindings across three languages (ubx sdk gen's own real
+# output, "DO NOT EDIT" per every generated package.json/pyproject.toml
+# here) -- no hand-written logic to unit-test, but a real, non-trivial
+# check still exists: does every generated file actually compile or
+# typecheck in its own language. Catches a real codegen bug (a naming
+# collision, a malformed generated file, an import cycle), not a
+# check that always passes.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: sdk/go/go.mod
+
+      - name: go build (sdk/go)
+        run: go build ./...
+        working-directory: sdk/go
+
+      - name: Set up Deno
+        uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: deno install (sdk/typescript)
+        # deno check's own type resolution for the real npm dependency
+        # (@ubx/sdk, package.json) needs node_modules populated first --
+        # caught live on this workflow's own first real PR run: "Could
+        # not find @ubx/sdk in a node_modules folder."
+        run: deno install
+        working-directory: sdk/typescript
+
+      - name: deno check (sdk/typescript)
+        run: find . -name "*.ts" -print0 | xargs -0 deno check
+        working-directory: sdk/typescript
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: pip install and compile (sdk/python)
+        run: |
+          set -euo pipefail
+          python -m pip install -e .
+          python -m compileall -q ubx
+        working-directory: sdk/python
