@@ -41,6 +41,21 @@ name: publish
 # Requires PYPI_TOKEN and NPM_TOKEN repo secrets (Settings -> Secrets
 # and variables -> Actions) -- dedicated CI tokens, scoped to this
 # repo/package.
+#
+# UBI-240 (slice 1, ubx-docs-providers pilot): a docs artifact now
+# publishes alongside the three registries, a real GitHub Release
+# (v$new_version, a bare tag, distinct from the Go module's own
+# sdk/go/v$new_version) carrying docs.tar.gz + SHA256SUMS -- the schema
+# dump (ubx sdk gen --dump-ir against the real, live kubernetes
+# provider) plus the descriptions/intros/categories/exclusions
+# artifacts (still committed in ubiquex-docs, only a snapshot travels
+# here -- migrating them out is separately scoped, not this slice).
+# Inputs for ubx-docs-providers to render at build time, never rendered
+# pages themselves: a styling change should never need a new SDK
+# release. Modeled directly on ubx-schema-kubernetes's own publish.yml
+# (the identical snapshot.tar.gz/SHA256SUMS/gh release shape already
+# proven there) and hash-watch.yml's own clone-ubiquex-and-build-ubx
+# step, already working in this exact repo.
 
 on:
   workflow_dispatch: {}
@@ -236,6 +251,119 @@ jobs:
             git tag -a "$v" -m "$v"
             git push origin "$v"
           fi
+
+      - name: Refuse to republish an existing docs release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          v="${{ steps.bump.outputs.new_version }}"
+          if gh release view "v$v" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "v$v already has a docs release -- nothing to do" >&2
+            exit 1
+          fi
+
+      - name: Check out ubiquex and ubx-provider-dynamic (to build ubx and dump the real schema)
+        run: |
+          set -euo pipefail
+          git clone --depth=1 --recurse-submodules \
+            "https://github.com/Ubiquex/ubiquex.git" \
+            "${{ runner.temp }}/ubiquex-src"
+          git clone --depth=1 \
+            "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
+            "${{ runner.temp }}/ubx-provider-dynamic-src"
+
+      - name: Set up Go (for ubx and the schema dump -- publish.yml otherwise never needs it)
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: ${{ runner.temp }}/ubiquex-src/go.mod
+
+      - name: Build ubx
+        run: |
+          set -euo pipefail
+          go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
+          "${{ runner.temp }}/ubx" version
+
+      - name: Dump the real, live kubernetes schema
+        env:
+          UBX_PROVIDER_DYNAMIC_REPO: ${{ runner.temp }}/ubx-provider-dynamic-src
+        run: |
+          set -euo pipefail
+          gendir="${{ runner.temp }}/ubxgen"
+          mkdir -p "$gendir/.ubx" "${{ runner.temp }}/schema-dump" "${{ runner.temp }}/gen-unused"
+          # Same minimal inline config hash-watch.yml already uses in
+          # this exact repo -- never the real sdk/providers/.ubx/config
+          # (that file also declares six other providers this workflow
+          # has no reason to touch).
+          cat > "$gendir/.ubx/config" <<EOF
+          [dynamic_providers.kubernetes]
+          schema_source = "openapi"
+          schema_url = "https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.37/api/openapi-spec/swagger.json"
+          base_url = "https://kubernetes.example.invalid"
+          EOF
+          (cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes \
+            --dump-ir "${{ runner.temp }}/schema-dump" \
+            --out "${{ runner.temp }}/gen-unused" --lang go)
+
+      - name: Check out ubiquex-docs (sparse -- only this provider's own artifacts)
+        run: |
+          set -euo pipefail
+          git clone --depth=1 --filter=blob:none --sparse \
+            "https://github.com/Ubiquex/ubiquex-docs.git" \
+            "${{ runner.temp }}/ubiquex-docs-src"
+          git -C "${{ runner.temp }}/ubiquex-docs-src" sparse-checkout set artifacts/kubernetes
+
+      - name: Package the docs artifact
+        run: |
+          set -euo pipefail
+          staging="${{ runner.temp }}/docs-artifact"
+          mkdir -p "$staging/artifacts"
+          cp -r "${{ runner.temp }}/schema-dump/kubernetes" "$staging/schema"
+          cp "${{ runner.temp }}/ubiquex-docs-src/artifacts/kubernetes/descriptions.json" \
+             "${{ runner.temp }}/ubiquex-docs-src/artifacts/kubernetes/intros.json" \
+             "${{ runner.temp }}/ubiquex-docs-src/artifacts/kubernetes/categories.json" \
+             "${{ runner.temp }}/ubiquex-docs-src/artifacts/kubernetes/exclusions.json" \
+             "$staging/artifacts/"
+          r="$(find "$staging/schema" -maxdepth 1 -name '*.json' ! -name 'data_*' ! -name 'schema.json' ! -name 'PROVENANCE.json' | wc -l | tr -d ' ')"
+          d="$(find "$staging/schema" -maxdepth 1 -name 'data_*.json' | wc -l | tr -d ' ')"
+          v="${{ steps.bump.outputs.new_version }}"
+          python3 -c "
+          import json
+          json.dump({
+              'schema_version': 1,
+              'provider': 'kubernetes',
+              'sdk_version': '$v',
+              'resource_count': $r,
+              'data_source_count': $d,
+          }, open('$staging/manifest.json', 'w'), indent=2)
+          "
+          tar czf "${{ runner.temp }}/docs.tar.gz" -C "$staging" .
+          sha256sum "${{ runner.temp }}/docs.tar.gz" > "${{ runner.temp }}/SHA256SUMS"
+
+      - name: Create the docs release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          v="${{ steps.bump.outputs.new_version }}"
+          gh release create "v$v" "${{ runner.temp }}/docs.tar.gz" "${{ runner.temp }}/SHA256SUMS" \
+            --repo "${{ github.repository }}" \
+            --title "v$v" \
+            --notes "Docs artifact for ubx-sdk-kubernetes v$v (UBI-240): the real schema dump (ubx sdk gen --dump-ir against the live kubernetes provider) plus the descriptions/intros/categories/exclusions artifacts. Inputs for ubx-docs-providers to render at build time, not rendered pages themselves."
+
+      - name: Verify the docs release is real and carries exactly the two expected assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          v="${{ steps.bump.outputs.new_version }}"
+          gh release view "v$v" --repo "${{ github.repository }}" --json assets --jq '.assets[].name' | sort > "${{ runner.temp }}/got-docs-assets"
+          printf '%s\n' "SHA256SUMS" "docs.tar.gz" | sort > "${{ runner.temp }}/want-docs-assets"
+          if ! diff -u "${{ runner.temp }}/want-docs-assets" "${{ runner.temp }}/got-docs-assets"; then
+            echo "docs release v$v does not have exactly the two expected assets" >&2
+            exit 1
+          fi
+          echo "v$v docs release published with exactly the two expected assets."
 
       - name: Open a PR for the version bump
         # Deliberately runs LAST, after npm + PyPI + the Go tag have all
