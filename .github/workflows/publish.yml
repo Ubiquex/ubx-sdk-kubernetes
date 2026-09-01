@@ -48,6 +48,7 @@ on:
 permissions:
   contents: write
   id-token: write
+  pull-requests: write
 
 jobs:
   publish:
@@ -236,7 +237,7 @@ jobs:
             git push origin "$v"
           fi
 
-      - name: Commit version bump
+      - name: Open a PR for the version bump
         # Deliberately runs LAST, after npm + PyPI + the Go tag have all
         # already succeeded -- moved here from right after the in-place
         # file bump (UBI-143). Previously this committed and pushed the
@@ -247,16 +248,32 @@ jobs:
         # every publish step above has already succeeded means a
         # partial failure leaves nothing committed, so main can never
         # claim a release that does not exist.
+        #
+        # UBI-225: opens a PR rather than pushing to main directly --
+        # main is branch-protected (UBI-216), so a direct push here
+        # always fails with GH006 (confirmed live on ubx-sdk-typescript).
+        # Every registry already has the real content by the time this
+        # runs, so a human merging the bump PR late costs nothing but a
+        # brief window where the registries are ahead of what main
+        # claims, never the other way around. Never self-merged.
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           if git diff --quiet -- sdk/typescript/package.json sdk/typescript/deno.json sdk/python/pyproject.toml; then
             echo "already at ${{ steps.bump.outputs.new_version }} -- nothing to commit"
           else
+            v="${{ steps.bump.outputs.new_version }}"
+            branch="version-bump/v$v"
             git config user.name "ubx-bot"
             git config user.email "actions@users.noreply.github.com"
+            git checkout -b "$branch"
             git add sdk/typescript/package.json sdk/typescript/deno.json sdk/python/pyproject.toml
-            git commit -m "sdk: bump to v${{ steps.bump.outputs.new_version }}"
-            git push origin main
+            git commit -m "sdk: bump to v$v"
+            git push origin "$branch"
+            gh pr create --title "sdk: bump to v$v" \
+              --body "Every registry already has v$v (this workflow only opens this PR after every publish step above succeeds). Merging this brings main's own committed version files in line with what is already published." \
+              --base main --head "$branch"
           fi
 
       - name: Verify registries agree
