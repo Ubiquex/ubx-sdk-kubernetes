@@ -1,0 +1,281 @@
+{
+ "overrides": {
+  "kubernetes_admissionregistration_mutating_admission_policy": {
+   "label": "Admission Registration"
+  },
+  "kubernetes_admissionregistration_mutating_admission_policy_binding": {
+   "label": "Admission Registration"
+  },
+  "kubernetes_admissionregistration_mutating_webhook_configuration": {
+   "label": "Admission Registration"
+  },
+  "kubernetes_admissionregistration_v1alpha1_mutating_admission_policy": {
+   "label": "Admission Registration"
+  },
+  "kubernetes_admissionregistration_v1alpha1_mutating_admission_policy_binding": {
+   "label": "Admission Registration"
+  },
+  "kubernetes_admissionregistration_v1beta1_mutating_admission_policy": {
+   "label": "Admission Registration"
+  },
+  "kubernetes_admissionregistration_v1beta1_mutating_admission_policy_binding": {
+   "label": "Admission Registration"
+  },
+  "kubernetes_admissionregistration_validating_admission_policy": {
+   "label": "Admission Registration"
+  },
+  "kubernetes_admissionregistration_validating_admission_policy_binding": {
+   "label": "Admission Registration"
+  },
+  "kubernetes_admissionregistration_validating_webhook_configuration": {
+   "label": "Admission Registration"
+  },
+  "kubernetes_apiextensions_custom_resource_definition": {
+   "label": "API Extensions"
+  },
+  "kubernetes_apiregistration_apiservice": {
+   "label": "API Registration"
+  },
+  "kubernetes_apiserverinternal_storage_version": {
+   "label": "Internal API Server"
+  },
+  "kubernetes_apps_controller_revision": {
+   "label": "Apps"
+  },
+  "kubernetes_apps_daemon_set": {
+   "label": "Apps"
+  },
+  "kubernetes_apps_deployment": {
+   "label": "Apps"
+  },
+  "kubernetes_apps_replica_set": {
+   "label": "Apps"
+  },
+  "kubernetes_apps_stateful_set": {
+   "label": "Apps"
+  },
+  "kubernetes_autoscaling_horizontal_pod_autoscaler": {
+   "label": "Autoscaling"
+  },
+  "kubernetes_autoscaling_v1_horizontal_pod_autoscaler": {
+   "label": "Autoscaling"
+  },
+  "kubernetes_batch_cron_job": {
+   "label": "Batch"
+  },
+  "kubernetes_batch_job": {
+   "label": "Batch"
+  },
+  "kubernetes_certificates_certificate_signing_request": {
+   "label": "Certificates"
+  },
+  "kubernetes_certificates_cluster_trust_bundle": {
+   "label": "Certificates"
+  },
+  "kubernetes_certificates_pod_certificate_request": {
+   "label": "Certificates"
+  },
+  "kubernetes_certificates_v1beta1_cluster_trust_bundle": {
+   "label": "Certificates"
+  },
+  "kubernetes_certificates_v1beta1_pod_certificate_request": {
+   "label": "Certificates"
+  },
+  "kubernetes_coordination_lease": {
+   "label": "Coordination"
+  },
+  "kubernetes_coordination_lease_candidate": {
+   "label": "Coordination"
+  },
+  "kubernetes_coordination_v1alpha2_lease_candidate": {
+   "label": "Coordination"
+  },
+  "kubernetes_core_config_map": {
+   "label": "Core"
+  },
+  "kubernetes_core_endpoints": {
+   "label": "Core"
+  },
+  "kubernetes_core_event": {
+   "label": "Core"
+  },
+  "kubernetes_core_limit_range": {
+   "label": "Core"
+  },
+  "kubernetes_core_namespace": {
+   "label": "Core"
+  },
+  "kubernetes_core_node": {
+   "label": "Core"
+  },
+  "kubernetes_core_persistent_volume": {
+   "label": "Core"
+  },
+  "kubernetes_core_persistent_volume_claim": {
+   "label": "Core"
+  },
+  "kubernetes_core_pod": {
+   "label": "Core"
+  },
+  "kubernetes_core_pod_template": {
+   "label": "Core"
+  },
+  "kubernetes_core_replication_controller": {
+   "label": "Core"
+  },
+  "kubernetes_core_resource_quota": {
+   "label": "Core"
+  },
+  "kubernetes_core_secret": {
+   "label": "Core"
+  },
+  "kubernetes_core_service": {
+   "label": "Core"
+  },
+  "kubernetes_core_service_account": {
+   "label": "Core"
+  },
+  "kubernetes_discovery_endpoint_slice": {
+   "label": "Discovery"
+  },
+  "kubernetes_events_event": {
+   "label": "Events"
+  },
+  "kubernetes_flowcontrol_flow_schema": {
+   "label": "Flow Control"
+  },
+  "kubernetes_flowcontrol_priority_level_configuration": {
+   "label": "Flow Control"
+  },
+  "kubernetes_lifecycle_eviction": {
+   "label": "lifecycle"
+  },
+  "kubernetes_lifecycle_eviction_request": {
+   "label": "lifecycle"
+  },
+  "kubernetes_networking_ingress": {
+   "label": "Networking"
+  },
+  "kubernetes_networking_ingress_class": {
+   "label": "Networking"
+  },
+  "kubernetes_networking_ipaddress": {
+   "label": "Networking"
+  },
+  "kubernetes_networking_network_policy": {
+   "label": "Networking"
+  },
+  "kubernetes_networking_service_cidr": {
+   "label": "Networking"
+  },
+  "kubernetes_node_runtime_class": {
+   "label": "Node"
+  },
+  "kubernetes_policy_pod_disruption_budget": {
+   "label": "Policy"
+  },
+  "kubernetes_rbac_cluster_role": {
+   "label": "RBAC"
+  },
+  "kubernetes_rbac_cluster_role_binding": {
+   "label": "RBAC"
+  },
+  "kubernetes_rbac_role": {
+   "label": "RBAC"
+  },
+  "kubernetes_rbac_role_binding": {
+   "label": "RBAC"
+  },
+  "kubernetes_resource_device_class": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_device_taint_rule": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_resource_claim": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_resource_claim_template": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_resource_pool_status_request": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_resource_slice": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_v1alpha3_device_taint_rule": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_v1beta1_device_class": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_v1beta1_resource_claim": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_v1beta1_resource_claim_template": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_v1beta1_resource_slice": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_v1beta2_device_class": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_v1beta2_device_taint_rule": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_v1beta2_resource_claim": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_v1beta2_resource_claim_template": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_resource_v1beta2_resource_slice": {
+   "label": "Dynamic Resource Allocation"
+  },
+  "kubernetes_scheduling_composite_pod_group": {
+   "label": "Scheduling"
+  },
+  "kubernetes_scheduling_pod_group": {
+   "label": "Scheduling"
+  },
+  "kubernetes_scheduling_priority_class": {
+   "label": "Scheduling"
+  },
+  "kubernetes_scheduling_v1alpha3_pod_group": {
+   "label": "Scheduling"
+  },
+  "kubernetes_scheduling_v1alpha3_workload": {
+   "label": "Scheduling"
+  },
+  "kubernetes_scheduling_workload": {
+   "label": "Scheduling"
+  },
+  "kubernetes_storage_csidriver": {
+   "label": "Storage"
+  },
+  "kubernetes_storage_csinode": {
+   "label": "Storage"
+  },
+  "kubernetes_storage_csistorage_capacity": {
+   "label": "Storage"
+  },
+  "kubernetes_storage_storage_class": {
+   "label": "Storage"
+  },
+  "kubernetes_storage_volume_attachment": {
+   "label": "Storage"
+  },
+  "kubernetes_storage_volume_attributes_class": {
+   "label": "Storage"
+  },
+  "kubernetes_storagemigration_storage_version_migration": {
+   "label": "Storage Migration"
+  },
+  "kubernetes_storagemigration_v1beta1_storage_version_migration": {
+   "label": "Storage Migration"
+  }
+ },
+ "services": {}
+}

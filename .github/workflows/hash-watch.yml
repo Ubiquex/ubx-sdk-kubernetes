@@ -266,9 +266,26 @@ jobs:
           mkdir -p "$gendir/out/kubernetes/sdk/go"
           cp sdk/go/go.mod "$gendir/out/kubernetes/sdk/go/go.mod"
 
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang go --out out --require-clean-provenance )
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang ts --out out --require-clean-provenance )
-          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang py --out out --require-clean-provenance )
+          # UBI-240 slice 5: artifacts/kubernetes/ now lives in this repo
+          # (moved out of ubiquex-docs) -- an absolute path, since the
+          # actual sdk gen invocation below runs from $gendir, not here.
+          # loadCheckedInDescriptions reads <dir>/kubernetes.json
+          # specifically, the {resource: {relPath: text}} shape a real
+          # description-authoring session produces via
+          # export_raw_descriptions.py --nested-out (ubiquex-docs, run
+          # against a sibling checkout of this repo) and commits
+          # alongside descriptions.json in the same PR -- not this
+          # workflow's own job to generate at CI time, only to read.
+          # Before this, this step never passed --descriptions-dir at
+          # all, so every regen silently generated without the real,
+          # checked-in description corpus (found live, UBI-102's own
+          # pin was never wired into this workflow -- see that ticket's
+          # own comment for the full account). This is the fix.
+          descriptions_dir="$PWD/artifacts/kubernetes"
+
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang go --out out --descriptions-dir "$descriptions_dir" --require-clean-provenance )
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang ts --out out --descriptions-dir "$descriptions_dir" --require-clean-provenance )
+          ( cd "$gendir" && "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang py --out out --descriptions-dir "$descriptions_dir" --require-clean-provenance )
 
           # UBI-197: real ubx-provider-dynamic provenance (source, commit,
           # dirty, unpushed) -- --require-clean-provenance above already
