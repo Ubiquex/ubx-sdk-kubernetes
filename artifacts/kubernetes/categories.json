@@ -57,6 +57,9 @@
   "kubernetes_autoscaling_horizontal_pod_autoscaler": {
    "label": "Autoscaling"
   },
+  "kubernetes_autoscaling_scale": {
+   "label": "Autoscaling"
+  },
   "kubernetes_autoscaling_v1_horizontal_pod_autoscaler": {
    "label": "Autoscaling"
   },
@@ -89,6 +92,12 @@
   },
   "kubernetes_coordination_v1alpha2_lease_candidate": {
    "label": "Coordination"
+  },
+  "kubernetes_core_component_condition": {
+   "label": "Core"
+  },
+  "kubernetes_core_component_status": {
+   "label": "Core"
   },
   "kubernetes_core_config_map": {
    "label": "Core"
@@ -147,11 +156,23 @@
   "kubernetes_flowcontrol_priority_level_configuration": {
    "label": "Flow Control"
   },
+  "kubernetes_io_k8s_apimachinery_pkg_version_info": {
+   "label": "Internal API Server"
+  },
   "kubernetes_lifecycle_eviction": {
    "label": "lifecycle"
   },
   "kubernetes_lifecycle_eviction_request": {
    "label": "lifecycle"
+  },
+  "kubernetes_meta_apigroup": {
+   "label": "Internal API Server"
+  },
+  "kubernetes_meta_apiresource": {
+   "label": "Internal API Server"
+  },
+  "kubernetes_meta_server_address_by_client_cidr": {
+   "label": "Internal API Server"
   },
   "kubernetes_networking_ingress": {
    "label": "Networking"
