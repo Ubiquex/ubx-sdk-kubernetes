@@ -48,9 +48,10 @@ name: publish
 # sdk/go/v$new_version) carrying docs.tar.gz + SHA256SUMS -- the schema
 # dump (ubx sdk gen --dump-ir against the real, live kubernetes
 # provider) plus the descriptions/intros/categories/exclusions
-# artifacts (still committed in ubiquex-docs, only a snapshot travels
-# here -- migrating them out is separately scoped, not this slice).
-# Inputs for ubx-docs-providers to render at build time, never rendered
+# artifacts -- UBI-240 slice 5: these now live in this repo's own
+# artifacts/kubernetes/ (moved out of ubiquex-docs), read directly from
+# this job's own checkout, no second clone. Inputs for
+# ubx-docs-providers to render at build time, never rendered
 # pages themselves: a styling change should never need a new SDK
 # release. Modeled directly on ubx-schema-kubernetes's own publish.yml
 # (the identical snapshot.tar.gz/SHA256SUMS/gh release shape already
@@ -305,24 +306,25 @@ jobs:
             --dump-ir "${{ runner.temp }}/schema-dump" \
             --out "${{ runner.temp }}/gen-unused" --lang go)
 
-      - name: Check out ubiquex-docs (sparse -- only this provider's own artifacts)
-        run: |
-          set -euo pipefail
-          git clone --depth=1 --filter=blob:none --sparse \
-            "https://github.com/Ubiquex/ubiquex-docs.git" \
-            "${{ runner.temp }}/ubiquex-docs-src"
-          git -C "${{ runner.temp }}/ubiquex-docs-src" sparse-checkout set artifacts/kubernetes
-
       - name: Package the docs artifact
+        # UBI-240 slice 5: artifacts/kubernetes/ now lives in this repo's
+        # own checkout (moved out of ubiquex-docs), so the descriptions/
+        # intros/categories/exclusions files this step needs are already
+        # sitting in the working tree from this job's first checkout
+        # step -- no second clone. kubernetes.json (the codegen-ready
+        # {resource: {relPath: text}} export hash-watch.yml's own
+        # --descriptions-dir reads) is deliberately NOT copied here --
+        # it's a codegen-time input, not something ubx-docs-providers
+        # ever reads.
         run: |
           set -euo pipefail
           staging="${{ runner.temp }}/docs-artifact"
           mkdir -p "$staging/artifacts"
           cp -r "${{ runner.temp }}/schema-dump/kubernetes" "$staging/schema"
-          cp "${{ runner.temp }}/ubiquex-docs-src/artifacts/kubernetes/descriptions.json" \
-             "${{ runner.temp }}/ubiquex-docs-src/artifacts/kubernetes/intros.json" \
-             "${{ runner.temp }}/ubiquex-docs-src/artifacts/kubernetes/categories.json" \
-             "${{ runner.temp }}/ubiquex-docs-src/artifacts/kubernetes/exclusions.json" \
+          cp "artifacts/kubernetes/descriptions.json" \
+             "artifacts/kubernetes/intros.json" \
+             "artifacts/kubernetes/categories.json" \
+             "artifacts/kubernetes/exclusions.json" \
              "$staging/artifacts/"
           r="$(find "$staging/schema" -maxdepth 1 -name '*.json' ! -name 'data_*' ! -name 'schema.json' ! -name 'PROVENANCE.json' | wc -l | tr -d ' ')"
           d="$(find "$staging/schema" -maxdepth 1 -name 'data_*.json' | wc -l | tr -d ' ')"
