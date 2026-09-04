@@ -1,0 +1,409 @@
+name: translator-watch
+
+# UBI-249: hash-watch.yml only ever detects upstream SPEC drift -- it
+# re-fetches Kubernetes's own live schema, hashes it, and compares
+# against VERSION. A translator change in ubx-provider-dynamic (a fix
+# to how OpenAPI/CloudFormation/discovery-doc schemas become tfprotov6
+# schemas) moves none of that: the spec is unchanged, so hash-watch
+# never fires, even though the SDK this repo publishes can come out
+# different from the same spec once regenerated with the new
+# translator. Confirmed live this session: three consecutive translator
+# fixes (UBI-250's BuildTopLevel/allOf fix, the DigitalOcean path-
+# collision fix, the AWS placement fix before both) each needed a
+# manual regeneration across every affected provider, found and done
+# by hand every time, with nothing watching for the next one.
+#
+# This workflow closes that gap with three real stages, never
+# conflated:
+#
+#   1. DETECT -- compare this repo's own PROVENANCE.json `commit`
+#      against ubx-provider-dynamic's latest tagged release. Most
+#      releases touch code paths this provider's own generation never
+#      exercises, so a version move alone is not evidence of an output
+#      change (this is why MinBinaryVersion -- snapshot.go's own
+#      "minimum binary that can SERVE this snapshot," stamped at
+#      snapshot-cut time in a DIFFERENT repo -- was ruled out as the
+#      comparison target: it answers a different question). When the
+#      tag moved, this stage regenerates for real, holding the SCHEMA
+#      side fixed: it uses ubiquex's own central, PINNED
+#      [dynamic_providers.kubernetes] table (sdk/providers/.ubx/config,
+#      source="ubiquex/kubernetes" version=<the exact version already
+#      recorded in this repo's own PROVENANCE.json>) rather than any
+#      live schema fetch. Only one variable moves -- the translator
+#      commit used to build ubx -- so any diff in the regenerated
+#      output is attributable to the translator alone, never to a
+#      spec change hash-watch.yml hasn't caught yet.
+#
+#   2. SELF-HEAL -- an empty diff means the tag moved but this
+#      provider's real generated output did not. Administrative: only
+#      PROVENANCE.json's own `commit` field needs to move, so this
+#      never fires blindly on every ubx-provider-dynamic release the
+#      way a naive version-only check would. Still opens a PR (never
+#      auto-merges, matching hash-watch.yml's own convention and every
+#      other workflow in this org) -- but a PROVENANCE-only PR is
+#      immediately legible as nothing-to-review, distinct from stage 3.
+#
+#   3. REGENERATE FOR REVIEW -- a real diff means the translator
+#      changed this provider's actual output. Never applied blindly: a
+#      translator fix can move thousands of pages at once (confirmed
+#      live, UBI-250's allOf fix alone moved 731 of Azure's 737
+#      collapsed resources). Regenerates all three languages, runs the
+#      same sanity checks hash-watch.yml already runs (go build/vet,
+#      deno check --frozen, a real Python import-all), and opens a PR
+#      for the founder to review -- exactly like a real spec-drift PR,
+#      just triggered by the other half of what actually produces this
+#      repo's content.
+#
+# Sibling to hash-watch.yml, not folded into it: the two watch
+# genuinely independent variables (spec content vs. translator
+# version) and conflating their trigger conditions would make either
+# one's own "why did this fire" unclear from the PR alone.
+#
+# UBI-249's own audit (see PROVENANCE.json history across this org):
+# this repo's own hash-watch.yml already keeps PROVENANCE.json current on its own after a real spec-drift regeneration; this workflow adds the other, independent trigger that path never covered.
+# Either way, this workflow is this provider's own uniform,
+# translator-triggered path to a current PROVENANCE.json, run the same
+# way regardless of which hash-watch.yml variant this repo carries --
+# the manual gap UBI-249 found (a hand regeneration copying the three
+# language directories and never PROVENANCE.json) has no foothold here
+# because stage 2 makes the file's own update the ONLY thing a
+# no-output-change tag bump ever touches.
+
+on:
+  schedule:
+    - cron: "0 6 * * 2" # every Tuesday, 06:00 UTC -- a day after hash-watch.yml's own Monday 06:00, so a real spec-drift PR from that run has a day to land before this one regenerates against it
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+env:
+  ERROR_ISSUE_LABEL: translator-watch-error
+
+jobs:
+  check-and-regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out ubx-sdk-kubernetes
+        uses: actions/checkout@v4
+
+      - name: Read this repo's own recorded translator commit
+        id: recorded
+        run: |
+          set -euo pipefail
+          if [ ! -f PROVENANCE.json ]; then
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "error=PROVENANCE.json does not exist in this repo -- nothing to compare against. Run a manual regeneration with --require-clean-provenance once to bootstrap it." >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          commit="$(python3 -c "import json; print(json.load(open('PROVENANCE.json'))['commit'])")"
+          version="$(python3 -c "import json; print(json.load(open('PROVENANCE.json'))['schema_version'])")"
+          echo "ok=true" >> "$GITHUB_OUTPUT"
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
+          echo "schema_version=$version" >> "$GITHUB_OUTPUT"
+          echo "This repo's own PROVENANCE.json records translator commit: $commit (schema version: $version)"
+
+      - name: Find the latest ubx-provider-dynamic tagged release
+        id: latest
+        if: steps.recorded.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          tag="$(gh api repos/Ubiquex/ubx-provider-dynamic/tags --jq '.[0].name')"
+          commit="$(gh api repos/Ubiquex/ubx-provider-dynamic/tags --jq '.[0].commit.sha')"
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+          echo "commit=$commit" >> "$GITHUB_OUTPUT"
+          echo "Latest ubx-provider-dynamic release: $tag ($commit)"
+
+      - name: Compare
+        id: compare
+        if: steps.recorded.outputs.ok == 'true'
+        run: |
+          set -euo pipefail
+          if [ "${{ steps.recorded.outputs.commit }}" = "${{ steps.latest.outputs.commit }}" ]; then
+            echo "state=clean" >> "$GITHUB_OUTPUT"
+            echo "Already current -- nothing to do."
+          else
+            echo "state=candidate" >> "$GITHUB_OUTPUT"
+            echo "Translator moved: ${{ steps.recorded.outputs.commit }} -> ${{ steps.latest.outputs.commit }} (${{ steps.latest.outputs.tag }}). Checking whether this provider's real output actually changed."
+          fi
+
+      - name: Find any existing error tracking issue
+        id: existing
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          error_number="$(gh issue list --label "$ERROR_ISSUE_LABEL" --state open --json number --jq '.[0].number // empty')"
+          echo "error_number=$error_number" >> "$GITHUB_OUTPUT"
+
+      - name: Surface an error state -- never allowed to look like "nothing to report"
+        if: steps.recorded.outputs.ok == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          run_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          body="**translator-watch could not check this repo for translator drift.**
+
+          ${{ steps.recorded.outputs.error }}
+
+          Full workflow run: $run_url"
+          if [ -n "${{ steps.existing.outputs.error_number }}" ]; then
+            gh issue comment "${{ steps.existing.outputs.error_number }}" --body "$body"
+          else
+            gh issue create --title "translator-watch: unable to check for translator drift" --label "$ERROR_ISSUE_LABEL" --body "$body"
+          fi
+
+      - name: Close a stale error tracking issue once checking works again
+        if: steps.recorded.outputs.ok == 'true' && steps.existing.outputs.error_number != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh issue close "${{ steps.existing.outputs.error_number }}" \
+            --comment "translator-watch checked successfully on this run -- closing."
+
+      - name: Fail this run's own status on error, so it never shows green by accident
+        if: steps.recorded.outputs.ok == 'false'
+        run: |
+          echo "state: error -- ${{ steps.recorded.outputs.error }}"
+          exit 1
+
+      # --- everything below only runs when the translator tag moved ---
+
+      - name: Check out ubiquex (unchanged main -- carries the central pinned schema config) and ubx-provider-dynamic at the new tag
+        if: steps.compare.outputs.state == 'candidate'
+        run: |
+          set -euo pipefail
+          git clone --depth=1 --recurse-submodules \
+            "https://github.com/Ubiquex/ubiquex.git" \
+            "${{ runner.temp }}/ubiquex-src"
+          git clone --depth=1 --branch "${{ steps.latest.outputs.tag }}" \
+            "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
+            "${{ runner.temp }}/ubx-provider-dynamic-src"
+
+      - name: Set up Go
+        if: steps.compare.outputs.state == 'candidate'
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: ${{ runner.temp }}/ubiquex-src/go.mod
+
+      - name: Set up Deno
+        if: steps.compare.outputs.state == 'candidate'
+        uses: denoland/setup-deno@v2.0.5
+        with:
+          deno-version: "2.x"
+
+      - name: Set up Python
+        if: steps.compare.outputs.state == 'candidate'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build ubx from unchanged ubiquex main
+        if: steps.compare.outputs.state == 'candidate'
+        run: |
+          set -euo pipefail
+          go build -C "${{ runner.temp }}/ubiquex-src" -o "${{ runner.temp }}/ubx" ./cmd/ubx
+          "${{ runner.temp }}/ubx" version
+
+      - name: Regenerate against the new translator, schema held fixed at this repo's own pinned version
+        id: regen
+        if: steps.compare.outputs.state == 'candidate'
+        env:
+          UBX_PROVIDER_DYNAMIC_REPO: ${{ runner.temp }}/ubx-provider-dynamic-src
+        run: |
+          set -euo pipefail
+          gendir="${{ runner.temp }}/ubxgen"
+          mkdir -p "$gendir/out/kubernetes/sdk/go"
+          cp sdk/go/go.mod "$gendir/out/kubernetes/sdk/go/go.mod"
+
+          # sdk/providers/.ubx/config in ubiquex-src is the real, central,
+          # PINNED config (source="ubiquex/kubernetes" version="${{ steps.recorded.outputs.schema_version }}")
+          # -- the same schema this repo is already generated from,
+          # resolved from the cached ubx-schema-kubernetes snapshot, zero
+          # live fetch. Only the translator commit varies from what
+          # produced the currently-committed tree.
+          descriptions_dir="$PWD/artifacts/kubernetes"
+
+          cd "${{ runner.temp }}/ubiquex-src/sdk/providers"
+          "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang go --out "$gendir/out" --descriptions-dir "$descriptions_dir" --require-clean-provenance
+          "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang ts --out "$gendir/out" --descriptions-dir "$descriptions_dir" --require-clean-provenance
+          "${{ runner.temp }}/ubx" sdk gen --only kubernetes --lang py --out "$gendir/out" --descriptions-dir "$descriptions_dir" --require-clean-provenance
+          cd - >/dev/null
+
+          echo "gendir=$gendir" >> "$GITHUB_OUTPUT"
+
+      - name: Diff regenerated output against what's currently committed
+        id: diff
+        if: steps.compare.outputs.state == 'candidate'
+        run: |
+          set -euo pipefail
+          gendir="${{ steps.regen.outputs.gendir }}"
+          if diff -rq \
+              -x go.sum -x deno.lock -x deno.json -x package.json -x pyproject.toml \
+              "$gendir/out/kubernetes/sdk/go" sdk/go > /tmp/diffout 2>&1 \
+             && diff -rq \
+              -x go.sum -x deno.lock -x deno.json -x package.json -x pyproject.toml \
+              "$gendir/out/kubernetes/sdk/typescript" sdk/typescript >> /tmp/diffout 2>&1 \
+             && diff -rq \
+              "$gendir/out/kubernetes/sdk/python" sdk/python >> /tmp/diffout 2>&1; then
+            echo "state=administrative" >> "$GITHUB_OUTPUT"
+            echo "Tag moved but this provider's real generated output is byte-identical -- nothing for a human to review."
+          else
+            echo "state=output-changed" >> "$GITHUB_OUTPUT"
+            echo "Real output difference found:"
+            cat /tmp/diffout
+          fi
+
+      - name: Open an administrative PR -- PROVENANCE.json only, nothing to judge
+        if: steps.diff.outputs.state == 'administrative'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          cp "${{ steps.regen.outputs.gendir }}/out/kubernetes/PROVENANCE.json" PROVENANCE.json
+          git config user.name "ubx-bot"
+          git config user.email "actions@users.noreply.github.com"
+          short="$(echo "${{ steps.latest.outputs.commit }}" | cut -c1-12)"
+          branch="translator-heal/kubernetes-$short"
+          git checkout -b "$branch"
+          git add PROVENANCE.json
+          git commit -m "provenance: translator moved to ${{ steps.latest.outputs.tag }}, output unchanged (UBI-249)"
+          git push origin "$branch" --force
+          gh pr create \
+            --title "provenance: translator moved to ${{ steps.latest.outputs.tag }}, output unchanged" \
+            --label "translator-watch-administrative" \
+            --body "Automated (\`.github/workflows/translator-watch.yml\`). ubx-provider-dynamic moved from \`${{ steps.recorded.outputs.commit }}\` to \`${{ steps.latest.outputs.commit }}\` (${{ steps.latest.outputs.tag }}). Regenerated against this repo's own pinned schema (version ${{ steps.recorded.outputs.schema_version }}, unchanged) using the new translator -- the real output is byte-identical to what's currently committed.
+
+          The only change in this PR is PROVENANCE.json's own \`commit\` field. Nothing else to review." \
+            --base main --head "$branch"
+
+      - name: Refresh sdk/typescript/deno.json's exports map for the regenerated tree
+        if: steps.diff.outputs.state == 'output-changed'
+        run: |
+          set -euo pipefail
+          python3 - <<'PYEOF'
+          import json, os
+
+          with open("sdk/typescript/deno.json") as fh:
+              cfg = json.load(fh)
+
+          exports = {}
+          for dirpath, _, filenames in os.walk("sdk/typescript/kubernetes"):
+              for f in sorted(filenames):
+                  if not f.endswith(".ts"):
+                      continue
+                  rel = os.path.relpath(os.path.join(dirpath, f), "sdk/typescript")
+                  exports["./" + rel[:-3]] = "./" + rel
+
+          cfg["exports"] = exports
+
+          with open("sdk/typescript/deno.json", "w") as fh:
+              json.dump(cfg, fh, indent=2)
+              fh.write("\n")
+
+          print(f"sdk/typescript/deno.json exports: {len(exports)} entries")
+          PYEOF
+
+      - name: Sync the regenerated trees in (code only -- version fields, go.sum, deno.lock stay as committed)
+        if: steps.diff.outputs.state == 'output-changed'
+        run: |
+          set -euo pipefail
+          gendir="${{ steps.regen.outputs.gendir }}"
+          cp "$gendir/out/kubernetes/PROVENANCE.json" PROVENANCE.json
+          rsync -a --delete --exclude='go.sum' \
+            "$gendir/out/kubernetes/sdk/go/" sdk/go/
+          rsync -a --delete --exclude='deno.json' --exclude='deno.lock' \
+            "$gendir/out/kubernetes/sdk/typescript/" sdk/typescript/
+          rsync -a --delete \
+            "$gendir/out/kubernetes/sdk/python/" sdk/python/
+
+      - name: Regenerate sdk/go/go.sum
+        if: steps.diff.outputs.state == 'output-changed'
+        run: |
+          set -euo pipefail
+          cd sdk/go
+          go mod tidy
+
+      - name: Sanity-check the regenerated Go tree still builds
+        if: steps.diff.outputs.state == 'output-changed'
+        run: |
+          set -euo pipefail
+          cd sdk/go
+          go build ./...
+          go vet ./...
+
+      - name: Sanity-check the regenerated TS tree still typechecks
+        if: steps.diff.outputs.state == 'output-changed'
+        run: |
+          set -euo pipefail
+          cd sdk/typescript
+          find . -name "*.ts" -print0 | xargs -0 deno cache
+          find . -name "*.ts" -print0 | xargs -0 deno check --frozen
+
+      - name: Sanity-check the regenerated Python tree -- real import of every module
+        if: steps.diff.outputs.state == 'output-changed'
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: |
+          set -euo pipefail
+          deps="$(cd sdk/python && python3 -c "import tomllib; print(' '.join(tomllib.load(open('pyproject.toml','rb'))['project']['dependencies']))")"
+          pip install $deps
+          python3 - <<'PYEOF'
+          import os, sys, importlib
+
+          repo_root = os.path.join(os.getcwd(), "sdk", "python")
+          sys.path.insert(0, repo_root)
+
+          count = 0
+          errors = []
+          for dirpath, dirnames, filenames in os.walk(repo_root):
+              for f in filenames:
+                  if not f.endswith(".py"):
+                      continue
+                  rel = os.path.relpath(os.path.join(dirpath, f), repo_root)
+                  mod = rel[:-3].replace(os.sep, ".")
+                  if mod.endswith(".__init__"):
+                      mod = mod[: -len(".__init__")]
+                  try:
+                      importlib.import_module(mod)
+                      count += 1
+                  except Exception as e:
+                      errors.append((mod, str(e)))
+
+          print(f"imported {count} modules OK")
+          if errors:
+              print(f"{len(errors)} ERRORS:")
+              for m, e in errors:
+                  print(f"  {m}: {e}")
+              sys.exit(1)
+          print("ZERO errors")
+          PYEOF
+
+      - name: Open a review PR -- real output change, never applied blindly
+        if: steps.diff.outputs.state == 'output-changed'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name "ubx-bot"
+          git config user.email "actions@users.noreply.github.com"
+          short="$(echo "${{ steps.latest.outputs.commit }}" | cut -c1-12)"
+          branch="translator-regen/kubernetes-$short"
+          git checkout -b "$branch"
+          git add -A
+          git commit -m "sdk: regenerate for ubx-provider-dynamic ${{ steps.latest.outputs.tag }} (UBI-249)"
+          git push origin "$branch" --force
+          gh pr create \
+            --title "sdk: regenerate for ubx-provider-dynamic ${{ steps.latest.outputs.tag }}" \
+            --label "translator-watch-review" \
+            --body "Automated (\`.github/workflows/translator-watch.yml\`). ubx-provider-dynamic moved from \`${{ steps.recorded.outputs.commit }}\` to \`${{ steps.latest.outputs.commit }}\` (${{ steps.latest.outputs.tag }}). Schema held fixed at this repo's own pinned version (${{ steps.recorded.outputs.schema_version }}) -- this diff is attributable to the translator change alone, not a spec change.
+
+          A translator fix can move many resources at once. Review the diff before merging -- this never auto-merges." \
+            --base main --head "$branch"
