@@ -8,21 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1StorageVersionMigration_Metadata_ManagedFields:
+    # The API version used to manage the fields in this managedFields entry. (AI-inferred)
     api_version: Any = None
+    # The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
     fields_type: Any = None
+    # fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
     fields_v1: Any = None
+    # The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
     manager: Any = None
+    # Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
     operation: Any = None
+    # The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
     subresource: Any = None
+    # Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class V1beta1StorageVersionMigration_Metadata_OwnerReferences:
+    # The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
     api_version: Any = None
+    # If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
     block_owner_deletion: Any = None
+    # Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
     controller: Any = None
+    # The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
     kind: Any = None
+    # The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
     name: Any = None
+    # UID of the referenced owner object. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass
@@ -60,7 +73,9 @@ class V1beta1StorageVersionMigration_Metadata:
 
 @dataclasses.dataclass
 class V1beta1StorageVersionMigration_Spec_Resource:
+    # The API group of the resource being migrated (e.g., 'apps', 'batch'). This is part of the GroupVersionResource that specifies the resource whose storage version is being migrated. (AI-inferred)
     group: Any = None
+    # The API resource that this StorageVersionMigration targets. This required string identifies the resource whose storage version will be migrated, typically in the format 'resource.group' (e.g., 'deployments.apps') or just 'resource' for core group resources. (AI-inferred)
     resource: Any = None
 
 @dataclasses.dataclass
@@ -70,11 +85,17 @@ class V1beta1StorageVersionMigration_Spec:
 
 @dataclasses.dataclass
 class V1beta1StorageVersionMigration_Status_Conditions:
+    # The last time the condition transitioned from one status to another. This should reflect when the underlying condition changed, typically represented as a timestamp string. (AI-inferred)
     last_transition_time: Any = None
+    # A human-readable message that provides additional details about the current condition, including information about the last transition. (AI-inferred)
     message: Any = None
+    # The generation of the ValidatingAdmissionPolicy that was last processed by the controller, used to determine whether the status reflects the latest spec. (AI-inferred)
     observed_generation: Any = None
+    # A machine-readable, CamelCase reason for the condition's last transition. This provides a stable identifier for the condition state, complementing the human-readable message. (AI-inferred)
     reason: Any = None
+    # The status of the condition, indicating whether the condition is True, False, or Unknown. (AI-inferred)
     status: Any = None
+    # Type is a string that identifies the condition and distinguishes it from other conditions in the status.conditions list. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass

@@ -2,21 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1ResourceSlice_Metadata_ManagedFields {
+  /** The API version used to manage the fields in this managedFields entry. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred) */
   fieldsType?: string | Computed<string>;
+  /** fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred) */
   fieldsV1?: unknown | Computed<unknown>;
+  /** The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred) */
   manager?: string | Computed<string>;
+  /** Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred) */
   subresource?: string | Computed<string>;
+  /** Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceSlice_Metadata_OwnerReferences {
+  /** The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred) */
   blockOwnerDeletion?: boolean | Computed<boolean>;
+  /** Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred) */
   controller?: boolean | Computed<boolean>;
+  /** The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred) */
   name?: string | Computed<string>;
+  /** UID of the referenced owner object. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 
@@ -54,98 +67,149 @@ export interface V1beta1ResourceSlice_Metadata {
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_Attributes {
+  /** This device attribute's own real value, when it's a single boolean. (AI-inferred) */
   bool?: boolean | Computed<boolean>;
+  /** This device attribute's own real value, when it's a list of booleans. (AI-inferred) */
   bools?: boolean[] | Computed<boolean[]>;
+  /** This device attribute's own real value, when it's a single integer. (AI-inferred) */
   int?: number | Computed<number>;
+  /** This device attribute's own real value, when it's a list of integers. (AI-inferred) */
   ints?: number[] | Computed<number[]>;
+  /** This device attribute's own real value, when it's a single string. (AI-inferred) */
   string?: string | Computed<string>;
+  /** This device attribute's own real value, when it's a list of strings. (AI-inferred) */
   strings?: string[] | Computed<string[]>;
+  /** This device attribute's own real value, when it's a single semantic version. (AI-inferred) */
   version?: string | Computed<string>;
+  /** This device attribute's own real value, when it's a list of semantic versions. (AI-inferred) */
   versions?: string[] | Computed<string[]>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy_ValidRange {
+  /** The real maximum amount of this capacity a single request may consume. (AI-inferred) */
   max?: string | Computed<string>;
+  /** The real minimum amount of this capacity a single request may consume. (AI-inferred) */
   min?: string | Computed<string>;
+  /** The real increment a request's own consumption of this capacity must be a multiple of, between `min` and `max`. (AI-inferred) */
   step?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy {
+  /** The real default amount of this capacity a request consumes when it doesn't specify its own explicit amount. (AI-inferred) */
   default?: string | Computed<string>;
+  /** The real, allowed minimum/maximum/step range a request's own consumption of this capacity must fall within. (AI-inferred) */
   validRange?: V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy_ValidRange | Computed<V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy_ValidRange>;
+  /** The real, fixed set of amounts a request's own consumption of this capacity is allowed to be, instead of a continuous range. (AI-inferred) */
   validValues?: string[] | Computed<string[]>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_Capacity {
+  /** Real rules constraining how much of this capacity a single request may actually consume, beyond just its own raw quantity. (AI-inferred) */
   requestPolicy?: V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy | Computed<V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy>;
+  /** This capacity's own real, current total quantity, before any request consumes part of it. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_Counters {
+  /** The real quantity this counter reference consumes or advertises. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters {
+  /** Groups of counter-consuming devices treated as sharing the same real pool -- devices in the same group can't independently double-consume the same counter. (AI-inferred) */
   compatibilityGroups?: string[] | Computed<string[]>;
+  /** The real, named CounterSet (from this ResourceSlice's own `shared_counters`) this consumption reference draws from. (AI-inferred) */
   counterSet?: string | Computed<string>;
+  /** The real, named counters within the referenced CounterSet, and how much of each this device consumes. (AI-inferred) */
   counters?: Record<string, V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_Counters> | Computed<Record<string, V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_Counters>>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_Mapping {
+  /** The real, named device capacity this mapping translates into a node-allocatable resource. (AI-inferred) */
   capacityKey?: string | Computed<string>;
+  /** A real scale factor applied to the device capacity's own quantity before it's counted against the node's own allocatable resources. (AI-inferred) */
   capacityMultiplier?: string | Computed<string>;
+  /** A real scale factor applied per allocated device before its capacity counts against the node's own allocatable resources. (AI-inferred) */
   deviceMultiplier?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_Overhead {
+  /** The real, fixed additional resource reservation charged once per container using this device. (AI-inferred) */
   perContainer?: string | Computed<string>;
+  /** The real, fixed additional resource reservation charged once per pod using this device, regardless of container count. (AI-inferred) */
   perPod?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources {
+  /** Real, per-capacity rules translating this device's own capacity into a real node-allocatable compute resource quantity. (AI-inferred) */
   mapping?: V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_Mapping | Computed<V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_Mapping>;
+  /** A real, fixed additional resource reservation this device requires on the node, on top of whatever a claiming pod's own containers request. (AI-inferred) */
   overhead?: V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_Overhead | Computed<V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_Overhead>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressions {
+  /** The real label key this selector requirement matches against. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The real comparison (`In`, `NotIn`, `Exists`, `DoesNotExist`) this selector requirement applies to `key`/`values`. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The real set of values `key` is compared against, per this requirement's own `operator`. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms {
+  /** Real, ANDed label-based requirements every node in this term must all satisfy. (AI-inferred) */
   matchExpressions?: V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressions[] | Computed<V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressions[]>;
+  /** Real, ANDed field-based requirements (matching a node's own real object fields, not just its labels) every node in this term must all satisfy. (AI-inferred) */
   matchFields?: V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressions[] | Computed<V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressions[]>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector {
+  /** Real, ORed sets of node-matching requirements -- a node satisfies this selector if it matches any one of these terms. (AI-inferred) */
   nodeSelectorTerms?: V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms[] | Computed<V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms[]>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic_Taints {
+  /** The real effect this device taint has on requests that don't tolerate it. (AI-inferred) */
   effect?: string | Computed<string>;
+  /** The real key identifying this device taint. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The real timestamp this taint was actually applied to the device. (AI-inferred) */
   timeAdded?: string | Computed<string>;
+  /** The real value paired with this device taint's own key. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices_Basic {
+  /** Whether this device is available identically on every node in the cluster, rather than being tied to the one node this ResourceSlice is scoped to. (AI-inferred) */
   allNodes?: boolean | Computed<boolean>;
+  /** Whether this device supports being allocated to more than one ResourceClaim at once (a shared device), rather than being exclusive to a single claim. (AI-inferred) */
   allowMultipleAllocations?: boolean | Computed<boolean>;
+  /** Real, named attributes (string, version, integer, or boolean, singular or list) describing this device's own real qualities -- what a device selector's CEL expression actually reads. (AI-inferred) */
   attributes?: Record<string, V1beta1ResourceSlice_Spec_Devices_Basic_Attributes> | Computed<Record<string, V1beta1ResourceSlice_Spec_Devices_Basic_Attributes>>;
+  /** Real conditions that must all be true before a claim allocated to this device can actually be used, checked at pod-binding time. (AI-inferred) */
   bindingConditions?: string[] | Computed<string[]>;
+  /** Real conditions that, if any becomes true, mean this device's own binding has definitively failed and should not be retried. (AI-inferred) */
   bindingFailureConditions?: string[] | Computed<string[]>;
+  /** Whether allocating this device also binds the claiming pod to the specific node this ResourceSlice is scoped to. (AI-inferred) */
   bindsToNode?: boolean | Computed<boolean>;
+  /** The real, named capacities (each a quantity, like available memory or bandwidth) this device advertises, that a request can specify a minimum for. (AI-inferred) */
   capacity?: Record<string, V1beta1ResourceSlice_Spec_Devices_Basic_Capacity> | Computed<Record<string, V1beta1ResourceSlice_Spec_Devices_Basic_Capacity>>;
+  /** Real references to this ResourceSlice's own `shared_counters`, and how much of each this device consumes just by existing, before any claim allocates it. (AI-inferred) */
   consumesCounters?: V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters[] | Computed<V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters[]>;
+  /** Real, computed mappings from this device's own capacity down to the node's own allocatable compute resources, so the kubelet accounts for it correctly alongside ordinary pod resource requests. (AI-inferred) */
   nodeAllocatableResources?: Record<string, V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources> | Computed<Record<string, V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources>>;
+  /** Pins this device to one specific real node by name, when it isn't available cluster-wide. (AI-inferred) */
   nodeName?: string | Computed<string>;
+  /** A real node selector scoping this device's own real availability to a matching subset of nodes, rather than one specific node or the whole cluster. (AI-inferred) */
   nodeSelector?: V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector | Computed<V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector>;
+  /** Real taints this device itself carries, matching the same mechanism node taints use -- a request needs a matching toleration to be allocated a tainted device. (AI-inferred) */
   taints?: V1beta1ResourceSlice_Spec_Devices_Basic_Taints[] | Computed<V1beta1ResourceSlice_Spec_Devices_Basic_Taints[]>;
 }
 
 export interface V1beta1ResourceSlice_Spec_Devices {
+  /** The real, concrete definition of one hardware or software device this ResourceSlice advertises, described by its own attributes and capacities. (AI-inferred) */
   basic?: V1beta1ResourceSlice_Spec_Devices_Basic | Computed<V1beta1ResourceSlice_Spec_Devices_Basic>;
+  /** The name of the device, unique within the resource slice. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
@@ -159,7 +223,9 @@ export interface V1beta1ResourceSlice_Spec_Pool {
 }
 
 export interface V1beta1ResourceSlice_Spec_SharedCounters {
+  /** The real, named counters this shared CounterSet actually defines, each with its own total real quantity devices can consume from. (AI-inferred) */
   counters?: Record<string, V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_Counters> | Computed<Record<string, V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_Counters>>;
+  /** The real name identifying this CounterSet, referenced by any device's own `consumes_counters`. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

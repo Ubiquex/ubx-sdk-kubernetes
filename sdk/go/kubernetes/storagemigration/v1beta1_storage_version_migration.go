@@ -4,21 +4,34 @@ package storagemigration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1StorageVersionMigration_Metadata_ManagedFields struct {
+	// The API version used to manage the fields in this managedFields entry. (AI-inferred)
 	ApiVersion any
+	// The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
 	FieldsType any
+	// fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
 	FieldsV1 any
+	// The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
 	Manager any
+	// Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
 	Operation any
+	// The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
 	Subresource any
+	// Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
 	Time any
 }
 
 type V1beta1StorageVersionMigration_Metadata_OwnerReferences struct {
+	// The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
 	ApiVersion any
+	// If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
 	BlockOwnerDeletion any
+	// Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
 	Controller any
+	// The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
 	Kind any
+	// The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
 	Name any
+	// UID of the referenced owner object. (AI-inferred)
 	Uid any
 }
 
@@ -56,7 +69,9 @@ type V1beta1StorageVersionMigration_Metadata struct {
 }
 
 type V1beta1StorageVersionMigration_Spec_Resource struct {
+	// The API group of the resource being migrated (e.g., 'apps', 'batch'). This is part of the GroupVersionResource that specifies the resource whose storage version is being migrated. (AI-inferred)
 	Group any
+	// The API resource that this StorageVersionMigration targets. This required string identifies the resource whose storage version will be migrated, typically in the format 'resource.group' (e.g., 'deployments.apps') or just 'resource' for core group resources. (AI-inferred)
 	Resource any
 }
 
@@ -66,11 +81,17 @@ type V1beta1StorageVersionMigration_Spec struct {
 }
 
 type V1beta1StorageVersionMigration_Status_Conditions struct {
+	// The last time the condition transitioned from one status to another. This should reflect when the underlying condition changed, typically represented as a timestamp string. (AI-inferred)
 	LastTransitionTime any
+	// A human-readable message that provides additional details about the current condition, including information about the last transition. (AI-inferred)
 	Message any
+	// The generation of the ValidatingAdmissionPolicy that was last processed by the controller, used to determine whether the status reflects the latest spec. (AI-inferred)
 	ObservedGeneration any
+	// A machine-readable, CamelCase reason for the condition's last transition. This provides a stable identifier for the condition state, complementing the human-readable message. (AI-inferred)
 	Reason any
+	// The status of the condition, indicating whether the condition is True, False, or Unknown. (AI-inferred)
 	Status any
+	// Type is a string that identifies the condition and distinguishes it from other conditions in the status.conditions list. (AI-inferred)
 	Type any
 }
 
@@ -82,80 +103,80 @@ type V1beta1StorageVersionMigration_Status struct {
 }
 
 var V1beta1StorageVersionMigration_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var V1beta1StorageVersionMigration_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta1StorageVersionMigration_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: V1beta1StorageVersionMigration_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: V1beta1StorageVersionMigration_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   V1beta1StorageVersionMigration_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   V1beta1StorageVersionMigration_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta1StorageVersionMigration_Spec_ResourceFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"Group":    ubx.FieldSpec{WireName: "group"},
+	"Resource": ubx.FieldSpec{WireName: "resource"},
+}
 
 var V1beta1StorageVersionMigration_SpecFields = ubx.FieldMap{
-		"Resource": ubx.FieldSpec{
-			WireName: "resource",
-			Kind: "object",
-			Fields: V1beta1StorageVersionMigration_Spec_ResourceFields,
-		},
-	}
+	"Resource": ubx.FieldSpec{
+		WireName: "resource",
+		Kind:     "object",
+		Fields:   V1beta1StorageVersionMigration_Spec_ResourceFields,
+	},
+}
 
 var V1beta1StorageVersionMigration_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1StorageVersionMigration_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: V1beta1StorageVersionMigration_Status_ConditionsFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   V1beta1StorageVersionMigration_Status_ConditionsFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+}
 
 type V1beta1StorageVersionMigrationConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -191,21 +212,21 @@ var V1beta1StorageVersionMigration = ubx.ResourceBinding{
 	WireType: "kubernetes_storagemigration_v1beta1_storage_version_migration",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1StorageVersionMigration_MetadataFields,
+			Kind:     "object",
+			Fields:   V1beta1StorageVersionMigration_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: V1beta1StorageVersionMigration_SpecFields,
+			Kind:     "object",
+			Fields:   V1beta1StorageVersionMigration_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: V1beta1StorageVersionMigration_StatusFields,
+			Kind:     "object",
+			Fields:   V1beta1StorageVersionMigration_StatusFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

@@ -96,9 +96,9 @@ type ResourcePoolStatusRequest_Status_Conditions struct {
 
 type ResourcePoolStatusRequest_Status_Pools_PartitionSummary struct {
 	Allocatable any
-	Attribute any
-	Total any
-	Type any
+	Attribute   any
+	Total       any
+	Type        any
 }
 
 type ResourcePoolStatusRequest_Status_Pools_ShareableSummary_Capacity struct {
@@ -106,8 +106,8 @@ type ResourcePoolStatusRequest_Status_Pools_ShareableSummary_Capacity struct {
 	Available any
 	// The amount of the shareable capacity that has been consumed, expressed as a Kubernetes resource quantity (e.g., '1Gi'). (AI-inferred)
 	Consumed any
-	Name any
-	Total any
+	Name     any
+	Total    any
 }
 
 type ResourcePoolStatusRequest_Status_Pools_ShareableSummary struct {
@@ -123,20 +123,20 @@ type ResourcePoolStatusRequest_Status_Pools struct {
 	AllocatedDevices any
 	// The number of devices currently available for use in the resource pool. (AI-inferred)
 	AvailableDevices any
-	Driver any
-	Generation any
+	Driver           any
+	Generation       any
 	// The name of the Kubernetes node associated with this resource pool. (AI-inferred)
-	NodeName any
+	NodeName         any
 	PartitionSummary any
-	PoolName any
+	PoolName         any
 	// The number of resource slices in the resource pool. (AI-inferred)
 	ResourceSliceCount any
-	ShareableSummary any
+	ShareableSummary   any
 	// The total number of devices (e.g., GPUs, NICs) available in the resource pool. (AI-inferred)
 	TotalDevices any
 	// The number of devices in the resource pool that are currently unavailable. (AI-inferred)
 	UnavailableDevices any
-	ValidationError any
+	ValidationError    any
 }
 
 type ResourcePoolStatusRequest_Status struct {
@@ -149,126 +149,126 @@ type ResourcePoolStatusRequest_Status struct {
 }
 
 var ResourcePoolStatusRequest_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var ResourcePoolStatusRequest_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var ResourcePoolStatusRequest_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: ResourcePoolStatusRequest_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: ResourcePoolStatusRequest_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   ResourcePoolStatusRequest_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   ResourcePoolStatusRequest_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var ResourcePoolStatusRequest_SpecFields = ubx.FieldMap{
-		"DefaultPartitionTypeAttribute": ubx.FieldSpec{WireName: "default_partition_type_attribute"},
-		"Driver": ubx.FieldSpec{WireName: "driver"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"PoolName": ubx.FieldSpec{WireName: "pool_name"},
-	}
+	"DefaultPartitionTypeAttribute": ubx.FieldSpec{WireName: "default_partition_type_attribute"},
+	"Driver":                        ubx.FieldSpec{WireName: "driver"},
+	"Limit":                         ubx.FieldSpec{WireName: "limit"},
+	"PoolName":                      ubx.FieldSpec{WireName: "pool_name"},
+}
 
 var ResourcePoolStatusRequest_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var ResourcePoolStatusRequest_Status_Pools_PartitionSummaryFields = ubx.FieldMap{
-		"Allocatable": ubx.FieldSpec{WireName: "allocatable"},
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Total": ubx.FieldSpec{WireName: "total"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Allocatable": ubx.FieldSpec{WireName: "allocatable"},
+	"Attribute":   ubx.FieldSpec{WireName: "attribute"},
+	"Total":       ubx.FieldSpec{WireName: "total"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var ResourcePoolStatusRequest_Status_Pools_ShareableSummary_CapacityFields = ubx.FieldMap{
-		"Available": ubx.FieldSpec{WireName: "available"},
-		"Consumed": ubx.FieldSpec{WireName: "consumed"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Total": ubx.FieldSpec{WireName: "total"},
-	}
+	"Available": ubx.FieldSpec{WireName: "available"},
+	"Consumed":  ubx.FieldSpec{WireName: "consumed"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Total":     ubx.FieldSpec{WireName: "total"},
+}
 
 var ResourcePoolStatusRequest_Status_Pools_ShareableSummaryFields = ubx.FieldMap{
-		"Capacity": ubx.FieldSpec{
-			WireName: "capacity",
-			Kind: "list",
-			Fields: ResourcePoolStatusRequest_Status_Pools_ShareableSummary_CapacityFields,
-		},
-		"FullyAvailableDevices": ubx.FieldSpec{WireName: "fully_available_devices"},
-		"PartiallyAvailableDevices": ubx.FieldSpec{WireName: "partially_available_devices"},
-	}
+	"Capacity": ubx.FieldSpec{
+		WireName: "capacity",
+		Kind:     "list",
+		Fields:   ResourcePoolStatusRequest_Status_Pools_ShareableSummary_CapacityFields,
+	},
+	"FullyAvailableDevices":     ubx.FieldSpec{WireName: "fully_available_devices"},
+	"PartiallyAvailableDevices": ubx.FieldSpec{WireName: "partially_available_devices"},
+}
 
 var ResourcePoolStatusRequest_Status_PoolsFields = ubx.FieldMap{
-		"AllocatedDevices": ubx.FieldSpec{WireName: "allocated_devices"},
-		"AvailableDevices": ubx.FieldSpec{WireName: "available_devices"},
-		"Driver": ubx.FieldSpec{WireName: "driver"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"NodeName": ubx.FieldSpec{WireName: "node_name"},
-		"PartitionSummary": ubx.FieldSpec{
-			WireName: "partition_summary",
-			Kind: "list",
-			Fields: ResourcePoolStatusRequest_Status_Pools_PartitionSummaryFields,
-		},
-		"PoolName": ubx.FieldSpec{WireName: "pool_name"},
-		"ResourceSliceCount": ubx.FieldSpec{WireName: "resource_slice_count"},
-		"ShareableSummary": ubx.FieldSpec{
-			WireName: "shareable_summary",
-			Kind: "object",
-			Fields: ResourcePoolStatusRequest_Status_Pools_ShareableSummaryFields,
-		},
-		"TotalDevices": ubx.FieldSpec{WireName: "total_devices"},
-		"UnavailableDevices": ubx.FieldSpec{WireName: "unavailable_devices"},
-		"ValidationError": ubx.FieldSpec{WireName: "validation_error"},
-	}
+	"AllocatedDevices": ubx.FieldSpec{WireName: "allocated_devices"},
+	"AvailableDevices": ubx.FieldSpec{WireName: "available_devices"},
+	"Driver":           ubx.FieldSpec{WireName: "driver"},
+	"Generation":       ubx.FieldSpec{WireName: "generation"},
+	"NodeName":         ubx.FieldSpec{WireName: "node_name"},
+	"PartitionSummary": ubx.FieldSpec{
+		WireName: "partition_summary",
+		Kind:     "list",
+		Fields:   ResourcePoolStatusRequest_Status_Pools_PartitionSummaryFields,
+	},
+	"PoolName":           ubx.FieldSpec{WireName: "pool_name"},
+	"ResourceSliceCount": ubx.FieldSpec{WireName: "resource_slice_count"},
+	"ShareableSummary": ubx.FieldSpec{
+		WireName: "shareable_summary",
+		Kind:     "object",
+		Fields:   ResourcePoolStatusRequest_Status_Pools_ShareableSummaryFields,
+	},
+	"TotalDevices":       ubx.FieldSpec{WireName: "total_devices"},
+	"UnavailableDevices": ubx.FieldSpec{WireName: "unavailable_devices"},
+	"ValidationError":    ubx.FieldSpec{WireName: "validation_error"},
+}
 
 var ResourcePoolStatusRequest_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: ResourcePoolStatusRequest_Status_ConditionsFields,
-		},
-		"PoolCount": ubx.FieldSpec{WireName: "pool_count"},
-		"Pools": ubx.FieldSpec{
-			WireName: "pools",
-			Kind: "list",
-			Fields: ResourcePoolStatusRequest_Status_PoolsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   ResourcePoolStatusRequest_Status_ConditionsFields,
+	},
+	"PoolCount": ubx.FieldSpec{WireName: "pool_count"},
+	"Pools": ubx.FieldSpec{
+		WireName: "pools",
+		Kind:     "list",
+		Fields:   ResourcePoolStatusRequest_Status_PoolsFields,
+	},
+}
 
 type ResourcePoolStatusRequestConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -304,21 +304,21 @@ var ResourcePoolStatusRequest = ubx.ResourceBinding{
 	WireType: "kubernetes_resource_resource_pool_status_request",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: ResourcePoolStatusRequest_MetadataFields,
+			Kind:     "object",
+			Fields:   ResourcePoolStatusRequest_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: ResourcePoolStatusRequest_SpecFields,
+			Kind:     "object",
+			Fields:   ResourcePoolStatusRequest_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: ResourcePoolStatusRequest_StatusFields,
+			Kind:     "object",
+			Fields:   ResourcePoolStatusRequest_StatusFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

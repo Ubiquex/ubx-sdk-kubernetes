@@ -4,21 +4,34 @@ package resource
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1ResourceSlice_Metadata_ManagedFields struct {
+	// The API version used to manage the fields in this managedFields entry. (AI-inferred)
 	ApiVersion any
+	// The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
 	FieldsType any
+	// fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
 	FieldsV1 any
+	// The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
 	Manager any
+	// Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
 	Operation any
+	// The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
 	Subresource any
+	// Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
 	Time any
 }
 
 type V1beta1ResourceSlice_Metadata_OwnerReferences struct {
+	// The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
 	ApiVersion any
+	// If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
 	BlockOwnerDeletion any
+	// Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
 	Controller any
+	// The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
 	Kind any
+	// The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
 	Name any
+	// UID of the referenced owner object. (AI-inferred)
 	Uid any
 }
 
@@ -56,98 +69,149 @@ type V1beta1ResourceSlice_Metadata struct {
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_Attributes struct {
+	// This device attribute's own real value, when it's a single boolean. (AI-inferred)
 	Bool any
+	// This device attribute's own real value, when it's a list of booleans. (AI-inferred)
 	Bools any
+	// This device attribute's own real value, when it's a single integer. (AI-inferred)
 	Int any
+	// This device attribute's own real value, when it's a list of integers. (AI-inferred)
 	Ints any
+	// This device attribute's own real value, when it's a single string. (AI-inferred)
 	String any
+	// This device attribute's own real value, when it's a list of strings. (AI-inferred)
 	Strings any
+	// This device attribute's own real value, when it's a single semantic version. (AI-inferred)
 	Version any
+	// This device attribute's own real value, when it's a list of semantic versions. (AI-inferred)
 	Versions any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy_ValidRange struct {
+	// The real maximum amount of this capacity a single request may consume. (AI-inferred)
 	Max any
+	// The real minimum amount of this capacity a single request may consume. (AI-inferred)
 	Min any
+	// The real increment a request's own consumption of this capacity must be a multiple of, between `min` and `max`. (AI-inferred)
 	Step any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy struct {
+	// The real default amount of this capacity a request consumes when it doesn't specify its own explicit amount. (AI-inferred)
 	Default any
+	// The real, allowed minimum/maximum/step range a request's own consumption of this capacity must fall within. (AI-inferred)
 	ValidRange any
+	// The real, fixed set of amounts a request's own consumption of this capacity is allowed to be, instead of a continuous range. (AI-inferred)
 	ValidValues any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_Capacity struct {
+	// Real rules constraining how much of this capacity a single request may actually consume, beyond just its own raw quantity. (AI-inferred)
 	RequestPolicy any
+	// This capacity's own real, current total quantity, before any request consumes part of it. (AI-inferred)
 	Value any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_Counters struct {
+	// The real quantity this counter reference consumes or advertises. (AI-inferred)
 	Value any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters struct {
+	// Groups of counter-consuming devices treated as sharing the same real pool -- devices in the same group can't independently double-consume the same counter. (AI-inferred)
 	CompatibilityGroups any
+	// The real, named CounterSet (from this ResourceSlice's own `shared_counters`) this consumption reference draws from. (AI-inferred)
 	CounterSet any
+	// The real, named counters within the referenced CounterSet, and how much of each this device consumes. (AI-inferred)
 	Counters any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_Mapping struct {
+	// The real, named device capacity this mapping translates into a node-allocatable resource. (AI-inferred)
 	CapacityKey any
+	// A real scale factor applied to the device capacity's own quantity before it's counted against the node's own allocatable resources. (AI-inferred)
 	CapacityMultiplier any
+	// A real scale factor applied per allocated device before its capacity counts against the node's own allocatable resources. (AI-inferred)
 	DeviceMultiplier any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_Overhead struct {
+	// The real, fixed additional resource reservation charged once per container using this device. (AI-inferred)
 	PerContainer any
+	// The real, fixed additional resource reservation charged once per pod using this device, regardless of container count. (AI-inferred)
 	PerPod any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources struct {
+	// Real, per-capacity rules translating this device's own capacity into a real node-allocatable compute resource quantity. (AI-inferred)
 	Mapping any
+	// A real, fixed additional resource reservation this device requires on the node, on top of whatever a claiming pod's own containers request. (AI-inferred)
 	Overhead any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressions struct {
+	// The real label key this selector requirement matches against. (AI-inferred)
 	Key any
+	// The real comparison (`In`, `NotIn`, `Exists`, `DoesNotExist`) this selector requirement applies to `key`/`values`. (AI-inferred)
 	Operator any
+	// The real set of values `key` is compared against, per this requirement's own `operator`. (AI-inferred)
 	Values any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms struct {
+	// Real, ANDed label-based requirements every node in this term must all satisfy. (AI-inferred)
 	MatchExpressions any
+	// Real, ANDed field-based requirements (matching a node's own real object fields, not just its labels) every node in this term must all satisfy. (AI-inferred)
 	MatchFields any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector struct {
+	// Real, ORed sets of node-matching requirements -- a node satisfies this selector if it matches any one of these terms. (AI-inferred)
 	NodeSelectorTerms any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic_Taints struct {
+	// The real effect this device taint has on requests that don't tolerate it. (AI-inferred)
 	Effect any
+	// The real key identifying this device taint. (AI-inferred)
 	Key any
+	// The real timestamp this taint was actually applied to the device. (AI-inferred)
 	TimeAdded any
+	// The real value paired with this device taint's own key. (AI-inferred)
 	Value any
 }
 
 type V1beta1ResourceSlice_Spec_Devices_Basic struct {
+	// Whether this device is available identically on every node in the cluster, rather than being tied to the one node this ResourceSlice is scoped to. (AI-inferred)
 	AllNodes any
+	// Whether this device supports being allocated to more than one ResourceClaim at once (a shared device), rather than being exclusive to a single claim. (AI-inferred)
 	AllowMultipleAllocations any
+	// Real, named attributes (string, version, integer, or boolean, singular or list) describing this device's own real qualities -- what a device selector's CEL expression actually reads. (AI-inferred)
 	Attributes any
+	// Real conditions that must all be true before a claim allocated to this device can actually be used, checked at pod-binding time. (AI-inferred)
 	BindingConditions any
+	// Real conditions that, if any becomes true, mean this device's own binding has definitively failed and should not be retried. (AI-inferred)
 	BindingFailureConditions any
+	// Whether allocating this device also binds the claiming pod to the specific node this ResourceSlice is scoped to. (AI-inferred)
 	BindsToNode any
+	// The real, named capacities (each a quantity, like available memory or bandwidth) this device advertises, that a request can specify a minimum for. (AI-inferred)
 	Capacity any
+	// Real references to this ResourceSlice's own `shared_counters`, and how much of each this device consumes just by existing, before any claim allocates it. (AI-inferred)
 	ConsumesCounters any
+	// Real, computed mappings from this device's own capacity down to the node's own allocatable compute resources, so the kubelet accounts for it correctly alongside ordinary pod resource requests. (AI-inferred)
 	NodeAllocatableResources any
+	// Pins this device to one specific real node by name, when it isn't available cluster-wide. (AI-inferred)
 	NodeName any
+	// A real node selector scoping this device's own real availability to a matching subset of nodes, rather than one specific node or the whole cluster. (AI-inferred)
 	NodeSelector any
+	// Real taints this device itself carries, matching the same mechanism node taints use -- a request needs a matching toleration to be allocated a tainted device. (AI-inferred)
 	Taints any
 }
 
 type V1beta1ResourceSlice_Spec_Devices struct {
+	// The real, concrete definition of one hardware or software device this ResourceSlice advertises, described by its own attributes and capacities. (AI-inferred)
 	Basic any
+	// The name of the device, unique within the resource slice. (AI-inferred)
 	Name any
 }
 
@@ -161,7 +225,9 @@ type V1beta1ResourceSlice_Spec_Pool struct {
 }
 
 type V1beta1ResourceSlice_Spec_SharedCounters struct {
+	// The real, named counters this shared CounterSet actually defines, each with its own total real quantity devices can consume from. (AI-inferred)
 	Counters any
+	// The real name identifying this CounterSet, referenced by any device's own `consumes_counters`. (AI-inferred)
 	Name any
 }
 
@@ -189,249 +255,249 @@ type V1beta1ResourceSlice_Spec struct {
 }
 
 var V1beta1ResourceSlice_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var V1beta1ResourceSlice_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta1ResourceSlice_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: V1beta1ResourceSlice_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: V1beta1ResourceSlice_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   V1beta1ResourceSlice_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   V1beta1ResourceSlice_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_AttributesFields = ubx.FieldMap{
-		"Bool": ubx.FieldSpec{WireName: "bool"},
-		"Bools": ubx.FieldSpec{WireName: "bools"},
-		"Int": ubx.FieldSpec{WireName: "int"},
-		"Ints": ubx.FieldSpec{WireName: "ints"},
-		"String": ubx.FieldSpec{WireName: "string"},
-		"Strings": ubx.FieldSpec{WireName: "strings"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"Versions": ubx.FieldSpec{WireName: "versions"},
-	}
+	"Bool":     ubx.FieldSpec{WireName: "bool"},
+	"Bools":    ubx.FieldSpec{WireName: "bools"},
+	"Int":      ubx.FieldSpec{WireName: "int"},
+	"Ints":     ubx.FieldSpec{WireName: "ints"},
+	"String":   ubx.FieldSpec{WireName: "string"},
+	"Strings":  ubx.FieldSpec{WireName: "strings"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+	"Versions": ubx.FieldSpec{WireName: "versions"},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy_ValidRangeFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"Step": ubx.FieldSpec{WireName: "step"},
-	}
+	"Max":  ubx.FieldSpec{WireName: "max"},
+	"Min":  ubx.FieldSpec{WireName: "min"},
+	"Step": ubx.FieldSpec{WireName: "step"},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicyFields = ubx.FieldMap{
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"ValidRange": ubx.FieldSpec{
-			WireName: "valid_range",
-			Kind: "object",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy_ValidRangeFields,
-		},
-		"ValidValues": ubx.FieldSpec{WireName: "valid_values"},
-	}
+	"Default": ubx.FieldSpec{WireName: "default"},
+	"ValidRange": ubx.FieldSpec{
+		WireName: "valid_range",
+		Kind:     "object",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicy_ValidRangeFields,
+	},
+	"ValidValues": ubx.FieldSpec{WireName: "valid_values"},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_CapacityFields = ubx.FieldMap{
-		"RequestPolicy": ubx.FieldSpec{
-			WireName: "request_policy",
-			Kind: "object",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicyFields,
-		},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"RequestPolicy": ubx.FieldSpec{
+		WireName: "request_policy",
+		Kind:     "object",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_Capacity_RequestPolicyFields,
+	},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_CountersFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCountersFields = ubx.FieldMap{
-		"CompatibilityGroups": ubx.FieldSpec{WireName: "compatibility_groups"},
-		"CounterSet": ubx.FieldSpec{WireName: "counter_set"},
-		"Counters": ubx.FieldSpec{
-			WireName: "counters",
-			Kind: "map",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_CountersFields,
-		},
-	}
+	"CompatibilityGroups": ubx.FieldSpec{WireName: "compatibility_groups"},
+	"CounterSet":          ubx.FieldSpec{WireName: "counter_set"},
+	"Counters": ubx.FieldSpec{
+		WireName: "counters",
+		Kind:     "map",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_CountersFields,
+	},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_MappingFields = ubx.FieldMap{
-		"CapacityKey": ubx.FieldSpec{WireName: "capacity_key"},
-		"CapacityMultiplier": ubx.FieldSpec{WireName: "capacity_multiplier"},
-		"DeviceMultiplier": ubx.FieldSpec{WireName: "device_multiplier"},
-	}
+	"CapacityKey":        ubx.FieldSpec{WireName: "capacity_key"},
+	"CapacityMultiplier": ubx.FieldSpec{WireName: "capacity_multiplier"},
+	"DeviceMultiplier":   ubx.FieldSpec{WireName: "device_multiplier"},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_OverheadFields = ubx.FieldMap{
-		"PerContainer": ubx.FieldSpec{WireName: "per_container"},
-		"PerPod": ubx.FieldSpec{WireName: "per_pod"},
-	}
+	"PerContainer": ubx.FieldSpec{WireName: "per_container"},
+	"PerPod":       ubx.FieldSpec{WireName: "per_pod"},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResourcesFields = ubx.FieldMap{
-		"Mapping": ubx.FieldSpec{
-			WireName: "mapping",
-			Kind: "object",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_MappingFields,
-		},
-		"Overhead": ubx.FieldSpec{
-			WireName: "overhead",
-			Kind: "object",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_OverheadFields,
-		},
-	}
+	"Mapping": ubx.FieldSpec{
+		WireName: "mapping",
+		Kind:     "object",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_MappingFields,
+	},
+	"Overhead": ubx.FieldSpec{
+		WireName: "overhead",
+		Kind:     "object",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResources_OverheadFields,
+	},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTermsFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressionsFields,
-		},
-		"MatchFields": ubx.FieldSpec{
-			WireName: "match_fields",
-			Kind: "list",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressionsFields,
-		},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressionsFields,
+	},
+	"MatchFields": ubx.FieldSpec{
+		WireName: "match_fields",
+		Kind:     "list",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTerms_MatchExpressionsFields,
+	},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelectorFields = ubx.FieldMap{
-		"NodeSelectorTerms": ubx.FieldSpec{
-			WireName: "node_selector_terms",
-			Kind: "list",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTermsFields,
-		},
-	}
+	"NodeSelectorTerms": ubx.FieldSpec{
+		WireName: "node_selector_terms",
+		Kind:     "list",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelector_NodeSelectorTermsFields,
+	},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_Basic_TaintsFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"TimeAdded": ubx.FieldSpec{WireName: "time_added"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Effect":    ubx.FieldSpec{WireName: "effect"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"TimeAdded": ubx.FieldSpec{WireName: "time_added"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1ResourceSlice_Spec_Devices_BasicFields = ubx.FieldMap{
-		"AllNodes": ubx.FieldSpec{WireName: "all_nodes"},
-		"AllowMultipleAllocations": ubx.FieldSpec{WireName: "allow_multiple_allocations"},
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "map",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_AttributesFields,
-		},
-		"BindingConditions": ubx.FieldSpec{WireName: "binding_conditions"},
-		"BindingFailureConditions": ubx.FieldSpec{WireName: "binding_failure_conditions"},
-		"BindsToNode": ubx.FieldSpec{WireName: "binds_to_node"},
-		"Capacity": ubx.FieldSpec{
-			WireName: "capacity",
-			Kind: "map",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_CapacityFields,
-		},
-		"ConsumesCounters": ubx.FieldSpec{
-			WireName: "consumes_counters",
-			Kind: "list",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCountersFields,
-		},
-		"NodeAllocatableResources": ubx.FieldSpec{
-			WireName: "node_allocatable_resources",
-			Kind: "map",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResourcesFields,
-		},
-		"NodeName": ubx.FieldSpec{WireName: "node_name"},
-		"NodeSelector": ubx.FieldSpec{
-			WireName: "node_selector",
-			Kind: "object",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelectorFields,
-		},
-		"Taints": ubx.FieldSpec{
-			WireName: "taints",
-			Kind: "list",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_TaintsFields,
-		},
-	}
+	"AllNodes":                 ubx.FieldSpec{WireName: "all_nodes"},
+	"AllowMultipleAllocations": ubx.FieldSpec{WireName: "allow_multiple_allocations"},
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "map",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_AttributesFields,
+	},
+	"BindingConditions":        ubx.FieldSpec{WireName: "binding_conditions"},
+	"BindingFailureConditions": ubx.FieldSpec{WireName: "binding_failure_conditions"},
+	"BindsToNode":              ubx.FieldSpec{WireName: "binds_to_node"},
+	"Capacity": ubx.FieldSpec{
+		WireName: "capacity",
+		Kind:     "map",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_CapacityFields,
+	},
+	"ConsumesCounters": ubx.FieldSpec{
+		WireName: "consumes_counters",
+		Kind:     "list",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCountersFields,
+	},
+	"NodeAllocatableResources": ubx.FieldSpec{
+		WireName: "node_allocatable_resources",
+		Kind:     "map",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_NodeAllocatableResourcesFields,
+	},
+	"NodeName": ubx.FieldSpec{WireName: "node_name"},
+	"NodeSelector": ubx.FieldSpec{
+		WireName: "node_selector",
+		Kind:     "object",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelectorFields,
+	},
+	"Taints": ubx.FieldSpec{
+		WireName: "taints",
+		Kind:     "list",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_TaintsFields,
+	},
+}
 
 var V1beta1ResourceSlice_Spec_DevicesFields = ubx.FieldMap{
-		"Basic": ubx.FieldSpec{
-			WireName: "basic",
-			Kind: "object",
-			Fields: V1beta1ResourceSlice_Spec_Devices_BasicFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Basic": ubx.FieldSpec{
+		WireName: "basic",
+		Kind:     "object",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_BasicFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V1beta1ResourceSlice_Spec_PoolFields = ubx.FieldMap{
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceSliceCount": ubx.FieldSpec{WireName: "resource_slice_count"},
-	}
+	"Generation":         ubx.FieldSpec{WireName: "generation"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"ResourceSliceCount": ubx.FieldSpec{WireName: "resource_slice_count"},
+}
 
 var V1beta1ResourceSlice_Spec_SharedCountersFields = ubx.FieldMap{
-		"Counters": ubx.FieldSpec{
-			WireName: "counters",
-			Kind: "map",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_CountersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Counters": ubx.FieldSpec{
+		WireName: "counters",
+		Kind:     "map",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_ConsumesCounters_CountersFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V1beta1ResourceSlice_SpecFields = ubx.FieldMap{
-		"AllNodes": ubx.FieldSpec{WireName: "all_nodes"},
-		"Devices": ubx.FieldSpec{
-			WireName: "devices",
-			Kind: "list",
-			Fields: V1beta1ResourceSlice_Spec_DevicesFields,
-		},
-		"Driver": ubx.FieldSpec{WireName: "driver"},
-		"NodeName": ubx.FieldSpec{WireName: "node_name"},
-		"NodeSelector": ubx.FieldSpec{
-			WireName: "node_selector",
-			Kind: "object",
-			Fields: V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelectorFields,
-		},
-		"PartitionTypeAttribute": ubx.FieldSpec{WireName: "partition_type_attribute"},
-		"PerDeviceNodeSelection": ubx.FieldSpec{WireName: "per_device_node_selection"},
-		"Pool": ubx.FieldSpec{
-			WireName: "pool",
-			Kind: "object",
-			Fields: V1beta1ResourceSlice_Spec_PoolFields,
-		},
-		"SharedCounters": ubx.FieldSpec{
-			WireName: "shared_counters",
-			Kind: "list",
-			Fields: V1beta1ResourceSlice_Spec_SharedCountersFields,
-		},
-		"SkipNodeOperations": ubx.FieldSpec{WireName: "skip_node_operations"},
-	}
+	"AllNodes": ubx.FieldSpec{WireName: "all_nodes"},
+	"Devices": ubx.FieldSpec{
+		WireName: "devices",
+		Kind:     "list",
+		Fields:   V1beta1ResourceSlice_Spec_DevicesFields,
+	},
+	"Driver":   ubx.FieldSpec{WireName: "driver"},
+	"NodeName": ubx.FieldSpec{WireName: "node_name"},
+	"NodeSelector": ubx.FieldSpec{
+		WireName: "node_selector",
+		Kind:     "object",
+		Fields:   V1beta1ResourceSlice_Spec_Devices_Basic_NodeSelectorFields,
+	},
+	"PartitionTypeAttribute": ubx.FieldSpec{WireName: "partition_type_attribute"},
+	"PerDeviceNodeSelection": ubx.FieldSpec{WireName: "per_device_node_selection"},
+	"Pool": ubx.FieldSpec{
+		WireName: "pool",
+		Kind:     "object",
+		Fields:   V1beta1ResourceSlice_Spec_PoolFields,
+	},
+	"SharedCounters": ubx.FieldSpec{
+		WireName: "shared_counters",
+		Kind:     "list",
+		Fields:   V1beta1ResourceSlice_Spec_SharedCountersFields,
+	},
+	"SkipNodeOperations": ubx.FieldSpec{WireName: "skip_node_operations"},
+}
 
 type V1beta1ResourceSliceConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -463,16 +529,16 @@ var V1beta1ResourceSlice = ubx.ResourceBinding{
 	WireType: "kubernetes_resource_v1beta1_resource_slice",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1ResourceSlice_MetadataFields,
+			Kind:     "object",
+			Fields:   V1beta1ResourceSlice_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: V1beta1ResourceSlice_SpecFields,
+			Kind:     "object",
+			Fields:   V1beta1ResourceSlice_SpecFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

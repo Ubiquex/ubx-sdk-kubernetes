@@ -2,21 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1ResourceClaim_Metadata_ManagedFields {
+  /** The API version used to manage the fields in this managedFields entry. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred) */
   fieldsType?: string | Computed<string>;
+  /** fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred) */
   fieldsV1?: unknown | Computed<unknown>;
+  /** The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred) */
   manager?: string | Computed<string>;
+  /** Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred) */
   subresource?: string | Computed<string>;
+  /** Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceClaim_Metadata_OwnerReferences {
+  /** The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred) */
   blockOwnerDeletion?: boolean | Computed<boolean>;
+  /** Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred) */
   controller?: boolean | Computed<boolean>;
+  /** The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred) */
   name?: string | Computed<string>;
+  /** UID of the referenced owner object. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 
@@ -54,67 +67,102 @@ export interface V1beta1ResourceClaim_Metadata {
 }
 
 export interface V1beta1ResourceClaim_Spec_Devices_Config_Opaque {
+  /** Specifies the name of the driver that interprets the opaque device configuration parameters. (AI-inferred) */
   driver?: string | Computed<string>;
+  /** Arbitrary JSON object containing driver-specific parameters. The cluster does not interpret these parameters; they are passed as-is to the device driver. (AI-inferred) */
   parameters?: unknown | Computed<unknown>;
 }
 
 export interface V1beta1ResourceClaim_Spec_Devices_Config {
+  /** Opaque carries driver-specific configuration parameters in a raw object, allowing the device driver to interpret the settings without Kubernetes understanding them. (AI-inferred) */
   opaque?: V1beta1ResourceClaim_Spec_Devices_Config_Opaque | Computed<V1beta1ResourceClaim_Spec_Devices_Config_Opaque>;
+  /** Which of this claim's own device requests this configuration applies to -- every request, when left empty. (AI-inferred) */
   requests?: string[] | Computed<string[]>;
 }
 
 export interface V1beta1ResourceClaim_Spec_Devices_Constraints {
+  /** The name of a device attribute that all devices selected for the request must have different values for, ensuring the devices are distinct with respect to that attribute. (AI-inferred) */
   distinctAttribute?: string | Computed<string>;
+  /** The name of the device attribute this constraint applies to. A device is selected only if it has this attribute with a value matching the constraint's 'value' field. (AI-inferred) */
   matchAttribute?: string | Computed<string>;
+  /** A list of request names that this constraint applies to. If empty, the constraint applies to all requests in the claim. (AI-inferred) */
   requests?: string[] | Computed<string[]>;
 }
 
 export interface V1beta1ResourceClaim_Spec_Devices_Requests_Capacity {
+  /** The real, minimum quantity requested for each named device capacity. (AI-inferred) */
   requests?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface V1beta1ResourceClaim_Spec_Devices_Requests_DerivedAttributes {
+  /** The real CEL expression computing this derived attribute's own value from the allocated device. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The real name this derived attribute is exposed under on the resulting allocation. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Selectors_Cel {
+  /** The CEL expression used to select devices that satisfy this request. It is evaluated against each device's attributes and must return true for the device to be matched. (AI-inferred) */
   expression?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Selectors {
+  /** CEL (Common Expression Language) selector for device allocation. The expression is evaluated against device attributes to determine which devices match the request; a device is selected if the expression evaluates to true. This is an alternative to the serial selector. (AI-inferred) */
   cel?: V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Selectors_Cel | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Selectors_Cel>;
 }
 
 export interface V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Tolerations {
+  /** The effect of the taint to match. Valid values are 'NoSchedule', 'PreferNoSchedule', and 'NoExecute'. An empty value matches all taint effects. (AI-inferred) */
   effect?: string | Computed<string>;
+  /** The key of the taint that this toleration matches. When the operator is 'Exists', the value must be empty. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The operator used to match the taint key. Valid values are 'Exists' and 'Equal'. Defaults to 'Equal'. When 'Exists' is set, the value must be empty and the toleration matches all taints with the specified key. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** The duration in seconds for which the toleration tolerates the taint when the effect is NoExecute. If omitted, the toleration lasts forever. (AI-inferred) */
   tolerationSeconds?: number | Computed<number>;
+  /** The value associated with the key of the toleration. This is used with the operator to determine a match, e.g., when operator is Equal, the value must match the taint's value; when operator is Exists, this field is ignored. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable {
+  /** The allocation mode for the device request. In the Kubernetes DRA API, this can be 'All' (allocate all matching devices) or 'Exact' (allocate the specified number of matching devices). (AI-inferred) */
   allocationMode?: string | Computed<string>;
+  /** Real, minimum capacity requirements (per named capacity) this prioritized sub-request's own matched device must satisfy. (AI-inferred) */
   capacity?: V1beta1ResourceClaim_Spec_Devices_Requests_Capacity | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_Capacity>;
+  /** Number of devices to allocate from the first available devices that match the request's class and selectors. (AI-inferred) */
   count?: number | Computed<number>;
+  /** Real, computed attributes (a CEL expression evaluated per allocated device) exposed on the resulting allocation, not present on the device itself. (AI-inferred) */
   derivedAttributes?: V1beta1ResourceClaim_Spec_Devices_Requests_DerivedAttributes[] | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_DerivedAttributes[]>;
+  /** The name of the DeviceClass that the requested device must belong to when using the firstAvailable selector. Only devices from the named class are eligible for allocation. (AI-inferred) */
   deviceClassName?: string | Computed<string>;
+  /** The real name identifying this alternative sub-request within its own parent request's `first_available` list -- what an allocation result reports as actually satisfied. (AI-inferred) */
   name?: string | Computed<string>;
+  /** A list of device selectors used to filter devices from the requested device class. Each selector is a CEL expression evaluated against device attributes; multiple selectors are combined with AND logic. If empty, all devices of the class are considered for allocation. (AI-inferred) */
   selectors?: V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Selectors[] | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Selectors[]>;
+  /** List of tolerations that apply to this device request in a Kubernetes ResourceClaim. Tolerations allow scheduling onto nodes with matching taints, similar to pod tolerations. (AI-inferred) */
   tolerations?: V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Tolerations[] | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Tolerations[]>;
 }
 
 export interface V1beta1ResourceClaim_Spec_Devices_Requests {
+  /** Whether this device request grants the claim admin-level access to the device, bypassing the device's own normal usage restrictions -- only usable in a namespace explicitly labeled to allow it. (AI-inferred) */
   adminAccess?: boolean | Computed<boolean>;
+  /** How many devices this request needs -- `ExactCount` for a specific `count`, or `All` for every device matching its selectors. (AI-inferred) */
   allocationMode?: string | Computed<string>;
+  /** Real, minimum capacity requirements (per named capacity) this request's own matched device(s) must satisfy. (AI-inferred) */
   capacity?: V1beta1ResourceClaim_Spec_Devices_Requests_Capacity | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_Capacity>;
+  /** How many devices to allocate, when `allocation_mode` is `ExactCount`. (AI-inferred) */
   count?: number | Computed<number>;
+  /** Real, computed attributes (a CEL expression evaluated per allocated device) exposed on the resulting allocation, not present on the device itself. (AI-inferred) */
   derivedAttributes?: V1beta1ResourceClaim_Spec_Devices_Requests_DerivedAttributes[] | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_DerivedAttributes[]>;
+  /** The real DeviceClass this request selects candidate devices from. (AI-inferred) */
   deviceClassName?: string | Computed<string>;
+  /** An ordered list of DeviceRequest alternatives; the first one that can be satisfied will be allocated. (AI-inferred) */
   firstAvailable?: V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable[] | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable[]>;
+  /** Name of the device request. Must be unique within the requests list. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Real CEL device selectors every candidate device must satisfy to match this request. (AI-inferred) */
   selectors?: V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Selectors[] | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Selectors[]>;
+  /** Real tolerations letting this request's own matched devices carry a taint the request is willing to accept. (AI-inferred) */
   tolerations?: V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Tolerations[] | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Tolerations[]>;
 }
 
@@ -133,22 +181,36 @@ export interface V1beta1ResourceClaim_Spec {
 }
 
 export interface V1beta1ResourceClaim_Status_Allocation_Devices_Config {
+  /** Opaque provides driver-specific configuration parameters for the device allocation. It is used when the configuration source is 'FromData'. (AI-inferred) */
   opaque?: V1beta1ResourceClaim_Spec_Devices_Config_Opaque | Computed<V1beta1ResourceClaim_Spec_Devices_Config_Opaque>;
+  /** Which of this claim's own device requests this configuration applies to -- every request, when left empty. (AI-inferred) */
   requests?: string[] | Computed<string[]>;
+  /** Source indicates the origin of the device allocation configuration. Valid values are 'claim' (configuration from the ResourceClaim) and 'driver' (configuration from the driver). (AI-inferred) */
   source?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceClaim_Status_Allocation_Devices_Results {
+  /** Indicates whether the device was allocated with administrative access. (AI-inferred) */
   adminAccess?: boolean | Computed<boolean>;
+  /** Real cluster conditions (matching a device's own `binding_conditions`) that must hold before this allocated device is actually usable by the pod. (AI-inferred) */
   bindingConditions?: string[] | Computed<string[]>;
+  /** A list of conditions that describe why the binding of the resource to the claim failed. In the Kubernetes ResourceClaim status, this field is populated with error reasons when the scheduler cannot allocate the requested devices. (AI-inferred) */
   bindingFailureConditions?: string[] | Computed<string[]>;
+  /** The real, actual capacity quantities this allocation consumed from the device's own advertised capacity. (AI-inferred) */
   consumedCapacity?: Record<string, string> | Computed<Record<string, string>>;
+  /** The name of the device that was allocated from the pool for this resource claim, as reported by the resource driver. (AI-inferred) */
   device?: string | Computed<string>;
+  /** The name of the device driver that provides the allocated device. (AI-inferred) */
   driver?: string | Computed<string>;
+  /** The name of the resource pool from which the device was allocated. (AI-inferred) */
   pool?: string | Computed<string>;
+  /** The name of the device request that this allocation result corresponds to. (AI-inferred) */
   request?: string | Computed<string>;
+  /** ShareID is a string that uniquely identifies a shared device across multiple resource claims. If the device is not shared, this field is omitted. (AI-inferred) */
   shareId?: string | Computed<string>;
+  /** A list of node operations that the driver has indicated should be skipped for this allocated device. These operations are normally performed by the kubelet during device preparation, but are skipped for devices that do not require them. (AI-inferred) */
   skipNodeOperations?: string[] | Computed<string[]>;
+  /** The real tolerations this allocation result was granted under, letting it keep using a device that later gained a matching taint. (AI-inferred) */
   tolerations?: V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Tolerations[] | Computed<V1beta1ResourceClaim_Spec_Devices_Requests_FirstAvailable_Tolerations[]>;
 }
 
@@ -160,13 +222,18 @@ export interface V1beta1ResourceClaim_Status_Allocation_Devices {
 }
 
 export interface V1beta1ResourceClaim_Status_Allocation_NodeSelector_NodeSelectorTerms_MatchExpressions {
+  /** The label key that the selector expression applies to. It must be a valid Kubernetes label key (e.g., 'disktype' or 'kubernetes.io/os'). (AI-inferred) */
   key?: string | Computed<string>;
+  /** The operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist, Gt, and Lt. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** values is the list of strings that correspond to the key. For example, if operator is In or NotIn, the key's value must be in (or not in) this list. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
 export interface V1beta1ResourceClaim_Status_Allocation_NodeSelector_NodeSelectorTerms {
+  /** A list of node selector requirements by node's labels. (AI-inferred) */
   matchExpressions?: V1beta1ResourceClaim_Status_Allocation_NodeSelector_NodeSelectorTerms_MatchExpressions[] | Computed<V1beta1ResourceClaim_Status_Allocation_NodeSelector_NodeSelectorTerms_MatchExpressions[]>;
+  /** match_fields is a list of node selector requirements that specify the node fields (e.g., metadata.name) that must match for a node to be selected by this node selector term. (AI-inferred) */
   matchFields?: V1beta1ResourceClaim_Status_Allocation_NodeSelector_NodeSelectorTerms_MatchExpressions[] | Computed<V1beta1ResourceClaim_Status_Allocation_NodeSelector_NodeSelectorTerms_MatchExpressions[]>;
 }
 
@@ -185,34 +252,54 @@ export interface V1beta1ResourceClaim_Status_Allocation {
 }
 
 export interface V1beta1ResourceClaim_Status_Devices_Conditions {
+  /** lastTransitionTime is the last time the condition transitioned from one status to another. This timestamp is typically represented in RFC3339 format. (AI-inferred) */
   lastTransitionTime?: string | Computed<string>;
+  /** A human-readable message providing details about the current condition of the device in the resource claim. (AI-inferred) */
   message?: string | Computed<string>;
+  /** observedGeneration is the .metadata.generation of the ResourceClaim that this condition was observed against, indicating the freshness of the condition relative to the latest generation. (AI-inferred) */
   observedGeneration?: number | Computed<number>;
+  /** Reason is a machine-readable, CamelCase reason for the condition's last transition, providing a stable identifier for the cause of the condition. (AI-inferred) */
   reason?: string | Computed<string>;
+  /** The status of the condition, typically 'True', 'False', or 'Unknown'. (AI-inferred) */
   status?: string | Computed<string>;
+  /** The real, named condition type (e.g. whether the device is still healthy and reachable) this status condition reports on. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceClaim_Status_Devices_NetworkData {
+  /** The MAC address of the network interface allocated for this resource claim. (AI-inferred) */
   hardwareAddress?: string | Computed<string>;
+  /** The name of the network interface on the node where this device is allocated. (AI-inferred) */
   interfaceName?: string | Computed<string>;
+  /** List of IP addresses assigned to the network device. (AI-inferred) */
   ips?: string[] | Computed<string[]>;
 }
 
 export interface V1beta1ResourceClaim_Status_Devices {
+  /** The list of conditions representing the latest observed state of the device. Each condition includes the type, status, reason, and message to indicate the device's health status. (AI-inferred) */
   conditions?: V1beta1ResourceClaim_Status_Devices_Conditions[] | Computed<V1beta1ResourceClaim_Status_Devices_Conditions[]>;
+  /** Arbitrary driver-specific data about the device allocation, as provided by the resource driver. Kubernetes does not interpret this field and it may be used to pass device-specific configuration or status. (AI-inferred) */
   data?: unknown | Computed<unknown>;
+  /** The name of the device that has been allocated for this resource claim. (AI-inferred) */
   device?: string | Computed<string>;
+  /** The name of the device driver that manages this allocated device, matching the driver specified in the corresponding DeviceClass. (AI-inferred) */
   driver?: string | Computed<string>;
+  /** Network information for the allocated device, including its interface name, IP addresses, and MAC address. (AI-inferred) */
   networkData?: V1beta1ResourceClaim_Status_Devices_NetworkData | Computed<V1beta1ResourceClaim_Status_Devices_NetworkData>;
+  /** The name of the resource pool (ResourceSlice) from which this device was allocated. (AI-inferred) */
   pool?: string | Computed<string>;
+  /** A real, unique identifier for this specific share of a device that supports being allocated to more than one claim at once. (AI-inferred) */
   shareId?: string | Computed<string>;
 }
 
 export interface V1beta1ResourceClaim_Status_ReservedFor {
+  /** The API group of the resource that reserved this claim. For core resources, this is the empty string; otherwise it is the fully-qualified API group name. (AI-inferred) */
   apiGroup?: string | Computed<string>;
+  /** The name of the pod that this resource claim is reserved for. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The name of the resource (e.g., a Pod) that holds a reservation for this resource claim, as recorded in the status.reservedFor list. (AI-inferred) */
   resource?: string | Computed<string>;
+  /** The UID of the consumer (e.g., a Pod) that this ResourceClaim is reserved for. This is part of the ResourceClaimConsumerReference in the reservedFor list. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 

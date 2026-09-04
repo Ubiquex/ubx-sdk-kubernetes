@@ -3,483 +3,369 @@ package core
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type PersistentVolume_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+type PersistentVolume_Items_Metadata_ManagedFields struct {
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
-type PersistentVolume_Metadata_OwnerReferences struct {
-	ApiVersion any
+type PersistentVolume_Items_Metadata_OwnerReferences struct {
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
-type PersistentVolume_Metadata struct {
-	// Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
-	Annotations any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	CreationTimestamp any
-	// Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+type PersistentVolume_Items_Metadata struct {
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	DeletionTimestamp any
-	// Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
-	Finalizers any
-	// GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
-	GenerateName any
-	// A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
-	Generation any
-	// Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
-	Labels any
-	// ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
-	ManagedFields any
-	// Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
-	Name any
-	// Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
-	Namespace any
-	// List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
-	OwnerReferences any
-	// An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
-	ResourceVersion any
-	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
-	SelfLink any
-	// UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
-type PersistentVolume_Spec_AwsElasticBlockStore struct {
-	// fsType is the filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
-	FsType any
-	// partition is the partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).
+type PersistentVolume_Items_Spec_AwsElasticBlockStore struct {
+	FsType    any
 	Partition any
-	// readOnly value true will force the readOnly setting in VolumeMounts. More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
-	ReadOnly any
-	// volumeID is unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
-	VolumeId any
+	ReadOnly  any
+	VolumeId  any
 }
 
-type PersistentVolume_Spec_AzureDisk struct {
-	// cachingMode is the Host Caching mode: None, Read Only, Read Write.
+type PersistentVolume_Items_Spec_AzureDisk struct {
 	CachingMode any
-	// diskName is the Name of the data disk in the blob storage
-	DiskName any
-	// diskURI is the URI of data disk in the blob storage
-	DiskUri any
-	// fsType is Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-	FsType any
-	// kind expected values are Shared: multiple blob disks per storage account Dedicated: single blob disk per storage account Managed: azure managed data disk (only in managed availability set). defaults to shared
-	Kind any
-	// readOnly Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
-	ReadOnly any
+	DiskName    any
+	DiskUri     any
+	FsType      any
+	Kind        any
+	ReadOnly    any
 }
 
-type PersistentVolume_Spec_AzureFile struct {
-	// readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
-	ReadOnly any
-	// secretName is the name of secret that contains Azure Storage Account Name and Key
-	SecretName any
-	// secretNamespace is the namespace of the secret that contains Azure Storage Account Name and Key default is the same as the Pod
+type PersistentVolume_Items_Spec_AzureFile struct {
+	ReadOnly        any
+	SecretName      any
 	SecretNamespace any
-	// shareName is the azure Share Name
-	ShareName any
+	ShareName       any
 }
 
-type PersistentVolume_Spec_Cephfs_SecretRef struct {
-	// name is unique within a namespace to reference a secret resource.
-	Name any
-	// namespace defines the space within which the secret name must be unique.
+type PersistentVolume_Items_Spec_Cephfs_SecretRef struct {
+	Name      any
 	Namespace any
 }
 
-type PersistentVolume_Spec_Cephfs struct {
-	// monitors is Required: Monitors is a collection of Ceph monitors More info: https://examples.k8s.io/volumes/cephfs/README.md#how-to-use-it
-	Monitors any
-	// path is Optional: Used as the mounted root, rather than the full Ceph tree, default is /
-	Path any
-	// readOnly is Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts. More info: https://examples.k8s.io/volumes/cephfs/README.md#how-to-use-it
-	ReadOnly any
-	// secretFile is Optional: SecretFile is the path to key ring for User, default is /etc/ceph/user.secret More info: https://examples.k8s.io/volumes/cephfs/README.md#how-to-use-it
+type PersistentVolume_Items_Spec_Cephfs struct {
+	Monitors   any
+	Path       any
+	ReadOnly   any
 	SecretFile any
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
-	SecretRef any
-	// user is Optional: User is the rados user name, default is admin More info: https://examples.k8s.io/volumes/cephfs/README.md#how-to-use-it
-	User any
+	SecretRef  any
+	User       any
 }
 
-type PersistentVolume_Spec_Cinder struct {
-	// fsType Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://examples.k8s.io/mysql-cinder-pd/README.md
-	FsType any
-	// readOnly is Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts. More info: https://examples.k8s.io/mysql-cinder-pd/README.md
-	ReadOnly any
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
+type PersistentVolume_Items_Spec_Cinder struct {
+	FsType    any
+	ReadOnly  any
 	SecretRef any
-	// volumeID used to identify the volume in cinder. More info: https://examples.k8s.io/mysql-cinder-pd/README.md
-	VolumeId any
+	VolumeId  any
 }
 
-type PersistentVolume_Spec_ClaimRef struct {
-	// API version of the referent.
-	ApiVersion any
-	// If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.
-	FieldPath any
-	// Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
-	// Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-	Name any
-	// Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
-	Namespace any
-	// Specific resourceVersion to which this reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+type PersistentVolume_Items_Spec_ClaimRef struct {
+	ApiVersion      any
+	FieldPath       any
+	Kind            any
+	Name            any
+	Namespace       any
 	ResourceVersion any
-	// UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids
-	Uid any
+	Uid             any
 }
 
-type PersistentVolume_Spec_Csi struct {
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
-	ControllerExpandSecretRef any
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
+type PersistentVolume_Items_Spec_Csi struct {
+	ControllerExpandSecretRef  any
 	ControllerPublishSecretRef any
-	// driver is the name of the driver to use for this volume. Required.
-	Driver any
-	// fsType to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs".
-	FsType any
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
-	NodeExpandSecretRef any
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
-	NodePublishSecretRef any
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
-	NodeStageSecretRef any
-	// readOnly value to pass to ControllerPublishVolumeRequest. Defaults to false (read/write).
-	ReadOnly any
-	// volumeAttributes of the volume to publish.
-	VolumeAttributes any
-	// volumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to refer to the volume on all subsequent calls. Required.
-	VolumeHandle any
+	Driver                     any
+	FsType                     any
+	NodeExpandSecretRef        any
+	NodePublishSecretRef       any
+	NodeStageSecretRef         any
+	ReadOnly                   any
+	VolumeAttributes           any
+	VolumeHandle               any
 }
 
-type PersistentVolume_Spec_Fc struct {
-	// fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-	FsType any
-	// lun is Optional: FC target lun number
-	Lun any
-	// readOnly is Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
-	ReadOnly any
-	// targetWWNs is Optional: FC target worldwide names (WWNs)
+type PersistentVolume_Items_Spec_Fc struct {
+	FsType     any
+	Lun        any
+	ReadOnly   any
 	TargetWwns any
-	// wwids Optional: FC volume world wide identifiers (wwids) Either wwids or combination of targetWWNs and lun must be set, but not both simultaneously.
-	Wwids any
+	Wwids      any
 }
 
-type PersistentVolume_Spec_FlexVolume struct {
-	// driver is the name of the driver to use for this volume.
-	Driver any
-	// fsType is the Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.
-	FsType any
-	// options is Optional: this field holds extra command options if any.
-	Options any
-	// readOnly is Optional: defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
-	ReadOnly any
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
+type PersistentVolume_Items_Spec_FlexVolume struct {
+	Driver    any
+	FsType    any
+	Options   any
+	ReadOnly  any
 	SecretRef any
 }
 
-type PersistentVolume_Spec_Flocker struct {
-	// datasetName is Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated
+type PersistentVolume_Items_Spec_Flocker struct {
 	DatasetName any
-	// datasetUUID is the UUID of the dataset. This is unique identifier of a Flocker dataset
 	DatasetUuid any
 }
 
-type PersistentVolume_Spec_GcePersistentDisk struct {
-	// fsType is filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
-	FsType any
-	// partition is the partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
+type PersistentVolume_Items_Spec_GcePersistentDisk struct {
+	FsType    any
 	Partition any
-	// pdName is unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
-	PdName any
-	// readOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
-	ReadOnly any
+	PdName    any
+	ReadOnly  any
 }
 
-type PersistentVolume_Spec_Glusterfs struct {
-	// endpoints is the endpoint name that details Glusterfs topology. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
-	Endpoints any
-	// endpointsNamespace is the namespace that contains Glusterfs endpoint. If this field is empty, the EndpointNamespace defaults to the same namespace as the bound PVC. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
+type PersistentVolume_Items_Spec_Glusterfs struct {
+	Endpoints          any
 	EndpointsNamespace any
-	// path is the Glusterfs volume path. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
-	Path any
-	// readOnly here will force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
-	ReadOnly any
+	Path               any
+	ReadOnly           any
 }
 
-type PersistentVolume_Spec_HostPath struct {
-	// path of the directory on the host. If the path is a symlink, it will follow the link to the real path. More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath
+type PersistentVolume_Items_Spec_HostPath struct {
 	Path any
-	// type for HostPath Volume Defaults to "" More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath
 	Type any
 }
 
-type PersistentVolume_Spec_Iscsi struct {
-	// chapAuthDiscovery defines whether support iSCSI Discovery CHAP authentication
+type PersistentVolume_Items_Spec_Iscsi struct {
 	ChapAuthDiscovery any
-	// chapAuthSession defines whether support iSCSI Session CHAP authentication
-	ChapAuthSession any
-	// fsType is the filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#iscsi
+	ChapAuthSession   any
+	FsType            any
+	InitiatorName     any
+	Iqn               any
+	IscsiInterface    any
+	Lun               any
+	Portals           any
+	ReadOnly          any
+	SecretRef         any
+	TargetPortal      any
+}
+
+type PersistentVolume_Items_Spec_Local struct {
 	FsType any
-	// initiatorName is the custom iSCSI Initiator Name. If initiatorName is specified with iscsiInterface simultaneously, new iSCSI interface <target portal>:<volume name> will be created for the connection.
-	InitiatorName any
-	// iqn is Target iSCSI Qualified Name.
-	Iqn any
-	// iscsiInterface is the interface Name that uses an iSCSI transport. Defaults to 'default' (tcp).
-	IscsiInterface any
-	// lun is iSCSI Target Lun number.
-	Lun any
-	// portals is the iSCSI Target Portal List. The Portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
-	Portals any
-	// readOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false.
+	Path   any
+}
+
+type PersistentVolume_Items_Spec_Nfs struct {
+	Path     any
 	ReadOnly any
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
-	SecretRef any
-	// targetPortal is iSCSI Target Portal. The Portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
-	TargetPortal any
+	Server   any
 }
 
-type PersistentVolume_Spec_Local struct {
-	// fsType is the filesystem type to mount. It applies only when the Path is a block device. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default value is to auto-select a filesystem if unspecified.
-	FsType any
-	// path of the full path to the volume on the node. It can be either a directory or block device (disk, partition, ...).
-	Path any
-}
-
-type PersistentVolume_Spec_Nfs struct {
-	// path that is exported by the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
-	Path any
-	// readOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
-	ReadOnly any
-	// server is the hostname or IP address of the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
-	Server any
-}
-
-type PersistentVolume_Spec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressions struct {
-	Key any
+type PersistentVolume_Items_Spec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressions struct {
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
-type PersistentVolume_Spec_NodeAffinity_Required_NodeSelectorTerms struct {
+type PersistentVolume_Items_Spec_NodeAffinity_Required_NodeSelectorTerms struct {
 	MatchExpressions any
-	MatchFields any
+	MatchFields      any
 }
 
-type PersistentVolume_Spec_NodeAffinity_Required struct {
-	// Required. A list of node selector terms. The terms are ORed.
+type PersistentVolume_Items_Spec_NodeAffinity_Required struct {
 	NodeSelectorTerms any
 }
 
-type PersistentVolume_Spec_NodeAffinity struct {
-	// A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
+type PersistentVolume_Items_Spec_NodeAffinity struct {
 	Required any
 }
 
-type PersistentVolume_Spec_PhotonPersistentDisk struct {
-	// fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+type PersistentVolume_Items_Spec_PhotonPersistentDisk struct {
 	FsType any
-	// pdID is the ID that identifies Photon Controller persistent disk
-	PdId any
+	PdId   any
 }
 
-type PersistentVolume_Spec_PortworxVolume struct {
-	// fSType represents the filesystem type to mount Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs". Implicitly inferred to be "ext4" if unspecified.
-	FsType any
-	// readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
+type PersistentVolume_Items_Spec_PortworxVolume struct {
+	FsType   any
 	ReadOnly any
-	// volumeID uniquely identifies a Portworx volume
 	VolumeId any
 }
 
-type PersistentVolume_Spec_Quobyte struct {
-	// group to map volume access to Default is no group
-	Group any
-	// readOnly here will force the Quobyte volume to be mounted with read-only permissions. Defaults to false.
+type PersistentVolume_Items_Spec_Quobyte struct {
+	Group    any
 	ReadOnly any
-	// registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
 	Registry any
-	// tenant owning the given Quobyte volume in the Backend Used with dynamically provisioned Quobyte volumes, value is set by the plugin
-	Tenant any
-	// user to map volume access to Defaults to serivceaccount user
-	User any
-	// volume is a string that references an already created Quobyte volume by name.
-	Volume any
+	Tenant   any
+	User     any
+	Volume   any
 }
 
-type PersistentVolume_Spec_Rbd struct {
-	// fsType is the filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#rbd
-	FsType any
-	// image is the rados image name. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
-	Image any
-	// keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
-	Keyring any
-	// monitors is a collection of Ceph monitors. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
-	Monitors any
-	// pool is the rados pool name. Default is rbd. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
-	Pool any
-	// readOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
-	ReadOnly any
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
+type PersistentVolume_Items_Spec_Rbd struct {
+	FsType    any
+	Image     any
+	Keyring   any
+	Monitors  any
+	Pool      any
+	ReadOnly  any
 	SecretRef any
-	// user is the rados user name. Default is admin. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
-	User any
+	User      any
 }
 
-type PersistentVolume_Spec_ScaleIo struct {
-	// fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Default is "xfs"
-	FsType any
-	// gateway is the host address of the ScaleIO API Gateway.
-	Gateway any
-	// protectionDomain is the name of the ScaleIO Protection Domain for the configured storage.
+type PersistentVolume_Items_Spec_ScaleIo struct {
+	FsType           any
+	Gateway          any
 	ProtectionDomain any
-	// readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
-	ReadOnly any
-	// SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
-	SecretRef any
-	// sslEnabled is the flag to enable/disable SSL communication with Gateway, default false
-	SslEnabled any
-	// storageMode indicates whether the storage for a volume should be ThickProvisioned or ThinProvisioned. Default is ThinProvisioned.
-	StorageMode any
-	// storagePool is the ScaleIO Storage Pool associated with the protection domain.
-	StoragePool any
-	// system is the name of the storage system as configured in ScaleIO.
-	System any
-	// volumeName is the name of a volume already created in the ScaleIO system that is associated with this volume source.
-	VolumeName any
+	ReadOnly         any
+	SecretRef        any
+	SslEnabled       any
+	StorageMode      any
+	StoragePool      any
+	System           any
+	VolumeName       any
 }
 
-type PersistentVolume_Spec_Storageos struct {
-	// fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-	FsType any
-	// readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
-	ReadOnly any
-	// ObjectReference contains enough information to let you inspect or modify the referred object.
-	SecretRef any
-	// volumeName is the human-readable name of the StorageOS volume. Volume names are only unique within a namespace.
-	VolumeName any
-	// volumeNamespace specifies the scope of the volume within StorageOS. If no namespace is specified then the Pod's namespace will be used. This allows the Kubernetes name scoping to be mirrored within StorageOS for tighter integration. Set VolumeName to any name to override the default behaviour. Set to "default" if you are not using namespaces within StorageOS. Namespaces that do not pre-exist within StorageOS will be created.
+type PersistentVolume_Items_Spec_Storageos struct {
+	FsType          any
+	ReadOnly        any
+	SecretRef       any
+	VolumeName      any
 	VolumeNamespace any
 }
 
-type PersistentVolume_Spec_VsphereVolume struct {
-	// fsType is filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
-	FsType any
-	// storagePolicyID is the storage Policy Based Management (SPBM) profile ID associated with the StoragePolicyName.
-	StoragePolicyId any
-	// storagePolicyName is the storage Policy Based Management (SPBM) profile name.
+type PersistentVolume_Items_Spec_VsphereVolume struct {
+	FsType            any
+	StoragePolicyId   any
 	StoragePolicyName any
-	// volumePath is the path that identifies vSphere volume vmdk
-	VolumePath any
+	VolumePath        any
 }
 
-type PersistentVolume_Spec struct {
-	// accessModes contains all ways the volume can be mounted. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes
-	AccessModes any
-	// Represents a Persistent Disk resource in AWS. An AWS EBS disk must exist before mounting to a container. The disk must also be in the same AWS zone as the kubelet. An AWS EBS disk can only be mounted as read/write once. AWS EBS volumes support ownership management and SELinux relabeling.
-	AwsElasticBlockStore any
-	// AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
-	AzureDisk any
-	// AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
-	AzureFile any
-	// capacity is the description of the persistent volume's resources and capacity. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity
-	Capacity any
-	// Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
-	Cephfs any
-	// Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.
-	Cinder any
-	// ObjectReference contains enough information to let you inspect or modify the referred object.
-	ClaimRef any
-	// Represents storage that is managed by an external CSI volume driver
-	Csi any
-	// Represents a Fibre Channel volume. Fibre Channel volumes can only be mounted as read/write once. Fibre Channel volumes support ownership management and SELinux relabeling.
-	Fc any
-	// FlexPersistentVolumeSource represents a generic persistent volume resource that is provisioned/attached using an exec based plugin.
-	FlexVolume any
-	// Represents a Flocker volume mounted by the Flocker agent. One and only one of datasetName and datasetUUID should be set. Flocker volumes do not support ownership management or SELinux relabeling.
-	Flocker any
-	// Represents a Persistent Disk resource in Google Compute Engine. A GCE PD must exist before mounting to a container. The disk must also be in the same GCE project and zone as the kubelet. A GCE PD can only be mounted as read/write once or read-only many times. GCE PDs support ownership management and SELinux relabeling.
-	GcePersistentDisk any
-	// Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
-	Glusterfs any
-	// Represents a host path mapped into a pod. Host path volumes do not support ownership management or SELinux relabeling.
-	HostPath any
-	// ISCSIPersistentVolumeSource represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
-	Iscsi any
-	// Local represents directly-attached storage with node affinity
-	Local any
-	// mountOptions is the list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#mount-options
-	MountOptions any
-	// Represents an NFS mount that lasts the lifetime of a pod. NFS volumes do not support ownership management or SELinux relabeling.
-	Nfs any
-	// VolumeNodeAffinity defines constraints that limit what nodes this volume can be accessed from.
-	NodeAffinity any
-	// persistentVolumeReclaimPolicy defines what happens to a persistent volume when released from its claim. Valid options are Retain (default for manually created PersistentVolumes), Delete (default for dynamically provisioned PersistentVolumes), and Recycle (deprecated). Recycle must be supported by the volume plugin underlying this PersistentVolume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#reclaiming
+type PersistentVolume_Items_Spec struct {
+	AccessModes                   any
+	AwsElasticBlockStore          any
+	AzureDisk                     any
+	AzureFile                     any
+	Capacity                      any
+	Cephfs                        any
+	Cinder                        any
+	ClaimRef                      any
+	Csi                           any
+	Fc                            any
+	FlexVolume                    any
+	Flocker                       any
+	GcePersistentDisk             any
+	Glusterfs                     any
+	HostPath                      any
+	Iscsi                         any
+	Local                         any
+	MountOptions                  any
+	Nfs                           any
+	NodeAffinity                  any
 	PersistentVolumeReclaimPolicy any
-	// Represents a Photon Controller persistent disk resource.
-	PhotonPersistentDisk any
-	// PortworxVolumeSource represents a Portworx volume resource.
-	PortworxVolume any
-	// Represents a Quobyte mount that lasts the lifetime of a pod. Quobyte volumes do not support ownership management or SELinux relabeling.
-	Quobyte any
-	// Represents a Rados Block Device mount that lasts the lifetime of a pod. RBD volumes support ownership management and SELinux relabeling.
-	Rbd any
-	// ScaleIOPersistentVolumeSource represents a persistent ScaleIO volume
-	ScaleIo any
-	// storageClassName is the name of StorageClass to which this persistent volume belongs. Empty value means that this volume does not belong to any StorageClass.
-	StorageClassName any
-	// Represents a StorageOS persistent volume resource.
-	Storageos any
-	// Name of VolumeAttributesClass to which this persistent volume belongs. Empty value is not allowed. When this field is not set, it indicates that this volume does not belong to any VolumeAttributesClass. This field is mutable and can be changed by the CSI driver after a volume has been updated successfully to a new class. For an unbound PersistentVolume, the volumeAttributesClassName will be matched with unbound PersistentVolumeClaims during the binding process.
-	VolumeAttributesClassName any
-	// volumeMode defines if a volume is intended to be used with a formatted filesystem or to remain in raw block state. Value of Filesystem is implied when not included in spec.
-	VolumeMode any
-	// Represents a vSphere volume resource.
-	VsphereVolume any
+	PhotonPersistentDisk          any
+	PortworxVolume                any
+	Quobyte                       any
+	Rbd                           any
+	ScaleIo                       any
+	StorageClassName              any
+	Storageos                     any
+	VolumeAttributesClassName     any
+	VolumeMode                    any
+	VsphereVolume                 any
 }
 
-type PersistentVolume_Status struct {
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
+type PersistentVolume_Items_Status struct {
 	LastPhaseTransitionTime any
-	// message is a human-readable message indicating details about why the volume is in this state.
-	Message any
-	// phase indicates if a volume is available, bound to a claim, or released by a claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#phase
-	Phase any
-	// reason is a brief CamelCase string that describes any failure and is meant for machine parsing and tidy display in the CLI.
-	Reason any
+	Message                 any
+	Phase                   any
+	Reason                  any
+}
+
+type PersistentVolume_Items struct {
+	ApiVersion any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
+}
+
+type PersistentVolume_Metadata_ShardInfo struct {
+	// selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+	Selector any
+}
+
+type PersistentVolume_Metadata struct {
+	// continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+	Continue any
+	// remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+	RemainingItemCount any
+	// String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+	ResourceVersion any
+	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+	SelfLink any
+	// ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+	ShardInfo any
 }
 
 type PersistentVolumeConfig struct {
+	AllowWatchBookmarks  any
+	Continue             any
+	FieldSelector        any
+	LabelSelector        any
+	Limit                any
+	ResourceVersion      any
+	ResourceVersionMatch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 type PersistentVolumeAttrs struct {
+	AllowWatchBookmarks any
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-	ApiVersion any
+	ApiVersion    any
+	Continue      any
+	FieldSelector any
+	// items is a list of persistent volumes. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
+	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
-	// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
-	Metadata any
-	// PersistentVolumeSpec is the specification of a persistent volume.
-	Spec any
-	// PersistentVolumeStatus is the current status of a persistent volume.
-	Status any
+	Kind          any
+	LabelSelector any
+	Limit         any
+	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
+	Metadata             any
+	ResourceVersion      any
+	ResourceVersionMatch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 var PersistentVolume = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_persistent_volume",
 	Fields: ubx.FieldMap{
+		"AllowWatchBookmarks":  ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
+		"Continue":             ubx.FieldSpec{WireName: "continue"},
+		"FieldSelector":        ubx.FieldSpec{WireName: "field_selector"},
+		"LabelSelector":        ubx.FieldSpec{WireName: "label_selector"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"ResourceVersion":      ubx.FieldSpec{WireName: "resource_version"},
+		"ResourceVersionMatch": ubx.FieldSpec{WireName: "resource_version_match"},
+		"SendInitialEvents":    ubx.FieldSpec{WireName: "send_initial_events"},
+		"ShardSelector":        ubx.FieldSpec{WireName: "shard_selector"},
+		"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+		"Watch":                ubx.FieldSpec{WireName: "watch"},
 	},
 }

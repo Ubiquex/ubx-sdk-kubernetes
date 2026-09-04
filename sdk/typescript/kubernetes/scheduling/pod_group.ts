@@ -2,34 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface PodGroup_Metadata_ManagedFields {
-  /** The API version of the resource that this managed fields entry applies to (e.g., 'group/version'). (AI-inferred) */
+  /** The API version used to manage the fields in this managedFields entry. (AI-inferred) */
   apiVersion?: string | Computed<string>;
-  /** The type of the managed fields, indicating the versioned format of the fields data (e.g., 'FieldsV1'). (AI-inferred) */
+  /** The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred) */
   fieldsType?: string | Computed<string>;
-  /** fields_v1 is a JSON representation of the set of fields managed by the manager. It is stored as a FieldsV1 object, which is a map of field paths to their values, recording which fields were changed by this managedFields entry. (AI-inferred) */
+  /** fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred) */
   fieldsV1?: unknown | Computed<unknown>;
-  /** The name of the manager (e.g., a controller or user) that last modified the managed field. (AI-inferred) */
+  /** The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred) */
   manager?: string | Computed<string>;
-  /** The type of operation performed by the manager on the managed fields. Allowed values are 'Apply' and 'Update'. (AI-inferred) */
+  /** Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred) */
   operation?: string | Computed<string>;
-  /** The subresource that this managed field entry applies to, such as 'status' or 'scale'. Empty indicates the main resource. (AI-inferred) */
+  /** The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred) */
   subresource?: string | Computed<string>;
-  /** The timestamp (RFC3339 format) at which the managed field was last updated by the manager. (AI-inferred) */
+  /** Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
 export interface PodGroup_Metadata_OwnerReferences {
-  /** The API version of the referent (owner) object. (AI-inferred) */
+  /** The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred) */
   apiVersion?: string | Computed<string>;
-  /** If true, and the owner has the foregroundDeletion finalizer, the owner cannot be deleted from the cluster until this owner reference is removed. Defaults to false. Setting this field requires delete permission on the owner. (AI-inferred) */
+  /** If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred) */
   blockOwnerDeletion?: boolean | Computed<boolean>;
-  /** If true, this reference points to the managing controller. (AI-inferred) */
+  /** Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred) */
   controller?: boolean | Computed<boolean>;
-  /** The kind of the Kubernetes object that is the owner of this pod group, as defined in the owner reference. (AI-inferred) */
+  /** The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred) */
   kind?: string | Computed<string>;
-  /** The name of the referenced owner object. This field is required in an OwnerReference and must match the metadata.name of the referenced resource. (AI-inferred) */
+  /** The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The unique identifier (UID) of the object referenced as the owner of this PodGroup. (AI-inferred) */
+  /** UID of the referenced owner object. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 
@@ -74,14 +74,16 @@ export interface PodGroup_Spec_DisruptionMode {
 }
 
 export interface PodGroup_Spec_ResourceClaims {
+  /** The name of the resource claim. Must be unique within the pod. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The name of the ResourceClaim that this pod group is configured to use. (AI-inferred) */
+  /** The name of the ResourceClaim resource that this pod references. Must match an existing ResourceClaim in the same namespace, or be omitted if a template is provided. (AI-inferred) */
   resourceClaimName?: string | Computed<string>;
-  /** The name of the ResourceClaimTemplate that defines the resources to claim for this pod group's resource claim. (AI-inferred) */
+  /** Name of a ResourceClaimTemplate in the same namespace that will be used to create a ResourceClaim for this pod. (AI-inferred) */
   resourceClaimTemplateName?: string | Computed<string>;
 }
 
 export interface PodGroup_Spec_SchedulingConstraints_Topology {
+  /** The topology key (label) that defines the domain over which pods are distributed or constrained, such as a node, zone, or region. Common examples include 'kubernetes.io/hostname' and 'topology.kubernetes.io/zone'. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
@@ -131,24 +133,24 @@ export interface PodGroup_Spec {
 }
 
 export interface PodGroup_Status_Conditions {
-  /** The last time the condition transitioned from one status to another. This is an RFC3339 timestamp string. (AI-inferred) */
+  /** The last time the condition transitioned from one status to another. This should reflect when the underlying condition changed, typically represented as a timestamp string. (AI-inferred) */
   lastTransitionTime?: string | Computed<string>;
-  /** Human-readable message providing details about the current condition state, such as why the pod group is in this state. (AI-inferred) */
+  /** A human-readable message that provides additional details about the current condition, including information about the last transition. (AI-inferred) */
   message?: string | Computed<string>;
-  /** The generation of the resource that the controller observed when it last updated this condition. Used to track whether the condition is up-to-date with the resource's spec. (AI-inferred) */
+  /** The generation of the ValidatingAdmissionPolicy that was last processed by the controller, used to determine whether the status reflects the latest spec. (AI-inferred) */
   observedGeneration?: number | Computed<number>;
-  /** A machine-readable reason for the condition's last transition. (AI-inferred) */
+  /** A machine-readable, CamelCase reason for the condition's last transition. This provides a stable identifier for the condition state, complementing the human-readable message. (AI-inferred) */
   reason?: string | Computed<string>;
   /** The status of the condition, indicating whether the condition is True, False, or Unknown. (AI-inferred) */
   status?: string | Computed<string>;
-  /** Type of the condition, typically a short name indicating the condition being reported, such as 'PodGroupScheduled' or 'Ready'. (AI-inferred) */
+  /** Type is a string that identifies the condition and distinguishes it from other conditions in the status.conditions list. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
 export interface PodGroup_Status_ResourceClaimStatuses {
-  /** The name of the resource claim, matching the corresponding entry in the pod's resourceClaims field. (AI-inferred) */
+  /** Name of the resource claim as defined in the pod's spec.resourceClaims, identifying which claim this status belongs to. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The name of the Kubernetes ResourceClaim object that this status entry corresponds to. (AI-inferred) */
+  /** The name of the ResourceClaim resource that was successfully bound to the pod. This is empty if the claim is not bound yet. (AI-inferred) */
   resourceClaimName?: string | Computed<string>;
 }
 

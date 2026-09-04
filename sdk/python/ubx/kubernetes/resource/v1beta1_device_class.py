@@ -8,21 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1DeviceClass_Metadata_ManagedFields:
+    # The API version used to manage the fields in this managedFields entry. (AI-inferred)
     api_version: Any = None
+    # The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
     fields_type: Any = None
+    # fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
     fields_v1: Any = None
+    # The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
     manager: Any = None
+    # Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
     operation: Any = None
+    # The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
     subresource: Any = None
+    # Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class V1beta1DeviceClass_Metadata_OwnerReferences:
+    # The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
     api_version: Any = None
+    # If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
     block_owner_deletion: Any = None
+    # Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
     controller: Any = None
+    # The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
     kind: Any = None
+    # The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
     name: Any = None
+    # UID of the referenced owner object. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass
@@ -60,19 +73,24 @@ class V1beta1DeviceClass_Metadata:
 
 @dataclasses.dataclass
 class V1beta1DeviceClass_Spec_Config_Opaque:
+    # Specifies the name of the driver that owns this opaque device configuration. This driver is responsible for interpreting the corresponding parameters and allocating resources accordingly. (AI-inferred)
     driver: Any = None
+    # Parameters is an arbitrary JSON object containing driver-specific configuration for this opaque device class configuration. The structure is not defined by Kubernetes and must be interpreted by the device driver. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class V1beta1DeviceClass_Spec_Config:
+    # Provides driver-specific settings for a device class that are opaque to the Kubernetes scheduler. (AI-inferred)
     opaque: Any = None
 
 @dataclasses.dataclass
 class V1beta1DeviceClass_Spec_Selectors_Cel:
+    # The CEL expression used to select devices based on their attributes. The expression is evaluated against device attributes, and devices for which it evaluates to true are selected. (AI-inferred)
     expression: Any = None
 
 @dataclasses.dataclass
 class V1beta1DeviceClass_Spec_Selectors:
+    # The CEL selector object, containing a Common Expression Language (CEL) expression that is evaluated against device attributes to determine whether a device matches this selector. (AI-inferred)
     cel: Any = None
 
 @dataclasses.dataclass

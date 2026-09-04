@@ -506,493 +506,493 @@ type VolumeAttachment_Status struct {
 }
 
 var VolumeAttachment_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var VolumeAttachment_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var VolumeAttachment_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: VolumeAttachment_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: VolumeAttachment_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   VolumeAttachment_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   VolumeAttachment_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_AwsElasticBlockStoreFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Partition": ubx.FieldSpec{WireName: "partition"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-	}
+	"FsType":    ubx.FieldSpec{WireName: "fs_type"},
+	"Partition": ubx.FieldSpec{WireName: "partition"},
+	"ReadOnly":  ubx.FieldSpec{WireName: "read_only"},
+	"VolumeId":  ubx.FieldSpec{WireName: "volume_id"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_AzureDiskFields = ubx.FieldMap{
-		"CachingMode": ubx.FieldSpec{WireName: "caching_mode"},
-		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
-		"DiskUri": ubx.FieldSpec{WireName: "disk_uri"},
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-	}
+	"CachingMode": ubx.FieldSpec{WireName: "caching_mode"},
+	"DiskName":    ubx.FieldSpec{WireName: "disk_name"},
+	"DiskUri":     ubx.FieldSpec{WireName: "disk_uri"},
+	"FsType":      ubx.FieldSpec{WireName: "fs_type"},
+	"Kind":        ubx.FieldSpec{WireName: "kind"},
+	"ReadOnly":    ubx.FieldSpec{WireName: "read_only"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_AzureFileFields = ubx.FieldMap{
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretName": ubx.FieldSpec{WireName: "secret_name"},
-		"SecretNamespace": ubx.FieldSpec{WireName: "secret_namespace"},
-		"ShareName": ubx.FieldSpec{WireName: "share_name"},
-	}
+	"ReadOnly":        ubx.FieldSpec{WireName: "read_only"},
+	"SecretName":      ubx.FieldSpec{WireName: "secret_name"},
+	"SecretNamespace": ubx.FieldSpec{WireName: "secret_namespace"},
+	"ShareName":       ubx.FieldSpec{WireName: "share_name"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_CephfsFields = ubx.FieldMap{
-		"Monitors": ubx.FieldSpec{WireName: "monitors"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretFile": ubx.FieldSpec{WireName: "secret_file"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"Monitors":   ubx.FieldSpec{WireName: "monitors"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"ReadOnly":   ubx.FieldSpec{WireName: "read_only"},
+	"SecretFile": ubx.FieldSpec{WireName: "secret_file"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+	"User": ubx.FieldSpec{WireName: "user"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_CinderFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-	}
+	"FsType":   ubx.FieldSpec{WireName: "fs_type"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+	"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_ClaimRefFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":      ubx.FieldSpec{WireName: "api_version"},
+	"FieldPath":       ubx.FieldSpec{WireName: "field_path"},
+	"Kind":            ubx.FieldSpec{WireName: "kind"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Namespace":       ubx.FieldSpec{WireName: "namespace"},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_CsiFields = ubx.FieldMap{
-		"ControllerExpandSecretRef": ubx.FieldSpec{
-			WireName: "controller_expand_secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-		"ControllerPublishSecretRef": ubx.FieldSpec{
-			WireName: "controller_publish_secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-		"Driver": ubx.FieldSpec{WireName: "driver"},
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"NodeExpandSecretRef": ubx.FieldSpec{
-			WireName: "node_expand_secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-		"NodePublishSecretRef": ubx.FieldSpec{
-			WireName: "node_publish_secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-		"NodeStageSecretRef": ubx.FieldSpec{
-			WireName: "node_stage_secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"VolumeAttributes": ubx.FieldSpec{WireName: "volume_attributes"},
-		"VolumeHandle": ubx.FieldSpec{WireName: "volume_handle"},
-	}
+	"ControllerExpandSecretRef": ubx.FieldSpec{
+		WireName: "controller_expand_secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+	"ControllerPublishSecretRef": ubx.FieldSpec{
+		WireName: "controller_publish_secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+	"Driver": ubx.FieldSpec{WireName: "driver"},
+	"FsType": ubx.FieldSpec{WireName: "fs_type"},
+	"NodeExpandSecretRef": ubx.FieldSpec{
+		WireName: "node_expand_secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+	"NodePublishSecretRef": ubx.FieldSpec{
+		WireName: "node_publish_secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+	"NodeStageSecretRef": ubx.FieldSpec{
+		WireName: "node_stage_secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+	"ReadOnly":         ubx.FieldSpec{WireName: "read_only"},
+	"VolumeAttributes": ubx.FieldSpec{WireName: "volume_attributes"},
+	"VolumeHandle":     ubx.FieldSpec{WireName: "volume_handle"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_FcFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Lun": ubx.FieldSpec{WireName: "lun"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"TargetWwns": ubx.FieldSpec{WireName: "target_wwns"},
-		"Wwids": ubx.FieldSpec{WireName: "wwids"},
-	}
+	"FsType":     ubx.FieldSpec{WireName: "fs_type"},
+	"Lun":        ubx.FieldSpec{WireName: "lun"},
+	"ReadOnly":   ubx.FieldSpec{WireName: "read_only"},
+	"TargetWwns": ubx.FieldSpec{WireName: "target_wwns"},
+	"Wwids":      ubx.FieldSpec{WireName: "wwids"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_FlexVolumeFields = ubx.FieldMap{
-		"Driver": ubx.FieldSpec{WireName: "driver"},
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Options": ubx.FieldSpec{WireName: "options"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-	}
+	"Driver":   ubx.FieldSpec{WireName: "driver"},
+	"FsType":   ubx.FieldSpec{WireName: "fs_type"},
+	"Options":  ubx.FieldSpec{WireName: "options"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_FlockerFields = ubx.FieldMap{
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-		"DatasetUuid": ubx.FieldSpec{WireName: "dataset_uuid"},
-	}
+	"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
+	"DatasetUuid": ubx.FieldSpec{WireName: "dataset_uuid"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_GcePersistentDiskFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Partition": ubx.FieldSpec{WireName: "partition"},
-		"PdName": ubx.FieldSpec{WireName: "pd_name"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-	}
+	"FsType":    ubx.FieldSpec{WireName: "fs_type"},
+	"Partition": ubx.FieldSpec{WireName: "partition"},
+	"PdName":    ubx.FieldSpec{WireName: "pd_name"},
+	"ReadOnly":  ubx.FieldSpec{WireName: "read_only"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_GlusterfsFields = ubx.FieldMap{
-		"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
-		"EndpointsNamespace": ubx.FieldSpec{WireName: "endpoints_namespace"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-	}
+	"Endpoints":          ubx.FieldSpec{WireName: "endpoints"},
+	"EndpointsNamespace": ubx.FieldSpec{WireName: "endpoints_namespace"},
+	"Path":               ubx.FieldSpec{WireName: "path"},
+	"ReadOnly":           ubx.FieldSpec{WireName: "read_only"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_HostPathFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_IscsiFields = ubx.FieldMap{
-		"ChapAuthDiscovery": ubx.FieldSpec{WireName: "chap_auth_discovery"},
-		"ChapAuthSession": ubx.FieldSpec{WireName: "chap_auth_session"},
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"InitiatorName": ubx.FieldSpec{WireName: "initiator_name"},
-		"Iqn": ubx.FieldSpec{WireName: "iqn"},
-		"IscsiInterface": ubx.FieldSpec{WireName: "iscsi_interface"},
-		"Lun": ubx.FieldSpec{WireName: "lun"},
-		"Portals": ubx.FieldSpec{WireName: "portals"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-		"TargetPortal": ubx.FieldSpec{WireName: "target_portal"},
-	}
+	"ChapAuthDiscovery": ubx.FieldSpec{WireName: "chap_auth_discovery"},
+	"ChapAuthSession":   ubx.FieldSpec{WireName: "chap_auth_session"},
+	"FsType":            ubx.FieldSpec{WireName: "fs_type"},
+	"InitiatorName":     ubx.FieldSpec{WireName: "initiator_name"},
+	"Iqn":               ubx.FieldSpec{WireName: "iqn"},
+	"IscsiInterface":    ubx.FieldSpec{WireName: "iscsi_interface"},
+	"Lun":               ubx.FieldSpec{WireName: "lun"},
+	"Portals":           ubx.FieldSpec{WireName: "portals"},
+	"ReadOnly":          ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+	"TargetPortal": ubx.FieldSpec{WireName: "target_portal"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_LocalFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"FsType": ubx.FieldSpec{WireName: "fs_type"},
+	"Path":   ubx.FieldSpec{WireName: "path"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_NfsFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"Server": ubx.FieldSpec{WireName: "server"},
-	}
+	"Path":     ubx.FieldSpec{WireName: "path"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"Server":   ubx.FieldSpec{WireName: "server"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required_NodeSelectorTermsFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressionsFields,
-		},
-		"MatchFields": ubx.FieldSpec{
-			WireName: "match_fields",
-			Kind: "list",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressionsFields,
-		},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressionsFields,
+	},
+	"MatchFields": ubx.FieldSpec{
+		WireName: "match_fields",
+		Kind:     "list",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressionsFields,
+	},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_RequiredFields = ubx.FieldMap{
-		"NodeSelectorTerms": ubx.FieldSpec{
-			WireName: "node_selector_terms",
-			Kind: "list",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required_NodeSelectorTermsFields,
-		},
-	}
+	"NodeSelectorTerms": ubx.FieldSpec{
+		WireName: "node_selector_terms",
+		Kind:     "list",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required_NodeSelectorTermsFields,
+	},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinityFields = ubx.FieldMap{
-		"Required": ubx.FieldSpec{
-			WireName: "required",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_RequiredFields,
-		},
-	}
+	"Required": ubx.FieldSpec{
+		WireName: "required",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_RequiredFields,
+	},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_PhotonPersistentDiskFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"PdId": ubx.FieldSpec{WireName: "pd_id"},
-	}
+	"FsType": ubx.FieldSpec{WireName: "fs_type"},
+	"PdId":   ubx.FieldSpec{WireName: "pd_id"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_PortworxVolumeFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-	}
+	"FsType":   ubx.FieldSpec{WireName: "fs_type"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_QuobyteFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"Registry": ubx.FieldSpec{WireName: "registry"},
-		"Tenant": ubx.FieldSpec{WireName: "tenant"},
-		"User": ubx.FieldSpec{WireName: "user"},
-		"Volume": ubx.FieldSpec{WireName: "volume"},
-	}
+	"Group":    ubx.FieldSpec{WireName: "group"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"Registry": ubx.FieldSpec{WireName: "registry"},
+	"Tenant":   ubx.FieldSpec{WireName: "tenant"},
+	"User":     ubx.FieldSpec{WireName: "user"},
+	"Volume":   ubx.FieldSpec{WireName: "volume"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_RbdFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"Keyring": ubx.FieldSpec{WireName: "keyring"},
-		"Monitors": ubx.FieldSpec{WireName: "monitors"},
-		"Pool": ubx.FieldSpec{WireName: "pool"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"FsType":   ubx.FieldSpec{WireName: "fs_type"},
+	"Image":    ubx.FieldSpec{WireName: "image"},
+	"Keyring":  ubx.FieldSpec{WireName: "keyring"},
+	"Monitors": ubx.FieldSpec{WireName: "monitors"},
+	"Pool":     ubx.FieldSpec{WireName: "pool"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+	"User": ubx.FieldSpec{WireName: "user"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_ScaleIoFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Gateway": ubx.FieldSpec{WireName: "gateway"},
-		"ProtectionDomain": ubx.FieldSpec{WireName: "protection_domain"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
-		},
-		"SslEnabled": ubx.FieldSpec{WireName: "ssl_enabled"},
-		"StorageMode": ubx.FieldSpec{WireName: "storage_mode"},
-		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-		"System": ubx.FieldSpec{WireName: "system"},
-		"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
-	}
+	"FsType":           ubx.FieldSpec{WireName: "fs_type"},
+	"Gateway":          ubx.FieldSpec{WireName: "gateway"},
+	"ProtectionDomain": ubx.FieldSpec{WireName: "protection_domain"},
+	"ReadOnly":         ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_Cephfs_SecretRefFields,
+	},
+	"SslEnabled":  ubx.FieldSpec{WireName: "ssl_enabled"},
+	"StorageMode": ubx.FieldSpec{WireName: "storage_mode"},
+	"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+	"System":      ubx.FieldSpec{WireName: "system"},
+	"VolumeName":  ubx.FieldSpec{WireName: "volume_name"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_StorageosFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_ClaimRefFields,
-		},
-		"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
-		"VolumeNamespace": ubx.FieldSpec{WireName: "volume_namespace"},
-	}
+	"FsType":   ubx.FieldSpec{WireName: "fs_type"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_ClaimRefFields,
+	},
+	"VolumeName":      ubx.FieldSpec{WireName: "volume_name"},
+	"VolumeNamespace": ubx.FieldSpec{WireName: "volume_namespace"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpec_VsphereVolumeFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"StoragePolicyId": ubx.FieldSpec{WireName: "storage_policy_id"},
-		"StoragePolicyName": ubx.FieldSpec{WireName: "storage_policy_name"},
-		"VolumePath": ubx.FieldSpec{WireName: "volume_path"},
-	}
+	"FsType":            ubx.FieldSpec{WireName: "fs_type"},
+	"StoragePolicyId":   ubx.FieldSpec{WireName: "storage_policy_id"},
+	"StoragePolicyName": ubx.FieldSpec{WireName: "storage_policy_name"},
+	"VolumePath":        ubx.FieldSpec{WireName: "volume_path"},
+}
 
 var VolumeAttachment_Spec_Source_InlineVolumeSpecFields = ubx.FieldMap{
-		"AccessModes": ubx.FieldSpec{WireName: "access_modes"},
-		"AwsElasticBlockStore": ubx.FieldSpec{
-			WireName: "aws_elastic_block_store",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_AwsElasticBlockStoreFields,
-		},
-		"AzureDisk": ubx.FieldSpec{
-			WireName: "azure_disk",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_AzureDiskFields,
-		},
-		"AzureFile": ubx.FieldSpec{
-			WireName: "azure_file",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_AzureFileFields,
-		},
-		"Capacity": ubx.FieldSpec{WireName: "capacity"},
-		"Cephfs": ubx.FieldSpec{
-			WireName: "cephfs",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_CephfsFields,
-		},
-		"Cinder": ubx.FieldSpec{
-			WireName: "cinder",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_CinderFields,
-		},
-		"ClaimRef": ubx.FieldSpec{
-			WireName: "claim_ref",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_ClaimRefFields,
-		},
-		"Csi": ubx.FieldSpec{
-			WireName: "csi",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_CsiFields,
-		},
-		"Fc": ubx.FieldSpec{
-			WireName: "fc",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_FcFields,
-		},
-		"FlexVolume": ubx.FieldSpec{
-			WireName: "flex_volume",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_FlexVolumeFields,
-		},
-		"Flocker": ubx.FieldSpec{
-			WireName: "flocker",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_FlockerFields,
-		},
-		"GcePersistentDisk": ubx.FieldSpec{
-			WireName: "gce_persistent_disk",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_GcePersistentDiskFields,
-		},
-		"Glusterfs": ubx.FieldSpec{
-			WireName: "glusterfs",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_GlusterfsFields,
-		},
-		"HostPath": ubx.FieldSpec{
-			WireName: "host_path",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_HostPathFields,
-		},
-		"Iscsi": ubx.FieldSpec{
-			WireName: "iscsi",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_IscsiFields,
-		},
-		"Local": ubx.FieldSpec{
-			WireName: "local",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_LocalFields,
-		},
-		"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
-		"Nfs": ubx.FieldSpec{
-			WireName: "nfs",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_NfsFields,
-		},
-		"NodeAffinity": ubx.FieldSpec{
-			WireName: "node_affinity",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinityFields,
-		},
-		"PersistentVolumeReclaimPolicy": ubx.FieldSpec{WireName: "persistent_volume_reclaim_policy"},
-		"PhotonPersistentDisk": ubx.FieldSpec{
-			WireName: "photon_persistent_disk",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_PhotonPersistentDiskFields,
-		},
-		"PortworxVolume": ubx.FieldSpec{
-			WireName: "portworx_volume",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_PortworxVolumeFields,
-		},
-		"Quobyte": ubx.FieldSpec{
-			WireName: "quobyte",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_QuobyteFields,
-		},
-		"Rbd": ubx.FieldSpec{
-			WireName: "rbd",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_RbdFields,
-		},
-		"ScaleIo": ubx.FieldSpec{
-			WireName: "scale_io",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_ScaleIoFields,
-		},
-		"StorageClassName": ubx.FieldSpec{WireName: "storage_class_name"},
-		"Storageos": ubx.FieldSpec{
-			WireName: "storageos",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_StorageosFields,
-		},
-		"VolumeAttributesClassName": ubx.FieldSpec{WireName: "volume_attributes_class_name"},
-		"VolumeMode": ubx.FieldSpec{WireName: "volume_mode"},
-		"VsphereVolume": ubx.FieldSpec{
-			WireName: "vsphere_volume",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpec_VsphereVolumeFields,
-		},
-	}
+	"AccessModes": ubx.FieldSpec{WireName: "access_modes"},
+	"AwsElasticBlockStore": ubx.FieldSpec{
+		WireName: "aws_elastic_block_store",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_AwsElasticBlockStoreFields,
+	},
+	"AzureDisk": ubx.FieldSpec{
+		WireName: "azure_disk",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_AzureDiskFields,
+	},
+	"AzureFile": ubx.FieldSpec{
+		WireName: "azure_file",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_AzureFileFields,
+	},
+	"Capacity": ubx.FieldSpec{WireName: "capacity"},
+	"Cephfs": ubx.FieldSpec{
+		WireName: "cephfs",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_CephfsFields,
+	},
+	"Cinder": ubx.FieldSpec{
+		WireName: "cinder",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_CinderFields,
+	},
+	"ClaimRef": ubx.FieldSpec{
+		WireName: "claim_ref",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_ClaimRefFields,
+	},
+	"Csi": ubx.FieldSpec{
+		WireName: "csi",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_CsiFields,
+	},
+	"Fc": ubx.FieldSpec{
+		WireName: "fc",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_FcFields,
+	},
+	"FlexVolume": ubx.FieldSpec{
+		WireName: "flex_volume",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_FlexVolumeFields,
+	},
+	"Flocker": ubx.FieldSpec{
+		WireName: "flocker",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_FlockerFields,
+	},
+	"GcePersistentDisk": ubx.FieldSpec{
+		WireName: "gce_persistent_disk",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_GcePersistentDiskFields,
+	},
+	"Glusterfs": ubx.FieldSpec{
+		WireName: "glusterfs",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_GlusterfsFields,
+	},
+	"HostPath": ubx.FieldSpec{
+		WireName: "host_path",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_HostPathFields,
+	},
+	"Iscsi": ubx.FieldSpec{
+		WireName: "iscsi",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_IscsiFields,
+	},
+	"Local": ubx.FieldSpec{
+		WireName: "local",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_LocalFields,
+	},
+	"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
+	"Nfs": ubx.FieldSpec{
+		WireName: "nfs",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_NfsFields,
+	},
+	"NodeAffinity": ubx.FieldSpec{
+		WireName: "node_affinity",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinityFields,
+	},
+	"PersistentVolumeReclaimPolicy": ubx.FieldSpec{WireName: "persistent_volume_reclaim_policy"},
+	"PhotonPersistentDisk": ubx.FieldSpec{
+		WireName: "photon_persistent_disk",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_PhotonPersistentDiskFields,
+	},
+	"PortworxVolume": ubx.FieldSpec{
+		WireName: "portworx_volume",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_PortworxVolumeFields,
+	},
+	"Quobyte": ubx.FieldSpec{
+		WireName: "quobyte",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_QuobyteFields,
+	},
+	"Rbd": ubx.FieldSpec{
+		WireName: "rbd",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_RbdFields,
+	},
+	"ScaleIo": ubx.FieldSpec{
+		WireName: "scale_io",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_ScaleIoFields,
+	},
+	"StorageClassName": ubx.FieldSpec{WireName: "storage_class_name"},
+	"Storageos": ubx.FieldSpec{
+		WireName: "storageos",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_StorageosFields,
+	},
+	"VolumeAttributesClassName": ubx.FieldSpec{WireName: "volume_attributes_class_name"},
+	"VolumeMode":                ubx.FieldSpec{WireName: "volume_mode"},
+	"VsphereVolume": ubx.FieldSpec{
+		WireName: "vsphere_volume",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpec_VsphereVolumeFields,
+	},
+}
 
 var VolumeAttachment_Spec_SourceFields = ubx.FieldMap{
-		"InlineVolumeSpec": ubx.FieldSpec{
-			WireName: "inline_volume_spec",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_Source_InlineVolumeSpecFields,
-		},
-		"PersistentVolumeName": ubx.FieldSpec{WireName: "persistent_volume_name"},
-	}
+	"InlineVolumeSpec": ubx.FieldSpec{
+		WireName: "inline_volume_spec",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_Source_InlineVolumeSpecFields,
+	},
+	"PersistentVolumeName": ubx.FieldSpec{WireName: "persistent_volume_name"},
+}
 
 var VolumeAttachment_SpecFields = ubx.FieldMap{
-		"Attacher": ubx.FieldSpec{WireName: "attacher"},
-		"NodeName": ubx.FieldSpec{WireName: "node_name"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: VolumeAttachment_Spec_SourceFields,
-		},
-	}
+	"Attacher": ubx.FieldSpec{WireName: "attacher"},
+	"NodeName": ubx.FieldSpec{WireName: "node_name"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Spec_SourceFields,
+	},
+}
 
 var VolumeAttachment_Status_AttachErrorFields = ubx.FieldMap{
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+	"Time":      ubx.FieldSpec{WireName: "time"},
+}
 
 var VolumeAttachment_StatusFields = ubx.FieldMap{
-		"AttachError": ubx.FieldSpec{
-			WireName: "attach_error",
-			Kind: "object",
-			Fields: VolumeAttachment_Status_AttachErrorFields,
-		},
-		"Attached": ubx.FieldSpec{WireName: "attached"},
-		"AttachmentMetadata": ubx.FieldSpec{WireName: "attachment_metadata"},
-		"DetachError": ubx.FieldSpec{
-			WireName: "detach_error",
-			Kind: "object",
-			Fields: VolumeAttachment_Status_AttachErrorFields,
-		},
-	}
+	"AttachError": ubx.FieldSpec{
+		WireName: "attach_error",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Status_AttachErrorFields,
+	},
+	"Attached":           ubx.FieldSpec{WireName: "attached"},
+	"AttachmentMetadata": ubx.FieldSpec{WireName: "attachment_metadata"},
+	"DetachError": ubx.FieldSpec{
+		WireName: "detach_error",
+		Kind:     "object",
+		Fields:   VolumeAttachment_Status_AttachErrorFields,
+	},
+}
 
 type VolumeAttachmentConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -1028,21 +1028,21 @@ var VolumeAttachment = ubx.ResourceBinding{
 	WireType: "kubernetes_storage_volume_attachment",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: VolumeAttachment_MetadataFields,
+			Kind:     "object",
+			Fields:   VolumeAttachment_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: VolumeAttachment_SpecFields,
+			Kind:     "object",
+			Fields:   VolumeAttachment_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: VolumeAttachment_StatusFields,
+			Kind:     "object",
+			Fields:   VolumeAttachment_StatusFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

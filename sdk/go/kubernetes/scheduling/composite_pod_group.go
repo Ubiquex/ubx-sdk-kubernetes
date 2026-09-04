@@ -144,128 +144,128 @@ type CompositePodGroup_Status struct {
 }
 
 var CompositePodGroup_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var CompositePodGroup_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var CompositePodGroup_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: CompositePodGroup_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: CompositePodGroup_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   CompositePodGroup_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   CompositePodGroup_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var CompositePodGroup_Spec_DisruptionModeFields = ubx.FieldMap{
-		"All": ubx.FieldSpec{WireName: "all"},
-		"Single": ubx.FieldSpec{WireName: "single"},
-	}
+	"All":    ubx.FieldSpec{WireName: "all"},
+	"Single": ubx.FieldSpec{WireName: "single"},
+}
 
 var CompositePodGroup_Spec_SchedulingConstraints_TopologyFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+}
 
 var CompositePodGroup_Spec_SchedulingConstraintsFields = ubx.FieldMap{
-		"Topology": ubx.FieldSpec{
-			WireName: "topology",
-			Kind: "list",
-			Fields: CompositePodGroup_Spec_SchedulingConstraints_TopologyFields,
-		},
-	}
+	"Topology": ubx.FieldSpec{
+		WireName: "topology",
+		Kind:     "list",
+		Fields:   CompositePodGroup_Spec_SchedulingConstraints_TopologyFields,
+	},
+}
 
 var CompositePodGroup_Spec_SchedulingPolicy_GangFields = ubx.FieldMap{
-		"MinGroupCount": ubx.FieldSpec{WireName: "min_group_count"},
-	}
+	"MinGroupCount": ubx.FieldSpec{WireName: "min_group_count"},
+}
 
 var CompositePodGroup_Spec_SchedulingPolicyFields = ubx.FieldMap{
-		"Basic": ubx.FieldSpec{WireName: "basic"},
-		"Gang": ubx.FieldSpec{
-			WireName: "gang",
-			Kind: "object",
-			Fields: CompositePodGroup_Spec_SchedulingPolicy_GangFields,
-		},
-	}
+	"Basic": ubx.FieldSpec{WireName: "basic"},
+	"Gang": ubx.FieldSpec{
+		WireName: "gang",
+		Kind:     "object",
+		Fields:   CompositePodGroup_Spec_SchedulingPolicy_GangFields,
+	},
+}
 
 var CompositePodGroup_Spec_WorkloadRefFields = ubx.FieldMap{
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
-		"WorkloadName": ubx.FieldSpec{WireName: "workload_name"},
-	}
+	"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+	"WorkloadName": ubx.FieldSpec{WireName: "workload_name"},
+}
 
 var CompositePodGroup_SpecFields = ubx.FieldMap{
-		"DisruptionMode": ubx.FieldSpec{
-			WireName: "disruption_mode",
-			Kind: "object",
-			Fields: CompositePodGroup_Spec_DisruptionModeFields,
-		},
-		"ParentCompositePodGroupName": ubx.FieldSpec{WireName: "parent_composite_pod_group_name"},
-		"PreemptionPolicy": ubx.FieldSpec{WireName: "preemption_policy"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"PriorityClassName": ubx.FieldSpec{WireName: "priority_class_name"},
-		"SchedulingConstraints": ubx.FieldSpec{
-			WireName: "scheduling_constraints",
-			Kind: "object",
-			Fields: CompositePodGroup_Spec_SchedulingConstraintsFields,
-		},
-		"SchedulingPolicy": ubx.FieldSpec{
-			WireName: "scheduling_policy",
-			Kind: "object",
-			Fields: CompositePodGroup_Spec_SchedulingPolicyFields,
-		},
-		"WorkloadRef": ubx.FieldSpec{
-			WireName: "workload_ref",
-			Kind: "object",
-			Fields: CompositePodGroup_Spec_WorkloadRefFields,
-		},
-	}
+	"DisruptionMode": ubx.FieldSpec{
+		WireName: "disruption_mode",
+		Kind:     "object",
+		Fields:   CompositePodGroup_Spec_DisruptionModeFields,
+	},
+	"ParentCompositePodGroupName": ubx.FieldSpec{WireName: "parent_composite_pod_group_name"},
+	"PreemptionPolicy":            ubx.FieldSpec{WireName: "preemption_policy"},
+	"Priority":                    ubx.FieldSpec{WireName: "priority"},
+	"PriorityClassName":           ubx.FieldSpec{WireName: "priority_class_name"},
+	"SchedulingConstraints": ubx.FieldSpec{
+		WireName: "scheduling_constraints",
+		Kind:     "object",
+		Fields:   CompositePodGroup_Spec_SchedulingConstraintsFields,
+	},
+	"SchedulingPolicy": ubx.FieldSpec{
+		WireName: "scheduling_policy",
+		Kind:     "object",
+		Fields:   CompositePodGroup_Spec_SchedulingPolicyFields,
+	},
+	"WorkloadRef": ubx.FieldSpec{
+		WireName: "workload_ref",
+		Kind:     "object",
+		Fields:   CompositePodGroup_Spec_WorkloadRefFields,
+	},
+}
 
 var CompositePodGroup_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var CompositePodGroup_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: CompositePodGroup_Status_ConditionsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   CompositePodGroup_Status_ConditionsFields,
+	},
+}
 
 type CompositePodGroupConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -305,23 +305,23 @@ var CompositePodGroup = ubx.ResourceBinding{
 	WireType: "kubernetes_scheduling_composite_pod_group",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: CompositePodGroup_MetadataFields,
+			Kind:     "object",
+			Fields:   CompositePodGroup_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: CompositePodGroup_SpecFields,
+			Kind:     "object",
+			Fields:   CompositePodGroup_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: CompositePodGroup_StatusFields,
+			Kind:     "object",
+			Fields:   CompositePodGroup_StatusFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

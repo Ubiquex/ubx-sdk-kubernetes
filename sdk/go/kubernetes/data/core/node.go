@@ -3,248 +3,241 @@ package core
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Node_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+type Node_Items_Metadata_ManagedFields struct {
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
-type Node_Metadata_OwnerReferences struct {
-	ApiVersion any
+type Node_Items_Metadata_OwnerReferences struct {
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
-type Node_Metadata struct {
-	// Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
-	Annotations any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	CreationTimestamp any
-	// Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+type Node_Items_Metadata struct {
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	DeletionTimestamp any
-	// Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
-	Finalizers any
-	// GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
-	GenerateName any
-	// A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
-	Generation any
-	// Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
-	Labels any
-	// ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
-	ManagedFields any
-	// Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
-	Name any
-	// Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
-	Namespace any
-	// List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
-	OwnerReferences any
-	// An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
-	ResourceVersion any
-	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
-	SelfLink any
-	// UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
-type Node_Spec_ConfigSource_ConfigMap struct {
-	// KubeletConfigKey declares which key of the referenced ConfigMap corresponds to the KubeletConfiguration structure This field is required in all cases.
+type Node_Items_Spec_ConfigSource_ConfigMap struct {
 	KubeletConfigKey any
-	// Name is the metadata.name of the referenced ConfigMap. This field is required in all cases.
-	Name any
-	// Namespace is the metadata.namespace of the referenced ConfigMap. This field is required in all cases.
-	Namespace any
-	// ResourceVersion is the metadata.ResourceVersion of the referenced ConfigMap. This field is forbidden in Node.Spec, and required in Node.Status.
-	ResourceVersion any
-	// UID is the metadata.UID of the referenced ConfigMap. This field is forbidden in Node.Spec, and required in Node.Status.
-	Uid any
+	Name             any
+	Namespace        any
+	ResourceVersion  any
+	Uid              any
 }
 
-type Node_Spec_ConfigSource struct {
-	// ConfigMapNodeConfigSource contains the information to reference a ConfigMap as a config source for the Node. This API is deprecated since 1.22: https://git.k8s.io/enhancements/keps/sig-node/281-dynamic-kubelet-configuration
+type Node_Items_Spec_ConfigSource struct {
 	ConfigMap any
 }
 
-type Node_Spec_PodPreemptionPolicy struct {
-	// DisableResizePreemption lists the owners (e.g., autoscalers, operators, administrators) that have requested to disable scheduler and Kubelet preemption for in-place pod resize on this node. If this list is non-empty, resize-induced preemption is disabled on this node. This is an alpha field and requires enabling the InPlacePodVerticalScalingSchedulerPreemption feature gate.
+type Node_Items_Spec_PodPreemptionPolicy struct {
 	DisableResizePreemption any
 }
 
-type Node_Spec_Taints struct {
-	Effect any
-	Key any
+type Node_Items_Spec_Taints struct {
+	Effect    any
+	Key       any
 	TimeAdded any
-	Value any
+	Value     any
 }
 
-type Node_Spec struct {
-	// NodeConfigSource specifies a source of node configuration. Exactly one subfield (excluding metadata) must be non-nil. This API is deprecated since 1.22
-	ConfigSource any
-	// Deprecated. Not all kubelets will set this field. Remove field after 1.13. see: https://issues.k8s.io/61966
-	ExternalId any
-	// PodCIDR represents the pod IP range assigned to the node.
-	PodCidr any
-	// podCIDRs represents the IP ranges assigned to the node for usage by Pods on that node. If this field is specified, the 0th entry must match the podCIDR field. It may contain at most 1 value for each of IPv4 and IPv6.
-	PodCidrs any
-	// NodePodPreemptionPolicy defines the node-level policies governing preemption for pods on this node.
+type Node_Items_Spec struct {
+	ConfigSource        any
+	ExternalId          any
+	PodCidr             any
+	PodCidrs            any
 	PodPreemptionPolicy any
-	// ID of the node assigned by the cloud provider in the format: <ProviderName>://<ProviderSpecificNodeID>
-	ProviderId any
-	// If specified, the node's taints.
-	Taints any
-	// Unschedulable controls node schedulability of new pods. By default, node is schedulable. More info: https://kubernetes.io/docs/concepts/nodes/node/#manual-node-administration
-	Unschedulable any
+	ProviderId          any
+	Taints              any
+	Unschedulable       any
 }
 
-type Node_Status_Addresses struct {
+type Node_Items_Status_Addresses struct {
 	Address any
-	Type any
+	Type    any
 }
 
-type Node_Status_Conditions struct {
-	LastHeartbeatTime any
+type Node_Items_Status_Conditions struct {
+	LastHeartbeatTime  any
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
-type Node_Status_Config struct {
-	// NodeConfigSource specifies a source of node configuration. Exactly one subfield (excluding metadata) must be non-nil. This API is deprecated since 1.22
-	Active any
-	// NodeConfigSource specifies a source of node configuration. Exactly one subfield (excluding metadata) must be non-nil. This API is deprecated since 1.22
-	Assigned any
-	// Error describes any problems reconciling the Spec.ConfigSource to the Active config. Errors may occur, for example, attempting to checkpoint Spec.ConfigSource to the local Assigned record, attempting to checkpoint the payload associated with Spec.ConfigSource, attempting to load or validate the Assigned config, etc. Errors may occur at different points while syncing config. Earlier errors (e.g. download or checkpointing errors) will not result in a rollback to LastKnownGood, and may resolve across Kubelet retries. Later errors (e.g. loading or validating a checkpointed config) will result in a rollback to LastKnownGood. In the latter case, it is usually possible to resolve the error by fixing the config assigned in Spec.ConfigSource. You can find additional information for debugging by searching the error message in the Kubelet log. Error is a human-readable description of the error state; machines can check whether or not Error is empty, but should not rely on the stability of the Error text across Kubelet versions.
-	Error any
-	// NodeConfigSource specifies a source of node configuration. Exactly one subfield (excluding metadata) must be non-nil. This API is deprecated since 1.22
+type Node_Items_Status_Config struct {
+	Active        any
+	Assigned      any
+	Error         any
 	LastKnownGood any
 }
 
-type Node_Status_DaemonEndpoints_KubeletEndpoint struct {
-	// Port number of the given endpoint.
+type Node_Items_Status_DaemonEndpoints_KubeletEndpoint struct {
 	Port any
 }
 
-type Node_Status_DaemonEndpoints struct {
-	// DaemonEndpoint contains information about a single Daemon endpoint.
+type Node_Items_Status_DaemonEndpoints struct {
 	KubeletEndpoint any
 }
 
-type Node_Status_Features struct {
-	// SupplementalGroupsPolicy is set to true if the runtime supports SupplementalGroupsPolicy and ContainerUser.
+type Node_Items_Status_Features struct {
 	SupplementalGroupsPolicy any
 }
 
-type Node_Status_Images struct {
-	Names any
+type Node_Items_Status_Images struct {
+	Names     any
 	SizeBytes any
 }
 
-type Node_Status_NodeInfo_Swap struct {
-	// Total amount of swap memory in bytes.
+type Node_Items_Status_NodeInfo_Swap struct {
 	Capacity any
 }
 
-type Node_Status_NodeInfo struct {
-	// The Architecture reported by the node
-	Architecture any
-	// Boot ID reported by the node.
-	BootId any
-	// ContainerRuntime Version reported by the node through runtime remote API (e.g. containerd://1.4.2).
+type Node_Items_Status_NodeInfo struct {
+	Architecture            any
+	BootId                  any
 	ContainerRuntimeVersion any
-	// Kernel Version reported by the node from 'uname -r' (e.g. 3.16.0-0.bpo.4-amd64).
-	KernelVersion any
-	// Deprecated: KubeProxy Version reported by the node.
-	KubeProxyVersion any
-	// Kubelet Version reported by the node.
-	KubeletVersion any
-	// MachineID reported by the node. For unique machine identification in the cluster this field is preferred. Learn more from man(5) machine-id: http://man7.org/linux/man-pages/man5/machine-id.5.html
-	MachineId any
-	// The Operating System reported by the node
-	OperatingSystem any
-	// OS Image reported by the node from /etc/os-release (e.g. Debian GNU/Linux 7 (wheezy)).
-	OsImage any
-	// Whether the node is running in a user namespace.
-	RunningInUserNamespace any
-	// NodeSwapStatus represents swap memory information.
-	Swap any
-	// SystemUUID reported by the node. For unique machine identification MachineID is preferred. This field is specific to Red Hat hosts https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/rhsm/uuid
-	SystemUuid any
+	KernelVersion           any
+	KubeProxyVersion        any
+	KubeletVersion          any
+	MachineId               any
+	OperatingSystem         any
+	OsImage                 any
+	RunningInUserNamespace  any
+	Swap                    any
+	SystemUuid              any
 }
 
-type Node_Status_RuntimeHandlers_Features struct {
+type Node_Items_Status_RuntimeHandlers_Features struct {
 	RecursiveReadOnlyMounts any
-	UserNamespaces any
+	UserNamespaces          any
 }
 
-type Node_Status_RuntimeHandlers struct {
+type Node_Items_Status_RuntimeHandlers struct {
 	Features any
-	Name any
+	Name     any
 }
 
-type Node_Status_VolumesAttached struct {
+type Node_Items_Status_VolumesAttached struct {
 	DevicePath any
-	Name any
+	Name       any
 }
 
-type Node_Status struct {
-	// List of addresses reachable to the node. Queried from cloud provider, if available. More info: https://kubernetes.io/docs/reference/node/node-status/#addresses Note: This field is declared as mergeable, but the merge key is not sufficiently unique, which can cause data corruption when it is merged. Callers should instead use a full-replacement patch. See https://pr.k8s.io/79391 for an example. Consumers should assume that addresses can change during the lifetime of a Node. However, there are some exceptions where this may not be possible, such as Pods that inherit a Node's address in its own status or consumers of the downward API (status.hostIP).
-	Addresses any
-	// Allocatable represents the resources of a node that are available for scheduling. Defaults to Capacity.
-	Allocatable any
-	// Capacity represents the total resources of a node. More info: https://kubernetes.io/docs/reference/node/node-status/#capacity
-	Capacity any
-	// Conditions is an array of current observed node conditions. More info: https://kubernetes.io/docs/reference/node/node-status/#condition
-	Conditions any
-	// NodeConfigStatus describes the status of the config assigned by Node.Spec.ConfigSource.
-	Config any
-	// NodeDaemonEndpoints lists ports opened by daemons running on the Node.
-	DaemonEndpoints any
-	// DeclaredFeatures represents the features related to feature gates that are declared by the node.
+type Node_Items_Status struct {
+	Addresses        any
+	Allocatable      any
+	Capacity         any
+	Conditions       any
+	Config           any
+	DaemonEndpoints  any
 	DeclaredFeatures any
-	// NodeFeatures describes the set of features implemented by the CRI implementation. The features contained in the NodeFeatures should depend only on the cri implementation independent of runtime handlers.
-	Features any
-	// List of container images on this node
-	Images any
-	// NodeSystemInfo is a set of ids/uuids to uniquely identify the node.
-	NodeInfo any
-	// NodePhase is the recently observed lifecycle phase of the node. More info: https://kubernetes.io/docs/concepts/nodes/node/#phase The field is never populated, and now is deprecated.
-	Phase any
-	// The available runtime handlers.
-	RuntimeHandlers any
-	// List of volumes that are attached to the node.
-	VolumesAttached any
-	// List of attachable volumes in use (mounted) by the node.
-	VolumesInUse any
+	Features         any
+	Images           any
+	NodeInfo         any
+	Phase            any
+	RuntimeHandlers  any
+	VolumesAttached  any
+	VolumesInUse     any
+}
+
+type Node_Items struct {
+	ApiVersion any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
+}
+
+type Node_Metadata_ShardInfo struct {
+	// selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+	Selector any
+}
+
+type Node_Metadata struct {
+	// continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+	Continue any
+	// remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+	RemainingItemCount any
+	// String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+	ResourceVersion any
+	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+	SelfLink any
+	// ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+	ShardInfo any
 }
 
 type NodeConfig struct {
+	AllowWatchBookmarks  any
+	Continue             any
+	FieldSelector        any
+	LabelSelector        any
+	Limit                any
+	ResourceVersion      any
+	ResourceVersionMatch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 type NodeAttrs struct {
+	AllowWatchBookmarks any
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-	ApiVersion any
+	ApiVersion    any
+	Continue      any
+	FieldSelector any
+	// List of nodes
+	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
-	// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
-	Metadata any
-	// NodeSpec describes the attributes that a node is created with.
-	Spec any
-	// NodeStatus is information about the current status of a node.
-	Status any
+	Kind          any
+	LabelSelector any
+	Limit         any
+	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
+	Metadata             any
+	ResourceVersion      any
+	ResourceVersionMatch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 var Node = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_node",
 	Fields: ubx.FieldMap{
+		"AllowWatchBookmarks":  ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
+		"Continue":             ubx.FieldSpec{WireName: "continue"},
+		"FieldSelector":        ubx.FieldSpec{WireName: "field_selector"},
+		"LabelSelector":        ubx.FieldSpec{WireName: "label_selector"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"ResourceVersion":      ubx.FieldSpec{WireName: "resource_version"},
+		"ResourceVersionMatch": ubx.FieldSpec{WireName: "resource_version_match"},
+		"SendInitialEvents":    ubx.FieldSpec{WireName: "send_initial_events"},
+		"ShardSelector":        ubx.FieldSpec{WireName: "shard_selector"},
+		"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+		"Watch":                ubx.FieldSpec{WireName: "watch"},
 	},
 }

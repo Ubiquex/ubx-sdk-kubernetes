@@ -5,8 +5,6 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .composite_pod_group import CompositePodGroup, CompositePodGroupConfig
-from .composite_pod_group_list import CompositePodGroupList, CompositePodGroupListConfig
 from .pod_group import PodGroup, PodGroupConfig
-from .pod_group_list import PodGroupList, PodGroupListConfig
-from .priority_class_list import PriorityClassList, PriorityClassListConfig
-from .workload_list import WorkloadList, WorkloadListConfig
+from .priority_class import PriorityClass, PriorityClassConfig
+from .workload import Workload, WorkloadConfig

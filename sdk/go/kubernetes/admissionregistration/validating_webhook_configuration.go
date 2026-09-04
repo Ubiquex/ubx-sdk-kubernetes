@@ -8,7 +8,7 @@ type ValidatingWebhookConfiguration_Metadata_ManagedFields struct {
 	ApiVersion any
 	// The type of the managed fields, typically 'FieldsV1'. (AI-inferred)
 	FieldsType any
-	// The managed fields for this entry, represented as a FieldsV1 object—a JSON structure (trie-like) encoding the set of fields owned by the manager. (AI-inferred)
+	// The managed fields for this entry, represented as a FieldsV1 object -- a JSON structure (trie-like) encoding the set of fields owned by the manager. (AI-inferred)
 	FieldsV1 any
 	// The name of the entity (such as a controller, operator, or user) that manages the fields listed in this managedFields entry. (AI-inferred)
 	Manager any
@@ -150,128 +150,128 @@ type ValidatingWebhookConfiguration_Webhooks struct {
 }
 
 var ValidatingWebhookConfiguration_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var ValidatingWebhookConfiguration_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var ValidatingWebhookConfiguration_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: ValidatingWebhookConfiguration_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: ValidatingWebhookConfiguration_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   ValidatingWebhookConfiguration_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   ValidatingWebhookConfiguration_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var ValidatingWebhookConfiguration_Webhooks_ClientConfig_ServiceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"Path":      ubx.FieldSpec{WireName: "path"},
+	"Port":      ubx.FieldSpec{WireName: "port"},
+}
 
 var ValidatingWebhookConfiguration_Webhooks_ClientConfigFields = ubx.FieldMap{
-		"CaBundle": ubx.FieldSpec{WireName: "ca_bundle"},
-		"Service": ubx.FieldSpec{
-			WireName: "service",
-			Kind: "object",
-			Fields: ValidatingWebhookConfiguration_Webhooks_ClientConfig_ServiceFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"CaBundle": ubx.FieldSpec{WireName: "ca_bundle"},
+	"Service": ubx.FieldSpec{
+		WireName: "service",
+		Kind:     "object",
+		Fields:   ValidatingWebhookConfiguration_Webhooks_ClientConfig_ServiceFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var ValidatingWebhookConfiguration_Webhooks_MatchConditionsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var ValidatingWebhookConfiguration_Webhooks_NamespaceSelector_MatchExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ValidatingWebhookConfiguration_Webhooks_NamespaceSelectorFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: ValidatingWebhookConfiguration_Webhooks_NamespaceSelector_MatchExpressionsFields,
-		},
-		"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   ValidatingWebhookConfiguration_Webhooks_NamespaceSelector_MatchExpressionsFields,
+	},
+	"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
+}
 
 var ValidatingWebhookConfiguration_Webhooks_RulesFields = ubx.FieldMap{
-		"ApiGroups": ubx.FieldSpec{WireName: "api_groups"},
-		"ApiVersions": ubx.FieldSpec{WireName: "api_versions"},
-		"Operations": ubx.FieldSpec{WireName: "operations"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"ApiGroups":   ubx.FieldSpec{WireName: "api_groups"},
+	"ApiVersions": ubx.FieldSpec{WireName: "api_versions"},
+	"Operations":  ubx.FieldSpec{WireName: "operations"},
+	"Resources":   ubx.FieldSpec{WireName: "resources"},
+	"Scope":       ubx.FieldSpec{WireName: "scope"},
+}
 
 var ValidatingWebhookConfiguration_WebhooksFields = ubx.FieldMap{
-		"AdmissionReviewVersions": ubx.FieldSpec{WireName: "admission_review_versions"},
-		"ClientConfig": ubx.FieldSpec{
-			WireName: "client_config",
-			Kind: "object",
-			Fields: ValidatingWebhookConfiguration_Webhooks_ClientConfigFields,
-		},
-		"FailurePolicy": ubx.FieldSpec{WireName: "failure_policy"},
-		"MatchConditions": ubx.FieldSpec{
-			WireName: "match_conditions",
-			Kind: "list",
-			Fields: ValidatingWebhookConfiguration_Webhooks_MatchConditionsFields,
-		},
-		"MatchPolicy": ubx.FieldSpec{WireName: "match_policy"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamespaceSelector": ubx.FieldSpec{
-			WireName: "namespace_selector",
-			Kind: "object",
-			Fields: ValidatingWebhookConfiguration_Webhooks_NamespaceSelectorFields,
-		},
-		"ObjectSelector": ubx.FieldSpec{
-			WireName: "object_selector",
-			Kind: "object",
-			Fields: ValidatingWebhookConfiguration_Webhooks_NamespaceSelectorFields,
-		},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: ValidatingWebhookConfiguration_Webhooks_RulesFields,
-		},
-		"SideEffects": ubx.FieldSpec{WireName: "side_effects"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"AdmissionReviewVersions": ubx.FieldSpec{WireName: "admission_review_versions"},
+	"ClientConfig": ubx.FieldSpec{
+		WireName: "client_config",
+		Kind:     "object",
+		Fields:   ValidatingWebhookConfiguration_Webhooks_ClientConfigFields,
+	},
+	"FailurePolicy": ubx.FieldSpec{WireName: "failure_policy"},
+	"MatchConditions": ubx.FieldSpec{
+		WireName: "match_conditions",
+		Kind:     "list",
+		Fields:   ValidatingWebhookConfiguration_Webhooks_MatchConditionsFields,
+	},
+	"MatchPolicy": ubx.FieldSpec{WireName: "match_policy"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"NamespaceSelector": ubx.FieldSpec{
+		WireName: "namespace_selector",
+		Kind:     "object",
+		Fields:   ValidatingWebhookConfiguration_Webhooks_NamespaceSelectorFields,
+	},
+	"ObjectSelector": ubx.FieldSpec{
+		WireName: "object_selector",
+		Kind:     "object",
+		Fields:   ValidatingWebhookConfiguration_Webhooks_NamespaceSelectorFields,
+	},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   ValidatingWebhookConfiguration_Webhooks_RulesFields,
+	},
+	"SideEffects":    ubx.FieldSpec{WireName: "side_effects"},
+	"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 type ValidatingWebhookConfigurationConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -303,16 +303,16 @@ var ValidatingWebhookConfiguration = ubx.ResourceBinding{
 	WireType: "kubernetes_admissionregistration_validating_webhook_configuration",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: ValidatingWebhookConfiguration_MetadataFields,
+			Kind:     "object",
+			Fields:   ValidatingWebhookConfiguration_MetadataFields,
 		},
 		"Webhooks": ubx.FieldSpec{
 			WireName: "webhooks",
-			Kind: "list",
-			Fields: ValidatingWebhookConfiguration_WebhooksFields,
+			Kind:     "list",
+			Fields:   ValidatingWebhookConfiguration_WebhooksFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

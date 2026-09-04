@@ -3,968 +3,886 @@ package apps
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Deployment_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+type Deployment_Items_Metadata_ManagedFields struct {
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
-type Deployment_Metadata_OwnerReferences struct {
-	ApiVersion any
+type Deployment_Items_Metadata_OwnerReferences struct {
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
-type Deployment_Metadata struct {
-	// Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
-	Annotations any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	CreationTimestamp any
-	// Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+type Deployment_Items_Metadata struct {
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	DeletionTimestamp any
-	// Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
-	Finalizers any
-	// GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
-	GenerateName any
-	// A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
-	Generation any
-	// Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
-	Labels any
-	// ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
-	ManagedFields any
-	// Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
-	Name any
-	// Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
-	Namespace any
-	// List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
-	OwnerReferences any
-	// An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
-	ResourceVersion any
-	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
-	SelfLink any
-	// UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
-type Deployment_Spec_Selector_MatchExpressions struct {
-	Key any
+type Deployment_Items_Spec_Selector_MatchExpressions struct {
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
-type Deployment_Spec_Selector struct {
-	// matchExpressions is a list of label selector requirements. The requirements are ANDed.
+type Deployment_Items_Spec_Selector struct {
 	MatchExpressions any
-	// matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-	MatchLabels any
+	MatchLabels      any
 }
 
-type Deployment_Spec_Strategy_RollingUpdate struct {
-	// IntOrString is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.
-	MaxSurge any
-	// IntOrString is a type that can hold an int32 or a string. When used in JSON or YAML marshalling and unmarshalling, it produces or consumes the inner type. This allows you to have, for example, a JSON field that can accept a name or number.
+type Deployment_Items_Spec_Strategy_RollingUpdate struct {
+	MaxSurge       any
 	MaxUnavailable any
 }
 
-type Deployment_Spec_Strategy struct {
-	// Spec to control the desired behavior of rolling update.
+type Deployment_Items_Spec_Strategy struct {
 	RollingUpdate any
-	// Type of deployment. Can be "Recreate" or "RollingUpdate". Default is RollingUpdate.
-	Type any
+	Type          any
 }
 
-type Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference struct {
+type Deployment_Items_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference struct {
 	MatchExpressions any
-	MatchFields any
+	MatchFields      any
 }
 
-type Deployment_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution struct {
+type Deployment_Items_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution struct {
 	Preference any
-	Weight any
+	Weight     any
 }
 
-type Deployment_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution struct {
-	// Required. A list of node selector terms. The terms are ORed.
+type Deployment_Items_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution struct {
 	NodeSelectorTerms any
 }
 
-type Deployment_Spec_Template_Spec_Affinity_NodeAffinity struct {
-	// The scheduler will prefer to schedule pods to nodes that satisfy the affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding "weight" to the sum if the node matches the corresponding matchExpressions; the node(s) with the highest sum are the most preferred.
+type Deployment_Items_Spec_Template_Spec_Affinity_NodeAffinity struct {
 	PreferredDuringSchedulingIgnoredDuringExecution any
-	// A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
-	RequiredDuringSchedulingIgnoredDuringExecution any
+	RequiredDuringSchedulingIgnoredDuringExecution  any
 }
 
-type Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm struct {
-	LabelSelector any
-	MatchLabelKeys any
+type Deployment_Items_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm struct {
+	LabelSelector     any
+	MatchLabelKeys    any
 	MismatchLabelKeys any
 	NamespaceSelector any
-	Namespaces any
-	TopologyKey any
+	Namespaces        any
+	TopologyKey       any
 }
 
-type Deployment_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution struct {
+type Deployment_Items_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution struct {
 	PodAffinityTerm any
-	Weight any
+	Weight          any
 }
 
-type Deployment_Spec_Template_Spec_Affinity_PodAffinity struct {
-	// The scheduler will prefer to schedule pods to nodes that satisfy the affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding "weight" to the sum if the node has pods which matches the corresponding podAffinityTerm; the node(s) with the highest sum are the most preferred.
+type Deployment_Items_Spec_Template_Spec_Affinity_PodAffinity struct {
 	PreferredDuringSchedulingIgnoredDuringExecution any
-	// If the affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node. If the affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to a pod label update), the system may or may not try to eventually evict the pod from its node. When there are multiple elements, the lists of nodes corresponding to each podAffinityTerm are intersected, i.e. all terms must be satisfied.
-	RequiredDuringSchedulingIgnoredDuringExecution any
+	RequiredDuringSchedulingIgnoredDuringExecution  any
 }
 
-type Deployment_Spec_Template_Spec_Affinity struct {
-	// Node affinity is a group of node affinity scheduling rules.
-	NodeAffinity any
-	// Pod affinity is a group of inter pod affinity scheduling rules.
-	PodAffinity any
-	// Pod anti affinity is a group of inter pod anti affinity scheduling rules.
+type Deployment_Items_Spec_Template_Spec_Affinity struct {
+	NodeAffinity    any
+	PodAffinity     any
 	PodAntiAffinity any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Env_ValueFrom_ConfigMapKeyRef struct {
-	Key any
-	Name any
+type Deployment_Items_Spec_Template_Spec_Containers_Env_ValueFrom_ConfigMapKeyRef struct {
+	Key      any
+	Name     any
 	Optional any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Env_ValueFrom_FieldRef struct {
+type Deployment_Items_Spec_Template_Spec_Containers_Env_ValueFrom_FieldRef struct {
 	ApiVersion any
-	FieldPath any
+	FieldPath  any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Env_ValueFrom_FileKeyRef struct {
-	Key any
-	Optional any
-	Path any
+type Deployment_Items_Spec_Template_Spec_Containers_Env_ValueFrom_FileKeyRef struct {
+	Key        any
+	Optional   any
+	Path       any
 	VolumeName any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Env_ValueFrom_ResourceFieldRef struct {
+type Deployment_Items_Spec_Template_Spec_Containers_Env_ValueFrom_ResourceFieldRef struct {
 	ContainerName any
-	Divisor any
-	Resource any
+	Divisor       any
+	Resource      any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Env_ValueFrom struct {
-	ConfigMapKeyRef any
-	FieldRef any
-	FileKeyRef any
+type Deployment_Items_Spec_Template_Spec_Containers_Env_ValueFrom struct {
+	ConfigMapKeyRef  any
+	FieldRef         any
+	FileKeyRef       any
 	ResourceFieldRef any
-	SecretKeyRef any
+	SecretKeyRef     any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Env struct {
-	Name any
-	Value any
+type Deployment_Items_Spec_Template_Spec_Containers_Env struct {
+	Name      any
+	Value     any
 	ValueFrom any
 }
 
-type Deployment_Spec_Template_Spec_Containers_EnvFrom_ConfigMapRef struct {
-	Name any
+type Deployment_Items_Spec_Template_Spec_Containers_EnvFrom_ConfigMapRef struct {
+	Name     any
 	Optional any
 }
 
-type Deployment_Spec_Template_Spec_Containers_EnvFrom struct {
+type Deployment_Items_Spec_Template_Spec_Containers_EnvFrom struct {
 	ConfigMapRef any
-	Prefix any
-	SecretRef any
+	Prefix       any
+	SecretRef    any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Lifecycle_PostStart_Exec struct {
+type Deployment_Items_Spec_Template_Spec_Containers_Lifecycle_PostStart_Exec struct {
 	Command any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeaders struct {
-	Name any
+type Deployment_Items_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeaders struct {
+	Name  any
 	Value any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet struct {
-	Host any
+type Deployment_Items_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet struct {
+	Host        any
 	HttpHeaders any
-	Path any
-	Port any
-	Protocol any
-	Scheme any
+	Path        any
+	Port        any
+	Protocol    any
+	Scheme      any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Lifecycle_PostStart_Sleep struct {
+type Deployment_Items_Spec_Template_Spec_Containers_Lifecycle_PostStart_Sleep struct {
 	Seconds any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Lifecycle_PostStart_TcpSocket struct {
+type Deployment_Items_Spec_Template_Spec_Containers_Lifecycle_PostStart_TcpSocket struct {
 	Host any
 	Port any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Lifecycle_PostStart struct {
-	Exec any
-	HttpGet any
-	Sleep any
+type Deployment_Items_Spec_Template_Spec_Containers_Lifecycle_PostStart struct {
+	Exec      any
+	HttpGet   any
+	Sleep     any
 	TcpSocket any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Lifecycle struct {
-	PostStart any
-	PreStop any
+type Deployment_Items_Spec_Template_Spec_Containers_Lifecycle struct {
+	PostStart  any
+	PreStop    any
 	StopSignal any
 }
 
-type Deployment_Spec_Template_Spec_Containers_LivenessProbe_Grpc struct {
-	Mode any
-	Port any
+type Deployment_Items_Spec_Template_Spec_Containers_LivenessProbe_Grpc struct {
+	Mode    any
+	Port    any
 	Service any
 }
 
-type Deployment_Spec_Template_Spec_Containers_LivenessProbe struct {
-	Exec any
-	FailureThreshold any
-	Grpc any
-	HttpGet any
-	InitialDelaySeconds any
-	PeriodSeconds any
-	SuccessThreshold any
-	TcpSocket any
+type Deployment_Items_Spec_Template_Spec_Containers_LivenessProbe struct {
+	Exec                          any
+	FailureThreshold              any
+	Grpc                          any
+	HttpGet                       any
+	InitialDelaySeconds           any
+	PeriodSeconds                 any
+	SuccessThreshold              any
+	TcpSocket                     any
 	TerminationGracePeriodSeconds any
-	TimeoutSeconds any
+	TimeoutSeconds                any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Ports struct {
+type Deployment_Items_Spec_Template_Spec_Containers_Ports struct {
 	ContainerPort any
-	HostIp any
-	HostPort any
-	Name any
-	Protocol any
+	HostIp        any
+	HostPort      any
+	Name          any
+	Protocol      any
 }
 
-type Deployment_Spec_Template_Spec_Containers_ResizePolicy struct {
-	ResourceName any
+type Deployment_Items_Spec_Template_Spec_Containers_ResizePolicy struct {
+	ResourceName  any
 	RestartPolicy any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Resources_Claims struct {
-	Name any
+type Deployment_Items_Spec_Template_Spec_Containers_Resources_Claims struct {
+	Name    any
 	Request any
 }
 
-type Deployment_Spec_Template_Spec_Containers_Resources struct {
-	Claims any
-	Limits any
+type Deployment_Items_Spec_Template_Spec_Containers_Resources struct {
+	Claims   any
+	Limits   any
 	Requests any
 }
 
-type Deployment_Spec_Template_Spec_Containers_RestartPolicyRules_ExitCodes struct {
+type Deployment_Items_Spec_Template_Spec_Containers_RestartPolicyRules_ExitCodes struct {
 	Operator any
-	Values any
+	Values   any
 }
 
-type Deployment_Spec_Template_Spec_Containers_RestartPolicyRules struct {
-	Action any
+type Deployment_Items_Spec_Template_Spec_Containers_RestartPolicyRules struct {
+	Action    any
 	ExitCodes any
 }
 
-type Deployment_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfile struct {
+type Deployment_Items_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfile struct {
 	LocalhostProfile any
-	Type any
+	Type             any
 }
 
-type Deployment_Spec_Template_Spec_Containers_SecurityContext_Capabilities struct {
-	Add any
+type Deployment_Items_Spec_Template_Spec_Containers_SecurityContext_Capabilities struct {
+	Add  any
 	Drop any
 }
 
-type Deployment_Spec_Template_Spec_Containers_SecurityContext_SeLinuxOptions struct {
+type Deployment_Items_Spec_Template_Spec_Containers_SecurityContext_SeLinuxOptions struct {
 	Level any
-	Role any
-	Type any
-	User any
+	Role  any
+	Type  any
+	User  any
 }
 
-type Deployment_Spec_Template_Spec_Containers_SecurityContext_WindowsOptions struct {
-	GmsaCredentialSpec any
+type Deployment_Items_Spec_Template_Spec_Containers_SecurityContext_WindowsOptions struct {
+	GmsaCredentialSpec     any
 	GmsaCredentialSpecName any
-	HostProcess any
-	RunAsUserName any
+	HostProcess            any
+	RunAsUserName          any
 }
 
-type Deployment_Spec_Template_Spec_Containers_SecurityContext struct {
+type Deployment_Items_Spec_Template_Spec_Containers_SecurityContext struct {
 	AllowPrivilegeEscalation any
-	AppArmorProfile any
-	Capabilities any
-	Privileged any
-	ProcMount any
-	ReadOnlyRootFilesystem any
-	RunAsGroup any
-	RunAsNonRoot any
-	RunAsUser any
-	SeLinuxOptions any
-	SeccompProfile any
-	WindowsOptions any
+	AppArmorProfile          any
+	Capabilities             any
+	Privileged               any
+	ProcMount                any
+	ReadOnlyRootFilesystem   any
+	RunAsGroup               any
+	RunAsNonRoot             any
+	RunAsUser                any
+	SeLinuxOptions           any
+	SeccompProfile           any
+	WindowsOptions           any
 }
 
-type Deployment_Spec_Template_Spec_Containers_VolumeDevices struct {
+type Deployment_Items_Spec_Template_Spec_Containers_VolumeDevices struct {
 	DevicePath any
-	Name any
+	Name       any
 }
 
-type Deployment_Spec_Template_Spec_Containers_VolumeMounts struct {
-	BindMountOptions any
-	MountPath any
-	MountPropagation any
-	Name any
-	ReadOnly any
+type Deployment_Items_Spec_Template_Spec_Containers_VolumeMounts struct {
+	BindMountOptions  any
+	MountPath         any
+	MountPropagation  any
+	Name              any
+	ReadOnly          any
 	RecursiveReadOnly any
-	SubPath any
-	SubPathExpr any
+	SubPath           any
+	SubPathExpr       any
 }
 
-type Deployment_Spec_Template_Spec_Containers struct {
-	Args any
-	Command any
-	Env any
-	EnvFrom any
-	Image any
-	ImagePullPolicy any
-	Lifecycle any
-	LivenessProbe any
-	Name any
-	Ports any
-	ReadinessProbe any
-	ResizePolicy any
-	Resources any
-	RestartPolicy any
-	RestartPolicyRules any
-	SecurityContext any
-	StartupProbe any
-	Stdin any
-	StdinOnce any
-	TerminationMessagePath any
+type Deployment_Items_Spec_Template_Spec_Containers struct {
+	Args                     any
+	Command                  any
+	Env                      any
+	EnvFrom                  any
+	Image                    any
+	ImagePullPolicy          any
+	Lifecycle                any
+	LivenessProbe            any
+	Name                     any
+	Ports                    any
+	ReadinessProbe           any
+	ResizePolicy             any
+	Resources                any
+	RestartPolicy            any
+	RestartPolicyRules       any
+	SecurityContext          any
+	StartupProbe             any
+	Stdin                    any
+	StdinOnce                any
+	TerminationMessagePath   any
 	TerminationMessagePolicy any
-	Tty any
-	VolumeDevices any
-	VolumeMounts any
-	WorkingDir any
+	Tty                      any
+	VolumeDevices            any
+	VolumeMounts             any
+	WorkingDir               any
 }
 
-type Deployment_Spec_Template_Spec_DnsConfig struct {
-	// A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
+type Deployment_Items_Spec_Template_Spec_DnsConfig struct {
 	Nameservers any
-	// A list of DNS resolver options. This will be merged with the base options generated from DNSPolicy. Duplicated entries will be removed. Resolution options given in Options will override those that appear in the base DNSPolicy.
-	Options any
-	// A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
-	Searches any
+	Options     any
+	Searches    any
 }
 
-type Deployment_Spec_Template_Spec_EphemeralContainers struct {
-	Args any
-	Command any
-	Env any
-	EnvFrom any
-	Image any
-	ImagePullPolicy any
-	Lifecycle any
-	LivenessProbe any
-	Name any
-	Ports any
-	ReadinessProbe any
-	ResizePolicy any
-	Resources any
-	RestartPolicy any
-	RestartPolicyRules any
-	SecurityContext any
-	StartupProbe any
-	Stdin any
-	StdinOnce any
-	TargetContainerName any
-	TerminationMessagePath any
+type Deployment_Items_Spec_Template_Spec_EphemeralContainers struct {
+	Args                     any
+	Command                  any
+	Env                      any
+	EnvFrom                  any
+	Image                    any
+	ImagePullPolicy          any
+	Lifecycle                any
+	LivenessProbe            any
+	Name                     any
+	Ports                    any
+	ReadinessProbe           any
+	ResizePolicy             any
+	Resources                any
+	RestartPolicy            any
+	RestartPolicyRules       any
+	SecurityContext          any
+	StartupProbe             any
+	Stdin                    any
+	StdinOnce                any
+	TargetContainerName      any
+	TerminationMessagePath   any
 	TerminationMessagePolicy any
-	Tty any
-	VolumeDevices any
-	VolumeMounts any
-	WorkingDir any
+	Tty                      any
+	VolumeDevices            any
+	VolumeMounts             any
+	WorkingDir               any
 }
 
-type Deployment_Spec_Template_Spec_EvictionResponders struct {
-	Name any
+type Deployment_Items_Spec_Template_Spec_EvictionResponders struct {
+	Name     any
 	Priority any
 }
 
-type Deployment_Spec_Template_Spec_HostAliases struct {
+type Deployment_Items_Spec_Template_Spec_HostAliases struct {
 	Hostnames any
-	Ip any
+	Ip        any
 }
 
-type Deployment_Spec_Template_Spec_ImagePullSecrets struct {
+type Deployment_Items_Spec_Template_Spec_ImagePullSecrets struct {
 	Name any
 }
 
-type Deployment_Spec_Template_Spec_ReadinessGates struct {
+type Deployment_Items_Spec_Template_Spec_ReadinessGates struct {
 	ConditionType any
 }
 
-type Deployment_Spec_Template_Spec_ResourceClaims struct {
-	Name any
-	ResourceClaimName any
+type Deployment_Items_Spec_Template_Spec_ResourceClaims struct {
+	Name                      any
+	ResourceClaimName         any
 	ResourceClaimTemplateName any
 }
 
-type Deployment_Spec_Template_Spec_SchedulingGroup struct {
-	// PodGroupName specifies the name of the standalone PodGroup object that represents the runtime instance of this group. Must be a DNS subdomain.
+type Deployment_Items_Spec_Template_Spec_SchedulingGroup struct {
 	PodGroupName any
 }
 
-type Deployment_Spec_Template_Spec_SecurityContext struct {
-	// AppArmorProfile defines a pod or container's AppArmor settings.
-	AppArmorProfile any
-	// A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume. Note that this field cannot be set when spec.os.name is windows.
-	FsGroup any
-	// fsGroupChangePolicy defines behavior of changing ownership and permission of the volume before being exposed inside Pod. This field will only apply to volume types which support fsGroup based ownership(and permissions). It will have no effect on ephemeral volume types such as: secret, configmaps and emptydir. Valid values are "OnRootMismatch" and "Always". If not specified, "Always" is used. Note that this field cannot be set when spec.os.name is windows.
-	FsGroupChangePolicy any
-	// The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. Note that this field cannot be set when spec.os.name is windows.
-	RunAsGroup any
-	// Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
-	RunAsNonRoot any
-	// The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. Note that this field cannot be set when spec.os.name is windows.
-	RunAsUser any
-	// seLinuxChangePolicy defines how the container's SELinux label is applied to all volumes used by the Pod. It has no effect on nodes that do not support SELinux or to volumes does not support SELinux. Valid values are "MountOption" and "Recursive". "Recursive" means relabeling of all files on all Pod volumes by the container runtime. This may be slow for large volumes, but allows mixing privileged and unprivileged Pods sharing the same volume on the same node. "MountOption" mounts all eligible Pod volumes with `-o context` mount option. This requires all Pods that share the same volume to use the same SELinux label. It is not possible to share the same volume among privileged and unprivileged Pods. Eligible volumes are in-tree FibreChannel and iSCSI volumes, and all CSI volumes whose CSI driver announces SELinux support by setting spec.seLinuxMount: true in their CSIDriver instance. Other volumes are always re-labelled recursively. If not specified, "MountOption" is used. This field affects only Pods that have SELinux label set, either in PodSecurityContext or in SecurityContext of all containers. All Pods that use the same volume should use the same seLinuxChangePolicy, otherwise some pods can get stuck in ContainerCreating state. Note that this field cannot be set when spec.os.name is windows.
-	SeLinuxChangePolicy any
-	// SELinuxOptions are the labels to be applied to the container
-	SeLinuxOptions any
-	// SeccompProfile defines a pod/container's seccomp profile settings. Only one profile source may be set.
-	SeccompProfile any
-	// A list of groups applied to the first process run in each container, in addition to the container's primary GID and fsGroup (if specified). If the SupplementalGroupsPolicy feature is enabled, the supplementalGroupsPolicy field determines whether these are in addition to or instead of any group memberships defined in the container image. If unspecified, no additional groups are added, though group memberships defined in the container image may still be used, depending on the supplementalGroupsPolicy field. Note that this field cannot be set when spec.os.name is windows.
-	SupplementalGroups any
-	// Defines how supplemental groups of the first container processes are calculated. Valid values are "Merge" and "Strict". If not specified, "Merge" is used. (Alpha) Using the field requires the SupplementalGroupsPolicy feature gate to be enabled and the container runtime must implement support for this feature. Note that this field cannot be set when spec.os.name is windows.
+type Deployment_Items_Spec_Template_Spec_SecurityContext struct {
+	AppArmorProfile          any
+	FsGroup                  any
+	FsGroupChangePolicy      any
+	RunAsGroup               any
+	RunAsNonRoot             any
+	RunAsUser                any
+	SeLinuxChangePolicy      any
+	SeLinuxOptions           any
+	SeccompProfile           any
+	SupplementalGroups       any
 	SupplementalGroupsPolicy any
-	// Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch. Note that this field cannot be set when spec.os.name is windows.
-	Sysctls any
-	// WindowsSecurityContextOptions contain Windows-specific options and credentials.
-	WindowsOptions any
+	Sysctls                  any
+	WindowsOptions           any
 }
 
-type Deployment_Spec_Template_Spec_Tolerations struct {
-	Effect any
-	Key any
-	Operator any
+type Deployment_Items_Spec_Template_Spec_Tolerations struct {
+	Effect            any
+	Key               any
+	Operator          any
 	TolerationSeconds any
-	Value any
+	Value             any
 }
 
-type Deployment_Spec_Template_Spec_TopologySpreadConstraints struct {
-	LabelSelector any
-	MatchLabelKeys any
-	MaxSkew any
-	MinDomains any
+type Deployment_Items_Spec_Template_Spec_TopologySpreadConstraints struct {
+	LabelSelector      any
+	MatchLabelKeys     any
+	MaxSkew            any
+	MinDomains         any
 	NodeAffinityPolicy any
-	NodeTaintsPolicy any
-	TopologyKey any
-	WhenUnsatisfiable any
+	NodeTaintsPolicy   any
+	TopologyKey        any
+	WhenUnsatisfiable  any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_AwsElasticBlockStore struct {
-	FsType any
+type Deployment_Items_Spec_Template_Spec_Volumes_AwsElasticBlockStore struct {
+	FsType    any
 	Partition any
-	ReadOnly any
-	VolumeId any
+	ReadOnly  any
+	VolumeId  any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_AzureDisk struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_AzureDisk struct {
 	CachingMode any
-	DiskName any
-	DiskUri any
-	FsType any
-	Kind any
-	ReadOnly any
+	DiskName    any
+	DiskUri     any
+	FsType      any
+	Kind        any
+	ReadOnly    any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_AzureFile struct {
-	ReadOnly any
+type Deployment_Items_Spec_Template_Spec_Volumes_AzureFile struct {
+	ReadOnly   any
 	SecretName any
-	ShareName any
+	ShareName  any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Cephfs struct {
-	Monitors any
-	Path any
-	ReadOnly any
+type Deployment_Items_Spec_Template_Spec_Volumes_Cephfs struct {
+	Monitors   any
+	Path       any
+	ReadOnly   any
 	SecretFile any
-	SecretRef any
-	User any
+	SecretRef  any
+	User       any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Cinder struct {
-	FsType any
-	ReadOnly any
+type Deployment_Items_Spec_Template_Spec_Volumes_Cinder struct {
+	FsType    any
+	ReadOnly  any
 	SecretRef any
-	VolumeId any
+	VolumeId  any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_ConfigMap_Items struct {
-	Key any
+type Deployment_Items_Spec_Template_Spec_Volumes_ConfigMap_Items struct {
+	Key  any
 	Mode any
 	Path any
 	User any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_ConfigMap struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_ConfigMap struct {
 	DefaultMode any
 	DefaultUser any
-	Items any
-	Name any
-	Optional any
+	Items       any
+	Name        any
+	Optional    any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Csi struct {
-	Driver any
-	FsType any
+type Deployment_Items_Spec_Template_Spec_Volumes_Csi struct {
+	Driver               any
+	FsType               any
 	NodePublishSecretRef any
-	ReadOnly any
-	VolumeAttributes any
+	ReadOnly             any
+	VolumeAttributes     any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_DownwardApi_Items struct {
-	FieldRef any
-	Mode any
-	Path any
+type Deployment_Items_Spec_Template_Spec_Volumes_DownwardApi_Items struct {
+	FieldRef         any
+	Mode             any
+	Path             any
 	ResourceFieldRef any
-	User any
+	User             any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_DownwardApi struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_DownwardApi struct {
 	DefaultMode any
 	DefaultUser any
-	Items any
+	Items       any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_EmptyDir struct {
-	Medium any
-	Mode any
+type Deployment_Items_Spec_Template_Spec_Volumes_EmptyDir struct {
+	Medium    any
+	Mode      any
 	SizeLimit any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSource struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSource struct {
 	ApiGroup any
-	Kind any
-	Name any
+	Kind     any
+	Name     any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceRef struct {
-	ApiGroup any
-	Kind any
-	Name any
+type Deployment_Items_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceRef struct {
+	ApiGroup  any
+	Kind      any
+	Name      any
 	Namespace any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_Resources struct {
-	Limits any
+type Deployment_Items_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_Resources struct {
+	Limits   any
 	Requests any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec struct {
-	AccessModes any
-	DataSource any
-	DataSourceRef any
-	Resources any
-	Selector any
-	StorageClassName any
+type Deployment_Items_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec struct {
+	AccessModes               any
+	DataSource                any
+	DataSourceRef             any
+	Resources                 any
+	Selector                  any
+	StorageClassName          any
 	VolumeAttributesClassName any
-	VolumeMode any
-	VolumeName any
+	VolumeMode                any
+	VolumeName                any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate struct {
 	Metadata any
-	Spec any
+	Spec     any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Ephemeral struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Ephemeral struct {
 	VolumeClaimTemplate any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Fc struct {
-	FsType any
-	Lun any
-	ReadOnly any
+type Deployment_Items_Spec_Template_Spec_Volumes_Fc struct {
+	FsType     any
+	Lun        any
+	ReadOnly   any
 	TargetWwns any
-	Wwids any
+	Wwids      any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_FlexVolume struct {
-	Driver any
-	FsType any
-	Options any
-	ReadOnly any
+type Deployment_Items_Spec_Template_Spec_Volumes_FlexVolume struct {
+	Driver    any
+	FsType    any
+	Options   any
+	ReadOnly  any
 	SecretRef any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Flocker struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Flocker struct {
 	DatasetName any
 	DatasetUuid any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_GcePersistentDisk struct {
-	FsType any
+type Deployment_Items_Spec_Template_Spec_Volumes_GcePersistentDisk struct {
+	FsType    any
 	Partition any
-	PdName any
-	ReadOnly any
+	PdName    any
+	ReadOnly  any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_GitRepo struct {
-	Directory any
+type Deployment_Items_Spec_Template_Spec_Volumes_GitRepo struct {
+	Directory  any
 	Repository any
-	Revision any
+	Revision   any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Glusterfs struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Glusterfs struct {
 	Endpoints any
-	Path any
-	ReadOnly any
+	Path      any
+	ReadOnly  any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_HostPath struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_HostPath struct {
 	Path any
 	Type any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Image struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Image struct {
 	PullPolicy any
-	Reference any
+	Reference  any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Iscsi struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Iscsi struct {
 	ChapAuthDiscovery any
-	ChapAuthSession any
-	FsType any
-	InitiatorName any
-	Iqn any
-	IscsiInterface any
-	Lun any
-	Portals any
-	ReadOnly any
-	SecretRef any
-	TargetPortal any
+	ChapAuthSession   any
+	FsType            any
+	InitiatorName     any
+	Iqn               any
+	IscsiInterface    any
+	Lun               any
+	Portals           any
+	ReadOnly          any
+	SecretRef         any
+	TargetPortal      any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Nfs struct {
-	Path any
+type Deployment_Items_Spec_Template_Spec_Volumes_Nfs struct {
+	Path     any
 	ReadOnly any
-	Server any
+	Server   any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_PersistentVolumeClaim struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_PersistentVolumeClaim struct {
 	ClaimName any
-	ReadOnly any
+	ReadOnly  any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_PhotonPersistentDisk struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_PhotonPersistentDisk struct {
 	FsType any
-	PdId any
+	PdId   any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_PortworxVolume struct {
-	FsType any
+type Deployment_Items_Spec_Template_Spec_Volumes_PortworxVolume struct {
+	FsType   any
 	ReadOnly any
 	VolumeId any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Projected_Sources_ClusterTrustBundle struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Projected_Sources_ClusterTrustBundle struct {
 	LabelSelector any
-	Name any
+	Name          any
+	Optional      any
+	Path          any
+	SignerName    any
+	User          any
+}
+
+type Deployment_Items_Spec_Template_Spec_Volumes_Projected_Sources_ConfigMap struct {
+	Items    any
+	Name     any
 	Optional any
-	Path any
-	SignerName any
-	User any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Projected_Sources_ConfigMap struct {
-	Items any
-	Name any
-	Optional any
-}
-
-type Deployment_Spec_Template_Spec_Volumes_Projected_Sources_DownwardApi struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Projected_Sources_DownwardApi struct {
 	Items any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Projected_Sources_PodCertificate struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Projected_Sources_PodCertificate struct {
 	CertificateChainPath any
 	CredentialBundlePath any
-	KeyPath any
-	KeyType any
+	KeyPath              any
+	KeyType              any
 	MaxExpirationSeconds any
-	SignerName any
-	User any
-	UserAnnotations any
+	SignerName           any
+	User                 any
+	UserAnnotations      any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Projected_Sources_ServiceAccountToken struct {
-	Audience any
+type Deployment_Items_Spec_Template_Spec_Volumes_Projected_Sources_ServiceAccountToken struct {
+	Audience          any
 	ExpirationSeconds any
-	Path any
-	User any
+	Path              any
+	User              any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Projected_Sources struct {
-	ClusterTrustBundle any
-	ConfigMap any
-	DownwardApi any
-	PodCertificate any
-	Secret any
+type Deployment_Items_Spec_Template_Spec_Volumes_Projected_Sources struct {
+	ClusterTrustBundle  any
+	ConfigMap           any
+	DownwardApi         any
+	PodCertificate      any
+	Secret              any
 	ServiceAccountToken any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Projected struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Projected struct {
 	DefaultMode any
 	DefaultUser any
-	Sources any
+	Sources     any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Quobyte struct {
-	Group any
+type Deployment_Items_Spec_Template_Spec_Volumes_Quobyte struct {
+	Group    any
 	ReadOnly any
 	Registry any
-	Tenant any
-	User any
-	Volume any
+	Tenant   any
+	User     any
+	Volume   any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Rbd struct {
-	FsType any
-	Image any
-	Keyring any
-	Monitors any
-	Pool any
-	ReadOnly any
+type Deployment_Items_Spec_Template_Spec_Volumes_Rbd struct {
+	FsType    any
+	Image     any
+	Keyring   any
+	Monitors  any
+	Pool      any
+	ReadOnly  any
 	SecretRef any
-	User any
+	User      any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_ScaleIo struct {
-	FsType any
-	Gateway any
+type Deployment_Items_Spec_Template_Spec_Volumes_ScaleIo struct {
+	FsType           any
+	Gateway          any
 	ProtectionDomain any
-	ReadOnly any
-	SecretRef any
-	SslEnabled any
-	StorageMode any
-	StoragePool any
-	System any
-	VolumeName any
+	ReadOnly         any
+	SecretRef        any
+	SslEnabled       any
+	StorageMode      any
+	StoragePool      any
+	System           any
+	VolumeName       any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Secret struct {
+type Deployment_Items_Spec_Template_Spec_Volumes_Secret struct {
 	DefaultMode any
 	DefaultUser any
-	Items any
-	Optional any
-	SecretName any
+	Items       any
+	Optional    any
+	SecretName  any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_Storageos struct {
-	FsType any
-	ReadOnly any
-	SecretRef any
-	VolumeName any
+type Deployment_Items_Spec_Template_Spec_Volumes_Storageos struct {
+	FsType          any
+	ReadOnly        any
+	SecretRef       any
+	VolumeName      any
 	VolumeNamespace any
 }
 
-type Deployment_Spec_Template_Spec_Volumes_VsphereVolume struct {
-	FsType any
-	StoragePolicyId any
+type Deployment_Items_Spec_Template_Spec_Volumes_VsphereVolume struct {
+	FsType            any
+	StoragePolicyId   any
 	StoragePolicyName any
-	VolumePath any
+	VolumePath        any
 }
 
-type Deployment_Spec_Template_Spec_Volumes struct {
-	AwsElasticBlockStore any
-	AzureDisk any
-	AzureFile any
-	Cephfs any
-	Cinder any
-	ConfigMap any
-	Csi any
-	DownwardApi any
-	EmptyDir any
-	Ephemeral any
-	Fc any
-	FlexVolume any
-	Flocker any
-	GcePersistentDisk any
-	GitRepo any
-	Glusterfs any
-	HostPath any
-	Image any
-	Iscsi any
-	Name any
-	Nfs any
+type Deployment_Items_Spec_Template_Spec_Volumes struct {
+	AwsElasticBlockStore  any
+	AzureDisk             any
+	AzureFile             any
+	Cephfs                any
+	Cinder                any
+	ConfigMap             any
+	Csi                   any
+	DownwardApi           any
+	EmptyDir              any
+	Ephemeral             any
+	Fc                    any
+	FlexVolume            any
+	Flocker               any
+	GcePersistentDisk     any
+	GitRepo               any
+	Glusterfs             any
+	HostPath              any
+	Image                 any
+	Iscsi                 any
+	Name                  any
+	Nfs                   any
 	PersistentVolumeClaim any
-	PhotonPersistentDisk any
-	PortworxVolume any
-	Projected any
-	Quobyte any
-	Rbd any
-	ScaleIo any
-	Secret any
-	Storageos any
-	VsphereVolume any
+	PhotonPersistentDisk  any
+	PortworxVolume        any
+	Projected             any
+	Quobyte               any
+	Rbd                   any
+	ScaleIo               any
+	Secret                any
+	Storageos             any
+	VsphereVolume         any
 }
 
-type Deployment_Spec_Template_Spec struct {
-	// Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
-	ActiveDeadlineSeconds any
-	// Affinity is a group of affinity scheduling rules.
-	Affinity any
-	// AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.
-	AutomountServiceAccountToken any
-	// List of containers belonging to the pod. Containers cannot currently be added or removed. There must be at least one container in a Pod. Cannot be updated.
-	Containers any
-	// PodDNSConfig defines the DNS parameters of a pod in addition to those generated from DNSPolicy.
-	DnsConfig any
-	// Set DNS policy for the pod. Defaults to "ClusterFirst". Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'.
-	DnsPolicy any
-	// EnableServiceLinks indicates whether information about services should be injected into pod's environment variables, matching the syntax of Docker links. Optional: Defaults to true.
-	EnableServiceLinks any
-	// List of ephemeral containers run in this pod. Ephemeral containers may be run in an existing pod to perform user-initiated actions such as debugging. This list cannot be specified when creating a pod, and it cannot be modified by updating the pod spec. In order to add an ephemeral container to an existing pod, use the pod's ephemeralcontainers subresource.
-	EphemeralContainers any
-	// evictionResponders reference responders that react to Evictions based on EvictionRequests. Responders should observe and communicate through the Eviction Resource API to help with the graceful termination of a pod. The responders are selected sequentially, according to their specified priority. Responders should periodically report on an eviction progress by updating the .status.responders[].heartbeatTime field of the Eviction object. If this field is not updated within the heartbeat deadline defined by the Eviction API (currently 20 minutes), the eviction is passed over to the next responder with a lower priority. If there is no other responder, the last default imperative-eviction.k8s.io/evictor responder with a priority of 100 will evict the pod using the imperative Eviction API (pods/<name>/eviction subresource). The maximum length of the responders list is 10. Responders are not supported when the pod is part of a PodGroup (.spec.schedulingGroup is set). This field can only be set on creation and is immutable afterwards.
-	EvictionResponders any
-	// HostAliases is an optional list of hosts and IPs that will be injected into the pod's hosts file if specified.
-	HostAliases any
-	// Use the host's ipc namespace. Optional: Default to false.
-	HostIpc any
-	// Host networking requested for this pod. Use the host's network namespace. When using HostNetwork you should specify ports so the scheduler is aware. When `hostNetwork` is true, specified `hostPort` fields in port definitions must match `containerPort`, and unspecified `hostPort` fields in port definitions are defaulted to match `containerPort`. Default to false.
-	HostNetwork any
-	// Use the host's pid namespace. Optional: Default to false.
-	HostPid any
-	// Use the host's user namespace. Optional: Default to true. If set to true or not present, the pod will be run in the host user namespace, useful for when the pod needs a feature only available to the host user namespace, such as loading a kernel module with CAP_SYS_MODULE. When set to false, a new userns is created for the pod. Setting false is useful for mitigating container breakout vulnerabilities even allowing users to run their containers as root without actually having root privileges on the host.
-	HostUsers any
-	// Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
-	Hostname any
-	// HostnameOverride specifies an explicit override for the pod's hostname as perceived by the pod. This field only specifies the pod's hostname and does not affect its DNS records. When this field is set to a non-empty string: - It takes precedence over the values set in `hostname` and `subdomain`. - The Pod's hostname will be set to this value. - `setHostnameAsFQDN` must be nil or set to false. - `hostNetwork` must be set to false. This field must be a valid DNS subdomain as defined in RFC 1123 and contain at most 64 characters.
-	HostnameOverride any
-	// ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec. If specified, these secrets will be passed to individual puller implementations for them to use. More info: https://kubernetes.io/docs/concepts/containers/images#specifying-imagepullsecrets-on-a-pod
-	ImagePullSecrets any
-	// List of initialization containers belonging to the pod. Init containers are executed in order prior to containers being started. If any init container fails, the pod is considered to have failed and is handled according to its restartPolicy. The name for an init container or normal container must be unique among all containers. Init containers may not have Lifecycle actions, Readiness probes, Liveness probes, or Startup probes. The resourceRequirements of an init container are taken into account during scheduling by finding the highest request/limit for each resource type, and then using the max of that value or the sum of the normal containers. Limits are applied to init containers in a similar fashion. Init containers cannot currently be added or removed. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
-	InitContainers any
-	// NodeName indicates in which node this pod is scheduled. If empty, this pod is a candidate for scheduling by the scheduler defined in schedulerName. Once this field is set, the kubelet for this node becomes responsible for the lifecycle of this pod. This field should not be used to express a desire for the pod to be scheduled on a specific node. https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodename
-	NodeName any
-	// NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
-	NodeSelector any
-	// PodOS defines the OS parameters of a pod.
-	Os any
-	// Overhead represents the resource overhead associated with running a pod for a given RuntimeClass. This field will be autopopulated at admission time by the RuntimeClass admission controller. If the RuntimeClass admission controller is enabled, overhead must not be set in Pod create requests. The RuntimeClass admission controller will reject Pod create requests which have the overhead already set. If RuntimeClass is configured and selected in the PodSpec, Overhead will be set to the value defined in the corresponding RuntimeClass, otherwise it will remain unset and treated as zero. More info: https://git.k8s.io/enhancements/keps/sig-node/688-pod-overhead/README.md
-	Overhead any
-	// PreemptionPolicy is the Policy for preempting pods with lower priority. One of Never, PreemptLowerPriority. When Priority Admission Controller is enabled, it prevents users from setting this field. The admission controller populates this field from PriorityClassName. Defaults to PreemptLowerPriority if unset.
-	PreemptionPolicy any
-	// The priority value. Various system components use this field to find the priority of the pod. When Priority Admission Controller is enabled, it prevents users from setting this field. The admission controller populates this field from PriorityClassName. The higher the value, the higher the priority.
-	Priority any
-	// If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
-	PriorityClassName any
-	// If specified, all readiness gates will be evaluated for pod readiness. A pod is ready when all its containers are ready AND all conditions specified in the readiness gates have status equal to "True" More info: https://git.k8s.io/enhancements/keps/sig-network/580-pod-readiness-gates
-	ReadinessGates any
-	// ResourceClaims defines which ResourceClaims must be allocated and reserved before the Pod is allowed to start. The resources will be made available to those containers which consume them by name. This is a stable field but requires that the DynamicResourceAllocation feature gate is enabled. This field is immutable.
-	ResourceClaims any
-	// ResourceRequirements describes the compute resource requirements.
-	Resources any
-	// Restart policy for all containers within the pod. One of Always, OnFailure, Never. In some contexts, only a subset of those values may be permitted. Default to Always. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy
-	RestartPolicy any
-	// RuntimeClassName refers to a RuntimeClass object in the node.k8s.io group, which should be used to run this pod. If no RuntimeClass resource matches the named class, the pod will not be run. If unset or empty, the "legacy" RuntimeClass will be used, which is an implicit class with an empty definition that uses the default runtime handler. More info: https://git.k8s.io/enhancements/keps/sig-node/585-runtime-class
-	RuntimeClassName any
-	// If specified, the pod will be dispatched by specified scheduler. If not specified, the pod will be dispatched by default scheduler.
-	SchedulerName any
-	// SchedulingGates is an opaque list of values that if specified will block scheduling the pod. If schedulingGates is not empty, the pod will stay in the SchedulingGated state and the scheduler will not attempt to schedule the pod. SchedulingGates can only be set at pod creation time, and be removed only afterwards.
-	SchedulingGates any
-	// PodSchedulingGroup identifies the runtime scheduling group instance that a Pod belongs to. The scheduler uses this information to apply workload-aware scheduling semantics. Exactly one field must be specified.
-	SchedulingGroup any
-	// PodSecurityContext holds pod-level security attributes and common container settings. Some fields are also present in container.securityContext. Field values of container.securityContext take precedence over field values of PodSecurityContext.
-	SecurityContext any
-	// DeprecatedServiceAccount is a deprecated alias for ServiceAccountName. Deprecated: Use serviceAccountName instead.
-	ServiceAccount any
-	// ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
-	ServiceAccountName any
-	// If true the pod's hostname will be configured as the pod's FQDN, rather than the leaf name (the default). In Linux containers, this means setting the FQDN in the hostname field of the kernel (the nodename field of struct utsname). In Windows containers, this means setting the registry value of hostname for the registry key HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters to FQDN. If a pod does not have FQDN, this has no effect. Default to false.
-	SetHostnameAsFqdn any
-	// Share a single process namespace between all of the containers in a pod. When this is set containers will be able to view and signal processes from other containers in the same pod, and the first process in each container will not be assigned PID 1. HostPID and ShareProcessNamespace cannot both be set. Optional: Default to false.
-	ShareProcessNamespace any
-	// If specified, the fully qualified Pod hostname will be "<hostname>.<subdomain>.<pod namespace>.svc.<cluster domain>". If not specified, the pod will not have a domainname at all.
-	Subdomain any
-	// Optional duration in seconds the pod needs to terminate gracefully. May be decreased in delete request. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). If this value is nil, the default grace period will be used instead. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. Defaults to 30 seconds.
+type Deployment_Items_Spec_Template_Spec struct {
+	ActiveDeadlineSeconds         any
+	Affinity                      any
+	AutomountServiceAccountToken  any
+	Containers                    any
+	DnsConfig                     any
+	DnsPolicy                     any
+	EnableServiceLinks            any
+	EphemeralContainers           any
+	EvictionResponders            any
+	HostAliases                   any
+	HostIpc                       any
+	HostNetwork                   any
+	HostPid                       any
+	HostUsers                     any
+	Hostname                      any
+	HostnameOverride              any
+	ImagePullSecrets              any
+	InitContainers                any
+	NodeName                      any
+	NodeSelector                  any
+	Os                            any
+	Overhead                      any
+	PreemptionPolicy              any
+	Priority                      any
+	PriorityClassName             any
+	ReadinessGates                any
+	ResourceClaims                any
+	Resources                     any
+	RestartPolicy                 any
+	RuntimeClassName              any
+	SchedulerName                 any
+	SchedulingGates               any
+	SchedulingGroup               any
+	SecurityContext               any
+	ServiceAccount                any
+	ServiceAccountName            any
+	SetHostnameAsFqdn             any
+	ShareProcessNamespace         any
+	Subdomain                     any
 	TerminationGracePeriodSeconds any
-	// If specified, the pod's tolerations.
-	Tolerations any
-	// TopologySpreadConstraints describes how a group of pods ought to spread across topology domains. Scheduler will schedule pods in a way which abides by the constraints. All topologySpreadConstraints are ANDed.
-	TopologySpreadConstraints any
-	// List of volumes that can be mounted by containers belonging to the pod. More info: https://kubernetes.io/docs/concepts/storage/volumes
-	Volumes any
+	Tolerations                   any
+	TopologySpreadConstraints     any
+	Volumes                       any
 }
 
-type Deployment_Spec_Template struct {
-	// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+type Deployment_Items_Spec_Template struct {
 	Metadata any
-	// PodSpec is a description of a pod.
-	Spec any
+	Spec     any
 }
 
-type Deployment_Spec struct {
-	// Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)
-	MinReadySeconds any
-	// Indicates that the deployment is paused.
-	Paused any
-	// The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Note that progress will not be estimated during the time a deployment is paused. Defaults to 600s.
+type Deployment_Items_Spec struct {
+	MinReadySeconds         any
+	Paused                  any
 	ProgressDeadlineSeconds any
-	// Number of desired pods. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1.
-	Replicas any
-	// The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.
-	RevisionHistoryLimit any
-	// A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.
-	Selector any
-	// DeploymentStrategy describes how to replace existing pods with new ones.
-	Strategy any
-	// PodTemplateSpec describes the data a pod should have when created from a template
-	Template any
+	Replicas                any
+	RevisionHistoryLimit    any
+	Selector                any
+	Strategy                any
+	Template                any
 }
 
-type Deployment_Status_Conditions struct {
+type Deployment_Items_Status_Conditions struct {
 	LastTransitionTime any
-	LastUpdateTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	LastUpdateTime     any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
-type Deployment_Status struct {
-	// Total number of available non-terminating pods (ready for at least minReadySeconds) targeted by this deployment.
-	AvailableReplicas any
-	// Count of hash collisions for the Deployment. The Deployment controller uses this field as a collision avoidance mechanism when it needs to create the name for the newest ReplicaSet.
-	CollisionCount any
-	// Represents the latest available observations of a deployment's current state.
-	Conditions any
-	// The generation observed by the deployment controller.
-	ObservedGeneration any
-	// Total number of non-terminating pods targeted by this Deployment with a Ready Condition.
-	ReadyReplicas any
-	// Total number of non-terminating pods targeted by this deployment (their labels match the selector).
-	Replicas any
-	// Total number of terminating pods targeted by this deployment. Terminating pods have a non-null .metadata.deletionTimestamp and have not yet reached the Failed or Succeeded .status.phase. This is a beta field and requires enabling DeploymentReplicaSetTerminatingReplicas feature (enabled by default).
+type Deployment_Items_Status struct {
+	AvailableReplicas   any
+	CollisionCount      any
+	Conditions          any
+	ObservedGeneration  any
+	ReadyReplicas       any
+	Replicas            any
 	TerminatingReplicas any
-	// Total number of unavailable pods targeted by this deployment. This is the total number of pods that are still required for the deployment to have 100% available capacity. They may either be pods that are running but not yet available or pods that still have not been created.
 	UnavailableReplicas any
-	// Total number of non-terminating pods targeted by this deployment that have the desired template spec.
-	UpdatedReplicas any
+	UpdatedReplicas     any
+}
+
+type Deployment_Items struct {
+	ApiVersion any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
+}
+
+type Deployment_Metadata_ShardInfo struct {
+	// selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+	Selector any
+}
+
+type Deployment_Metadata struct {
+	// continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+	Continue any
+	// remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+	RemainingItemCount any
+	// String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+	ResourceVersion any
+	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+	SelfLink any
+	// ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+	ShardInfo any
 }
 
 type DeploymentConfig struct {
@@ -973,18 +891,15 @@ type DeploymentConfig struct {
 type DeploymentAttrs struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 	ApiVersion any
+	// Items is the list of Deployments.
+	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	Kind any
-	// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
 	Metadata any
-	// DeploymentSpec is the specification of the desired behavior of the Deployment.
-	Spec any
-	// DeploymentStatus is the most recently observed status of the Deployment.
-	Status any
 }
 
 var Deployment = ubx.DataSourceBinding{
 	WireType: "kubernetes_apps_deployment",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

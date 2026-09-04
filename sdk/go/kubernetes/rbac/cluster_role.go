@@ -103,80 +103,80 @@ type ClusterRole_Rules struct {
 }
 
 var ClusterRole_AggregationRule_ClusterRoleSelectors_MatchExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ClusterRole_AggregationRule_ClusterRoleSelectorsFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: ClusterRole_AggregationRule_ClusterRoleSelectors_MatchExpressionsFields,
-		},
-		"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   ClusterRole_AggregationRule_ClusterRoleSelectors_MatchExpressionsFields,
+	},
+	"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
+}
 
 var ClusterRole_AggregationRuleFields = ubx.FieldMap{
-		"ClusterRoleSelectors": ubx.FieldSpec{
-			WireName: "cluster_role_selectors",
-			Kind: "list",
-			Fields: ClusterRole_AggregationRule_ClusterRoleSelectorsFields,
-		},
-	}
+	"ClusterRoleSelectors": ubx.FieldSpec{
+		WireName: "cluster_role_selectors",
+		Kind:     "list",
+		Fields:   ClusterRole_AggregationRule_ClusterRoleSelectorsFields,
+	},
+}
 
 var ClusterRole_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var ClusterRole_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var ClusterRole_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: ClusterRole_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: ClusterRole_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   ClusterRole_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   ClusterRole_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var ClusterRole_RulesFields = ubx.FieldMap{
-		"ApiGroups": ubx.FieldSpec{WireName: "api_groups"},
-		"NonResourceUrls": ubx.FieldSpec{WireName: "non_resource_urls"},
-		"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"Verbs": ubx.FieldSpec{WireName: "verbs"},
-	}
+	"ApiGroups":       ubx.FieldSpec{WireName: "api_groups"},
+	"NonResourceUrls": ubx.FieldSpec{WireName: "non_resource_urls"},
+	"ResourceNames":   ubx.FieldSpec{WireName: "resource_names"},
+	"Resources":       ubx.FieldSpec{WireName: "resources"},
+	"Verbs":           ubx.FieldSpec{WireName: "verbs"},
+}
 
 type ClusterRoleConfig struct {
 	// AggregationRule describes how to locate ClusterRoles to aggregate into the ClusterRole
@@ -213,20 +213,20 @@ var ClusterRole = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AggregationRule": ubx.FieldSpec{
 			WireName: "aggregation_rule",
-			Kind: "object",
-			Fields: ClusterRole_AggregationRuleFields,
+			Kind:     "object",
+			Fields:   ClusterRole_AggregationRuleFields,
 		},
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: ClusterRole_MetadataFields,
+			Kind:     "object",
+			Fields:   ClusterRole_MetadataFields,
 		},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: ClusterRole_RulesFields,
+			Kind:     "list",
+			Fields:   ClusterRole_RulesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

@@ -5,9 +5,7 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .ingress import Ingress, IngressConfig
-from .ingress_class_list import IngressClassList, IngressClassListConfig
-from .ingress_list import IngressList, IngressListConfig
-from .ipaddress_list import IpaddressList, IpaddressListConfig
-from .network_policy_list import NetworkPolicyList, NetworkPolicyListConfig
+from .ingress_class import IngressClass, IngressClassConfig
+from .ipaddress import Ipaddress, IpaddressConfig
+from .network_policy import NetworkPolicy, NetworkPolicyConfig
 from .service_cidr import ServiceCidr, ServiceCidrConfig
-from .service_cidrlist import ServiceCidrlist, ServiceCidrlistConfig

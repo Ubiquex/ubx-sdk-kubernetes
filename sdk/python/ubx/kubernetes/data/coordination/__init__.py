@@ -4,5 +4,5 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
-from .lease_candidate_list import LeaseCandidateList, LeaseCandidateListConfig
-from .lease_list import LeaseList, LeaseListConfig
+from .lease import Lease, LeaseConfig
+from .lease_candidate import LeaseCandidate, LeaseCandidateConfig

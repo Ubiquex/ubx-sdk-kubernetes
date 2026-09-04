@@ -3,180 +3,202 @@ package admissionregistration
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ValidatingAdmissionPolicy_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+type ValidatingAdmissionPolicy_Items_Metadata_ManagedFields struct {
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
-type ValidatingAdmissionPolicy_Metadata_OwnerReferences struct {
-	ApiVersion any
+type ValidatingAdmissionPolicy_Items_Metadata_OwnerReferences struct {
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
-type ValidatingAdmissionPolicy_Metadata struct {
-	// Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
-	Annotations any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	CreationTimestamp any
-	// Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+type ValidatingAdmissionPolicy_Items_Metadata struct {
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	DeletionTimestamp any
-	// Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
-	Finalizers any
-	// GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
-	GenerateName any
-	// A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
-	Generation any
-	// Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
-	Labels any
-	// ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
-	ManagedFields any
-	// Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
-	Name any
-	// Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
-	Namespace any
-	// List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
-	OwnerReferences any
-	// An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
-	ResourceVersion any
-	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
-	SelfLink any
-	// UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
-type ValidatingAdmissionPolicy_Spec_AuditAnnotations struct {
-	Key any
+type ValidatingAdmissionPolicy_Items_Spec_AuditAnnotations struct {
+	Key             any
 	ValueExpression any
 }
 
-type ValidatingAdmissionPolicy_Spec_MatchConditions struct {
+type ValidatingAdmissionPolicy_Items_Spec_MatchConditions struct {
 	Expression any
-	Name any
+	Name       any
 }
 
-type ValidatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRules struct {
-	ApiGroups any
-	ApiVersions any
-	Operations any
+type ValidatingAdmissionPolicy_Items_Spec_MatchConstraints_ExcludeResourceRules struct {
+	ApiGroups     any
+	ApiVersions   any
+	Operations    any
 	ResourceNames any
-	Resources any
-	Scope any
+	Resources     any
+	Scope         any
 }
 
-type ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector_MatchExpressions struct {
-	Key any
+type ValidatingAdmissionPolicy_Items_Spec_MatchConstraints_NamespaceSelector_MatchExpressions struct {
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
-type ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector struct {
-	// matchExpressions is a list of label selector requirements. The requirements are ANDed.
+type ValidatingAdmissionPolicy_Items_Spec_MatchConstraints_NamespaceSelector struct {
 	MatchExpressions any
-	// matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.
-	MatchLabels any
+	MatchLabels      any
 }
 
-type ValidatingAdmissionPolicy_Spec_MatchConstraints struct {
-	// excludeResourceRules describes what operations on what resources/subresources the ValidatingAdmissionPolicy should not care about. The exclude rules take precedence over include rules (if a resource matches both, it is excluded)
+type ValidatingAdmissionPolicy_Items_Spec_MatchConstraints struct {
 	ExcludeResourceRules any
-	// matchPolicy defines how the "MatchResources" list is used to match incoming requests. Allowed values are "Exact" or "Equivalent". - Exact: match a request only if it exactly matches a specified rule. For example, if deployments can be modified via apps/v1, apps/v1beta1, and extensions/v1beta1, but "rules" only included `apiGroups:["apps"], apiVersions:["v1"], resources: ["deployments"]`, a request to apps/v1beta1 or extensions/v1beta1 would not be sent to the ValidatingAdmissionPolicy. - Equivalent: match a request if modifies a resource listed in rules, even via another API group or version. For example, if deployments can be modified via apps/v1, apps/v1beta1, and extensions/v1beta1, and "rules" only included `apiGroups:["apps"], apiVersions:["v1"], resources: ["deployments"]`, a request to apps/v1beta1 or extensions/v1beta1 would be converted to apps/v1 and sent to the ValidatingAdmissionPolicy. Defaults to "Equivalent"
-	MatchPolicy any
-	// A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.
-	NamespaceSelector any
-	// A label selector is a label query over a set of resources. The result of matchLabels and matchExpressions are ANDed. An empty label selector matches all objects. A null label selector matches no objects.
-	ObjectSelector any
-	// resourceRules describes what operations on what resources/subresources the ValidatingAdmissionPolicy matches. The policy cares about an operation if it matches _any_ Rule.
-	ResourceRules any
+	MatchPolicy          any
+	NamespaceSelector    any
+	ObjectSelector       any
+	ResourceRules        any
 }
 
-type ValidatingAdmissionPolicy_Spec_ParamKind struct {
-	// apiVersion is the API group version the resources belong to. In format of "group/version". Required.
+type ValidatingAdmissionPolicy_Items_Spec_ParamKind struct {
 	ApiVersion any
-	// kind is the API kind the resources belong to. Required.
-	Kind any
+	Kind       any
 }
 
-type ValidatingAdmissionPolicy_Spec_Validations struct {
-	Expression any
-	Message any
+type ValidatingAdmissionPolicy_Items_Spec_Validations struct {
+	Expression        any
+	Message           any
 	MessageExpression any
-	Reason any
+	Reason            any
 }
 
-type ValidatingAdmissionPolicy_Spec struct {
-	// auditAnnotations contains CEL expressions which are used to produce audit annotations for the audit event of the API request. validations and auditAnnotations may not both be empty; a least one of validations or auditAnnotations is required.
+type ValidatingAdmissionPolicy_Items_Spec struct {
 	AuditAnnotations any
-	// failurePolicy defines how to handle failures for the admission policy. Failures can occur from CEL expression parse errors, type check errors, runtime errors and invalid or mis-configured policy definitions or bindings. A policy is invalid if spec.paramKind refers to a non-existent Kind. A binding is invalid if spec.paramRef.name refers to a non-existent resource. failurePolicy does not define how validations that evaluate to false are handled. When failurePolicy is set to Fail, ValidatingAdmissionPolicyBinding validationActions define how failures are enforced. Allowed values are Ignore or Fail. Defaults to Fail.
-	FailurePolicy any
-	// matchConditions is a list of conditions that must be met for a request to be validated. Match conditions filter requests that have already been matched by the rules, namespaceSelector, and objectSelector. An empty list of matchConditions matches all requests. There are a maximum of 64 match conditions allowed. If a parameter object is provided, it can be accessed via the `params` handle in the same manner as validation expressions. The exact matching logic is (in order): 1. If ANY matchCondition evaluates to FALSE, the policy is skipped. 2. If ALL matchConditions evaluate to TRUE, the policy is evaluated. 3. If any matchCondition evaluates to an error (but none are FALSE): - If failurePolicy=Fail, reject the request - If failurePolicy=Ignore, the policy is skipped
-	MatchConditions any
-	// MatchResources decides whether to run the admission control policy on an object based on whether it meets the match criteria. The exclude rules take precedence over include rules (if a resource matches both, it is excluded)
+	FailurePolicy    any
+	MatchConditions  any
 	MatchConstraints any
-	// ParamKind is a tuple of Group Kind and Version.
-	ParamKind any
-	// validations contain CEL expressions which is used to apply the validation. Validations and AuditAnnotations may not both be empty; a minimum of one Validations or AuditAnnotations is required.
-	Validations any
-	// variables contain definitions of variables that can be used in composition of other expressions. Each variable is defined as a named CEL expression. The variables defined here will be available under `variables` in other expressions of the policy except MatchConditions because MatchConditions are evaluated before the rest of the policy. The expression of a variable can refer to other variables defined earlier in the list but not those after. Thus, Variables must be sorted by the order of first appearance and acyclic.
-	Variables any
+	ParamKind        any
+	Validations      any
+	Variables        any
 }
 
-type ValidatingAdmissionPolicy_Status_Conditions struct {
+type ValidatingAdmissionPolicy_Items_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
-type ValidatingAdmissionPolicy_Status_TypeChecking_ExpressionWarnings struct {
+type ValidatingAdmissionPolicy_Items_Status_TypeChecking_ExpressionWarnings struct {
 	FieldRef any
-	Warning any
+	Warning  any
 }
 
-type ValidatingAdmissionPolicy_Status_TypeChecking struct {
-	// expressionWarnings contains the type checking warnings for each expression.
+type ValidatingAdmissionPolicy_Items_Status_TypeChecking struct {
 	ExpressionWarnings any
 }
 
-type ValidatingAdmissionPolicy_Status struct {
-	// conditions represent the latest available observations of a policy's current state.
-	Conditions any
-	// observedGeneration is the generation observed by the controller.
+type ValidatingAdmissionPolicy_Items_Status struct {
+	Conditions         any
 	ObservedGeneration any
-	// TypeChecking contains results of type checking the expressions in the ValidatingAdmissionPolicy
-	TypeChecking any
+	TypeChecking       any
+}
+
+type ValidatingAdmissionPolicy_Items struct {
+	ApiVersion any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
+}
+
+type ValidatingAdmissionPolicy_Metadata_ShardInfo struct {
+	// selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+	Selector any
+}
+
+type ValidatingAdmissionPolicy_Metadata struct {
+	// continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+	Continue any
+	// remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+	RemainingItemCount any
+	// String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+	ResourceVersion any
+	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+	SelfLink any
+	// ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+	ShardInfo any
 }
 
 type ValidatingAdmissionPolicyConfig struct {
+	AllowWatchBookmarks  any
+	Continue             any
+	FieldSelector        any
+	LabelSelector        any
+	Limit                any
+	ResourceVersion      any
+	ResourceVersionMatch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 type ValidatingAdmissionPolicyAttrs struct {
+	AllowWatchBookmarks any
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-	ApiVersion any
+	ApiVersion    any
+	Continue      any
+	FieldSelector any
+	// List of ValidatingAdmissionPolicy.
+	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
-	// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
-	Metadata any
-	// ValidatingAdmissionPolicySpec is the specification of the desired behavior of the AdmissionPolicy.
-	Spec any
-	// ValidatingAdmissionPolicyStatus represents the status of an admission validation policy.
-	Status any
+	Kind          any
+	LabelSelector any
+	Limit         any
+	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
+	Metadata             any
+	ResourceVersion      any
+	ResourceVersionMatch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 var ValidatingAdmissionPolicy = ubx.DataSourceBinding{
 	WireType: "kubernetes_admissionregistration_validating_admission_policy",
 	Fields: ubx.FieldMap{
+		"AllowWatchBookmarks":  ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
+		"Continue":             ubx.FieldSpec{WireName: "continue"},
+		"FieldSelector":        ubx.FieldSpec{WireName: "field_selector"},
+		"LabelSelector":        ubx.FieldSpec{WireName: "label_selector"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"ResourceVersion":      ubx.FieldSpec{WireName: "resource_version"},
+		"ResourceVersionMatch": ubx.FieldSpec{WireName: "resource_version_match"},
+		"SendInitialEvents":    ubx.FieldSpec{WireName: "send_initial_events"},
+		"ShardSelector":        ubx.FieldSpec{WireName: "shard_selector"},
+		"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+		"Watch":                ubx.FieldSpec{WireName: "watch"},
 	},
 }

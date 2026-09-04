@@ -4,4 +4,4 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
-from .endpoint_slice_list import EndpointSliceList, EndpointSliceListConfig
+from .endpoint_slice import EndpointSlice, EndpointSliceConfig

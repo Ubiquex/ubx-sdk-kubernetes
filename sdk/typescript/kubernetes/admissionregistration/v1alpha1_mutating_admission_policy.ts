@@ -2,21 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1alpha1MutatingAdmissionPolicy_Metadata_ManagedFields {
+  /** The API version used to manage the fields in this managedFields entry. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred) */
   fieldsType?: string | Computed<string>;
+  /** fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred) */
   fieldsV1?: unknown | Computed<unknown>;
+  /** The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred) */
   manager?: string | Computed<string>;
+  /** Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred) */
   subresource?: string | Computed<string>;
+  /** Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
 export interface V1alpha1MutatingAdmissionPolicy_Metadata_OwnerReferences {
+  /** The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred) */
   blockOwnerDeletion?: boolean | Computed<boolean>;
+  /** Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred) */
   controller?: boolean | Computed<boolean>;
+  /** The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred) */
   name?: string | Computed<string>;
+  /** UID of the referenced owner object. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 
@@ -54,22 +67,33 @@ export interface V1alpha1MutatingAdmissionPolicy_Metadata {
 }
 
 export interface V1alpha1MutatingAdmissionPolicy_Spec_MatchConditions {
+  /** The Common Expression Language (CEL) expression that must evaluate to true for the admission policy to match the request. It is evaluated against the admission review object, with access to fields such as `request.object` and `request.userInfo`. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The name of the match condition, used to uniquely identify it within the list of match conditions for this admission policy. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface V1alpha1MutatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRules {
+  /** The API groups to which this resource rule applies. For example, 'apps', 'networking.k8s.io', or '*' to match all groups. (AI-inferred) */
   apiGroups?: string[] | Computed<string[]>;
+  /** List of API versions (e.g., 'v1', 'apps/v1') of the resources to which this exclude rule applies. Requests for resources with matching API versions are excluded from the admission policy's match constraints. (AI-inferred) */
   apiVersions?: string[] | Computed<string[]>;
+  /** List of operations (e.g., CREATE, UPDATE, DELETE, CONNECT, or '*') to exclude from matching in this resource rule. (AI-inferred) */
   operations?: string[] | Computed<string[]>;
+  /** A list of specific resource names (e.g., 'my-nginx') that this rule applies to. When used in exclude_resource_rules, these names are excluded from the match constraints. (AI-inferred) */
   resourceNames?: string[] | Computed<string[]>;
+  /** A list of Kubernetes resource names (e.g., 'pods', 'services') that are excluded from the match constraints. This field is used within exclude_resource_rules to define the resources to which the exclusion rule applies. (AI-inferred) */
   resources?: string[] | Computed<string[]>;
+  /** Specifies the scope of resources to which this exclude rule applies. Allowed values are 'Cluster', 'Namespaced', or '*' to match both. (AI-inferred) */
   scope?: string | Computed<string>;
 }
 
 export interface V1alpha1MutatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector_MatchExpressions {
+  /** The key of the label selector expression. This is the label key that the expression filters on, such as 'app' or 'environment'. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** A list of string values that the label key must match, as specified by the operator in this match expression. For example, if the operator is 'In' or 'NotIn', these values provide the set to compare against; if the operator is 'Exists' or 'DoesNotExist', this list must be empty. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 
@@ -94,12 +118,16 @@ export interface V1alpha1MutatingAdmissionPolicy_Spec_MatchConstraints {
 }
 
 export interface V1alpha1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfiguration {
+  /** The expression is a Common Expression Language (CEL) expression that evaluates to a partial object to be applied to the request object. It is evaluated for each admission request, and the result is merged with the original object. (AI-inferred) */
   expression?: string | Computed<string>;
 }
 
 export interface V1alpha1MutatingAdmissionPolicy_Spec_Mutations {
+  /** Configures the mutation as an apply configuration operation, where the supplied configuration is applied to the object via server-side apply, merging with existing configuration. (AI-inferred) */
   applyConfiguration?: V1alpha1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfiguration | Computed<V1alpha1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfiguration>;
+  /** The JSON Patch to apply to the object as part of this mutation. It contains an expression that evaluates to a JSON Patch string. (AI-inferred) */
   jsonPatch?: V1alpha1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfiguration | Computed<V1alpha1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfiguration>;
+  /** Specifies the type of patch to apply. Valid values are 'JSONPatch' and 'ApplyConfiguration'. (AI-inferred) */
   patchType?: string | Computed<string>;
 }
 

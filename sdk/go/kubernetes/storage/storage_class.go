@@ -81,62 +81,62 @@ type StorageClass_Metadata struct {
 }
 
 var StorageClass_AllowedTopologies_MatchLabelExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var StorageClass_AllowedTopologiesFields = ubx.FieldMap{
-		"MatchLabelExpressions": ubx.FieldSpec{
-			WireName: "match_label_expressions",
-			Kind: "list",
-			Fields: StorageClass_AllowedTopologies_MatchLabelExpressionsFields,
-		},
-	}
+	"MatchLabelExpressions": ubx.FieldSpec{
+		WireName: "match_label_expressions",
+		Kind:     "list",
+		Fields:   StorageClass_AllowedTopologies_MatchLabelExpressionsFields,
+	},
+}
 
 var StorageClass_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var StorageClass_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var StorageClass_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: StorageClass_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: StorageClass_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   StorageClass_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   StorageClass_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 type StorageClassConfig struct {
 	// allowVolumeExpansion shows whether the storage class allow volume expand.
@@ -194,21 +194,21 @@ var StorageClass = ubx.ResourceBinding{
 		"AllowVolumeExpansion": ubx.FieldSpec{WireName: "allow_volume_expansion"},
 		"AllowedTopologies": ubx.FieldSpec{
 			WireName: "allowed_topologies",
-			Kind: "list",
-			Fields: StorageClass_AllowedTopologiesFields,
+			Kind:     "list",
+			Fields:   StorageClass_AllowedTopologiesFields,
 		},
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: StorageClass_MetadataFields,
+			Kind:     "object",
+			Fields:   StorageClass_MetadataFields,
 		},
-		"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Provisioner": ubx.FieldSpec{WireName: "provisioner"},
-		"ReclaimPolicy": ubx.FieldSpec{WireName: "reclaim_policy"},
+		"MountOptions":      ubx.FieldSpec{WireName: "mount_options"},
+		"Parameters":        ubx.FieldSpec{WireName: "parameters"},
+		"Provisioner":       ubx.FieldSpec{WireName: "provisioner"},
+		"ReclaimPolicy":     ubx.FieldSpec{WireName: "reclaim_policy"},
 		"VolumeBindingMode": ubx.FieldSpec{WireName: "volume_binding_mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 	},
 }

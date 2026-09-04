@@ -4,21 +4,34 @@ package resource
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta2DeviceClass_Metadata_ManagedFields struct {
+	// The API version used to manage the fields in this managedFields entry. (AI-inferred)
 	ApiVersion any
+	// The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
 	FieldsType any
+	// fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
 	FieldsV1 any
+	// The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
 	Manager any
+	// Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
 	Operation any
+	// The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
 	Subresource any
+	// Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
 	Time any
 }
 
 type V1beta2DeviceClass_Metadata_OwnerReferences struct {
+	// The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
 	ApiVersion any
+	// If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
 	BlockOwnerDeletion any
+	// Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
 	Controller any
+	// The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
 	Kind any
+	// The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
 	Name any
+	// UID of the referenced owner object. (AI-inferred)
 	Uid any
 }
 
@@ -56,19 +69,24 @@ type V1beta2DeviceClass_Metadata struct {
 }
 
 type V1beta2DeviceClass_Spec_Config_Opaque struct {
+	// Specifies the name of the driver that owns this opaque device configuration. This driver is responsible for interpreting the corresponding parameters and allocating resources accordingly. (AI-inferred)
 	Driver any
+	// Parameters is an arbitrary JSON object containing driver-specific configuration for this opaque device class configuration. The structure is not defined by Kubernetes and must be interpreted by the device driver. (AI-inferred)
 	Parameters any
 }
 
 type V1beta2DeviceClass_Spec_Config struct {
+	// Provides driver-specific settings for a device class that are opaque to the Kubernetes scheduler. (AI-inferred)
 	Opaque any
 }
 
 type V1beta2DeviceClass_Spec_Selectors_Cel struct {
+	// The CEL expression used to select devices based on their attributes. The expression is evaluated against device attributes, and devices for which it evaluates to true are selected. (AI-inferred)
 	Expression any
 }
 
 type V1beta2DeviceClass_Spec_Selectors struct {
+	// The CEL selector object, containing a Common Expression Language (CEL) expression that is evaluated against device attributes to determine whether a device matches this selector. (AI-inferred)
 	Cel any
 }
 
@@ -82,88 +100,88 @@ type V1beta2DeviceClass_Spec struct {
 }
 
 var V1beta2DeviceClass_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var V1beta2DeviceClass_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta2DeviceClass_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: V1beta2DeviceClass_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: V1beta2DeviceClass_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   V1beta2DeviceClass_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   V1beta2DeviceClass_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta2DeviceClass_Spec_Config_OpaqueFields = ubx.FieldMap{
-		"Driver": ubx.FieldSpec{WireName: "driver"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"Driver":     ubx.FieldSpec{WireName: "driver"},
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+}
 
 var V1beta2DeviceClass_Spec_ConfigFields = ubx.FieldMap{
-		"Opaque": ubx.FieldSpec{
-			WireName: "opaque",
-			Kind: "object",
-			Fields: V1beta2DeviceClass_Spec_Config_OpaqueFields,
-		},
-	}
+	"Opaque": ubx.FieldSpec{
+		WireName: "opaque",
+		Kind:     "object",
+		Fields:   V1beta2DeviceClass_Spec_Config_OpaqueFields,
+	},
+}
 
 var V1beta2DeviceClass_Spec_Selectors_CelFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var V1beta2DeviceClass_Spec_SelectorsFields = ubx.FieldMap{
-		"Cel": ubx.FieldSpec{
-			WireName: "cel",
-			Kind: "object",
-			Fields: V1beta2DeviceClass_Spec_Selectors_CelFields,
-		},
-	}
+	"Cel": ubx.FieldSpec{
+		WireName: "cel",
+		Kind:     "object",
+		Fields:   V1beta2DeviceClass_Spec_Selectors_CelFields,
+	},
+}
 
 var V1beta2DeviceClass_SpecFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "list",
-			Fields: V1beta2DeviceClass_Spec_ConfigFields,
-		},
-		"ExtendedResourceName": ubx.FieldSpec{WireName: "extended_resource_name"},
-		"Selectors": ubx.FieldSpec{
-			WireName: "selectors",
-			Kind: "list",
-			Fields: V1beta2DeviceClass_Spec_SelectorsFields,
-		},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "list",
+		Fields:   V1beta2DeviceClass_Spec_ConfigFields,
+	},
+	"ExtendedResourceName": ubx.FieldSpec{WireName: "extended_resource_name"},
+	"Selectors": ubx.FieldSpec{
+		WireName: "selectors",
+		Kind:     "list",
+		Fields:   V1beta2DeviceClass_Spec_SelectorsFields,
+	},
+}
 
 type V1beta2DeviceClassConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -195,16 +213,16 @@ var V1beta2DeviceClass = ubx.ResourceBinding{
 	WireType: "kubernetes_resource_v1beta2_device_class",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta2DeviceClass_MetadataFields,
+			Kind:     "object",
+			Fields:   V1beta2DeviceClass_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: V1beta2DeviceClass_SpecFields,
+			Kind:     "object",
+			Fields:   V1beta2DeviceClass_SpecFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

@@ -7,7 +7,7 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class StorageVersion_Metadata_ManagedFields:
+class StorageVersion_Items_Metadata_ManagedFields:
     api_version: Any = None
     fields_type: Any = None
     fields_v1: Any = None
@@ -17,7 +17,7 @@ class StorageVersion_Metadata_ManagedFields:
     time: Any = None
 
 @dataclasses.dataclass
-class StorageVersion_Metadata_OwnerReferences:
+class StorageVersion_Items_Metadata_OwnerReferences:
     api_version: Any = None
     block_owner_deletion: Any = None
     controller: Any = None
@@ -26,40 +26,25 @@ class StorageVersion_Metadata_OwnerReferences:
     uid: Any = None
 
 @dataclasses.dataclass
-class StorageVersion_Metadata:
-    # Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
+class StorageVersion_Items_Metadata:
     annotations: Any = None
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
     creation_timestamp: Any = None
-    # Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
     deletion_grace_period_seconds: Any = None
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
     deletion_timestamp: Any = None
-    # Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
     finalizers: Any = None
-    # GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
     generate_name: Any = None
-    # A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
     generation: Any = None
-    # Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
     labels: Any = None
-    # ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
     managed_fields: Any = None
-    # Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
     name: Any = None
-    # Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
     namespace: Any = None
-    # List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
     owner_references: Any = None
-    # An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
     resource_version: Any = None
-    # Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
     self_link: Any = None
-    # UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
     uid: Any = None
 
 @dataclasses.dataclass
-class StorageVersion_Status_Conditions:
+class StorageVersion_Items_Status_Conditions:
     last_transition_time: Any = None
     message: Any = None
     observed_generation: Any = None
@@ -68,40 +53,93 @@ class StorageVersion_Status_Conditions:
     type: Any = None
 
 @dataclasses.dataclass
-class StorageVersion_Status_StorageVersions:
+class StorageVersion_Items_Status_StorageVersions:
     api_server_id: Any = None
     decodable_versions: Any = None
     encoding_version: Any = None
     served_versions: Any = None
 
 @dataclasses.dataclass
-class StorageVersion_Status:
-    # commonEncodingVersion is set to an encoding storage version if all API server instances share that same version. If they don't share one storage version, this field is left empty. API servers should finish updating its storageVersionStatus entry before serving write operations, so that this field will be in sync with the reality.
+class StorageVersion_Items_Status:
     common_encoding_version: Any = None
-    # conditions lists the latest available observations of the storageVersion's state.
     conditions: Any = None
-    # storageVersions lists the reported versions per API server instance.
     storage_versions: Any = None
 
 @dataclasses.dataclass
+class StorageVersion_Items:
+    api_version: Any = None
+    kind: Any = None
+    metadata: Any = None
+    spec: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class StorageVersion_Metadata_ShardInfo:
+    # selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+    selector: Any = None
+
+@dataclasses.dataclass
+class StorageVersion_Metadata:
+    # continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+    continue_: Any = None
+    # remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+    remaining_item_count: Any = None
+    # String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+    resource_version: Any = None
+    # Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+    self_link: Any = None
+    # ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+    shard_info: Any = None
+
+@dataclasses.dataclass
 class StorageVersionConfig:
-    pass
+    allow_watch_bookmarks: Any = None
+    continue_: Any = None
+    field_selector: Any = None
+    label_selector: Any = None
+    limit: Any = None
+    resource_version: Any = None
+    resource_version_match: Any = None
+    send_initial_events: Any = None
+    shard_selector: Any = None
+    timeout_seconds: Any = None
+    watch: Any = None
 
 @dataclasses.dataclass
 class StorageVersionAttrs:
+    allow_watch_bookmarks: Any = None
     # APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     api_version: Any = None
+    continue_: Any = None
+    field_selector: Any = None
+    # Items holds a list of StorageVersion
+    items: Any = None
     # Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
     kind: Any = None
-    # ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+    label_selector: Any = None
+    limit: Any = None
+    # ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
     metadata: Any = None
-    # StorageVersionSpec is an empty spec.
-    spec: Any = None
-    # API server instances report the versions they can decode and the version they encode objects to when persisting objects in the backend.
-    status: Any = None
+    resource_version: Any = None
+    resource_version_match: Any = None
+    send_initial_events: Any = None
+    shard_selector: Any = None
+    timeout_seconds: Any = None
+    watch: Any = None
 
 StorageVersion = ubx.DataSourceBinding(
     wire_type="kubernetes_apiserverinternal_storage_version",
     fields={
+        "allow_watch_bookmarks": ubx.FieldSpec(wire_name="allow_watch_bookmarks"),
+        "continue_": ubx.FieldSpec(wire_name="continue"),
+        "field_selector": ubx.FieldSpec(wire_name="field_selector"),
+        "label_selector": ubx.FieldSpec(wire_name="label_selector"),
+        "limit": ubx.FieldSpec(wire_name="limit"),
+        "resource_version": ubx.FieldSpec(wire_name="resource_version"),
+        "resource_version_match": ubx.FieldSpec(wire_name="resource_version_match"),
+        "send_initial_events": ubx.FieldSpec(wire_name="send_initial_events"),
+        "shard_selector": ubx.FieldSpec(wire_name="shard_selector"),
+        "timeout_seconds": ubx.FieldSpec(wire_name="timeout_seconds"),
+        "watch": ubx.FieldSpec(wire_name="watch"),
     },
 )

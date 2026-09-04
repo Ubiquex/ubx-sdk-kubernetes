@@ -5,7 +5,5 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .apigroup import Apigroup, ApigroupConfig
-from .apigroup_list import ApigroupList, ApigroupListConfig
-from .apiresource_list import ApiresourceList, ApiresourceListConfig
-from .apiversions import Apiversions, ApiversionsConfig
-from .watch_event import WatchEvent, WatchEventConfig
+from .apiresource import Apiresource, ApiresourceConfig
+from .server_address_by_client_cidr import ServerAddressByClientCidr, ServerAddressByClientCidrConfig

@@ -3,139 +3,135 @@ package networking
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Ingress_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+type Ingress_Items_Metadata_ManagedFields struct {
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
-type Ingress_Metadata_OwnerReferences struct {
-	ApiVersion any
+type Ingress_Items_Metadata_OwnerReferences struct {
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
-type Ingress_Metadata struct {
-	// Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
-	Annotations any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	CreationTimestamp any
-	// Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+type Ingress_Items_Metadata struct {
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	DeletionTimestamp any
-	// Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
-	Finalizers any
-	// GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
-	GenerateName any
-	// A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
-	Generation any
-	// Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
-	Labels any
-	// ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
-	ManagedFields any
-	// Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
-	Name any
-	// Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
-	Namespace any
-	// List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
-	OwnerReferences any
-	// An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
-	ResourceVersion any
-	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
-	SelfLink any
-	// UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
-type Ingress_Spec_DefaultBackend_Resource struct {
-	// APIGroup is the group for the resource being referenced. If APIGroup is not specified, the specified Kind must be in the core API group. For any other third-party types, APIGroup is required.
+type Ingress_Items_Spec_DefaultBackend_Resource struct {
 	ApiGroup any
-	// Kind is the type of resource being referenced
-	Kind any
-	// Name is the name of resource being referenced
-	Name any
+	Kind     any
+	Name     any
 }
 
-type Ingress_Spec_DefaultBackend_Service_Port struct {
-	// name is the name of the port on the Service. This is a mutually exclusive setting with "Number".
-	Name any
-	// number is the numerical port number (e.g. 80) on the Service. This is a mutually exclusive setting with "Name".
+type Ingress_Items_Spec_DefaultBackend_Service_Port struct {
+	Name   any
 	Number any
 }
 
-type Ingress_Spec_DefaultBackend_Service struct {
-	// name is the referenced service. The service must exist in the same namespace as the Ingress object.
+type Ingress_Items_Spec_DefaultBackend_Service struct {
 	Name any
-	// ServiceBackendPort is the service port being referenced.
 	Port any
 }
 
-type Ingress_Spec_DefaultBackend struct {
-	// TypedLocalObjectReference contains enough information to let you locate the typed referenced object inside the same namespace.
+type Ingress_Items_Spec_DefaultBackend struct {
 	Resource any
-	// IngressServiceBackend references a Kubernetes Service as a Backend.
-	Service any
+	Service  any
 }
 
-type Ingress_Spec_Rules_Http_Paths struct {
-	Backend any
-	Path any
+type Ingress_Items_Spec_Rules_Http_Paths struct {
+	Backend  any
+	Path     any
 	PathType any
 }
 
-type Ingress_Spec_Rules_Http struct {
+type Ingress_Items_Spec_Rules_Http struct {
 	Paths any
 }
 
-type Ingress_Spec_Rules struct {
+type Ingress_Items_Spec_Rules struct {
 	Host any
 	Http any
 }
 
-type Ingress_Spec_Tls struct {
-	Hosts any
+type Ingress_Items_Spec_Tls struct {
+	Hosts      any
 	SecretName any
 }
 
-type Ingress_Spec struct {
-	// IngressBackend describes all endpoints for a given service and port.
-	DefaultBackend any
-	// ingressClassName is the name of an IngressClass cluster resource. Ingress controller implementations use this field to know whether they should be serving this Ingress resource, by a transitive connection (controller -> IngressClass -> Ingress resource). Although the `kubernetes.io/ingress.class` annotation (simple constant name) was never formally defined, it was widely supported by Ingress controllers to create a direct binding between Ingress controller and Ingress resources. Newly created Ingress resources should prefer using the field. However, even though the annotation is officially deprecated, for backwards compatibility reasons, ingress controllers should still honor that annotation if present.
+type Ingress_Items_Spec struct {
+	DefaultBackend   any
 	IngressClassName any
-	// rules is a list of host rules used to configure the Ingress. If unspecified, or no rule matches, all traffic is sent to the default backend.
-	Rules any
-	// tls represents the TLS configuration. Currently the Ingress only supports a single TLS port, 443. If multiple members of this list specify different hosts, they will be multiplexed on the same port according to the hostname specified through the SNI TLS extension, if the ingress controller fulfilling the ingress supports SNI.
-	Tls any
+	Rules            any
+	Tls              any
 }
 
-type Ingress_Status_LoadBalancer_Ingress_Ports struct {
-	Error any
-	Port any
+type Ingress_Items_Status_LoadBalancer_Ingress_Ports struct {
+	Error    any
+	Port     any
 	Protocol any
 }
 
-type Ingress_Status_LoadBalancer_Ingress struct {
+type Ingress_Items_Status_LoadBalancer_Ingress struct {
 	Hostname any
-	Ip any
-	Ports any
+	Ip       any
+	Ports    any
 }
 
-type Ingress_Status_LoadBalancer struct {
-	// ingress is a list containing ingress points for the load-balancer.
+type Ingress_Items_Status_LoadBalancer struct {
 	Ingress any
 }
 
-type Ingress_Status struct {
-	// IngressLoadBalancerStatus represents the status of a load-balancer.
+type Ingress_Items_Status struct {
 	LoadBalancer any
+}
+
+type Ingress_Items struct {
+	ApiVersion any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
+}
+
+type Ingress_Metadata_ShardInfo struct {
+	// selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+	Selector any
+}
+
+type Ingress_Metadata struct {
+	// continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+	Continue any
+	// remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+	RemainingItemCount any
+	// String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+	ResourceVersion any
+	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+	SelfLink any
+	// ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+	ShardInfo any
 }
 
 type IngressConfig struct {
@@ -144,18 +140,15 @@ type IngressConfig struct {
 type IngressAttrs struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 	ApiVersion any
+	// items is the list of Ingress.
+	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	Kind any
-	// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
 	Metadata any
-	// IngressSpec describes the Ingress the user wishes to exist.
-	Spec any
-	// IngressStatus describe the current state of the Ingress.
-	Status any
 }
 
 var Ingress = ubx.DataSourceBinding{
 	WireType: "kubernetes_networking_ingress",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

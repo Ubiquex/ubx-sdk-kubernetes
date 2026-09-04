@@ -4,12 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
-from .device_class_list import DeviceClassList, DeviceClassListConfig
+from .device_class import DeviceClass, DeviceClassConfig
 from .device_taint_rule import DeviceTaintRule, DeviceTaintRuleConfig
-from .device_taint_rule_list import DeviceTaintRuleList, DeviceTaintRuleListConfig
 from .resource_claim import ResourceClaim, ResourceClaimConfig
-from .resource_claim_list import ResourceClaimList, ResourceClaimListConfig
-from .resource_claim_template_list import ResourceClaimTemplateList, ResourceClaimTemplateListConfig
+from .resource_claim_template import ResourceClaimTemplate, ResourceClaimTemplateConfig
 from .resource_pool_status_request import ResourcePoolStatusRequest, ResourcePoolStatusRequestConfig
-from .resource_pool_status_request_list import ResourcePoolStatusRequestList, ResourcePoolStatusRequestListConfig
-from .resource_slice_list import ResourceSliceList, ResourceSliceListConfig
+from .resource_slice import ResourceSlice, ResourceSliceConfig

@@ -6,7 +6,7 @@ export interface ValidatingWebhookConfiguration_Metadata_ManagedFields {
   apiVersion?: string | Computed<string>;
   /** The type of the managed fields, typically 'FieldsV1'. (AI-inferred) */
   fieldsType?: string | Computed<string>;
-  /** The managed fields for this entry, represented as a FieldsV1 object—a JSON structure (trie-like) encoding the set of fields owned by the manager. (AI-inferred) */
+  /** The managed fields for this entry, represented as a FieldsV1 object -- a JSON structure (trie-like) encoding the set of fields owned by the manager. (AI-inferred) */
   fieldsV1?: unknown | Computed<unknown>;
   /** The name of the entity (such as a controller, operator, or user) that manages the fields listed in this managedFields entry. (AI-inferred) */
   manager?: string | Computed<string>;
