@@ -106,7 +106,7 @@ type Csinode_Status_StorageHealth_HealthConditions struct {
 type Csinode_Status_StorageHealth struct {
 	// List of health conditions for a storage volume on the node, reporting the current state and any issues. Each condition provides the status, reason, and message for a particular health check. (AI-inferred)
 	HealthConditions any
-	Name any
+	Name             any
 }
 
 type Csinode_Status struct {
@@ -115,98 +115,98 @@ type Csinode_Status struct {
 }
 
 var Csinode_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var Csinode_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var Csinode_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: Csinode_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: Csinode_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   Csinode_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   Csinode_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var Csinode_Spec_Drivers_AllocatableFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+}
 
 var Csinode_Spec_DriversFields = ubx.FieldMap{
-		"Allocatable": ubx.FieldSpec{
-			WireName: "allocatable",
-			Kind: "object",
-			Fields: Csinode_Spec_Drivers_AllocatableFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NodeId": ubx.FieldSpec{WireName: "node_id"},
-		"TopologyKeys": ubx.FieldSpec{WireName: "topology_keys"},
-	}
+	"Allocatable": ubx.FieldSpec{
+		WireName: "allocatable",
+		Kind:     "object",
+		Fields:   Csinode_Spec_Drivers_AllocatableFields,
+	},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"NodeId":       ubx.FieldSpec{WireName: "node_id"},
+	"TopologyKeys": ubx.FieldSpec{WireName: "topology_keys"},
+}
 
 var Csinode_SpecFields = ubx.FieldMap{
-		"Drivers": ubx.FieldSpec{
-			WireName: "drivers",
-			Kind: "list",
-			Fields: Csinode_Spec_DriversFields,
-		},
-	}
+	"Drivers": ubx.FieldSpec{
+		WireName: "drivers",
+		Kind:     "list",
+		Fields:   Csinode_Spec_DriversFields,
+	},
+}
 
 var Csinode_Status_StorageHealth_HealthConditionsFields = ubx.FieldMap{
-		"AccessMode": ubx.FieldSpec{WireName: "access_mode"},
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"VolumeMode": ubx.FieldSpec{WireName: "volume_mode"},
-	}
+	"AccessMode":         ubx.FieldSpec{WireName: "access_mode"},
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"VolumeMode":         ubx.FieldSpec{WireName: "volume_mode"},
+}
 
 var Csinode_Status_StorageHealthFields = ubx.FieldMap{
-		"HealthConditions": ubx.FieldSpec{
-			WireName: "health_conditions",
-			Kind: "list",
-			Fields: Csinode_Status_StorageHealth_HealthConditionsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"HealthConditions": ubx.FieldSpec{
+		WireName: "health_conditions",
+		Kind:     "list",
+		Fields:   Csinode_Status_StorageHealth_HealthConditionsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Csinode_StatusFields = ubx.FieldMap{
-		"StorageHealth": ubx.FieldSpec{
-			WireName: "storage_health",
-			Kind: "list",
-			Fields: Csinode_Status_StorageHealthFields,
-		},
-	}
+	"StorageHealth": ubx.FieldSpec{
+		WireName: "storage_health",
+		Kind:     "list",
+		Fields:   Csinode_Status_StorageHealthFields,
+	},
+}
 
 type CsinodeConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -242,21 +242,21 @@ var Csinode = ubx.ResourceBinding{
 	WireType: "kubernetes_storage_csinode",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: Csinode_MetadataFields,
+			Kind:     "object",
+			Fields:   Csinode_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: Csinode_SpecFields,
+			Kind:     "object",
+			Fields:   Csinode_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: Csinode_StatusFields,
+			Kind:     "object",
+			Fields:   Csinode_StatusFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

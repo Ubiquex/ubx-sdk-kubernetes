@@ -7,7 +7,7 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Pod_Metadata_ManagedFields:
+class Pod_Items_Metadata_ManagedFields:
     api_version: Any = None
     fields_type: Any = None
     fields_v1: Any = None
@@ -17,7 +17,7 @@ class Pod_Metadata_ManagedFields:
     time: Any = None
 
 @dataclasses.dataclass
-class Pod_Metadata_OwnerReferences:
+class Pod_Items_Metadata_OwnerReferences:
     api_version: Any = None
     block_owner_deletion: Any = None
     controller: Any = None
@@ -26,73 +26,55 @@ class Pod_Metadata_OwnerReferences:
     uid: Any = None
 
 @dataclasses.dataclass
-class Pod_Metadata:
-    # Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
+class Pod_Items_Metadata:
     annotations: Any = None
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
     creation_timestamp: Any = None
-    # Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
     deletion_grace_period_seconds: Any = None
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
     deletion_timestamp: Any = None
-    # Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
     finalizers: Any = None
-    # GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
     generate_name: Any = None
-    # A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
     generation: Any = None
-    # Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
     labels: Any = None
-    # ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
     managed_fields: Any = None
-    # Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
     name: Any = None
-    # Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
     namespace: Any = None
-    # List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
     owner_references: Any = None
-    # An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
     resource_version: Any = None
-    # Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
     self_link: Any = None
-    # UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
     uid: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions:
+class Pod_Items_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions:
     key: Any = None
     operator: Any = None
     values: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference:
+class Pod_Items_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference:
     match_expressions: Any = None
     match_fields: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution:
+class Pod_Items_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution:
     preference: Any = None
     weight: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution:
-    # Required. A list of node selector terms. The terms are ORed.
+class Pod_Items_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution:
     node_selector_terms: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Affinity_NodeAffinity:
-    # The scheduler will prefer to schedule pods to nodes that satisfy the affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding "weight" to the sum if the node matches the corresponding matchExpressions; the node(s) with the highest sum are the most preferred.
+class Pod_Items_Spec_Affinity_NodeAffinity:
     preferred_during_scheduling_ignored_during_execution: Any = None
-    # A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
     required_during_scheduling_ignored_during_execution: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector:
+class Pod_Items_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector:
     match_expressions: Any = None
     match_labels: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm:
+class Pod_Items_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm:
     label_selector: Any = None
     match_label_keys: Any = None
     mismatch_label_keys: Any = None
@@ -101,52 +83,47 @@ class Pod_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecut
     topology_key: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution:
+class Pod_Items_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution:
     pod_affinity_term: Any = None
     weight: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Affinity_PodAffinity:
-    # The scheduler will prefer to schedule pods to nodes that satisfy the affinity expressions specified by this field, but it may choose a node that violates one or more of the expressions. The node that is most preferred is the one with the greatest sum of weights, i.e. for each node that meets all of the scheduling requirements (resource request, requiredDuringScheduling affinity expressions, etc.), compute a sum by iterating through the elements of this field and adding "weight" to the sum if the node has pods which matches the corresponding podAffinityTerm; the node(s) with the highest sum are the most preferred.
+class Pod_Items_Spec_Affinity_PodAffinity:
     preferred_during_scheduling_ignored_during_execution: Any = None
-    # If the affinity requirements specified by this field are not met at scheduling time, the pod will not be scheduled onto the node. If the affinity requirements specified by this field cease to be met at some point during pod execution (e.g. due to a pod label update), the system may or may not try to eventually evict the pod from its node. When there are multiple elements, the lists of nodes corresponding to each podAffinityTerm are intersected, i.e. all terms must be satisfied.
     required_during_scheduling_ignored_during_execution: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Affinity:
-    # Node affinity is a group of node affinity scheduling rules.
+class Pod_Items_Spec_Affinity:
     node_affinity: Any = None
-    # Pod affinity is a group of inter pod affinity scheduling rules.
     pod_affinity: Any = None
-    # Pod anti affinity is a group of inter pod anti affinity scheduling rules.
     pod_anti_affinity: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Env_ValueFrom_ConfigMapKeyRef:
+class Pod_Items_Spec_Containers_Env_ValueFrom_ConfigMapKeyRef:
     key: Any = None
     name: Any = None
     optional: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Env_ValueFrom_FieldRef:
+class Pod_Items_Spec_Containers_Env_ValueFrom_FieldRef:
     api_version: Any = None
     field_path: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Env_ValueFrom_FileKeyRef:
+class Pod_Items_Spec_Containers_Env_ValueFrom_FileKeyRef:
     key: Any = None
     optional: Any = None
     path: Any = None
     volume_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Env_ValueFrom_ResourceFieldRef:
+class Pod_Items_Spec_Containers_Env_ValueFrom_ResourceFieldRef:
     container_name: Any = None
     divisor: Any = None
     resource: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Env_ValueFrom:
+class Pod_Items_Spec_Containers_Env_ValueFrom:
     config_map_key_ref: Any = None
     field_ref: Any = None
     file_key_ref: Any = None
@@ -154,33 +131,33 @@ class Pod_Spec_Containers_Env_ValueFrom:
     secret_key_ref: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Env:
+class Pod_Items_Spec_Containers_Env:
     name: Any = None
     value: Any = None
     value_from: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_EnvFrom_ConfigMapRef:
+class Pod_Items_Spec_Containers_EnvFrom_ConfigMapRef:
     name: Any = None
     optional: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_EnvFrom:
+class Pod_Items_Spec_Containers_EnvFrom:
     config_map_ref: Any = None
     prefix: Any = None
     secret_ref: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Lifecycle_PostStart_Exec:
+class Pod_Items_Spec_Containers_Lifecycle_PostStart_Exec:
     command: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeaders:
+class Pod_Items_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeaders:
     name: Any = None
     value: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Lifecycle_PostStart_HttpGet:
+class Pod_Items_Spec_Containers_Lifecycle_PostStart_HttpGet:
     host: Any = None
     http_headers: Any = None
     path: Any = None
@@ -189,35 +166,35 @@ class Pod_Spec_Containers_Lifecycle_PostStart_HttpGet:
     scheme: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Lifecycle_PostStart_Sleep:
+class Pod_Items_Spec_Containers_Lifecycle_PostStart_Sleep:
     seconds: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Lifecycle_PostStart_TcpSocket:
+class Pod_Items_Spec_Containers_Lifecycle_PostStart_TcpSocket:
     host: Any = None
     port: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Lifecycle_PostStart:
+class Pod_Items_Spec_Containers_Lifecycle_PostStart:
     exec: Any = None
     http_get: Any = None
     sleep: Any = None
     tcp_socket: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Lifecycle:
+class Pod_Items_Spec_Containers_Lifecycle:
     post_start: Any = None
     pre_stop: Any = None
     stop_signal: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_LivenessProbe_Grpc:
+class Pod_Items_Spec_Containers_LivenessProbe_Grpc:
     mode: Any = None
     port: Any = None
     service: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_LivenessProbe:
+class Pod_Items_Spec_Containers_LivenessProbe:
     exec: Any = None
     failure_threshold: Any = None
     grpc: Any = None
@@ -230,7 +207,7 @@ class Pod_Spec_Containers_LivenessProbe:
     timeout_seconds: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Ports:
+class Pod_Items_Spec_Containers_Ports:
     container_port: Any = None
     host_ip: Any = None
     host_port: Any = None
@@ -238,57 +215,57 @@ class Pod_Spec_Containers_Ports:
     protocol: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_ResizePolicy:
+class Pod_Items_Spec_Containers_ResizePolicy:
     resource_name: Any = None
     restart_policy: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Resources_Claims:
+class Pod_Items_Spec_Containers_Resources_Claims:
     name: Any = None
     request: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_Resources:
+class Pod_Items_Spec_Containers_Resources:
     claims: Any = None
     limits: Any = None
     requests: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_RestartPolicyRules_ExitCodes:
+class Pod_Items_Spec_Containers_RestartPolicyRules_ExitCodes:
     operator: Any = None
     values: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_RestartPolicyRules:
+class Pod_Items_Spec_Containers_RestartPolicyRules:
     action: Any = None
     exit_codes: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_SecurityContext_AppArmorProfile:
+class Pod_Items_Spec_Containers_SecurityContext_AppArmorProfile:
     localhost_profile: Any = None
     type: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_SecurityContext_Capabilities:
+class Pod_Items_Spec_Containers_SecurityContext_Capabilities:
     add: Any = None
     drop: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_SecurityContext_SeLinuxOptions:
+class Pod_Items_Spec_Containers_SecurityContext_SeLinuxOptions:
     level: Any = None
     role: Any = None
     type: Any = None
     user: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_SecurityContext_WindowsOptions:
+class Pod_Items_Spec_Containers_SecurityContext_WindowsOptions:
     gmsa_credential_spec: Any = None
     gmsa_credential_spec_name: Any = None
     host_process: Any = None
     run_as_user_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_SecurityContext:
+class Pod_Items_Spec_Containers_SecurityContext:
     allow_privilege_escalation: Any = None
     app_armor_profile: Any = None
     capabilities: Any = None
@@ -303,12 +280,12 @@ class Pod_Spec_Containers_SecurityContext:
     windows_options: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_VolumeDevices:
+class Pod_Items_Spec_Containers_VolumeDevices:
     device_path: Any = None
     name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers_VolumeMounts:
+class Pod_Items_Spec_Containers_VolumeMounts:
     bind_mount_options: Any = None
     mount_path: Any = None
     mount_propagation: Any = None
@@ -319,7 +296,7 @@ class Pod_Spec_Containers_VolumeMounts:
     sub_path_expr: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Containers:
+class Pod_Items_Spec_Containers:
     args: Any = None
     command: Any = None
     env: Any = None
@@ -347,16 +324,13 @@ class Pod_Spec_Containers:
     working_dir: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_DnsConfig:
-    # A list of DNS name server IP addresses. This will be appended to the base nameservers generated from DNSPolicy. Duplicated nameservers will be removed.
+class Pod_Items_Spec_DnsConfig:
     nameservers: Any = None
-    # A list of DNS resolver options. This will be merged with the base options generated from DNSPolicy. Duplicated entries will be removed. Resolution options given in Options will override those that appear in the base DNSPolicy.
     options: Any = None
-    # A list of DNS search domains for host-name lookup. This will be appended to the base search paths generated from DNSPolicy. Duplicated search paths will be removed.
     searches: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_EphemeralContainers:
+class Pod_Items_Spec_EphemeralContainers:
     args: Any = None
     command: Any = None
     env: Any = None
@@ -385,65 +359,51 @@ class Pod_Spec_EphemeralContainers:
     working_dir: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_EvictionResponders:
+class Pod_Items_Spec_EvictionResponders:
     name: Any = None
     priority: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_HostAliases:
+class Pod_Items_Spec_HostAliases:
     hostnames: Any = None
     ip: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_ImagePullSecrets:
+class Pod_Items_Spec_ImagePullSecrets:
     name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_ReadinessGates:
+class Pod_Items_Spec_ReadinessGates:
     condition_type: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_ResourceClaims:
+class Pod_Items_Spec_ResourceClaims:
     name: Any = None
     resource_claim_name: Any = None
     resource_claim_template_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_SchedulingGroup:
-    # PodGroupName specifies the name of the standalone PodGroup object that represents the runtime instance of this group. Must be a DNS subdomain.
+class Pod_Items_Spec_SchedulingGroup:
     pod_group_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_SecurityContext:
-    # AppArmorProfile defines a pod or container's AppArmor settings.
+class Pod_Items_Spec_SecurityContext:
     app_armor_profile: Any = None
-    # A special supplemental group that applies to all containers in a pod. Some volume types allow the Kubelet to change the ownership of that volume to be owned by the pod: 1. The owning GID will be the FSGroup 2. The setgid bit is set (new files created in the volume will be owned by FSGroup) 3. The permission bits are OR'd with rw-rw---- If unset, the Kubelet will not modify the ownership and permissions of any volume. Note that this field cannot be set when spec.os.name is windows.
     fs_group: Any = None
-    # fsGroupChangePolicy defines behavior of changing ownership and permission of the volume before being exposed inside Pod. This field will only apply to volume types which support fsGroup based ownership(and permissions). It will have no effect on ephemeral volume types such as: secret, configmaps and emptydir. Valid values are "OnRootMismatch" and "Always". If not specified, "Always" is used. Note that this field cannot be set when spec.os.name is windows.
     fs_group_change_policy: Any = None
-    # The GID to run the entrypoint of the container process. Uses runtime default if unset. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. Note that this field cannot be set when spec.os.name is windows.
     run_as_group: Any = None
-    # Indicates that the container must run as a non-root user. If true, the Kubelet will validate the image at runtime to ensure that it does not run as UID 0 (root) and fail to start the container if it does. If unset or false, no such validation will be performed. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
     run_as_non_root: Any = None
-    # The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in SecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence for that container. Note that this field cannot be set when spec.os.name is windows.
     run_as_user: Any = None
-    # seLinuxChangePolicy defines how the container's SELinux label is applied to all volumes used by the Pod. It has no effect on nodes that do not support SELinux or to volumes does not support SELinux. Valid values are "MountOption" and "Recursive". "Recursive" means relabeling of all files on all Pod volumes by the container runtime. This may be slow for large volumes, but allows mixing privileged and unprivileged Pods sharing the same volume on the same node. "MountOption" mounts all eligible Pod volumes with `-o context` mount option. This requires all Pods that share the same volume to use the same SELinux label. It is not possible to share the same volume among privileged and unprivileged Pods. Eligible volumes are in-tree FibreChannel and iSCSI volumes, and all CSI volumes whose CSI driver announces SELinux support by setting spec.seLinuxMount: true in their CSIDriver instance. Other volumes are always re-labelled recursively. If not specified, "MountOption" is used. This field affects only Pods that have SELinux label set, either in PodSecurityContext or in SecurityContext of all containers. All Pods that use the same volume should use the same seLinuxChangePolicy, otherwise some pods can get stuck in ContainerCreating state. Note that this field cannot be set when spec.os.name is windows.
     se_linux_change_policy: Any = None
-    # SELinuxOptions are the labels to be applied to the container
     se_linux_options: Any = None
-    # SeccompProfile defines a pod/container's seccomp profile settings. Only one profile source may be set.
     seccomp_profile: Any = None
-    # A list of groups applied to the first process run in each container, in addition to the container's primary GID and fsGroup (if specified). If the SupplementalGroupsPolicy feature is enabled, the supplementalGroupsPolicy field determines whether these are in addition to or instead of any group memberships defined in the container image. If unspecified, no additional groups are added, though group memberships defined in the container image may still be used, depending on the supplementalGroupsPolicy field. Note that this field cannot be set when spec.os.name is windows.
     supplemental_groups: Any = None
-    # Defines how supplemental groups of the first container processes are calculated. Valid values are "Merge" and "Strict". If not specified, "Merge" is used. (Alpha) Using the field requires the SupplementalGroupsPolicy feature gate to be enabled and the container runtime must implement support for this feature. Note that this field cannot be set when spec.os.name is windows.
     supplemental_groups_policy: Any = None
-    # Sysctls hold a list of namespaced sysctls used for the pod. Pods with unsupported sysctls (by the container runtime) might fail to launch. Note that this field cannot be set when spec.os.name is windows.
     sysctls: Any = None
-    # WindowsSecurityContextOptions contain Windows-specific options and credentials.
     windows_options: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Tolerations:
+class Pod_Items_Spec_Tolerations:
     effect: Any = None
     key: Any = None
     operator: Any = None
@@ -451,7 +411,7 @@ class Pod_Spec_Tolerations:
     value: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_TopologySpreadConstraints:
+class Pod_Items_Spec_TopologySpreadConstraints:
     label_selector: Any = None
     match_label_keys: Any = None
     max_skew: Any = None
@@ -462,14 +422,14 @@ class Pod_Spec_TopologySpreadConstraints:
     when_unsatisfiable: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_AwsElasticBlockStore:
+class Pod_Items_Spec_Volumes_AwsElasticBlockStore:
     fs_type: Any = None
     partition: Any = None
     read_only: Any = None
     volume_id: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_AzureDisk:
+class Pod_Items_Spec_Volumes_AzureDisk:
     caching_mode: Any = None
     disk_name: Any = None
     disk_uri: Any = None
@@ -478,13 +438,13 @@ class Pod_Spec_Volumes_AzureDisk:
     read_only: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_AzureFile:
+class Pod_Items_Spec_Volumes_AzureFile:
     read_only: Any = None
     secret_name: Any = None
     share_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Cephfs:
+class Pod_Items_Spec_Volumes_Cephfs:
     monitors: Any = None
     path: Any = None
     read_only: Any = None
@@ -493,21 +453,21 @@ class Pod_Spec_Volumes_Cephfs:
     user: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Cinder:
+class Pod_Items_Spec_Volumes_Cinder:
     fs_type: Any = None
     read_only: Any = None
     secret_ref: Any = None
     volume_id: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_ConfigMap_Items:
+class Pod_Items_Spec_Volumes_ConfigMap_Items:
     key: Any = None
     mode: Any = None
     path: Any = None
     user: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_ConfigMap:
+class Pod_Items_Spec_Volumes_ConfigMap:
     default_mode: Any = None
     default_user: Any = None
     items: Any = None
@@ -515,7 +475,7 @@ class Pod_Spec_Volumes_ConfigMap:
     optional: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Csi:
+class Pod_Items_Spec_Volumes_Csi:
     driver: Any = None
     fs_type: Any = None
     node_publish_secret_ref: Any = None
@@ -523,7 +483,7 @@ class Pod_Spec_Volumes_Csi:
     volume_attributes: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_DownwardApi_Items:
+class Pod_Items_Spec_Volumes_DownwardApi_Items:
     field_ref: Any = None
     mode: Any = None
     path: Any = None
@@ -531,37 +491,37 @@ class Pod_Spec_Volumes_DownwardApi_Items:
     user: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_DownwardApi:
+class Pod_Items_Spec_Volumes_DownwardApi:
     default_mode: Any = None
     default_user: Any = None
     items: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_EmptyDir:
+class Pod_Items_Spec_Volumes_EmptyDir:
     medium: Any = None
     mode: Any = None
     size_limit: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSource:
+class Pod_Items_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSource:
     api_group: Any = None
     kind: Any = None
     name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceRef:
+class Pod_Items_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceRef:
     api_group: Any = None
     kind: Any = None
     name: Any = None
     namespace: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_Resources:
+class Pod_Items_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_Resources:
     limits: Any = None
     requests: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec:
+class Pod_Items_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec:
     access_modes: Any = None
     data_source: Any = None
     data_source_ref: Any = None
@@ -573,16 +533,16 @@ class Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec:
     volume_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate:
+class Pod_Items_Spec_Volumes_Ephemeral_VolumeClaimTemplate:
     metadata: Any = None
     spec: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Ephemeral:
+class Pod_Items_Spec_Volumes_Ephemeral:
     volume_claim_template: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Fc:
+class Pod_Items_Spec_Volumes_Fc:
     fs_type: Any = None
     lun: Any = None
     read_only: Any = None
@@ -590,7 +550,7 @@ class Pod_Spec_Volumes_Fc:
     wwids: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_FlexVolume:
+class Pod_Items_Spec_Volumes_FlexVolume:
     driver: Any = None
     fs_type: Any = None
     options: Any = None
@@ -598,41 +558,41 @@ class Pod_Spec_Volumes_FlexVolume:
     secret_ref: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Flocker:
+class Pod_Items_Spec_Volumes_Flocker:
     dataset_name: Any = None
     dataset_uuid: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_GcePersistentDisk:
+class Pod_Items_Spec_Volumes_GcePersistentDisk:
     fs_type: Any = None
     partition: Any = None
     pd_name: Any = None
     read_only: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_GitRepo:
+class Pod_Items_Spec_Volumes_GitRepo:
     directory: Any = None
     repository: Any = None
     revision: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Glusterfs:
+class Pod_Items_Spec_Volumes_Glusterfs:
     endpoints: Any = None
     path: Any = None
     read_only: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_HostPath:
+class Pod_Items_Spec_Volumes_HostPath:
     path: Any = None
     type: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Image:
+class Pod_Items_Spec_Volumes_Image:
     pull_policy: Any = None
     reference: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Iscsi:
+class Pod_Items_Spec_Volumes_Iscsi:
     chap_auth_discovery: Any = None
     chap_auth_session: Any = None
     fs_type: Any = None
@@ -646,29 +606,29 @@ class Pod_Spec_Volumes_Iscsi:
     target_portal: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Nfs:
+class Pod_Items_Spec_Volumes_Nfs:
     path: Any = None
     read_only: Any = None
     server: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_PersistentVolumeClaim:
+class Pod_Items_Spec_Volumes_PersistentVolumeClaim:
     claim_name: Any = None
     read_only: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_PhotonPersistentDisk:
+class Pod_Items_Spec_Volumes_PhotonPersistentDisk:
     fs_type: Any = None
     pd_id: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_PortworxVolume:
+class Pod_Items_Spec_Volumes_PortworxVolume:
     fs_type: Any = None
     read_only: Any = None
     volume_id: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Projected_Sources_ClusterTrustBundle:
+class Pod_Items_Spec_Volumes_Projected_Sources_ClusterTrustBundle:
     label_selector: Any = None
     name: Any = None
     optional: Any = None
@@ -677,17 +637,17 @@ class Pod_Spec_Volumes_Projected_Sources_ClusterTrustBundle:
     user: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Projected_Sources_ConfigMap:
+class Pod_Items_Spec_Volumes_Projected_Sources_ConfigMap:
     items: Any = None
     name: Any = None
     optional: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Projected_Sources_DownwardApi:
+class Pod_Items_Spec_Volumes_Projected_Sources_DownwardApi:
     items: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Projected_Sources_PodCertificate:
+class Pod_Items_Spec_Volumes_Projected_Sources_PodCertificate:
     certificate_chain_path: Any = None
     credential_bundle_path: Any = None
     key_path: Any = None
@@ -698,14 +658,14 @@ class Pod_Spec_Volumes_Projected_Sources_PodCertificate:
     user_annotations: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Projected_Sources_ServiceAccountToken:
+class Pod_Items_Spec_Volumes_Projected_Sources_ServiceAccountToken:
     audience: Any = None
     expiration_seconds: Any = None
     path: Any = None
     user: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Projected_Sources:
+class Pod_Items_Spec_Volumes_Projected_Sources:
     cluster_trust_bundle: Any = None
     config_map: Any = None
     downward_api: Any = None
@@ -714,13 +674,13 @@ class Pod_Spec_Volumes_Projected_Sources:
     service_account_token: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Projected:
+class Pod_Items_Spec_Volumes_Projected:
     default_mode: Any = None
     default_user: Any = None
     sources: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Quobyte:
+class Pod_Items_Spec_Volumes_Quobyte:
     group: Any = None
     read_only: Any = None
     registry: Any = None
@@ -729,7 +689,7 @@ class Pod_Spec_Volumes_Quobyte:
     volume: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Rbd:
+class Pod_Items_Spec_Volumes_Rbd:
     fs_type: Any = None
     image: Any = None
     keyring: Any = None
@@ -740,7 +700,7 @@ class Pod_Spec_Volumes_Rbd:
     user: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_ScaleIo:
+class Pod_Items_Spec_Volumes_ScaleIo:
     fs_type: Any = None
     gateway: Any = None
     protection_domain: Any = None
@@ -753,7 +713,7 @@ class Pod_Spec_Volumes_ScaleIo:
     volume_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Secret:
+class Pod_Items_Spec_Volumes_Secret:
     default_mode: Any = None
     default_user: Any = None
     items: Any = None
@@ -761,7 +721,7 @@ class Pod_Spec_Volumes_Secret:
     secret_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_Storageos:
+class Pod_Items_Spec_Volumes_Storageos:
     fs_type: Any = None
     read_only: Any = None
     secret_ref: Any = None
@@ -769,14 +729,14 @@ class Pod_Spec_Volumes_Storageos:
     volume_namespace: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes_VsphereVolume:
+class Pod_Items_Spec_Volumes_VsphereVolume:
     fs_type: Any = None
     storage_policy_id: Any = None
     storage_policy_name: Any = None
     volume_path: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec_Volumes:
+class Pod_Items_Spec_Volumes:
     aws_elastic_block_store: Any = None
     azure_disk: Any = None
     azure_file: Any = None
@@ -810,96 +770,53 @@ class Pod_Spec_Volumes:
     vsphere_volume: Any = None
 
 @dataclasses.dataclass
-class Pod_Spec:
-    # Optional duration in seconds the pod may be active on the node relative to StartTime before the system will actively try to mark it failed and kill associated containers. Value must be a positive integer.
+class Pod_Items_Spec:
     active_deadline_seconds: Any = None
-    # Affinity is a group of affinity scheduling rules.
     affinity: Any = None
-    # AutomountServiceAccountToken indicates whether a service account token should be automatically mounted.
     automount_service_account_token: Any = None
-    # List of containers belonging to the pod. Containers cannot currently be added or removed. There must be at least one container in a Pod. Cannot be updated.
     containers: Any = None
-    # PodDNSConfig defines the DNS parameters of a pod in addition to those generated from DNSPolicy.
     dns_config: Any = None
-    # Set DNS policy for the pod. Defaults to "ClusterFirst". Valid values are 'ClusterFirstWithHostNet', 'ClusterFirst', 'Default' or 'None'. DNS parameters given in DNSConfig will be merged with the policy selected with DNSPolicy. To have DNS options set along with hostNetwork, you have to specify DNS policy explicitly to 'ClusterFirstWithHostNet'.
     dns_policy: Any = None
-    # EnableServiceLinks indicates whether information about services should be injected into pod's environment variables, matching the syntax of Docker links. Optional: Defaults to true.
     enable_service_links: Any = None
-    # List of ephemeral containers run in this pod. Ephemeral containers may be run in an existing pod to perform user-initiated actions such as debugging. This list cannot be specified when creating a pod, and it cannot be modified by updating the pod spec. In order to add an ephemeral container to an existing pod, use the pod's ephemeralcontainers subresource.
     ephemeral_containers: Any = None
-    # evictionResponders reference responders that react to Evictions based on EvictionRequests. Responders should observe and communicate through the Eviction Resource API to help with the graceful termination of a pod. The responders are selected sequentially, according to their specified priority. Responders should periodically report on an eviction progress by updating the .status.responders[].heartbeatTime field of the Eviction object. If this field is not updated within the heartbeat deadline defined by the Eviction API (currently 20 minutes), the eviction is passed over to the next responder with a lower priority. If there is no other responder, the last default imperative-eviction.k8s.io/evictor responder with a priority of 100 will evict the pod using the imperative Eviction API (pods/<name>/eviction subresource). The maximum length of the responders list is 10. Responders are not supported when the pod is part of a PodGroup (.spec.schedulingGroup is set). This field can only be set on creation and is immutable afterwards.
     eviction_responders: Any = None
-    # HostAliases is an optional list of hosts and IPs that will be injected into the pod's hosts file if specified.
     host_aliases: Any = None
-    # Use the host's ipc namespace. Optional: Default to false.
     host_ipc: Any = None
-    # Host networking requested for this pod. Use the host's network namespace. When using HostNetwork you should specify ports so the scheduler is aware. When `hostNetwork` is true, specified `hostPort` fields in port definitions must match `containerPort`, and unspecified `hostPort` fields in port definitions are defaulted to match `containerPort`. Default to false.
     host_network: Any = None
-    # Use the host's pid namespace. Optional: Default to false.
     host_pid: Any = None
-    # Use the host's user namespace. Optional: Default to true. If set to true or not present, the pod will be run in the host user namespace, useful for when the pod needs a feature only available to the host user namespace, such as loading a kernel module with CAP_SYS_MODULE. When set to false, a new userns is created for the pod. Setting false is useful for mitigating container breakout vulnerabilities even allowing users to run their containers as root without actually having root privileges on the host.
     host_users: Any = None
-    # Specifies the hostname of the Pod If not specified, the pod's hostname will be set to a system-defined value.
     hostname: Any = None
-    # HostnameOverride specifies an explicit override for the pod's hostname as perceived by the pod. This field only specifies the pod's hostname and does not affect its DNS records. When this field is set to a non-empty string: - It takes precedence over the values set in `hostname` and `subdomain`. - The Pod's hostname will be set to this value. - `setHostnameAsFQDN` must be nil or set to false. - `hostNetwork` must be set to false. This field must be a valid DNS subdomain as defined in RFC 1123 and contain at most 64 characters.
     hostname_override: Any = None
-    # ImagePullSecrets is an optional list of references to secrets in the same namespace to use for pulling any of the images used by this PodSpec. If specified, these secrets will be passed to individual puller implementations for them to use. More info: https://kubernetes.io/docs/concepts/containers/images#specifying-imagepullsecrets-on-a-pod
     image_pull_secrets: Any = None
-    # List of initialization containers belonging to the pod. Init containers are executed in order prior to containers being started. If any init container fails, the pod is considered to have failed and is handled according to its restartPolicy. The name for an init container or normal container must be unique among all containers. Init containers may not have Lifecycle actions, Readiness probes, Liveness probes, or Startup probes. The resourceRequirements of an init container are taken into account during scheduling by finding the highest request/limit for each resource type, and then using the max of that value or the sum of the normal containers. Limits are applied to init containers in a similar fashion. Init containers cannot currently be added or removed. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/init-containers/
     init_containers: Any = None
-    # NodeName indicates in which node this pod is scheduled. If empty, this pod is a candidate for scheduling by the scheduler defined in schedulerName. Once this field is set, the kubelet for this node becomes responsible for the lifecycle of this pod. This field should not be used to express a desire for the pod to be scheduled on a specific node. https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodename
     node_name: Any = None
-    # NodeSelector is a selector which must be true for the pod to fit on a node. Selector which must match a node's labels for the pod to be scheduled on that node. More info: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
     node_selector: Any = None
-    # PodOS defines the OS parameters of a pod.
     os: Any = None
-    # Overhead represents the resource overhead associated with running a pod for a given RuntimeClass. This field will be autopopulated at admission time by the RuntimeClass admission controller. If the RuntimeClass admission controller is enabled, overhead must not be set in Pod create requests. The RuntimeClass admission controller will reject Pod create requests which have the overhead already set. If RuntimeClass is configured and selected in the PodSpec, Overhead will be set to the value defined in the corresponding RuntimeClass, otherwise it will remain unset and treated as zero. More info: https://git.k8s.io/enhancements/keps/sig-node/688-pod-overhead/README.md
     overhead: Any = None
-    # PreemptionPolicy is the Policy for preempting pods with lower priority. One of Never, PreemptLowerPriority. When Priority Admission Controller is enabled, it prevents users from setting this field. The admission controller populates this field from PriorityClassName. Defaults to PreemptLowerPriority if unset.
     preemption_policy: Any = None
-    # The priority value. Various system components use this field to find the priority of the pod. When Priority Admission Controller is enabled, it prevents users from setting this field. The admission controller populates this field from PriorityClassName. The higher the value, the higher the priority.
     priority: Any = None
-    # If specified, indicates the pod's priority. "system-node-critical" and "system-cluster-critical" are two special keywords which indicate the highest priorities with the former being the highest priority. Any other name must be defined by creating a PriorityClass object with that name. If not specified, the pod priority will be default or zero if there is no default.
     priority_class_name: Any = None
-    # If specified, all readiness gates will be evaluated for pod readiness. A pod is ready when all its containers are ready AND all conditions specified in the readiness gates have status equal to "True" More info: https://git.k8s.io/enhancements/keps/sig-network/580-pod-readiness-gates
     readiness_gates: Any = None
-    # ResourceClaims defines which ResourceClaims must be allocated and reserved before the Pod is allowed to start. The resources will be made available to those containers which consume them by name. This is a stable field but requires that the DynamicResourceAllocation feature gate is enabled. This field is immutable.
     resource_claims: Any = None
-    # ResourceRequirements describes the compute resource requirements.
     resources: Any = None
-    # Restart policy for all containers within the pod. One of Always, OnFailure, Never. In some contexts, only a subset of those values may be permitted. Default to Always. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy
     restart_policy: Any = None
-    # RuntimeClassName refers to a RuntimeClass object in the node.k8s.io group, which should be used to run this pod. If no RuntimeClass resource matches the named class, the pod will not be run. If unset or empty, the "legacy" RuntimeClass will be used, which is an implicit class with an empty definition that uses the default runtime handler. More info: https://git.k8s.io/enhancements/keps/sig-node/585-runtime-class
     runtime_class_name: Any = None
-    # If specified, the pod will be dispatched by specified scheduler. If not specified, the pod will be dispatched by default scheduler.
     scheduler_name: Any = None
-    # SchedulingGates is an opaque list of values that if specified will block scheduling the pod. If schedulingGates is not empty, the pod will stay in the SchedulingGated state and the scheduler will not attempt to schedule the pod. SchedulingGates can only be set at pod creation time, and be removed only afterwards.
     scheduling_gates: Any = None
-    # PodSchedulingGroup identifies the runtime scheduling group instance that a Pod belongs to. The scheduler uses this information to apply workload-aware scheduling semantics. Exactly one field must be specified.
     scheduling_group: Any = None
-    # PodSecurityContext holds pod-level security attributes and common container settings. Some fields are also present in container.securityContext. Field values of container.securityContext take precedence over field values of PodSecurityContext.
     security_context: Any = None
-    # DeprecatedServiceAccount is a deprecated alias for ServiceAccountName. Deprecated: Use serviceAccountName instead.
     service_account: Any = None
-    # ServiceAccountName is the name of the ServiceAccount to use to run this pod. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
     service_account_name: Any = None
-    # If true the pod's hostname will be configured as the pod's FQDN, rather than the leaf name (the default). In Linux containers, this means setting the FQDN in the hostname field of the kernel (the nodename field of struct utsname). In Windows containers, this means setting the registry value of hostname for the registry key HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip\\Parameters to FQDN. If a pod does not have FQDN, this has no effect. Default to false.
     set_hostname_as_fqdn: Any = None
-    # Share a single process namespace between all of the containers in a pod. When this is set containers will be able to view and signal processes from other containers in the same pod, and the first process in each container will not be assigned PID 1. HostPID and ShareProcessNamespace cannot both be set. Optional: Default to false.
     share_process_namespace: Any = None
-    # If specified, the fully qualified Pod hostname will be "<hostname>.<subdomain>.<pod namespace>.svc.<cluster domain>". If not specified, the pod will not have a domainname at all.
     subdomain: Any = None
-    # Optional duration in seconds the pod needs to terminate gracefully. May be decreased in delete request. Value must be non-negative integer. The value zero indicates stop immediately via the kill signal (no opportunity to shut down). If this value is nil, the default grace period will be used instead. The grace period is the duration in seconds after the processes running in the pod are sent a termination signal and the time when the processes are forcibly halted with a kill signal. Set this value longer than the expected cleanup time for your process. Defaults to 30 seconds.
     termination_grace_period_seconds: Any = None
-    # If specified, the pod's tolerations.
     tolerations: Any = None
-    # TopologySpreadConstraints describes how a group of pods ought to spread across topology domains. Scheduler will schedule pods in a way which abides by the constraints. All topologySpreadConstraints are ANDed.
     topology_spread_constraints: Any = None
-    # List of volumes that can be mounted by containers belonging to the pod. More info: https://kubernetes.io/docs/concepts/storage/volumes
     volumes: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_Conditions:
+class Pod_Items_Status_Conditions:
     last_probe_time: Any = None
     last_transition_time: Any = None
     message: Any = None
@@ -909,22 +826,22 @@ class Pod_Status_Conditions:
     type: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_AllocatedResourcesStatus_Resources:
+class Pod_Items_Status_ContainerStatuses_AllocatedResourcesStatus_Resources:
     health: Any = None
     message: Any = None
     resource_id: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_AllocatedResourcesStatus:
+class Pod_Items_Status_ContainerStatuses_AllocatedResourcesStatus:
     name: Any = None
     resources: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_LastState_Running:
+class Pod_Items_Status_ContainerStatuses_LastState_Running:
     started_at: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_LastState_Terminated:
+class Pod_Items_Status_ContainerStatuses_LastState_Terminated:
     container_id: Any = None
     exit_code: Any = None
     finished_at: Any = None
@@ -934,36 +851,36 @@ class Pod_Status_ContainerStatuses_LastState_Terminated:
     started_at: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_LastState_Waiting:
+class Pod_Items_Status_ContainerStatuses_LastState_Waiting:
     message: Any = None
     reason: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_LastState:
+class Pod_Items_Status_ContainerStatuses_LastState:
     running: Any = None
     terminated: Any = None
     waiting: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_User_Linux:
+class Pod_Items_Status_ContainerStatuses_User_Linux:
     gid: Any = None
     supplemental_groups: Any = None
     uid: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_User:
+class Pod_Items_Status_ContainerStatuses_User:
     linux: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_VolumeMounts_VolumeStatus_Image:
+class Pod_Items_Status_ContainerStatuses_VolumeMounts_VolumeStatus_Image:
     image_ref: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_VolumeMounts_VolumeStatus:
+class Pod_Items_Status_ContainerStatuses_VolumeMounts_VolumeStatus:
     image: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses_VolumeMounts:
+class Pod_Items_Status_ContainerStatuses_VolumeMounts:
     mount_path: Any = None
     name: Any = None
     read_only: Any = None
@@ -971,7 +888,7 @@ class Pod_Status_ContainerStatuses_VolumeMounts:
     volume_status: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ContainerStatuses:
+class Pod_Items_Status_ContainerStatuses:
     allocated_resources: Any = None
     allocated_resources_status: Any = None
     container_id: Any = None
@@ -989,123 +906,155 @@ class Pod_Status_ContainerStatuses:
     volume_mounts: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ExtendedResourceClaimStatus_RequestMappings:
+class Pod_Items_Status_ExtendedResourceClaimStatus_RequestMappings:
     container_name: Any = None
     request_name: Any = None
     resource_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ExtendedResourceClaimStatus:
-    # RequestMappings identifies the mapping of <container, extended resource backed by DRA> to device request in the generated ResourceClaim.
+class Pod_Items_Status_ExtendedResourceClaimStatus:
     request_mappings: Any = None
-    # ResourceClaimName is the name of the ResourceClaim that was generated for the Pod in the namespace of the Pod.
     resource_claim_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_HostIps:
+class Pod_Items_Status_HostIps:
     ip: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_NodeAllocatableResourceClaimStatuses_Mapping:
+class Pod_Items_Status_NodeAllocatableResourceClaimStatuses_Mapping:
     name: Any = None
     quantity: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_NodeAllocatableResourceClaimStatuses_Overhead:
+class Pod_Items_Status_NodeAllocatableResourceClaimStatuses_Overhead:
     name: Any = None
     per_container: Any = None
     per_pod: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_NodeAllocatableResourceClaimStatuses:
+class Pod_Items_Status_NodeAllocatableResourceClaimStatuses:
     containers: Any = None
     mapping: Any = None
     overhead: Any = None
     resource_claim_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_ResourceClaimStatuses:
+class Pod_Items_Status_ResourceClaimStatuses:
     name: Any = None
     resource_claim_name: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_VolumeHealth_HealthConditions:
+class Pod_Items_Status_VolumeHealth_HealthConditions:
     message: Any = None
     reason: Any = None
     status: Any = None
 
 @dataclasses.dataclass
-class Pod_Status_VolumeHealth:
+class Pod_Items_Status_VolumeHealth:
     health_conditions: Any = None
     last_transition_time: Any = None
     name: Any = None
 
 @dataclasses.dataclass
-class Pod_Status:
-    # AllocatedResources is the total requests allocated for this pod by the node. If pod-level requests are not set, this will be the total requests aggregated across containers in the pod.
+class Pod_Items_Status:
     allocated_resources: Any = None
-    # Current service state of pod. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-conditions
     conditions: Any = None
-    # Statuses of containers in this pod. Each container in the pod should have at most one status in this list, and all statuses should be for containers in the pod. However this is not enforced. If a status for a non-existent container is present in the list, or the list has duplicate names, the behavior of various Kubernetes components is not defined and those statuses might be ignored. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status
     container_statuses: Any = None
-    # Statuses for any ephemeral containers that have run in this pod. Each ephemeral container in the pod should have at most one status in this list, and all statuses should be for containers in the pod. However this is not enforced. If a status for a non-existent container is present in the list, or the list has duplicate names, the behavior of various Kubernetes components is not defined and those statuses might be ignored. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-and-container-status
     ephemeral_container_statuses: Any = None
-    # PodExtendedResourceClaimStatus is stored in the PodStatus for the extended resource requests backed by DRA. It stores the generated name for the corresponding special ResourceClaim created by the scheduler.
     extended_resource_claim_status: Any = None
-    # hostIP holds the IP address of the host to which the pod is assigned. Empty if the pod has not started yet. A pod can be assigned to a node that has a problem in kubelet which in turns mean that HostIP will not be updated even if there is a node is assigned to pod
     host_ip: Any = None
-    # hostIPs holds the IP addresses allocated to the host. If this field is specified, the first entry must match the hostIP field. This list is empty if the pod has not started yet. A pod can be assigned to a node that has a problem in kubelet which in turns means that HostIPs will not be updated even if there is a node is assigned to this pod.
     host_ips: Any = None
-    # Statuses of init containers in this pod. The most recent successful non-restartable init container will have ready = true, the most recently started container will have startTime set. Each init container in the pod should have at most one status in this list, and all statuses should be for containers in the pod. However this is not enforced. If a status for a non-existent container is present in the list, or the list has duplicate names, the behavior of various Kubernetes components is not defined and those statuses might be ignored. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-and-container-status
     init_container_statuses: Any = None
-    # A human readable message indicating details about why the pod is in this condition.
     message: Any = None
-    # NodeAllocatableResourceClaimStatuses contains the status of node-allocatable resources that were allocated for this pod through DRA claims. This includes resources currently reported in v1.Node `status.allocatable` that are not extended resources (see https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#extended-resources). Examples include "cpu", "memory", "ephemeral-storage", and hugepages.
     node_allocatable_resource_claim_statuses: Any = None
-    # nominatedNodeName is set only when this pod preempts other pods on the node, but it cannot be scheduled right away as preemption victims receive their graceful termination periods. This field does not guarantee that the pod will be scheduled on this node. Scheduler may decide to place the pod elsewhere if other nodes become available sooner. Scheduler may also decide to give the resources on this node to a higher priority pod that is created after preemption. As a result, this field may be different than PodSpec.nodeName when the pod is scheduled.
     nominated_node_name: Any = None
-    # If set, this represents the .metadata.generation that the pod status was set based upon. The PodObservedGenerationTracking feature gate must be enabled to use this field.
     observed_generation: Any = None
-    # The phase of a Pod is a simple, high-level summary of where the Pod is in its lifecycle. The conditions array, the reason and message fields, and the individual container status arrays contain more detail about the pod's status. There are five possible phase values: Pending: The pod has been accepted by the Kubernetes system, but one or more of the container images has not been created. This includes time before being scheduled as well as time spent downloading images over the network, which could take a while. Running: The pod has been bound to a node, and all of the containers have been created. At least one container is still running, or is in the process of starting or restarting. Succeeded: All containers in the pod have terminated in success, and will not be restarted. Failed: All containers in the pod have terminated, and at least one container has terminated in failure. The container either exited with non-zero status or was terminated by the system. Unknown: For some reason the state of the pod could not be obtained, typically due to an error in communicating with the host of the pod. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#pod-phase
     phase: Any = None
-    # podIP address allocated to the pod. Routable at least within the cluster. Empty if not yet allocated.
     pod_ip: Any = None
-    # podIPs holds the IP addresses allocated to the pod. If this field is specified, the 0th entry must match the podIP field. Pods may be allocated at most 1 value for each of IPv4 and IPv6. This list is empty if no IPs have been allocated yet.
     pod_ips: Any = None
-    # The Quality of Service (QOS) classification assigned to the pod based on resource requirements See PodQOSClass type for available QOS classes More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-qos/#quality-of-service-classes
     qos_class: Any = None
-    # A brief CamelCase message indicating details about why the pod is in this state. e.g. 'Evicted'
     reason: Any = None
-    # Status of resources resize desired for pod's containers. It is empty if no resources resize is pending. Any changes to container resources will automatically set this to "Proposed" Deprecated: Resize status is moved to two pod conditions PodResizePending and PodResizeInProgress. PodResizePending will track states where the spec has been resized, but the Kubelet has not yet allocated the resources. PodResizeInProgress will track in-progress resizes, and should be present whenever allocated resources != acknowledged resources.
     resize: Any = None
-    # Status of resource claims.
     resource_claim_statuses: Any = None
-    # ResourceRequirements describes the compute resource requirements.
     resources: Any = None
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
     start_time: Any = None
-    # volumeHealth contains node-reported health for each volume the pod is using. Populated by the kubelet on the pod's node.
     volume_health: Any = None
 
 @dataclasses.dataclass
+class Pod_Items:
+    api_version: Any = None
+    kind: Any = None
+    metadata: Any = None
+    spec: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class Pod_Metadata_ShardInfo:
+    # selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+    selector: Any = None
+
+@dataclasses.dataclass
+class Pod_Metadata:
+    # continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+    continue_: Any = None
+    # remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+    remaining_item_count: Any = None
+    # String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+    resource_version: Any = None
+    # Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+    self_link: Any = None
+    # ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+    shard_info: Any = None
+
+@dataclasses.dataclass
 class PodConfig:
-    pass
+    allow_watch_bookmarks: Any = None
+    continue_: Any = None
+    field_selector: Any = None
+    label_selector: Any = None
+    limit: Any = None
+    resource_version: Any = None
+    resource_version_match: Any = None
+    send_initial_events: Any = None
+    shard_selector: Any = None
+    timeout_seconds: Any = None
+    watch: Any = None
 
 @dataclasses.dataclass
 class PodAttrs:
+    allow_watch_bookmarks: Any = None
     # APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     api_version: Any = None
+    continue_: Any = None
+    field_selector: Any = None
+    # List of pods. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md
+    items: Any = None
     # Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
     kind: Any = None
-    # ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+    label_selector: Any = None
+    limit: Any = None
+    # ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
     metadata: Any = None
-    # PodSpec is a description of a pod.
-    spec: Any = None
-    # PodStatus represents information about the status of a pod. Status may trail the actual state of a system, especially if the node that hosts the pod cannot contact the control plane.
-    status: Any = None
+    resource_version: Any = None
+    resource_version_match: Any = None
+    send_initial_events: Any = None
+    shard_selector: Any = None
+    timeout_seconds: Any = None
+    watch: Any = None
 
 Pod = ubx.DataSourceBinding(
     wire_type="kubernetes_core_pod",
     fields={
+        "allow_watch_bookmarks": ubx.FieldSpec(wire_name="allow_watch_bookmarks"),
+        "continue_": ubx.FieldSpec(wire_name="continue"),
+        "field_selector": ubx.FieldSpec(wire_name="field_selector"),
+        "label_selector": ubx.FieldSpec(wire_name="label_selector"),
+        "limit": ubx.FieldSpec(wire_name="limit"),
+        "resource_version": ubx.FieldSpec(wire_name="resource_version"),
+        "resource_version_match": ubx.FieldSpec(wire_name="resource_version_match"),
+        "send_initial_events": ubx.FieldSpec(wire_name="send_initial_events"),
+        "shard_selector": ubx.FieldSpec(wire_name="shard_selector"),
+        "timeout_seconds": ubx.FieldSpec(wire_name="timeout_seconds"),
+        "watch": ubx.FieldSpec(wire_name="watch"),
     },
 )

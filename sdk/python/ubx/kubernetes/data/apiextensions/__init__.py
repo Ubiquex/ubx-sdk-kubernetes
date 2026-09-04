@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .custom_resource_definition import CustomResourceDefinition, CustomResourceDefinitionConfig
-from .custom_resource_definition_list import CustomResourceDefinitionList, CustomResourceDefinitionListConfig

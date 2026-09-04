@@ -5,6 +5,4 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .flow_schema import FlowSchema, FlowSchemaConfig
-from .flow_schema_list import FlowSchemaList, FlowSchemaListConfig
 from .priority_level_configuration import PriorityLevelConfiguration, PriorityLevelConfigurationConfig
-from .priority_level_configuration_list import PriorityLevelConfigurationList, PriorityLevelConfigurationListConfig

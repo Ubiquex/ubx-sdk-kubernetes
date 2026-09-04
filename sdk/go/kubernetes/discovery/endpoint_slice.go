@@ -135,112 +135,112 @@ type EndpointSlice_Ports struct {
 }
 
 var EndpointSlice_Endpoints_ConditionsFields = ubx.FieldMap{
-		"Ready": ubx.FieldSpec{WireName: "ready"},
-		"Serving": ubx.FieldSpec{WireName: "serving"},
-		"Terminating": ubx.FieldSpec{WireName: "terminating"},
-	}
+	"Ready":       ubx.FieldSpec{WireName: "ready"},
+	"Serving":     ubx.FieldSpec{WireName: "serving"},
+	"Terminating": ubx.FieldSpec{WireName: "terminating"},
+}
 
 var EndpointSlice_Endpoints_Hints_ForNodesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var EndpointSlice_Endpoints_HintsFields = ubx.FieldMap{
-		"ForNodes": ubx.FieldSpec{
-			WireName: "for_nodes",
-			Kind: "list",
-			Fields: EndpointSlice_Endpoints_Hints_ForNodesFields,
-		},
-		"ForZones": ubx.FieldSpec{
-			WireName: "for_zones",
-			Kind: "list",
-			Fields: EndpointSlice_Endpoints_Hints_ForNodesFields,
-		},
-	}
+	"ForNodes": ubx.FieldSpec{
+		WireName: "for_nodes",
+		Kind:     "list",
+		Fields:   EndpointSlice_Endpoints_Hints_ForNodesFields,
+	},
+	"ForZones": ubx.FieldSpec{
+		WireName: "for_zones",
+		Kind:     "list",
+		Fields:   EndpointSlice_Endpoints_Hints_ForNodesFields,
+	},
+}
 
 var EndpointSlice_Endpoints_TargetRefFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":      ubx.FieldSpec{WireName: "api_version"},
+	"FieldPath":       ubx.FieldSpec{WireName: "field_path"},
+	"Kind":            ubx.FieldSpec{WireName: "kind"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Namespace":       ubx.FieldSpec{WireName: "namespace"},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var EndpointSlice_EndpointsFields = ubx.FieldMap{
-		"Addresses": ubx.FieldSpec{WireName: "addresses"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "object",
-			Fields: EndpointSlice_Endpoints_ConditionsFields,
-		},
-		"DeprecatedTopology": ubx.FieldSpec{WireName: "deprecated_topology"},
-		"Hints": ubx.FieldSpec{
-			WireName: "hints",
-			Kind: "object",
-			Fields: EndpointSlice_Endpoints_HintsFields,
-		},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"NodeName": ubx.FieldSpec{WireName: "node_name"},
-		"TargetRef": ubx.FieldSpec{
-			WireName: "target_ref",
-			Kind: "object",
-			Fields: EndpointSlice_Endpoints_TargetRefFields,
-		},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Addresses": ubx.FieldSpec{WireName: "addresses"},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "object",
+		Fields:   EndpointSlice_Endpoints_ConditionsFields,
+	},
+	"DeprecatedTopology": ubx.FieldSpec{WireName: "deprecated_topology"},
+	"Hints": ubx.FieldSpec{
+		WireName: "hints",
+		Kind:     "object",
+		Fields:   EndpointSlice_Endpoints_HintsFields,
+	},
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"NodeName": ubx.FieldSpec{WireName: "node_name"},
+	"TargetRef": ubx.FieldSpec{
+		WireName: "target_ref",
+		Kind:     "object",
+		Fields:   EndpointSlice_Endpoints_TargetRefFields,
+	},
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var EndpointSlice_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var EndpointSlice_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var EndpointSlice_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: EndpointSlice_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: EndpointSlice_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   EndpointSlice_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   EndpointSlice_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var EndpointSlice_PortsFields = ubx.FieldMap{
-		"AppProtocol": ubx.FieldSpec{WireName: "app_protocol"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"AppProtocol": ubx.FieldSpec{WireName: "app_protocol"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+	"Protocol":    ubx.FieldSpec{WireName: "protocol"},
+}
 
 type EndpointSliceConfig struct {
 	// addressType specifies the type of address carried by this EndpointSlice. All addresses in this slice must be the same type. This field is immutable after creation. The following address types are currently supported: * IPv4: Represents an IPv4 Address. * IPv6: Represents an IPv6 Address. * FQDN: Represents a Fully Qualified Domain Name. (Deprecated) The EndpointSlice controller only generates, and kube-proxy only processes, slices of addressType "IPv4" and "IPv6". No semantics are defined for the "FQDN" type.
@@ -284,24 +284,24 @@ var EndpointSlice = ubx.ResourceBinding{
 	WireType: "kubernetes_discovery_endpoint_slice",
 	Fields: ubx.FieldMap{
 		"AddressType": ubx.FieldSpec{WireName: "address_type"},
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+		"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
 		"Endpoints": ubx.FieldSpec{
 			WireName: "endpoints",
-			Kind: "list",
-			Fields: EndpointSlice_EndpointsFields,
+			Kind:     "list",
+			Fields:   EndpointSlice_EndpointsFields,
 		},
 		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: EndpointSlice_MetadataFields,
+			Kind:     "object",
+			Fields:   EndpointSlice_MetadataFields,
 		},
 		"Ports": ubx.FieldSpec{
 			WireName: "ports",
-			Kind: "list",
-			Fields: EndpointSlice_PortsFields,
+			Kind:     "list",
+			Fields:   EndpointSlice_PortsFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

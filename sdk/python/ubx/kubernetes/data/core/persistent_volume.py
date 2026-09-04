@@ -7,7 +7,7 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class PersistentVolume_Metadata_ManagedFields:
+class PersistentVolume_Items_Metadata_ManagedFields:
     api_version: Any = None
     fields_type: Any = None
     fields_v1: Any = None
@@ -17,7 +17,7 @@ class PersistentVolume_Metadata_ManagedFields:
     time: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Metadata_OwnerReferences:
+class PersistentVolume_Items_Metadata_OwnerReferences:
     api_version: Any = None
     block_owner_deletion: Any = None
     controller: Any = None
@@ -26,464 +26,349 @@ class PersistentVolume_Metadata_OwnerReferences:
     uid: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Metadata:
-    # Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
+class PersistentVolume_Items_Metadata:
     annotations: Any = None
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
     creation_timestamp: Any = None
-    # Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
     deletion_grace_period_seconds: Any = None
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
     deletion_timestamp: Any = None
-    # Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
     finalizers: Any = None
-    # GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
     generate_name: Any = None
-    # A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
     generation: Any = None
-    # Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
     labels: Any = None
-    # ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
     managed_fields: Any = None
-    # Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
     name: Any = None
-    # Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
     namespace: Any = None
-    # List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
     owner_references: Any = None
-    # An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
     resource_version: Any = None
-    # Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
     self_link: Any = None
-    # UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
     uid: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_AwsElasticBlockStore:
-    # fsType is the filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
+class PersistentVolume_Items_Spec_AwsElasticBlockStore:
     fs_type: Any = None
-    # partition is the partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty).
     partition: Any = None
-    # readOnly value true will force the readOnly setting in VolumeMounts. More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
     read_only: Any = None
-    # volumeID is unique ID of the persistent disk resource in AWS (Amazon EBS volume). More info: https://kubernetes.io/docs/concepts/storage/volumes#awselasticblockstore
     volume_id: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_AzureDisk:
-    # cachingMode is the Host Caching mode: None, Read Only, Read Write.
+class PersistentVolume_Items_Spec_AzureDisk:
     caching_mode: Any = None
-    # diskName is the Name of the data disk in the blob storage
     disk_name: Any = None
-    # diskURI is the URI of data disk in the blob storage
     disk_uri: Any = None
-    # fsType is Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
     fs_type: Any = None
-    # kind expected values are Shared: multiple blob disks per storage account Dedicated: single blob disk per storage account Managed: azure managed data disk (only in managed availability set). defaults to shared
     kind: Any = None
-    # readOnly Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
     read_only: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_AzureFile:
-    # readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
+class PersistentVolume_Items_Spec_AzureFile:
     read_only: Any = None
-    # secretName is the name of secret that contains Azure Storage Account Name and Key
     secret_name: Any = None
-    # secretNamespace is the namespace of the secret that contains Azure Storage Account Name and Key default is the same as the Pod
     secret_namespace: Any = None
-    # shareName is the azure Share Name
     share_name: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Cephfs_SecretRef:
-    # name is unique within a namespace to reference a secret resource.
+class PersistentVolume_Items_Spec_Cephfs_SecretRef:
     name: Any = None
-    # namespace defines the space within which the secret name must be unique.
     namespace: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Cephfs:
-    # monitors is Required: Monitors is a collection of Ceph monitors More info: https://examples.k8s.io/volumes/cephfs/README.md#how-to-use-it
+class PersistentVolume_Items_Spec_Cephfs:
     monitors: Any = None
-    # path is Optional: Used as the mounted root, rather than the full Ceph tree, default is /
     path: Any = None
-    # readOnly is Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts. More info: https://examples.k8s.io/volumes/cephfs/README.md#how-to-use-it
     read_only: Any = None
-    # secretFile is Optional: SecretFile is the path to key ring for User, default is /etc/ceph/user.secret More info: https://examples.k8s.io/volumes/cephfs/README.md#how-to-use-it
     secret_file: Any = None
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
     secret_ref: Any = None
-    # user is Optional: User is the rados user name, default is admin More info: https://examples.k8s.io/volumes/cephfs/README.md#how-to-use-it
     user: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Cinder:
-    # fsType Filesystem type to mount. Must be a filesystem type supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://examples.k8s.io/mysql-cinder-pd/README.md
+class PersistentVolume_Items_Spec_Cinder:
     fs_type: Any = None
-    # readOnly is Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts. More info: https://examples.k8s.io/mysql-cinder-pd/README.md
     read_only: Any = None
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
     secret_ref: Any = None
-    # volumeID used to identify the volume in cinder. More info: https://examples.k8s.io/mysql-cinder-pd/README.md
     volume_id: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_ClaimRef:
-    # API version of the referent.
+class PersistentVolume_Items_Spec_ClaimRef:
     api_version: Any = None
-    # If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.
     field_path: Any = None
-    # Kind of the referent. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
     kind: Any = None
-    # Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
     name: Any = None
-    # Namespace of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
     namespace: Any = None
-    # Specific resourceVersion to which this reference is made, if any. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
     resource_version: Any = None
-    # UID of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#uids
     uid: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Csi:
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
+class PersistentVolume_Items_Spec_Csi:
     controller_expand_secret_ref: Any = None
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
     controller_publish_secret_ref: Any = None
-    # driver is the name of the driver to use for this volume. Required.
     driver: Any = None
-    # fsType to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs".
     fs_type: Any = None
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
     node_expand_secret_ref: Any = None
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
     node_publish_secret_ref: Any = None
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
     node_stage_secret_ref: Any = None
-    # readOnly value to pass to ControllerPublishVolumeRequest. Defaults to false (read/write).
     read_only: Any = None
-    # volumeAttributes of the volume to publish.
     volume_attributes: Any = None
-    # volumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to refer to the volume on all subsequent calls. Required.
     volume_handle: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Fc:
-    # fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+class PersistentVolume_Items_Spec_Fc:
     fs_type: Any = None
-    # lun is Optional: FC target lun number
     lun: Any = None
-    # readOnly is Optional: Defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
     read_only: Any = None
-    # targetWWNs is Optional: FC target worldwide names (WWNs)
     target_wwns: Any = None
-    # wwids Optional: FC volume world wide identifiers (wwids) Either wwids or combination of targetWWNs and lun must be set, but not both simultaneously.
     wwids: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_FlexVolume:
-    # driver is the name of the driver to use for this volume.
+class PersistentVolume_Items_Spec_FlexVolume:
     driver: Any = None
-    # fsType is the Filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default filesystem depends on FlexVolume script.
     fs_type: Any = None
-    # options is Optional: this field holds extra command options if any.
     options: Any = None
-    # readOnly is Optional: defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
     read_only: Any = None
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
     secret_ref: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Flocker:
-    # datasetName is Name of the dataset stored as metadata -> name on the dataset for Flocker should be considered as deprecated
+class PersistentVolume_Items_Spec_Flocker:
     dataset_name: Any = None
-    # datasetUUID is the UUID of the dataset. This is unique identifier of a Flocker dataset
     dataset_uuid: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_GcePersistentDisk:
-    # fsType is filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
+class PersistentVolume_Items_Spec_GcePersistentDisk:
     fs_type: Any = None
-    # partition is the partition in the volume that you want to mount. If omitted, the default is to mount by volume name. Examples: For volume /dev/sda1, you specify the partition as "1". Similarly, the volume partition for /dev/sda is "0" (or you can leave the property empty). More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
     partition: Any = None
-    # pdName is unique name of the PD resource in GCE. Used to identify the disk in GCE. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
     pd_name: Any = None
-    # readOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: https://kubernetes.io/docs/concepts/storage/volumes#gcepersistentdisk
     read_only: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Glusterfs:
-    # endpoints is the endpoint name that details Glusterfs topology. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
+class PersistentVolume_Items_Spec_Glusterfs:
     endpoints: Any = None
-    # endpointsNamespace is the namespace that contains Glusterfs endpoint. If this field is empty, the EndpointNamespace defaults to the same namespace as the bound PVC. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
     endpoints_namespace: Any = None
-    # path is the Glusterfs volume path. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
     path: Any = None
-    # readOnly here will force the Glusterfs volume to be mounted with read-only permissions. Defaults to false. More info: https://examples.k8s.io/volumes/glusterfs/README.md#create-a-pod
     read_only: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_HostPath:
-    # path of the directory on the host. If the path is a symlink, it will follow the link to the real path. More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath
+class PersistentVolume_Items_Spec_HostPath:
     path: Any = None
-    # type for HostPath Volume Defaults to "" More info: https://kubernetes.io/docs/concepts/storage/volumes#hostpath
     type: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Iscsi:
-    # chapAuthDiscovery defines whether support iSCSI Discovery CHAP authentication
+class PersistentVolume_Items_Spec_Iscsi:
     chap_auth_discovery: Any = None
-    # chapAuthSession defines whether support iSCSI Session CHAP authentication
     chap_auth_session: Any = None
-    # fsType is the filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#iscsi
     fs_type: Any = None
-    # initiatorName is the custom iSCSI Initiator Name. If initiatorName is specified with iscsiInterface simultaneously, new iSCSI interface <target portal>:<volume name> will be created for the connection.
     initiator_name: Any = None
-    # iqn is Target iSCSI Qualified Name.
     iqn: Any = None
-    # iscsiInterface is the interface Name that uses an iSCSI transport. Defaults to 'default' (tcp).
     iscsi_interface: Any = None
-    # lun is iSCSI Target Lun number.
     lun: Any = None
-    # portals is the iSCSI Target Portal List. The Portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
     portals: Any = None
-    # readOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false.
     read_only: Any = None
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
     secret_ref: Any = None
-    # targetPortal is iSCSI Target Portal. The Portal is either an IP or ip_addr:port if the port is other than default (typically TCP ports 860 and 3260).
     target_portal: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Local:
-    # fsType is the filesystem type to mount. It applies only when the Path is a block device. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". The default value is to auto-select a filesystem if unspecified.
+class PersistentVolume_Items_Spec_Local:
     fs_type: Any = None
-    # path of the full path to the volume on the node. It can be either a directory or block device (disk, partition, ...).
     path: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Nfs:
-    # path that is exported by the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
+class PersistentVolume_Items_Spec_Nfs:
     path: Any = None
-    # readOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
     read_only: Any = None
-    # server is the hostname or IP address of the NFS server. More info: https://kubernetes.io/docs/concepts/storage/volumes#nfs
     server: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressions:
+class PersistentVolume_Items_Spec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressions:
     key: Any = None
     operator: Any = None
     values: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_NodeAffinity_Required_NodeSelectorTerms:
+class PersistentVolume_Items_Spec_NodeAffinity_Required_NodeSelectorTerms:
     match_expressions: Any = None
     match_fields: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_NodeAffinity_Required:
-    # Required. A list of node selector terms. The terms are ORed.
+class PersistentVolume_Items_Spec_NodeAffinity_Required:
     node_selector_terms: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_NodeAffinity:
-    # A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
+class PersistentVolume_Items_Spec_NodeAffinity:
     required: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_PhotonPersistentDisk:
-    # fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+class PersistentVolume_Items_Spec_PhotonPersistentDisk:
     fs_type: Any = None
-    # pdID is the ID that identifies Photon Controller persistent disk
     pd_id: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_PortworxVolume:
-    # fSType represents the filesystem type to mount Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs". Implicitly inferred to be "ext4" if unspecified.
+class PersistentVolume_Items_Spec_PortworxVolume:
     fs_type: Any = None
-    # readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
     read_only: Any = None
-    # volumeID uniquely identifies a Portworx volume
     volume_id: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Quobyte:
-    # group to map volume access to Default is no group
+class PersistentVolume_Items_Spec_Quobyte:
     group: Any = None
-    # readOnly here will force the Quobyte volume to be mounted with read-only permissions. Defaults to false.
     read_only: Any = None
-    # registry represents a single or multiple Quobyte Registry services specified as a string as host:port pair (multiple entries are separated with commas) which acts as the central registry for volumes
     registry: Any = None
-    # tenant owning the given Quobyte volume in the Backend Used with dynamically provisioned Quobyte volumes, value is set by the plugin
     tenant: Any = None
-    # user to map volume access to Defaults to serivceaccount user
     user: Any = None
-    # volume is a string that references an already created Quobyte volume by name.
     volume: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Rbd:
-    # fsType is the filesystem type of the volume that you want to mount. Tip: Ensure that the filesystem type is supported by the host operating system. Examples: "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified. More info: https://kubernetes.io/docs/concepts/storage/volumes#rbd
+class PersistentVolume_Items_Spec_Rbd:
     fs_type: Any = None
-    # image is the rados image name. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
     image: Any = None
-    # keyring is the path to key ring for RBDUser. Default is /etc/ceph/keyring. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
     keyring: Any = None
-    # monitors is a collection of Ceph monitors. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
     monitors: Any = None
-    # pool is the rados pool name. Default is rbd. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
     pool: Any = None
-    # readOnly here will force the ReadOnly setting in VolumeMounts. Defaults to false. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
     read_only: Any = None
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
     secret_ref: Any = None
-    # user is the rados user name. Default is admin. More info: https://examples.k8s.io/volumes/rbd/README.md#how-to-use-it
     user: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_ScaleIo:
-    # fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Default is "xfs"
+class PersistentVolume_Items_Spec_ScaleIo:
     fs_type: Any = None
-    # gateway is the host address of the ScaleIO API Gateway.
     gateway: Any = None
-    # protectionDomain is the name of the ScaleIO Protection Domain for the configured storage.
     protection_domain: Any = None
-    # readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
     read_only: Any = None
-    # SecretReference represents a Secret Reference. It has enough information to retrieve secret in any namespace
     secret_ref: Any = None
-    # sslEnabled is the flag to enable/disable SSL communication with Gateway, default false
     ssl_enabled: Any = None
-    # storageMode indicates whether the storage for a volume should be ThickProvisioned or ThinProvisioned. Default is ThinProvisioned.
     storage_mode: Any = None
-    # storagePool is the ScaleIO Storage Pool associated with the protection domain.
     storage_pool: Any = None
-    # system is the name of the storage system as configured in ScaleIO.
     system: Any = None
-    # volumeName is the name of a volume already created in the ScaleIO system that is associated with this volume source.
     volume_name: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_Storageos:
-    # fsType is the filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+class PersistentVolume_Items_Spec_Storageos:
     fs_type: Any = None
-    # readOnly defaults to false (read/write). ReadOnly here will force the ReadOnly setting in VolumeMounts.
     read_only: Any = None
-    # ObjectReference contains enough information to let you inspect or modify the referred object.
     secret_ref: Any = None
-    # volumeName is the human-readable name of the StorageOS volume. Volume names are only unique within a namespace.
     volume_name: Any = None
-    # volumeNamespace specifies the scope of the volume within StorageOS. If no namespace is specified then the Pod's namespace will be used. This allows the Kubernetes name scoping to be mirrored within StorageOS for tighter integration. Set VolumeName to any name to override the default behaviour. Set to "default" if you are not using namespaces within StorageOS. Namespaces that do not pre-exist within StorageOS will be created.
     volume_namespace: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec_VsphereVolume:
-    # fsType is filesystem type to mount. Must be a filesystem type supported by the host operating system. Ex. "ext4", "xfs", "ntfs". Implicitly inferred to be "ext4" if unspecified.
+class PersistentVolume_Items_Spec_VsphereVolume:
     fs_type: Any = None
-    # storagePolicyID is the storage Policy Based Management (SPBM) profile ID associated with the StoragePolicyName.
     storage_policy_id: Any = None
-    # storagePolicyName is the storage Policy Based Management (SPBM) profile name.
     storage_policy_name: Any = None
-    # volumePath is the path that identifies vSphere volume vmdk
     volume_path: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Spec:
-    # accessModes contains all ways the volume can be mounted. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes
+class PersistentVolume_Items_Spec:
     access_modes: Any = None
-    # Represents a Persistent Disk resource in AWS. An AWS EBS disk must exist before mounting to a container. The disk must also be in the same AWS zone as the kubelet. An AWS EBS disk can only be mounted as read/write once. AWS EBS volumes support ownership management and SELinux relabeling.
     aws_elastic_block_store: Any = None
-    # AzureDisk represents an Azure Data Disk mount on the host and bind mount to the pod.
     azure_disk: Any = None
-    # AzureFile represents an Azure File Service mount on the host and bind mount to the pod.
     azure_file: Any = None
-    # capacity is the description of the persistent volume's resources and capacity. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#capacity
     capacity: Any = None
-    # Represents a Ceph Filesystem mount that lasts the lifetime of a pod Cephfs volumes do not support ownership management or SELinux relabeling.
     cephfs: Any = None
-    # Represents a cinder volume resource in Openstack. A Cinder volume must exist before mounting to a container. The volume must also be in the same region as the kubelet. Cinder volumes support ownership management and SELinux relabeling.
     cinder: Any = None
-    # ObjectReference contains enough information to let you inspect or modify the referred object.
     claim_ref: Any = None
-    # Represents storage that is managed by an external CSI volume driver
     csi: Any = None
-    # Represents a Fibre Channel volume. Fibre Channel volumes can only be mounted as read/write once. Fibre Channel volumes support ownership management and SELinux relabeling.
     fc: Any = None
-    # FlexPersistentVolumeSource represents a generic persistent volume resource that is provisioned/attached using an exec based plugin.
     flex_volume: Any = None
-    # Represents a Flocker volume mounted by the Flocker agent. One and only one of datasetName and datasetUUID should be set. Flocker volumes do not support ownership management or SELinux relabeling.
     flocker: Any = None
-    # Represents a Persistent Disk resource in Google Compute Engine. A GCE PD must exist before mounting to a container. The disk must also be in the same GCE project and zone as the kubelet. A GCE PD can only be mounted as read/write once or read-only many times. GCE PDs support ownership management and SELinux relabeling.
     gce_persistent_disk: Any = None
-    # Represents a Glusterfs mount that lasts the lifetime of a pod. Glusterfs volumes do not support ownership management or SELinux relabeling.
     glusterfs: Any = None
-    # Represents a host path mapped into a pod. Host path volumes do not support ownership management or SELinux relabeling.
     host_path: Any = None
-    # ISCSIPersistentVolumeSource represents an ISCSI disk. ISCSI volumes can only be mounted as read/write once. ISCSI volumes support ownership management and SELinux relabeling.
     iscsi: Any = None
-    # Local represents directly-attached storage with node affinity
     local: Any = None
-    # mountOptions is the list of mount options, e.g. ["ro", "soft"]. Not validated - mount will simply fail if one is invalid. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#mount-options
     mount_options: Any = None
-    # Represents an NFS mount that lasts the lifetime of a pod. NFS volumes do not support ownership management or SELinux relabeling.
     nfs: Any = None
-    # VolumeNodeAffinity defines constraints that limit what nodes this volume can be accessed from.
     node_affinity: Any = None
-    # persistentVolumeReclaimPolicy defines what happens to a persistent volume when released from its claim. Valid options are Retain (default for manually created PersistentVolumes), Delete (default for dynamically provisioned PersistentVolumes), and Recycle (deprecated). Recycle must be supported by the volume plugin underlying this PersistentVolume. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#reclaiming
     persistent_volume_reclaim_policy: Any = None
-    # Represents a Photon Controller persistent disk resource.
     photon_persistent_disk: Any = None
-    # PortworxVolumeSource represents a Portworx volume resource.
     portworx_volume: Any = None
-    # Represents a Quobyte mount that lasts the lifetime of a pod. Quobyte volumes do not support ownership management or SELinux relabeling.
     quobyte: Any = None
-    # Represents a Rados Block Device mount that lasts the lifetime of a pod. RBD volumes support ownership management and SELinux relabeling.
     rbd: Any = None
-    # ScaleIOPersistentVolumeSource represents a persistent ScaleIO volume
     scale_io: Any = None
-    # storageClassName is the name of StorageClass to which this persistent volume belongs. Empty value means that this volume does not belong to any StorageClass.
     storage_class_name: Any = None
-    # Represents a StorageOS persistent volume resource.
     storageos: Any = None
-    # Name of VolumeAttributesClass to which this persistent volume belongs. Empty value is not allowed. When this field is not set, it indicates that this volume does not belong to any VolumeAttributesClass. This field is mutable and can be changed by the CSI driver after a volume has been updated successfully to a new class. For an unbound PersistentVolume, the volumeAttributesClassName will be matched with unbound PersistentVolumeClaims during the binding process.
     volume_attributes_class_name: Any = None
-    # volumeMode defines if a volume is intended to be used with a formatted filesystem or to remain in raw block state. Value of Filesystem is implied when not included in spec.
     volume_mode: Any = None
-    # Represents a vSphere volume resource.
     vsphere_volume: Any = None
 
 @dataclasses.dataclass
-class PersistentVolume_Status:
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
+class PersistentVolume_Items_Status:
     last_phase_transition_time: Any = None
-    # message is a human-readable message indicating details about why the volume is in this state.
     message: Any = None
-    # phase indicates if a volume is available, bound to a claim, or released by a claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#phase
     phase: Any = None
-    # reason is a brief CamelCase string that describes any failure and is meant for machine parsing and tidy display in the CLI.
     reason: Any = None
 
 @dataclasses.dataclass
+class PersistentVolume_Items:
+    api_version: Any = None
+    kind: Any = None
+    metadata: Any = None
+    spec: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class PersistentVolume_Metadata_ShardInfo:
+    # selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+    selector: Any = None
+
+@dataclasses.dataclass
+class PersistentVolume_Metadata:
+    # continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+    continue_: Any = None
+    # remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+    remaining_item_count: Any = None
+    # String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+    resource_version: Any = None
+    # Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+    self_link: Any = None
+    # ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+    shard_info: Any = None
+
+@dataclasses.dataclass
 class PersistentVolumeConfig:
-    pass
+    allow_watch_bookmarks: Any = None
+    continue_: Any = None
+    field_selector: Any = None
+    label_selector: Any = None
+    limit: Any = None
+    resource_version: Any = None
+    resource_version_match: Any = None
+    send_initial_events: Any = None
+    shard_selector: Any = None
+    timeout_seconds: Any = None
+    watch: Any = None
 
 @dataclasses.dataclass
 class PersistentVolumeAttrs:
+    allow_watch_bookmarks: Any = None
     # APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     api_version: Any = None
+    continue_: Any = None
+    field_selector: Any = None
+    # items is a list of persistent volumes. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
+    items: Any = None
     # Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
     kind: Any = None
-    # ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+    label_selector: Any = None
+    limit: Any = None
+    # ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
     metadata: Any = None
-    # PersistentVolumeSpec is the specification of a persistent volume.
-    spec: Any = None
-    # PersistentVolumeStatus is the current status of a persistent volume.
-    status: Any = None
+    resource_version: Any = None
+    resource_version_match: Any = None
+    send_initial_events: Any = None
+    shard_selector: Any = None
+    timeout_seconds: Any = None
+    watch: Any = None
 
 PersistentVolume = ubx.DataSourceBinding(
     wire_type="kubernetes_core_persistent_volume",
     fields={
+        "allow_watch_bookmarks": ubx.FieldSpec(wire_name="allow_watch_bookmarks"),
+        "continue_": ubx.FieldSpec(wire_name="continue"),
+        "field_selector": ubx.FieldSpec(wire_name="field_selector"),
+        "label_selector": ubx.FieldSpec(wire_name="label_selector"),
+        "limit": ubx.FieldSpec(wire_name="limit"),
+        "resource_version": ubx.FieldSpec(wire_name="resource_version"),
+        "resource_version_match": ubx.FieldSpec(wire_name="resource_version_match"),
+        "send_initial_events": ubx.FieldSpec(wire_name="send_initial_events"),
+        "shard_selector": ubx.FieldSpec(wire_name="shard_selector"),
+        "timeout_seconds": ubx.FieldSpec(wire_name="timeout_seconds"),
+        "watch": ubx.FieldSpec(wire_name="watch"),
     },
 )

@@ -3,252 +3,281 @@ package resource
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type ResourceClaim_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+type ResourceClaim_Items_Metadata_ManagedFields struct {
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
-type ResourceClaim_Metadata_OwnerReferences struct {
-	ApiVersion any
+type ResourceClaim_Items_Metadata_OwnerReferences struct {
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
-type ResourceClaim_Metadata struct {
-	// Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
-	Annotations any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	CreationTimestamp any
-	// Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+type ResourceClaim_Items_Metadata struct {
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	DeletionTimestamp any
-	// Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
-	Finalizers any
-	// GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
-	GenerateName any
-	// A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
-	Generation any
-	// Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
-	Labels any
-	// ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
-	ManagedFields any
-	// Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
-	Name any
-	// Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
-	Namespace any
-	// List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
-	OwnerReferences any
-	// An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
-	ResourceVersion any
-	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
-	SelfLink any
-	// UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
-type ResourceClaim_Spec_Devices_Config_Opaque struct {
-	Driver any
+type ResourceClaim_Items_Spec_Devices_Config_Opaque struct {
+	Driver     any
 	Parameters any
 }
 
-type ResourceClaim_Spec_Devices_Config struct {
-	Opaque any
+type ResourceClaim_Items_Spec_Devices_Config struct {
+	Opaque   any
 	Requests any
 }
 
-type ResourceClaim_Spec_Devices_Constraints struct {
+type ResourceClaim_Items_Spec_Devices_Constraints struct {
 	DistinctAttribute any
-	MatchAttribute any
+	MatchAttribute    any
+	Requests          any
+}
+
+type ResourceClaim_Items_Spec_Devices_Requests_Exactly_Capacity struct {
 	Requests any
 }
 
-type ResourceClaim_Spec_Devices_Requests_Exactly_Capacity struct {
-	Requests any
-}
-
-type ResourceClaim_Spec_Devices_Requests_Exactly_DerivedAttributes struct {
+type ResourceClaim_Items_Spec_Devices_Requests_Exactly_DerivedAttributes struct {
 	Expression any
-	Name any
+	Name       any
 }
 
-type ResourceClaim_Spec_Devices_Requests_Exactly_Selectors_Cel struct {
+type ResourceClaim_Items_Spec_Devices_Requests_Exactly_Selectors_Cel struct {
 	Expression any
 }
 
-type ResourceClaim_Spec_Devices_Requests_Exactly_Selectors struct {
+type ResourceClaim_Items_Spec_Devices_Requests_Exactly_Selectors struct {
 	Cel any
 }
 
-type ResourceClaim_Spec_Devices_Requests_Exactly_Tolerations struct {
-	Effect any
-	Key any
-	Operator any
+type ResourceClaim_Items_Spec_Devices_Requests_Exactly_Tolerations struct {
+	Effect            any
+	Key               any
+	Operator          any
 	TolerationSeconds any
-	Value any
+	Value             any
 }
 
-type ResourceClaim_Spec_Devices_Requests_Exactly struct {
-	AdminAccess any
-	AllocationMode any
-	Capacity any
-	Count any
+type ResourceClaim_Items_Spec_Devices_Requests_Exactly struct {
+	AdminAccess       any
+	AllocationMode    any
+	Capacity          any
+	Count             any
 	DerivedAttributes any
-	DeviceClassName any
-	Selectors any
-	Tolerations any
+	DeviceClassName   any
+	Selectors         any
+	Tolerations       any
 }
 
-type ResourceClaim_Spec_Devices_Requests_FirstAvailable struct {
-	AllocationMode any
-	Capacity any
-	Count any
+type ResourceClaim_Items_Spec_Devices_Requests_FirstAvailable struct {
+	AllocationMode    any
+	Capacity          any
+	Count             any
 	DerivedAttributes any
-	DeviceClassName any
-	Name any
-	Selectors any
-	Tolerations any
+	DeviceClassName   any
+	Name              any
+	Selectors         any
+	Tolerations       any
 }
 
-type ResourceClaim_Spec_Devices_Requests struct {
-	Exactly any
+type ResourceClaim_Items_Spec_Devices_Requests struct {
+	Exactly        any
 	FirstAvailable any
-	Name any
+	Name           any
 }
 
-type ResourceClaim_Spec_Devices struct {
-	// This field holds configuration for multiple potential drivers which could satisfy requests in this claim. It is ignored while allocating the claim.
-	Config any
-	// These constraints must be satisfied by the set of devices that get allocated for the claim.
+type ResourceClaim_Items_Spec_Devices struct {
+	Config      any
 	Constraints any
-	// Requests represent individual requests for distinct devices which must all be satisfied. If empty, nothing needs to be allocated.
-	Requests any
+	Requests    any
 }
 
-type ResourceClaim_Spec struct {
-	// DeviceClaim defines how to request devices with a ResourceClaim.
+type ResourceClaim_Items_Spec struct {
 	Devices any
 }
 
-type ResourceClaim_Status_Allocation_Devices_Config struct {
-	Opaque any
+type ResourceClaim_Items_Status_Allocation_Devices_Config struct {
+	Opaque   any
 	Requests any
-	Source any
+	Source   any
 }
 
-type ResourceClaim_Status_Allocation_Devices_Results struct {
-	AdminAccess any
-	BindingConditions any
+type ResourceClaim_Items_Status_Allocation_Devices_Results struct {
+	AdminAccess              any
+	BindingConditions        any
 	BindingFailureConditions any
-	ConsumedCapacity any
-	Device any
-	Driver any
-	Pool any
-	Request any
-	ShareId any
-	SkipNodeOperations any
-	Tolerations any
+	ConsumedCapacity         any
+	Device                   any
+	Driver                   any
+	Pool                     any
+	Request                  any
+	ShareId                  any
+	SkipNodeOperations       any
+	Tolerations              any
 }
 
-type ResourceClaim_Status_Allocation_Devices struct {
-	// This field is a combination of all the claim and class configuration parameters. Drivers can distinguish between those based on a flag. This includes configuration parameters for drivers which have no allocated devices in the result because it is up to the drivers which configuration parameters they support. They can silently ignore unknown configuration parameters.
-	Config any
-	// Results lists all allocated devices.
+type ResourceClaim_Items_Status_Allocation_Devices struct {
+	Config  any
 	Results any
 }
 
-type ResourceClaim_Status_Allocation_NodeSelector_NodeSelectorTerms_MatchExpressions struct {
-	Key any
+type ResourceClaim_Items_Status_Allocation_NodeSelector_NodeSelectorTerms_MatchExpressions struct {
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
-type ResourceClaim_Status_Allocation_NodeSelector_NodeSelectorTerms struct {
+type ResourceClaim_Items_Status_Allocation_NodeSelector_NodeSelectorTerms struct {
 	MatchExpressions any
-	MatchFields any
+	MatchFields      any
 }
 
-type ResourceClaim_Status_Allocation_NodeSelector struct {
-	// Required. A list of node selector terms. The terms are ORed.
+type ResourceClaim_Items_Status_Allocation_NodeSelector struct {
 	NodeSelectorTerms any
 }
 
-type ResourceClaim_Status_Allocation struct {
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
+type ResourceClaim_Items_Status_Allocation struct {
 	AllocationTimestamp any
-	// DeviceAllocationResult is the result of allocating devices.
-	Devices any
-	// A node selector represents the union of the results of one or more label queries over a set of nodes; that is, it represents the OR of the selectors represented by the node selector terms.
-	NodeSelector any
+	Devices             any
+	NodeSelector        any
 }
 
-type ResourceClaim_Status_Devices_Conditions struct {
+type ResourceClaim_Items_Status_Devices_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
-type ResourceClaim_Status_Devices_NetworkData struct {
+type ResourceClaim_Items_Status_Devices_NetworkData struct {
 	HardwareAddress any
-	InterfaceName any
-	Ips any
+	InterfaceName   any
+	Ips             any
 }
 
-type ResourceClaim_Status_Devices struct {
-	Conditions any
-	Data any
-	Device any
-	Driver any
+type ResourceClaim_Items_Status_Devices struct {
+	Conditions  any
+	Data        any
+	Device      any
+	Driver      any
 	NetworkData any
-	Pool any
-	ShareId any
+	Pool        any
+	ShareId     any
 }
 
-type ResourceClaim_Status_ReservedFor struct {
+type ResourceClaim_Items_Status_ReservedFor struct {
 	ApiGroup any
-	Name any
+	Name     any
 	Resource any
-	Uid any
+	Uid      any
 }
 
-type ResourceClaim_Status struct {
-	// AllocationResult contains attributes of an allocated resource.
-	Allocation any
-	// Devices contains the status of each device allocated for this claim, as reported by the driver. This can include driver-specific information. Entries are owned by their respective drivers.
-	Devices any
-	// ReservedFor indicates which entities are currently allowed to use the claim. A Pod which references a ResourceClaim which is not reserved for that Pod will not be started. A claim that is in use or might be in use because it has been reserved must not get deallocated. In a cluster with multiple scheduler instances, two pods might get scheduled concurrently by different schedulers. When they reference the same ResourceClaim which already has reached its maximum number of consumers, only one pod can be scheduled. Both schedulers try to add their pod to the claim.status.reservedFor field, but only the update that reaches the API server first gets stored. The other one fails with an error and the scheduler which issued it knows that it must put the pod back into the queue, waiting for the ResourceClaim to become usable again. There can be at most 256 such reservations. This may get increased in the future, but not reduced.
+type ResourceClaim_Items_Status struct {
+	Allocation  any
+	Devices     any
 	ReservedFor any
 }
 
+type ResourceClaim_Items struct {
+	ApiVersion any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
+}
+
+type ResourceClaim_Metadata_ShardInfo struct {
+	// selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+	Selector any
+}
+
+type ResourceClaim_Metadata struct {
+	// continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+	Continue any
+	// remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+	RemainingItemCount any
+	// String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+	ResourceVersion any
+	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+	SelfLink any
+	// ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+	ShardInfo any
+}
+
 type ResourceClaimConfig struct {
+	AllowWatchBookmarks  any
+	Continue             any
+	FieldSelector        any
+	LabelSelector        any
+	Limit                any
+	ResourceVersion      any
+	ResourceVersionMatch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 type ResourceClaimAttrs struct {
+	AllowWatchBookmarks any
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-	ApiVersion any
+	ApiVersion    any
+	Continue      any
+	FieldSelector any
+	// Items is the list of resource claims.
+	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
-	// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
-	Metadata any
-	// ResourceClaimSpec defines what is being requested in a ResourceClaim and how to configure it.
-	Spec any
-	// ResourceClaimStatus tracks whether the resource has been allocated and what the result of that was.
-	Status any
+	Kind          any
+	LabelSelector any
+	Limit         any
+	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
+	Metadata             any
+	ResourceVersion      any
+	ResourceVersionMatch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 var ResourceClaim = ubx.DataSourceBinding{
 	WireType: "kubernetes_resource_resource_claim",
 	Fields: ubx.FieldMap{
+		"AllowWatchBookmarks":  ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
+		"Continue":             ubx.FieldSpec{WireName: "continue"},
+		"FieldSelector":        ubx.FieldSpec{WireName: "field_selector"},
+		"LabelSelector":        ubx.FieldSpec{WireName: "label_selector"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"ResourceVersion":      ubx.FieldSpec{WireName: "resource_version"},
+		"ResourceVersionMatch": ubx.FieldSpec{WireName: "resource_version_match"},
+		"SendInitialEvents":    ubx.FieldSpec{WireName: "send_initial_events"},
+		"ShardSelector":        ubx.FieldSpec{WireName: "shard_selector"},
+		"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+		"Watch":                ubx.FieldSpec{WireName: "watch"},
 	},
 }

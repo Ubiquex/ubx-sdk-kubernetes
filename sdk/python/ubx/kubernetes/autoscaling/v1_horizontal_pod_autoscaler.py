@@ -8,21 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1HorizontalPodAutoscaler_Metadata_ManagedFields:
+    # APIVersion defines the version of this resource that this field set applies to. The format is 'group/version' just like the top-level Version field. It is necessary to clear the entry in the managed fields when the API version changes. (AI-inferred)
     api_version: Any = None
+    # FieldsType is the discriminator for the different fields format and version. There is only one possible value: FieldsV1. (AI-inferred)
     fields_type: Any = None
+    # fieldsV1 stores the fields managed by the manager as a JSON object, representing the managed fields in a structured format. (AI-inferred)
     fields_v1: Any = None
+    # The name of the controller, actor, or client that last applied or owns the fields in this managed fields entry. (AI-inferred)
     manager: Any = None
+    # The operation type that was performed on the resource, such as 'Apply' or 'Update'. This is part of a managed field entry in metadata. (AI-inferred)
     operation: Any = None
+    # The subresource this managed fields entry applies to, such as 'scale' for the scale subresource. Empty string indicates the main resource. (AI-inferred)
     subresource: Any = None
+    # The timestamp at which the ManagedFields entry was processed. This is represented as a string in RFC3339 format. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class V1HorizontalPodAutoscaler_Metadata_OwnerReferences:
+    # The API version of the owner resource. (AI-inferred)
     api_version: Any = None
+    # If true, and the owner has the 'foregroundDeletion' finalizer, the owner cannot be deleted until this reference is removed. Defaults to false. (AI-inferred)
     block_owner_deletion: Any = None
+    # A boolean flag indicating whether the referenced object is the managing controller for the owner reference. When true, this owner reference is a controller. (AI-inferred)
     controller: Any = None
+    # Kind of the referenced owner object. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds (AI-inferred)
     kind: Any = None
+    # The name of the owner object referenced by this owner reference. It must match the name of the resource in the same API group and kind. (AI-inferred)
     name: Any = None
+    # The UID of the referenced owner object. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass

@@ -198,189 +198,189 @@ type ValidatingAdmissionPolicy_Status struct {
 }
 
 var ValidatingAdmissionPolicy_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var ValidatingAdmissionPolicy_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var ValidatingAdmissionPolicy_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var ValidatingAdmissionPolicy_Spec_AuditAnnotationsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ValueExpression": ubx.FieldSpec{WireName: "value_expression"},
-	}
+	"Key":             ubx.FieldSpec{WireName: "key"},
+	"ValueExpression": ubx.FieldSpec{WireName: "value_expression"},
+}
 
 var ValidatingAdmissionPolicy_Spec_MatchConditionsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var ValidatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRulesFields = ubx.FieldMap{
-		"ApiGroups": ubx.FieldSpec{WireName: "api_groups"},
-		"ApiVersions": ubx.FieldSpec{WireName: "api_versions"},
-		"Operations": ubx.FieldSpec{WireName: "operations"},
-		"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"ApiGroups":     ubx.FieldSpec{WireName: "api_groups"},
+	"ApiVersions":   ubx.FieldSpec{WireName: "api_versions"},
+	"Operations":    ubx.FieldSpec{WireName: "operations"},
+	"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
+	"Resources":     ubx.FieldSpec{WireName: "resources"},
+	"Scope":         ubx.FieldSpec{WireName: "scope"},
+}
 
 var ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector_MatchExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelectorFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector_MatchExpressionsFields,
-		},
-		"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector_MatchExpressionsFields,
+	},
+	"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
+}
 
 var ValidatingAdmissionPolicy_Spec_MatchConstraintsFields = ubx.FieldMap{
-		"ExcludeResourceRules": ubx.FieldSpec{
-			WireName: "exclude_resource_rules",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRulesFields,
-		},
-		"MatchPolicy": ubx.FieldSpec{WireName: "match_policy"},
-		"NamespaceSelector": ubx.FieldSpec{
-			WireName: "namespace_selector",
-			Kind: "object",
-			Fields: ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelectorFields,
-		},
-		"ObjectSelector": ubx.FieldSpec{
-			WireName: "object_selector",
-			Kind: "object",
-			Fields: ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelectorFields,
-		},
-		"ResourceRules": ubx.FieldSpec{
-			WireName: "resource_rules",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRulesFields,
-		},
-	}
+	"ExcludeResourceRules": ubx.FieldSpec{
+		WireName: "exclude_resource_rules",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRulesFields,
+	},
+	"MatchPolicy": ubx.FieldSpec{WireName: "match_policy"},
+	"NamespaceSelector": ubx.FieldSpec{
+		WireName: "namespace_selector",
+		Kind:     "object",
+		Fields:   ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelectorFields,
+	},
+	"ObjectSelector": ubx.FieldSpec{
+		WireName: "object_selector",
+		Kind:     "object",
+		Fields:   ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelectorFields,
+	},
+	"ResourceRules": ubx.FieldSpec{
+		WireName: "resource_rules",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRulesFields,
+	},
+}
 
 var ValidatingAdmissionPolicy_Spec_ParamKindFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+}
 
 var ValidatingAdmissionPolicy_Spec_ValidationsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"MessageExpression": ubx.FieldSpec{WireName: "message_expression"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Expression":        ubx.FieldSpec{WireName: "expression"},
+	"Message":           ubx.FieldSpec{WireName: "message"},
+	"MessageExpression": ubx.FieldSpec{WireName: "message_expression"},
+	"Reason":            ubx.FieldSpec{WireName: "reason"},
+}
 
 var ValidatingAdmissionPolicy_SpecFields = ubx.FieldMap{
-		"AuditAnnotations": ubx.FieldSpec{
-			WireName: "audit_annotations",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Spec_AuditAnnotationsFields,
-		},
-		"FailurePolicy": ubx.FieldSpec{WireName: "failure_policy"},
-		"MatchConditions": ubx.FieldSpec{
-			WireName: "match_conditions",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Spec_MatchConditionsFields,
-		},
-		"MatchConstraints": ubx.FieldSpec{
-			WireName: "match_constraints",
-			Kind: "object",
-			Fields: ValidatingAdmissionPolicy_Spec_MatchConstraintsFields,
-		},
-		"ParamKind": ubx.FieldSpec{
-			WireName: "param_kind",
-			Kind: "object",
-			Fields: ValidatingAdmissionPolicy_Spec_ParamKindFields,
-		},
-		"Validations": ubx.FieldSpec{
-			WireName: "validations",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Spec_ValidationsFields,
-		},
-		"Variables": ubx.FieldSpec{
-			WireName: "variables",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Spec_MatchConditionsFields,
-		},
-	}
+	"AuditAnnotations": ubx.FieldSpec{
+		WireName: "audit_annotations",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Spec_AuditAnnotationsFields,
+	},
+	"FailurePolicy": ubx.FieldSpec{WireName: "failure_policy"},
+	"MatchConditions": ubx.FieldSpec{
+		WireName: "match_conditions",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Spec_MatchConditionsFields,
+	},
+	"MatchConstraints": ubx.FieldSpec{
+		WireName: "match_constraints",
+		Kind:     "object",
+		Fields:   ValidatingAdmissionPolicy_Spec_MatchConstraintsFields,
+	},
+	"ParamKind": ubx.FieldSpec{
+		WireName: "param_kind",
+		Kind:     "object",
+		Fields:   ValidatingAdmissionPolicy_Spec_ParamKindFields,
+	},
+	"Validations": ubx.FieldSpec{
+		WireName: "validations",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Spec_ValidationsFields,
+	},
+	"Variables": ubx.FieldSpec{
+		WireName: "variables",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Spec_MatchConditionsFields,
+	},
+}
 
 var ValidatingAdmissionPolicy_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var ValidatingAdmissionPolicy_Status_TypeChecking_ExpressionWarningsFields = ubx.FieldMap{
-		"FieldRef": ubx.FieldSpec{WireName: "field_ref"},
-		"Warning": ubx.FieldSpec{WireName: "warning"},
-	}
+	"FieldRef": ubx.FieldSpec{WireName: "field_ref"},
+	"Warning":  ubx.FieldSpec{WireName: "warning"},
+}
 
 var ValidatingAdmissionPolicy_Status_TypeCheckingFields = ubx.FieldMap{
-		"ExpressionWarnings": ubx.FieldSpec{
-			WireName: "expression_warnings",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Status_TypeChecking_ExpressionWarningsFields,
-		},
-	}
+	"ExpressionWarnings": ubx.FieldSpec{
+		WireName: "expression_warnings",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Status_TypeChecking_ExpressionWarningsFields,
+	},
+}
 
 var ValidatingAdmissionPolicy_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: ValidatingAdmissionPolicy_Status_ConditionsFields,
-		},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"TypeChecking": ubx.FieldSpec{
-			WireName: "type_checking",
-			Kind: "object",
-			Fields: ValidatingAdmissionPolicy_Status_TypeCheckingFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   ValidatingAdmissionPolicy_Status_ConditionsFields,
+	},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"TypeChecking": ubx.FieldSpec{
+		WireName: "type_checking",
+		Kind:     "object",
+		Fields:   ValidatingAdmissionPolicy_Status_TypeCheckingFields,
+	},
+}
 
 type ValidatingAdmissionPolicyConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -416,21 +416,21 @@ var ValidatingAdmissionPolicy = ubx.ResourceBinding{
 	WireType: "kubernetes_admissionregistration_validating_admission_policy",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: ValidatingAdmissionPolicy_MetadataFields,
+			Kind:     "object",
+			Fields:   ValidatingAdmissionPolicy_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: ValidatingAdmissionPolicy_SpecFields,
+			Kind:     "object",
+			Fields:   ValidatingAdmissionPolicy_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: ValidatingAdmissionPolicy_StatusFields,
+			Kind:     "object",
+			Fields:   ValidatingAdmissionPolicy_StatusFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

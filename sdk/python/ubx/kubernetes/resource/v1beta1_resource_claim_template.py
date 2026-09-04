@@ -8,21 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Metadata_ManagedFields:
+    # The API version used to manage the fields in this managedFields entry. (AI-inferred)
     api_version: Any = None
+    # The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
     fields_type: Any = None
+    # fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
     fields_v1: Any = None
+    # The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
     manager: Any = None
+    # Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
     operation: Any = None
+    # The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
     subresource: Any = None
+    # Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Metadata_OwnerReferences:
+    # The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
     api_version: Any = None
+    # If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
     block_owner_deletion: Any = None
+    # Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
     controller: Any = None
+    # The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
     kind: Any = None
+    # The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
     name: Any = None
+    # UID of the referenced owner object. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass
@@ -60,67 +73,102 @@ class V1beta1ResourceClaimTemplate_Metadata:
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Config_Opaque:
+    # The real DRA driver name this opaque configuration is meant for. (AI-inferred)
     driver: Any = None
+    # The real, driver-specific configuration payload itself, an arbitrary object only that driver interprets. (AI-inferred)
     parameters: Any = None
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Config:
+    # Real, driver-specific configuration data, opaque to Kubernetes itself and interpreted only by the DRA driver that owns the matched device. (AI-inferred)
     opaque: Any = None
+    # Which of this claim's own device requests this configuration applies to -- every request, when left empty. (AI-inferred)
     requests: Any = None
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Constraints:
+    # Requires every device satisfying this constraint to report a different value for this real, named device attribute. (AI-inferred)
     distinct_attribute: Any = None
+    # Requires every device satisfying this constraint to report the identical value for this real, named device attribute. (AI-inferred)
     match_attribute: Any = None
+    # Which of this claim's own device requests this constraint applies across -- every request, when left empty. (AI-inferred)
     requests: Any = None
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_Capacity:
+    # The real, minimum quantity requested for each named device capacity. (AI-inferred)
     requests: Any = None
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_DerivedAttributes:
+    # The real CEL expression computing this derived attribute's own value from the allocated device. (AI-inferred)
     expression: Any = None
+    # The real name this derived attribute is exposed under on the resulting allocation. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_Selectors_Cel:
+    # The real CEL expression text, evaluated with a `device` variable exposing the candidate device's own attributes and capacities; must return a boolean. (AI-inferred)
     expression: Any = None
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_Selectors:
+    # The real CEL expression this selector evaluates against each candidate device. (AI-inferred)
     cel: Any = None
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_Tolerations:
+    # The real taint effect (matching a device taint's own effect) this toleration applies to. (AI-inferred)
     effect: Any = None
+    # The real taint key this toleration matches against. (AI-inferred)
     key: Any = None
+    # Whether this toleration matches by exact key/value (`Equal`) or by key presence alone (`Exists`). (AI-inferred)
     operator: Any = None
+    # How long, in seconds, an already-allocated device may keep being used after a matching taint appears, before it's treated as no longer tolerated. (AI-inferred)
     toleration_seconds: Any = None
+    # The real taint value this toleration matches against, when its own operator is `Equal`. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable:
+    # How many devices this prioritized sub-request needs -- `ExactCount` for a specific `count`, or `All` for every device matching its selectors. (AI-inferred)
     allocation_mode: Any = None
+    # Real, minimum capacity requirements (per named capacity) this prioritized sub-request's own matched device must satisfy. (AI-inferred)
     capacity: Any = None
+    # How many devices to allocate, when this prioritized sub-request's own `allocation_mode` is `ExactCount`. (AI-inferred)
     count: Any = None
+    # Real, computed attributes (a CEL expression evaluated per allocated device) exposed on the resulting allocation, not present on the device itself. (AI-inferred)
     derived_attributes: Any = None
+    # The real DeviceClass this prioritized sub-request selects candidate devices from. (AI-inferred)
     device_class_name: Any = None
+    # The real name identifying this alternative sub-request within its own parent request's `first_available` list -- what an allocation result reports as actually satisfied. (AI-inferred)
     name: Any = None
+    # Real CEL device selectors every candidate device must satisfy to match this prioritized sub-request. (AI-inferred)
     selectors: Any = None
+    # Real tolerations letting this prioritized sub-request's own matched devices carry a taint the request is willing to accept. (AI-inferred)
     tolerations: Any = None
 
 @dataclasses.dataclass
 class V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests:
+    # Whether this device request grants the claim admin-level access to the device, bypassing the device's own normal usage restrictions -- only usable in a namespace explicitly labeled to allow it. (AI-inferred)
     admin_access: Any = None
+    # How many devices this request needs -- `ExactCount` for a specific `count`, or `All` for every device matching its selectors. (AI-inferred)
     allocation_mode: Any = None
+    # Real, minimum capacity requirements (per named capacity) this request's own matched device(s) must satisfy. (AI-inferred)
     capacity: Any = None
+    # How many devices to allocate, when `allocation_mode` is `ExactCount`. (AI-inferred)
     count: Any = None
+    # Real, computed attributes (a CEL expression evaluated per allocated device) exposed on the resulting allocation, not present on the device itself. (AI-inferred)
     derived_attributes: Any = None
+    # The real DeviceClass this request selects candidate devices from. (AI-inferred)
     device_class_name: Any = None
+    # A real, ordered list of alternative sub-requests -- the driver tries each in turn and satisfies the request with the first one it can actually allocate. (AI-inferred)
     first_available: Any = None
+    # The real name identifying this device request within the claim, referenced by its own `config`/`constraints` and by a pod's own container volume mounts. (AI-inferred)
     name: Any = None
+    # Real CEL device selectors every candidate device must satisfy to match this request. (AI-inferred)
     selectors: Any = None
+    # Real tolerations letting this request's own matched devices carry a taint the request is willing to accept. (AI-inferred)
     tolerations: Any = None
 
 @dataclasses.dataclass

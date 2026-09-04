@@ -3,16 +3,23 @@ package meta
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type Apigroup_PreferredVersion struct {
-	// groupVersion specifies the API group and version in the form "group/version"
+type Apigroup_Groups_PreferredVersion struct {
 	GroupVersion any
-	// version specifies the version in the form of "version". This is to save the clients the trouble of splitting the GroupVersion.
-	Version any
+	Version      any
 }
 
-type Apigroup_ServerAddressByClientCidrs struct {
-	ClientCidr any
+type Apigroup_Groups_ServerAddressByClientCidrs struct {
+	ClientCidr    any
 	ServerAddress any
+}
+
+type Apigroup_Groups struct {
+	ApiVersion                 any
+	Kind                       any
+	Name                       any
+	PreferredVersion           any
+	ServerAddressByClientCidrs any
+	Versions                   any
 }
 
 type ApigroupConfig struct {
@@ -21,20 +28,13 @@ type ApigroupConfig struct {
 type ApigroupAttrs struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
 	ApiVersion any
+	// groups is a list of APIGroup.
+	Groups any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
 	Kind any
-	// name is the name of the group.
-	Name any
-	// GroupVersion contains the "group/version" and "version" string of a version. It is made a struct to keep extensibility.
-	PreferredVersion any
-	// a map of client CIDR to server address that is serving this group. This is to help clients reach servers in the most network-efficient way possible. Clients can use the appropriate server address as per the CIDR that they match. In case of multiple matches, clients should use the longest matching CIDR. The server returns only those CIDRs that it thinks that the client can match. For example: the master will return an internal IP CIDR only, if the client reaches the server using an internal IP. Server looks at X-Forwarded-For header or X-Real-Ip header or request.RemoteAddr (in that order) to get the client IP.
-	ServerAddressByClientCidrs any
-	// versions are the versions supported in this group.
-	Versions any
 }
 
 var Apigroup = ubx.DataSourceBinding{
 	WireType: "kubernetes_meta_apigroup",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

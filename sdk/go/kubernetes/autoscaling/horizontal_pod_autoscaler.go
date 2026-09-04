@@ -4,34 +4,34 @@ package autoscaling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HorizontalPodAutoscaler_Metadata_ManagedFields struct {
-	// APIVersion defines the version of this resource that this field set applies to. The format is 'group/version' just like the top-level Version field. It is necessary to clear the entry in the managed fields when the API version changes. (AI-inferred)
+	// The API version used to manage the fields in this managedFields entry. (AI-inferred)
 	ApiVersion any
-	// FieldsType is the discriminator for the different fields format and version. There is only one possible value: FieldsV1. (AI-inferred)
+	// The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
 	FieldsType any
-	// fieldsV1 stores the fields managed by the manager as a JSON object, representing the managed fields in a structured format. (AI-inferred)
+	// fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
 	FieldsV1 any
-	// The name of the controller, actor, or client that last applied or owns the fields in this managed fields entry. (AI-inferred)
+	// The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
 	Manager any
-	// The operation type that was performed on the resource, such as 'Apply' or 'Update'. This is part of a managed field entry in metadata. (AI-inferred)
+	// Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
 	Operation any
-	// The subresource this managed fields entry applies to, such as 'scale' for the scale subresource. Empty string indicates the main resource. (AI-inferred)
+	// The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
 	Subresource any
-	// The timestamp at which the ManagedFields entry was processed. This is represented as a string in RFC3339 format. (AI-inferred)
+	// Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
 	Time any
 }
 
 type HorizontalPodAutoscaler_Metadata_OwnerReferences struct {
-	// The API version of the owner resource. (AI-inferred)
+	// The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
 	ApiVersion any
-	// If true, and the owner has the 'foregroundDeletion' finalizer, the owner cannot be deleted until this reference is removed. Defaults to false. (AI-inferred)
+	// If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
 	BlockOwnerDeletion any
-	// A boolean flag indicating whether the referenced object is the managing controller for the owner reference. When true, this owner reference is a controller. (AI-inferred)
+	// Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
 	Controller any
-	// Kind of the referenced owner object. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds (AI-inferred)
+	// The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
 	Kind any
-	// The name of the owner object referenced by this owner reference. It must match the name of the resource in the same API group and kind. (AI-inferred)
+	// The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
 	Name any
-	// The UID of the referenced owner object. (AI-inferred)
+	// UID of the referenced owner object. (AI-inferred)
 	Uid any
 }
 
@@ -69,8 +69,11 @@ type HorizontalPodAutoscaler_Metadata struct {
 }
 
 type HorizontalPodAutoscaler_Spec_Behavior_ScaleDown_Policies struct {
+	// The window, in seconds, this scaling policy's own rate limit is measured over. (AI-inferred)
 	PeriodSeconds any
+	// Whether this scaling policy's own limit is a `Pods` count or a `Percent` of current replicas. (AI-inferred)
 	Type any
+	// The real limit this scaling policy enforces -- a pod count or a percentage, per its own `type`. (AI-inferred)
 	Value any
 }
 
@@ -93,62 +96,92 @@ type HorizontalPodAutoscaler_Spec_Behavior struct {
 }
 
 type HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_Target struct {
+	// The real target average CPU/memory utilization, as a percentage of the resource's own requested value, this metric tries to maintain. (AI-inferred)
 	AverageUtilization any
+	// The real target average value (not a percentage) this metric tries to maintain across all matched pods. (AI-inferred)
 	AverageValue any
+	// Whether this MetricTarget expresses its own real target as `Utilization`, `Value`, or `AverageValue`. (AI-inferred)
 	Type any
+	// The real target value (not averaged, not a percentage) this metric tries to maintain. (AI-inferred)
 	Value any
 }
 
 type HorizontalPodAutoscaler_Spec_Metrics_ContainerResource struct {
+	// The specific container within the target pod this container-resource metric is measured against. (AI-inferred)
 	Container any
+	// The real resource name (`cpu`, `memory`) this container-resource metric tracks. (AI-inferred)
 	Name any
+	// The real target value the HorizontalPodAutoscaler tries to keep this container-resource metric at. (AI-inferred)
 	Target any
 }
 
 type HorizontalPodAutoscaler_Spec_Metrics_External_Metric_Selector_MatchExpressions struct {
+	// The real label key this selector requirement matches against. (AI-inferred)
 	Key any
+	// The real comparison (`In`, `NotIn`, `Exists`, `DoesNotExist`) this selector requirement applies to `key`/`values`. (AI-inferred)
 	Operator any
+	// The real set of values `key` is compared against, per this requirement's own `operator`. (AI-inferred)
 	Values any
 }
 
 type HorizontalPodAutoscaler_Spec_Metrics_External_Metric_Selector struct {
+	// Real, set-based selector requirements (each a key/operator/values triple) this label selector also requires, alongside any `match_labels`. (AI-inferred)
 	MatchExpressions any
+	// A real map of label key/value pairs every match must carry exactly, ANDed together with any `match_expressions`. (AI-inferred)
 	MatchLabels any
 }
 
 type HorizontalPodAutoscaler_Spec_Metrics_External_Metric struct {
+	// The real, named metric identifier a monitoring pipeline reports under. (AI-inferred)
 	Name any
+	// A real label selector narrowing which real time series this metric name resolves to, when more than one could match. (AI-inferred)
 	Selector any
 }
 
 type HorizontalPodAutoscaler_Spec_Metrics_External struct {
+	// The real, named external metric (outside the cluster, from a monitoring system) this HorizontalPodAutoscaler scales on. (AI-inferred)
 	Metric any
+	// The real target value the HorizontalPodAutoscaler tries to keep this external metric at. (AI-inferred)
 	Target any
 }
 
 type HorizontalPodAutoscaler_Spec_Metrics_Object_DescribedObject struct {
+	// The API version of the real Kubernetes object this object metric is measured against. (AI-inferred)
 	ApiVersion any
+	// The real Kind of the Kubernetes object this object metric is measured against. (AI-inferred)
 	Kind any
+	// The real name of the Kubernetes object this object metric is measured against. (AI-inferred)
 	Name any
 }
 
 type HorizontalPodAutoscaler_Spec_Metrics_Object struct {
+	// The real Kubernetes object (by apiVersion, kind, and name) this object metric is measured against, when it isn't the scaled resource itself. (AI-inferred)
 	DescribedObject any
+	// The real, named metric this object metric measures on the object named in `described_object`. (AI-inferred)
 	Metric any
+	// The real target value the HorizontalPodAutoscaler tries to keep this object metric at. (AI-inferred)
 	Target any
 }
 
 type HorizontalPodAutoscaler_Spec_Metrics_Resource struct {
+	// The real resource name (`cpu`, `memory`) this resource metric tracks. (AI-inferred)
 	Name any
+	// The real target value the HorizontalPodAutoscaler tries to keep this resource metric at. (AI-inferred)
 	Target any
 }
 
 type HorizontalPodAutoscaler_Spec_Metrics struct {
+	// This MetricSpec entry's own real container-resource metric source, present when `type` is `ContainerResource`. (AI-inferred)
 	ContainerResource any
+	// This MetricSpec entry's own real external metric source, present when `type` is `External`. (AI-inferred)
 	External any
+	// This MetricSpec entry's own real object metric source, present when `type` is `Object`. (AI-inferred)
 	Object any
+	// This MetricSpec entry's own real pods metric source, present when `type` is `Pods`. (AI-inferred)
 	Pods any
+	// This MetricSpec entry's own real resource metric source, present when `type` is `Resource`. (AI-inferred)
 	Resource any
+	// Which real metric source (`Resource`, `ContainerResource`, `Pods`, `Object`, or `External`) this MetricSpec entry describes. (AI-inferred)
 	Type any
 }
 
@@ -166,48 +199,73 @@ type HorizontalPodAutoscaler_Spec struct {
 }
 
 type HorizontalPodAutoscaler_Status_Conditions struct {
+	// The last time the condition transitioned from one status to another. This should reflect when the underlying condition changed, typically represented as a timestamp string. (AI-inferred)
 	LastTransitionTime any
+	// A human-readable message that provides additional details about the current condition, including information about the last transition. (AI-inferred)
 	Message any
+	// The generation of the ValidatingAdmissionPolicy that was last processed by the controller, used to determine whether the status reflects the latest spec. (AI-inferred)
 	ObservedGeneration any
+	// A machine-readable, CamelCase reason for the condition's last transition. This provides a stable identifier for the condition state, complementing the human-readable message. (AI-inferred)
 	Reason any
+	// The status of the condition, indicating whether the condition is True, False, or Unknown. (AI-inferred)
 	Status any
+	// Type is a string that identifies the condition and distinguishes it from other conditions in the status.conditions list. (AI-inferred)
 	Type any
 }
 
 type HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_Current struct {
+	// The real, currently-observed average CPU/memory utilization, as last read by the autoscaler. (AI-inferred)
 	AverageUtilization any
+	// The real, currently-observed average value of this metric, as last read by the autoscaler. (AI-inferred)
 	AverageValue any
+	// The real, currently-observed value of this metric, as last read by the autoscaler. (AI-inferred)
 	Value any
 }
 
 type HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource struct {
+	// The specific container within the target pod this container-resource metric is measured against. (AI-inferred)
 	Container any
+	// The real, currently-observed value of this container-resource metric, as last read by the autoscaler. (AI-inferred)
 	Current any
+	// The real resource name (`cpu`, `memory`) this container-resource metric tracks. (AI-inferred)
 	Name any
 }
 
 type HorizontalPodAutoscaler_Status_CurrentMetrics_External struct {
+	// The real, currently-observed value of this external metric, as last read by the autoscaler. (AI-inferred)
 	Current any
+	// The real, named external metric (outside the cluster, from a monitoring system) this HorizontalPodAutoscaler scales on. (AI-inferred)
 	Metric any
 }
 
 type HorizontalPodAutoscaler_Status_CurrentMetrics_Object struct {
+	// The real, currently-observed value of this object metric, as last read by the autoscaler. (AI-inferred)
 	Current any
+	// The real Kubernetes object (by apiVersion, kind, and name) this object metric is measured against, when it isn't the scaled resource itself. (AI-inferred)
 	DescribedObject any
+	// The real, named metric this object metric measures on the object named in `described_object`. (AI-inferred)
 	Metric any
 }
 
 type HorizontalPodAutoscaler_Status_CurrentMetrics_Resource struct {
+	// The real, currently-observed value of this resource metric, as last read by the autoscaler. (AI-inferred)
 	Current any
+	// The real resource name (`cpu`, `memory`) this resource metric tracks. (AI-inferred)
 	Name any
 }
 
 type HorizontalPodAutoscaler_Status_CurrentMetrics struct {
+	// This observed MetricStatus entry's own real container-resource metric, present when `type` is `ContainerResource`. (AI-inferred)
 	ContainerResource any
+	// This observed MetricStatus entry's own real external metric, present when `type` is `External`. (AI-inferred)
 	External any
+	// This observed MetricStatus entry's own real object metric, present when `type` is `Object`. (AI-inferred)
 	Object any
+	// This observed MetricStatus entry's own real pods metric, present when `type` is `Pods`. (AI-inferred)
 	Pods any
+	// This observed MetricStatus entry's own real resource metric, present when `type` is `Resource`. (AI-inferred)
 	Resource any
+	// Which real metric source (`Resource`, `ContainerResource`, `Pods`, `Object`, or `External`) this observed metric entry describes. (AI-inferred)
 	Type any
 }
 
@@ -227,326 +285,326 @@ type HorizontalPodAutoscaler_Status struct {
 }
 
 var HorizontalPodAutoscaler_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var HorizontalPodAutoscaler_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var HorizontalPodAutoscaler_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: HorizontalPodAutoscaler_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: HorizontalPodAutoscaler_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   HorizontalPodAutoscaler_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   HorizontalPodAutoscaler_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var HorizontalPodAutoscaler_Spec_Behavior_ScaleDown_PoliciesFields = ubx.FieldMap{
-		"PeriodSeconds": ubx.FieldSpec{WireName: "period_seconds"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"PeriodSeconds": ubx.FieldSpec{WireName: "period_seconds"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+	"Value":         ubx.FieldSpec{WireName: "value"},
+}
 
 var HorizontalPodAutoscaler_Spec_Behavior_ScaleDownFields = ubx.FieldMap{
-		"Policies": ubx.FieldSpec{
-			WireName: "policies",
-			Kind: "list",
-			Fields: HorizontalPodAutoscaler_Spec_Behavior_ScaleDown_PoliciesFields,
-		},
-		"SelectPolicy": ubx.FieldSpec{WireName: "select_policy"},
-		"StabilizationWindowSeconds": ubx.FieldSpec{WireName: "stabilization_window_seconds"},
-		"Tolerance": ubx.FieldSpec{WireName: "tolerance"},
-	}
+	"Policies": ubx.FieldSpec{
+		WireName: "policies",
+		Kind:     "list",
+		Fields:   HorizontalPodAutoscaler_Spec_Behavior_ScaleDown_PoliciesFields,
+	},
+	"SelectPolicy":               ubx.FieldSpec{WireName: "select_policy"},
+	"StabilizationWindowSeconds": ubx.FieldSpec{WireName: "stabilization_window_seconds"},
+	"Tolerance":                  ubx.FieldSpec{WireName: "tolerance"},
+}
 
 var HorizontalPodAutoscaler_Spec_BehaviorFields = ubx.FieldMap{
-		"ScaleDown": ubx.FieldSpec{
-			WireName: "scale_down",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Behavior_ScaleDownFields,
-		},
-		"ScaleUp": ubx.FieldSpec{
-			WireName: "scale_up",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Behavior_ScaleDownFields,
-		},
-	}
+	"ScaleDown": ubx.FieldSpec{
+		WireName: "scale_down",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Behavior_ScaleDownFields,
+	},
+	"ScaleUp": ubx.FieldSpec{
+		WireName: "scale_up",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Behavior_ScaleDownFields,
+	},
+}
 
 var HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_TargetFields = ubx.FieldMap{
-		"AverageUtilization": ubx.FieldSpec{WireName: "average_utilization"},
-		"AverageValue": ubx.FieldSpec{WireName: "average_value"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"AverageUtilization": ubx.FieldSpec{WireName: "average_utilization"},
+	"AverageValue":       ubx.FieldSpec{WireName: "average_value"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+	"Value":              ubx.FieldSpec{WireName: "value"},
+}
 
 var HorizontalPodAutoscaler_Spec_Metrics_ContainerResourceFields = ubx.FieldMap{
-		"Container": ubx.FieldSpec{WireName: "container"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_TargetFields,
-		},
-	}
+	"Container": ubx.FieldSpec{WireName: "container"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_TargetFields,
+	},
+}
 
 var HorizontalPodAutoscaler_Spec_Metrics_External_Metric_Selector_MatchExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var HorizontalPodAutoscaler_Spec_Metrics_External_Metric_SelectorFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_External_Metric_Selector_MatchExpressionsFields,
-		},
-		"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_External_Metric_Selector_MatchExpressionsFields,
+	},
+	"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
+}
 
 var HorizontalPodAutoscaler_Spec_Metrics_External_MetricFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Selector": ubx.FieldSpec{
-			WireName: "selector",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_External_Metric_SelectorFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Selector": ubx.FieldSpec{
+		WireName: "selector",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_External_Metric_SelectorFields,
+	},
+}
 
 var HorizontalPodAutoscaler_Spec_Metrics_ExternalFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_External_MetricFields,
-		},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_TargetFields,
-		},
-	}
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_External_MetricFields,
+	},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_TargetFields,
+	},
+}
 
 var HorizontalPodAutoscaler_Spec_Metrics_Object_DescribedObjectFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var HorizontalPodAutoscaler_Spec_Metrics_ObjectFields = ubx.FieldMap{
-		"DescribedObject": ubx.FieldSpec{
-			WireName: "described_object",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_Object_DescribedObjectFields,
-		},
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_External_MetricFields,
-		},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_TargetFields,
-		},
-	}
+	"DescribedObject": ubx.FieldSpec{
+		WireName: "described_object",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_Object_DescribedObjectFields,
+	},
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_External_MetricFields,
+	},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_TargetFields,
+	},
+}
 
 var HorizontalPodAutoscaler_Spec_Metrics_ResourceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_TargetFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_TargetFields,
+	},
+}
 
 var HorizontalPodAutoscaler_Spec_MetricsFields = ubx.FieldMap{
-		"ContainerResource": ubx.FieldSpec{
-			WireName: "container_resource",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_ContainerResourceFields,
-		},
-		"External": ubx.FieldSpec{
-			WireName: "external",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_ExternalFields,
-		},
-		"Object": ubx.FieldSpec{
-			WireName: "object",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_ObjectFields,
-		},
-		"Pods": ubx.FieldSpec{
-			WireName: "pods",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_ExternalFields,
-		},
-		"Resource": ubx.FieldSpec{
-			WireName: "resource",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_ResourceFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ContainerResource": ubx.FieldSpec{
+		WireName: "container_resource",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_ContainerResourceFields,
+	},
+	"External": ubx.FieldSpec{
+		WireName: "external",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_ExternalFields,
+	},
+	"Object": ubx.FieldSpec{
+		WireName: "object",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_ObjectFields,
+	},
+	"Pods": ubx.FieldSpec{
+		WireName: "pods",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_ExternalFields,
+	},
+	"Resource": ubx.FieldSpec{
+		WireName: "resource",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_ResourceFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var HorizontalPodAutoscaler_SpecFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{
-			WireName: "behavior",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_BehaviorFields,
-		},
-		"MaxReplicas": ubx.FieldSpec{WireName: "max_replicas"},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: HorizontalPodAutoscaler_Spec_MetricsFields,
-		},
-		"MinReplicas": ubx.FieldSpec{WireName: "min_replicas"},
-		"ScaleTargetRef": ubx.FieldSpec{
-			WireName: "scale_target_ref",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_Object_DescribedObjectFields,
-		},
-	}
+	"Behavior": ubx.FieldSpec{
+		WireName: "behavior",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_BehaviorFields,
+	},
+	"MaxReplicas": ubx.FieldSpec{WireName: "max_replicas"},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   HorizontalPodAutoscaler_Spec_MetricsFields,
+	},
+	"MinReplicas": ubx.FieldSpec{WireName: "min_replicas"},
+	"ScaleTargetRef": ubx.FieldSpec{
+		WireName: "scale_target_ref",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_Object_DescribedObjectFields,
+	},
+}
 
 var HorizontalPodAutoscaler_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_CurrentFields = ubx.FieldMap{
-		"AverageUtilization": ubx.FieldSpec{WireName: "average_utilization"},
-		"AverageValue": ubx.FieldSpec{WireName: "average_value"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"AverageUtilization": ubx.FieldSpec{WireName: "average_utilization"},
+	"AverageValue":       ubx.FieldSpec{WireName: "average_value"},
+	"Value":              ubx.FieldSpec{WireName: "value"},
+}
 
 var HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResourceFields = ubx.FieldMap{
-		"Container": ubx.FieldSpec{WireName: "container"},
-		"Current": ubx.FieldSpec{
-			WireName: "current",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_CurrentFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Container": ubx.FieldSpec{WireName: "container"},
+	"Current": ubx.FieldSpec{
+		WireName: "current",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_CurrentFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var HorizontalPodAutoscaler_Status_CurrentMetrics_ExternalFields = ubx.FieldMap{
-		"Current": ubx.FieldSpec{
-			WireName: "current",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_CurrentFields,
-		},
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_External_MetricFields,
-		},
-	}
+	"Current": ubx.FieldSpec{
+		WireName: "current",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_CurrentFields,
+	},
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_External_MetricFields,
+	},
+}
 
 var HorizontalPodAutoscaler_Status_CurrentMetrics_ObjectFields = ubx.FieldMap{
-		"Current": ubx.FieldSpec{
-			WireName: "current",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_CurrentFields,
-		},
-		"DescribedObject": ubx.FieldSpec{
-			WireName: "described_object",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_Object_DescribedObjectFields,
-		},
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Spec_Metrics_External_MetricFields,
-		},
-	}
+	"Current": ubx.FieldSpec{
+		WireName: "current",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_CurrentFields,
+	},
+	"DescribedObject": ubx.FieldSpec{
+		WireName: "described_object",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_Object_DescribedObjectFields,
+	},
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Spec_Metrics_External_MetricFields,
+	},
+}
 
 var HorizontalPodAutoscaler_Status_CurrentMetrics_ResourceFields = ubx.FieldMap{
-		"Current": ubx.FieldSpec{
-			WireName: "current",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_CurrentFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Current": ubx.FieldSpec{
+		WireName: "current",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_CurrentFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var HorizontalPodAutoscaler_Status_CurrentMetricsFields = ubx.FieldMap{
-		"ContainerResource": ubx.FieldSpec{
-			WireName: "container_resource",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResourceFields,
-		},
-		"External": ubx.FieldSpec{
-			WireName: "external",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Status_CurrentMetrics_ExternalFields,
-		},
-		"Object": ubx.FieldSpec{
-			WireName: "object",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Status_CurrentMetrics_ObjectFields,
-		},
-		"Pods": ubx.FieldSpec{
-			WireName: "pods",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Status_CurrentMetrics_ExternalFields,
-		},
-		"Resource": ubx.FieldSpec{
-			WireName: "resource",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_Status_CurrentMetrics_ResourceFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ContainerResource": ubx.FieldSpec{
+		WireName: "container_resource",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResourceFields,
+	},
+	"External": ubx.FieldSpec{
+		WireName: "external",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Status_CurrentMetrics_ExternalFields,
+	},
+	"Object": ubx.FieldSpec{
+		WireName: "object",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Status_CurrentMetrics_ObjectFields,
+	},
+	"Pods": ubx.FieldSpec{
+		WireName: "pods",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Status_CurrentMetrics_ExternalFields,
+	},
+	"Resource": ubx.FieldSpec{
+		WireName: "resource",
+		Kind:     "object",
+		Fields:   HorizontalPodAutoscaler_Status_CurrentMetrics_ResourceFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var HorizontalPodAutoscaler_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: HorizontalPodAutoscaler_Status_ConditionsFields,
-		},
-		"CurrentMetrics": ubx.FieldSpec{
-			WireName: "current_metrics",
-			Kind: "list",
-			Fields: HorizontalPodAutoscaler_Status_CurrentMetricsFields,
-		},
-		"CurrentReplicas": ubx.FieldSpec{WireName: "current_replicas"},
-		"DesiredReplicas": ubx.FieldSpec{WireName: "desired_replicas"},
-		"LastScaleTime": ubx.FieldSpec{WireName: "last_scale_time"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   HorizontalPodAutoscaler_Status_ConditionsFields,
+	},
+	"CurrentMetrics": ubx.FieldSpec{
+		WireName: "current_metrics",
+		Kind:     "list",
+		Fields:   HorizontalPodAutoscaler_Status_CurrentMetricsFields,
+	},
+	"CurrentReplicas":    ubx.FieldSpec{WireName: "current_replicas"},
+	"DesiredReplicas":    ubx.FieldSpec{WireName: "desired_replicas"},
+	"LastScaleTime":      ubx.FieldSpec{WireName: "last_scale_time"},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+}
 
 type HorizontalPodAutoscalerConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -586,23 +644,23 @@ var HorizontalPodAutoscaler = ubx.ResourceBinding{
 	WireType: "kubernetes_autoscaling_horizontal_pod_autoscaler",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_MetadataFields,
+			Kind:     "object",
+			Fields:   HorizontalPodAutoscaler_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_SpecFields,
+			Kind:     "object",
+			Fields:   HorizontalPodAutoscaler_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: HorizontalPodAutoscaler_StatusFields,
+			Kind:     "object",
+			Fields:   HorizontalPodAutoscaler_StatusFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

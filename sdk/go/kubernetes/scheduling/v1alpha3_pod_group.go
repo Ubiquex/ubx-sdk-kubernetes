@@ -4,21 +4,34 @@ package scheduling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha3PodGroup_Metadata_ManagedFields struct {
+	// The API version of the resource that this managed fields entry applies to (e.g., 'group/version'). (AI-inferred)
 	ApiVersion any
+	// The type of the managed fields, indicating the versioned format of the fields data (e.g., 'FieldsV1'). (AI-inferred)
 	FieldsType any
+	// fields_v1 is a JSON representation of the set of fields managed by the manager. It is stored as a FieldsV1 object, which is a map of field paths to their values, recording which fields were changed by this managedFields entry. (AI-inferred)
 	FieldsV1 any
+	// The name of the manager (e.g., a controller or user) that last modified the managed field. (AI-inferred)
 	Manager any
+	// The type of operation performed by the manager on the managed fields. Allowed values are 'Apply' and 'Update'. (AI-inferred)
 	Operation any
+	// The subresource that this managed field entry applies to, such as 'status' or 'scale'. Empty indicates the main resource. (AI-inferred)
 	Subresource any
+	// The timestamp (RFC3339 format) at which the managed field was last updated by the manager. (AI-inferred)
 	Time any
 }
 
 type V1alpha3PodGroup_Metadata_OwnerReferences struct {
+	// The API version of the referent (owner) object. (AI-inferred)
 	ApiVersion any
+	// If true, and the owner has the foregroundDeletion finalizer, the owner cannot be deleted from the cluster until this owner reference is removed. Defaults to false. Setting this field requires delete permission on the owner. (AI-inferred)
 	BlockOwnerDeletion any
+	// If true, this reference points to the managing controller. (AI-inferred)
 	Controller any
+	// The kind of the Kubernetes object that is the owner of this pod group, as defined in the owner reference. (AI-inferred)
 	Kind any
+	// The name of the referenced owner object. This field is required in an OwnerReference and must match the metadata.name of the referenced resource. (AI-inferred)
 	Name any
+	// The unique identifier (UID) of the object referenced as the owner of this PodGroup. (AI-inferred)
 	Uid any
 }
 
@@ -63,12 +76,16 @@ type V1alpha3PodGroup_Spec_DisruptionMode struct {
 }
 
 type V1alpha3PodGroup_Spec_ResourceClaims struct {
+	// The name of the resource claim. Must be unique within the pod. (AI-inferred)
 	Name any
+	// The name of the ResourceClaim that this pod group is configured to use. (AI-inferred)
 	ResourceClaimName any
+	// The name of the ResourceClaimTemplate that defines the resources to claim for this pod group's resource claim. (AI-inferred)
 	ResourceClaimTemplateName any
 }
 
 type V1alpha3PodGroup_Spec_SchedulingConstraints_Topology struct {
+	// The topology key (label) that defines the domain over which pods are distributed or constrained, such as a node, zone, or region. Common examples include 'kubernetes.io/hostname' and 'topology.kubernetes.io/zone'. (AI-inferred)
 	Key any
 }
 
@@ -118,16 +135,24 @@ type V1alpha3PodGroup_Spec struct {
 }
 
 type V1alpha3PodGroup_Status_Conditions struct {
+	// The last time the condition transitioned from one status to another. This is an RFC3339 timestamp string. (AI-inferred)
 	LastTransitionTime any
+	// Human-readable message providing details about the current condition state, such as why the pod group is in this state. (AI-inferred)
 	Message any
+	// The generation of the resource that the controller observed when it last updated this condition. Used to track whether the condition is up-to-date with the resource's spec. (AI-inferred)
 	ObservedGeneration any
+	// A machine-readable reason for the condition's last transition. (AI-inferred)
 	Reason any
+	// The status of the condition, indicating whether the condition is True, False, or Unknown. (AI-inferred)
 	Status any
+	// Type of the condition, typically a short name indicating the condition being reported, such as 'PodGroupScheduled' or 'Ready'. (AI-inferred)
 	Type any
 }
 
 type V1alpha3PodGroup_Status_ResourceClaimStatuses struct {
+	// The name of the resource claim, matching the corresponding entry in the pod's resourceClaims field. (AI-inferred)
 	Name any
+	// The name of the Kubernetes ResourceClaim object that this status entry corresponds to. (AI-inferred)
 	ResourceClaimName any
 }
 
@@ -139,149 +164,149 @@ type V1alpha3PodGroup_Status struct {
 }
 
 var V1alpha3PodGroup_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var V1alpha3PodGroup_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1alpha3PodGroup_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: V1alpha3PodGroup_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: V1alpha3PodGroup_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   V1alpha3PodGroup_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   V1alpha3PodGroup_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1alpha3PodGroup_Spec_DisruptionModeFields = ubx.FieldMap{
-		"All": ubx.FieldSpec{WireName: "all"},
-		"Single": ubx.FieldSpec{WireName: "single"},
-	}
+	"All":    ubx.FieldSpec{WireName: "all"},
+	"Single": ubx.FieldSpec{WireName: "single"},
+}
 
 var V1alpha3PodGroup_Spec_ResourceClaimsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceClaimName": ubx.FieldSpec{WireName: "resource_claim_name"},
-		"ResourceClaimTemplateName": ubx.FieldSpec{WireName: "resource_claim_template_name"},
-	}
+	"Name":                      ubx.FieldSpec{WireName: "name"},
+	"ResourceClaimName":         ubx.FieldSpec{WireName: "resource_claim_name"},
+	"ResourceClaimTemplateName": ubx.FieldSpec{WireName: "resource_claim_template_name"},
+}
 
 var V1alpha3PodGroup_Spec_SchedulingConstraints_TopologyFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+}
 
 var V1alpha3PodGroup_Spec_SchedulingConstraintsFields = ubx.FieldMap{
-		"Topology": ubx.FieldSpec{
-			WireName: "topology",
-			Kind: "list",
-			Fields: V1alpha3PodGroup_Spec_SchedulingConstraints_TopologyFields,
-		},
-	}
+	"Topology": ubx.FieldSpec{
+		WireName: "topology",
+		Kind:     "list",
+		Fields:   V1alpha3PodGroup_Spec_SchedulingConstraints_TopologyFields,
+	},
+}
 
 var V1alpha3PodGroup_Spec_SchedulingPolicy_GangFields = ubx.FieldMap{
-		"MinCount": ubx.FieldSpec{WireName: "min_count"},
-	}
+	"MinCount": ubx.FieldSpec{WireName: "min_count"},
+}
 
 var V1alpha3PodGroup_Spec_SchedulingPolicyFields = ubx.FieldMap{
-		"Basic": ubx.FieldSpec{WireName: "basic"},
-		"Gang": ubx.FieldSpec{
-			WireName: "gang",
-			Kind: "object",
-			Fields: V1alpha3PodGroup_Spec_SchedulingPolicy_GangFields,
-		},
-	}
+	"Basic": ubx.FieldSpec{WireName: "basic"},
+	"Gang": ubx.FieldSpec{
+		WireName: "gang",
+		Kind:     "object",
+		Fields:   V1alpha3PodGroup_Spec_SchedulingPolicy_GangFields,
+	},
+}
 
 var V1alpha3PodGroup_Spec_WorkloadRefFields = ubx.FieldMap{
-		"TemplateName": ubx.FieldSpec{WireName: "template_name"},
-		"WorkloadName": ubx.FieldSpec{WireName: "workload_name"},
-	}
+	"TemplateName": ubx.FieldSpec{WireName: "template_name"},
+	"WorkloadName": ubx.FieldSpec{WireName: "workload_name"},
+}
 
 var V1alpha3PodGroup_SpecFields = ubx.FieldMap{
-		"DisruptionMode": ubx.FieldSpec{
-			WireName: "disruption_mode",
-			Kind: "object",
-			Fields: V1alpha3PodGroup_Spec_DisruptionModeFields,
-		},
-		"ParentCompositePodGroupName": ubx.FieldSpec{WireName: "parent_composite_pod_group_name"},
-		"PreemptionPolicy": ubx.FieldSpec{WireName: "preemption_policy"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"PriorityClassName": ubx.FieldSpec{WireName: "priority_class_name"},
-		"ResourceClaims": ubx.FieldSpec{
-			WireName: "resource_claims",
-			Kind: "list",
-			Fields: V1alpha3PodGroup_Spec_ResourceClaimsFields,
-		},
-		"SchedulingConstraints": ubx.FieldSpec{
-			WireName: "scheduling_constraints",
-			Kind: "object",
-			Fields: V1alpha3PodGroup_Spec_SchedulingConstraintsFields,
-		},
-		"SchedulingPolicy": ubx.FieldSpec{
-			WireName: "scheduling_policy",
-			Kind: "object",
-			Fields: V1alpha3PodGroup_Spec_SchedulingPolicyFields,
-		},
-		"WorkloadRef": ubx.FieldSpec{
-			WireName: "workload_ref",
-			Kind: "object",
-			Fields: V1alpha3PodGroup_Spec_WorkloadRefFields,
-		},
-	}
+	"DisruptionMode": ubx.FieldSpec{
+		WireName: "disruption_mode",
+		Kind:     "object",
+		Fields:   V1alpha3PodGroup_Spec_DisruptionModeFields,
+	},
+	"ParentCompositePodGroupName": ubx.FieldSpec{WireName: "parent_composite_pod_group_name"},
+	"PreemptionPolicy":            ubx.FieldSpec{WireName: "preemption_policy"},
+	"Priority":                    ubx.FieldSpec{WireName: "priority"},
+	"PriorityClassName":           ubx.FieldSpec{WireName: "priority_class_name"},
+	"ResourceClaims": ubx.FieldSpec{
+		WireName: "resource_claims",
+		Kind:     "list",
+		Fields:   V1alpha3PodGroup_Spec_ResourceClaimsFields,
+	},
+	"SchedulingConstraints": ubx.FieldSpec{
+		WireName: "scheduling_constraints",
+		Kind:     "object",
+		Fields:   V1alpha3PodGroup_Spec_SchedulingConstraintsFields,
+	},
+	"SchedulingPolicy": ubx.FieldSpec{
+		WireName: "scheduling_policy",
+		Kind:     "object",
+		Fields:   V1alpha3PodGroup_Spec_SchedulingPolicyFields,
+	},
+	"WorkloadRef": ubx.FieldSpec{
+		WireName: "workload_ref",
+		Kind:     "object",
+		Fields:   V1alpha3PodGroup_Spec_WorkloadRefFields,
+	},
+}
 
 var V1alpha3PodGroup_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alpha3PodGroup_Status_ResourceClaimStatusesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceClaimName": ubx.FieldSpec{WireName: "resource_claim_name"},
-	}
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"ResourceClaimName": ubx.FieldSpec{WireName: "resource_claim_name"},
+}
 
 var V1alpha3PodGroup_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: V1alpha3PodGroup_Status_ConditionsFields,
-		},
-		"ResourceClaimStatuses": ubx.FieldSpec{
-			WireName: "resource_claim_statuses",
-			Kind: "list",
-			Fields: V1alpha3PodGroup_Status_ResourceClaimStatusesFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   V1alpha3PodGroup_Status_ConditionsFields,
+	},
+	"ResourceClaimStatuses": ubx.FieldSpec{
+		WireName: "resource_claim_statuses",
+		Kind:     "list",
+		Fields:   V1alpha3PodGroup_Status_ResourceClaimStatusesFields,
+	},
+}
 
 type V1alpha3PodGroupConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -321,23 +346,23 @@ var V1alpha3PodGroup = ubx.ResourceBinding{
 	WireType: "kubernetes_scheduling_v1alpha3_pod_group",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: V1alpha3PodGroup_MetadataFields,
+			Kind:     "object",
+			Fields:   V1alpha3PodGroup_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: V1alpha3PodGroup_SpecFields,
+			Kind:     "object",
+			Fields:   V1alpha3PodGroup_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: V1alpha3PodGroup_StatusFields,
+			Kind:     "object",
+			Fields:   V1alpha3PodGroup_StatusFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

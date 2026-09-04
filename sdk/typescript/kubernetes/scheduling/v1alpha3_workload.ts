@@ -2,21 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1alpha3Workload_Metadata_ManagedFields {
+  /** The API version of the resource to which these managed fields apply. For example, 'v1' or 'batch/v1'. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** The type of fields managed by this entry, indicating the versioned format (e.g., FieldsV1). (AI-inferred) */
   fieldsType?: string | Computed<string>;
+  /** fieldsV1 stores the set of fields that a manager owns, represented as a JSON object where keys are field paths and values indicate ownership. (AI-inferred) */
   fieldsV1?: unknown | Computed<unknown>;
+  /** The name of the component (e.g., kubectl, a controller) that owns this managed field entry. (AI-inferred) */
   manager?: string | Computed<string>;
+  /** Indicates the type of operation that led to this managed field entry, with allowed values 'Apply' and 'Update'. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** The subresource, such as status, that this managed field entry applies to. An empty string indicates the main resource. (AI-inferred) */
   subresource?: string | Computed<string>;
+  /** The timestamp of when this managed fields entry was added or updated, in RFC3339 format. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
 export interface V1alpha3Workload_Metadata_OwnerReferences {
+  /** apiVersion is the API version of the referent (the owner object being referenced). (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** If true, and if the owner has the 'foregroundDeletion' finalizer, the owner cannot be deleted from the key-value store until this dependent is deleted. This blocks the owner's deletion until the resource is removed, protecting against premature garbage collection. (AI-inferred) */
   blockOwnerDeletion?: boolean | Computed<boolean>;
+  /** Indicates whether the referenced object is the managing controller of the workload. This helps Kubernetes determine which owner is responsible for managing and garbage-collecting the dependent resource. (AI-inferred) */
   controller?: boolean | Computed<boolean>;
+  /** The kind (resource type) of the owner object, such as 'Deployment' or 'ReplicaSet'. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The name of the owner object that this reference points to. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The UID of the owner object referenced by this owner reference. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 
@@ -57,62 +70,92 @@ export interface V1alpha3Workload_Spec_CompositePodGroupTemplates_CompositePodGr
 }
 
 export interface V1alpha3Workload_Spec_CompositePodGroupTemplates_DisruptionMode {
+  /** Real settings for treating the WHOLE group as disrupted the moment any single member pod is evicted or preempted. (AI-inferred) */
   all?: unknown | Computed<unknown>;
+  /** Real settings for treating only the specific evicted or preempted member as disrupted, not the group as a whole. (AI-inferred) */
   single?: unknown | Computed<unknown>;
 }
 
 export interface V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_ResourceClaims {
+  /** Name uniquely identifies this resource claim inside the pod. It must be used when generating the corresponding ResourceClaim object's name. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The name of the ResourceClaim that the pod references, used for Kubernetes dynamic resource allocation (DRA). (AI-inferred) */
   resourceClaimName?: string | Computed<string>;
+  /** The name of the ResourceClaimTemplate that defines the resource claim to be allocated for this pod. This references a Kubernetes ResourceClaimTemplate to provide the claim. (AI-inferred) */
   resourceClaimTemplateName?: string | Computed<string>;
 }
 
 export interface V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingConstraints_Topology {
+  /** The topology key that defines the domain for this scheduling constraint, such as a well-known Kubernetes label like `kubernetes.io/hostname` or `topology.kubernetes.io/zone`. (AI-inferred) */
   key?: string | Computed<string>;
 }
 
 export interface V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingConstraints {
+  /** The real node-label key naming the topology domain (e.g. a rack or a zone) this pod group's own members must be co-located within. (AI-inferred) */
   topology?: V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingConstraints_Topology[] | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingConstraints_Topology[]>;
 }
 
 export interface V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingPolicy_Gang {
+  /** The minimum number of pods in the gang that must be successfully scheduled for the gang to be considered fulfilled. Gang scheduling will only proceed if at least this many pods can be scheduled together. (AI-inferred) */
   minCount?: number | Computed<number>;
 }
 
 export interface V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingPolicy {
+  /** The real, basic gang-scheduling policy shape -- how many of this group's own pods must be schedulable together before any of them are bound. (AI-inferred) */
   basic?: unknown | Computed<unknown>;
+  /** Specifies gang scheduling configuration for the pod group, ensuring that all member pods are scheduled together as a unit. (AI-inferred) */
   gang?: V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingPolicy_Gang | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingPolicy_Gang>;
 }
 
 export interface V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates {
+  /** How the scheduler treats this PodGroup as a unit under preemption -- whether losing any member counts as disrupting the whole group, or only losing all of them does. (AI-inferred) */
   disruptionMode?: V1alpha3Workload_Spec_CompositePodGroupTemplates_DisruptionMode | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_DisruptionMode>;
+  /** The real name this pod-group template is identified by within its own parent Workload. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Determines whether pods in this pod group can preempt lower-priority pods. Allowed values are Never and PreemptLowerPriority. (AI-inferred) */
   preemptionPolicy?: string | Computed<string>;
+  /** The real scheduling priority this pod group's own generated PodGroup is created with. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** The name of the PriorityClass to apply to the pod. This sets the pod's priority level, influencing scheduling and preemption behavior. (AI-inferred) */
   priorityClassName?: string | Computed<string>;
+  /** List of resource claims to associate with the pod group template. Each entry defines a named reference to a ResourceClaim or ResourceClaimTemplate, enabling dynamic resource allocation for containers in the pod (as used by Kubernetes PodSpec resourceClaims). (AI-inferred) */
   resourceClaims?: V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_ResourceClaims[] | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_ResourceClaims[]>;
+  /** Real, placement-affecting constraints (like a required topology domain) the scheduler must honor when placing this pod group's own member pods. (AI-inferred) */
   schedulingConstraints?: V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingConstraints | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingConstraints>;
+  /** The real gang-scheduling policy (e.g. an all-or-nothing minimum count) this pod group's own generated PodGroup enforces. (AI-inferred) */
   schedulingPolicy?: V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingPolicy | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingPolicy>;
 }
 
 export interface V1alpha3Workload_Spec_CompositePodGroupTemplates_SchedulingPolicy_Gang {
+  /** The minimum number of pod groups that must be co-scheduled for the gang scheduling policy to be satisfied. This value sets the required lower bound on the number of groups that must be available before the workload is admitted. (AI-inferred) */
   minGroupCount?: number | Computed<number>;
 }
 
 export interface V1alpha3Workload_Spec_CompositePodGroupTemplates_SchedulingPolicy {
+  /** The real, basic gang-scheduling policy shape -- how many of this group's own pods must be schedulable together before any of them are bound. (AI-inferred) */
   basic?: unknown | Computed<unknown>;
+  /** Defines the gang scheduling policy for the composite pod group, ensuring that all pods in the group are scheduled together or not at all. (AI-inferred) */
   gang?: V1alpha3Workload_Spec_CompositePodGroupTemplates_SchedulingPolicy_Gang | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_SchedulingPolicy_Gang>;
 }
 
 export interface V1alpha3Workload_Spec_CompositePodGroupTemplates {
+  /** Real, nested CompositePodGroupTemplates -- lets a multi-tier workload (e.g. a training job's own leader and worker roles) express its own real scheduling hierarchy as a tree, not just a flat list. (AI-inferred) */
   compositePodGroupTemplates?: V1alpha3Workload_Spec_CompositePodGroupTemplates_CompositePodGroupTemplates[] | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_CompositePodGroupTemplates[]>;
+  /** How the scheduler treats this composite group as a unit under preemption -- whether losing any member counts as disrupting the whole group, or only losing all of them does. (AI-inferred) */
   disruptionMode?: V1alpha3Workload_Spec_CompositePodGroupTemplates_DisruptionMode | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_DisruptionMode>;
+  /** The real name this pod-group template is identified by within its own parent Workload. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The list of pod group templates that define the individual pod groups contained in this composite pod group template. (AI-inferred) */
   podGroupTemplates?: V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates[] | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates[]>;
+  /** Real settings controlling whether and how this composite pod group's own members can preempt other, lower-priority workloads to get scheduled. (AI-inferred) */
   preemptionPolicy?: string | Computed<string>;
+  /** The real scheduling priority this composite pod group's own generated PodGroup is created with. (AI-inferred) */
   priority?: number | Computed<number>;
+  /** The name of the Kubernetes PriorityClass that determines the scheduling priority for pods created from this composite pod group template. Must match an existing PriorityClass in the cluster. (AI-inferred) */
   priorityClassName?: string | Computed<string>;
+  /** Real, placement-affecting constraints (like a required topology domain) the scheduler must honor when placing this composite pod group's own member pods. (AI-inferred) */
   schedulingConstraints?: V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingConstraints | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingConstraints>;
+  /** The real gang-scheduling policy (e.g. an all-or-nothing minimum count) this composite pod group's own generated PodGroup enforces. (AI-inferred) */
   schedulingPolicy?: V1alpha3Workload_Spec_CompositePodGroupTemplates_SchedulingPolicy | Computed<V1alpha3Workload_Spec_CompositePodGroupTemplates_SchedulingPolicy>;
 }
 

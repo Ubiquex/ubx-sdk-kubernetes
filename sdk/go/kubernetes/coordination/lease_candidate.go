@@ -4,34 +4,34 @@ package coordination
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LeaseCandidate_Metadata_ManagedFields struct {
-	// The API version of the resource that the manager used to manage the field. This is part of the managed fields metadata for the Kubernetes object. (AI-inferred)
+	// The API version used to manage the fields in this managedFields entry. (AI-inferred)
 	ApiVersion any
-	// The type of fields stored in this managedFields entry. In Kubernetes, the only supported value is 'FieldsV1', which indicates the fields are stored in the FieldsV1 format. (AI-inferred)
+	// The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
 	FieldsType any
-	// fields_v1 is a JSON representation of the managed fields. It stores the set of fields that are owned by the manager, including their current values, used for conflict resolution during updates. (AI-inferred)
+	// fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
 	FieldsV1 any
-	// The name of the manager (user or system) that last applied this field set. (AI-inferred)
+	// The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
 	Manager any
-	// The operation that was performed on the managed field, such as 'Apply', 'Update', or 'Delete'. (AI-inferred)
+	// Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
 	Operation any
-	// The subresource of the resource that these managed fields apply to, such as 'status' or an empty string for the main resource. (AI-inferred)
+	// The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
 	Subresource any
-	// Time is the timestamp of when the managed fields entry was added. It records when the object was last modified by the manager. (AI-inferred)
+	// Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
 	Time any
 }
 
 type LeaseCandidate_Metadata_OwnerReferences struct {
-	// The API version of the referent resource. This identifies the Kubernetes API version of the owner object. (AI-inferred)
+	// The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
 	ApiVersion any
-	// If true, blocks deletion of the owner object until this dependent resource is removed. This field is part of the OwnerReference in Kubernetes metadata and is used to prevent the owner from being deleted while this dependent exists. (AI-inferred)
+	// If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
 	BlockOwnerDeletion any
-	// If true, this reference points to the managing controller. (AI-inferred)
+	// Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
 	Controller any
-	// The kind of the referenced owner object, e.g., 'Deployment' or 'ReplicaSet'. It identifies the Kubernetes resource type of the owner. (AI-inferred)
+	// The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
 	Kind any
-	// The name of the referenced Kubernetes object, used to identify the exact owner resource in the OwnerReference. (AI-inferred)
+	// The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
 	Name any
-	// The UID of the object that this owner reference points to. This uniquely identifies the referenced object within its API group and resource type. (AI-inferred)
+	// UID of the referenced owner object. (AI-inferred)
 	Uid any
 }
 
@@ -84,58 +84,58 @@ type LeaseCandidate_Spec struct {
 }
 
 var LeaseCandidate_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var LeaseCandidate_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var LeaseCandidate_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: LeaseCandidate_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: LeaseCandidate_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   LeaseCandidate_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   LeaseCandidate_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var LeaseCandidate_SpecFields = ubx.FieldMap{
-		"BinaryVersion": ubx.FieldSpec{WireName: "binary_version"},
-		"EmulationVersion": ubx.FieldSpec{WireName: "emulation_version"},
-		"LeaseName": ubx.FieldSpec{WireName: "lease_name"},
-		"PingTime": ubx.FieldSpec{WireName: "ping_time"},
-		"RenewTime": ubx.FieldSpec{WireName: "renew_time"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-	}
+	"BinaryVersion":    ubx.FieldSpec{WireName: "binary_version"},
+	"EmulationVersion": ubx.FieldSpec{WireName: "emulation_version"},
+	"LeaseName":        ubx.FieldSpec{WireName: "lease_name"},
+	"PingTime":         ubx.FieldSpec{WireName: "ping_time"},
+	"RenewTime":        ubx.FieldSpec{WireName: "renew_time"},
+	"Strategy":         ubx.FieldSpec{WireName: "strategy"},
+}
 
 type LeaseCandidateConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -171,18 +171,18 @@ var LeaseCandidate = ubx.ResourceBinding{
 	WireType: "kubernetes_coordination_lease_candidate",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: LeaseCandidate_MetadataFields,
+			Kind:     "object",
+			Fields:   LeaseCandidate_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: LeaseCandidate_SpecFields,
+			Kind:     "object",
+			Fields:   LeaseCandidate_SpecFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

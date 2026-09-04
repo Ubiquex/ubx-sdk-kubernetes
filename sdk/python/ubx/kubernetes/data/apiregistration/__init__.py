@@ -5,4 +5,3 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .apiservice import Apiservice, ApiserviceConfig
-from .apiservice_list import ApiserviceList, ApiserviceListConfig

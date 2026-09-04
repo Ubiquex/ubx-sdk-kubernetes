@@ -2,21 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1alpha2LeaseCandidate_Metadata_ManagedFields {
+  /** The API version of the resource that the manager used to manage the field. This is part of the managed fields metadata for the Kubernetes object. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** The type of fields stored in this managedFields entry. In Kubernetes, the only supported value is 'FieldsV1', which indicates the fields are stored in the FieldsV1 format. (AI-inferred) */
   fieldsType?: string | Computed<string>;
+  /** fields_v1 is a JSON representation of the managed fields. It stores the set of fields that are owned by the manager, including their current values, used for conflict resolution during updates. (AI-inferred) */
   fieldsV1?: unknown | Computed<unknown>;
+  /** The name of the manager (user or system) that last applied this field set. (AI-inferred) */
   manager?: string | Computed<string>;
+  /** The operation that was performed on the managed field, such as 'Apply', 'Update', or 'Delete'. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** The subresource of the resource that these managed fields apply to, such as 'status' or an empty string for the main resource. (AI-inferred) */
   subresource?: string | Computed<string>;
+  /** Time is the timestamp of when the managed fields entry was added. It records when the object was last modified by the manager. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
 export interface V1alpha2LeaseCandidate_Metadata_OwnerReferences {
+  /** The API version of the referent resource. This identifies the Kubernetes API version of the owner object. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** If true, blocks deletion of the owner object until this dependent resource is removed. This field is part of the OwnerReference in Kubernetes metadata and is used to prevent the owner from being deleted while this dependent exists. (AI-inferred) */
   blockOwnerDeletion?: boolean | Computed<boolean>;
+  /** If true, this reference points to the managing controller. (AI-inferred) */
   controller?: boolean | Computed<boolean>;
+  /** The kind of the referenced owner object, e.g., 'Deployment' or 'ReplicaSet'. It identifies the Kubernetes resource type of the owner. (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The name of the referenced Kubernetes object, used to identify the exact owner resource in the OwnerReference. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The UID of the object that this owner reference points to. This uniquely identifies the referenced object within its API group and resource type. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 

@@ -12,7 +12,7 @@ class ValidatingWebhookConfiguration_Metadata_ManagedFields:
     api_version: Any = None
     # The type of the managed fields, typically 'FieldsV1'. (AI-inferred)
     fields_type: Any = None
-    # The managed fields for this entry, represented as a FieldsV1 object—a JSON structure (trie-like) encoding the set of fields owned by the manager. (AI-inferred)
+    # The managed fields for this entry, represented as a FieldsV1 object -- a JSON structure (trie-like) encoding the set of fields owned by the manager. (AI-inferred)
     fields_v1: Any = None
     # The name of the entity (such as a controller, operator, or user) that manages the fields listed in this managedFields entry. (AI-inferred)
     manager: Any = None

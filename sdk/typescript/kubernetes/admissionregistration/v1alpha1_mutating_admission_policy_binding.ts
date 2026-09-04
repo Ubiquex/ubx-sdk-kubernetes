@@ -2,21 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1alpha1MutatingAdmissionPolicyBinding_Metadata_ManagedFields {
+  /** The API version used to manage the fields in this managedFields entry. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred) */
   fieldsType?: string | Computed<string>;
+  /** fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred) */
   fieldsV1?: unknown | Computed<unknown>;
+  /** The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred) */
   manager?: string | Computed<string>;
+  /** Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred) */
   subresource?: string | Computed<string>;
+  /** Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
 export interface V1alpha1MutatingAdmissionPolicyBinding_Metadata_OwnerReferences {
+  /** The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred) */
   blockOwnerDeletion?: boolean | Computed<boolean>;
+  /** Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred) */
   controller?: boolean | Computed<boolean>;
+  /** The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred) */
   name?: string | Computed<string>;
+  /** UID of the referenced owner object. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 
@@ -54,17 +67,26 @@ export interface V1alpha1MutatingAdmissionPolicyBinding_Metadata {
 }
 
 export interface V1alpha1MutatingAdmissionPolicyBinding_Spec_MatchResources_ExcludeResourceRules {
+  /** Specifies the API groups to which the exclusion rule applies. Use an empty string for the core group, a group name like `apps`, or `*` to match all API groups. (AI-inferred) */
   apiGroups?: string[] | Computed<string[]>;
+  /** A list of API versions to match for this exclude rule. For example, 'v1' or 'apps/v1'. The rule applies only to resources with the listed API versions. (AI-inferred) */
   apiVersions?: string[] | Computed<string[]>;
+  /** Specifies the operations to which this rule applies, such as CREATE, UPDATE, DELETE, and CONNECT. The wildcard '*' matches all operations. In this context (exclude_resource_rules), these operations are excluded from matching. (AI-inferred) */
   operations?: string[] | Computed<string[]>;
+  /** A list of specific resource names to which this rule applies. If empty, the rule applies to all resource names. (AI-inferred) */
   resourceNames?: string[] | Computed<string[]>;
+  /** The list of Kubernetes resource types (e.g., 'pods', 'deployments') that are excluded from matching. This field specifies the resources to which this exclude rule applies. (AI-inferred) */
   resources?: string[] | Computed<string[]>;
+  /** Scope of the resources to which this rule applies. In Kubernetes, this can be 'Cluster', 'Namespaced', or '*' to match all scopes. If omitted, the rule applies to all scopes. (AI-inferred) */
   scope?: string | Computed<string>;
 }
 
 export interface V1alpha1MutatingAdmissionPolicyBinding_Spec_MatchResources_NamespaceSelector_MatchExpressions {
+  /** key is the label key that the selector applies to. (AI-inferred) */
   key?: string | Computed<string>;
+  /** The operator represents the relationship between the key and a set of values in a label selector requirement. Allowed values are In, NotIn, Exists, and DoesNotExist. (AI-inferred) */
   operator?: string | Computed<string>;
+  /** A list of string values that the label key must match when the operator is In or NotIn. This field must be empty for the Exists and DoesNotExist operators. (AI-inferred) */
   values?: string[] | Computed<string[]>;
 }
 

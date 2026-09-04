@@ -2,21 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta2ResourceClaimTemplate_Metadata_ManagedFields {
+  /** The API version used to manage the fields in this managedFields entry. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred) */
   fieldsType?: string | Computed<string>;
+  /** fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred) */
   fieldsV1?: unknown | Computed<unknown>;
+  /** The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred) */
   manager?: string | Computed<string>;
+  /** Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred) */
   subresource?: string | Computed<string>;
+  /** Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Metadata_OwnerReferences {
+  /** The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred) */
   blockOwnerDeletion?: boolean | Computed<boolean>;
+  /** Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred) */
   controller?: boolean | Computed<boolean>;
+  /** The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred) */
   name?: string | Computed<string>;
+  /** UID of the referenced owner object. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 
@@ -54,71 +67,107 @@ export interface V1beta2ResourceClaimTemplate_Metadata {
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Config_Opaque {
+  /** The real DRA driver name this opaque configuration is meant for. (AI-inferred) */
   driver?: string | Computed<string>;
+  /** The real, driver-specific configuration payload itself, an arbitrary object only that driver interprets. (AI-inferred) */
   parameters?: unknown | Computed<unknown>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Config {
+  /** Real, driver-specific configuration data, opaque to Kubernetes itself and interpreted only by the DRA driver that owns the matched device. (AI-inferred) */
   opaque?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Config_Opaque | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Config_Opaque>;
+  /** Which of this claim's own device requests this configuration applies to -- every request, when left empty. (AI-inferred) */
   requests?: string[] | Computed<string[]>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Constraints {
+  /** Requires every device satisfying this constraint to report a different value for this real, named device attribute. (AI-inferred) */
   distinctAttribute?: string | Computed<string>;
+  /** Requires every device satisfying this constraint to report the identical value for this real, named device attribute. (AI-inferred) */
   matchAttribute?: string | Computed<string>;
+  /** Which of this claim's own device requests this constraint applies across -- every request, when left empty. (AI-inferred) */
   requests?: string[] | Computed<string[]>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Capacity {
+  /** The real, minimum quantity requested for each named device capacity. (AI-inferred) */
   requests?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributes {
+  /** The real CEL expression computing this derived attribute's own value from the allocated device. (AI-inferred) */
   expression?: string | Computed<string>;
+  /** The real name this derived attribute is exposed under on the resulting allocation. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors_Cel {
+  /** The real CEL expression text, evaluated with a `device` variable exposing the candidate device's own attributes and capacities; must return a boolean. (AI-inferred) */
   expression?: string | Computed<string>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors {
+  /** The real CEL expression this selector evaluates against each candidate device. (AI-inferred) */
   cel?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors_Cel | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors_Cel>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Tolerations {
+  /** The real taint effect (matching a device taint's own effect) this toleration applies to. (AI-inferred) */
   effect?: string | Computed<string>;
+  /** The real taint key this toleration matches against. (AI-inferred) */
   key?: string | Computed<string>;
+  /** Whether this toleration matches by exact key/value (`Equal`) or by key presence alone (`Exists`). (AI-inferred) */
   operator?: string | Computed<string>;
+  /** How long, in seconds, an already-allocated device may keep being used after a matching taint appears, before it's treated as no longer tolerated. (AI-inferred) */
   tolerationSeconds?: number | Computed<number>;
+  /** The real taint value this toleration matches against, when its own operator is `Equal`. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly {
+  /** Whether this exact device request grants the claim admin-level access to the device, bypassing the device's own normal usage restrictions -- only usable in a namespace explicitly labeled to allow it. (AI-inferred) */
   adminAccess?: boolean | Computed<boolean>;
+  /** How many devices this exact device request needs -- `ExactCount` for a specific `count`, or `All` for every device matching its selectors. (AI-inferred) */
   allocationMode?: string | Computed<string>;
+  /** Real, minimum capacity requirements (per named capacity) this exact device request's own matched device must satisfy. (AI-inferred) */
   capacity?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Capacity | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Capacity>;
+  /** How many devices to allocate, when this exact device request's own `allocation_mode` is `ExactCount`. (AI-inferred) */
   count?: number | Computed<number>;
+  /** Real, computed attributes (a CEL expression evaluated per allocated device) exposed on the resulting allocation, not present on the device itself. (AI-inferred) */
   derivedAttributes?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributes[] | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributes[]>;
+  /** The real DeviceClass this exact device request selects candidate devices from. (AI-inferred) */
   deviceClassName?: string | Computed<string>;
+  /** Real CEL device selectors every candidate device must satisfy to match this exact device request. (AI-inferred) */
   selectors?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors[] | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors[]>;
+  /** Real tolerations letting this exact device request's own matched devices carry a taint the request is willing to accept. (AI-inferred) */
   tolerations?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Tolerations[] | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Tolerations[]>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable {
+  /** How many devices this prioritized sub-request needs -- `ExactCount` for a specific `count`, or `All` for every device matching its selectors. (AI-inferred) */
   allocationMode?: string | Computed<string>;
+  /** Real, minimum capacity requirements (per named capacity) this prioritized sub-request's own matched device must satisfy. (AI-inferred) */
   capacity?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Capacity | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Capacity>;
+  /** How many devices to allocate, when this prioritized sub-request's own `allocation_mode` is `ExactCount`. (AI-inferred) */
   count?: number | Computed<number>;
+  /** Real, computed attributes (a CEL expression evaluated per allocated device) exposed on the resulting allocation, not present on the device itself. (AI-inferred) */
   derivedAttributes?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributes[] | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributes[]>;
+  /** The real DeviceClass this prioritized sub-request selects candidate devices from. (AI-inferred) */
   deviceClassName?: string | Computed<string>;
+  /** The real name identifying this alternative sub-request within its own parent request's `first_available` list -- what an allocation result reports as actually satisfied. (AI-inferred) */
   name?: string | Computed<string>;
+  /** Real CEL device selectors every candidate device must satisfy to match this prioritized sub-request. (AI-inferred) */
   selectors?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors[] | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors[]>;
+  /** Real tolerations letting this prioritized sub-request's own matched devices carry a taint the request is willing to accept. (AI-inferred) */
   tolerations?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Tolerations[] | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Tolerations[]>;
 }
 
 export interface V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests {
+  /** This request's own exact device selection (a device class, count, and selectors) when it isn't expressed as a `first_available` prioritized list instead. (AI-inferred) */
   exactly?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly>;
+  /** A real, ordered list of alternative sub-requests -- the driver tries each in turn and satisfies the request with the first one it can actually allocate. (AI-inferred) */
   firstAvailable?: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable[] | Computed<V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable[]>;
+  /** The real name identifying this device request within the claim, referenced by its own `config`/`constraints` and by a pod's own container volume mounts. (AI-inferred) */
   name?: string | Computed<string>;
 }
 

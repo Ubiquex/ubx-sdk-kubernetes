@@ -1,0 +1,10 @@
+{
+  "source": "local-checkout",
+  "repo_path": "/Users/roozbeh/Ubiquex/ubx-provider-dynamic",
+  "commit": "dba9b68a8e62998398b14b04df33457eb7bc5769",
+  "dirty": false,
+  "unpushed": false,
+  "schema_pinned": true,
+  "schema_source": "ubiquex/kubernetes",
+  "schema_version": "3.0.1"
+}

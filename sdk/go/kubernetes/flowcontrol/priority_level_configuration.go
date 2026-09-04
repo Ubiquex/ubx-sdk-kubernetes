@@ -120,7 +120,7 @@ type PriorityLevelConfiguration_Status_Conditions struct {
 	Reason any
 	// The status of the condition, one of True, False, or Unknown. (AI-inferred)
 	Status any
-	Type any
+	Type   any
 }
 
 type PriorityLevelConfiguration_Status struct {
@@ -129,110 +129,110 @@ type PriorityLevelConfiguration_Status struct {
 }
 
 var PriorityLevelConfiguration_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var PriorityLevelConfiguration_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var PriorityLevelConfiguration_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: PriorityLevelConfiguration_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: PriorityLevelConfiguration_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   PriorityLevelConfiguration_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   PriorityLevelConfiguration_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var PriorityLevelConfiguration_Spec_ExemptFields = ubx.FieldMap{
-		"LendablePercent": ubx.FieldSpec{WireName: "lendable_percent"},
-		"NominalConcurrencyShares": ubx.FieldSpec{WireName: "nominal_concurrency_shares"},
-	}
+	"LendablePercent":          ubx.FieldSpec{WireName: "lendable_percent"},
+	"NominalConcurrencyShares": ubx.FieldSpec{WireName: "nominal_concurrency_shares"},
+}
 
 var PriorityLevelConfiguration_Spec_Limited_LimitResponse_QueuingFields = ubx.FieldMap{
-		"HandSize": ubx.FieldSpec{WireName: "hand_size"},
-		"QueueLengthLimit": ubx.FieldSpec{WireName: "queue_length_limit"},
-		"Queues": ubx.FieldSpec{WireName: "queues"},
-	}
+	"HandSize":         ubx.FieldSpec{WireName: "hand_size"},
+	"QueueLengthLimit": ubx.FieldSpec{WireName: "queue_length_limit"},
+	"Queues":           ubx.FieldSpec{WireName: "queues"},
+}
 
 var PriorityLevelConfiguration_Spec_Limited_LimitResponseFields = ubx.FieldMap{
-		"Queuing": ubx.FieldSpec{
-			WireName: "queuing",
-			Kind: "object",
-			Fields: PriorityLevelConfiguration_Spec_Limited_LimitResponse_QueuingFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Queuing": ubx.FieldSpec{
+		WireName: "queuing",
+		Kind:     "object",
+		Fields:   PriorityLevelConfiguration_Spec_Limited_LimitResponse_QueuingFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var PriorityLevelConfiguration_Spec_LimitedFields = ubx.FieldMap{
-		"BorrowingLimitPercent": ubx.FieldSpec{WireName: "borrowing_limit_percent"},
-		"LendablePercent": ubx.FieldSpec{WireName: "lendable_percent"},
-		"LimitResponse": ubx.FieldSpec{
-			WireName: "limit_response",
-			Kind: "object",
-			Fields: PriorityLevelConfiguration_Spec_Limited_LimitResponseFields,
-		},
-		"NominalConcurrencyShares": ubx.FieldSpec{WireName: "nominal_concurrency_shares"},
-	}
+	"BorrowingLimitPercent": ubx.FieldSpec{WireName: "borrowing_limit_percent"},
+	"LendablePercent":       ubx.FieldSpec{WireName: "lendable_percent"},
+	"LimitResponse": ubx.FieldSpec{
+		WireName: "limit_response",
+		Kind:     "object",
+		Fields:   PriorityLevelConfiguration_Spec_Limited_LimitResponseFields,
+	},
+	"NominalConcurrencyShares": ubx.FieldSpec{WireName: "nominal_concurrency_shares"},
+}
 
 var PriorityLevelConfiguration_SpecFields = ubx.FieldMap{
-		"Exempt": ubx.FieldSpec{
-			WireName: "exempt",
-			Kind: "object",
-			Fields: PriorityLevelConfiguration_Spec_ExemptFields,
-		},
-		"Limited": ubx.FieldSpec{
-			WireName: "limited",
-			Kind: "object",
-			Fields: PriorityLevelConfiguration_Spec_LimitedFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Exempt": ubx.FieldSpec{
+		WireName: "exempt",
+		Kind:     "object",
+		Fields:   PriorityLevelConfiguration_Spec_ExemptFields,
+	},
+	"Limited": ubx.FieldSpec{
+		WireName: "limited",
+		Kind:     "object",
+		Fields:   PriorityLevelConfiguration_Spec_LimitedFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var PriorityLevelConfiguration_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var PriorityLevelConfiguration_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: PriorityLevelConfiguration_Status_ConditionsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   PriorityLevelConfiguration_Status_ConditionsFields,
+	},
+}
 
 type PriorityLevelConfigurationConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -268,21 +268,21 @@ var PriorityLevelConfiguration = ubx.ResourceBinding{
 	WireType: "kubernetes_flowcontrol_priority_level_configuration",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: PriorityLevelConfiguration_MetadataFields,
+			Kind:     "object",
+			Fields:   PriorityLevelConfiguration_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: PriorityLevelConfiguration_SpecFields,
+			Kind:     "object",
+			Fields:   PriorityLevelConfiguration_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: PriorityLevelConfiguration_StatusFields,
+			Kind:     "object",
+			Fields:   PriorityLevelConfiguration_StatusFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

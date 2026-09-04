@@ -101,72 +101,72 @@ type Csidriver_Spec struct {
 }
 
 var Csidriver_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var Csidriver_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var Csidriver_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: Csidriver_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: Csidriver_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   Csidriver_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   Csidriver_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var Csidriver_Spec_TokenRequestsFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ExpirationSeconds": ubx.FieldSpec{WireName: "expiration_seconds"},
-	}
+	"Audience":          ubx.FieldSpec{WireName: "audience"},
+	"ExpirationSeconds": ubx.FieldSpec{WireName: "expiration_seconds"},
+}
 
 var Csidriver_SpecFields = ubx.FieldMap{
-		"AttachRequired": ubx.FieldSpec{WireName: "attach_required"},
-		"FsGroupPolicy": ubx.FieldSpec{WireName: "fs_group_policy"},
-		"NodeAllocatableUpdatePeriodSeconds": ubx.FieldSpec{WireName: "node_allocatable_update_period_seconds"},
-		"PodInfoOnMount": ubx.FieldSpec{WireName: "pod_info_on_mount"},
-		"PreventPodSchedulingIfMissing": ubx.FieldSpec{WireName: "prevent_pod_scheduling_if_missing"},
-		"RequiresRepublish": ubx.FieldSpec{WireName: "requires_republish"},
-		"SeLinuxMount": ubx.FieldSpec{WireName: "se_linux_mount"},
-		"ServiceAccountTokenInSecrets": ubx.FieldSpec{WireName: "service_account_token_in_secrets"},
-		"StorageCapacity": ubx.FieldSpec{WireName: "storage_capacity"},
-		"TokenRequests": ubx.FieldSpec{
-			WireName: "token_requests",
-			Kind: "list",
-			Fields: Csidriver_Spec_TokenRequestsFields,
-		},
-		"VolumeLifecycleModes": ubx.FieldSpec{WireName: "volume_lifecycle_modes"},
-	}
+	"AttachRequired":                     ubx.FieldSpec{WireName: "attach_required"},
+	"FsGroupPolicy":                      ubx.FieldSpec{WireName: "fs_group_policy"},
+	"NodeAllocatableUpdatePeriodSeconds": ubx.FieldSpec{WireName: "node_allocatable_update_period_seconds"},
+	"PodInfoOnMount":                     ubx.FieldSpec{WireName: "pod_info_on_mount"},
+	"PreventPodSchedulingIfMissing":      ubx.FieldSpec{WireName: "prevent_pod_scheduling_if_missing"},
+	"RequiresRepublish":                  ubx.FieldSpec{WireName: "requires_republish"},
+	"SeLinuxMount":                       ubx.FieldSpec{WireName: "se_linux_mount"},
+	"ServiceAccountTokenInSecrets":       ubx.FieldSpec{WireName: "service_account_token_in_secrets"},
+	"StorageCapacity":                    ubx.FieldSpec{WireName: "storage_capacity"},
+	"TokenRequests": ubx.FieldSpec{
+		WireName: "token_requests",
+		Kind:     "list",
+		Fields:   Csidriver_Spec_TokenRequestsFields,
+	},
+	"VolumeLifecycleModes": ubx.FieldSpec{WireName: "volume_lifecycle_modes"},
+}
 
 type CsidriverConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -198,16 +198,16 @@ var Csidriver = ubx.ResourceBinding{
 	WireType: "kubernetes_storage_csidriver",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: Csidriver_MetadataFields,
+			Kind:     "object",
+			Fields:   Csidriver_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: Csidriver_SpecFields,
+			Kind:     "object",
+			Fields:   Csidriver_SpecFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

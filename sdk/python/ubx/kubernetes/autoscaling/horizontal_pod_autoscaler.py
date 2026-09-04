@@ -8,34 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Metadata_ManagedFields:
-    # APIVersion defines the version of this resource that this field set applies to. The format is 'group/version' just like the top-level Version field. It is necessary to clear the entry in the managed fields when the API version changes. (AI-inferred)
+    # The API version used to manage the fields in this managedFields entry. (AI-inferred)
     api_version: Any = None
-    # FieldsType is the discriminator for the different fields format and version. There is only one possible value: FieldsV1. (AI-inferred)
+    # The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
     fields_type: Any = None
-    # fieldsV1 stores the fields managed by the manager as a JSON object, representing the managed fields in a structured format. (AI-inferred)
+    # fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
     fields_v1: Any = None
-    # The name of the controller, actor, or client that last applied or owns the fields in this managed fields entry. (AI-inferred)
+    # The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
     manager: Any = None
-    # The operation type that was performed on the resource, such as 'Apply' or 'Update'. This is part of a managed field entry in metadata. (AI-inferred)
+    # Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
     operation: Any = None
-    # The subresource this managed fields entry applies to, such as 'scale' for the scale subresource. Empty string indicates the main resource. (AI-inferred)
+    # The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
     subresource: Any = None
-    # The timestamp at which the ManagedFields entry was processed. This is represented as a string in RFC3339 format. (AI-inferred)
+    # Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Metadata_OwnerReferences:
-    # The API version of the owner resource. (AI-inferred)
+    # The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
     api_version: Any = None
-    # If true, and the owner has the 'foregroundDeletion' finalizer, the owner cannot be deleted until this reference is removed. Defaults to false. (AI-inferred)
+    # If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
     block_owner_deletion: Any = None
-    # A boolean flag indicating whether the referenced object is the managing controller for the owner reference. When true, this owner reference is a controller. (AI-inferred)
+    # Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
     controller: Any = None
-    # Kind of the referenced owner object. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds (AI-inferred)
+    # The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
     kind: Any = None
-    # The name of the owner object referenced by this owner reference. It must match the name of the resource in the same API group and kind. (AI-inferred)
+    # The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
     name: Any = None
-    # The UID of the referenced owner object. (AI-inferred)
+    # UID of the referenced owner object. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass
@@ -73,8 +73,11 @@ class HorizontalPodAutoscaler_Metadata:
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Behavior_ScaleDown_Policies:
+    # The window, in seconds, this scaling policy's own rate limit is measured over. (AI-inferred)
     period_seconds: Any = None
+    # Whether this scaling policy's own limit is a `Pods` count or a `Percent` of current replicas. (AI-inferred)
     type: Any = None
+    # The real limit this scaling policy enforces -- a pod count or a percentage, per its own `type`. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -97,62 +100,92 @@ class HorizontalPodAutoscaler_Spec_Behavior:
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Metrics_ContainerResource_Target:
+    # The real target average CPU/memory utilization, as a percentage of the resource's own requested value, this metric tries to maintain. (AI-inferred)
     average_utilization: Any = None
+    # The real target average value (not a percentage) this metric tries to maintain across all matched pods. (AI-inferred)
     average_value: Any = None
+    # Whether this MetricTarget expresses its own real target as `Utilization`, `Value`, or `AverageValue`. (AI-inferred)
     type: Any = None
+    # The real target value (not averaged, not a percentage) this metric tries to maintain. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Metrics_ContainerResource:
+    # The specific container within the target pod this container-resource metric is measured against. (AI-inferred)
     container: Any = None
+    # The real resource name (`cpu`, `memory`) this container-resource metric tracks. (AI-inferred)
     name: Any = None
+    # The real target value the HorizontalPodAutoscaler tries to keep this container-resource metric at. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Metrics_External_Metric_Selector_MatchExpressions:
+    # The real label key this selector requirement matches against. (AI-inferred)
     key: Any = None
+    # The real comparison (`In`, `NotIn`, `Exists`, `DoesNotExist`) this selector requirement applies to `key`/`values`. (AI-inferred)
     operator: Any = None
+    # The real set of values `key` is compared against, per this requirement's own `operator`. (AI-inferred)
     values: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Metrics_External_Metric_Selector:
+    # Real, set-based selector requirements (each a key/operator/values triple) this label selector also requires, alongside any `match_labels`. (AI-inferred)
     match_expressions: Any = None
+    # A real map of label key/value pairs every match must carry exactly, ANDed together with any `match_expressions`. (AI-inferred)
     match_labels: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Metrics_External_Metric:
+    # The real, named metric identifier a monitoring pipeline reports under. (AI-inferred)
     name: Any = None
+    # A real label selector narrowing which real time series this metric name resolves to, when more than one could match. (AI-inferred)
     selector: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Metrics_External:
+    # The real, named external metric (outside the cluster, from a monitoring system) this HorizontalPodAutoscaler scales on. (AI-inferred)
     metric: Any = None
+    # The real target value the HorizontalPodAutoscaler tries to keep this external metric at. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Metrics_Object_DescribedObject:
+    # The API version of the real Kubernetes object this object metric is measured against. (AI-inferred)
     api_version: Any = None
+    # The real Kind of the Kubernetes object this object metric is measured against. (AI-inferred)
     kind: Any = None
+    # The real name of the Kubernetes object this object metric is measured against. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Metrics_Object:
+    # The real Kubernetes object (by apiVersion, kind, and name) this object metric is measured against, when it isn't the scaled resource itself. (AI-inferred)
     described_object: Any = None
+    # The real, named metric this object metric measures on the object named in `described_object`. (AI-inferred)
     metric: Any = None
+    # The real target value the HorizontalPodAutoscaler tries to keep this object metric at. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Metrics_Resource:
+    # The real resource name (`cpu`, `memory`) this resource metric tracks. (AI-inferred)
     name: Any = None
+    # The real target value the HorizontalPodAutoscaler tries to keep this resource metric at. (AI-inferred)
     target: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Spec_Metrics:
+    # This MetricSpec entry's own real container-resource metric source, present when `type` is `ContainerResource`. (AI-inferred)
     container_resource: Any = None
+    # This MetricSpec entry's own real external metric source, present when `type` is `External`. (AI-inferred)
     external: Any = None
+    # This MetricSpec entry's own real object metric source, present when `type` is `Object`. (AI-inferred)
     object: Any = None
+    # This MetricSpec entry's own real pods metric source, present when `type` is `Pods`. (AI-inferred)
     pods: Any = None
+    # This MetricSpec entry's own real resource metric source, present when `type` is `Resource`. (AI-inferred)
     resource: Any = None
+    # Which real metric source (`Resource`, `ContainerResource`, `Pods`, `Object`, or `External`) this MetricSpec entry describes. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -170,48 +203,73 @@ class HorizontalPodAutoscaler_Spec:
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Status_Conditions:
+    # The last time the condition transitioned from one status to another. This should reflect when the underlying condition changed, typically represented as a timestamp string. (AI-inferred)
     last_transition_time: Any = None
+    # A human-readable message that provides additional details about the current condition, including information about the last transition. (AI-inferred)
     message: Any = None
+    # The generation of the ValidatingAdmissionPolicy that was last processed by the controller, used to determine whether the status reflects the latest spec. (AI-inferred)
     observed_generation: Any = None
+    # A machine-readable, CamelCase reason for the condition's last transition. This provides a stable identifier for the condition state, complementing the human-readable message. (AI-inferred)
     reason: Any = None
+    # The status of the condition, indicating whether the condition is True, False, or Unknown. (AI-inferred)
     status: Any = None
+    # Type is a string that identifies the condition and distinguishes it from other conditions in the status.conditions list. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource_Current:
+    # The real, currently-observed average CPU/memory utilization, as last read by the autoscaler. (AI-inferred)
     average_utilization: Any = None
+    # The real, currently-observed average value of this metric, as last read by the autoscaler. (AI-inferred)
     average_value: Any = None
+    # The real, currently-observed value of this metric, as last read by the autoscaler. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Status_CurrentMetrics_ContainerResource:
+    # The specific container within the target pod this container-resource metric is measured against. (AI-inferred)
     container: Any = None
+    # The real, currently-observed value of this container-resource metric, as last read by the autoscaler. (AI-inferred)
     current: Any = None
+    # The real resource name (`cpu`, `memory`) this container-resource metric tracks. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Status_CurrentMetrics_External:
+    # The real, currently-observed value of this external metric, as last read by the autoscaler. (AI-inferred)
     current: Any = None
+    # The real, named external metric (outside the cluster, from a monitoring system) this HorizontalPodAutoscaler scales on. (AI-inferred)
     metric: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Status_CurrentMetrics_Object:
+    # The real, currently-observed value of this object metric, as last read by the autoscaler. (AI-inferred)
     current: Any = None
+    # The real Kubernetes object (by apiVersion, kind, and name) this object metric is measured against, when it isn't the scaled resource itself. (AI-inferred)
     described_object: Any = None
+    # The real, named metric this object metric measures on the object named in `described_object`. (AI-inferred)
     metric: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Status_CurrentMetrics_Resource:
+    # The real, currently-observed value of this resource metric, as last read by the autoscaler. (AI-inferred)
     current: Any = None
+    # The real resource name (`cpu`, `memory`) this resource metric tracks. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class HorizontalPodAutoscaler_Status_CurrentMetrics:
+    # This observed MetricStatus entry's own real container-resource metric, present when `type` is `ContainerResource`. (AI-inferred)
     container_resource: Any = None
+    # This observed MetricStatus entry's own real external metric, present when `type` is `External`. (AI-inferred)
     external: Any = None
+    # This observed MetricStatus entry's own real object metric, present when `type` is `Object`. (AI-inferred)
     object: Any = None
+    # This observed MetricStatus entry's own real pods metric, present when `type` is `Pods`. (AI-inferred)
     pods: Any = None
+    # This observed MetricStatus entry's own real resource metric, present when `type` is `Resource`. (AI-inferred)
     resource: Any = None
+    # Which real metric source (`Resource`, `ContainerResource`, `Pods`, `Object`, or `External`) this observed metric entry describes. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass

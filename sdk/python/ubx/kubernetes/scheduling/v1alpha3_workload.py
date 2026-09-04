@@ -8,21 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1alpha3Workload_Metadata_ManagedFields:
+    # The API version of the resource to which these managed fields apply. For example, 'v1' or 'batch/v1'. (AI-inferred)
     api_version: Any = None
+    # The type of fields managed by this entry, indicating the versioned format (e.g., FieldsV1). (AI-inferred)
     fields_type: Any = None
+    # fieldsV1 stores the set of fields that a manager owns, represented as a JSON object where keys are field paths and values indicate ownership. (AI-inferred)
     fields_v1: Any = None
+    # The name of the component (e.g., kubectl, a controller) that owns this managed field entry. (AI-inferred)
     manager: Any = None
+    # Indicates the type of operation that led to this managed field entry, with allowed values 'Apply' and 'Update'. (AI-inferred)
     operation: Any = None
+    # The subresource, such as status, that this managed field entry applies to. An empty string indicates the main resource. (AI-inferred)
     subresource: Any = None
+    # The timestamp of when this managed fields entry was added or updated, in RFC3339 format. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class V1alpha3Workload_Metadata_OwnerReferences:
+    # apiVersion is the API version of the referent (the owner object being referenced). (AI-inferred)
     api_version: Any = None
+    # If true, and if the owner has the 'foregroundDeletion' finalizer, the owner cannot be deleted from the key-value store until this dependent is deleted. This blocks the owner's deletion until the resource is removed, protecting against premature garbage collection. (AI-inferred)
     block_owner_deletion: Any = None
+    # Indicates whether the referenced object is the managing controller of the workload. This helps Kubernetes determine which owner is responsible for managing and garbage-collecting the dependent resource. (AI-inferred)
     controller: Any = None
+    # The kind (resource type) of the owner object, such as 'Deployment' or 'ReplicaSet'. (AI-inferred)
     kind: Any = None
+    # The name of the owner object that this reference points to. (AI-inferred)
     name: Any = None
+    # The UID of the owner object referenced by this owner reference. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass
@@ -64,62 +77,92 @@ class V1alpha3Workload_Spec_CompositePodGroupTemplates_CompositePodGroupTemplate
 
 @dataclasses.dataclass
 class V1alpha3Workload_Spec_CompositePodGroupTemplates_DisruptionMode:
+    # Real settings for treating the WHOLE group as disrupted the moment any single member pod is evicted or preempted. (AI-inferred)
     all: Any = None
+    # Real settings for treating only the specific evicted or preempted member as disrupted, not the group as a whole. (AI-inferred)
     single: Any = None
 
 @dataclasses.dataclass
 class V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_ResourceClaims:
+    # Name uniquely identifies this resource claim inside the pod. It must be used when generating the corresponding ResourceClaim object's name. (AI-inferred)
     name: Any = None
+    # The name of the ResourceClaim that the pod references, used for Kubernetes dynamic resource allocation (DRA). (AI-inferred)
     resource_claim_name: Any = None
+    # The name of the ResourceClaimTemplate that defines the resource claim to be allocated for this pod. This references a Kubernetes ResourceClaimTemplate to provide the claim. (AI-inferred)
     resource_claim_template_name: Any = None
 
 @dataclasses.dataclass
 class V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingConstraints_Topology:
+    # The topology key that defines the domain for this scheduling constraint, such as a well-known Kubernetes label like `kubernetes.io/hostname` or `topology.kubernetes.io/zone`. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
 class V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingConstraints:
+    # The real node-label key naming the topology domain (e.g. a rack or a zone) this pod group's own members must be co-located within. (AI-inferred)
     topology: Any = None
 
 @dataclasses.dataclass
 class V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingPolicy_Gang:
+    # The minimum number of pods in the gang that must be successfully scheduled for the gang to be considered fulfilled. Gang scheduling will only proceed if at least this many pods can be scheduled together. (AI-inferred)
     min_count: Any = None
 
 @dataclasses.dataclass
 class V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates_SchedulingPolicy:
+    # The real, basic gang-scheduling policy shape -- how many of this group's own pods must be schedulable together before any of them are bound. (AI-inferred)
     basic: Any = None
+    # Specifies gang scheduling configuration for the pod group, ensuring that all member pods are scheduled together as a unit. (AI-inferred)
     gang: Any = None
 
 @dataclasses.dataclass
 class V1alpha3Workload_Spec_CompositePodGroupTemplates_PodGroupTemplates:
+    # How the scheduler treats this PodGroup as a unit under preemption -- whether losing any member counts as disrupting the whole group, or only losing all of them does. (AI-inferred)
     disruption_mode: Any = None
+    # The real name this pod-group template is identified by within its own parent Workload. (AI-inferred)
     name: Any = None
+    # Determines whether pods in this pod group can preempt lower-priority pods. Allowed values are Never and PreemptLowerPriority. (AI-inferred)
     preemption_policy: Any = None
+    # The real scheduling priority this pod group's own generated PodGroup is created with. (AI-inferred)
     priority: Any = None
+    # The name of the PriorityClass to apply to the pod. This sets the pod's priority level, influencing scheduling and preemption behavior. (AI-inferred)
     priority_class_name: Any = None
+    # List of resource claims to associate with the pod group template. Each entry defines a named reference to a ResourceClaim or ResourceClaimTemplate, enabling dynamic resource allocation for containers in the pod (as used by Kubernetes PodSpec resourceClaims). (AI-inferred)
     resource_claims: Any = None
+    # Real, placement-affecting constraints (like a required topology domain) the scheduler must honor when placing this pod group's own member pods. (AI-inferred)
     scheduling_constraints: Any = None
+    # The real gang-scheduling policy (e.g. an all-or-nothing minimum count) this pod group's own generated PodGroup enforces. (AI-inferred)
     scheduling_policy: Any = None
 
 @dataclasses.dataclass
 class V1alpha3Workload_Spec_CompositePodGroupTemplates_SchedulingPolicy_Gang:
+    # The minimum number of pod groups that must be co-scheduled for the gang scheduling policy to be satisfied. This value sets the required lower bound on the number of groups that must be available before the workload is admitted. (AI-inferred)
     min_group_count: Any = None
 
 @dataclasses.dataclass
 class V1alpha3Workload_Spec_CompositePodGroupTemplates_SchedulingPolicy:
+    # The real, basic gang-scheduling policy shape -- how many of this group's own pods must be schedulable together before any of them are bound. (AI-inferred)
     basic: Any = None
+    # Defines the gang scheduling policy for the composite pod group, ensuring that all pods in the group are scheduled together or not at all. (AI-inferred)
     gang: Any = None
 
 @dataclasses.dataclass
 class V1alpha3Workload_Spec_CompositePodGroupTemplates:
+    # Real, nested CompositePodGroupTemplates -- lets a multi-tier workload (e.g. a training job's own leader and worker roles) express its own real scheduling hierarchy as a tree, not just a flat list. (AI-inferred)
     composite_pod_group_templates: Any = None
+    # How the scheduler treats this composite group as a unit under preemption -- whether losing any member counts as disrupting the whole group, or only losing all of them does. (AI-inferred)
     disruption_mode: Any = None
+    # The real name this pod-group template is identified by within its own parent Workload. (AI-inferred)
     name: Any = None
+    # The list of pod group templates that define the individual pod groups contained in this composite pod group template. (AI-inferred)
     pod_group_templates: Any = None
+    # Real settings controlling whether and how this composite pod group's own members can preempt other, lower-priority workloads to get scheduled. (AI-inferred)
     preemption_policy: Any = None
+    # The real scheduling priority this composite pod group's own generated PodGroup is created with. (AI-inferred)
     priority: Any = None
+    # The name of the Kubernetes PriorityClass that determines the scheduling priority for pods created from this composite pod group template. Must match an existing PriorityClass in the cluster. (AI-inferred)
     priority_class_name: Any = None
+    # Real, placement-affecting constraints (like a required topology domain) the scheduler must honor when placing this composite pod group's own member pods. (AI-inferred)
     scheduling_constraints: Any = None
+    # The real gang-scheduling policy (e.g. an all-or-nothing minimum count) this composite pod group's own generated PodGroup enforces. (AI-inferred)
     scheduling_policy: Any = None
 
 @dataclasses.dataclass

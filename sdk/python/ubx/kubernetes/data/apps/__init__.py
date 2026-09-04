@@ -4,12 +4,8 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
-from .controller_revision_list import ControllerRevisionList, ControllerRevisionListConfig
+from .controller_revision import ControllerRevision, ControllerRevisionConfig
 from .daemon_set import DaemonSet, DaemonSetConfig
-from .daemon_set_list import DaemonSetList, DaemonSetListConfig
 from .deployment import Deployment, DeploymentConfig
-from .deployment_list import DeploymentList, DeploymentListConfig
 from .replica_set import ReplicaSet, ReplicaSetConfig
-from .replica_set_list import ReplicaSetList, ReplicaSetListConfig
 from .stateful_set import StatefulSet, StatefulSetConfig
-from .stateful_set_list import StatefulSetList, StatefulSetListConfig

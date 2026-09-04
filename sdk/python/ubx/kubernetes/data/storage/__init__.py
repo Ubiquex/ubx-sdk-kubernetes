@@ -4,11 +4,9 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
-from .csidriver_list import CsidriverList, CsidriverListConfig
+from .csidriver import Csidriver, CsidriverConfig
 from .csinode import Csinode, CsinodeConfig
-from .csinode_list import CsinodeList, CsinodeListConfig
-from .csistorage_capacity_list import CsistorageCapacityList, CsistorageCapacityListConfig
-from .storage_class_list import StorageClassList, StorageClassListConfig
+from .csistorage_capacity import CsistorageCapacity, CsistorageCapacityConfig
+from .storage_class import StorageClass, StorageClassConfig
 from .volume_attachment import VolumeAttachment, VolumeAttachmentConfig
-from .volume_attachment_list import VolumeAttachmentList, VolumeAttachmentListConfig
-from .volume_attributes_class_list import VolumeAttributesClassList, VolumeAttributesClassListConfig
+from .volume_attributes_class import VolumeAttributesClass, VolumeAttributesClassConfig

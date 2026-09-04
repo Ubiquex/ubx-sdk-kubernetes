@@ -4,21 +4,34 @@ package resource
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta2ResourceClaimTemplate_Metadata_ManagedFields struct {
+	// The API version used to manage the fields in this managedFields entry. (AI-inferred)
 	ApiVersion any
+	// The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
 	FieldsType any
+	// fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
 	FieldsV1 any
+	// The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
 	Manager any
+	// Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
 	Operation any
+	// The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
 	Subresource any
+	// Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
 	Time any
 }
 
 type V1beta2ResourceClaimTemplate_Metadata_OwnerReferences struct {
+	// The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
 	ApiVersion any
+	// If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
 	BlockOwnerDeletion any
+	// Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
 	Controller any
+	// The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
 	Kind any
+	// The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
 	Name any
+	// UID of the referenced owner object. (AI-inferred)
 	Uid any
 }
 
@@ -56,71 +69,107 @@ type V1beta2ResourceClaimTemplate_Metadata struct {
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Config_Opaque struct {
+	// The real DRA driver name this opaque configuration is meant for. (AI-inferred)
 	Driver any
+	// The real, driver-specific configuration payload itself, an arbitrary object only that driver interprets. (AI-inferred)
 	Parameters any
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Config struct {
+	// Real, driver-specific configuration data, opaque to Kubernetes itself and interpreted only by the DRA driver that owns the matched device. (AI-inferred)
 	Opaque any
+	// Which of this claim's own device requests this configuration applies to -- every request, when left empty. (AI-inferred)
 	Requests any
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Constraints struct {
+	// Requires every device satisfying this constraint to report a different value for this real, named device attribute. (AI-inferred)
 	DistinctAttribute any
+	// Requires every device satisfying this constraint to report the identical value for this real, named device attribute. (AI-inferred)
 	MatchAttribute any
+	// Which of this claim's own device requests this constraint applies across -- every request, when left empty. (AI-inferred)
 	Requests any
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Capacity struct {
+	// The real, minimum quantity requested for each named device capacity. (AI-inferred)
 	Requests any
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributes struct {
+	// The real CEL expression computing this derived attribute's own value from the allocated device. (AI-inferred)
 	Expression any
+	// The real name this derived attribute is exposed under on the resulting allocation. (AI-inferred)
 	Name any
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors_Cel struct {
+	// The real CEL expression text, evaluated with a `device` variable exposing the candidate device's own attributes and capacities; must return a boolean. (AI-inferred)
 	Expression any
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors struct {
+	// The real CEL expression this selector evaluates against each candidate device. (AI-inferred)
 	Cel any
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Tolerations struct {
+	// The real taint effect (matching a device taint's own effect) this toleration applies to. (AI-inferred)
 	Effect any
+	// The real taint key this toleration matches against. (AI-inferred)
 	Key any
+	// Whether this toleration matches by exact key/value (`Equal`) or by key presence alone (`Exists`). (AI-inferred)
 	Operator any
+	// How long, in seconds, an already-allocated device may keep being used after a matching taint appears, before it's treated as no longer tolerated. (AI-inferred)
 	TolerationSeconds any
+	// The real taint value this toleration matches against, when its own operator is `Equal`. (AI-inferred)
 	Value any
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly struct {
+	// Whether this exact device request grants the claim admin-level access to the device, bypassing the device's own normal usage restrictions -- only usable in a namespace explicitly labeled to allow it. (AI-inferred)
 	AdminAccess any
+	// How many devices this exact device request needs -- `ExactCount` for a specific `count`, or `All` for every device matching its selectors. (AI-inferred)
 	AllocationMode any
+	// Real, minimum capacity requirements (per named capacity) this exact device request's own matched device must satisfy. (AI-inferred)
 	Capacity any
+	// How many devices to allocate, when this exact device request's own `allocation_mode` is `ExactCount`. (AI-inferred)
 	Count any
+	// Real, computed attributes (a CEL expression evaluated per allocated device) exposed on the resulting allocation, not present on the device itself. (AI-inferred)
 	DerivedAttributes any
+	// The real DeviceClass this exact device request selects candidate devices from. (AI-inferred)
 	DeviceClassName any
+	// Real CEL device selectors every candidate device must satisfy to match this exact device request. (AI-inferred)
 	Selectors any
+	// Real tolerations letting this exact device request's own matched devices carry a taint the request is willing to accept. (AI-inferred)
 	Tolerations any
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable struct {
+	// How many devices this prioritized sub-request needs -- `ExactCount` for a specific `count`, or `All` for every device matching its selectors. (AI-inferred)
 	AllocationMode any
+	// Real, minimum capacity requirements (per named capacity) this prioritized sub-request's own matched device must satisfy. (AI-inferred)
 	Capacity any
+	// How many devices to allocate, when this prioritized sub-request's own `allocation_mode` is `ExactCount`. (AI-inferred)
 	Count any
+	// Real, computed attributes (a CEL expression evaluated per allocated device) exposed on the resulting allocation, not present on the device itself. (AI-inferred)
 	DerivedAttributes any
+	// The real DeviceClass this prioritized sub-request selects candidate devices from. (AI-inferred)
 	DeviceClassName any
+	// The real name identifying this alternative sub-request within its own parent request's `first_available` list -- what an allocation result reports as actually satisfied. (AI-inferred)
 	Name any
+	// Real CEL device selectors every candidate device must satisfy to match this prioritized sub-request. (AI-inferred)
 	Selectors any
+	// Real tolerations letting this prioritized sub-request's own matched devices carry a taint the request is willing to accept. (AI-inferred)
 	Tolerations any
 }
 
 type V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests struct {
+	// This request's own exact device selection (a device class, count, and selectors) when it isn't expressed as a `first_available` prioritized list instead. (AI-inferred)
 	Exactly any
+	// A real, ordered list of alternative sub-requests -- the driver tries each in turn and satisfies the request with the first one it can actually allocate. (AI-inferred)
 	FirstAvailable any
+	// The real name identifying this device request within the claim, referenced by its own `config`/`constraints` and by a pod's own container volume mounts. (AI-inferred)
 	Name any
 }
 
@@ -146,205 +195,205 @@ type V1beta2ResourceClaimTemplate_Spec struct {
 }
 
 var V1beta2ResourceClaimTemplate_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var V1beta2ResourceClaimTemplate_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta2ResourceClaimTemplate_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Config_OpaqueFields = ubx.FieldMap{
-		"Driver": ubx.FieldSpec{WireName: "driver"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"Driver":     ubx.FieldSpec{WireName: "driver"},
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_ConfigFields = ubx.FieldMap{
-		"Opaque": ubx.FieldSpec{
-			WireName: "opaque",
-			Kind: "object",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Config_OpaqueFields,
-		},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"Opaque": ubx.FieldSpec{
+		WireName: "opaque",
+		Kind:     "object",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Config_OpaqueFields,
+	},
+	"Requests": ubx.FieldSpec{WireName: "requests"},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_ConstraintsFields = ubx.FieldMap{
-		"DistinctAttribute": ubx.FieldSpec{WireName: "distinct_attribute"},
-		"MatchAttribute": ubx.FieldSpec{WireName: "match_attribute"},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"DistinctAttribute": ubx.FieldSpec{WireName: "distinct_attribute"},
+	"MatchAttribute":    ubx.FieldSpec{WireName: "match_attribute"},
+	"Requests":          ubx.FieldSpec{WireName: "requests"},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_CapacityFields = ubx.FieldMap{
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"Requests": ubx.FieldSpec{WireName: "requests"},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributesFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors_CelFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_SelectorsFields = ubx.FieldMap{
-		"Cel": ubx.FieldSpec{
-			WireName: "cel",
-			Kind: "object",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors_CelFields,
-		},
-	}
+	"Cel": ubx.FieldSpec{
+		WireName: "cel",
+		Kind:     "object",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_Selectors_CelFields,
+	},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_TolerationsFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"TolerationSeconds": ubx.FieldSpec{WireName: "toleration_seconds"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Effect":            ubx.FieldSpec{WireName: "effect"},
+	"Key":               ubx.FieldSpec{WireName: "key"},
+	"Operator":          ubx.FieldSpec{WireName: "operator"},
+	"TolerationSeconds": ubx.FieldSpec{WireName: "toleration_seconds"},
+	"Value":             ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_ExactlyFields = ubx.FieldMap{
-		"AdminAccess": ubx.FieldSpec{WireName: "admin_access"},
-		"AllocationMode": ubx.FieldSpec{WireName: "allocation_mode"},
-		"Capacity": ubx.FieldSpec{
-			WireName: "capacity",
-			Kind: "object",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_CapacityFields,
-		},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"DerivedAttributes": ubx.FieldSpec{
-			WireName: "derived_attributes",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributesFields,
-		},
-		"DeviceClassName": ubx.FieldSpec{WireName: "device_class_name"},
-		"Selectors": ubx.FieldSpec{
-			WireName: "selectors",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_SelectorsFields,
-		},
-		"Tolerations": ubx.FieldSpec{
-			WireName: "tolerations",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_TolerationsFields,
-		},
-	}
+	"AdminAccess":    ubx.FieldSpec{WireName: "admin_access"},
+	"AllocationMode": ubx.FieldSpec{WireName: "allocation_mode"},
+	"Capacity": ubx.FieldSpec{
+		WireName: "capacity",
+		Kind:     "object",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_CapacityFields,
+	},
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"DerivedAttributes": ubx.FieldSpec{
+		WireName: "derived_attributes",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributesFields,
+	},
+	"DeviceClassName": ubx.FieldSpec{WireName: "device_class_name"},
+	"Selectors": ubx.FieldSpec{
+		WireName: "selectors",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_SelectorsFields,
+	},
+	"Tolerations": ubx.FieldSpec{
+		WireName: "tolerations",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_TolerationsFields,
+	},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailableFields = ubx.FieldMap{
-		"AllocationMode": ubx.FieldSpec{WireName: "allocation_mode"},
-		"Capacity": ubx.FieldSpec{
-			WireName: "capacity",
-			Kind: "object",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_CapacityFields,
-		},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"DerivedAttributes": ubx.FieldSpec{
-			WireName: "derived_attributes",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributesFields,
-		},
-		"DeviceClassName": ubx.FieldSpec{WireName: "device_class_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Selectors": ubx.FieldSpec{
-			WireName: "selectors",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_SelectorsFields,
-		},
-		"Tolerations": ubx.FieldSpec{
-			WireName: "tolerations",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_TolerationsFields,
-		},
-	}
+	"AllocationMode": ubx.FieldSpec{WireName: "allocation_mode"},
+	"Capacity": ubx.FieldSpec{
+		WireName: "capacity",
+		Kind:     "object",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_CapacityFields,
+	},
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"DerivedAttributes": ubx.FieldSpec{
+		WireName: "derived_attributes",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_DerivedAttributesFields,
+	},
+	"DeviceClassName": ubx.FieldSpec{WireName: "device_class_name"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Selectors": ubx.FieldSpec{
+		WireName: "selectors",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_SelectorsFields,
+	},
+	"Tolerations": ubx.FieldSpec{
+		WireName: "tolerations",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_Exactly_TolerationsFields,
+	},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_Devices_RequestsFields = ubx.FieldMap{
-		"Exactly": ubx.FieldSpec{
-			WireName: "exactly",
-			Kind: "object",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_ExactlyFields,
-		},
-		"FirstAvailable": ubx.FieldSpec{
-			WireName: "first_available",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailableFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Exactly": ubx.FieldSpec{
+		WireName: "exactly",
+		Kind:     "object",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_ExactlyFields,
+	},
+	"FirstAvailable": ubx.FieldSpec{
+		WireName: "first_available",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailableFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_Spec_DevicesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_ConfigFields,
-		},
-		"Constraints": ubx.FieldSpec{
-			WireName: "constraints",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_ConstraintsFields,
-		},
-		"Requests": ubx.FieldSpec{
-			WireName: "requests",
-			Kind: "list",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_Devices_RequestsFields,
-		},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_ConfigFields,
+	},
+	"Constraints": ubx.FieldSpec{
+		WireName: "constraints",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_ConstraintsFields,
+	},
+	"Requests": ubx.FieldSpec{
+		WireName: "requests",
+		Kind:     "list",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_Devices_RequestsFields,
+	},
+}
 
 var V1beta2ResourceClaimTemplate_Spec_SpecFields = ubx.FieldMap{
-		"Devices": ubx.FieldSpec{
-			WireName: "devices",
-			Kind: "object",
-			Fields: V1beta2ResourceClaimTemplate_Spec_Spec_DevicesFields,
-		},
-	}
+	"Devices": ubx.FieldSpec{
+		WireName: "devices",
+		Kind:     "object",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_Spec_DevicesFields,
+	},
+}
 
 var V1beta2ResourceClaimTemplate_SpecFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta2ResourceClaimTemplate_MetadataFields,
-		},
-		"Spec": ubx.FieldSpec{
-			WireName: "spec",
-			Kind: "object",
-			Fields: V1beta2ResourceClaimTemplate_Spec_SpecFields,
-		},
-	}
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   V1beta2ResourceClaimTemplate_MetadataFields,
+	},
+	"Spec": ubx.FieldSpec{
+		WireName: "spec",
+		Kind:     "object",
+		Fields:   V1beta2ResourceClaimTemplate_Spec_SpecFields,
+	},
+}
 
 type V1beta2ResourceClaimTemplateConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -380,18 +429,18 @@ var V1beta2ResourceClaimTemplate = ubx.ResourceBinding{
 	WireType: "kubernetes_resource_v1beta2_resource_claim_template",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta2ResourceClaimTemplate_MetadataFields,
+			Kind:     "object",
+			Fields:   V1beta2ResourceClaimTemplate_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: V1beta2ResourceClaimTemplate_SpecFields,
+			Kind:     "object",
+			Fields:   V1beta2ResourceClaimTemplate_SpecFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

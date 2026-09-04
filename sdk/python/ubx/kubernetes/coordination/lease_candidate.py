@@ -8,34 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LeaseCandidate_Metadata_ManagedFields:
-    # The API version of the resource that the manager used to manage the field. This is part of the managed fields metadata for the Kubernetes object. (AI-inferred)
+    # The API version used to manage the fields in this managedFields entry. (AI-inferred)
     api_version: Any = None
-    # The type of fields stored in this managedFields entry. In Kubernetes, the only supported value is 'FieldsV1', which indicates the fields are stored in the FieldsV1 format. (AI-inferred)
+    # The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
     fields_type: Any = None
-    # fields_v1 is a JSON representation of the managed fields. It stores the set of fields that are owned by the manager, including their current values, used for conflict resolution during updates. (AI-inferred)
+    # fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
     fields_v1: Any = None
-    # The name of the manager (user or system) that last applied this field set. (AI-inferred)
+    # The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
     manager: Any = None
-    # The operation that was performed on the managed field, such as 'Apply', 'Update', or 'Delete'. (AI-inferred)
+    # Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
     operation: Any = None
-    # The subresource of the resource that these managed fields apply to, such as 'status' or an empty string for the main resource. (AI-inferred)
+    # The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
     subresource: Any = None
-    # Time is the timestamp of when the managed fields entry was added. It records when the object was last modified by the manager. (AI-inferred)
+    # Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class LeaseCandidate_Metadata_OwnerReferences:
-    # The API version of the referent resource. This identifies the Kubernetes API version of the owner object. (AI-inferred)
+    # The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
     api_version: Any = None
-    # If true, blocks deletion of the owner object until this dependent resource is removed. This field is part of the OwnerReference in Kubernetes metadata and is used to prevent the owner from being deleted while this dependent exists. (AI-inferred)
+    # If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
     block_owner_deletion: Any = None
-    # If true, this reference points to the managing controller. (AI-inferred)
+    # Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
     controller: Any = None
-    # The kind of the referenced owner object, e.g., 'Deployment' or 'ReplicaSet'. It identifies the Kubernetes resource type of the owner. (AI-inferred)
+    # The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
     kind: Any = None
-    # The name of the referenced Kubernetes object, used to identify the exact owner resource in the OwnerReference. (AI-inferred)
+    # The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
     name: Any = None
-    # The UID of the object that this owner reference points to. This uniquely identifies the referenced object within its API group and resource type. (AI-inferred)
+    # UID of the referenced owner object. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass

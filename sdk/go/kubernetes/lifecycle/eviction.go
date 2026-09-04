@@ -96,29 +96,29 @@ type Eviction_Status_Conditions struct {
 	Reason any
 	// The status of the condition, typically one of 'True', 'False', or 'Unknown'. (AI-inferred)
 	Status any
-	Type any
+	Type   any
 }
 
 type Eviction_Status_Requesters struct {
 	Intent any
-	Name any
+	Name   any
 }
 
 type Eviction_Status_Responders struct {
 	// The timestamp (as a string) indicating when the responder completed its lifecycle eviction action. (AI-inferred)
-	CompletionTime any
+	CompletionTime         any
 	ExpectedCompletionTime any
 	// The timestamp of the last heartbeat received from this responder. (AI-inferred)
 	HeartbeatTime any
-	Message any
-	Name any
-	StartTime any
+	Message       any
+	Name          any
+	StartTime     any
 }
 
 type Eviction_Status_TargetResponders struct {
-	Name any
+	Name     any
 	Priority any
-	State any
+	State    any
 }
 
 type Eviction_Status struct {
@@ -135,123 +135,123 @@ type Eviction_Status struct {
 }
 
 var Eviction_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var Eviction_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var Eviction_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: Eviction_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: Eviction_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   Eviction_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   Eviction_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var Eviction_Spec_Target_PodFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Uid":  ubx.FieldSpec{WireName: "uid"},
+}
 
 var Eviction_Spec_TargetFields = ubx.FieldMap{
-		"Pod": ubx.FieldSpec{
-			WireName: "pod",
-			Kind: "object",
-			Fields: Eviction_Spec_Target_PodFields,
-		},
-	}
+	"Pod": ubx.FieldSpec{
+		WireName: "pod",
+		Kind:     "object",
+		Fields:   Eviction_Spec_Target_PodFields,
+	},
+}
 
 var Eviction_SpecFields = ubx.FieldMap{
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: Eviction_Spec_TargetFields,
-		},
-	}
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   Eviction_Spec_TargetFields,
+	},
+}
 
 var Eviction_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var Eviction_Status_RequestersFields = ubx.FieldMap{
-		"Intent": ubx.FieldSpec{WireName: "intent"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Intent": ubx.FieldSpec{WireName: "intent"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
 
 var Eviction_Status_RespondersFields = ubx.FieldMap{
-		"CompletionTime": ubx.FieldSpec{WireName: "completion_time"},
-		"ExpectedCompletionTime": ubx.FieldSpec{WireName: "expected_completion_time"},
-		"HeartbeatTime": ubx.FieldSpec{WireName: "heartbeat_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"CompletionTime":         ubx.FieldSpec{WireName: "completion_time"},
+	"ExpectedCompletionTime": ubx.FieldSpec{WireName: "expected_completion_time"},
+	"HeartbeatTime":          ubx.FieldSpec{WireName: "heartbeat_time"},
+	"Message":                ubx.FieldSpec{WireName: "message"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"StartTime":              ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Eviction_Status_TargetRespondersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+	"State":    ubx.FieldSpec{WireName: "state"},
+}
 
 var Eviction_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: Eviction_Status_ConditionsFields,
-		},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Requesters": ubx.FieldSpec{
-			WireName: "requesters",
-			Kind: "list",
-			Fields: Eviction_Status_RequestersFields,
-		},
-		"Responders": ubx.FieldSpec{
-			WireName: "responders",
-			Kind: "list",
-			Fields: Eviction_Status_RespondersFields,
-		},
-		"TargetResponders": ubx.FieldSpec{
-			WireName: "target_responders",
-			Kind: "list",
-			Fields: Eviction_Status_TargetRespondersFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   Eviction_Status_ConditionsFields,
+	},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"Requesters": ubx.FieldSpec{
+		WireName: "requesters",
+		Kind:     "list",
+		Fields:   Eviction_Status_RequestersFields,
+	},
+	"Responders": ubx.FieldSpec{
+		WireName: "responders",
+		Kind:     "list",
+		Fields:   Eviction_Status_RespondersFields,
+	},
+	"TargetResponders": ubx.FieldSpec{
+		WireName: "target_responders",
+		Kind:     "list",
+		Fields:   Eviction_Status_TargetRespondersFields,
+	},
+}
 
 type EvictionConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -291,23 +291,23 @@ var Eviction = ubx.ResourceBinding{
 	WireType: "kubernetes_lifecycle_eviction",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: Eviction_MetadataFields,
+			Kind:     "object",
+			Fields:   Eviction_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: Eviction_SpecFields,
+			Kind:     "object",
+			Fields:   Eviction_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: Eviction_StatusFields,
+			Kind:     "object",
+			Fields:   Eviction_StatusFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

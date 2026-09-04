@@ -7,7 +7,7 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
-class Service_Metadata_ManagedFields:
+class Service_Items_Metadata_ManagedFields:
     api_version: Any = None
     fields_type: Any = None
     fields_v1: Any = None
@@ -17,7 +17,7 @@ class Service_Metadata_ManagedFields:
     time: Any = None
 
 @dataclasses.dataclass
-class Service_Metadata_OwnerReferences:
+class Service_Items_Metadata_OwnerReferences:
     api_version: Any = None
     block_owner_deletion: Any = None
     controller: Any = None
@@ -26,40 +26,25 @@ class Service_Metadata_OwnerReferences:
     uid: Any = None
 
 @dataclasses.dataclass
-class Service_Metadata:
-    # Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
+class Service_Items_Metadata:
     annotations: Any = None
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
     creation_timestamp: Any = None
-    # Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
     deletion_grace_period_seconds: Any = None
-    # Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
     deletion_timestamp: Any = None
-    # Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
     finalizers: Any = None
-    # GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
     generate_name: Any = None
-    # A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
     generation: Any = None
-    # Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
     labels: Any = None
-    # ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
     managed_fields: Any = None
-    # Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
     name: Any = None
-    # Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
     namespace: Any = None
-    # List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
     owner_references: Any = None
-    # An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
     resource_version: Any = None
-    # Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
     self_link: Any = None
-    # UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
     uid: Any = None
 
 @dataclasses.dataclass
-class Service_Spec_Ports:
+class Service_Items_Spec_Ports:
     app_protocol: Any = None
     name: Any = None
     node_port: Any = None
@@ -68,60 +53,38 @@ class Service_Spec_Ports:
     target_port: Any = None
 
 @dataclasses.dataclass
-class Service_Spec_SessionAffinityConfig_ClientIp:
-    # timeoutSeconds specifies the seconds of ClientIP type session sticky time. The value must be >0 && <=86400(for 1 day) if ServiceAffinity == "ClientIP". Default value is 10800(for 3 hours).
+class Service_Items_Spec_SessionAffinityConfig_ClientIp:
     timeout_seconds: Any = None
 
 @dataclasses.dataclass
-class Service_Spec_SessionAffinityConfig:
-    # ClientIPConfig represents the configurations of Client IP based session affinity.
+class Service_Items_Spec_SessionAffinityConfig:
     client_ip: Any = None
 
 @dataclasses.dataclass
-class Service_Spec:
-    # allocateLoadBalancerNodePorts defines if NodePorts will be automatically allocated for services with type LoadBalancer. Default is "true". It may be set to "false" if the cluster load-balancer does not rely on NodePorts. If the caller requests specific NodePorts (by specifying a value), those requests will be respected, regardless of this field. This field may only be set for services with type LoadBalancer and will be cleared if the type is changed to any other type.
+class Service_Items_Spec:
     allocate_load_balancer_node_ports: Any = None
-    # clusterIP is the IP address of the service and is usually assigned randomly. If an address is specified manually, is in-range (as per system configuration), and is not in use, it will be allocated to the service; otherwise creation of the service will fail. This field may not be changed through updates unless the type field is also being changed to ExternalName (which requires this field to be blank) or the type field is being changed from ExternalName (in which case this field may optionally be specified, as describe above). Valid values are "None", empty string (""), or a valid IP address. Setting this to "None" makes a "headless service" (no virtual IP), which is useful when direct endpoint connections are preferred and proxying is not required. Only applies to types ClusterIP, NodePort, and LoadBalancer. If this field is specified when creating a Service of type ExternalName, creation will fail. This field will be wiped when updating a Service to type ExternalName. More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
     cluster_ip: Any = None
-    # ClusterIPs is a list of IP addresses assigned to this service, and are usually assigned randomly. If an address is specified manually, is in-range (as per system configuration), and is not in use, it will be allocated to the service; otherwise creation of the service will fail. This field may not be changed through updates unless the type field is also being changed to ExternalName (which requires this field to be empty) or the type field is being changed from ExternalName (in which case this field may optionally be specified, as describe above). Valid values are "None", empty string (""), or a valid IP address. Setting this to "None" makes a "headless service" (no virtual IP), which is useful when direct endpoint connections are preferred and proxying is not required. Only applies to types ClusterIP, NodePort, and LoadBalancer. If this field is specified when creating a Service of type ExternalName, creation will fail. This field will be wiped when updating a Service to type ExternalName. If this field is not specified, it will be initialized from the clusterIP field. If this field is specified, clients must ensure that clusterIPs[0] and clusterIP have the same value. This field may hold a maximum of two entries (dual-stack IPs, in either order). These IPs must correspond to the values of the ipFamilies field. Both clusterIPs and ipFamilies are governed by the ipFamilyPolicy field. More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
     cluster_ips: Any = None
-    # externalIPs is a list of IP addresses for which nodes in the cluster will also accept traffic for this service. These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP. A common example is external load-balancers that are not part of the Kubernetes system.
     external_ips: Any = None
-    # externalName is the external reference that discovery mechanisms will return as an alias for this service (e.g. a DNS CNAME record). No proxying will be involved. Must be a lowercase RFC-1123 hostname (https://tools.ietf.org/html/rfc1123) and requires `type` to be "ExternalName".
     external_name: Any = None
-    # externalTrafficPolicy describes how nodes distribute service traffic they receive on one of the Service's "externally-facing" addresses (NodePorts, ExternalIPs, and LoadBalancer IPs). If set to "Local", the proxy will configure the service in a way that assumes that external load balancers will take care of balancing the service traffic between nodes, and so each node will deliver traffic only to the node-local endpoints of the service, without masquerading the client source IP. (Traffic mistakenly sent to a node with no endpoints will be dropped.) The default value, "Cluster", uses the standard behavior of routing to all endpoints evenly (possibly modified by topology and other features). Note that traffic sent to an External IP or LoadBalancer IP from within the cluster will always get "Cluster" semantics, but clients sending to a NodePort from within the cluster may need to take traffic policy into account when picking a node.
     external_traffic_policy: Any = None
-    # healthCheckNodePort specifies the healthcheck nodePort for the service. This only applies when type is set to LoadBalancer and externalTrafficPolicy is set to Local. If a value is specified, is in-range, and is not in use, it will be used. If not specified, a value will be automatically allocated. External systems (e.g. load-balancers) can use this port to determine if a given node holds endpoints for this service or not. If this field is specified when creating a Service which does not need it, creation will fail. This field will be wiped when updating a Service to no longer need it (e.g. changing type). This field cannot be updated once set.
     health_check_node_port: Any = None
-    # InternalTrafficPolicy describes how nodes distribute service traffic they receive on the ClusterIP. If set to "Local", the proxy will assume that pods only want to talk to endpoints of the service on the same node as the pod, dropping the traffic if there are no local endpoints. The default value, "Cluster", uses the standard behavior of routing to all endpoints evenly (possibly modified by topology and other features).
     internal_traffic_policy: Any = None
-    # IPFamilies is a list of IP families (e.g. IPv4, IPv6) assigned to this service. This field is usually assigned automatically based on cluster configuration and the ipFamilyPolicy field. If this field is specified manually, the requested family is available in the cluster, and ipFamilyPolicy allows it, it will be used; otherwise creation of the service will fail. This field is conditionally mutable: it allows for adding or removing a secondary IP family, but it does not allow changing the primary IP family of the Service. Valid values are "IPv4" and "IPv6". This field only applies to Services of types ClusterIP, NodePort, and LoadBalancer, and does apply to "headless" services. This field will be wiped when updating a Service to type ExternalName. This field may hold a maximum of two entries (dual-stack families, in either order). These families must correspond to the values of the clusterIPs field, if specified. Both clusterIPs and ipFamilies are governed by the ipFamilyPolicy field.
     ip_families: Any = None
-    # IPFamilyPolicy represents the dual-stack-ness requested or required by this Service. If there is no value provided, then this field will be set to SingleStack. Services can be "SingleStack" (a single IP family), "PreferDualStack" (two IP families on dual-stack configured clusters or a single IP family on single-stack clusters), or "RequireDualStack" (two IP families on dual-stack configured clusters, otherwise fail). The ipFamilies and clusterIPs fields depend on the value of this field. This field will be wiped when updating a service to type ExternalName.
     ip_family_policy: Any = None
-    # loadBalancerClass is the class of the load balancer implementation this Service belongs to. If specified, the value of this field must be a label-style identifier, with an optional prefix, e.g. "internal-vip" or "example.com/internal-vip". Unprefixed names are reserved for end-users. This field can only be set when the Service type is 'LoadBalancer'. If not set, the default load balancer implementation is used, today this is typically done through the cloud provider integration, but should apply for any default implementation. If set, it is assumed that a load balancer implementation is watching for Services with a matching class. Any default load balancer implementation (e.g. cloud providers) should ignore Services that set this field. This field can only be set when creating or updating a Service to type 'LoadBalancer'. Once set, it can not be changed. This field will be wiped when a service is updated to a non 'LoadBalancer' type.
     load_balancer_class: Any = None
-    # Only applies to Service Type: LoadBalancer. This feature depends on whether the underlying cloud-provider supports specifying the loadBalancerIP when a load balancer is created. This field will be ignored if the cloud-provider does not support the feature. Deprecated: This field was under-specified and its meaning varies across implementations. Using it is non-portable and it may not support dual-stack. Users are encouraged to use implementation-specific annotations when available.
     load_balancer_ip: Any = None
-    # If specified and supported by the platform, this will restrict traffic through the cloud-provider load-balancer will be restricted to the specified client IPs. This field will be ignored if the cloud-provider does not support the feature." More info: https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/
     load_balancer_source_ranges: Any = None
-    # The list of ports that are exposed by this service. More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
     ports: Any = None
-    # publishNotReadyAddresses indicates that any agent which deals with endpoints for this Service should disregard any indications of ready/not-ready. The primary use case for setting this field is for a StatefulSet's Headless Service to propagate SRV DNS records for its Pods for the purpose of peer discovery. The Kubernetes controllers that generate Endpoints and EndpointSlice resources for Services interpret this to mean that all endpoints are considered "ready" even if the Pods themselves are not. Agents which consume only Kubernetes generated endpoints through the Endpoints or EndpointSlice resources can safely assume this behavior.
     publish_not_ready_addresses: Any = None
-    # Route service traffic to pods with label keys and values matching this selector. If empty or not present, the service is assumed to have an external process managing its endpoints, which Kubernetes will not modify. Only applies to types ClusterIP, NodePort, and LoadBalancer. Ignored if type is ExternalName. More info: https://kubernetes.io/docs/concepts/services-networking/service/
     selector: Any = None
-    # Supports "ClientIP" and "None". Used to maintain session affinity. Enable client IP based session affinity. Must be ClientIP or None. Defaults to None. More info: https://kubernetes.io/docs/concepts/services-networking/service/#virtual-ips-and-service-proxies
     session_affinity: Any = None
-    # SessionAffinityConfig represents the configurations of session affinity.
     session_affinity_config: Any = None
-    # TrafficDistribution offers a way to express preferences for how traffic is distributed to Service endpoints. Implementations can use this field as a hint, but are not required to guarantee strict adherence. If the field is not set, the implementation will apply its default routing strategy. If set to "PreferClose", implementations should prioritize endpoints that are in the same zone.
     traffic_distribution: Any = None
-    # type determines how the Service is exposed. Defaults to ClusterIP. Valid options are ExternalName, ClusterIP, NodePort, and LoadBalancer. "ClusterIP" allocates a cluster-internal IP address for load-balancing to endpoints. Endpoints are determined by the selector or if that is not specified, by manual construction of an Endpoints object or EndpointSlice objects. If clusterIP is "None", no virtual IP is allocated and the endpoints are published as a set of endpoints rather than a virtual IP. "NodePort" builds on ClusterIP and allocates a port on every node which routes to the same endpoints as the clusterIP. "LoadBalancer" builds on NodePort and creates an external load-balancer (if supported in the current cloud) which routes to the same endpoints as the clusterIP. "ExternalName" aliases this service to the specified externalName. Several other fields do not apply to ExternalName services. More info: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
     type: Any = None
 
 @dataclasses.dataclass
-class Service_Status_Conditions:
+class Service_Items_Status_Conditions:
     last_transition_time: Any = None
     message: Any = None
     observed_generation: Any = None
@@ -130,49 +93,102 @@ class Service_Status_Conditions:
     type: Any = None
 
 @dataclasses.dataclass
-class Service_Status_LoadBalancer_Ingress_Ports:
+class Service_Items_Status_LoadBalancer_Ingress_Ports:
     error: Any = None
     port: Any = None
     protocol: Any = None
 
 @dataclasses.dataclass
-class Service_Status_LoadBalancer_Ingress:
+class Service_Items_Status_LoadBalancer_Ingress:
     hostname: Any = None
     ip: Any = None
     ip_mode: Any = None
     ports: Any = None
 
 @dataclasses.dataclass
-class Service_Status_LoadBalancer:
-    # Ingress is a list containing ingress points for the load-balancer. Traffic intended for the service should be sent to these ingress points.
+class Service_Items_Status_LoadBalancer:
     ingress: Any = None
 
 @dataclasses.dataclass
-class Service_Status:
-    # Current service state
+class Service_Items_Status:
     conditions: Any = None
-    # LoadBalancerStatus represents the status of a load-balancer.
     load_balancer: Any = None
 
 @dataclasses.dataclass
+class Service_Items:
+    api_version: Any = None
+    kind: Any = None
+    metadata: Any = None
+    spec: Any = None
+    status: Any = None
+
+@dataclasses.dataclass
+class Service_Metadata_ShardInfo:
+    # selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+    selector: Any = None
+
+@dataclasses.dataclass
+class Service_Metadata:
+    # continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+    continue_: Any = None
+    # remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+    remaining_item_count: Any = None
+    # String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+    resource_version: Any = None
+    # Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+    self_link: Any = None
+    # ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+    shard_info: Any = None
+
+@dataclasses.dataclass
 class ServiceConfig:
-    pass
+    allow_watch_bookmarks: Any = None
+    continue_: Any = None
+    field_selector: Any = None
+    label_selector: Any = None
+    limit: Any = None
+    resource_version: Any = None
+    resource_version_match: Any = None
+    send_initial_events: Any = None
+    shard_selector: Any = None
+    timeout_seconds: Any = None
+    watch: Any = None
 
 @dataclasses.dataclass
 class ServiceAttrs:
+    allow_watch_bookmarks: Any = None
     # APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
     api_version: Any = None
+    continue_: Any = None
+    field_selector: Any = None
+    # List of services
+    items: Any = None
     # Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
     kind: Any = None
-    # ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+    label_selector: Any = None
+    limit: Any = None
+    # ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
     metadata: Any = None
-    # ServiceSpec describes the attributes that a user creates on a service.
-    spec: Any = None
-    # ServiceStatus represents the current status of a service.
-    status: Any = None
+    resource_version: Any = None
+    resource_version_match: Any = None
+    send_initial_events: Any = None
+    shard_selector: Any = None
+    timeout_seconds: Any = None
+    watch: Any = None
 
 Service = ubx.DataSourceBinding(
     wire_type="kubernetes_core_service",
     fields={
+        "allow_watch_bookmarks": ubx.FieldSpec(wire_name="allow_watch_bookmarks"),
+        "continue_": ubx.FieldSpec(wire_name="continue"),
+        "field_selector": ubx.FieldSpec(wire_name="field_selector"),
+        "label_selector": ubx.FieldSpec(wire_name="label_selector"),
+        "limit": ubx.FieldSpec(wire_name="limit"),
+        "resource_version": ubx.FieldSpec(wire_name="resource_version"),
+        "resource_version_match": ubx.FieldSpec(wire_name="resource_version_match"),
+        "send_initial_events": ubx.FieldSpec(wire_name="send_initial_events"),
+        "shard_selector": ubx.FieldSpec(wire_name="shard_selector"),
+        "timeout_seconds": ubx.FieldSpec(wire_name="timeout_seconds"),
+        "watch": ubx.FieldSpec(wire_name="watch"),
     },
 )

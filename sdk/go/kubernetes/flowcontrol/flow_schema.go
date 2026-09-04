@@ -155,147 +155,147 @@ type FlowSchema_Status struct {
 }
 
 var FlowSchema_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var FlowSchema_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var FlowSchema_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: FlowSchema_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: FlowSchema_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   FlowSchema_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   FlowSchema_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var FlowSchema_Spec_DistinguisherMethodFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var FlowSchema_Spec_PriorityLevelConfigurationFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var FlowSchema_Spec_Rules_NonResourceRulesFields = ubx.FieldMap{
-		"NonResourceUrls": ubx.FieldSpec{WireName: "non_resource_urls"},
-		"Verbs": ubx.FieldSpec{WireName: "verbs"},
-	}
+	"NonResourceUrls": ubx.FieldSpec{WireName: "non_resource_urls"},
+	"Verbs":           ubx.FieldSpec{WireName: "verbs"},
+}
 
 var FlowSchema_Spec_Rules_ResourceRulesFields = ubx.FieldMap{
-		"ApiGroups": ubx.FieldSpec{WireName: "api_groups"},
-		"ClusterScope": ubx.FieldSpec{WireName: "cluster_scope"},
-		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"Verbs": ubx.FieldSpec{WireName: "verbs"},
-	}
+	"ApiGroups":    ubx.FieldSpec{WireName: "api_groups"},
+	"ClusterScope": ubx.FieldSpec{WireName: "cluster_scope"},
+	"Namespaces":   ubx.FieldSpec{WireName: "namespaces"},
+	"Resources":    ubx.FieldSpec{WireName: "resources"},
+	"Verbs":        ubx.FieldSpec{WireName: "verbs"},
+}
 
 var FlowSchema_Spec_Rules_Subjects_ServiceAccountFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var FlowSchema_Spec_Rules_SubjectsFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{
-			WireName: "group",
-			Kind: "object",
-			Fields: FlowSchema_Spec_PriorityLevelConfigurationFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"ServiceAccount": ubx.FieldSpec{
-			WireName: "service_account",
-			Kind: "object",
-			Fields: FlowSchema_Spec_Rules_Subjects_ServiceAccountFields,
-		},
-		"User": ubx.FieldSpec{
-			WireName: "user",
-			Kind: "object",
-			Fields: FlowSchema_Spec_PriorityLevelConfigurationFields,
-		},
-	}
+	"Group": ubx.FieldSpec{
+		WireName: "group",
+		Kind:     "object",
+		Fields:   FlowSchema_Spec_PriorityLevelConfigurationFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"ServiceAccount": ubx.FieldSpec{
+		WireName: "service_account",
+		Kind:     "object",
+		Fields:   FlowSchema_Spec_Rules_Subjects_ServiceAccountFields,
+	},
+	"User": ubx.FieldSpec{
+		WireName: "user",
+		Kind:     "object",
+		Fields:   FlowSchema_Spec_PriorityLevelConfigurationFields,
+	},
+}
 
 var FlowSchema_Spec_RulesFields = ubx.FieldMap{
-		"NonResourceRules": ubx.FieldSpec{
-			WireName: "non_resource_rules",
-			Kind: "list",
-			Fields: FlowSchema_Spec_Rules_NonResourceRulesFields,
-		},
-		"ResourceRules": ubx.FieldSpec{
-			WireName: "resource_rules",
-			Kind: "list",
-			Fields: FlowSchema_Spec_Rules_ResourceRulesFields,
-		},
-		"Subjects": ubx.FieldSpec{
-			WireName: "subjects",
-			Kind: "list",
-			Fields: FlowSchema_Spec_Rules_SubjectsFields,
-		},
-	}
+	"NonResourceRules": ubx.FieldSpec{
+		WireName: "non_resource_rules",
+		Kind:     "list",
+		Fields:   FlowSchema_Spec_Rules_NonResourceRulesFields,
+	},
+	"ResourceRules": ubx.FieldSpec{
+		WireName: "resource_rules",
+		Kind:     "list",
+		Fields:   FlowSchema_Spec_Rules_ResourceRulesFields,
+	},
+	"Subjects": ubx.FieldSpec{
+		WireName: "subjects",
+		Kind:     "list",
+		Fields:   FlowSchema_Spec_Rules_SubjectsFields,
+	},
+}
 
 var FlowSchema_SpecFields = ubx.FieldMap{
-		"DistinguisherMethod": ubx.FieldSpec{
-			WireName: "distinguisher_method",
-			Kind: "object",
-			Fields: FlowSchema_Spec_DistinguisherMethodFields,
-		},
-		"MatchingPrecedence": ubx.FieldSpec{WireName: "matching_precedence"},
-		"PriorityLevelConfiguration": ubx.FieldSpec{
-			WireName: "priority_level_configuration",
-			Kind: "object",
-			Fields: FlowSchema_Spec_PriorityLevelConfigurationFields,
-		},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: FlowSchema_Spec_RulesFields,
-		},
-	}
+	"DistinguisherMethod": ubx.FieldSpec{
+		WireName: "distinguisher_method",
+		Kind:     "object",
+		Fields:   FlowSchema_Spec_DistinguisherMethodFields,
+	},
+	"MatchingPrecedence": ubx.FieldSpec{WireName: "matching_precedence"},
+	"PriorityLevelConfiguration": ubx.FieldSpec{
+		WireName: "priority_level_configuration",
+		Kind:     "object",
+		Fields:   FlowSchema_Spec_PriorityLevelConfigurationFields,
+	},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   FlowSchema_Spec_RulesFields,
+	},
+}
 
 var FlowSchema_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var FlowSchema_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: FlowSchema_Status_ConditionsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   FlowSchema_Status_ConditionsFields,
+	},
+}
 
 type FlowSchemaConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -331,21 +331,21 @@ var FlowSchema = ubx.ResourceBinding{
 	WireType: "kubernetes_flowcontrol_flow_schema",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: FlowSchema_MetadataFields,
+			Kind:     "object",
+			Fields:   FlowSchema_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: FlowSchema_SpecFields,
+			Kind:     "object",
+			Fields:   FlowSchema_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: FlowSchema_StatusFields,
+			Kind:     "object",
+			Fields:   FlowSchema_StatusFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

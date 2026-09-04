@@ -3,262 +3,277 @@ package apiextensions
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
-type CustomResourceDefinition_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+type CustomResourceDefinition_Items_Metadata_ManagedFields struct {
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
-type CustomResourceDefinition_Metadata_OwnerReferences struct {
-	ApiVersion any
+type CustomResourceDefinition_Items_Metadata_OwnerReferences struct {
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
-type CustomResourceDefinition_Metadata struct {
-	// Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations
-	Annotations any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	CreationTimestamp any
-	// Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+type CustomResourceDefinition_Items_Metadata struct {
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	// Time is a wrapper around time.Time which supports correct marshaling to YAML and JSON. Wrappers are provided for many of the factory methods that the time package offers.
-	DeletionTimestamp any
-	// Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
-	Finalizers any
-	// GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will return a 409. Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
-	GenerateName any
-	// A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
-	Generation any
-	// Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels
-	Labels any
-	// ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
-	ManagedFields any
-	// Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#names
-	Name any
-	// Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces
-	Namespace any
-	// List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
-	OwnerReferences any
-	// An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
-	ResourceVersion any
-	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
-	SelfLink any
-	// UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names#uids
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
-type CustomResourceDefinition_Spec_Conversion_Webhook_ClientConfig_Service struct {
-	// name is the name of the service. Required
-	Name any
-	// namespace is the namespace of the service. Required
+type CustomResourceDefinition_Items_Spec_Conversion_Webhook_ClientConfig_Service struct {
+	Name      any
 	Namespace any
-	// path is an optional URL path at which the webhook will be contacted.
-	Path any
-	// port is an optional service port at which the webhook will be contacted. `port` should be a valid port number (1-65535, inclusive). Defaults to 443 for backward compatibility.
-	Port any
+	Path      any
+	Port      any
 }
 
-type CustomResourceDefinition_Spec_Conversion_Webhook_ClientConfig struct {
-	// caBundle is a PEM encoded CA bundle which will be used to validate the webhook's server certificate. If unspecified, system trust roots on the apiserver are used.
+type CustomResourceDefinition_Items_Spec_Conversion_Webhook_ClientConfig struct {
 	CaBundle any
-	// ServiceReference holds a reference to Service.legacy.k8s.io
-	Service any
-	// url gives the location of the webhook, in standard URL form (`scheme://host:port/path`). Exactly one of `url` or `service` must be specified. The `host` should not refer to a service running in the cluster; use the `service` field instead. The host might be resolved via external DNS in some apiservers (e.g., `kube-apiserver` cannot resolve in-cluster DNS as that would be a layering violation). `host` may also be an IP address. Please note that using `localhost` or `127.0.0.1` as a `host` is risky unless you take great care to run this webhook on all hosts which run an apiserver which might need to make calls to this webhook. Such installs are likely to be non-portable, i.e., not easy to turn up in a new cluster. The scheme must be "https"; the URL must begin with "https://". A path is optional, and if present may be any string permissible in a URL. You may use the path to pass an arbitrary string to the webhook, for example, a cluster identifier. Attempting to use a user or basic auth e.g. "user:password@" is not allowed. Fragments ("#...") and query parameters ("?...") are not allowed, either.
-	Url any
+	Service  any
+	Url      any
 }
 
-type CustomResourceDefinition_Spec_Conversion_Webhook struct {
-	// WebhookClientConfig contains the information to make a TLS connection with the webhook.
-	ClientConfig any
-	// conversionReviewVersions is an ordered list of preferred `ConversionReview` versions the Webhook expects. The API server will use the first version in the list which it supports. If none of the versions specified in this list are supported by API server, conversion will fail for the custom resource. If a persisted Webhook configuration specifies allowed versions and does not include any versions known to the API Server, calls to the webhook will fail.
+type CustomResourceDefinition_Items_Spec_Conversion_Webhook struct {
+	ClientConfig             any
 	ConversionReviewVersions any
 }
 
-type CustomResourceDefinition_Spec_Conversion struct {
-	// strategy specifies how custom resources are converted between versions. Allowed values are: - `"None"`: The converter only change the apiVersion and would not touch any other field in the custom resource. - `"Webhook"`: API Server will call to an external webhook to do the conversion. Additional information is needed for this option. This requires spec.preserveUnknownFields to be false, and spec.conversion.webhook to be set.
+type CustomResourceDefinition_Items_Spec_Conversion struct {
 	Strategy any
-	// WebhookConversion describes how to call a conversion webhook
-	Webhook any
+	Webhook  any
 }
 
-type CustomResourceDefinition_Spec_Names struct {
-	// categories is a list of grouped resources this custom resource belongs to (e.g. 'all'). This is published in API discovery documents, and used by clients to support invocations like `kubectl get all`.
+type CustomResourceDefinition_Items_Spec_Names struct {
 	Categories any
-	// kind is the serialized kind of the resource. It is normally CamelCase and singular. Custom resource instances will use this value as the `kind` attribute in API calls.
-	Kind any
-	// listKind is the serialized kind of the list for this resource. Defaults to "`kind`List".
-	ListKind any
-	// plural is the plural name of the resource to serve. The custom resources are served under `/apis/<group>/<version>/.../<plural>`. Must match the name of the CustomResourceDefinition (in the form `<names.plural>.<group>`). Must be all lowercase.
-	Plural any
-	// shortNames are short names for the resource, exposed in API discovery documents, and used by clients to support invocations like `kubectl get <shortname>`. It must be all lowercase.
+	Kind       any
+	ListKind   any
+	Plural     any
 	ShortNames any
-	// singular is the singular name of the resource. It must be all lowercase. Defaults to lowercased `kind`.
-	Singular any
+	Singular   any
 }
 
-type CustomResourceDefinition_Spec_Versions_AdditionalPrinterColumns struct {
+type CustomResourceDefinition_Items_Spec_Versions_AdditionalPrinterColumns struct {
 	Description any
-	Format any
-	JsonPath any
-	Name any
-	Priority any
-	Type any
+	Format      any
+	JsonPath    any
+	Name        any
+	Priority    any
+	Type        any
 }
 
-type CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOf struct {
+type CustomResourceDefinition_Items_Spec_Versions_Schema_OpenApiv3Schema_AllOf struct {
 }
 
-type CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_ExternalDocs struct {
+type CustomResourceDefinition_Items_Spec_Versions_Schema_OpenApiv3Schema_ExternalDocs struct {
 	Description any
-	Url any
+	Url         any
 }
 
-type CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_XKubernetesValidations struct {
-	FieldPath any
-	Message any
+type CustomResourceDefinition_Items_Spec_Versions_Schema_OpenApiv3Schema_XKubernetesValidations struct {
+	FieldPath         any
+	Message           any
 	MessageExpression any
-	OptionalOldSelf any
-	Reason any
-	Rule any
+	OptionalOldSelf   any
+	Reason            any
+	Rule              any
 }
 
-type CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema struct {
-	AdditionalItems any
-	AdditionalProperties any
-	AllOf any
-	AnyOf any
-	Default any
-	Definitions any
-	Dependencies any
-	Description any
-	Enum any
-	Example any
-	ExclusiveMaximum any
-	ExclusiveMinimum any
-	ExternalDocs any
-	Format any
-	Id any
-	Items any
-	MaxItems any
-	MaxLength any
-	MaxProperties any
-	Maximum any
-	MinItems any
-	MinLength any
-	MinProperties any
-	Minimum any
-	MultipleOf any
-	Not any
-	Nullable any
-	OneOf any
-	Pattern any
-	PatternProperties any
-	Properties any
-	Required any
-	Title any
-	Type any
-	UniqueItems any
-	XKubernetesEmbeddedResource any
-	XKubernetesIntOrString any
-	XKubernetesListMapKeys any
-	XKubernetesListType any
-	XKubernetesMapType any
+type CustomResourceDefinition_Items_Spec_Versions_Schema_OpenApiv3Schema struct {
+	AdditionalItems                  any
+	AdditionalProperties             any
+	AllOf                            any
+	AnyOf                            any
+	Default                          any
+	Definitions                      any
+	Dependencies                     any
+	Description                      any
+	Enum                             any
+	Example                          any
+	ExclusiveMaximum                 any
+	ExclusiveMinimum                 any
+	ExternalDocs                     any
+	Format                           any
+	Id                               any
+	Items                            any
+	MaxItems                         any
+	MaxLength                        any
+	MaxProperties                    any
+	Maximum                          any
+	MinItems                         any
+	MinLength                        any
+	MinProperties                    any
+	Minimum                          any
+	MultipleOf                       any
+	Not                              any
+	Nullable                         any
+	OneOf                            any
+	Pattern                          any
+	PatternProperties                any
+	Properties                       any
+	Required                         any
+	Title                            any
+	Type                             any
+	UniqueItems                      any
+	XKubernetesEmbeddedResource      any
+	XKubernetesIntOrString           any
+	XKubernetesListMapKeys           any
+	XKubernetesListType              any
+	XKubernetesMapType               any
 	XKubernetesPreserveUnknownFields any
-	XKubernetesValidations any
+	XKubernetesValidations           any
 }
 
-type CustomResourceDefinition_Spec_Versions_Schema struct {
+type CustomResourceDefinition_Items_Spec_Versions_Schema struct {
 	OpenApiv3Schema any
 }
 
-type CustomResourceDefinition_Spec_Versions_SelectableFields struct {
+type CustomResourceDefinition_Items_Spec_Versions_SelectableFields struct {
 	JsonPath any
 }
 
-type CustomResourceDefinition_Spec_Versions_Subresources_Scale struct {
-	LabelSelectorPath any
-	SpecReplicasPath any
+type CustomResourceDefinition_Items_Spec_Versions_Subresources_Scale struct {
+	LabelSelectorPath  any
+	SpecReplicasPath   any
 	StatusReplicasPath any
 }
 
-type CustomResourceDefinition_Spec_Versions_Subresources struct {
-	Scale any
+type CustomResourceDefinition_Items_Spec_Versions_Subresources struct {
+	Scale  any
 	Status any
 }
 
-type CustomResourceDefinition_Spec_Versions struct {
+type CustomResourceDefinition_Items_Spec_Versions struct {
 	AdditionalPrinterColumns any
-	Deprecated any
-	DeprecationWarning any
-	Name any
-	Schema any
-	SelectableFields any
-	Served any
-	Storage any
-	Subresources any
+	Deprecated               any
+	DeprecationWarning       any
+	Name                     any
+	Schema                   any
+	SelectableFields         any
+	Served                   any
+	Storage                  any
+	Subresources             any
 }
 
-type CustomResourceDefinition_Spec struct {
-	// CustomResourceConversion describes how to convert different versions of a CR.
-	Conversion any
-	// group is the API group of the defined custom resource. The custom resources are served under `/apis/<group>/...`. Must match the name of the CustomResourceDefinition (in the form `<names.plural>.<group>`).
-	Group any
-	// CustomResourceDefinitionNames indicates the names to serve this CustomResourceDefinition
-	Names any
-	// preserveUnknownFields indicates that object fields which are not specified in the OpenAPI schema should be preserved when persisting to storage. apiVersion, kind, metadata and known fields inside metadata are always preserved. This field is deprecated in favor of setting `x-preserve-unknown-fields` to true in `spec.versions[*].schema.openAPIV3Schema`. See https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#field-pruning for details.
+type CustomResourceDefinition_Items_Spec struct {
+	Conversion            any
+	Group                 any
+	Names                 any
 	PreserveUnknownFields any
-	// scope indicates whether the defined custom resource is cluster- or namespace-scoped. Allowed values are `Cluster` and `Namespaced`.
-	Scope any
-	// versions is the list of all API versions of the defined custom resource. Version names are used to compute the order in which served versions are listed in API discovery. If the version string is "kube-like", it will sort above non "kube-like" version strings, which are ordered lexicographically. "Kube-like" versions start with a "v", then are followed by a number (the major version), then optionally the string "alpha" or "beta" and another number (the minor version). These are sorted first by GA > beta > alpha (where GA is a version with no suffix such as beta or alpha), and then by comparing major version, then minor version. An example sorted list of versions: v10, v2, v1, v11beta2, v10beta3, v3beta1, v12alpha1, v11alpha2, foo1, foo10.
-	Versions any
+	Scope                 any
+	Versions              any
 }
 
-type CustomResourceDefinition_Status_Conditions struct {
+type CustomResourceDefinition_Items_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
-type CustomResourceDefinition_Status struct {
-	// CustomResourceDefinitionNames indicates the names to serve this CustomResourceDefinition
-	AcceptedNames any
-	// conditions indicate state for particular aspects of a CustomResourceDefinition
-	Conditions any
-	// The generation observed by the CRD controller.
+type CustomResourceDefinition_Items_Status struct {
+	AcceptedNames      any
+	Conditions         any
 	ObservedGeneration any
-	// storedVersions lists all versions of CustomResources that were ever persisted. Tracking these versions allows a migration path for stored versions in etcd. The field is mutable so a migration controller can finish a migration to another version (ensuring no old objects are left in storage), and then remove the rest of the versions from this list. Versions may not be removed from `spec.versions` while they exist in this list.
-	StoredVersions any
+	StoredVersions     any
+}
+
+type CustomResourceDefinition_Items struct {
+	ApiVersion any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
+}
+
+type CustomResourceDefinition_Metadata_ShardInfo struct {
+	// selector is the shard selector string from the request, echoed back so clients can verify which shard they received and merge responses from multiple shards.
+	Selector any
+}
+
+type CustomResourceDefinition_Metadata struct {
+	// continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message.
+	Continue any
+	// remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is *estimating* the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact.
+	RemainingItemCount any
+	// String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+	ResourceVersion any
+	// Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.
+	SelfLink any
+	// ShardInfo describes the shard selector that was applied to produce a list response. Its presence on a list response indicates the list is a filtered subset.
+	ShardInfo any
 }
 
 type CustomResourceDefinitionConfig struct {
+	AllowWatchBookmarks  any
+	Continue             any
+	FieldSelector        any
+	LabelSelector        any
+	Limit                any
+	ResourceVersion      any
+	ResourceVersionMatch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 type CustomResourceDefinitionAttrs struct {
+	AllowWatchBookmarks any
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-	ApiVersion any
+	ApiVersion    any
+	Continue      any
+	FieldSelector any
+	// items list individual CustomResourceDefinition objects
+	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
-	// ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
-	Metadata any
-	// CustomResourceDefinitionSpec describes how a user wants their resource to appear
-	Spec any
-	// CustomResourceDefinitionStatus indicates the state of the CustomResourceDefinition
-	Status any
+	Kind          any
+	LabelSelector any
+	Limit         any
+	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
+	Metadata             any
+	ResourceVersion      any
+	ResourceVersionMatch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 var CustomResourceDefinition = ubx.DataSourceBinding{
 	WireType: "kubernetes_apiextensions_custom_resource_definition",
 	Fields: ubx.FieldMap{
+		"AllowWatchBookmarks":  ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
+		"Continue":             ubx.FieldSpec{WireName: "continue"},
+		"FieldSelector":        ubx.FieldSpec{WireName: "field_selector"},
+		"LabelSelector":        ubx.FieldSpec{WireName: "label_selector"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"ResourceVersion":      ubx.FieldSpec{WireName: "resource_version"},
+		"ResourceVersionMatch": ubx.FieldSpec{WireName: "resource_version_match"},
+		"SendInitialEvents":    ubx.FieldSpec{WireName: "send_initial_events"},
+		"ShardSelector":        ubx.FieldSpec{WireName: "shard_selector"},
+		"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+		"Watch":                ubx.FieldSpec{WireName: "watch"},
 	},
 }

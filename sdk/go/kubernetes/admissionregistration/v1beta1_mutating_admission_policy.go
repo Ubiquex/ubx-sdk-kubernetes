@@ -4,21 +4,34 @@ package admissionregistration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1MutatingAdmissionPolicy_Metadata_ManagedFields struct {
+	// The API version used to manage the fields in this managedFields entry. (AI-inferred)
 	ApiVersion any
+	// The type of the fields field. Currently only 'FieldsV1' is supported. (AI-inferred)
 	FieldsType any
+	// fields_v1 is the Kubernetes fieldsV1 field, which contains a JSON representation of the fields managed by this entry. It stores a set of field paths and their ownership information used for server-side apply conflict detection. (AI-inferred)
 	FieldsV1 any
+	// The name of the manager (entity, such as a controller or user) that last applied or updated the managed fields. (AI-inferred)
 	Manager any
+	// Operation is the type of operation that last modified the field, such as 'Update' or 'Apply'. (AI-inferred)
 	Operation any
+	// The subresource of the resource that this managed field entry applies to, such as 'status' or 'scale'. (AI-inferred)
 	Subresource any
+	// Time is the timestamp, in RFC3339 format, when the managed fields entry was last updated. (AI-inferred)
 	Time any
 }
 
 type V1beta1MutatingAdmissionPolicy_Metadata_OwnerReferences struct {
+	// The API version of the referenced owner object, e.g. 'v1' or 'apps/v1'. This matches the apiVersion field of the owner's resource. (AI-inferred)
 	ApiVersion any
+	// If true, prevents deletion of the owner object if this dependent resource would prevent the owner's garbage collection. This is part of the standard Kubernetes OwnerReference schema and helps ensure safe deletion ordering. (AI-inferred)
 	BlockOwnerDeletion any
+	// Indicates whether the owner reference is the managing controller for the resource. This matches the `controller` field in Kubernetes OwnerReference, which is a boolean pointer (set to true when the owner is the primary controller). (AI-inferred)
 	Controller any
+	// The kind of the referenced owner resource, matching the API resource type for the owner (e.g., 'Deployment'). (AI-inferred)
 	Kind any
+	// The name of the owner object that this owner_reference points to. In Kubernetes, this matches the name of the referenced resource as defined in its metadata. (AI-inferred)
 	Name any
+	// UID of the referenced owner object. (AI-inferred)
 	Uid any
 }
 
@@ -56,22 +69,33 @@ type V1beta1MutatingAdmissionPolicy_Metadata struct {
 }
 
 type V1beta1MutatingAdmissionPolicy_Spec_MatchConditions struct {
+	// The Common Expression Language (CEL) expression that must evaluate to true for the admission policy to match the request. It is evaluated against the admission review object, with access to fields such as `request.object` and `request.userInfo`. (AI-inferred)
 	Expression any
+	// The name of the match condition, used to uniquely identify it within the list of match conditions for this admission policy. (AI-inferred)
 	Name any
 }
 
 type V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRules struct {
+	// The API groups to which this resource rule applies. For example, 'apps', 'networking.k8s.io', or '*' to match all groups. (AI-inferred)
 	ApiGroups any
+	// List of API versions (e.g., 'v1', 'apps/v1') of the resources to which this exclude rule applies. Requests for resources with matching API versions are excluded from the admission policy's match constraints. (AI-inferred)
 	ApiVersions any
+	// List of operations (e.g., CREATE, UPDATE, DELETE, CONNECT, or '*') to exclude from matching in this resource rule. (AI-inferred)
 	Operations any
+	// A list of specific resource names (e.g., 'my-nginx') that this rule applies to. When used in exclude_resource_rules, these names are excluded from the match constraints. (AI-inferred)
 	ResourceNames any
+	// A list of Kubernetes resource names (e.g., 'pods', 'services') that are excluded from the match constraints. This field is used within exclude_resource_rules to define the resources to which the exclusion rule applies. (AI-inferred)
 	Resources any
+	// Specifies the scope of resources to which this exclude rule applies. Allowed values are 'Cluster', 'Namespaced', or '*' to match both. (AI-inferred)
 	Scope any
 }
 
 type V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector_MatchExpressions struct {
+	// The key of the label selector expression. This is the label key that the expression filters on, such as 'app' or 'environment'. (AI-inferred)
 	Key any
+	// The operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist. (AI-inferred)
 	Operator any
+	// A list of string values that the label key must match, as specified by the operator in this match expression. For example, if the operator is 'In' or 'NotIn', these values provide the set to compare against; if the operator is 'Exists' or 'DoesNotExist', this list must be empty. (AI-inferred)
 	Values any
 }
 
@@ -96,12 +120,16 @@ type V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints struct {
 }
 
 type V1beta1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfiguration struct {
+	// The expression is a Common Expression Language (CEL) expression that evaluates to a partial object to be applied to the request object. It is evaluated for each admission request, and the result is merged with the original object. (AI-inferred)
 	Expression any
 }
 
 type V1beta1MutatingAdmissionPolicy_Spec_Mutations struct {
+	// Configures the mutation as an apply configuration operation, where the supplied configuration is applied to the object via server-side apply, merging with existing configuration. (AI-inferred)
 	ApplyConfiguration any
+	// The JSON Patch to apply to the object as part of this mutation. It contains an expression that evaluates to a JSON Patch string. (AI-inferred)
 	JsonPatch any
+	// Specifies the type of patch to apply. Valid values are 'JSONPatch' and 'ApplyConfiguration'. (AI-inferred)
 	PatchType any
 }
 
@@ -130,155 +158,155 @@ type V1beta1MutatingAdmissionPolicy_Spec struct {
 }
 
 var V1beta1MutatingAdmissionPolicy_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var V1beta1MutatingAdmissionPolicy_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta1MutatingAdmissionPolicy_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: V1beta1MutatingAdmissionPolicy_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: V1beta1MutatingAdmissionPolicy_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   V1beta1MutatingAdmissionPolicy_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   V1beta1MutatingAdmissionPolicy_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta1MutatingAdmissionPolicy_Spec_MatchConditionsFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRulesFields = ubx.FieldMap{
-		"ApiGroups": ubx.FieldSpec{WireName: "api_groups"},
-		"ApiVersions": ubx.FieldSpec{WireName: "api_versions"},
-		"Operations": ubx.FieldSpec{WireName: "operations"},
-		"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"ApiGroups":     ubx.FieldSpec{WireName: "api_groups"},
+	"ApiVersions":   ubx.FieldSpec{WireName: "api_versions"},
+	"Operations":    ubx.FieldSpec{WireName: "operations"},
+	"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
+	"Resources":     ubx.FieldSpec{WireName: "resources"},
+	"Scope":         ubx.FieldSpec{WireName: "scope"},
+}
 
 var V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector_MatchExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelectorFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector_MatchExpressionsFields,
-		},
-		"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector_MatchExpressionsFields,
+	},
+	"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
+}
 
 var V1beta1MutatingAdmissionPolicy_Spec_MatchConstraintsFields = ubx.FieldMap{
-		"ExcludeResourceRules": ubx.FieldSpec{
-			WireName: "exclude_resource_rules",
-			Kind: "list",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRulesFields,
-		},
-		"MatchPolicy": ubx.FieldSpec{WireName: "match_policy"},
-		"NamespaceSelector": ubx.FieldSpec{
-			WireName: "namespace_selector",
-			Kind: "object",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelectorFields,
-		},
-		"ObjectSelector": ubx.FieldSpec{
-			WireName: "object_selector",
-			Kind: "object",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelectorFields,
-		},
-		"ResourceRules": ubx.FieldSpec{
-			WireName: "resource_rules",
-			Kind: "list",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRulesFields,
-		},
-	}
+	"ExcludeResourceRules": ubx.FieldSpec{
+		WireName: "exclude_resource_rules",
+		Kind:     "list",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRulesFields,
+	},
+	"MatchPolicy": ubx.FieldSpec{WireName: "match_policy"},
+	"NamespaceSelector": ubx.FieldSpec{
+		WireName: "namespace_selector",
+		Kind:     "object",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelectorFields,
+	},
+	"ObjectSelector": ubx.FieldSpec{
+		WireName: "object_selector",
+		Kind:     "object",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelectorFields,
+	},
+	"ResourceRules": ubx.FieldSpec{
+		WireName: "resource_rules",
+		Kind:     "list",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRulesFields,
+	},
+}
 
 var V1beta1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfigurationFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var V1beta1MutatingAdmissionPolicy_Spec_MutationsFields = ubx.FieldMap{
-		"ApplyConfiguration": ubx.FieldSpec{
-			WireName: "apply_configuration",
-			Kind: "object",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfigurationFields,
-		},
-		"JsonPatch": ubx.FieldSpec{
-			WireName: "json_patch",
-			Kind: "object",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfigurationFields,
-		},
-		"PatchType": ubx.FieldSpec{WireName: "patch_type"},
-	}
+	"ApplyConfiguration": ubx.FieldSpec{
+		WireName: "apply_configuration",
+		Kind:     "object",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfigurationFields,
+	},
+	"JsonPatch": ubx.FieldSpec{
+		WireName: "json_patch",
+		Kind:     "object",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_Mutations_ApplyConfigurationFields,
+	},
+	"PatchType": ubx.FieldSpec{WireName: "patch_type"},
+}
 
 var V1beta1MutatingAdmissionPolicy_Spec_ParamKindFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+}
 
 var V1beta1MutatingAdmissionPolicy_SpecFields = ubx.FieldMap{
-		"FailurePolicy": ubx.FieldSpec{WireName: "failure_policy"},
-		"MatchConditions": ubx.FieldSpec{
-			WireName: "match_conditions",
-			Kind: "list",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_MatchConditionsFields,
-		},
-		"MatchConstraints": ubx.FieldSpec{
-			WireName: "match_constraints",
-			Kind: "object",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_MatchConstraintsFields,
-		},
-		"Mutations": ubx.FieldSpec{
-			WireName: "mutations",
-			Kind: "list",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_MutationsFields,
-		},
-		"ParamKind": ubx.FieldSpec{
-			WireName: "param_kind",
-			Kind: "object",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_ParamKindFields,
-		},
-		"ReinvocationPolicy": ubx.FieldSpec{WireName: "reinvocation_policy"},
-		"Variables": ubx.FieldSpec{
-			WireName: "variables",
-			Kind: "list",
-			Fields: V1beta1MutatingAdmissionPolicy_Spec_MatchConditionsFields,
-		},
-	}
+	"FailurePolicy": ubx.FieldSpec{WireName: "failure_policy"},
+	"MatchConditions": ubx.FieldSpec{
+		WireName: "match_conditions",
+		Kind:     "list",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_MatchConditionsFields,
+	},
+	"MatchConstraints": ubx.FieldSpec{
+		WireName: "match_constraints",
+		Kind:     "object",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_MatchConstraintsFields,
+	},
+	"Mutations": ubx.FieldSpec{
+		WireName: "mutations",
+		Kind:     "list",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_MutationsFields,
+	},
+	"ParamKind": ubx.FieldSpec{
+		WireName: "param_kind",
+		Kind:     "object",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_ParamKindFields,
+	},
+	"ReinvocationPolicy": ubx.FieldSpec{WireName: "reinvocation_policy"},
+	"Variables": ubx.FieldSpec{
+		WireName: "variables",
+		Kind:     "list",
+		Fields:   V1beta1MutatingAdmissionPolicy_Spec_MatchConditionsFields,
+	},
+}
 
 type V1beta1MutatingAdmissionPolicyConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -310,16 +338,16 @@ var V1beta1MutatingAdmissionPolicy = ubx.ResourceBinding{
 	WireType: "kubernetes_admissionregistration_v1beta1_mutating_admission_policy",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1MutatingAdmissionPolicy_MetadataFields,
+			Kind:     "object",
+			Fields:   V1beta1MutatingAdmissionPolicy_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: V1beta1MutatingAdmissionPolicy_SpecFields,
+			Kind:     "object",
+			Fields:   V1beta1MutatingAdmissionPolicy_SpecFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

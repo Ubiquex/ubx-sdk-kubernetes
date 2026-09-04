@@ -8,21 +8,34 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1alpha3PodGroup_Metadata_ManagedFields:
+    # The API version of the resource that this managed fields entry applies to (e.g., 'group/version'). (AI-inferred)
     api_version: Any = None
+    # The type of the managed fields, indicating the versioned format of the fields data (e.g., 'FieldsV1'). (AI-inferred)
     fields_type: Any = None
+    # fields_v1 is a JSON representation of the set of fields managed by the manager. It is stored as a FieldsV1 object, which is a map of field paths to their values, recording which fields were changed by this managedFields entry. (AI-inferred)
     fields_v1: Any = None
+    # The name of the manager (e.g., a controller or user) that last modified the managed field. (AI-inferred)
     manager: Any = None
+    # The type of operation performed by the manager on the managed fields. Allowed values are 'Apply' and 'Update'. (AI-inferred)
     operation: Any = None
+    # The subresource that this managed field entry applies to, such as 'status' or 'scale'. Empty indicates the main resource. (AI-inferred)
     subresource: Any = None
+    # The timestamp (RFC3339 format) at which the managed field was last updated by the manager. (AI-inferred)
     time: Any = None
 
 @dataclasses.dataclass
 class V1alpha3PodGroup_Metadata_OwnerReferences:
+    # The API version of the referent (owner) object. (AI-inferred)
     api_version: Any = None
+    # If true, and the owner has the foregroundDeletion finalizer, the owner cannot be deleted from the cluster until this owner reference is removed. Defaults to false. Setting this field requires delete permission on the owner. (AI-inferred)
     block_owner_deletion: Any = None
+    # If true, this reference points to the managing controller. (AI-inferred)
     controller: Any = None
+    # The kind of the Kubernetes object that is the owner of this pod group, as defined in the owner reference. (AI-inferred)
     kind: Any = None
+    # The name of the referenced owner object. This field is required in an OwnerReference and must match the metadata.name of the referenced resource. (AI-inferred)
     name: Any = None
+    # The unique identifier (UID) of the object referenced as the owner of this PodGroup. (AI-inferred)
     uid: Any = None
 
 @dataclasses.dataclass
@@ -67,12 +80,16 @@ class V1alpha3PodGroup_Spec_DisruptionMode:
 
 @dataclasses.dataclass
 class V1alpha3PodGroup_Spec_ResourceClaims:
+    # The name of the resource claim. Must be unique within the pod. (AI-inferred)
     name: Any = None
+    # The name of the ResourceClaim that this pod group is configured to use. (AI-inferred)
     resource_claim_name: Any = None
+    # The name of the ResourceClaimTemplate that defines the resources to claim for this pod group's resource claim. (AI-inferred)
     resource_claim_template_name: Any = None
 
 @dataclasses.dataclass
 class V1alpha3PodGroup_Spec_SchedulingConstraints_Topology:
+    # The topology key (label) that defines the domain over which pods are distributed or constrained, such as a node, zone, or region. Common examples include 'kubernetes.io/hostname' and 'topology.kubernetes.io/zone'. (AI-inferred)
     key: Any = None
 
 @dataclasses.dataclass
@@ -122,16 +139,24 @@ class V1alpha3PodGroup_Spec:
 
 @dataclasses.dataclass
 class V1alpha3PodGroup_Status_Conditions:
+    # The last time the condition transitioned from one status to another. This is an RFC3339 timestamp string. (AI-inferred)
     last_transition_time: Any = None
+    # Human-readable message providing details about the current condition state, such as why the pod group is in this state. (AI-inferred)
     message: Any = None
+    # The generation of the resource that the controller observed when it last updated this condition. Used to track whether the condition is up-to-date with the resource's spec. (AI-inferred)
     observed_generation: Any = None
+    # A machine-readable reason for the condition's last transition. (AI-inferred)
     reason: Any = None
+    # The status of the condition, indicating whether the condition is True, False, or Unknown. (AI-inferred)
     status: Any = None
+    # Type of the condition, typically a short name indicating the condition being reported, such as 'PodGroupScheduled' or 'Ready'. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class V1alpha3PodGroup_Status_ResourceClaimStatuses:
+    # The name of the resource claim, matching the corresponding entry in the pod's resourceClaims field. (AI-inferred)
     name: Any = None
+    # The name of the Kubernetes ResourceClaim object that this status entry corresponds to. (AI-inferred)
     resource_claim_name: Any = None
 
 @dataclasses.dataclass

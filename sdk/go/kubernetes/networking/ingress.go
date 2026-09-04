@@ -166,165 +166,165 @@ type Ingress_Status struct {
 }
 
 var Ingress_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var Ingress_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var Ingress_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: Ingress_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: Ingress_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   Ingress_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   Ingress_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var Ingress_Spec_DefaultBackend_ResourceFields = ubx.FieldMap{
-		"ApiGroup": ubx.FieldSpec{WireName: "api_group"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiGroup": ubx.FieldSpec{WireName: "api_group"},
+	"Kind":     ubx.FieldSpec{WireName: "kind"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 var Ingress_Spec_DefaultBackend_Service_PortFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Number": ubx.FieldSpec{WireName: "number"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Number": ubx.FieldSpec{WireName: "number"},
+}
 
 var Ingress_Spec_DefaultBackend_ServiceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{
-			WireName: "port",
-			Kind: "object",
-			Fields: Ingress_Spec_DefaultBackend_Service_PortFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Port": ubx.FieldSpec{
+		WireName: "port",
+		Kind:     "object",
+		Fields:   Ingress_Spec_DefaultBackend_Service_PortFields,
+	},
+}
 
 var Ingress_Spec_DefaultBackendFields = ubx.FieldMap{
-		"Resource": ubx.FieldSpec{
-			WireName: "resource",
-			Kind: "object",
-			Fields: Ingress_Spec_DefaultBackend_ResourceFields,
-		},
-		"Service": ubx.FieldSpec{
-			WireName: "service",
-			Kind: "object",
-			Fields: Ingress_Spec_DefaultBackend_ServiceFields,
-		},
-	}
+	"Resource": ubx.FieldSpec{
+		WireName: "resource",
+		Kind:     "object",
+		Fields:   Ingress_Spec_DefaultBackend_ResourceFields,
+	},
+	"Service": ubx.FieldSpec{
+		WireName: "service",
+		Kind:     "object",
+		Fields:   Ingress_Spec_DefaultBackend_ServiceFields,
+	},
+}
 
 var Ingress_Spec_Rules_Http_PathsFields = ubx.FieldMap{
-		"Backend": ubx.FieldSpec{
-			WireName: "backend",
-			Kind: "object",
-			Fields: Ingress_Spec_DefaultBackendFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PathType": ubx.FieldSpec{WireName: "path_type"},
-	}
+	"Backend": ubx.FieldSpec{
+		WireName: "backend",
+		Kind:     "object",
+		Fields:   Ingress_Spec_DefaultBackendFields,
+	},
+	"Path":     ubx.FieldSpec{WireName: "path"},
+	"PathType": ubx.FieldSpec{WireName: "path_type"},
+}
 
 var Ingress_Spec_Rules_HttpFields = ubx.FieldMap{
-		"Paths": ubx.FieldSpec{
-			WireName: "paths",
-			Kind: "list",
-			Fields: Ingress_Spec_Rules_Http_PathsFields,
-		},
-	}
+	"Paths": ubx.FieldSpec{
+		WireName: "paths",
+		Kind:     "list",
+		Fields:   Ingress_Spec_Rules_Http_PathsFields,
+	},
+}
 
 var Ingress_Spec_RulesFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Http": ubx.FieldSpec{
-			WireName: "http",
-			Kind: "object",
-			Fields: Ingress_Spec_Rules_HttpFields,
-		},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"Http": ubx.FieldSpec{
+		WireName: "http",
+		Kind:     "object",
+		Fields:   Ingress_Spec_Rules_HttpFields,
+	},
+}
 
 var Ingress_Spec_TlsFields = ubx.FieldMap{
-		"Hosts": ubx.FieldSpec{WireName: "hosts"},
-		"SecretName": ubx.FieldSpec{WireName: "secret_name"},
-	}
+	"Hosts":      ubx.FieldSpec{WireName: "hosts"},
+	"SecretName": ubx.FieldSpec{WireName: "secret_name"},
+}
 
 var Ingress_SpecFields = ubx.FieldMap{
-		"DefaultBackend": ubx.FieldSpec{
-			WireName: "default_backend",
-			Kind: "object",
-			Fields: Ingress_Spec_DefaultBackendFields,
-		},
-		"IngressClassName": ubx.FieldSpec{WireName: "ingress_class_name"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Ingress_Spec_RulesFields,
-		},
-		"Tls": ubx.FieldSpec{
-			WireName: "tls",
-			Kind: "list",
-			Fields: Ingress_Spec_TlsFields,
-		},
-	}
+	"DefaultBackend": ubx.FieldSpec{
+		WireName: "default_backend",
+		Kind:     "object",
+		Fields:   Ingress_Spec_DefaultBackendFields,
+	},
+	"IngressClassName": ubx.FieldSpec{WireName: "ingress_class_name"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Ingress_Spec_RulesFields,
+	},
+	"Tls": ubx.FieldSpec{
+		WireName: "tls",
+		Kind:     "list",
+		Fields:   Ingress_Spec_TlsFields,
+	},
+}
 
 var Ingress_Status_LoadBalancer_Ingress_PortsFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{WireName: "error"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"Error":    ubx.FieldSpec{WireName: "error"},
+	"Port":     ubx.FieldSpec{WireName: "port"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var Ingress_Status_LoadBalancer_IngressFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: Ingress_Status_LoadBalancer_Ingress_PortsFields,
-		},
-	}
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"Ip":       ubx.FieldSpec{WireName: "ip"},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   Ingress_Status_LoadBalancer_Ingress_PortsFields,
+	},
+}
 
 var Ingress_Status_LoadBalancerFields = ubx.FieldMap{
-		"Ingress": ubx.FieldSpec{
-			WireName: "ingress",
-			Kind: "list",
-			Fields: Ingress_Status_LoadBalancer_IngressFields,
-		},
-	}
+	"Ingress": ubx.FieldSpec{
+		WireName: "ingress",
+		Kind:     "list",
+		Fields:   Ingress_Status_LoadBalancer_IngressFields,
+	},
+}
 
 var Ingress_StatusFields = ubx.FieldMap{
-		"LoadBalancer": ubx.FieldSpec{
-			WireName: "load_balancer",
-			Kind: "object",
-			Fields: Ingress_Status_LoadBalancerFields,
-		},
-	}
+	"LoadBalancer": ubx.FieldSpec{
+		WireName: "load_balancer",
+		Kind:     "object",
+		Fields:   Ingress_Status_LoadBalancerFields,
+	},
+}
 
 type IngressConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -364,23 +364,23 @@ var Ingress = ubx.ResourceBinding{
 	WireType: "kubernetes_networking_ingress",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: Ingress_MetadataFields,
+			Kind:     "object",
+			Fields:   Ingress_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: Ingress_SpecFields,
+			Kind:     "object",
+			Fields:   Ingress_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: Ingress_StatusFields,
+			Kind:     "object",
+			Fields:   Ingress_StatusFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -4,7 +4,7 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
-from .cluster_role_binding_list import ClusterRoleBindingList, ClusterRoleBindingListConfig
-from .cluster_role_list import ClusterRoleList, ClusterRoleListConfig
-from .role_binding_list import RoleBindingList, RoleBindingListConfig
-from .role_list import RoleList, RoleListConfig
+from .cluster_role import ClusterRole, ClusterRoleConfig
+from .cluster_role_binding import ClusterRoleBinding, ClusterRoleBindingConfig
+from .role import Role, RoleConfig
+from .role_binding import RoleBinding, RoleBindingConfig

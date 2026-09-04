@@ -2,21 +2,34 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1HorizontalPodAutoscaler_Metadata_ManagedFields {
+  /** APIVersion defines the version of this resource that this field set applies to. The format is 'group/version' just like the top-level Version field. It is necessary to clear the entry in the managed fields when the API version changes. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** FieldsType is the discriminator for the different fields format and version. There is only one possible value: FieldsV1. (AI-inferred) */
   fieldsType?: string | Computed<string>;
+  /** fieldsV1 stores the fields managed by the manager as a JSON object, representing the managed fields in a structured format. (AI-inferred) */
   fieldsV1?: unknown | Computed<unknown>;
+  /** The name of the controller, actor, or client that last applied or owns the fields in this managed fields entry. (AI-inferred) */
   manager?: string | Computed<string>;
+  /** The operation type that was performed on the resource, such as 'Apply' or 'Update'. This is part of a managed field entry in metadata. (AI-inferred) */
   operation?: string | Computed<string>;
+  /** The subresource this managed fields entry applies to, such as 'scale' for the scale subresource. Empty string indicates the main resource. (AI-inferred) */
   subresource?: string | Computed<string>;
+  /** The timestamp at which the ManagedFields entry was processed. This is represented as a string in RFC3339 format. (AI-inferred) */
   time?: string | Computed<string>;
 }
 
 export interface V1HorizontalPodAutoscaler_Metadata_OwnerReferences {
+  /** The API version of the owner resource. (AI-inferred) */
   apiVersion?: string | Computed<string>;
+  /** If true, and the owner has the 'foregroundDeletion' finalizer, the owner cannot be deleted until this reference is removed. Defaults to false. (AI-inferred) */
   blockOwnerDeletion?: boolean | Computed<boolean>;
+  /** A boolean flag indicating whether the referenced object is the managing controller for the owner reference. When true, this owner reference is a controller. (AI-inferred) */
   controller?: boolean | Computed<boolean>;
+  /** Kind of the referenced owner object. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds (AI-inferred) */
   kind?: string | Computed<string>;
+  /** The name of the owner object referenced by this owner reference. It must match the name of the resource in the same API group and kind. (AI-inferred) */
   name?: string | Computed<string>;
+  /** The UID of the referenced owner object. (AI-inferred) */
   uid?: string | Computed<string>;
 }
 
