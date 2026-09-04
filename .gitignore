@@ -1,11 +1,20 @@
 # Python build artifacts (a real, twice-repeated leak in ubx-sdk-aws's own
 # history: __pycache__ in the original generation, *.egg-info in its own
 # restructure) -- .gitignore added from the start here instead.
+#
+# dist/ and build/ are anchored to sdk/python/ specifically (UBI-249):
+# a bare, unanchored `build/` also matched a real generated package,
+# sdk/go/github/data/build/ (the github_build data source), silently
+# excluding it from every commit in ubx-sdk-github since that repo's
+# creation. Confirmed via a real dispatch of translator-watch.yml,
+# which diffs raw generator output against the checked-out tree
+# directly, bypassing git and .gitignore -- a git-based comparison
+# would never have caught this.
 __pycache__/
 *.pyc
 *.egg-info/
-dist/
-build/
+sdk/python/dist/
+sdk/python/build/
 
 # TypeScript/Deno
 node_modules/
