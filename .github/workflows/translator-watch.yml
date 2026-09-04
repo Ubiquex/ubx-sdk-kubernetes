@@ -183,9 +183,29 @@ jobs:
           git clone --depth=1 --recurse-submodules \
             "https://github.com/Ubiquex/ubiquex.git" \
             "${{ runner.temp }}/ubiquex-src"
-          git clone --depth=1 --branch "${{ steps.latest.outputs.tag }}" \
-            "https://github.com/Ubiquex/ubx-provider-dynamic.git" \
-            "${{ runner.temp }}/ubx-provider-dynamic-src"
+
+          dir="${{ runner.temp }}/ubx-provider-dynamic-src"
+          git clone --depth=1 "https://github.com/Ubiquex/ubx-provider-dynamic.git" "$dir"
+          cd "$dir"
+          target="${{ steps.latest.outputs.commit }}"
+          # Move the local main branch to the target commit instead of a
+          # detached `--branch <tag>` checkout. --require-clean-provenance's
+          # own "unpushed" check (cli/dynamicprovider.go) resolves @{u} and
+          # needs a named branch with a remote-tracking ref -- a detached
+          # tag checkout has neither, and fails the check even though the
+          # tag is genuinely pushed (confirmed live, UBI-249: this exact
+          # failure on the very first real dispatch of this workflow,
+          # against both ubx-sdk-azure and ubx-sdk-github). The target
+          # commit is always an ancestor of main under this repo's real
+          # tagging discipline (every tag is cut directly on main), so
+          # `rev-list @{u}..HEAD --count` correctly reports 0 after this
+          # reset -- main's own upstream (origin/main) stays intact, only
+          # its local tip moves.
+          if ! git cat-file -e "$target^{commit}" 2>/dev/null; then
+            git fetch --depth=1 origin "$target" 2>/dev/null || git fetch --unshallow origin
+          fi
+          git reset --hard "$target"
+          cd - >/dev/null
 
       - name: Set up Go
         if: steps.compare.outputs.state == 'candidate'
@@ -239,6 +259,22 @@ jobs:
 
           echo "gendir=$gendir" >> "$GITHUB_OUTPUT"
 
+      - name: gofmt the regenerated Go tree before comparing
+        if: steps.compare.outputs.state == 'candidate'
+        run: |
+          set -euo pipefail
+          # ubx sdk gen's own Go output is not gofmt-canonical on its own
+          # (confirmed live, UBI-249: a real dispatch of this workflow
+          # diffed every single generated .go file against the committed
+          # tree over formatting alone -- Fields: ubx.FieldMap{\n}, vs.
+          # the gofmt-collapsed Fields: ubx.FieldMap{} -- with zero real
+          # content difference underneath). The committed tree in every
+          # ubx-sdk-* repo has always been gofmt'd as a real, separate
+          # step before commit; comparing raw generator output against it
+          # without formatting both the same way makes every regen look
+          # like a translator-driven change even when nothing real moved.
+          gofmt -w "${{ steps.regen.outputs.gendir }}/out/kubernetes/sdk/go"
+
       - name: Diff regenerated output against what's currently committed
         id: diff
         if: steps.compare.outputs.state == 'candidate'
@@ -252,6 +288,7 @@ jobs:
               -x go.sum -x deno.lock -x deno.json -x package.json -x pyproject.toml \
               "$gendir/out/kubernetes/sdk/typescript" sdk/typescript >> /tmp/diffout 2>&1 \
              && diff -rq \
+              -x pyproject.toml \
               "$gendir/out/kubernetes/sdk/python" sdk/python >> /tmp/diffout 2>&1; then
             echo "state=administrative" >> "$GITHUB_OUTPUT"
             echo "Tag moved but this provider's real generated output is byte-identical -- nothing for a human to review."
@@ -344,7 +381,13 @@ jobs:
         run: |
           set -euo pipefail
           cd sdk/typescript
-          find . -name "*.ts" -print0 | xargs -0 deno cache
+          # deno cache alone does not populate node_modules/ for the npm:
+          # @ubx/sdk dependency -- confirmed live, UBI-249: a real
+          # dispatch of this workflow failed deno check on this exact
+          # gap ("Could not find @ubx/sdk in a node_modules folder").
+          # deno install is what every manual regeneration this session
+          # actually ran before deno check, and is what's needed here too.
+          deno install
           find . -name "*.ts" -print0 | xargs -0 deno check --frozen
 
       - name: Sanity-check the regenerated Python tree -- real import of every module
