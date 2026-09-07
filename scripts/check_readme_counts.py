@@ -5,8 +5,8 @@ WHY THIS EXISTS. The README-GEN block looks machine-generated, and it is
 not: nothing in this repo or in ubiquex ever regenerated it. It was
 written by hand once and the marker made it look maintained.
 
-So it went stale and nothing said. On 2026-08-27 the repo really did hold
-116 data source types. On 2026-09-04 a regeneration took that to 75, and
+So it went stale and nothing said. On 2026-08-27 ubx-sdk-kubernetes really did
+hold 116 data source types. On 2026-09-04 a regeneration took that to 75, and
 the README still said 116 a week later (UBI-241). The count was the only
 thing that disagreed with reality; the tree and a fresh schema dump
 agreed with each other exactly.
@@ -33,14 +33,42 @@ ROOT = Path(__file__).resolve().parent.parent
 BEGIN = "<!-- README-GEN:BEGIN -->"
 END = "<!-- README-GEN:END -->"
 
+def provider_name() -> str:
+    """The provider this repo publishes, discovered rather than hardcoded.
+
+    Every ubx-sdk-<p> repo has exactly one directory under sdk/go, named
+    for its provider. Discovering it is what lets one copy of this script
+    serve all six repos, which matters because the defect it guards
+    against is precisely the same file drifting between copies.
+    """
+    go_root = ROOT / "sdk/go"
+    dirs = [d.name for d in go_root.iterdir() if d.is_dir()] if go_root.is_dir() else []
+    if len(dirs) != 1:
+        raise SystemExit(
+            f"expected exactly one provider directory under {go_root}, found {dirs or 'none'}"
+        )
+    return dirs[0]
+
+
+PROVIDER = provider_name()
+
 # Per language: (root, file suffix, filenames that are not a type).
 # doc.go / doc.ts / __init__.py are package scaffolding, one per service
 # package, and counting them would inflate every number by the number of
 # services.
+#
+# index.ts is NOT on this list, and that is deliberate. It looks like a
+# barrel file and is not one: these repos contain no barrels at all, and
+# `index` is a real resource name in several providers
+# (datadog_logs_index, google aiplatform.Index, aws kendra.Index). The
+# first draft excluded it and reported the three largest repos as having
+# disagreeing language trees, which would have read as a partial
+# regeneration. The generator emits the same type set for all three
+# languages; only the per-language file naming differs.
 LANGUAGES = {
-    "go": (ROOT / "sdk/go/kubernetes", ".go", {"doc.go"}),
-    "typescript": (ROOT / "sdk/typescript/kubernetes", ".ts", {"doc.ts", "index.ts", "mod.ts"}),
-    "python": (ROOT / "sdk/python/ubx/kubernetes", ".py", {"__init__.py"}),
+    "go": (ROOT / "sdk/go" / PROVIDER, ".go", {"doc.go"}),
+    "typescript": (ROOT / "sdk/typescript" / PROVIDER, ".ts", {"doc.ts"}),
+    "python": (ROOT / "sdk/python/ubx" / PROVIDER, ".py", {"__init__.py"}),
 }
 
 
