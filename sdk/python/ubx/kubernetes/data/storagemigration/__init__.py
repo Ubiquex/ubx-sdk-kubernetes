@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .storage_version_migration import StorageVersionMigration, StorageVersionMigrationConfig
+from .storage_version_migration_list import StorageVersionMigrationList, StorageVersionMigrationListConfig

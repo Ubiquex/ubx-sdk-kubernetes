@@ -5,4 +5,6 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .cron_job import CronJob, CronJobConfig
+from .cron_job_list import CronJobList, CronJobListConfig
 from .job import Job, JobConfig
+from .job_list import JobList, JobListConfig
