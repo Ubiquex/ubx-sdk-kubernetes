@@ -4,22 +4,22 @@ package apiserverinternal
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StorageVersion_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type StorageVersion_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type StorageVersion_Metadata struct {
@@ -57,18 +57,18 @@ type StorageVersion_Metadata struct {
 
 type StorageVersion_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type StorageVersion_Status_StorageVersions struct {
-	ApiServerId any
+	ApiServerId       any
 	DecodableVersions any
-	EncodingVersion any
-	ServedVersions any
+	EncodingVersion   any
+	ServedVersions    any
 }
 
 type StorageVersion_Status struct {
@@ -98,6 +98,5 @@ type StorageVersionAttrs struct {
 
 var StorageVersion = ubx.DataSourceBinding{
 	WireType: "kubernetes_apiserverinternal_storage_version",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

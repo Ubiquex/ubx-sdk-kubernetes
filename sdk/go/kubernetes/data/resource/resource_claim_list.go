@@ -4,56 +4,56 @@ package resource
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceClaimList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type ResourceClaimList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type ResourceClaimList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type ResourceClaimList_Items_Spec_Devices_Config_Opaque struct {
-	Driver any
+	Driver     any
 	Parameters any
 }
 
 type ResourceClaimList_Items_Spec_Devices_Config struct {
-	Opaque any
+	Opaque   any
 	Requests any
 }
 
 type ResourceClaimList_Items_Spec_Devices_Constraints struct {
 	DistinctAttribute any
-	MatchAttribute any
-	Requests any
+	MatchAttribute    any
+	Requests          any
 }
 
 type ResourceClaimList_Items_Spec_Devices_Requests_Exactly_Capacity struct {
@@ -62,7 +62,7 @@ type ResourceClaimList_Items_Spec_Devices_Requests_Exactly_Capacity struct {
 
 type ResourceClaimList_Items_Spec_Devices_Requests_Exactly_DerivedAttributes struct {
 	Expression any
-	Name any
+	Name       any
 }
 
 type ResourceClaimList_Items_Spec_Devices_Requests_Exactly_Selectors_Cel struct {
@@ -74,45 +74,45 @@ type ResourceClaimList_Items_Spec_Devices_Requests_Exactly_Selectors struct {
 }
 
 type ResourceClaimList_Items_Spec_Devices_Requests_Exactly_Tolerations struct {
-	Effect any
-	Key any
-	Operator any
+	Effect            any
+	Key               any
+	Operator          any
 	TolerationSeconds any
-	Value any
+	Value             any
 }
 
 type ResourceClaimList_Items_Spec_Devices_Requests_Exactly struct {
-	AdminAccess any
-	AllocationMode any
-	Capacity any
-	Count any
+	AdminAccess       any
+	AllocationMode    any
+	Capacity          any
+	Count             any
 	DerivedAttributes any
-	DeviceClassName any
-	Selectors any
-	Tolerations any
+	DeviceClassName   any
+	Selectors         any
+	Tolerations       any
 }
 
 type ResourceClaimList_Items_Spec_Devices_Requests_FirstAvailable struct {
-	AllocationMode any
-	Capacity any
-	Count any
+	AllocationMode    any
+	Capacity          any
+	Count             any
 	DerivedAttributes any
-	DeviceClassName any
-	Name any
-	Selectors any
-	Tolerations any
+	DeviceClassName   any
+	Name              any
+	Selectors         any
+	Tolerations       any
 }
 
 type ResourceClaimList_Items_Spec_Devices_Requests struct {
-	Exactly any
+	Exactly        any
 	FirstAvailable any
-	Name any
+	Name           any
 }
 
 type ResourceClaimList_Items_Spec_Devices struct {
-	Config any
+	Config      any
 	Constraints any
-	Requests any
+	Requests    any
 }
 
 type ResourceClaimList_Items_Spec struct {
@@ -120,39 +120,39 @@ type ResourceClaimList_Items_Spec struct {
 }
 
 type ResourceClaimList_Items_Status_Allocation_Devices_Config struct {
-	Opaque any
+	Opaque   any
 	Requests any
-	Source any
+	Source   any
 }
 
 type ResourceClaimList_Items_Status_Allocation_Devices_Results struct {
-	AdminAccess any
-	BindingConditions any
+	AdminAccess              any
+	BindingConditions        any
 	BindingFailureConditions any
-	ConsumedCapacity any
-	Device any
-	Driver any
-	Pool any
-	Request any
-	ShareId any
-	SkipNodeOperations any
-	Tolerations any
+	ConsumedCapacity         any
+	Device                   any
+	Driver                   any
+	Pool                     any
+	Request                  any
+	ShareId                  any
+	SkipNodeOperations       any
+	Tolerations              any
 }
 
 type ResourceClaimList_Items_Status_Allocation_Devices struct {
-	Config any
+	Config  any
 	Results any
 }
 
 type ResourceClaimList_Items_Status_Allocation_NodeSelector_NodeSelectorTerms_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ResourceClaimList_Items_Status_Allocation_NodeSelector_NodeSelectorTerms struct {
 	MatchExpressions any
-	MatchFields any
+	MatchFields      any
 }
 
 type ResourceClaimList_Items_Status_Allocation_NodeSelector struct {
@@ -161,54 +161,54 @@ type ResourceClaimList_Items_Status_Allocation_NodeSelector struct {
 
 type ResourceClaimList_Items_Status_Allocation struct {
 	AllocationTimestamp any
-	Devices any
-	NodeSelector any
+	Devices             any
+	NodeSelector        any
 }
 
 type ResourceClaimList_Items_Status_Devices_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type ResourceClaimList_Items_Status_Devices_NetworkData struct {
 	HardwareAddress any
-	InterfaceName any
-	Ips any
+	InterfaceName   any
+	Ips             any
 }
 
 type ResourceClaimList_Items_Status_Devices struct {
-	Conditions any
-	Data any
-	Device any
-	Driver any
+	Conditions  any
+	Data        any
+	Device      any
+	Driver      any
 	NetworkData any
-	Pool any
-	ShareId any
+	Pool        any
+	ShareId     any
 }
 
 type ResourceClaimList_Items_Status_ReservedFor struct {
 	ApiGroup any
-	Name any
+	Name     any
 	Resource any
-	Uid any
+	Uid      any
 }
 
 type ResourceClaimList_Items_Status struct {
-	Allocation any
-	Devices any
+	Allocation  any
+	Devices     any
 	ReservedFor any
 }
 
 type ResourceClaimList_Items struct {
 	ApiVersion any
-	Kind any
-	Metadata any
-	Spec any
-	Status any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
 }
 
 type ResourceClaimList_Metadata_ShardInfo struct {
@@ -230,54 +230,54 @@ type ResourceClaimList_Metadata struct {
 }
 
 type ResourceClaimListConfig struct {
-	AllowWatchBookmarks any
-	Continue any
-	FieldSelector any
-	LabelSelector any
-	Limit any
-	ResourceVersion any
+	AllowWatchBookmarks  any
+	Continue             any
+	FieldSelector        any
+	LabelSelector        any
+	Limit                any
+	ResourceVersion      any
 	ResourceVersionMatch any
-	SendInitialEvents any
-	ShardSelector any
-	TimeoutSeconds any
-	Watch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 type ResourceClaimListAttrs struct {
 	AllowWatchBookmarks any
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-	ApiVersion any
-	Continue any
+	ApiVersion    any
+	Continue      any
 	FieldSelector any
 	// Items is the list of resource claims.
 	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
+	Kind          any
 	LabelSelector any
-	Limit any
+	Limit         any
 	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
-	Metadata any
-	ResourceVersion any
+	Metadata             any
+	ResourceVersion      any
 	ResourceVersionMatch any
-	SendInitialEvents any
-	ShardSelector any
-	TimeoutSeconds any
-	Watch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 var ResourceClaimList = ubx.DataSourceBinding{
 	WireType: "kubernetes_resource_resource_claim_list",
 	Fields: ubx.FieldMap{
-		"AllowWatchBookmarks": ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
-		"Continue": ubx.FieldSpec{WireName: "continue"},
-		"FieldSelector": ubx.FieldSpec{WireName: "field_selector"},
-		"LabelSelector": ubx.FieldSpec{WireName: "label_selector"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+		"AllowWatchBookmarks":  ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
+		"Continue":             ubx.FieldSpec{WireName: "continue"},
+		"FieldSelector":        ubx.FieldSpec{WireName: "field_selector"},
+		"LabelSelector":        ubx.FieldSpec{WireName: "label_selector"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"ResourceVersion":      ubx.FieldSpec{WireName: "resource_version"},
 		"ResourceVersionMatch": ubx.FieldSpec{WireName: "resource_version_match"},
-		"SendInitialEvents": ubx.FieldSpec{WireName: "send_initial_events"},
-		"ShardSelector": ubx.FieldSpec{WireName: "shard_selector"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-		"Watch": ubx.FieldSpec{WireName: "watch"},
+		"SendInitialEvents":    ubx.FieldSpec{WireName: "send_initial_events"},
+		"ShardSelector":        ubx.FieldSpec{WireName: "shard_selector"},
+		"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+		"Watch":                ubx.FieldSpec{WireName: "watch"},
 	},
 }

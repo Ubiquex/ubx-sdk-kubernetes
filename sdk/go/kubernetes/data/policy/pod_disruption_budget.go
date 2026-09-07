@@ -4,22 +4,22 @@ package policy
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PodDisruptionBudget_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type PodDisruptionBudget_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type PodDisruptionBudget_Metadata struct {
@@ -56,9 +56,9 @@ type PodDisruptionBudget_Metadata struct {
 }
 
 type PodDisruptionBudget_Spec_Selector_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type PodDisruptionBudget_Spec_Selector struct {
@@ -81,11 +81,11 @@ type PodDisruptionBudget_Spec struct {
 
 type PodDisruptionBudget_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type PodDisruptionBudget_Status struct {
@@ -123,6 +123,5 @@ type PodDisruptionBudgetAttrs struct {
 
 var PodDisruptionBudget = ubx.DataSourceBinding{
 	WireType: "kubernetes_policy_pod_disruption_budget",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

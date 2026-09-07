@@ -4,7 +4,7 @@ package meta
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServerAddressByClientCidrList_ServerAddressByClientCidrs struct {
-	ClientCidr any
+	ClientCidr    any
 	ServerAddress any
 }
 
@@ -24,6 +24,5 @@ type ServerAddressByClientCidrListAttrs struct {
 
 var ServerAddressByClientCidrList = ubx.DataSourceBinding{
 	WireType: "kubernetes_meta_server_address_by_client_cidr_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

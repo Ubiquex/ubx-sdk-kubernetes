@@ -4,44 +4,44 @@ package scheduling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CompositePodGroupList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type CompositePodGroupList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type CompositePodGroupList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type CompositePodGroupList_Items_Spec_DisruptionMode struct {
-	All any
+	All    any
 	Single any
 }
 
@@ -59,7 +59,7 @@ type CompositePodGroupList_Items_Spec_SchedulingPolicy_Gang struct {
 
 type CompositePodGroupList_Items_Spec_SchedulingPolicy struct {
 	Basic any
-	Gang any
+	Gang  any
 }
 
 type CompositePodGroupList_Items_Spec_WorkloadRef struct {
@@ -68,23 +68,23 @@ type CompositePodGroupList_Items_Spec_WorkloadRef struct {
 }
 
 type CompositePodGroupList_Items_Spec struct {
-	DisruptionMode any
+	DisruptionMode              any
 	ParentCompositePodGroupName any
-	PreemptionPolicy any
-	Priority any
-	PriorityClassName any
-	SchedulingConstraints any
-	SchedulingPolicy any
-	WorkloadRef any
+	PreemptionPolicy            any
+	Priority                    any
+	PriorityClassName           any
+	SchedulingConstraints       any
+	SchedulingPolicy            any
+	WorkloadRef                 any
 }
 
 type CompositePodGroupList_Items_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type CompositePodGroupList_Items_Status struct {
@@ -93,10 +93,10 @@ type CompositePodGroupList_Items_Status struct {
 
 type CompositePodGroupList_Items struct {
 	ApiVersion any
-	Kind any
-	Metadata any
-	Spec any
-	Status any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
 }
 
 type CompositePodGroupList_Metadata_ShardInfo struct {
@@ -133,6 +133,5 @@ type CompositePodGroupListAttrs struct {
 
 var CompositePodGroupList = ubx.DataSourceBinding{
 	WireType: "kubernetes_scheduling_composite_pod_group_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

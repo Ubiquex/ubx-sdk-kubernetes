@@ -100,69 +100,69 @@ type Event_Source struct {
 }
 
 var Event_InvolvedObjectFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":      ubx.FieldSpec{WireName: "api_version"},
+	"FieldPath":       ubx.FieldSpec{WireName: "field_path"},
+	"Kind":            ubx.FieldSpec{WireName: "kind"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Namespace":       ubx.FieldSpec{WireName: "namespace"},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var Event_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var Event_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var Event_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: Event_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: Event_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   Event_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   Event_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var Event_SeriesFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"LastObservedTime": ubx.FieldSpec{WireName: "last_observed_time"},
-	}
+	"Count":            ubx.FieldSpec{WireName: "count"},
+	"LastObservedTime": ubx.FieldSpec{WireName: "last_observed_time"},
+}
 
 var Event_SourceFields = ubx.FieldMap{
-		"Component": ubx.FieldSpec{WireName: "component"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-	}
+	"Component": ubx.FieldSpec{WireName: "component"},
+	"Host":      ubx.FieldSpec{WireName: "host"},
+}
 
 type EventConfig struct {
 	// What action was taken/failed regarding to the Regarding object.
@@ -249,44 +249,44 @@ type EventAttrs struct {
 var Event = ubx.ResourceBinding{
 	WireType: "kubernetes_core_event",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"EventTime": ubx.FieldSpec{WireName: "event_time"},
+		"Action":         ubx.FieldSpec{WireName: "action"},
+		"ApiVersion":     ubx.FieldSpec{WireName: "api_version"},
+		"Count":          ubx.FieldSpec{WireName: "count"},
+		"EventTime":      ubx.FieldSpec{WireName: "event_time"},
 		"FirstTimestamp": ubx.FieldSpec{WireName: "first_timestamp"},
 		"InvolvedObject": ubx.FieldSpec{
 			WireName: "involved_object",
-			Kind: "object",
-			Fields: Event_InvolvedObjectFields,
+			Kind:     "object",
+			Fields:   Event_InvolvedObjectFields,
 		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":          ubx.FieldSpec{WireName: "kind"},
 		"LastTimestamp": ubx.FieldSpec{WireName: "last_timestamp"},
-		"Message": ubx.FieldSpec{WireName: "message"},
+		"Message":       ubx.FieldSpec{WireName: "message"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: Event_MetadataFields,
+			Kind:     "object",
+			Fields:   Event_MetadataFields,
 		},
 		"Reason": ubx.FieldSpec{WireName: "reason"},
 		"Related": ubx.FieldSpec{
 			WireName: "related",
-			Kind: "object",
-			Fields: Event_InvolvedObjectFields,
+			Kind:     "object",
+			Fields:   Event_InvolvedObjectFields,
 		},
 		"ReportingComponent": ubx.FieldSpec{WireName: "reporting_component"},
-		"ReportingInstance": ubx.FieldSpec{WireName: "reporting_instance"},
+		"ReportingInstance":  ubx.FieldSpec{WireName: "reporting_instance"},
 		"Series": ubx.FieldSpec{
 			WireName: "series",
-			Kind: "object",
-			Fields: Event_SeriesFields,
+			Kind:     "object",
+			Fields:   Event_SeriesFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Event_SourceFields,
+			Kind:     "object",
+			Fields:   Event_SourceFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":      ubx.FieldSpec{WireName: "type"},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

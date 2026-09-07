@@ -135,138 +135,138 @@ type NetworkPolicy_Spec struct {
 }
 
 var NetworkPolicy_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var NetworkPolicy_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var NetworkPolicy_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: NetworkPolicy_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: NetworkPolicy_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   NetworkPolicy_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   NetworkPolicy_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var NetworkPolicy_Spec_Egress_PortsFields = ubx.FieldMap{
-		"EndPort": ubx.FieldSpec{WireName: "end_port"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"EndPort":  ubx.FieldSpec{WireName: "end_port"},
+	"Port":     ubx.FieldSpec{WireName: "port"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var NetworkPolicy_Spec_Egress_To_IpBlockFields = ubx.FieldMap{
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"Except": ubx.FieldSpec{WireName: "except"},
-	}
+	"Cidr":   ubx.FieldSpec{WireName: "cidr"},
+	"Except": ubx.FieldSpec{WireName: "except"},
+}
 
 var NetworkPolicy_Spec_Egress_To_NamespaceSelector_MatchExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var NetworkPolicy_Spec_Egress_To_NamespaceSelectorFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: NetworkPolicy_Spec_Egress_To_NamespaceSelector_MatchExpressionsFields,
-		},
-		"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   NetworkPolicy_Spec_Egress_To_NamespaceSelector_MatchExpressionsFields,
+	},
+	"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
+}
 
 var NetworkPolicy_Spec_Egress_ToFields = ubx.FieldMap{
-		"IpBlock": ubx.FieldSpec{
-			WireName: "ip_block",
-			Kind: "object",
-			Fields: NetworkPolicy_Spec_Egress_To_IpBlockFields,
-		},
-		"NamespaceSelector": ubx.FieldSpec{
-			WireName: "namespace_selector",
-			Kind: "object",
-			Fields: NetworkPolicy_Spec_Egress_To_NamespaceSelectorFields,
-		},
-		"PodSelector": ubx.FieldSpec{
-			WireName: "pod_selector",
-			Kind: "object",
-			Fields: NetworkPolicy_Spec_Egress_To_NamespaceSelectorFields,
-		},
-	}
+	"IpBlock": ubx.FieldSpec{
+		WireName: "ip_block",
+		Kind:     "object",
+		Fields:   NetworkPolicy_Spec_Egress_To_IpBlockFields,
+	},
+	"NamespaceSelector": ubx.FieldSpec{
+		WireName: "namespace_selector",
+		Kind:     "object",
+		Fields:   NetworkPolicy_Spec_Egress_To_NamespaceSelectorFields,
+	},
+	"PodSelector": ubx.FieldSpec{
+		WireName: "pod_selector",
+		Kind:     "object",
+		Fields:   NetworkPolicy_Spec_Egress_To_NamespaceSelectorFields,
+	},
+}
 
 var NetworkPolicy_Spec_EgressFields = ubx.FieldMap{
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: NetworkPolicy_Spec_Egress_PortsFields,
-		},
-		"To": ubx.FieldSpec{
-			WireName: "to",
-			Kind: "list",
-			Fields: NetworkPolicy_Spec_Egress_ToFields,
-		},
-	}
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   NetworkPolicy_Spec_Egress_PortsFields,
+	},
+	"To": ubx.FieldSpec{
+		WireName: "to",
+		Kind:     "list",
+		Fields:   NetworkPolicy_Spec_Egress_ToFields,
+	},
+}
 
 var NetworkPolicy_Spec_IngressFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{
-			WireName: "from",
-			Kind: "list",
-			Fields: NetworkPolicy_Spec_Egress_ToFields,
-		},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: NetworkPolicy_Spec_Egress_PortsFields,
-		},
-	}
+	"From": ubx.FieldSpec{
+		WireName: "from",
+		Kind:     "list",
+		Fields:   NetworkPolicy_Spec_Egress_ToFields,
+	},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   NetworkPolicy_Spec_Egress_PortsFields,
+	},
+}
 
 var NetworkPolicy_SpecFields = ubx.FieldMap{
-		"Egress": ubx.FieldSpec{
-			WireName: "egress",
-			Kind: "list",
-			Fields: NetworkPolicy_Spec_EgressFields,
-		},
-		"Ingress": ubx.FieldSpec{
-			WireName: "ingress",
-			Kind: "list",
-			Fields: NetworkPolicy_Spec_IngressFields,
-		},
-		"PodSelector": ubx.FieldSpec{
-			WireName: "pod_selector",
-			Kind: "object",
-			Fields: NetworkPolicy_Spec_Egress_To_NamespaceSelectorFields,
-		},
-		"PolicyTypes": ubx.FieldSpec{WireName: "policy_types"},
-	}
+	"Egress": ubx.FieldSpec{
+		WireName: "egress",
+		Kind:     "list",
+		Fields:   NetworkPolicy_Spec_EgressFields,
+	},
+	"Ingress": ubx.FieldSpec{
+		WireName: "ingress",
+		Kind:     "list",
+		Fields:   NetworkPolicy_Spec_IngressFields,
+	},
+	"PodSelector": ubx.FieldSpec{
+		WireName: "pod_selector",
+		Kind:     "object",
+		Fields:   NetworkPolicy_Spec_Egress_To_NamespaceSelectorFields,
+	},
+	"PolicyTypes": ubx.FieldSpec{WireName: "policy_types"},
+}
 
 type NetworkPolicyConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -302,18 +302,18 @@ var NetworkPolicy = ubx.ResourceBinding{
 	WireType: "kubernetes_networking_network_policy",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: NetworkPolicy_MetadataFields,
+			Kind:     "object",
+			Fields:   NetworkPolicy_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: NetworkPolicy_SpecFields,
+			Kind:     "object",
+			Fields:   NetworkPolicy_SpecFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApigroupList_Groups_PreferredVersion struct {
 	GroupVersion any
-	Version any
+	Version      any
 }
 
 type ApigroupList_Groups_ServerAddressByClientCidrs struct {
-	ClientCidr any
+	ClientCidr    any
 	ServerAddress any
 }
 
 type ApigroupList_Groups struct {
-	ApiVersion any
-	Kind any
-	Name any
-	PreferredVersion any
+	ApiVersion                 any
+	Kind                       any
+	Name                       any
+	PreferredVersion           any
 	ServerAddressByClientCidrs any
-	Versions any
+	Versions                   any
 }
 
 type ApigroupListConfig struct {
@@ -36,6 +36,5 @@ type ApigroupListAttrs struct {
 
 var ApigroupList = ubx.DataSourceBinding{
 	WireType: "kubernetes_meta_apigroup_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

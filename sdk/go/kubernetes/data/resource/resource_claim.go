@@ -4,22 +4,22 @@ package resource
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceClaim_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type ResourceClaim_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type ResourceClaim_Metadata struct {
@@ -56,19 +56,19 @@ type ResourceClaim_Metadata struct {
 }
 
 type ResourceClaim_Spec_Devices_Config_Opaque struct {
-	Driver any
+	Driver     any
 	Parameters any
 }
 
 type ResourceClaim_Spec_Devices_Config struct {
-	Opaque any
+	Opaque   any
 	Requests any
 }
 
 type ResourceClaim_Spec_Devices_Constraints struct {
 	DistinctAttribute any
-	MatchAttribute any
-	Requests any
+	MatchAttribute    any
+	Requests          any
 }
 
 type ResourceClaim_Spec_Devices_Requests_Exactly_Capacity struct {
@@ -77,7 +77,7 @@ type ResourceClaim_Spec_Devices_Requests_Exactly_Capacity struct {
 
 type ResourceClaim_Spec_Devices_Requests_Exactly_DerivedAttributes struct {
 	Expression any
-	Name any
+	Name       any
 }
 
 type ResourceClaim_Spec_Devices_Requests_Exactly_Selectors_Cel struct {
@@ -89,39 +89,39 @@ type ResourceClaim_Spec_Devices_Requests_Exactly_Selectors struct {
 }
 
 type ResourceClaim_Spec_Devices_Requests_Exactly_Tolerations struct {
-	Effect any
-	Key any
-	Operator any
+	Effect            any
+	Key               any
+	Operator          any
 	TolerationSeconds any
-	Value any
+	Value             any
 }
 
 type ResourceClaim_Spec_Devices_Requests_Exactly struct {
-	AdminAccess any
-	AllocationMode any
-	Capacity any
-	Count any
+	AdminAccess       any
+	AllocationMode    any
+	Capacity          any
+	Count             any
 	DerivedAttributes any
-	DeviceClassName any
-	Selectors any
-	Tolerations any
+	DeviceClassName   any
+	Selectors         any
+	Tolerations       any
 }
 
 type ResourceClaim_Spec_Devices_Requests_FirstAvailable struct {
-	AllocationMode any
-	Capacity any
-	Count any
+	AllocationMode    any
+	Capacity          any
+	Count             any
 	DerivedAttributes any
-	DeviceClassName any
-	Name any
-	Selectors any
-	Tolerations any
+	DeviceClassName   any
+	Name              any
+	Selectors         any
+	Tolerations       any
 }
 
 type ResourceClaim_Spec_Devices_Requests struct {
-	Exactly any
+	Exactly        any
 	FirstAvailable any
-	Name any
+	Name           any
 }
 
 type ResourceClaim_Spec_Devices struct {
@@ -139,23 +139,23 @@ type ResourceClaim_Spec struct {
 }
 
 type ResourceClaim_Status_Allocation_Devices_Config struct {
-	Opaque any
+	Opaque   any
 	Requests any
-	Source any
+	Source   any
 }
 
 type ResourceClaim_Status_Allocation_Devices_Results struct {
-	AdminAccess any
-	BindingConditions any
+	AdminAccess              any
+	BindingConditions        any
 	BindingFailureConditions any
-	ConsumedCapacity any
-	Device any
-	Driver any
-	Pool any
-	Request any
-	ShareId any
-	SkipNodeOperations any
-	Tolerations any
+	ConsumedCapacity         any
+	Device                   any
+	Driver                   any
+	Pool                     any
+	Request                  any
+	ShareId                  any
+	SkipNodeOperations       any
+	Tolerations              any
 }
 
 type ResourceClaim_Status_Allocation_Devices struct {
@@ -166,14 +166,14 @@ type ResourceClaim_Status_Allocation_Devices struct {
 }
 
 type ResourceClaim_Status_Allocation_NodeSelector_NodeSelectorTerms_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ResourceClaim_Status_Allocation_NodeSelector_NodeSelectorTerms struct {
 	MatchExpressions any
-	MatchFields any
+	MatchFields      any
 }
 
 type ResourceClaim_Status_Allocation_NodeSelector struct {
@@ -192,34 +192,34 @@ type ResourceClaim_Status_Allocation struct {
 
 type ResourceClaim_Status_Devices_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type ResourceClaim_Status_Devices_NetworkData struct {
 	HardwareAddress any
-	InterfaceName any
-	Ips any
+	InterfaceName   any
+	Ips             any
 }
 
 type ResourceClaim_Status_Devices struct {
-	Conditions any
-	Data any
-	Device any
-	Driver any
+	Conditions  any
+	Data        any
+	Device      any
+	Driver      any
 	NetworkData any
-	Pool any
-	ShareId any
+	Pool        any
+	ShareId     any
 }
 
 type ResourceClaim_Status_ReservedFor struct {
 	ApiGroup any
-	Name any
+	Name     any
 	Resource any
-	Uid any
+	Uid      any
 }
 
 type ResourceClaim_Status struct {
@@ -249,6 +249,5 @@ type ResourceClaimAttrs struct {
 
 var ResourceClaim = ubx.DataSourceBinding{
 	WireType: "kubernetes_resource_resource_claim",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

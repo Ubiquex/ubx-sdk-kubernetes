@@ -4,49 +4,49 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LimitRangeList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type LimitRangeList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type LimitRangeList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type LimitRangeList_Items_Spec_Limits struct {
-	Default any
-	DefaultRequest any
-	Max any
+	Default              any
+	DefaultRequest       any
+	Max                  any
 	MaxLimitRequestRatio any
-	Min any
-	Type any
+	Min                  any
+	Type                 any
 }
 
 type LimitRangeList_Items_Spec struct {
@@ -55,9 +55,9 @@ type LimitRangeList_Items_Spec struct {
 
 type LimitRangeList_Items struct {
 	ApiVersion any
-	Kind any
-	Metadata any
-	Spec any
+	Kind       any
+	Metadata   any
+	Spec       any
 }
 
 type LimitRangeList_Metadata_ShardInfo struct {
@@ -94,6 +94,5 @@ type LimitRangeListAttrs struct {
 
 var LimitRangeList = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_limit_range_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

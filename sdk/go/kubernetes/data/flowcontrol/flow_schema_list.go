@@ -4,40 +4,40 @@ package flowcontrol
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlowSchemaList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type FlowSchemaList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type FlowSchemaList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type FlowSchemaList_Items_Spec_DistinguisherMethod struct {
@@ -50,48 +50,48 @@ type FlowSchemaList_Items_Spec_PriorityLevelConfiguration struct {
 
 type FlowSchemaList_Items_Spec_Rules_NonResourceRules struct {
 	NonResourceUrls any
-	Verbs any
+	Verbs           any
 }
 
 type FlowSchemaList_Items_Spec_Rules_ResourceRules struct {
-	ApiGroups any
+	ApiGroups    any
 	ClusterScope any
-	Namespaces any
-	Resources any
-	Verbs any
+	Namespaces   any
+	Resources    any
+	Verbs        any
 }
 
 type FlowSchemaList_Items_Spec_Rules_Subjects_ServiceAccount struct {
-	Name any
+	Name      any
 	Namespace any
 }
 
 type FlowSchemaList_Items_Spec_Rules_Subjects struct {
-	Group any
-	Kind any
+	Group          any
+	Kind           any
 	ServiceAccount any
-	User any
+	User           any
 }
 
 type FlowSchemaList_Items_Spec_Rules struct {
 	NonResourceRules any
-	ResourceRules any
-	Subjects any
+	ResourceRules    any
+	Subjects         any
 }
 
 type FlowSchemaList_Items_Spec struct {
-	DistinguisherMethod any
-	MatchingPrecedence any
+	DistinguisherMethod        any
+	MatchingPrecedence         any
 	PriorityLevelConfiguration any
-	Rules any
+	Rules                      any
 }
 
 type FlowSchemaList_Items_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type FlowSchemaList_Items_Status struct {
@@ -100,10 +100,10 @@ type FlowSchemaList_Items_Status struct {
 
 type FlowSchemaList_Items struct {
 	ApiVersion any
-	Kind any
-	Metadata any
-	Spec any
-	Status any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
 }
 
 type FlowSchemaList_Metadata_ShardInfo struct {
@@ -125,54 +125,54 @@ type FlowSchemaList_Metadata struct {
 }
 
 type FlowSchemaListConfig struct {
-	AllowWatchBookmarks any
-	Continue any
-	FieldSelector any
-	LabelSelector any
-	Limit any
-	ResourceVersion any
+	AllowWatchBookmarks  any
+	Continue             any
+	FieldSelector        any
+	LabelSelector        any
+	Limit                any
+	ResourceVersion      any
 	ResourceVersionMatch any
-	SendInitialEvents any
-	ShardSelector any
-	TimeoutSeconds any
-	Watch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 type FlowSchemaListAttrs struct {
 	AllowWatchBookmarks any
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-	ApiVersion any
-	Continue any
+	ApiVersion    any
+	Continue      any
 	FieldSelector any
 	// `items` is a list of FlowSchemas.
 	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
+	Kind          any
 	LabelSelector any
-	Limit any
+	Limit         any
 	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
-	Metadata any
-	ResourceVersion any
+	Metadata             any
+	ResourceVersion      any
 	ResourceVersionMatch any
-	SendInitialEvents any
-	ShardSelector any
-	TimeoutSeconds any
-	Watch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 var FlowSchemaList = ubx.DataSourceBinding{
 	WireType: "kubernetes_flowcontrol_flow_schema_list",
 	Fields: ubx.FieldMap{
-		"AllowWatchBookmarks": ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
-		"Continue": ubx.FieldSpec{WireName: "continue"},
-		"FieldSelector": ubx.FieldSpec{WireName: "field_selector"},
-		"LabelSelector": ubx.FieldSpec{WireName: "label_selector"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+		"AllowWatchBookmarks":  ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
+		"Continue":             ubx.FieldSpec{WireName: "continue"},
+		"FieldSelector":        ubx.FieldSpec{WireName: "field_selector"},
+		"LabelSelector":        ubx.FieldSpec{WireName: "label_selector"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"ResourceVersion":      ubx.FieldSpec{WireName: "resource_version"},
 		"ResourceVersionMatch": ubx.FieldSpec{WireName: "resource_version_match"},
-		"SendInitialEvents": ubx.FieldSpec{WireName: "send_initial_events"},
-		"ShardSelector": ubx.FieldSpec{WireName: "shard_selector"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-		"Watch": ubx.FieldSpec{WireName: "watch"},
+		"SendInitialEvents":    ubx.FieldSpec{WireName: "send_initial_events"},
+		"ShardSelector":        ubx.FieldSpec{WireName: "shard_selector"},
+		"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+		"Watch":                ubx.FieldSpec{WireName: "watch"},
 	},
 }

@@ -4,122 +4,122 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PersistentVolumeList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type PersistentVolumeList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type PersistentVolumeList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type PersistentVolumeList_Items_Spec_AwsElasticBlockStore struct {
-	FsType any
+	FsType    any
 	Partition any
-	ReadOnly any
-	VolumeId any
+	ReadOnly  any
+	VolumeId  any
 }
 
 type PersistentVolumeList_Items_Spec_AzureDisk struct {
 	CachingMode any
-	DiskName any
-	DiskUri any
-	FsType any
-	Kind any
-	ReadOnly any
+	DiskName    any
+	DiskUri     any
+	FsType      any
+	Kind        any
+	ReadOnly    any
 }
 
 type PersistentVolumeList_Items_Spec_AzureFile struct {
-	ReadOnly any
-	SecretName any
+	ReadOnly        any
+	SecretName      any
 	SecretNamespace any
-	ShareName any
+	ShareName       any
 }
 
 type PersistentVolumeList_Items_Spec_Cephfs_SecretRef struct {
-	Name any
+	Name      any
 	Namespace any
 }
 
 type PersistentVolumeList_Items_Spec_Cephfs struct {
-	Monitors any
-	Path any
-	ReadOnly any
+	Monitors   any
+	Path       any
+	ReadOnly   any
 	SecretFile any
-	SecretRef any
-	User any
+	SecretRef  any
+	User       any
 }
 
 type PersistentVolumeList_Items_Spec_Cinder struct {
-	FsType any
-	ReadOnly any
+	FsType    any
+	ReadOnly  any
 	SecretRef any
-	VolumeId any
+	VolumeId  any
 }
 
 type PersistentVolumeList_Items_Spec_ClaimRef struct {
-	ApiVersion any
-	FieldPath any
-	Kind any
-	Name any
-	Namespace any
+	ApiVersion      any
+	FieldPath       any
+	Kind            any
+	Name            any
+	Namespace       any
 	ResourceVersion any
-	Uid any
+	Uid             any
 }
 
 type PersistentVolumeList_Items_Spec_Csi struct {
-	ControllerExpandSecretRef any
+	ControllerExpandSecretRef  any
 	ControllerPublishSecretRef any
-	Driver any
-	FsType any
-	NodeExpandSecretRef any
-	NodePublishSecretRef any
-	NodeStageSecretRef any
-	ReadOnly any
-	VolumeAttributes any
-	VolumeHandle any
+	Driver                     any
+	FsType                     any
+	NodeExpandSecretRef        any
+	NodePublishSecretRef       any
+	NodeStageSecretRef         any
+	ReadOnly                   any
+	VolumeAttributes           any
+	VolumeHandle               any
 }
 
 type PersistentVolumeList_Items_Spec_Fc struct {
-	FsType any
-	Lun any
-	ReadOnly any
+	FsType     any
+	Lun        any
+	ReadOnly   any
 	TargetWwns any
-	Wwids any
+	Wwids      any
 }
 
 type PersistentVolumeList_Items_Spec_FlexVolume struct {
-	Driver any
-	FsType any
-	Options any
-	ReadOnly any
+	Driver    any
+	FsType    any
+	Options   any
+	ReadOnly  any
 	SecretRef any
 }
 
@@ -129,17 +129,17 @@ type PersistentVolumeList_Items_Spec_Flocker struct {
 }
 
 type PersistentVolumeList_Items_Spec_GcePersistentDisk struct {
-	FsType any
+	FsType    any
 	Partition any
-	PdName any
-	ReadOnly any
+	PdName    any
+	ReadOnly  any
 }
 
 type PersistentVolumeList_Items_Spec_Glusterfs struct {
-	Endpoints any
+	Endpoints          any
 	EndpointsNamespace any
-	Path any
-	ReadOnly any
+	Path               any
+	ReadOnly           any
 }
 
 type PersistentVolumeList_Items_Spec_HostPath struct {
@@ -149,38 +149,38 @@ type PersistentVolumeList_Items_Spec_HostPath struct {
 
 type PersistentVolumeList_Items_Spec_Iscsi struct {
 	ChapAuthDiscovery any
-	ChapAuthSession any
-	FsType any
-	InitiatorName any
-	Iqn any
-	IscsiInterface any
-	Lun any
-	Portals any
-	ReadOnly any
-	SecretRef any
-	TargetPortal any
+	ChapAuthSession   any
+	FsType            any
+	InitiatorName     any
+	Iqn               any
+	IscsiInterface    any
+	Lun               any
+	Portals           any
+	ReadOnly          any
+	SecretRef         any
+	TargetPortal      any
 }
 
 type PersistentVolumeList_Items_Spec_Local struct {
 	FsType any
-	Path any
+	Path   any
 }
 
 type PersistentVolumeList_Items_Spec_Nfs struct {
-	Path any
+	Path     any
 	ReadOnly any
-	Server any
+	Server   any
 }
 
 type PersistentVolumeList_Items_Spec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type PersistentVolumeList_Items_Spec_NodeAffinity_Required_NodeSelectorTerms struct {
 	MatchExpressions any
-	MatchFields any
+	MatchFields      any
 }
 
 type PersistentVolumeList_Items_Spec_NodeAffinity_Required struct {
@@ -193,110 +193,110 @@ type PersistentVolumeList_Items_Spec_NodeAffinity struct {
 
 type PersistentVolumeList_Items_Spec_PhotonPersistentDisk struct {
 	FsType any
-	PdId any
+	PdId   any
 }
 
 type PersistentVolumeList_Items_Spec_PortworxVolume struct {
-	FsType any
+	FsType   any
 	ReadOnly any
 	VolumeId any
 }
 
 type PersistentVolumeList_Items_Spec_Quobyte struct {
-	Group any
+	Group    any
 	ReadOnly any
 	Registry any
-	Tenant any
-	User any
-	Volume any
+	Tenant   any
+	User     any
+	Volume   any
 }
 
 type PersistentVolumeList_Items_Spec_Rbd struct {
-	FsType any
-	Image any
-	Keyring any
-	Monitors any
-	Pool any
-	ReadOnly any
+	FsType    any
+	Image     any
+	Keyring   any
+	Monitors  any
+	Pool      any
+	ReadOnly  any
 	SecretRef any
-	User any
+	User      any
 }
 
 type PersistentVolumeList_Items_Spec_ScaleIo struct {
-	FsType any
-	Gateway any
+	FsType           any
+	Gateway          any
 	ProtectionDomain any
-	ReadOnly any
-	SecretRef any
-	SslEnabled any
-	StorageMode any
-	StoragePool any
-	System any
-	VolumeName any
+	ReadOnly         any
+	SecretRef        any
+	SslEnabled       any
+	StorageMode      any
+	StoragePool      any
+	System           any
+	VolumeName       any
 }
 
 type PersistentVolumeList_Items_Spec_Storageos struct {
-	FsType any
-	ReadOnly any
-	SecretRef any
-	VolumeName any
+	FsType          any
+	ReadOnly        any
+	SecretRef       any
+	VolumeName      any
 	VolumeNamespace any
 }
 
 type PersistentVolumeList_Items_Spec_VsphereVolume struct {
-	FsType any
-	StoragePolicyId any
+	FsType            any
+	StoragePolicyId   any
 	StoragePolicyName any
-	VolumePath any
+	VolumePath        any
 }
 
 type PersistentVolumeList_Items_Spec struct {
-	AccessModes any
-	AwsElasticBlockStore any
-	AzureDisk any
-	AzureFile any
-	Capacity any
-	Cephfs any
-	Cinder any
-	ClaimRef any
-	Csi any
-	Fc any
-	FlexVolume any
-	Flocker any
-	GcePersistentDisk any
-	Glusterfs any
-	HostPath any
-	Iscsi any
-	Local any
-	MountOptions any
-	Nfs any
-	NodeAffinity any
+	AccessModes                   any
+	AwsElasticBlockStore          any
+	AzureDisk                     any
+	AzureFile                     any
+	Capacity                      any
+	Cephfs                        any
+	Cinder                        any
+	ClaimRef                      any
+	Csi                           any
+	Fc                            any
+	FlexVolume                    any
+	Flocker                       any
+	GcePersistentDisk             any
+	Glusterfs                     any
+	HostPath                      any
+	Iscsi                         any
+	Local                         any
+	MountOptions                  any
+	Nfs                           any
+	NodeAffinity                  any
 	PersistentVolumeReclaimPolicy any
-	PhotonPersistentDisk any
-	PortworxVolume any
-	Quobyte any
-	Rbd any
-	ScaleIo any
-	StorageClassName any
-	Storageos any
-	VolumeAttributesClassName any
-	VolumeMode any
-	VsphereVolume any
+	PhotonPersistentDisk          any
+	PortworxVolume                any
+	Quobyte                       any
+	Rbd                           any
+	ScaleIo                       any
+	StorageClassName              any
+	Storageos                     any
+	VolumeAttributesClassName     any
+	VolumeMode                    any
+	VsphereVolume                 any
 }
 
 type PersistentVolumeList_Items_Status struct {
 	LastPhaseTransitionTime any
-	Message any
-	Phase any
-	Reason any
+	Message                 any
+	Phase                   any
+	Reason                  any
 }
 
 type PersistentVolumeList_Items struct {
 	ApiVersion any
-	Kind any
-	Metadata any
-	Spec any
-	Status any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
 }
 
 type PersistentVolumeList_Metadata_ShardInfo struct {
@@ -318,54 +318,54 @@ type PersistentVolumeList_Metadata struct {
 }
 
 type PersistentVolumeListConfig struct {
-	AllowWatchBookmarks any
-	Continue any
-	FieldSelector any
-	LabelSelector any
-	Limit any
-	ResourceVersion any
+	AllowWatchBookmarks  any
+	Continue             any
+	FieldSelector        any
+	LabelSelector        any
+	Limit                any
+	ResourceVersion      any
 	ResourceVersionMatch any
-	SendInitialEvents any
-	ShardSelector any
-	TimeoutSeconds any
-	Watch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 type PersistentVolumeListAttrs struct {
 	AllowWatchBookmarks any
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-	ApiVersion any
-	Continue any
+	ApiVersion    any
+	Continue      any
 	FieldSelector any
 	// items is a list of persistent volumes. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes
 	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
+	Kind          any
 	LabelSelector any
-	Limit any
+	Limit         any
 	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
-	Metadata any
-	ResourceVersion any
+	Metadata             any
+	ResourceVersion      any
 	ResourceVersionMatch any
-	SendInitialEvents any
-	ShardSelector any
-	TimeoutSeconds any
-	Watch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 var PersistentVolumeList = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_persistent_volume_list",
 	Fields: ubx.FieldMap{
-		"AllowWatchBookmarks": ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
-		"Continue": ubx.FieldSpec{WireName: "continue"},
-		"FieldSelector": ubx.FieldSpec{WireName: "field_selector"},
-		"LabelSelector": ubx.FieldSpec{WireName: "label_selector"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+		"AllowWatchBookmarks":  ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
+		"Continue":             ubx.FieldSpec{WireName: "continue"},
+		"FieldSelector":        ubx.FieldSpec{WireName: "field_selector"},
+		"LabelSelector":        ubx.FieldSpec{WireName: "label_selector"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"ResourceVersion":      ubx.FieldSpec{WireName: "resource_version"},
 		"ResourceVersionMatch": ubx.FieldSpec{WireName: "resource_version_match"},
-		"SendInitialEvents": ubx.FieldSpec{WireName: "send_initial_events"},
-		"ShardSelector": ubx.FieldSpec{WireName: "shard_selector"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-		"Watch": ubx.FieldSpec{WireName: "watch"},
+		"SendInitialEvents":    ubx.FieldSpec{WireName: "send_initial_events"},
+		"ShardSelector":        ubx.FieldSpec{WireName: "shard_selector"},
+		"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+		"Watch":                ubx.FieldSpec{WireName: "watch"},
 	},
 }

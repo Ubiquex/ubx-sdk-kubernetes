@@ -4,126 +4,126 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PersistentVolumeClaimList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type PersistentVolumeClaimList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type PersistentVolumeClaimList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type PersistentVolumeClaimList_Items_Spec_DataSource struct {
 	ApiGroup any
-	Kind any
-	Name any
+	Kind     any
+	Name     any
 }
 
 type PersistentVolumeClaimList_Items_Spec_DataSourceRef struct {
-	ApiGroup any
-	Kind any
-	Name any
+	ApiGroup  any
+	Kind      any
+	Name      any
 	Namespace any
 }
 
 type PersistentVolumeClaimList_Items_Spec_Resources struct {
-	Limits any
+	Limits   any
 	Requests any
 }
 
 type PersistentVolumeClaimList_Items_Spec_Selector_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type PersistentVolumeClaimList_Items_Spec_Selector struct {
 	MatchExpressions any
-	MatchLabels any
+	MatchLabels      any
 }
 
 type PersistentVolumeClaimList_Items_Spec struct {
-	AccessModes any
-	DataSource any
-	DataSourceRef any
-	Resources any
-	Selector any
-	StorageClassName any
+	AccessModes               any
+	DataSource                any
+	DataSourceRef             any
+	Resources                 any
+	Selector                  any
+	StorageClassName          any
 	VolumeAttributesClassName any
-	VolumeMode any
-	VolumeName any
+	VolumeMode                any
+	VolumeName                any
 }
 
 type PersistentVolumeClaimList_Items_Status_Conditions struct {
-	LastProbeTime any
+	LastProbeTime      any
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type PersistentVolumeClaimList_Items_Status_HealthStatus_HealthConditions struct {
 	Message any
-	Reason any
-	Status any
+	Reason  any
+	Status  any
 }
 
 type PersistentVolumeClaimList_Items_Status_HealthStatus struct {
-	HealthConditions any
+	HealthConditions   any
 	LastTransitionTime any
 }
 
 type PersistentVolumeClaimList_Items_Status_ModifyVolumeStatus struct {
-	Status any
+	Status                          any
 	TargetVolumeAttributesClassName any
 }
 
 type PersistentVolumeClaimList_Items_Status struct {
-	AccessModes any
-	AllocatedResourceStatuses any
-	AllocatedResources any
-	Capacity any
-	Conditions any
+	AccessModes                      any
+	AllocatedResourceStatuses        any
+	AllocatedResources               any
+	Capacity                         any
+	Conditions                       any
 	CurrentVolumeAttributesClassName any
-	HealthStatus any
-	ModifyVolumeStatus any
-	Phase any
+	HealthStatus                     any
+	ModifyVolumeStatus               any
+	Phase                            any
 }
 
 type PersistentVolumeClaimList_Items struct {
 	ApiVersion any
-	Kind any
-	Metadata any
-	Spec any
-	Status any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
 }
 
 type PersistentVolumeClaimList_Metadata_ShardInfo struct {
@@ -145,54 +145,54 @@ type PersistentVolumeClaimList_Metadata struct {
 }
 
 type PersistentVolumeClaimListConfig struct {
-	AllowWatchBookmarks any
-	Continue any
-	FieldSelector any
-	LabelSelector any
-	Limit any
-	ResourceVersion any
+	AllowWatchBookmarks  any
+	Continue             any
+	FieldSelector        any
+	LabelSelector        any
+	Limit                any
+	ResourceVersion      any
 	ResourceVersionMatch any
-	SendInitialEvents any
-	ShardSelector any
-	TimeoutSeconds any
-	Watch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 type PersistentVolumeClaimListAttrs struct {
 	AllowWatchBookmarks any
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-	ApiVersion any
-	Continue any
+	ApiVersion    any
+	Continue      any
 	FieldSelector any
 	// items is a list of persistent volume claims. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims
 	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
+	Kind          any
 	LabelSelector any
-	Limit any
+	Limit         any
 	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
-	Metadata any
-	ResourceVersion any
+	Metadata             any
+	ResourceVersion      any
 	ResourceVersionMatch any
-	SendInitialEvents any
-	ShardSelector any
-	TimeoutSeconds any
-	Watch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 var PersistentVolumeClaimList = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_persistent_volume_claim_list",
 	Fields: ubx.FieldMap{
-		"AllowWatchBookmarks": ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
-		"Continue": ubx.FieldSpec{WireName: "continue"},
-		"FieldSelector": ubx.FieldSpec{WireName: "field_selector"},
-		"LabelSelector": ubx.FieldSpec{WireName: "label_selector"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+		"AllowWatchBookmarks":  ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
+		"Continue":             ubx.FieldSpec{WireName: "continue"},
+		"FieldSelector":        ubx.FieldSpec{WireName: "field_selector"},
+		"LabelSelector":        ubx.FieldSpec{WireName: "label_selector"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"ResourceVersion":      ubx.FieldSpec{WireName: "resource_version"},
 		"ResourceVersionMatch": ubx.FieldSpec{WireName: "resource_version_match"},
-		"SendInitialEvents": ubx.FieldSpec{WireName: "send_initial_events"},
-		"ShardSelector": ubx.FieldSpec{WireName: "shard_selector"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-		"Watch": ubx.FieldSpec{WireName: "watch"},
+		"SendInitialEvents":    ubx.FieldSpec{WireName: "send_initial_events"},
+		"ShardSelector":        ubx.FieldSpec{WireName: "shard_selector"},
+		"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+		"Watch":                ubx.FieldSpec{WireName: "watch"},
 	},
 }

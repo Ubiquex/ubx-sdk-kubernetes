@@ -4,81 +4,81 @@ package apiextensions
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomResourceDefinitionList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type CustomResourceDefinitionList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type CustomResourceDefinitionList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Conversion_Webhook_ClientConfig_Service struct {
-	Name any
+	Name      any
 	Namespace any
-	Path any
-	Port any
+	Path      any
+	Port      any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Conversion_Webhook_ClientConfig struct {
 	CaBundle any
-	Service any
-	Url any
+	Service  any
+	Url      any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Conversion_Webhook struct {
-	ClientConfig any
+	ClientConfig             any
 	ConversionReviewVersions any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Conversion struct {
 	Strategy any
-	Webhook any
+	Webhook  any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Names struct {
 	Categories any
-	Kind any
-	ListKind any
-	Plural any
+	Kind       any
+	ListKind   any
+	Plural     any
 	ShortNames any
-	Singular any
+	Singular   any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Versions_AdditionalPrinterColumns struct {
 	Description any
-	Format any
-	JsonPath any
-	Name any
-	Priority any
-	Type any
+	Format      any
+	JsonPath    any
+	Name        any
+	Priority    any
+	Type        any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Versions_Schema_OpenApiv3Schema_AllOf struct {
@@ -86,61 +86,61 @@ type CustomResourceDefinitionList_Items_Spec_Versions_Schema_OpenApiv3Schema_All
 
 type CustomResourceDefinitionList_Items_Spec_Versions_Schema_OpenApiv3Schema_ExternalDocs struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Versions_Schema_OpenApiv3Schema_XKubernetesValidations struct {
-	FieldPath any
-	Message any
+	FieldPath         any
+	Message           any
 	MessageExpression any
-	OptionalOldSelf any
-	Reason any
-	Rule any
+	OptionalOldSelf   any
+	Reason            any
+	Rule              any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Versions_Schema_OpenApiv3Schema struct {
-	AdditionalItems any
-	AdditionalProperties any
-	AllOf any
-	AnyOf any
-	Default any
-	Definitions any
-	Dependencies any
-	Description any
-	Enum any
-	Example any
-	ExclusiveMaximum any
-	ExclusiveMinimum any
-	ExternalDocs any
-	Format any
-	Id any
-	Items any
-	MaxItems any
-	MaxLength any
-	MaxProperties any
-	Maximum any
-	MinItems any
-	MinLength any
-	MinProperties any
-	Minimum any
-	MultipleOf any
-	Not any
-	Nullable any
-	OneOf any
-	Pattern any
-	PatternProperties any
-	Properties any
-	Required any
-	Title any
-	Type any
-	UniqueItems any
-	XKubernetesEmbeddedResource any
-	XKubernetesIntOrString any
-	XKubernetesListMapKeys any
-	XKubernetesListType any
-	XKubernetesMapType any
+	AdditionalItems                  any
+	AdditionalProperties             any
+	AllOf                            any
+	AnyOf                            any
+	Default                          any
+	Definitions                      any
+	Dependencies                     any
+	Description                      any
+	Enum                             any
+	Example                          any
+	ExclusiveMaximum                 any
+	ExclusiveMinimum                 any
+	ExternalDocs                     any
+	Format                           any
+	Id                               any
+	Items                            any
+	MaxItems                         any
+	MaxLength                        any
+	MaxProperties                    any
+	Maximum                          any
+	MinItems                         any
+	MinLength                        any
+	MinProperties                    any
+	Minimum                          any
+	MultipleOf                       any
+	Not                              any
+	Nullable                         any
+	OneOf                            any
+	Pattern                          any
+	PatternProperties                any
+	Properties                       any
+	Required                         any
+	Title                            any
+	Type                             any
+	UniqueItems                      any
+	XKubernetesEmbeddedResource      any
+	XKubernetesIntOrString           any
+	XKubernetesListMapKeys           any
+	XKubernetesListType              any
+	XKubernetesMapType               any
 	XKubernetesPreserveUnknownFields any
-	XKubernetesValidations any
+	XKubernetesValidations           any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Versions_Schema struct {
@@ -152,59 +152,59 @@ type CustomResourceDefinitionList_Items_Spec_Versions_SelectableFields struct {
 }
 
 type CustomResourceDefinitionList_Items_Spec_Versions_Subresources_Scale struct {
-	LabelSelectorPath any
-	SpecReplicasPath any
+	LabelSelectorPath  any
+	SpecReplicasPath   any
 	StatusReplicasPath any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Versions_Subresources struct {
-	Scale any
+	Scale  any
 	Status any
 }
 
 type CustomResourceDefinitionList_Items_Spec_Versions struct {
 	AdditionalPrinterColumns any
-	Deprecated any
-	DeprecationWarning any
-	Name any
-	Schema any
-	SelectableFields any
-	Served any
-	Storage any
-	Subresources any
+	Deprecated               any
+	DeprecationWarning       any
+	Name                     any
+	Schema                   any
+	SelectableFields         any
+	Served                   any
+	Storage                  any
+	Subresources             any
 }
 
 type CustomResourceDefinitionList_Items_Spec struct {
-	Conversion any
-	Group any
-	Names any
+	Conversion            any
+	Group                 any
+	Names                 any
 	PreserveUnknownFields any
-	Scope any
-	Versions any
+	Scope                 any
+	Versions              any
 }
 
 type CustomResourceDefinitionList_Items_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type CustomResourceDefinitionList_Items_Status struct {
-	AcceptedNames any
-	Conditions any
+	AcceptedNames      any
+	Conditions         any
 	ObservedGeneration any
-	StoredVersions any
+	StoredVersions     any
 }
 
 type CustomResourceDefinitionList_Items struct {
 	ApiVersion any
-	Kind any
-	Metadata any
-	Spec any
-	Status any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
 }
 
 type CustomResourceDefinitionList_Metadata_ShardInfo struct {
@@ -226,54 +226,54 @@ type CustomResourceDefinitionList_Metadata struct {
 }
 
 type CustomResourceDefinitionListConfig struct {
-	AllowWatchBookmarks any
-	Continue any
-	FieldSelector any
-	LabelSelector any
-	Limit any
-	ResourceVersion any
+	AllowWatchBookmarks  any
+	Continue             any
+	FieldSelector        any
+	LabelSelector        any
+	Limit                any
+	ResourceVersion      any
 	ResourceVersionMatch any
-	SendInitialEvents any
-	ShardSelector any
-	TimeoutSeconds any
-	Watch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 type CustomResourceDefinitionListAttrs struct {
 	AllowWatchBookmarks any
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
-	ApiVersion any
-	Continue any
+	ApiVersion    any
+	Continue      any
 	FieldSelector any
 	// items list individual CustomResourceDefinition objects
 	Items any
 	// Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
-	Kind any
+	Kind          any
 	LabelSelector any
-	Limit any
+	Limit         any
 	// ListMeta describes metadata that synthetic resources must have, including lists and various status objects. A resource may have only one of {ObjectMeta, ListMeta}.
-	Metadata any
-	ResourceVersion any
+	Metadata             any
+	ResourceVersion      any
 	ResourceVersionMatch any
-	SendInitialEvents any
-	ShardSelector any
-	TimeoutSeconds any
-	Watch any
+	SendInitialEvents    any
+	ShardSelector        any
+	TimeoutSeconds       any
+	Watch                any
 }
 
 var CustomResourceDefinitionList = ubx.DataSourceBinding{
 	WireType: "kubernetes_apiextensions_custom_resource_definition_list",
 	Fields: ubx.FieldMap{
-		"AllowWatchBookmarks": ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
-		"Continue": ubx.FieldSpec{WireName: "continue"},
-		"FieldSelector": ubx.FieldSpec{WireName: "field_selector"},
-		"LabelSelector": ubx.FieldSpec{WireName: "label_selector"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+		"AllowWatchBookmarks":  ubx.FieldSpec{WireName: "allow_watch_bookmarks"},
+		"Continue":             ubx.FieldSpec{WireName: "continue"},
+		"FieldSelector":        ubx.FieldSpec{WireName: "field_selector"},
+		"LabelSelector":        ubx.FieldSpec{WireName: "label_selector"},
+		"Limit":                ubx.FieldSpec{WireName: "limit"},
+		"ResourceVersion":      ubx.FieldSpec{WireName: "resource_version"},
 		"ResourceVersionMatch": ubx.FieldSpec{WireName: "resource_version_match"},
-		"SendInitialEvents": ubx.FieldSpec{WireName: "send_initial_events"},
-		"ShardSelector": ubx.FieldSpec{WireName: "shard_selector"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-		"Watch": ubx.FieldSpec{WireName: "watch"},
+		"SendInitialEvents":    ubx.FieldSpec{WireName: "send_initial_events"},
+		"ShardSelector":        ubx.FieldSpec{WireName: "shard_selector"},
+		"TimeoutSeconds":       ubx.FieldSpec{WireName: "timeout_seconds"},
+		"Watch":                ubx.FieldSpec{WireName: "watch"},
 	},
 }

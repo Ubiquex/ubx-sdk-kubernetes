@@ -4,61 +4,61 @@ package storage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CsistorageCapacityList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type CsistorageCapacityList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type CsistorageCapacityList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type CsistorageCapacityList_Items_NodeTopology_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type CsistorageCapacityList_Items_NodeTopology struct {
 	MatchExpressions any
-	MatchLabels any
+	MatchLabels      any
 }
 
 type CsistorageCapacityList_Items struct {
-	ApiVersion any
-	Capacity any
-	Kind any
+	ApiVersion        any
+	Capacity          any
+	Kind              any
 	MaximumVolumeSize any
-	Metadata any
-	NodeTopology any
-	StorageClassName any
+	Metadata          any
+	NodeTopology      any
+	StorageClassName  any
 }
 
 type CsistorageCapacityList_Metadata_ShardInfo struct {
@@ -95,6 +95,5 @@ type CsistorageCapacityListAttrs struct {
 
 var CsistorageCapacityList = ubx.DataSourceBinding{
 	WireType: "kubernetes_storage_csistorage_capacity_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

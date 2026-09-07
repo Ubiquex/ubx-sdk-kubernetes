@@ -191,163 +191,163 @@ type PersistentVolumeClaim_Status struct {
 }
 
 var PersistentVolumeClaim_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var PersistentVolumeClaim_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var PersistentVolumeClaim_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: PersistentVolumeClaim_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: PersistentVolumeClaim_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   PersistentVolumeClaim_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   PersistentVolumeClaim_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var PersistentVolumeClaim_Spec_DataSourceFields = ubx.FieldMap{
-		"ApiGroup": ubx.FieldSpec{WireName: "api_group"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiGroup": ubx.FieldSpec{WireName: "api_group"},
+	"Kind":     ubx.FieldSpec{WireName: "kind"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 var PersistentVolumeClaim_Spec_DataSourceRefFields = ubx.FieldMap{
-		"ApiGroup": ubx.FieldSpec{WireName: "api_group"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"ApiGroup":  ubx.FieldSpec{WireName: "api_group"},
+	"Kind":      ubx.FieldSpec{WireName: "kind"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var PersistentVolumeClaim_Spec_ResourcesFields = ubx.FieldMap{
-		"Limits": ubx.FieldSpec{WireName: "limits"},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"Limits":   ubx.FieldSpec{WireName: "limits"},
+	"Requests": ubx.FieldSpec{WireName: "requests"},
+}
 
 var PersistentVolumeClaim_Spec_Selector_MatchExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var PersistentVolumeClaim_Spec_SelectorFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: PersistentVolumeClaim_Spec_Selector_MatchExpressionsFields,
-		},
-		"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   PersistentVolumeClaim_Spec_Selector_MatchExpressionsFields,
+	},
+	"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
+}
 
 var PersistentVolumeClaim_SpecFields = ubx.FieldMap{
-		"AccessModes": ubx.FieldSpec{WireName: "access_modes"},
-		"DataSource": ubx.FieldSpec{
-			WireName: "data_source",
-			Kind: "object",
-			Fields: PersistentVolumeClaim_Spec_DataSourceFields,
-		},
-		"DataSourceRef": ubx.FieldSpec{
-			WireName: "data_source_ref",
-			Kind: "object",
-			Fields: PersistentVolumeClaim_Spec_DataSourceRefFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: PersistentVolumeClaim_Spec_ResourcesFields,
-		},
-		"Selector": ubx.FieldSpec{
-			WireName: "selector",
-			Kind: "object",
-			Fields: PersistentVolumeClaim_Spec_SelectorFields,
-		},
-		"StorageClassName": ubx.FieldSpec{WireName: "storage_class_name"},
-		"VolumeAttributesClassName": ubx.FieldSpec{WireName: "volume_attributes_class_name"},
-		"VolumeMode": ubx.FieldSpec{WireName: "volume_mode"},
-		"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
-	}
+	"AccessModes": ubx.FieldSpec{WireName: "access_modes"},
+	"DataSource": ubx.FieldSpec{
+		WireName: "data_source",
+		Kind:     "object",
+		Fields:   PersistentVolumeClaim_Spec_DataSourceFields,
+	},
+	"DataSourceRef": ubx.FieldSpec{
+		WireName: "data_source_ref",
+		Kind:     "object",
+		Fields:   PersistentVolumeClaim_Spec_DataSourceRefFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   PersistentVolumeClaim_Spec_ResourcesFields,
+	},
+	"Selector": ubx.FieldSpec{
+		WireName: "selector",
+		Kind:     "object",
+		Fields:   PersistentVolumeClaim_Spec_SelectorFields,
+	},
+	"StorageClassName":          ubx.FieldSpec{WireName: "storage_class_name"},
+	"VolumeAttributesClassName": ubx.FieldSpec{WireName: "volume_attributes_class_name"},
+	"VolumeMode":                ubx.FieldSpec{WireName: "volume_mode"},
+	"VolumeName":                ubx.FieldSpec{WireName: "volume_name"},
+}
 
 var PersistentVolumeClaim_Status_ConditionsFields = ubx.FieldMap{
-		"LastProbeTime": ubx.FieldSpec{WireName: "last_probe_time"},
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastProbeTime":      ubx.FieldSpec{WireName: "last_probe_time"},
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var PersistentVolumeClaim_Status_HealthStatus_HealthConditionsFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Message": ubx.FieldSpec{WireName: "message"},
+	"Reason":  ubx.FieldSpec{WireName: "reason"},
+	"Status":  ubx.FieldSpec{WireName: "status"},
+}
 
 var PersistentVolumeClaim_Status_HealthStatusFields = ubx.FieldMap{
-		"HealthConditions": ubx.FieldSpec{
-			WireName: "health_conditions",
-			Kind: "list",
-			Fields: PersistentVolumeClaim_Status_HealthStatus_HealthConditionsFields,
-		},
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-	}
+	"HealthConditions": ubx.FieldSpec{
+		WireName: "health_conditions",
+		Kind:     "list",
+		Fields:   PersistentVolumeClaim_Status_HealthStatus_HealthConditionsFields,
+	},
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+}
 
 var PersistentVolumeClaim_Status_ModifyVolumeStatusFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TargetVolumeAttributesClassName": ubx.FieldSpec{WireName: "target_volume_attributes_class_name"},
-	}
+	"Status":                          ubx.FieldSpec{WireName: "status"},
+	"TargetVolumeAttributesClassName": ubx.FieldSpec{WireName: "target_volume_attributes_class_name"},
+}
 
 var PersistentVolumeClaim_StatusFields = ubx.FieldMap{
-		"AccessModes": ubx.FieldSpec{WireName: "access_modes"},
-		"AllocatedResourceStatuses": ubx.FieldSpec{WireName: "allocated_resource_statuses"},
-		"AllocatedResources": ubx.FieldSpec{WireName: "allocated_resources"},
-		"Capacity": ubx.FieldSpec{WireName: "capacity"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: PersistentVolumeClaim_Status_ConditionsFields,
-		},
-		"CurrentVolumeAttributesClassName": ubx.FieldSpec{WireName: "current_volume_attributes_class_name"},
-		"HealthStatus": ubx.FieldSpec{
-			WireName: "health_status",
-			Kind: "object",
-			Fields: PersistentVolumeClaim_Status_HealthStatusFields,
-		},
-		"ModifyVolumeStatus": ubx.FieldSpec{
-			WireName: "modify_volume_status",
-			Kind: "object",
-			Fields: PersistentVolumeClaim_Status_ModifyVolumeStatusFields,
-		},
-		"Phase": ubx.FieldSpec{WireName: "phase"},
-	}
+	"AccessModes":               ubx.FieldSpec{WireName: "access_modes"},
+	"AllocatedResourceStatuses": ubx.FieldSpec{WireName: "allocated_resource_statuses"},
+	"AllocatedResources":        ubx.FieldSpec{WireName: "allocated_resources"},
+	"Capacity":                  ubx.FieldSpec{WireName: "capacity"},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   PersistentVolumeClaim_Status_ConditionsFields,
+	},
+	"CurrentVolumeAttributesClassName": ubx.FieldSpec{WireName: "current_volume_attributes_class_name"},
+	"HealthStatus": ubx.FieldSpec{
+		WireName: "health_status",
+		Kind:     "object",
+		Fields:   PersistentVolumeClaim_Status_HealthStatusFields,
+	},
+	"ModifyVolumeStatus": ubx.FieldSpec{
+		WireName: "modify_volume_status",
+		Kind:     "object",
+		Fields:   PersistentVolumeClaim_Status_ModifyVolumeStatusFields,
+	},
+	"Phase": ubx.FieldSpec{WireName: "phase"},
+}
 
 type PersistentVolumeClaimConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -387,23 +387,23 @@ var PersistentVolumeClaim = ubx.ResourceBinding{
 	WireType: "kubernetes_core_persistent_volume_claim",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: PersistentVolumeClaim_MetadataFields,
+			Kind:     "object",
+			Fields:   PersistentVolumeClaim_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: PersistentVolumeClaim_SpecFields,
+			Kind:     "object",
+			Fields:   PersistentVolumeClaim_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: PersistentVolumeClaim_StatusFields,
+			Kind:     "object",
+			Fields:   PersistentVolumeClaim_StatusFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

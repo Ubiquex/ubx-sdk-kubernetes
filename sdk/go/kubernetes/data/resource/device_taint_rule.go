@@ -4,22 +4,22 @@ package resource
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeviceTaintRule_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type DeviceTaintRule_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type DeviceTaintRule_Metadata struct {
@@ -84,11 +84,11 @@ type DeviceTaintRule_Spec struct {
 
 type DeviceTaintRule_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type DeviceTaintRule_Status struct {
@@ -114,6 +114,5 @@ type DeviceTaintRuleAttrs struct {
 
 var DeviceTaintRule = ubx.DataSourceBinding{
 	WireType: "kubernetes_resource_device_taint_rule",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

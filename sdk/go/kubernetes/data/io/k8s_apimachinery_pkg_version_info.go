@@ -8,15 +8,15 @@ type K8sApimachineryPkgVersionInfoConfig struct {
 
 type K8sApimachineryPkgVersionInfoAttrs struct {
 	BuildDate any
-	Compiler any
+	Compiler  any
 	// EmulationMajor is the major version of the emulation version
 	EmulationMajor any
 	// EmulationMinor is the minor version of the emulation version
 	EmulationMinor any
-	GitCommit any
-	GitTreeState any
-	GitVersion any
-	GoVersion any
+	GitCommit      any
+	GitTreeState   any
+	GitVersion     any
+	GoVersion      any
 	// Major is the major version of the binary version
 	Major any
 	// MinCompatibilityMajor is the major version of the minimum compatibility version
@@ -24,12 +24,11 @@ type K8sApimachineryPkgVersionInfoAttrs struct {
 	// MinCompatibilityMinor is the minor version of the minimum compatibility version
 	MinCompatibilityMinor any
 	// Minor is the minor version of the binary version
-	Minor any
+	Minor    any
 	Platform any
 }
 
 var K8sApimachineryPkgVersionInfo = ubx.DataSourceBinding{
 	WireType: "kubernetes_io_k8s_apimachinery_pkg_version_info",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

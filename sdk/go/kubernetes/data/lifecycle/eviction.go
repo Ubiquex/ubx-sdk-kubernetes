@@ -4,22 +4,22 @@ package lifecycle
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Eviction_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type Eviction_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type Eviction_Metadata struct {
@@ -74,31 +74,31 @@ type Eviction_Spec struct {
 
 type Eviction_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type Eviction_Status_Requesters struct {
 	Intent any
-	Name any
+	Name   any
 }
 
 type Eviction_Status_Responders struct {
-	CompletionTime any
+	CompletionTime         any
 	ExpectedCompletionTime any
-	HeartbeatTime any
-	Message any
-	Name any
-	StartTime any
+	HeartbeatTime          any
+	Message                any
+	Name                   any
+	StartTime              any
 }
 
 type Eviction_Status_TargetResponders struct {
-	Name any
+	Name     any
 	Priority any
-	State any
+	State    any
 }
 
 type Eviction_Status struct {
@@ -132,6 +132,5 @@ type EvictionAttrs struct {
 
 var Eviction = ubx.DataSourceBinding{
 	WireType: "kubernetes_lifecycle_eviction",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

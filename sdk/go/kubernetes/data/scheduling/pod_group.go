@@ -4,22 +4,22 @@ package scheduling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PodGroup_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type PodGroup_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type PodGroup_Metadata struct {
@@ -63,8 +63,8 @@ type PodGroup_Spec_DisruptionMode struct {
 }
 
 type PodGroup_Spec_ResourceClaims struct {
-	Name any
-	ResourceClaimName any
+	Name                      any
+	ResourceClaimName         any
 	ResourceClaimTemplateName any
 }
 
@@ -119,15 +119,15 @@ type PodGroup_Spec struct {
 
 type PodGroup_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type PodGroup_Status_ResourceClaimStatuses struct {
-	Name any
+	Name              any
 	ResourceClaimName any
 }
 
@@ -156,6 +156,5 @@ type PodGroupAttrs struct {
 
 var PodGroup = ubx.DataSourceBinding{
 	WireType: "kubernetes_scheduling_pod_group",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

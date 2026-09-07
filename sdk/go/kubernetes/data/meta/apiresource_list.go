@@ -4,16 +4,16 @@ package meta
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApiresourceList_Resources struct {
-	Categories any
-	Group any
-	Kind any
-	Name any
-	Namespaced any
-	ShortNames any
-	SingularName any
+	Categories         any
+	Group              any
+	Kind               any
+	Name               any
+	Namespaced         any
+	ShortNames         any
+	SingularName       any
 	StorageVersionHash any
-	Verbs any
-	Version any
+	Verbs              any
+	Version            any
 }
 
 type ApiresourceListConfig struct {
@@ -32,6 +32,5 @@ type ApiresourceListAttrs struct {
 
 var ApiresourceList = ubx.DataSourceBinding{
 	WireType: "kubernetes_meta_apiresource_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

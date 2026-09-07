@@ -186,7 +186,7 @@ type CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema struct {
 	ExternalDocs any
 	// The OpenAPI v3 format modifier for the schema type, providing additional semantic detail (e.g., 'int32', 'int64', 'float', 'double', 'byte', 'binary', 'date', 'date-time', 'password'). This field is optional. (AI-inferred)
 	Format any
-	Id any
+	Id     any
 	// Specifies the schema for items within an array. This field is used when the parent schema's type is 'array' and defines the structure of each element in the array, following OpenAPI v3 conventions. (AI-inferred)
 	Items any
 	// The maximum number of items allowed in an array. The value must be a non-negative integer. (AI-inferred)
@@ -332,296 +332,295 @@ type CustomResourceDefinition_Status struct {
 }
 
 var CustomResourceDefinition_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var CustomResourceDefinition_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var CustomResourceDefinition_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: CustomResourceDefinition_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: CustomResourceDefinition_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   CustomResourceDefinition_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   CustomResourceDefinition_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var CustomResourceDefinition_Spec_Conversion_Webhook_ClientConfig_ServiceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"Path":      ubx.FieldSpec{WireName: "path"},
+	"Port":      ubx.FieldSpec{WireName: "port"},
+}
 
 var CustomResourceDefinition_Spec_Conversion_Webhook_ClientConfigFields = ubx.FieldMap{
-		"CaBundle": ubx.FieldSpec{WireName: "ca_bundle"},
-		"Service": ubx.FieldSpec{
-			WireName: "service",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_Conversion_Webhook_ClientConfig_ServiceFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"CaBundle": ubx.FieldSpec{WireName: "ca_bundle"},
+	"Service": ubx.FieldSpec{
+		WireName: "service",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_Conversion_Webhook_ClientConfig_ServiceFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var CustomResourceDefinition_Spec_Conversion_WebhookFields = ubx.FieldMap{
-		"ClientConfig": ubx.FieldSpec{
-			WireName: "client_config",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_Conversion_Webhook_ClientConfigFields,
-		},
-		"ConversionReviewVersions": ubx.FieldSpec{WireName: "conversion_review_versions"},
-	}
+	"ClientConfig": ubx.FieldSpec{
+		WireName: "client_config",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_Conversion_Webhook_ClientConfigFields,
+	},
+	"ConversionReviewVersions": ubx.FieldSpec{WireName: "conversion_review_versions"},
+}
 
 var CustomResourceDefinition_Spec_ConversionFields = ubx.FieldMap{
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-		"Webhook": ubx.FieldSpec{
-			WireName: "webhook",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_Conversion_WebhookFields,
-		},
-	}
+	"Strategy": ubx.FieldSpec{WireName: "strategy"},
+	"Webhook": ubx.FieldSpec{
+		WireName: "webhook",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_Conversion_WebhookFields,
+	},
+}
 
 var CustomResourceDefinition_Spec_NamesFields = ubx.FieldMap{
-		"Categories": ubx.FieldSpec{WireName: "categories"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"ListKind": ubx.FieldSpec{WireName: "list_kind"},
-		"Plural": ubx.FieldSpec{WireName: "plural"},
-		"ShortNames": ubx.FieldSpec{WireName: "short_names"},
-		"Singular": ubx.FieldSpec{WireName: "singular"},
-	}
+	"Categories": ubx.FieldSpec{WireName: "categories"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"ListKind":   ubx.FieldSpec{WireName: "list_kind"},
+	"Plural":     ubx.FieldSpec{WireName: "plural"},
+	"ShortNames": ubx.FieldSpec{WireName: "short_names"},
+	"Singular":   ubx.FieldSpec{WireName: "singular"},
+}
 
 var CustomResourceDefinition_Spec_Versions_AdditionalPrinterColumnsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Format":      ubx.FieldSpec{WireName: "format"},
+	"JsonPath":    ubx.FieldSpec{WireName: "json_path"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Priority":    ubx.FieldSpec{WireName: "priority"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
-var CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields = ubx.FieldMap{
-	}
+var CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields = ubx.FieldMap{}
 
 var CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_ExternalDocsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+}
 
 var CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_XKubernetesValidationsFields = ubx.FieldMap{
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"MessageExpression": ubx.FieldSpec{WireName: "message_expression"},
-		"OptionalOldSelf": ubx.FieldSpec{WireName: "optional_old_self"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Rule": ubx.FieldSpec{WireName: "rule"},
-	}
+	"FieldPath":         ubx.FieldSpec{WireName: "field_path"},
+	"Message":           ubx.FieldSpec{WireName: "message"},
+	"MessageExpression": ubx.FieldSpec{WireName: "message_expression"},
+	"OptionalOldSelf":   ubx.FieldSpec{WireName: "optional_old_self"},
+	"Reason":            ubx.FieldSpec{WireName: "reason"},
+	"Rule":              ubx.FieldSpec{WireName: "rule"},
+}
 
 var CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3SchemaFields = ubx.FieldMap{
-		"AdditionalItems": ubx.FieldSpec{WireName: "additional_items"},
-		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-		"AllOf": ubx.FieldSpec{
-			WireName: "all_of",
-			Kind: "list",
-			Fields: CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
-		},
-		"AnyOf": ubx.FieldSpec{
-			WireName: "any_of",
-			Kind: "list",
-			Fields: CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
-		},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Definitions": ubx.FieldSpec{
-			WireName: "definitions",
-			Kind: "map",
-			Fields: CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
-		},
-		"Dependencies": ubx.FieldSpec{WireName: "dependencies"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enum": ubx.FieldSpec{WireName: "enum"},
-		"Example": ubx.FieldSpec{WireName: "example"},
-		"ExclusiveMaximum": ubx.FieldSpec{WireName: "exclusive_maximum"},
-		"ExclusiveMinimum": ubx.FieldSpec{WireName: "exclusive_minimum"},
-		"ExternalDocs": ubx.FieldSpec{
-			WireName: "external_docs",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_ExternalDocsFields,
-		},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"MaxProperties": ubx.FieldSpec{WireName: "max_properties"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinItems": ubx.FieldSpec{WireName: "min_items"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-		"MinProperties": ubx.FieldSpec{WireName: "min_properties"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"MultipleOf": ubx.FieldSpec{WireName: "multiple_of"},
-		"Not": ubx.FieldSpec{WireName: "not"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"OneOf": ubx.FieldSpec{
-			WireName: "one_of",
-			Kind: "list",
-			Fields: CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
-		},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"PatternProperties": ubx.FieldSpec{
-			WireName: "pattern_properties",
-			Kind: "map",
-			Fields: CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
-		},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "map",
-			Fields: CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
-		},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UniqueItems": ubx.FieldSpec{WireName: "unique_items"},
-		"XKubernetesEmbeddedResource": ubx.FieldSpec{WireName: "x_kubernetes_embedded_resource"},
-		"XKubernetesIntOrString": ubx.FieldSpec{WireName: "x_kubernetes_int_or_string"},
-		"XKubernetesListMapKeys": ubx.FieldSpec{WireName: "x_kubernetes_list_map_keys"},
-		"XKubernetesListType": ubx.FieldSpec{WireName: "x_kubernetes_list_type"},
-		"XKubernetesMapType": ubx.FieldSpec{WireName: "x_kubernetes_map_type"},
-		"XKubernetesPreserveUnknownFields": ubx.FieldSpec{WireName: "x_kubernetes_preserve_unknown_fields"},
-		"XKubernetesValidations": ubx.FieldSpec{
-			WireName: "x_kubernetes_validations",
-			Kind: "list",
-			Fields: CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_XKubernetesValidationsFields,
-		},
-	}
+	"AdditionalItems":      ubx.FieldSpec{WireName: "additional_items"},
+	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+	"AllOf": ubx.FieldSpec{
+		WireName: "all_of",
+		Kind:     "list",
+		Fields:   CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
+	},
+	"AnyOf": ubx.FieldSpec{
+		WireName: "any_of",
+		Kind:     "list",
+		Fields:   CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
+	},
+	"Default": ubx.FieldSpec{WireName: "default"},
+	"Definitions": ubx.FieldSpec{
+		WireName: "definitions",
+		Kind:     "map",
+		Fields:   CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
+	},
+	"Dependencies":     ubx.FieldSpec{WireName: "dependencies"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"Enum":             ubx.FieldSpec{WireName: "enum"},
+	"Example":          ubx.FieldSpec{WireName: "example"},
+	"ExclusiveMaximum": ubx.FieldSpec{WireName: "exclusive_maximum"},
+	"ExclusiveMinimum": ubx.FieldSpec{WireName: "exclusive_minimum"},
+	"ExternalDocs": ubx.FieldSpec{
+		WireName: "external_docs",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_ExternalDocsFields,
+	},
+	"Format":        ubx.FieldSpec{WireName: "format"},
+	"Id":            ubx.FieldSpec{WireName: "id"},
+	"Items":         ubx.FieldSpec{WireName: "items"},
+	"MaxItems":      ubx.FieldSpec{WireName: "max_items"},
+	"MaxLength":     ubx.FieldSpec{WireName: "max_length"},
+	"MaxProperties": ubx.FieldSpec{WireName: "max_properties"},
+	"Maximum":       ubx.FieldSpec{WireName: "maximum"},
+	"MinItems":      ubx.FieldSpec{WireName: "min_items"},
+	"MinLength":     ubx.FieldSpec{WireName: "min_length"},
+	"MinProperties": ubx.FieldSpec{WireName: "min_properties"},
+	"Minimum":       ubx.FieldSpec{WireName: "minimum"},
+	"MultipleOf":    ubx.FieldSpec{WireName: "multiple_of"},
+	"Not":           ubx.FieldSpec{WireName: "not"},
+	"Nullable":      ubx.FieldSpec{WireName: "nullable"},
+	"OneOf": ubx.FieldSpec{
+		WireName: "one_of",
+		Kind:     "list",
+		Fields:   CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
+	},
+	"Pattern": ubx.FieldSpec{WireName: "pattern"},
+	"PatternProperties": ubx.FieldSpec{
+		WireName: "pattern_properties",
+		Kind:     "map",
+		Fields:   CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
+	},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "map",
+		Fields:   CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOfFields,
+	},
+	"Required":                         ubx.FieldSpec{WireName: "required"},
+	"Title":                            ubx.FieldSpec{WireName: "title"},
+	"Type":                             ubx.FieldSpec{WireName: "type"},
+	"UniqueItems":                      ubx.FieldSpec{WireName: "unique_items"},
+	"XKubernetesEmbeddedResource":      ubx.FieldSpec{WireName: "x_kubernetes_embedded_resource"},
+	"XKubernetesIntOrString":           ubx.FieldSpec{WireName: "x_kubernetes_int_or_string"},
+	"XKubernetesListMapKeys":           ubx.FieldSpec{WireName: "x_kubernetes_list_map_keys"},
+	"XKubernetesListType":              ubx.FieldSpec{WireName: "x_kubernetes_list_type"},
+	"XKubernetesMapType":               ubx.FieldSpec{WireName: "x_kubernetes_map_type"},
+	"XKubernetesPreserveUnknownFields": ubx.FieldSpec{WireName: "x_kubernetes_preserve_unknown_fields"},
+	"XKubernetesValidations": ubx.FieldSpec{
+		WireName: "x_kubernetes_validations",
+		Kind:     "list",
+		Fields:   CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_XKubernetesValidationsFields,
+	},
+}
 
 var CustomResourceDefinition_Spec_Versions_SchemaFields = ubx.FieldMap{
-		"OpenApiv3Schema": ubx.FieldSpec{
-			WireName: "open_apiv3_schema",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3SchemaFields,
-		},
-	}
+	"OpenApiv3Schema": ubx.FieldSpec{
+		WireName: "open_apiv3_schema",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3SchemaFields,
+	},
+}
 
 var CustomResourceDefinition_Spec_Versions_SelectableFieldsFields = ubx.FieldMap{
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-	}
+	"JsonPath": ubx.FieldSpec{WireName: "json_path"},
+}
 
 var CustomResourceDefinition_Spec_Versions_Subresources_ScaleFields = ubx.FieldMap{
-		"LabelSelectorPath": ubx.FieldSpec{WireName: "label_selector_path"},
-		"SpecReplicasPath": ubx.FieldSpec{WireName: "spec_replicas_path"},
-		"StatusReplicasPath": ubx.FieldSpec{WireName: "status_replicas_path"},
-	}
+	"LabelSelectorPath":  ubx.FieldSpec{WireName: "label_selector_path"},
+	"SpecReplicasPath":   ubx.FieldSpec{WireName: "spec_replicas_path"},
+	"StatusReplicasPath": ubx.FieldSpec{WireName: "status_replicas_path"},
+}
 
 var CustomResourceDefinition_Spec_Versions_SubresourcesFields = ubx.FieldMap{
-		"Scale": ubx.FieldSpec{
-			WireName: "scale",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_Versions_Subresources_ScaleFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Scale": ubx.FieldSpec{
+		WireName: "scale",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_Versions_Subresources_ScaleFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var CustomResourceDefinition_Spec_VersionsFields = ubx.FieldMap{
-		"AdditionalPrinterColumns": ubx.FieldSpec{
-			WireName: "additional_printer_columns",
-			Kind: "list",
-			Fields: CustomResourceDefinition_Spec_Versions_AdditionalPrinterColumnsFields,
-		},
-		"Deprecated": ubx.FieldSpec{WireName: "deprecated"},
-		"DeprecationWarning": ubx.FieldSpec{WireName: "deprecation_warning"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_Versions_SchemaFields,
-		},
-		"SelectableFields": ubx.FieldSpec{
-			WireName: "selectable_fields",
-			Kind: "list",
-			Fields: CustomResourceDefinition_Spec_Versions_SelectableFieldsFields,
-		},
-		"Served": ubx.FieldSpec{WireName: "served"},
-		"Storage": ubx.FieldSpec{WireName: "storage"},
-		"Subresources": ubx.FieldSpec{
-			WireName: "subresources",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_Versions_SubresourcesFields,
-		},
-	}
+	"AdditionalPrinterColumns": ubx.FieldSpec{
+		WireName: "additional_printer_columns",
+		Kind:     "list",
+		Fields:   CustomResourceDefinition_Spec_Versions_AdditionalPrinterColumnsFields,
+	},
+	"Deprecated":         ubx.FieldSpec{WireName: "deprecated"},
+	"DeprecationWarning": ubx.FieldSpec{WireName: "deprecation_warning"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_Versions_SchemaFields,
+	},
+	"SelectableFields": ubx.FieldSpec{
+		WireName: "selectable_fields",
+		Kind:     "list",
+		Fields:   CustomResourceDefinition_Spec_Versions_SelectableFieldsFields,
+	},
+	"Served":  ubx.FieldSpec{WireName: "served"},
+	"Storage": ubx.FieldSpec{WireName: "storage"},
+	"Subresources": ubx.FieldSpec{
+		WireName: "subresources",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_Versions_SubresourcesFields,
+	},
+}
 
 var CustomResourceDefinition_SpecFields = ubx.FieldMap{
-		"Conversion": ubx.FieldSpec{
-			WireName: "conversion",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_ConversionFields,
-		},
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"Names": ubx.FieldSpec{
-			WireName: "names",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_NamesFields,
-		},
-		"PreserveUnknownFields": ubx.FieldSpec{WireName: "preserve_unknown_fields"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Versions": ubx.FieldSpec{
-			WireName: "versions",
-			Kind: "list",
-			Fields: CustomResourceDefinition_Spec_VersionsFields,
-		},
-	}
+	"Conversion": ubx.FieldSpec{
+		WireName: "conversion",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_ConversionFields,
+	},
+	"Group": ubx.FieldSpec{WireName: "group"},
+	"Names": ubx.FieldSpec{
+		WireName: "names",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_NamesFields,
+	},
+	"PreserveUnknownFields": ubx.FieldSpec{WireName: "preserve_unknown_fields"},
+	"Scope":                 ubx.FieldSpec{WireName: "scope"},
+	"Versions": ubx.FieldSpec{
+		WireName: "versions",
+		Kind:     "list",
+		Fields:   CustomResourceDefinition_Spec_VersionsFields,
+	},
+}
 
 var CustomResourceDefinition_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var CustomResourceDefinition_StatusFields = ubx.FieldMap{
-		"AcceptedNames": ubx.FieldSpec{
-			WireName: "accepted_names",
-			Kind: "object",
-			Fields: CustomResourceDefinition_Spec_NamesFields,
-		},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: CustomResourceDefinition_Status_ConditionsFields,
-		},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"StoredVersions": ubx.FieldSpec{WireName: "stored_versions"},
-	}
+	"AcceptedNames": ubx.FieldSpec{
+		WireName: "accepted_names",
+		Kind:     "object",
+		Fields:   CustomResourceDefinition_Spec_NamesFields,
+	},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   CustomResourceDefinition_Status_ConditionsFields,
+	},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"StoredVersions":     ubx.FieldSpec{WireName: "stored_versions"},
+}
 
 type CustomResourceDefinitionConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -657,21 +656,21 @@ var CustomResourceDefinition = ubx.ResourceBinding{
 	WireType: "kubernetes_apiextensions_custom_resource_definition",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: CustomResourceDefinition_MetadataFields,
+			Kind:     "object",
+			Fields:   CustomResourceDefinition_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: CustomResourceDefinition_SpecFields,
+			Kind:     "object",
+			Fields:   CustomResourceDefinition_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: CustomResourceDefinition_StatusFields,
+			Kind:     "object",
+			Fields:   CustomResourceDefinition_StatusFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

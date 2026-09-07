@@ -4,22 +4,22 @@ package storage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VolumeAttachment_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type VolumeAttachment_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type VolumeAttachment_Metadata struct {
@@ -269,14 +269,14 @@ type VolumeAttachment_Spec_Source_InlineVolumeSpec_Nfs struct {
 }
 
 type VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required_NodeSelectorTerms struct {
 	MatchExpressions any
-	MatchFields any
+	MatchFields      any
 }
 
 type VolumeAttachment_Spec_Source_InlineVolumeSpec_NodeAffinity_Required struct {
@@ -505,6 +505,5 @@ type VolumeAttachmentAttrs struct {
 
 var VolumeAttachment = ubx.DataSourceBinding{
 	WireType: "kubernetes_storage_volume_attachment",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }
