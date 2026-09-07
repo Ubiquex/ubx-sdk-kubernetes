@@ -423,13 +423,20 @@ jobs:
         run: |
           set -euo pipefail
           v="${{ steps.bump.outputs.new_version }}"
+          # Real, live module path from go.mod itself, never a
+          # hardcoded "sdk/go": this module carries a /v2 suffix, so
+          # the proxy path is .../sdk/go/v2/@v/..., and a hardcoded one
+          # 404s and reports a false failure after every publish step
+          # has already succeeded. Reading go.mod means this does not
+          # go stale again on a future v3 bump either (UBI-185).
+          go_module_path="$(head -1 sdk/go/go.mod | awk '{print $2}')"
           live_pypi=""
           live_npm=""
           live_go=""
           for attempt in $(seq 1 10); do
             live_pypi="$(curl -sf https://pypi.org/pypi/ubx-sdk-kubernetes/json | python3 -c "import json,sys; print(json.load(sys.stdin)['info']['version'])" || echo "")"
             live_npm="$(curl -sf "https://registry.npmjs.org/@ubx%2fsdk-kubernetes/$v" | python3 -c "import json,sys; print(json.load(sys.stdin).get('version') or '')" || echo "")"
-            live_go="$(curl -sf "https://proxy.golang.org/github.com/ubiquex/ubx-sdk-kubernetes/sdk/go/@v/v$v.info" | python3 -c "import json,sys; print(json.load(sys.stdin).get('Version','').lstrip('v'))" || echo "")"
+            live_go="$(curl -sf "https://proxy.golang.org/${go_module_path}/@v/v$v.info" | python3 -c "import json,sys; print(json.load(sys.stdin).get('Version','').lstrip('v'))" || echo "")"
             if [ "$live_pypi" = "$v" ] && [ "$live_npm" = "$v" ] && [ "$live_go" = "$v" ]; then
               break
             fi

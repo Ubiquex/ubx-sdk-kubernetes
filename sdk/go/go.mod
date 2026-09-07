@@ -1,4 +1,4 @@
-module github.com/ubiquex/ubx-sdk-kubernetes/sdk/go
+module github.com/ubiquex/ubx-sdk-kubernetes/sdk/go/v2
 
 go 1.26.3
 
