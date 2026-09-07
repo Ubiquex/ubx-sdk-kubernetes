@@ -60,3 +60,10 @@ jobs:
           python -m pip install -e .
           python -m compileall -q ubx
         working-directory: sdk/python
+
+      - name: README counts match the generated tree
+        # The README-GEN block looks generated and never was: it went
+        # stale by 41 data sources and nothing said (UBI-241). Derived
+        # from the tree here so it cannot drift again, and counted across
+        # all three languages so a partial regeneration is caught too.
+        run: python3 scripts/check_readme_counts.py
