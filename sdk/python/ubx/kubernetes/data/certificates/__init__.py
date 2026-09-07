@@ -5,5 +5,7 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .certificate_signing_request import CertificateSigningRequest, CertificateSigningRequestConfig
-from .cluster_trust_bundle import ClusterTrustBundle, ClusterTrustBundleConfig
+from .certificate_signing_request_list import CertificateSigningRequestList, CertificateSigningRequestListConfig
+from .cluster_trust_bundle_list import ClusterTrustBundleList, ClusterTrustBundleListConfig
 from .pod_certificate_request import PodCertificateRequest, PodCertificateRequestConfig
+from .pod_certificate_request_list import PodCertificateRequestList, PodCertificateRequestListConfig

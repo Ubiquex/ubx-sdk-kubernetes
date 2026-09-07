@@ -124,85 +124,85 @@ type V1beta1PodCertificateRequest_Status struct {
 }
 
 var V1beta1PodCertificateRequest_Metadata_ManagedFieldsFields = ubx.FieldMap{
-	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
-	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
-	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
-	"Manager":     ubx.FieldSpec{WireName: "manager"},
-	"Operation":   ubx.FieldSpec{WireName: "operation"},
-	"Subresource": ubx.FieldSpec{WireName: "subresource"},
-	"Time":        ubx.FieldSpec{WireName: "time"},
-}
+		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
+		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
+		"Manager": ubx.FieldSpec{WireName: "manager"},
+		"Operation": ubx.FieldSpec{WireName: "operation"},
+		"Subresource": ubx.FieldSpec{WireName: "subresource"},
+		"Time": ubx.FieldSpec{WireName: "time"},
+	}
 
 var V1beta1PodCertificateRequest_Metadata_OwnerReferencesFields = ubx.FieldMap{
-	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
-	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-	"Controller":         ubx.FieldSpec{WireName: "controller"},
-	"Kind":               ubx.FieldSpec{WireName: "kind"},
-	"Name":               ubx.FieldSpec{WireName: "name"},
-	"Uid":                ubx.FieldSpec{WireName: "uid"},
-}
+		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+		"Controller": ubx.FieldSpec{WireName: "controller"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Uid": ubx.FieldSpec{WireName: "uid"},
+	}
 
 var V1beta1PodCertificateRequest_MetadataFields = ubx.FieldMap{
-	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
-	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
-	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
-	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
-	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
-	"Generation":                 ubx.FieldSpec{WireName: "generation"},
-	"Labels":                     ubx.FieldSpec{WireName: "labels"},
-	"ManagedFields": ubx.FieldSpec{
-		WireName: "managed_fields",
-		Kind:     "list",
-		Fields:   V1beta1PodCertificateRequest_Metadata_ManagedFieldsFields,
-	},
-	"Name":      ubx.FieldSpec{WireName: "name"},
-	"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	"OwnerReferences": ubx.FieldSpec{
-		WireName: "owner_references",
-		Kind:     "list",
-		Fields:   V1beta1PodCertificateRequest_Metadata_OwnerReferencesFields,
-	},
-	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
-	"Uid":             ubx.FieldSpec{WireName: "uid"},
-}
+		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
+		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
+		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
+		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
+		"Generation": ubx.FieldSpec{WireName: "generation"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"ManagedFields": ubx.FieldSpec{
+			WireName: "managed_fields",
+			Kind: "list",
+			Fields: V1beta1PodCertificateRequest_Metadata_ManagedFieldsFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"OwnerReferences": ubx.FieldSpec{
+			WireName: "owner_references",
+			Kind: "list",
+			Fields: V1beta1PodCertificateRequest_Metadata_OwnerReferencesFields,
+		},
+		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"Uid": ubx.FieldSpec{WireName: "uid"},
+	}
 
 var V1beta1PodCertificateRequest_SpecFields = ubx.FieldMap{
-	"MaxExpirationSeconds":      ubx.FieldSpec{WireName: "max_expiration_seconds"},
-	"NodeName":                  ubx.FieldSpec{WireName: "node_name"},
-	"NodeUid":                   ubx.FieldSpec{WireName: "node_uid"},
-	"PkixPublicKey":             ubx.FieldSpec{WireName: "pkix_public_key"},
-	"PodName":                   ubx.FieldSpec{WireName: "pod_name"},
-	"PodUid":                    ubx.FieldSpec{WireName: "pod_uid"},
-	"ProofOfPossession":         ubx.FieldSpec{WireName: "proof_of_possession"},
-	"ServiceAccountName":        ubx.FieldSpec{WireName: "service_account_name"},
-	"ServiceAccountUid":         ubx.FieldSpec{WireName: "service_account_uid"},
-	"SignerName":                ubx.FieldSpec{WireName: "signer_name"},
-	"StubPkcs10Request":         ubx.FieldSpec{WireName: "stub_pkcs10_request"},
-	"UnverifiedUserAnnotations": ubx.FieldSpec{WireName: "unverified_user_annotations"},
-}
+		"MaxExpirationSeconds": ubx.FieldSpec{WireName: "max_expiration_seconds"},
+		"NodeName": ubx.FieldSpec{WireName: "node_name"},
+		"NodeUid": ubx.FieldSpec{WireName: "node_uid"},
+		"PkixPublicKey": ubx.FieldSpec{WireName: "pkix_public_key"},
+		"PodName": ubx.FieldSpec{WireName: "pod_name"},
+		"PodUid": ubx.FieldSpec{WireName: "pod_uid"},
+		"ProofOfPossession": ubx.FieldSpec{WireName: "proof_of_possession"},
+		"ServiceAccountName": ubx.FieldSpec{WireName: "service_account_name"},
+		"ServiceAccountUid": ubx.FieldSpec{WireName: "service_account_uid"},
+		"SignerName": ubx.FieldSpec{WireName: "signer_name"},
+		"StubPkcs10Request": ubx.FieldSpec{WireName: "stub_pkcs10_request"},
+		"UnverifiedUserAnnotations": ubx.FieldSpec{WireName: "unverified_user_annotations"},
+	}
 
 var V1beta1PodCertificateRequest_Status_ConditionsFields = ubx.FieldMap{
-	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-	"Message":            ubx.FieldSpec{WireName: "message"},
-	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-	"Reason":             ubx.FieldSpec{WireName: "reason"},
-	"Status":             ubx.FieldSpec{WireName: "status"},
-	"Type":               ubx.FieldSpec{WireName: "type"},
-}
+		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+		"Reason": ubx.FieldSpec{WireName: "reason"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var V1beta1PodCertificateRequest_StatusFields = ubx.FieldMap{
-	"BeginRefreshAt":   ubx.FieldSpec{WireName: "begin_refresh_at"},
-	"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
-	"Conditions": ubx.FieldSpec{
-		WireName: "conditions",
-		Kind:     "list",
-		Fields:   V1beta1PodCertificateRequest_Status_ConditionsFields,
-	},
-	"NotAfter":  ubx.FieldSpec{WireName: "not_after"},
-	"NotBefore": ubx.FieldSpec{WireName: "not_before"},
-}
+		"BeginRefreshAt": ubx.FieldSpec{WireName: "begin_refresh_at"},
+		"CertificateChain": ubx.FieldSpec{WireName: "certificate_chain"},
+		"Conditions": ubx.FieldSpec{
+			WireName: "conditions",
+			Kind: "list",
+			Fields: V1beta1PodCertificateRequest_Status_ConditionsFields,
+		},
+		"NotAfter": ubx.FieldSpec{WireName: "not_after"},
+		"NotBefore": ubx.FieldSpec{WireName: "not_before"},
+	}
 
 type V1beta1PodCertificateRequestConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -242,23 +242,23 @@ var V1beta1PodCertificateRequest = ubx.ResourceBinding{
 	WireType: "kubernetes_certificates_v1beta1_pod_certificate_request",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind":       ubx.FieldSpec{WireName: "kind"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind:     "object",
-			Fields:   V1beta1PodCertificateRequest_MetadataFields,
+			Kind: "object",
+			Fields: V1beta1PodCertificateRequest_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind:     "object",
-			Fields:   V1beta1PodCertificateRequest_SpecFields,
+			Kind: "object",
+			Fields: V1beta1PodCertificateRequest_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind:     "object",
-			Fields:   V1beta1PodCertificateRequest_StatusFields,
+			Kind: "object",
+			Fields: V1beta1PodCertificateRequest_StatusFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

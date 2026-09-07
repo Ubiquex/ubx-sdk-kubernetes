@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .pod_disruption_budget import PodDisruptionBudget, PodDisruptionBudgetConfig
+from .pod_disruption_budget_list import PodDisruptionBudgetList, PodDisruptionBudgetListConfig

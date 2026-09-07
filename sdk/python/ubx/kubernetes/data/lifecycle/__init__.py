@@ -5,4 +5,6 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .eviction import Eviction, EvictionConfig
+from .eviction_list import EvictionList, EvictionListConfig
 from .eviction_request import EvictionRequest, EvictionRequestConfig
+from .eviction_request_list import EvictionRequestList, EvictionRequestListConfig

@@ -4,18 +4,25 @@
 # re-run `ubx sdk gen` to regenerate after a provider version bump.
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
-from .component_condition import ComponentCondition, ComponentConditionConfig
-from .component_status import ComponentStatus, ComponentStatusConfig
-from .config_map import ConfigMap, ConfigMapConfig
-from .endpoints import Endpoints, EndpointsConfig
-from .limit_range import LimitRange, LimitRangeConfig
+from .component_condition_list import ComponentConditionList, ComponentConditionListConfig
+from .component_status_list import ComponentStatusList, ComponentStatusListConfig
+from .config_map_list import ConfigMapList, ConfigMapListConfig
+from .endpoints_list import EndpointsList, EndpointsListConfig
+from .limit_range_list import LimitRangeList, LimitRangeListConfig
 from .namespace import Namespace, NamespaceConfig
+from .namespace_list import NamespaceList, NamespaceListConfig
 from .node import Node, NodeConfig
+from .node_list import NodeList, NodeListConfig
 from .persistent_volume import PersistentVolume, PersistentVolumeConfig
 from .persistent_volume_claim import PersistentVolumeClaim, PersistentVolumeClaimConfig
+from .persistent_volume_claim_list import PersistentVolumeClaimList, PersistentVolumeClaimListConfig
+from .persistent_volume_list import PersistentVolumeList, PersistentVolumeListConfig
 from .pod import Pod, PodConfig
-from .pod_template import PodTemplate, PodTemplateConfig
+from .pod_list import PodList, PodListConfig
+from .pod_template_list import PodTemplateList, PodTemplateListConfig
 from .replication_controller import ReplicationController, ReplicationControllerConfig
-from .secret import Secret, SecretConfig
+from .replication_controller_list import ReplicationControllerList, ReplicationControllerListConfig
+from .secret_list import SecretList, SecretListConfig
 from .service import Service, ServiceConfig
-from .service_account import ServiceAccount, ServiceAccountConfig
+from .service_account_list import ServiceAccountList, ServiceAccountListConfig
+from .service_list import ServiceList, ServiceListConfig

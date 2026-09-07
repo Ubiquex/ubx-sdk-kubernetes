@@ -5,4 +5,5 @@
 SOURCE_PROVENANCE = {"source": "kubernetes", "version": "dynamic"}
 
 from .horizontal_pod_autoscaler import HorizontalPodAutoscaler, HorizontalPodAutoscalerConfig
+from .horizontal_pod_autoscaler_list import HorizontalPodAutoscalerList, HorizontalPodAutoscalerListConfig
 from .scale import Scale, ScaleConfig
