@@ -4,69 +4,69 @@ package autoscaling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HorizontalPodAutoscalerList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type HorizontalPodAutoscalerList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type HorizontalPodAutoscalerList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type HorizontalPodAutoscalerList_Items_Spec_ScaleTargetRef struct {
 	ApiVersion any
-	Kind any
-	Name any
+	Kind       any
+	Name       any
 }
 
 type HorizontalPodAutoscalerList_Items_Spec struct {
-	MaxReplicas any
-	MinReplicas any
-	ScaleTargetRef any
+	MaxReplicas                    any
+	MinReplicas                    any
+	ScaleTargetRef                 any
 	TargetCpuutilizationPercentage any
 }
 
 type HorizontalPodAutoscalerList_Items_Status struct {
 	CurrentCpuutilizationPercentage any
-	CurrentReplicas any
-	DesiredReplicas any
-	LastScaleTime any
-	ObservedGeneration any
+	CurrentReplicas                 any
+	DesiredReplicas                 any
+	LastScaleTime                   any
+	ObservedGeneration              any
 }
 
 type HorizontalPodAutoscalerList_Items struct {
 	ApiVersion any
-	Kind any
-	Metadata any
-	Spec any
-	Status any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
 }
 
 type HorizontalPodAutoscalerList_Metadata_ShardInfo struct {
@@ -103,6 +103,5 @@ type HorizontalPodAutoscalerListAttrs struct {
 
 var HorizontalPodAutoscalerList = ubx.DataSourceBinding{
 	WireType: "kubernetes_autoscaling_horizontal_pod_autoscaler_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

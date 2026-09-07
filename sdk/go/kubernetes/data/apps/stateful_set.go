@@ -4,22 +4,22 @@ package apps
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StatefulSet_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type StatefulSet_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type StatefulSet_Metadata struct {
@@ -68,9 +68,9 @@ type StatefulSet_Spec_PersistentVolumeClaimRetentionPolicy struct {
 }
 
 type StatefulSet_Spec_Selector_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type StatefulSet_Spec_Selector struct {
@@ -82,12 +82,12 @@ type StatefulSet_Spec_Selector struct {
 
 type StatefulSet_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference struct {
 	MatchExpressions any
-	MatchFields any
+	MatchFields      any
 }
 
 type StatefulSet_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution struct {
 	Preference any
-	Weight any
+	Weight     any
 }
 
 type StatefulSet_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution struct {
@@ -103,17 +103,17 @@ type StatefulSet_Spec_Template_Spec_Affinity_NodeAffinity struct {
 }
 
 type StatefulSet_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm struct {
-	LabelSelector any
-	MatchLabelKeys any
+	LabelSelector     any
+	MatchLabelKeys    any
 	MismatchLabelKeys any
 	NamespaceSelector any
-	Namespaces any
-	TopologyKey any
+	Namespaces        any
+	TopologyKey       any
 }
 
 type StatefulSet_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution struct {
 	PodAffinityTerm any
-	Weight any
+	Weight          any
 }
 
 type StatefulSet_Spec_Template_Spec_Affinity_PodAffinity struct {
@@ -133,52 +133,52 @@ type StatefulSet_Spec_Template_Spec_Affinity struct {
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Env_ValueFrom_ConfigMapKeyRef struct {
-	Key any
-	Name any
+	Key      any
+	Name     any
 	Optional any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Env_ValueFrom_FieldRef struct {
 	ApiVersion any
-	FieldPath any
+	FieldPath  any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Env_ValueFrom_FileKeyRef struct {
-	Key any
-	Optional any
-	Path any
+	Key        any
+	Optional   any
+	Path       any
 	VolumeName any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Env_ValueFrom_ResourceFieldRef struct {
 	ContainerName any
-	Divisor any
-	Resource any
+	Divisor       any
+	Resource      any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Env_ValueFrom struct {
-	ConfigMapKeyRef any
-	FieldRef any
-	FileKeyRef any
+	ConfigMapKeyRef  any
+	FieldRef         any
+	FileKeyRef       any
 	ResourceFieldRef any
-	SecretKeyRef any
+	SecretKeyRef     any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Env struct {
-	Name any
-	Value any
+	Name      any
+	Value     any
 	ValueFrom any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_EnvFrom_ConfigMapRef struct {
-	Name any
+	Name     any
 	Optional any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_EnvFrom struct {
 	ConfigMapRef any
-	Prefix any
-	SecretRef any
+	Prefix       any
+	SecretRef    any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_Exec struct {
@@ -186,17 +186,17 @@ type StatefulSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_Exec struct {
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeaders struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet struct {
-	Host any
+	Host        any
 	HttpHeaders any
-	Path any
-	Port any
-	Protocol any
-	Scheme any
+	Path        any
+	Port        any
+	Protocol    any
+	Scheme      any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_Sleep struct {
@@ -209,152 +209,152 @@ type StatefulSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_TcpSocket str
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Lifecycle_PostStart struct {
-	Exec any
-	HttpGet any
-	Sleep any
+	Exec      any
+	HttpGet   any
+	Sleep     any
 	TcpSocket any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Lifecycle struct {
-	PostStart any
-	PreStop any
+	PostStart  any
+	PreStop    any
 	StopSignal any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_LivenessProbe_Grpc struct {
-	Mode any
-	Port any
+	Mode    any
+	Port    any
 	Service any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_LivenessProbe struct {
-	Exec any
-	FailureThreshold any
-	Grpc any
-	HttpGet any
-	InitialDelaySeconds any
-	PeriodSeconds any
-	SuccessThreshold any
-	TcpSocket any
+	Exec                          any
+	FailureThreshold              any
+	Grpc                          any
+	HttpGet                       any
+	InitialDelaySeconds           any
+	PeriodSeconds                 any
+	SuccessThreshold              any
+	TcpSocket                     any
 	TerminationGracePeriodSeconds any
-	TimeoutSeconds any
+	TimeoutSeconds                any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Ports struct {
 	ContainerPort any
-	HostIp any
-	HostPort any
-	Name any
-	Protocol any
+	HostIp        any
+	HostPort      any
+	Name          any
+	Protocol      any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_ResizePolicy struct {
-	ResourceName any
+	ResourceName  any
 	RestartPolicy any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Resources_Claims struct {
-	Name any
+	Name    any
 	Request any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_Resources struct {
-	Claims any
-	Limits any
+	Claims   any
+	Limits   any
 	Requests any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_RestartPolicyRules_ExitCodes struct {
 	Operator any
-	Values any
+	Values   any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_RestartPolicyRules struct {
-	Action any
+	Action    any
 	ExitCodes any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfile struct {
 	LocalhostProfile any
-	Type any
+	Type             any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_SecurityContext_Capabilities struct {
-	Add any
+	Add  any
 	Drop any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_SecurityContext_SeLinuxOptions struct {
 	Level any
-	Role any
-	Type any
-	User any
+	Role  any
+	Type  any
+	User  any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_SecurityContext_WindowsOptions struct {
-	GmsaCredentialSpec any
+	GmsaCredentialSpec     any
 	GmsaCredentialSpecName any
-	HostProcess any
-	RunAsUserName any
+	HostProcess            any
+	RunAsUserName          any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_SecurityContext struct {
 	AllowPrivilegeEscalation any
-	AppArmorProfile any
-	Capabilities any
-	Privileged any
-	ProcMount any
-	ReadOnlyRootFilesystem any
-	RunAsGroup any
-	RunAsNonRoot any
-	RunAsUser any
-	SeLinuxOptions any
-	SeccompProfile any
-	WindowsOptions any
+	AppArmorProfile          any
+	Capabilities             any
+	Privileged               any
+	ProcMount                any
+	ReadOnlyRootFilesystem   any
+	RunAsGroup               any
+	RunAsNonRoot             any
+	RunAsUser                any
+	SeLinuxOptions           any
+	SeccompProfile           any
+	WindowsOptions           any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_VolumeDevices struct {
 	DevicePath any
-	Name any
+	Name       any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers_VolumeMounts struct {
-	BindMountOptions any
-	MountPath any
-	MountPropagation any
-	Name any
-	ReadOnly any
+	BindMountOptions  any
+	MountPath         any
+	MountPropagation  any
+	Name              any
+	ReadOnly          any
 	RecursiveReadOnly any
-	SubPath any
-	SubPathExpr any
+	SubPath           any
+	SubPathExpr       any
 }
 
 type StatefulSet_Spec_Template_Spec_Containers struct {
-	Args any
-	Command any
-	Env any
-	EnvFrom any
-	Image any
-	ImagePullPolicy any
-	Lifecycle any
-	LivenessProbe any
-	Name any
-	Ports any
-	ReadinessProbe any
-	ResizePolicy any
-	Resources any
-	RestartPolicy any
-	RestartPolicyRules any
-	SecurityContext any
-	StartupProbe any
-	Stdin any
-	StdinOnce any
-	TerminationMessagePath any
+	Args                     any
+	Command                  any
+	Env                      any
+	EnvFrom                  any
+	Image                    any
+	ImagePullPolicy          any
+	Lifecycle                any
+	LivenessProbe            any
+	Name                     any
+	Ports                    any
+	ReadinessProbe           any
+	ResizePolicy             any
+	Resources                any
+	RestartPolicy            any
+	RestartPolicyRules       any
+	SecurityContext          any
+	StartupProbe             any
+	Stdin                    any
+	StdinOnce                any
+	TerminationMessagePath   any
 	TerminationMessagePolicy any
-	Tty any
-	VolumeDevices any
-	VolumeMounts any
-	WorkingDir any
+	Tty                      any
+	VolumeDevices            any
+	VolumeMounts             any
+	WorkingDir               any
 }
 
 type StatefulSet_Spec_Template_Spec_DnsConfig struct {
@@ -367,42 +367,42 @@ type StatefulSet_Spec_Template_Spec_DnsConfig struct {
 }
 
 type StatefulSet_Spec_Template_Spec_EphemeralContainers struct {
-	Args any
-	Command any
-	Env any
-	EnvFrom any
-	Image any
-	ImagePullPolicy any
-	Lifecycle any
-	LivenessProbe any
-	Name any
-	Ports any
-	ReadinessProbe any
-	ResizePolicy any
-	Resources any
-	RestartPolicy any
-	RestartPolicyRules any
-	SecurityContext any
-	StartupProbe any
-	Stdin any
-	StdinOnce any
-	TargetContainerName any
-	TerminationMessagePath any
+	Args                     any
+	Command                  any
+	Env                      any
+	EnvFrom                  any
+	Image                    any
+	ImagePullPolicy          any
+	Lifecycle                any
+	LivenessProbe            any
+	Name                     any
+	Ports                    any
+	ReadinessProbe           any
+	ResizePolicy             any
+	Resources                any
+	RestartPolicy            any
+	RestartPolicyRules       any
+	SecurityContext          any
+	StartupProbe             any
+	Stdin                    any
+	StdinOnce                any
+	TargetContainerName      any
+	TerminationMessagePath   any
 	TerminationMessagePolicy any
-	Tty any
-	VolumeDevices any
-	VolumeMounts any
-	WorkingDir any
+	Tty                      any
+	VolumeDevices            any
+	VolumeMounts             any
+	WorkingDir               any
 }
 
 type StatefulSet_Spec_Template_Spec_EvictionResponders struct {
-	Name any
+	Name     any
 	Priority any
 }
 
 type StatefulSet_Spec_Template_Spec_HostAliases struct {
 	Hostnames any
-	Ip any
+	Ip        any
 }
 
 type StatefulSet_Spec_Template_Spec_ImagePullSecrets struct {
@@ -414,8 +414,8 @@ type StatefulSet_Spec_Template_Spec_ReadinessGates struct {
 }
 
 type StatefulSet_Spec_Template_Spec_ResourceClaims struct {
-	Name any
-	ResourceClaimName any
+	Name                      any
+	ResourceClaimName         any
 	ResourceClaimTemplateName any
 }
 
@@ -454,64 +454,64 @@ type StatefulSet_Spec_Template_Spec_SecurityContext struct {
 }
 
 type StatefulSet_Spec_Template_Spec_Tolerations struct {
-	Effect any
-	Key any
-	Operator any
+	Effect            any
+	Key               any
+	Operator          any
 	TolerationSeconds any
-	Value any
+	Value             any
 }
 
 type StatefulSet_Spec_Template_Spec_TopologySpreadConstraints struct {
-	LabelSelector any
-	MatchLabelKeys any
-	MaxSkew any
-	MinDomains any
+	LabelSelector      any
+	MatchLabelKeys     any
+	MaxSkew            any
+	MinDomains         any
 	NodeAffinityPolicy any
-	NodeTaintsPolicy any
-	TopologyKey any
-	WhenUnsatisfiable any
+	NodeTaintsPolicy   any
+	TopologyKey        any
+	WhenUnsatisfiable  any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_AwsElasticBlockStore struct {
-	FsType any
+	FsType    any
 	Partition any
-	ReadOnly any
-	VolumeId any
+	ReadOnly  any
+	VolumeId  any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_AzureDisk struct {
 	CachingMode any
-	DiskName any
-	DiskUri any
-	FsType any
-	Kind any
-	ReadOnly any
+	DiskName    any
+	DiskUri     any
+	FsType      any
+	Kind        any
+	ReadOnly    any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_AzureFile struct {
-	ReadOnly any
+	ReadOnly   any
 	SecretName any
-	ShareName any
+	ShareName  any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Cephfs struct {
-	Monitors any
-	Path any
-	ReadOnly any
+	Monitors   any
+	Path       any
+	ReadOnly   any
 	SecretFile any
-	SecretRef any
-	User any
+	SecretRef  any
+	User       any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Cinder struct {
-	FsType any
-	ReadOnly any
+	FsType    any
+	ReadOnly  any
 	SecretRef any
-	VolumeId any
+	VolumeId  any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_ConfigMap_Items struct {
-	Key any
+	Key  any
 	Mode any
 	Path any
 	User any
@@ -520,72 +520,72 @@ type StatefulSet_Spec_Template_Spec_Volumes_ConfigMap_Items struct {
 type StatefulSet_Spec_Template_Spec_Volumes_ConfigMap struct {
 	DefaultMode any
 	DefaultUser any
-	Items any
-	Name any
-	Optional any
+	Items       any
+	Name        any
+	Optional    any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Csi struct {
-	Driver any
-	FsType any
+	Driver               any
+	FsType               any
 	NodePublishSecretRef any
-	ReadOnly any
-	VolumeAttributes any
+	ReadOnly             any
+	VolumeAttributes     any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_DownwardApi_Items struct {
-	FieldRef any
-	Mode any
-	Path any
+	FieldRef         any
+	Mode             any
+	Path             any
 	ResourceFieldRef any
-	User any
+	User             any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_DownwardApi struct {
 	DefaultMode any
 	DefaultUser any
-	Items any
+	Items       any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_EmptyDir struct {
-	Medium any
-	Mode any
+	Medium    any
+	Mode      any
 	SizeLimit any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSource struct {
 	ApiGroup any
-	Kind any
-	Name any
+	Kind     any
+	Name     any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceRef struct {
-	ApiGroup any
-	Kind any
-	Name any
+	ApiGroup  any
+	Kind      any
+	Name      any
 	Namespace any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_Resources struct {
-	Limits any
+	Limits   any
 	Requests any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec struct {
-	AccessModes any
-	DataSource any
-	DataSourceRef any
-	Resources any
-	Selector any
-	StorageClassName any
+	AccessModes               any
+	DataSource                any
+	DataSourceRef             any
+	Resources                 any
+	Selector                  any
+	StorageClassName          any
 	VolumeAttributesClassName any
-	VolumeMode any
-	VolumeName any
+	VolumeMode                any
+	VolumeName                any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate struct {
 	Metadata any
-	Spec any
+	Spec     any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Ephemeral struct {
@@ -593,18 +593,18 @@ type StatefulSet_Spec_Template_Spec_Volumes_Ephemeral struct {
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Fc struct {
-	FsType any
-	Lun any
-	ReadOnly any
+	FsType     any
+	Lun        any
+	ReadOnly   any
 	TargetWwns any
-	Wwids any
+	Wwids      any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_FlexVolume struct {
-	Driver any
-	FsType any
-	Options any
-	ReadOnly any
+	Driver    any
+	FsType    any
+	Options   any
+	ReadOnly  any
 	SecretRef any
 }
 
@@ -614,22 +614,22 @@ type StatefulSet_Spec_Template_Spec_Volumes_Flocker struct {
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_GcePersistentDisk struct {
-	FsType any
+	FsType    any
 	Partition any
-	PdName any
-	ReadOnly any
+	PdName    any
+	ReadOnly  any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_GitRepo struct {
-	Directory any
+	Directory  any
 	Repository any
-	Revision any
+	Revision   any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Glusterfs struct {
 	Endpoints any
-	Path any
-	ReadOnly any
+	Path      any
+	ReadOnly  any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_HostPath struct {
@@ -639,57 +639,57 @@ type StatefulSet_Spec_Template_Spec_Volumes_HostPath struct {
 
 type StatefulSet_Spec_Template_Spec_Volumes_Image struct {
 	PullPolicy any
-	Reference any
+	Reference  any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Iscsi struct {
 	ChapAuthDiscovery any
-	ChapAuthSession any
-	FsType any
-	InitiatorName any
-	Iqn any
-	IscsiInterface any
-	Lun any
-	Portals any
-	ReadOnly any
-	SecretRef any
-	TargetPortal any
+	ChapAuthSession   any
+	FsType            any
+	InitiatorName     any
+	Iqn               any
+	IscsiInterface    any
+	Lun               any
+	Portals           any
+	ReadOnly          any
+	SecretRef         any
+	TargetPortal      any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Nfs struct {
-	Path any
+	Path     any
 	ReadOnly any
-	Server any
+	Server   any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_PersistentVolumeClaim struct {
 	ClaimName any
-	ReadOnly any
+	ReadOnly  any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_PhotonPersistentDisk struct {
 	FsType any
-	PdId any
+	PdId   any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_PortworxVolume struct {
-	FsType any
+	FsType   any
 	ReadOnly any
 	VolumeId any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Projected_Sources_ClusterTrustBundle struct {
 	LabelSelector any
-	Name any
-	Optional any
-	Path any
-	SignerName any
-	User any
+	Name          any
+	Optional      any
+	Path          any
+	SignerName    any
+	User          any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Projected_Sources_ConfigMap struct {
-	Items any
-	Name any
+	Items    any
+	Name     any
 	Optional any
 }
 
@@ -700,124 +700,124 @@ type StatefulSet_Spec_Template_Spec_Volumes_Projected_Sources_DownwardApi struct
 type StatefulSet_Spec_Template_Spec_Volumes_Projected_Sources_PodCertificate struct {
 	CertificateChainPath any
 	CredentialBundlePath any
-	KeyPath any
-	KeyType any
+	KeyPath              any
+	KeyType              any
 	MaxExpirationSeconds any
-	SignerName any
-	User any
-	UserAnnotations any
+	SignerName           any
+	User                 any
+	UserAnnotations      any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Projected_Sources_ServiceAccountToken struct {
-	Audience any
+	Audience          any
 	ExpirationSeconds any
-	Path any
-	User any
+	Path              any
+	User              any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Projected_Sources struct {
-	ClusterTrustBundle any
-	ConfigMap any
-	DownwardApi any
-	PodCertificate any
-	Secret any
+	ClusterTrustBundle  any
+	ConfigMap           any
+	DownwardApi         any
+	PodCertificate      any
+	Secret              any
 	ServiceAccountToken any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Projected struct {
 	DefaultMode any
 	DefaultUser any
-	Sources any
+	Sources     any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Quobyte struct {
-	Group any
+	Group    any
 	ReadOnly any
 	Registry any
-	Tenant any
-	User any
-	Volume any
+	Tenant   any
+	User     any
+	Volume   any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Rbd struct {
-	FsType any
-	Image any
-	Keyring any
-	Monitors any
-	Pool any
-	ReadOnly any
+	FsType    any
+	Image     any
+	Keyring   any
+	Monitors  any
+	Pool      any
+	ReadOnly  any
 	SecretRef any
-	User any
+	User      any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_ScaleIo struct {
-	FsType any
-	Gateway any
+	FsType           any
+	Gateway          any
 	ProtectionDomain any
-	ReadOnly any
-	SecretRef any
-	SslEnabled any
-	StorageMode any
-	StoragePool any
-	System any
-	VolumeName any
+	ReadOnly         any
+	SecretRef        any
+	SslEnabled       any
+	StorageMode      any
+	StoragePool      any
+	System           any
+	VolumeName       any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Secret struct {
 	DefaultMode any
 	DefaultUser any
-	Items any
-	Optional any
-	SecretName any
+	Items       any
+	Optional    any
+	SecretName  any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_Storageos struct {
-	FsType any
-	ReadOnly any
-	SecretRef any
-	VolumeName any
+	FsType          any
+	ReadOnly        any
+	SecretRef       any
+	VolumeName      any
 	VolumeNamespace any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes_VsphereVolume struct {
-	FsType any
-	StoragePolicyId any
+	FsType            any
+	StoragePolicyId   any
 	StoragePolicyName any
-	VolumePath any
+	VolumePath        any
 }
 
 type StatefulSet_Spec_Template_Spec_Volumes struct {
-	AwsElasticBlockStore any
-	AzureDisk any
-	AzureFile any
-	Cephfs any
-	Cinder any
-	ConfigMap any
-	Csi any
-	DownwardApi any
-	EmptyDir any
-	Ephemeral any
-	Fc any
-	FlexVolume any
-	Flocker any
-	GcePersistentDisk any
-	GitRepo any
-	Glusterfs any
-	HostPath any
-	Image any
-	Iscsi any
-	Name any
-	Nfs any
+	AwsElasticBlockStore  any
+	AzureDisk             any
+	AzureFile             any
+	Cephfs                any
+	Cinder                any
+	ConfigMap             any
+	Csi                   any
+	DownwardApi           any
+	EmptyDir              any
+	Ephemeral             any
+	Fc                    any
+	FlexVolume            any
+	Flocker               any
+	GcePersistentDisk     any
+	GitRepo               any
+	Glusterfs             any
+	HostPath              any
+	Image                 any
+	Iscsi                 any
+	Name                  any
+	Nfs                   any
 	PersistentVolumeClaim any
-	PhotonPersistentDisk any
-	PortworxVolume any
-	Projected any
-	Quobyte any
-	Rbd any
-	ScaleIo any
-	Secret any
-	Storageos any
-	VsphereVolume any
+	PhotonPersistentDisk  any
+	PortworxVolume        any
+	Projected             any
+	Quobyte               any
+	Rbd                   any
+	ScaleIo               any
+	Secret                any
+	Storageos             any
+	VsphereVolume         any
 }
 
 type StatefulSet_Spec_Template_Spec struct {
@@ -931,48 +931,48 @@ type StatefulSet_Spec_UpdateStrategy struct {
 }
 
 type StatefulSet_Spec_VolumeClaimTemplates_Status_Conditions struct {
-	LastProbeTime any
+	LastProbeTime      any
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type StatefulSet_Spec_VolumeClaimTemplates_Status_HealthStatus_HealthConditions struct {
 	Message any
-	Reason any
-	Status any
+	Reason  any
+	Status  any
 }
 
 type StatefulSet_Spec_VolumeClaimTemplates_Status_HealthStatus struct {
-	HealthConditions any
+	HealthConditions   any
 	LastTransitionTime any
 }
 
 type StatefulSet_Spec_VolumeClaimTemplates_Status_ModifyVolumeStatus struct {
-	Status any
+	Status                          any
 	TargetVolumeAttributesClassName any
 }
 
 type StatefulSet_Spec_VolumeClaimTemplates_Status struct {
-	AccessModes any
-	AllocatedResourceStatuses any
-	AllocatedResources any
-	Capacity any
-	Conditions any
+	AccessModes                      any
+	AllocatedResourceStatuses        any
+	AllocatedResources               any
+	Capacity                         any
+	Conditions                       any
 	CurrentVolumeAttributesClassName any
-	HealthStatus any
-	ModifyVolumeStatus any
-	Phase any
+	HealthStatus                     any
+	ModifyVolumeStatus               any
+	Phase                            any
 }
 
 type StatefulSet_Spec_VolumeClaimTemplates struct {
 	ApiVersion any
-	Kind any
-	Metadata any
-	Spec any
-	Status any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
 }
 
 type StatefulSet_Spec struct {
@@ -1002,10 +1002,10 @@ type StatefulSet_Spec struct {
 
 type StatefulSet_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type StatefulSet_Status struct {
@@ -1049,6 +1049,5 @@ type StatefulSetAttrs struct {
 
 var StatefulSet = ubx.DataSourceBinding{
 	WireType: "kubernetes_apps_stateful_set",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,22 +4,22 @@ package apiextensions
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomResourceDefinition_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type CustomResourceDefinition_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type CustomResourceDefinition_Metadata struct {
@@ -106,11 +106,11 @@ type CustomResourceDefinition_Spec_Names struct {
 
 type CustomResourceDefinition_Spec_Versions_AdditionalPrinterColumns struct {
 	Description any
-	Format any
-	JsonPath any
-	Name any
-	Priority any
-	Type any
+	Format      any
+	JsonPath    any
+	Name        any
+	Priority    any
+	Type        any
 }
 
 type CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOf struct {
@@ -118,61 +118,61 @@ type CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_AllOf struct 
 
 type CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_ExternalDocs struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema_XKubernetesValidations struct {
-	FieldPath any
-	Message any
+	FieldPath         any
+	Message           any
 	MessageExpression any
-	OptionalOldSelf any
-	Reason any
-	Rule any
+	OptionalOldSelf   any
+	Reason            any
+	Rule              any
 }
 
 type CustomResourceDefinition_Spec_Versions_Schema_OpenApiv3Schema struct {
-	AdditionalItems any
-	AdditionalProperties any
-	AllOf any
-	AnyOf any
-	Default any
-	Definitions any
-	Dependencies any
-	Description any
-	Enum any
-	Example any
-	ExclusiveMaximum any
-	ExclusiveMinimum any
-	ExternalDocs any
-	Format any
-	Id any
-	Items any
-	MaxItems any
-	MaxLength any
-	MaxProperties any
-	Maximum any
-	MinItems any
-	MinLength any
-	MinProperties any
-	Minimum any
-	MultipleOf any
-	Not any
-	Nullable any
-	OneOf any
-	Pattern any
-	PatternProperties any
-	Properties any
-	Required any
-	Title any
-	Type any
-	UniqueItems any
-	XKubernetesEmbeddedResource any
-	XKubernetesIntOrString any
-	XKubernetesListMapKeys any
-	XKubernetesListType any
-	XKubernetesMapType any
+	AdditionalItems                  any
+	AdditionalProperties             any
+	AllOf                            any
+	AnyOf                            any
+	Default                          any
+	Definitions                      any
+	Dependencies                     any
+	Description                      any
+	Enum                             any
+	Example                          any
+	ExclusiveMaximum                 any
+	ExclusiveMinimum                 any
+	ExternalDocs                     any
+	Format                           any
+	Id                               any
+	Items                            any
+	MaxItems                         any
+	MaxLength                        any
+	MaxProperties                    any
+	Maximum                          any
+	MinItems                         any
+	MinLength                        any
+	MinProperties                    any
+	Minimum                          any
+	MultipleOf                       any
+	Not                              any
+	Nullable                         any
+	OneOf                            any
+	Pattern                          any
+	PatternProperties                any
+	Properties                       any
+	Required                         any
+	Title                            any
+	Type                             any
+	UniqueItems                      any
+	XKubernetesEmbeddedResource      any
+	XKubernetesIntOrString           any
+	XKubernetesListMapKeys           any
+	XKubernetesListType              any
+	XKubernetesMapType               any
 	XKubernetesPreserveUnknownFields any
-	XKubernetesValidations any
+	XKubernetesValidations           any
 }
 
 type CustomResourceDefinition_Spec_Versions_Schema struct {
@@ -184,26 +184,26 @@ type CustomResourceDefinition_Spec_Versions_SelectableFields struct {
 }
 
 type CustomResourceDefinition_Spec_Versions_Subresources_Scale struct {
-	LabelSelectorPath any
-	SpecReplicasPath any
+	LabelSelectorPath  any
+	SpecReplicasPath   any
 	StatusReplicasPath any
 }
 
 type CustomResourceDefinition_Spec_Versions_Subresources struct {
-	Scale any
+	Scale  any
 	Status any
 }
 
 type CustomResourceDefinition_Spec_Versions struct {
 	AdditionalPrinterColumns any
-	Deprecated any
-	DeprecationWarning any
-	Name any
-	Schema any
-	SelectableFields any
-	Served any
-	Storage any
-	Subresources any
+	Deprecated               any
+	DeprecationWarning       any
+	Name                     any
+	Schema                   any
+	SelectableFields         any
+	Served                   any
+	Storage                  any
+	Subresources             any
 }
 
 type CustomResourceDefinition_Spec struct {
@@ -223,11 +223,11 @@ type CustomResourceDefinition_Spec struct {
 
 type CustomResourceDefinition_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type CustomResourceDefinition_Status struct {
@@ -259,6 +259,5 @@ type CustomResourceDefinitionAttrs struct {
 
 var CustomResourceDefinition = ubx.DataSourceBinding{
 	WireType: "kubernetes_apiextensions_custom_resource_definition",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

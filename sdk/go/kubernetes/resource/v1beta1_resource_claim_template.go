@@ -190,197 +190,197 @@ type V1beta1ResourceClaimTemplate_Spec struct {
 }
 
 var V1beta1ResourceClaimTemplate_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var V1beta1ResourceClaimTemplate_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta1ResourceClaimTemplate_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Config_OpaqueFields = ubx.FieldMap{
-		"Driver": ubx.FieldSpec{WireName: "driver"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"Driver":     ubx.FieldSpec{WireName: "driver"},
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_Devices_ConfigFields = ubx.FieldMap{
-		"Opaque": ubx.FieldSpec{
-			WireName: "opaque",
-			Kind: "object",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Config_OpaqueFields,
-		},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"Opaque": ubx.FieldSpec{
+		WireName: "opaque",
+		Kind:     "object",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Config_OpaqueFields,
+	},
+	"Requests": ubx.FieldSpec{WireName: "requests"},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_Devices_ConstraintsFields = ubx.FieldMap{
-		"DistinctAttribute": ubx.FieldSpec{WireName: "distinct_attribute"},
-		"MatchAttribute": ubx.FieldSpec{WireName: "match_attribute"},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"DistinctAttribute": ubx.FieldSpec{WireName: "distinct_attribute"},
+	"MatchAttribute":    ubx.FieldSpec{WireName: "match_attribute"},
+	"Requests":          ubx.FieldSpec{WireName: "requests"},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_CapacityFields = ubx.FieldMap{
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"Requests": ubx.FieldSpec{WireName: "requests"},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_DerivedAttributesFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_Selectors_CelFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_SelectorsFields = ubx.FieldMap{
-		"Cel": ubx.FieldSpec{
-			WireName: "cel",
-			Kind: "object",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_Selectors_CelFields,
-		},
-	}
+	"Cel": ubx.FieldSpec{
+		WireName: "cel",
+		Kind:     "object",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_Selectors_CelFields,
+	},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_TolerationsFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"TolerationSeconds": ubx.FieldSpec{WireName: "toleration_seconds"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Effect":            ubx.FieldSpec{WireName: "effect"},
+	"Key":               ubx.FieldSpec{WireName: "key"},
+	"Operator":          ubx.FieldSpec{WireName: "operator"},
+	"TolerationSeconds": ubx.FieldSpec{WireName: "toleration_seconds"},
+	"Value":             ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailableFields = ubx.FieldMap{
-		"AllocationMode": ubx.FieldSpec{WireName: "allocation_mode"},
-		"Capacity": ubx.FieldSpec{
-			WireName: "capacity",
-			Kind: "object",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_CapacityFields,
-		},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"DerivedAttributes": ubx.FieldSpec{
-			WireName: "derived_attributes",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_DerivedAttributesFields,
-		},
-		"DeviceClassName": ubx.FieldSpec{WireName: "device_class_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Selectors": ubx.FieldSpec{
-			WireName: "selectors",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_SelectorsFields,
-		},
-		"Tolerations": ubx.FieldSpec{
-			WireName: "tolerations",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_TolerationsFields,
-		},
-	}
+	"AllocationMode": ubx.FieldSpec{WireName: "allocation_mode"},
+	"Capacity": ubx.FieldSpec{
+		WireName: "capacity",
+		Kind:     "object",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_CapacityFields,
+	},
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"DerivedAttributes": ubx.FieldSpec{
+		WireName: "derived_attributes",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_DerivedAttributesFields,
+	},
+	"DeviceClassName": ubx.FieldSpec{WireName: "device_class_name"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Selectors": ubx.FieldSpec{
+		WireName: "selectors",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_SelectorsFields,
+	},
+	"Tolerations": ubx.FieldSpec{
+		WireName: "tolerations",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_TolerationsFields,
+	},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_Devices_RequestsFields = ubx.FieldMap{
-		"AdminAccess": ubx.FieldSpec{WireName: "admin_access"},
-		"AllocationMode": ubx.FieldSpec{WireName: "allocation_mode"},
-		"Capacity": ubx.FieldSpec{
-			WireName: "capacity",
-			Kind: "object",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_CapacityFields,
-		},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"DerivedAttributes": ubx.FieldSpec{
-			WireName: "derived_attributes",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_DerivedAttributesFields,
-		},
-		"DeviceClassName": ubx.FieldSpec{WireName: "device_class_name"},
-		"FirstAvailable": ubx.FieldSpec{
-			WireName: "first_available",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailableFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Selectors": ubx.FieldSpec{
-			WireName: "selectors",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_SelectorsFields,
-		},
-		"Tolerations": ubx.FieldSpec{
-			WireName: "tolerations",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_TolerationsFields,
-		},
-	}
+	"AdminAccess":    ubx.FieldSpec{WireName: "admin_access"},
+	"AllocationMode": ubx.FieldSpec{WireName: "allocation_mode"},
+	"Capacity": ubx.FieldSpec{
+		WireName: "capacity",
+		Kind:     "object",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_CapacityFields,
+	},
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"DerivedAttributes": ubx.FieldSpec{
+		WireName: "derived_attributes",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_DerivedAttributesFields,
+	},
+	"DeviceClassName": ubx.FieldSpec{WireName: "device_class_name"},
+	"FirstAvailable": ubx.FieldSpec{
+		WireName: "first_available",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailableFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Selectors": ubx.FieldSpec{
+		WireName: "selectors",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_SelectorsFields,
+	},
+	"Tolerations": ubx.FieldSpec{
+		WireName: "tolerations",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_Requests_FirstAvailable_TolerationsFields,
+	},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_Spec_DevicesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_ConfigFields,
-		},
-		"Constraints": ubx.FieldSpec{
-			WireName: "constraints",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_ConstraintsFields,
-		},
-		"Requests": ubx.FieldSpec{
-			WireName: "requests",
-			Kind: "list",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_Devices_RequestsFields,
-		},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_ConfigFields,
+	},
+	"Constraints": ubx.FieldSpec{
+		WireName: "constraints",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_ConstraintsFields,
+	},
+	"Requests": ubx.FieldSpec{
+		WireName: "requests",
+		Kind:     "list",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_Devices_RequestsFields,
+	},
+}
 
 var V1beta1ResourceClaimTemplate_Spec_SpecFields = ubx.FieldMap{
-		"Devices": ubx.FieldSpec{
-			WireName: "devices",
-			Kind: "object",
-			Fields: V1beta1ResourceClaimTemplate_Spec_Spec_DevicesFields,
-		},
-	}
+	"Devices": ubx.FieldSpec{
+		WireName: "devices",
+		Kind:     "object",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_Spec_DevicesFields,
+	},
+}
 
 var V1beta1ResourceClaimTemplate_SpecFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1ResourceClaimTemplate_MetadataFields,
-		},
-		"Spec": ubx.FieldSpec{
-			WireName: "spec",
-			Kind: "object",
-			Fields: V1beta1ResourceClaimTemplate_Spec_SpecFields,
-		},
-	}
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   V1beta1ResourceClaimTemplate_MetadataFields,
+	},
+	"Spec": ubx.FieldSpec{
+		WireName: "spec",
+		Kind:     "object",
+		Fields:   V1beta1ResourceClaimTemplate_Spec_SpecFields,
+	},
+}
 
 type V1beta1ResourceClaimTemplateConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -416,18 +416,18 @@ var V1beta1ResourceClaimTemplate = ubx.ResourceBinding{
 	WireType: "kubernetes_resource_v1beta1_resource_claim_template",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1ResourceClaimTemplate_MetadataFields,
+			Kind:     "object",
+			Fields:   V1beta1ResourceClaimTemplate_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: V1beta1ResourceClaimTemplate_SpecFields,
+			Kind:     "object",
+			Fields:   V1beta1ResourceClaimTemplate_SpecFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

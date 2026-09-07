@@ -4,22 +4,22 @@ package resource
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourcePoolStatusRequest_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type ResourcePoolStatusRequest_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type ResourcePoolStatusRequest_Metadata struct {
@@ -68,46 +68,46 @@ type ResourcePoolStatusRequest_Spec struct {
 
 type ResourcePoolStatusRequest_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type ResourcePoolStatusRequest_Status_Pools_PartitionSummary struct {
 	Allocatable any
-	Attribute any
-	Total any
-	Type any
+	Attribute   any
+	Total       any
+	Type        any
 }
 
 type ResourcePoolStatusRequest_Status_Pools_ShareableSummary_Capacity struct {
 	Available any
-	Consumed any
-	Name any
-	Total any
+	Consumed  any
+	Name      any
+	Total     any
 }
 
 type ResourcePoolStatusRequest_Status_Pools_ShareableSummary struct {
-	Capacity any
-	FullyAvailableDevices any
+	Capacity                  any
+	FullyAvailableDevices     any
 	PartiallyAvailableDevices any
 }
 
 type ResourcePoolStatusRequest_Status_Pools struct {
-	AllocatedDevices any
-	AvailableDevices any
-	Driver any
-	Generation any
-	NodeName any
-	PartitionSummary any
-	PoolName any
+	AllocatedDevices   any
+	AvailableDevices   any
+	Driver             any
+	Generation         any
+	NodeName           any
+	PartitionSummary   any
+	PoolName           any
 	ResourceSliceCount any
-	ShareableSummary any
-	TotalDevices any
+	ShareableSummary   any
+	TotalDevices       any
 	UnavailableDevices any
-	ValidationError any
+	ValidationError    any
 }
 
 type ResourcePoolStatusRequest_Status struct {
@@ -137,6 +137,5 @@ type ResourcePoolStatusRequestAttrs struct {
 
 var ResourcePoolStatusRequest = ubx.DataSourceBinding{
 	WireType: "kubernetes_resource_resource_pool_status_request",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

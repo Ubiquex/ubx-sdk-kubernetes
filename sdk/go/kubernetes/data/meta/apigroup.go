@@ -11,7 +11,7 @@ type Apigroup_PreferredVersion struct {
 }
 
 type Apigroup_ServerAddressByClientCidrs struct {
-	ClientCidr any
+	ClientCidr    any
 	ServerAddress any
 }
 
@@ -35,6 +35,5 @@ type ApigroupAttrs struct {
 
 var Apigroup = ubx.DataSourceBinding{
 	WireType: "kubernetes_meta_apigroup",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

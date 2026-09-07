@@ -4,22 +4,22 @@ package certificates
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PodCertificateRequest_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type PodCertificateRequest_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type PodCertificateRequest_Metadata struct {
@@ -80,11 +80,11 @@ type PodCertificateRequest_Spec struct {
 
 type PodCertificateRequest_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type PodCertificateRequest_Status struct {
@@ -118,6 +118,5 @@ type PodCertificateRequestAttrs struct {
 
 var PodCertificateRequest = ubx.DataSourceBinding{
 	WireType: "kubernetes_certificates_pod_certificate_request",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

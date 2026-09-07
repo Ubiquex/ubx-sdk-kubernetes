@@ -4,22 +4,22 @@ package networking
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Ingress_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type Ingress_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type Ingress_Metadata struct {
@@ -86,8 +86,8 @@ type Ingress_Spec_DefaultBackend struct {
 }
 
 type Ingress_Spec_Rules_Http_Paths struct {
-	Backend any
-	Path any
+	Backend  any
+	Path     any
 	PathType any
 }
 
@@ -101,7 +101,7 @@ type Ingress_Spec_Rules struct {
 }
 
 type Ingress_Spec_Tls struct {
-	Hosts any
+	Hosts      any
 	SecretName any
 }
 
@@ -117,15 +117,15 @@ type Ingress_Spec struct {
 }
 
 type Ingress_Status_LoadBalancer_Ingress_Ports struct {
-	Error any
-	Port any
+	Error    any
+	Port     any
 	Protocol any
 }
 
 type Ingress_Status_LoadBalancer_Ingress struct {
 	Hostname any
-	Ip any
-	Ports any
+	Ip       any
+	Ports    any
 }
 
 type Ingress_Status_LoadBalancer struct {
@@ -156,6 +156,5 @@ type IngressAttrs struct {
 
 var Ingress = ubx.DataSourceBinding{
 	WireType: "kubernetes_networking_ingress",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,22 +4,22 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PersistentVolume_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type PersistentVolume_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type PersistentVolume_Metadata struct {
@@ -269,14 +269,14 @@ type PersistentVolume_Spec_Nfs struct {
 }
 
 type PersistentVolume_Spec_NodeAffinity_Required_NodeSelectorTerms_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type PersistentVolume_Spec_NodeAffinity_Required_NodeSelectorTerms struct {
 	MatchExpressions any
-	MatchFields any
+	MatchFields      any
 }
 
 type PersistentVolume_Spec_NodeAffinity_Required struct {
@@ -480,6 +480,5 @@ type PersistentVolumeAttrs struct {
 
 var PersistentVolume = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_persistent_volume",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

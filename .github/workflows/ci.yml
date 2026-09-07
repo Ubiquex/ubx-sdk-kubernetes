@@ -32,6 +32,31 @@ jobs:
         run: go build ./...
         working-directory: sdk/go
 
+      - name: Generated Go is gofmt-clean
+        # gofmt is the single canonical form the Go ecosystem assumes,
+        # and nothing was applying it: codegen did not, hash-watch.yml
+        # did not, and this workflow only ran go build, which is
+        # perfectly happy with unformatted source. 203 of this repo's
+        # 248 generated Go files had drifted out of it before anyone
+        # looked, and the sweep that fixed them was proven to change
+        # formatting only by comparing the Go token stream of every file
+        # before and after (UBI-244).
+        #
+        # ubx sdk gen now formats its own output, so this is a check
+        # that that stays true rather than the thing that makes it true.
+        # gofmt -l names offending files and exits 0 either way, so the
+        # emptiness of its output is the assertion, not the exit code.
+        run: |
+          set -euo pipefail
+          unformatted="$(gofmt -l .)"
+          if [ -n "$unformatted" ]; then
+            echo "not gofmt-clean:" >&2
+            echo "$unformatted" >&2
+            exit 1
+          fi
+          echo "ok: every generated Go file is gofmt-clean"
+        working-directory: sdk/go
+
       - name: Set up Deno
         uses: denoland/setup-deno@v2
         with:

@@ -4,22 +4,22 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Service_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type Service_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type Service_Metadata struct {
@@ -57,11 +57,11 @@ type Service_Metadata struct {
 
 type Service_Spec_Ports struct {
 	AppProtocol any
-	Name any
-	NodePort any
-	Port any
-	Protocol any
-	TargetPort any
+	Name        any
+	NodePort    any
+	Port        any
+	Protocol    any
+	TargetPort  any
 }
 
 type Service_Spec_SessionAffinityConfig_ClientIp struct {
@@ -119,24 +119,24 @@ type Service_Spec struct {
 
 type Service_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type Service_Status_LoadBalancer_Ingress_Ports struct {
-	Error any
-	Port any
+	Error    any
+	Port     any
 	Protocol any
 }
 
 type Service_Status_LoadBalancer_Ingress struct {
 	Hostname any
-	Ip any
-	IpMode any
-	Ports any
+	Ip       any
+	IpMode   any
+	Ports    any
 }
 
 type Service_Status_LoadBalancer struct {
@@ -169,6 +169,5 @@ type ServiceAttrs struct {
 
 var Service = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_service",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

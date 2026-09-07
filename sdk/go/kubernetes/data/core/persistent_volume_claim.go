@@ -4,22 +4,22 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PersistentVolumeClaim_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type PersistentVolumeClaim_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type PersistentVolumeClaim_Metadata struct {
@@ -83,9 +83,9 @@ type PersistentVolumeClaim_Spec_Resources struct {
 }
 
 type PersistentVolumeClaim_Spec_Selector_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type PersistentVolumeClaim_Spec_Selector struct {
@@ -117,18 +117,18 @@ type PersistentVolumeClaim_Spec struct {
 }
 
 type PersistentVolumeClaim_Status_Conditions struct {
-	LastProbeTime any
+	LastProbeTime      any
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type PersistentVolumeClaim_Status_HealthStatus_HealthConditions struct {
 	Message any
-	Reason any
-	Status any
+	Reason  any
+	Status  any
 }
 
 type PersistentVolumeClaim_Status_HealthStatus struct {
@@ -184,6 +184,5 @@ type PersistentVolumeClaimAttrs struct {
 
 var PersistentVolumeClaim = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_persistent_volume_claim",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

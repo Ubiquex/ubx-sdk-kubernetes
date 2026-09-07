@@ -4,45 +4,45 @@ package lifecycle
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EvictionRequestList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type EvictionRequestList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type EvictionRequestList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type EvictionRequestList_Items_Spec_Target_Pod struct {
 	Name any
-	Uid any
+	Uid  any
 }
 
 type EvictionRequestList_Items_Spec_Target struct {
@@ -50,31 +50,31 @@ type EvictionRequestList_Items_Spec_Target struct {
 }
 
 type EvictionRequestList_Items_Spec struct {
-	Intent any
+	Intent    any
 	Requester any
-	Target any
+	Target    any
 }
 
 type EvictionRequestList_Items_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type EvictionRequestList_Items_Status struct {
-	Conditions any
+	Conditions         any
 	ObservedGeneration any
 }
 
 type EvictionRequestList_Items struct {
 	ApiVersion any
-	Kind any
-	Metadata any
-	Spec any
-	Status any
+	Kind       any
+	Metadata   any
+	Spec       any
+	Status     any
 }
 
 type EvictionRequestList_Metadata_ShardInfo struct {
@@ -111,6 +111,5 @@ type EvictionRequestListAttrs struct {
 
 var EvictionRequestList = ubx.DataSourceBinding{
 	WireType: "kubernetes_lifecycle_eviction_request_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

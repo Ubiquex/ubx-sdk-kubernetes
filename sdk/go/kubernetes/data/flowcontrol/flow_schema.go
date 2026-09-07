@@ -4,22 +4,22 @@ package flowcontrol
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FlowSchema_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type FlowSchema_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type FlowSchema_Metadata struct {
@@ -67,33 +67,33 @@ type FlowSchema_Spec_PriorityLevelConfiguration struct {
 
 type FlowSchema_Spec_Rules_NonResourceRules struct {
 	NonResourceUrls any
-	Verbs any
+	Verbs           any
 }
 
 type FlowSchema_Spec_Rules_ResourceRules struct {
-	ApiGroups any
+	ApiGroups    any
 	ClusterScope any
-	Namespaces any
-	Resources any
-	Verbs any
+	Namespaces   any
+	Resources    any
+	Verbs        any
 }
 
 type FlowSchema_Spec_Rules_Subjects_ServiceAccount struct {
-	Name any
+	Name      any
 	Namespace any
 }
 
 type FlowSchema_Spec_Rules_Subjects struct {
-	Group any
-	Kind any
+	Group          any
+	Kind           any
 	ServiceAccount any
-	User any
+	User           any
 }
 
 type FlowSchema_Spec_Rules struct {
 	NonResourceRules any
-	ResourceRules any
-	Subjects any
+	ResourceRules    any
+	Subjects         any
 }
 
 type FlowSchema_Spec struct {
@@ -109,10 +109,10 @@ type FlowSchema_Spec struct {
 
 type FlowSchema_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type FlowSchema_Status struct {
@@ -138,6 +138,5 @@ type FlowSchemaAttrs struct {
 
 var FlowSchema = ubx.DataSourceBinding{
 	WireType: "kubernetes_flowcontrol_flow_schema",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

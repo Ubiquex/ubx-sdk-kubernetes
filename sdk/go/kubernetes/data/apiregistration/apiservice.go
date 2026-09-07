@@ -4,22 +4,22 @@ package apiregistration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Apiservice_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type Apiservice_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type Apiservice_Metadata struct {
@@ -83,10 +83,10 @@ type Apiservice_Spec struct {
 
 type Apiservice_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type Apiservice_Status struct {
@@ -112,6 +112,5 @@ type ApiserviceAttrs struct {
 
 var Apiservice = ubx.DataSourceBinding{
 	WireType: "kubernetes_apiregistration_apiservice",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

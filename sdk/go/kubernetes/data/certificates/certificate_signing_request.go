@@ -4,22 +4,22 @@ package certificates
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CertificateSigningRequest_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type CertificateSigningRequest_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type CertificateSigningRequest_Metadata struct {
@@ -76,11 +76,11 @@ type CertificateSigningRequest_Spec struct {
 
 type CertificateSigningRequest_Status_Conditions struct {
 	LastTransitionTime any
-	LastUpdateTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	LastUpdateTime     any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type CertificateSigningRequest_Status struct {
@@ -108,6 +108,5 @@ type CertificateSigningRequestAttrs struct {
 
 var CertificateSigningRequest = ubx.DataSourceBinding{
 	WireType: "kubernetes_certificates_certificate_signing_request",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,22 +4,22 @@ package admissionregistration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ValidatingAdmissionPolicy_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type ValidatingAdmissionPolicy_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type ValidatingAdmissionPolicy_Metadata struct {
@@ -56,28 +56,28 @@ type ValidatingAdmissionPolicy_Metadata struct {
 }
 
 type ValidatingAdmissionPolicy_Spec_AuditAnnotations struct {
-	Key any
+	Key             any
 	ValueExpression any
 }
 
 type ValidatingAdmissionPolicy_Spec_MatchConditions struct {
 	Expression any
-	Name any
+	Name       any
 }
 
 type ValidatingAdmissionPolicy_Spec_MatchConstraints_ExcludeResourceRules struct {
-	ApiGroups any
-	ApiVersions any
-	Operations any
+	ApiGroups     any
+	ApiVersions   any
+	Operations    any
 	ResourceNames any
-	Resources any
-	Scope any
+	Resources     any
+	Scope         any
 }
 
 type ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type ValidatingAdmissionPolicy_Spec_MatchConstraints_NamespaceSelector struct {
@@ -108,10 +108,10 @@ type ValidatingAdmissionPolicy_Spec_ParamKind struct {
 }
 
 type ValidatingAdmissionPolicy_Spec_Validations struct {
-	Expression any
-	Message any
+	Expression        any
+	Message           any
 	MessageExpression any
-	Reason any
+	Reason            any
 }
 
 type ValidatingAdmissionPolicy_Spec struct {
@@ -133,16 +133,16 @@ type ValidatingAdmissionPolicy_Spec struct {
 
 type ValidatingAdmissionPolicy_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type ValidatingAdmissionPolicy_Status_TypeChecking_ExpressionWarnings struct {
 	FieldRef any
-	Warning any
+	Warning  any
 }
 
 type ValidatingAdmissionPolicy_Status_TypeChecking struct {
@@ -177,6 +177,5 @@ type ValidatingAdmissionPolicyAttrs struct {
 
 var ValidatingAdmissionPolicy = ubx.DataSourceBinding{
 	WireType: "kubernetes_admissionregistration_validating_admission_policy",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -168,8 +168,8 @@ type ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_FileKeyRef struct {
 	// The key that identifies the specific value to extract from the referenced file, used to populate the environment variable. (AI-inferred)
 	Key any
 	// Indicates whether the referenced key is required to exist. When set to true, the container will start even if the key is not present; when false or unset, the key must exist in the referenced file. (AI-inferred)
-	Optional any
-	Path any
+	Optional   any
+	Path       any
 	VolumeName any
 }
 
@@ -186,7 +186,7 @@ type ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom struct {
 	// Selects a key from a ConfigMap to use as the value of the environment variable. The referenced ConfigMap must exist in the same namespace as the pod. (AI-inferred)
 	ConfigMapKeyRef any
 	// Selects a field of the pod (e.g., metadata.name, metadata.namespace, spec.nodeName, status.podIP) to populate the environment variable's value. (AI-inferred)
-	FieldRef any
+	FieldRef   any
 	FileKeyRef any
 	// Selects a resource field of the container, such as limits.cpu or requests.memory, to expose as the environment variable's value. Only resource limits and requests are currently supported. (AI-inferred)
 	ResourceFieldRef any
@@ -273,7 +273,7 @@ type ReplicaSet_Spec_Template_Spec_Containers_Lifecycle struct {
 	// Defines the handler for the postStart lifecycle hook, which is executed immediately after the container is started. The handler can be one of exec, httpGet, or tcpSocket. (AI-inferred)
 	PostStart any
 	// Defines the pre-stop lifecycle hook, which is executed immediately before a container is terminated. It can contain an exec command, an HTTP GET request, or a TCP socket check to perform cleanup or graceful shutdown. (AI-inferred)
-	PreStop any
+	PreStop    any
 	StopSignal any
 }
 
@@ -301,7 +301,7 @@ type ReplicaSet_Spec_Template_Spec_Containers_LivenessProbe struct {
 	// Minimum consecutive successes required for the liveness probe to be considered successful after it has failed. Defaults to 1, and must be 1 for liveness probes. (AI-inferred)
 	SuccessThreshold any
 	// Configuration for a TCP socket probe in a liveness check. Specifies the host (optional) and port (required) to attempt a TCP connection to determine container health. (AI-inferred)
-	TcpSocket any
+	TcpSocket                     any
 	TerminationGracePeriodSeconds any
 	// Number of seconds after which the liveness probe times out. If the probe does not complete within this duration, the probe is considered failed and the container is restarted according to the failure threshold. (AI-inferred)
 	TimeoutSeconds any
@@ -329,7 +329,7 @@ type ReplicaSet_Spec_Template_Spec_Containers_ResizePolicy struct {
 
 type ReplicaSet_Spec_Template_Spec_Containers_Resources_Claims struct {
 	// Name of the ResourceClaim that this container requests. This must match the name of a ResourceClaim object in the same namespace. (AI-inferred)
-	Name any
+	Name    any
 	Request any
 }
 
@@ -350,7 +350,7 @@ type ReplicaSet_Spec_Template_Spec_Containers_RestartPolicyRules_ExitCodes struc
 }
 
 type ReplicaSet_Spec_Template_Spec_Containers_RestartPolicyRules struct {
-	Action any
+	Action    any
 	ExitCodes any
 }
 
@@ -470,7 +470,7 @@ type ReplicaSet_Spec_Template_Spec_Containers struct {
 	// Compute resources required by the container, specifying resource requests and limits (e.g., CPU and memory) for scheduling and runtime enforcement. (AI-inferred)
 	Resources any
 	// Restart policy for the pod containing this container, defining when the kubelet should restart it. Allowed values are Always, OnFailure, and Never. (AI-inferred)
-	RestartPolicy any
+	RestartPolicy      any
 	RestartPolicyRules any
 	// SecurityContext holds security configuration for a container, such as runAsUser, capabilities, readOnlyRootFilesystem, and SELinux options. When both SecurityContext and PodSecurityContext are set for a container, the container-level settings take precedence. (AI-inferred)
 	SecurityContext any
@@ -529,8 +529,8 @@ type ReplicaSet_Spec_Template_Spec_EphemeralContainers struct {
 	// Defines the resize policy for the ephemeral container's resources. Each item specifies a resource name (e.g., cpu, memory) and a restart policy (NotRequired or RestartContainer) that controls whether the container is restarted when that resource is resized. (AI-inferred)
 	ResizePolicy any
 	// Resource requirements for the ephemeral container, specifying requests and limits for compute resources such as CPU and memory. (AI-inferred)
-	Resources any
-	RestartPolicy any
+	Resources          any
+	RestartPolicy      any
 	RestartPolicyRules any
 	// Security context defines privilege and access control settings for the ephemeral container, such as user and group IDs, Linux capabilities, SELinux options, and read-only root filesystem. (AI-inferred)
 	SecurityContext any
@@ -557,7 +557,7 @@ type ReplicaSet_Spec_Template_Spec_EphemeralContainers struct {
 }
 
 type ReplicaSet_Spec_Template_Spec_EvictionResponders struct {
-	Name any
+	Name     any
 	Priority any
 }
 
@@ -758,7 +758,7 @@ type ReplicaSet_Spec_Template_Spec_Volumes_DownwardApi_Items struct {
 	Path any
 	// ResourceFieldSelector that references a container resource field (e.g., requests.cpu, limits.memory) to be exposed as a file in the downward API volume. It may specify the container name and an optional divisor for the resource quantity. (AI-inferred)
 	ResourceFieldRef any
-	User any
+	User             any
 }
 
 type ReplicaSet_Spec_Template_Spec_Volumes_DownwardApi struct {
@@ -772,7 +772,7 @@ type ReplicaSet_Spec_Template_Spec_Volumes_DownwardApi struct {
 type ReplicaSet_Spec_Template_Spec_Volumes_EmptyDir struct {
 	// The storage medium backing the emptyDir volume. Empty string (default) uses the node's default disk storage; "Memory" uses a tmpfs (RAM-backed) filesystem. (AI-inferred)
 	Medium any
-	Mode any
+	Mode   any
 	// The maximum storage limit for the emptyDir volume. Specify a quantity such as '1Gi' or '512Mi'. If not set, the storage is limited only by the underlying medium (default is the node's disk, or memory if medium is 'Memory'). (AI-inferred)
 	SizeLimit any
 }
@@ -981,7 +981,7 @@ type ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ClusterTrustBundle 
 	Path any
 	// Selects ClusterTrustBundle objects by signer name. If empty, all cluster trust bundles are selected. (AI-inferred)
 	SignerName any
-	User any
+	User       any
 }
 
 type ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ConfigMap struct {
@@ -1012,7 +1012,7 @@ type ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_PodCertificate stru
 	// The name of the certificate signer that will issue the pod certificate. This must correspond to a signer configured in the cluster, and it determines the CA and certificate chain used for the projected certificate. (AI-inferred)
 	SignerName any
 	// The user ID (UID) that owns the file created from the projected pod certificate. (AI-inferred)
-	User any
+	User            any
 	UserAnnotations any
 }
 
@@ -1032,7 +1032,7 @@ type ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources struct {
 	// ConfigMap is a source type for a projected volume. This object defines how a ConfigMap's data is exposed within the projected volume. (AI-inferred)
 	ConfigMap any
 	// Defines the Downward API source for a projected volume, allowing pod metadata such as labels, annotations, and resource limits to be exposed as files to containers. (AI-inferred)
-	DownwardApi any
+	DownwardApi    any
 	PodCertificate any
 	// Projected source that references a Kubernetes Secret. It configures the Secret name, optional items to expose, and default file permissions within the projected volume. (AI-inferred)
 	Secret any
@@ -1344,1479 +1344,1479 @@ type ReplicaSet_Status struct {
 }
 
 var ReplicaSet_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var ReplicaSet_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var ReplicaSet_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: ReplicaSet_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: ReplicaSet_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   ReplicaSet_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   ReplicaSet_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var ReplicaSet_Spec_Selector_MatchExpressionsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ReplicaSet_Spec_SelectorFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Selector_MatchExpressionsFields,
-		},
-		"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Selector_MatchExpressionsFields,
+	},
+	"MatchLabels": ubx.FieldSpec{WireName: "match_labels"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PreferenceFields = ubx.FieldMap{
-		"MatchExpressions": ubx.FieldSpec{
-			WireName: "match_expressions",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Selector_MatchExpressionsFields,
-		},
-		"MatchFields": ubx.FieldSpec{
-			WireName: "match_fields",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Selector_MatchExpressionsFields,
-		},
-	}
+	"MatchExpressions": ubx.FieldSpec{
+		WireName: "match_expressions",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Selector_MatchExpressionsFields,
+	},
+	"MatchFields": ubx.FieldSpec{
+		WireName: "match_fields",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Selector_MatchExpressionsFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecutionFields = ubx.FieldMap{
-		"Preference": ubx.FieldSpec{
-			WireName: "preference",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PreferenceFields,
-		},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Preference": ubx.FieldSpec{
+		WireName: "preference",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PreferenceFields,
+	},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecutionFields = ubx.FieldMap{
-		"NodeSelectorTerms": ubx.FieldSpec{
-			WireName: "node_selector_terms",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PreferenceFields,
-		},
-	}
+	"NodeSelectorTerms": ubx.FieldSpec{
+		WireName: "node_selector_terms",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PreferenceFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinityFields = ubx.FieldMap{
-		"PreferredDuringSchedulingIgnoredDuringExecution": ubx.FieldSpec{
-			WireName: "preferred_during_scheduling_ignored_during_execution",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecutionFields,
-		},
-		"RequiredDuringSchedulingIgnoredDuringExecution": ubx.FieldSpec{
-			WireName: "required_during_scheduling_ignored_during_execution",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecutionFields,
-		},
-	}
+	"PreferredDuringSchedulingIgnoredDuringExecution": ubx.FieldSpec{
+		WireName: "preferred_during_scheduling_ignored_during_execution",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecutionFields,
+	},
+	"RequiredDuringSchedulingIgnoredDuringExecution": ubx.FieldSpec{
+		WireName: "required_during_scheduling_ignored_during_execution",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecutionFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTermFields = ubx.FieldMap{
-		"LabelSelector": ubx.FieldSpec{
-			WireName: "label_selector",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_SelectorFields,
-		},
-		"MatchLabelKeys": ubx.FieldSpec{WireName: "match_label_keys"},
-		"MismatchLabelKeys": ubx.FieldSpec{WireName: "mismatch_label_keys"},
-		"NamespaceSelector": ubx.FieldSpec{
-			WireName: "namespace_selector",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_SelectorFields,
-		},
-		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
-		"TopologyKey": ubx.FieldSpec{WireName: "topology_key"},
-	}
+	"LabelSelector": ubx.FieldSpec{
+		WireName: "label_selector",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_SelectorFields,
+	},
+	"MatchLabelKeys":    ubx.FieldSpec{WireName: "match_label_keys"},
+	"MismatchLabelKeys": ubx.FieldSpec{WireName: "mismatch_label_keys"},
+	"NamespaceSelector": ubx.FieldSpec{
+		WireName: "namespace_selector",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_SelectorFields,
+	},
+	"Namespaces":  ubx.FieldSpec{WireName: "namespaces"},
+	"TopologyKey": ubx.FieldSpec{WireName: "topology_key"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecutionFields = ubx.FieldMap{
-		"PodAffinityTerm": ubx.FieldSpec{
-			WireName: "pod_affinity_term",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTermFields,
-		},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"PodAffinityTerm": ubx.FieldSpec{
+		WireName: "pod_affinity_term",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTermFields,
+	},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Affinity_PodAffinityFields = ubx.FieldMap{
-		"PreferredDuringSchedulingIgnoredDuringExecution": ubx.FieldSpec{
-			WireName: "preferred_during_scheduling_ignored_during_execution",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecutionFields,
-		},
-		"RequiredDuringSchedulingIgnoredDuringExecution": ubx.FieldSpec{
-			WireName: "required_during_scheduling_ignored_during_execution",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTermFields,
-		},
-	}
+	"PreferredDuringSchedulingIgnoredDuringExecution": ubx.FieldSpec{
+		WireName: "preferred_during_scheduling_ignored_during_execution",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecutionFields,
+	},
+	"RequiredDuringSchedulingIgnoredDuringExecution": ubx.FieldSpec{
+		WireName: "required_during_scheduling_ignored_during_execution",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTermFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_AffinityFields = ubx.FieldMap{
-		"NodeAffinity": ubx.FieldSpec{
-			WireName: "node_affinity",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinityFields,
-		},
-		"PodAffinity": ubx.FieldSpec{
-			WireName: "pod_affinity",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Affinity_PodAffinityFields,
-		},
-		"PodAntiAffinity": ubx.FieldSpec{
-			WireName: "pod_anti_affinity",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Affinity_PodAffinityFields,
-		},
-	}
+	"NodeAffinity": ubx.FieldSpec{
+		WireName: "node_affinity",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Affinity_NodeAffinityFields,
+	},
+	"PodAffinity": ubx.FieldSpec{
+		WireName: "pod_affinity",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Affinity_PodAffinityFields,
+	},
+	"PodAntiAffinity": ubx.FieldSpec{
+		WireName: "pod_anti_affinity",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Affinity_PodAffinityFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_ConfigMapKeyRefFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Optional": ubx.FieldSpec{WireName: "optional"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Optional": ubx.FieldSpec{WireName: "optional"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_FieldRefFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-	}
+	"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+	"FieldPath":  ubx.FieldSpec{WireName: "field_path"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_FileKeyRefFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Optional": ubx.FieldSpec{WireName: "optional"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
-	}
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Optional":   ubx.FieldSpec{WireName: "optional"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_ResourceFieldRefFields = ubx.FieldMap{
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"Divisor": ubx.FieldSpec{WireName: "divisor"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+	"Divisor":       ubx.FieldSpec{WireName: "divisor"},
+	"Resource":      ubx.FieldSpec{WireName: "resource"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFromFields = ubx.FieldMap{
-		"ConfigMapKeyRef": ubx.FieldSpec{
-			WireName: "config_map_key_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_ConfigMapKeyRefFields,
-		},
-		"FieldRef": ubx.FieldSpec{
-			WireName: "field_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_FieldRefFields,
-		},
-		"FileKeyRef": ubx.FieldSpec{
-			WireName: "file_key_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_FileKeyRefFields,
-		},
-		"ResourceFieldRef": ubx.FieldSpec{
-			WireName: "resource_field_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_ResourceFieldRefFields,
-		},
-		"SecretKeyRef": ubx.FieldSpec{
-			WireName: "secret_key_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_ConfigMapKeyRefFields,
-		},
-	}
+	"ConfigMapKeyRef": ubx.FieldSpec{
+		WireName: "config_map_key_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_ConfigMapKeyRefFields,
+	},
+	"FieldRef": ubx.FieldSpec{
+		WireName: "field_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_FieldRefFields,
+	},
+	"FileKeyRef": ubx.FieldSpec{
+		WireName: "file_key_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_FileKeyRefFields,
+	},
+	"ResourceFieldRef": ubx.FieldSpec{
+		WireName: "resource_field_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_ResourceFieldRefFields,
+	},
+	"SecretKeyRef": ubx.FieldSpec{
+		WireName: "secret_key_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_ConfigMapKeyRefFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"ValueFrom": ubx.FieldSpec{
-			WireName: "value_from",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFromFields,
-		},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+	"ValueFrom": ubx.FieldSpec{
+		WireName: "value_from",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFromFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_EnvFrom_ConfigMapRefFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Optional": ubx.FieldSpec{WireName: "optional"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Optional": ubx.FieldSpec{WireName: "optional"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_EnvFromFields = ubx.FieldMap{
-		"ConfigMapRef": ubx.FieldSpec{
-			WireName: "config_map_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_EnvFrom_ConfigMapRefFields,
-		},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_EnvFrom_ConfigMapRefFields,
-		},
-	}
+	"ConfigMapRef": ubx.FieldSpec{
+		WireName: "config_map_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_EnvFrom_ConfigMapRefFields,
+	},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_EnvFrom_ConfigMapRefFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_ExecFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-	}
+	"Command": ubx.FieldSpec{WireName: "command"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeadersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGetFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"HttpHeaders": ubx.FieldSpec{
-			WireName: "http_headers",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeadersFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Scheme": ubx.FieldSpec{WireName: "scheme"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"HttpHeaders": ubx.FieldSpec{
+		WireName: "http_headers",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeadersFields,
+	},
+	"Path":     ubx.FieldSpec{WireName: "path"},
+	"Port":     ubx.FieldSpec{WireName: "port"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+	"Scheme":   ubx.FieldSpec{WireName: "scheme"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_SleepFields = ubx.FieldMap{
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_TcpSocketFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStartFields = ubx.FieldMap{
-		"Exec": ubx.FieldSpec{
-			WireName: "exec",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_ExecFields,
-		},
-		"HttpGet": ubx.FieldSpec{
-			WireName: "http_get",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGetFields,
-		},
-		"Sleep": ubx.FieldSpec{
-			WireName: "sleep",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_SleepFields,
-		},
-		"TcpSocket": ubx.FieldSpec{
-			WireName: "tcp_socket",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_TcpSocketFields,
-		},
-	}
+	"Exec": ubx.FieldSpec{
+		WireName: "exec",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_ExecFields,
+	},
+	"HttpGet": ubx.FieldSpec{
+		WireName: "http_get",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGetFields,
+	},
+	"Sleep": ubx.FieldSpec{
+		WireName: "sleep",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_SleepFields,
+	},
+	"TcpSocket": ubx.FieldSpec{
+		WireName: "tcp_socket",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_TcpSocketFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_LifecycleFields = ubx.FieldMap{
-		"PostStart": ubx.FieldSpec{
-			WireName: "post_start",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStartFields,
-		},
-		"PreStop": ubx.FieldSpec{
-			WireName: "pre_stop",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStartFields,
-		},
-		"StopSignal": ubx.FieldSpec{WireName: "stop_signal"},
-	}
+	"PostStart": ubx.FieldSpec{
+		WireName: "post_start",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStartFields,
+	},
+	"PreStop": ubx.FieldSpec{
+		WireName: "pre_stop",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStartFields,
+	},
+	"StopSignal": ubx.FieldSpec{WireName: "stop_signal"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_LivenessProbe_GrpcFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Mode":    ubx.FieldSpec{WireName: "mode"},
+	"Port":    ubx.FieldSpec{WireName: "port"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields = ubx.FieldMap{
-		"Exec": ubx.FieldSpec{
-			WireName: "exec",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_ExecFields,
-		},
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-		"Grpc": ubx.FieldSpec{
-			WireName: "grpc",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_LivenessProbe_GrpcFields,
-		},
-		"HttpGet": ubx.FieldSpec{
-			WireName: "http_get",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGetFields,
-		},
-		"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
-		"PeriodSeconds": ubx.FieldSpec{WireName: "period_seconds"},
-		"SuccessThreshold": ubx.FieldSpec{WireName: "success_threshold"},
-		"TcpSocket": ubx.FieldSpec{
-			WireName: "tcp_socket",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_TcpSocketFields,
-		},
-		"TerminationGracePeriodSeconds": ubx.FieldSpec{WireName: "termination_grace_period_seconds"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"Exec": ubx.FieldSpec{
+		WireName: "exec",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_ExecFields,
+	},
+	"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
+	"Grpc": ubx.FieldSpec{
+		WireName: "grpc",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_LivenessProbe_GrpcFields,
+	},
+	"HttpGet": ubx.FieldSpec{
+		WireName: "http_get",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGetFields,
+	},
+	"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
+	"PeriodSeconds":       ubx.FieldSpec{WireName: "period_seconds"},
+	"SuccessThreshold":    ubx.FieldSpec{WireName: "success_threshold"},
+	"TcpSocket": ubx.FieldSpec{
+		WireName: "tcp_socket",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_TcpSocketFields,
+	},
+	"TerminationGracePeriodSeconds": ubx.FieldSpec{WireName: "termination_grace_period_seconds"},
+	"TimeoutSeconds":                ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_PortsFields = ubx.FieldMap{
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-		"HostIp": ubx.FieldSpec{WireName: "host_ip"},
-		"HostPort": ubx.FieldSpec{WireName: "host_port"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+	"HostIp":        ubx.FieldSpec{WireName: "host_ip"},
+	"HostPort":      ubx.FieldSpec{WireName: "host_port"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Protocol":      ubx.FieldSpec{WireName: "protocol"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_ResizePolicyFields = ubx.FieldMap{
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"RestartPolicy": ubx.FieldSpec{WireName: "restart_policy"},
-	}
+	"ResourceName":  ubx.FieldSpec{WireName: "resource_name"},
+	"RestartPolicy": ubx.FieldSpec{WireName: "restart_policy"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_Resources_ClaimsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Request": ubx.FieldSpec{WireName: "request"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Request": ubx.FieldSpec{WireName: "request"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_ResourcesFields = ubx.FieldMap{
-		"Claims": ubx.FieldSpec{
-			WireName: "claims",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Resources_ClaimsFields,
-		},
-		"Limits": ubx.FieldSpec{WireName: "limits"},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"Claims": ubx.FieldSpec{
+		WireName: "claims",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Resources_ClaimsFields,
+	},
+	"Limits":   ubx.FieldSpec{WireName: "limits"},
+	"Requests": ubx.FieldSpec{WireName: "requests"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_RestartPolicyRules_ExitCodesFields = ubx.FieldMap{
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_RestartPolicyRulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"ExitCodes": ubx.FieldSpec{
-			WireName: "exit_codes",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_RestartPolicyRules_ExitCodesFields,
-		},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"ExitCodes": ubx.FieldSpec{
+		WireName: "exit_codes",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_RestartPolicyRules_ExitCodesFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfileFields = ubx.FieldMap{
-		"LocalhostProfile": ubx.FieldSpec{WireName: "localhost_profile"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LocalhostProfile": ubx.FieldSpec{WireName: "localhost_profile"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_CapabilitiesFields = ubx.FieldMap{
-		"Add": ubx.FieldSpec{WireName: "add"},
-		"Drop": ubx.FieldSpec{WireName: "drop"},
-	}
+	"Add":  ubx.FieldSpec{WireName: "add"},
+	"Drop": ubx.FieldSpec{WireName: "drop"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_SeLinuxOptionsFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"Level": ubx.FieldSpec{WireName: "level"},
+	"Role":  ubx.FieldSpec{WireName: "role"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"User":  ubx.FieldSpec{WireName: "user"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_WindowsOptionsFields = ubx.FieldMap{
-		"GmsaCredentialSpec": ubx.FieldSpec{WireName: "gmsa_credential_spec"},
-		"GmsaCredentialSpecName": ubx.FieldSpec{WireName: "gmsa_credential_spec_name"},
-		"HostProcess": ubx.FieldSpec{WireName: "host_process"},
-		"RunAsUserName": ubx.FieldSpec{WireName: "run_as_user_name"},
-	}
+	"GmsaCredentialSpec":     ubx.FieldSpec{WireName: "gmsa_credential_spec"},
+	"GmsaCredentialSpecName": ubx.FieldSpec{WireName: "gmsa_credential_spec_name"},
+	"HostProcess":            ubx.FieldSpec{WireName: "host_process"},
+	"RunAsUserName":          ubx.FieldSpec{WireName: "run_as_user_name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_SecurityContextFields = ubx.FieldMap{
-		"AllowPrivilegeEscalation": ubx.FieldSpec{WireName: "allow_privilege_escalation"},
-		"AppArmorProfile": ubx.FieldSpec{
-			WireName: "app_armor_profile",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfileFields,
-		},
-		"Capabilities": ubx.FieldSpec{
-			WireName: "capabilities",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_CapabilitiesFields,
-		},
-		"Privileged": ubx.FieldSpec{WireName: "privileged"},
-		"ProcMount": ubx.FieldSpec{WireName: "proc_mount"},
-		"ReadOnlyRootFilesystem": ubx.FieldSpec{WireName: "read_only_root_filesystem"},
-		"RunAsGroup": ubx.FieldSpec{WireName: "run_as_group"},
-		"RunAsNonRoot": ubx.FieldSpec{WireName: "run_as_non_root"},
-		"RunAsUser": ubx.FieldSpec{WireName: "run_as_user"},
-		"SeLinuxOptions": ubx.FieldSpec{
-			WireName: "se_linux_options",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_SeLinuxOptionsFields,
-		},
-		"SeccompProfile": ubx.FieldSpec{
-			WireName: "seccomp_profile",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfileFields,
-		},
-		"WindowsOptions": ubx.FieldSpec{
-			WireName: "windows_options",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_WindowsOptionsFields,
-		},
-	}
+	"AllowPrivilegeEscalation": ubx.FieldSpec{WireName: "allow_privilege_escalation"},
+	"AppArmorProfile": ubx.FieldSpec{
+		WireName: "app_armor_profile",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfileFields,
+	},
+	"Capabilities": ubx.FieldSpec{
+		WireName: "capabilities",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_CapabilitiesFields,
+	},
+	"Privileged":             ubx.FieldSpec{WireName: "privileged"},
+	"ProcMount":              ubx.FieldSpec{WireName: "proc_mount"},
+	"ReadOnlyRootFilesystem": ubx.FieldSpec{WireName: "read_only_root_filesystem"},
+	"RunAsGroup":             ubx.FieldSpec{WireName: "run_as_group"},
+	"RunAsNonRoot":           ubx.FieldSpec{WireName: "run_as_non_root"},
+	"RunAsUser":              ubx.FieldSpec{WireName: "run_as_user"},
+	"SeLinuxOptions": ubx.FieldSpec{
+		WireName: "se_linux_options",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_SeLinuxOptionsFields,
+	},
+	"SeccompProfile": ubx.FieldSpec{
+		WireName: "seccomp_profile",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfileFields,
+	},
+	"WindowsOptions": ubx.FieldSpec{
+		WireName: "windows_options",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_WindowsOptionsFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_VolumeDevicesFields = ubx.FieldMap{
-		"DevicePath": ubx.FieldSpec{WireName: "device_path"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DevicePath": ubx.FieldSpec{WireName: "device_path"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Containers_VolumeMountsFields = ubx.FieldMap{
-		"BindMountOptions": ubx.FieldSpec{WireName: "bind_mount_options"},
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"MountPropagation": ubx.FieldSpec{WireName: "mount_propagation"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"RecursiveReadOnly": ubx.FieldSpec{WireName: "recursive_read_only"},
-		"SubPath": ubx.FieldSpec{WireName: "sub_path"},
-		"SubPathExpr": ubx.FieldSpec{WireName: "sub_path_expr"},
-	}
+	"BindMountOptions":  ubx.FieldSpec{WireName: "bind_mount_options"},
+	"MountPath":         ubx.FieldSpec{WireName: "mount_path"},
+	"MountPropagation":  ubx.FieldSpec{WireName: "mount_propagation"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"ReadOnly":          ubx.FieldSpec{WireName: "read_only"},
+	"RecursiveReadOnly": ubx.FieldSpec{WireName: "recursive_read_only"},
+	"SubPath":           ubx.FieldSpec{WireName: "sub_path"},
+	"SubPathExpr":       ubx.FieldSpec{WireName: "sub_path_expr"},
+}
 
 var ReplicaSet_Spec_Template_Spec_ContainersFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_EnvFields,
-		},
-		"EnvFrom": ubx.FieldSpec{
-			WireName: "env_from",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_EnvFromFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"ImagePullPolicy": ubx.FieldSpec{WireName: "image_pull_policy"},
-		"Lifecycle": ubx.FieldSpec{
-			WireName: "lifecycle",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_LifecycleFields,
-		},
-		"LivenessProbe": ubx.FieldSpec{
-			WireName: "liveness_probe",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_PortsFields,
-		},
-		"ReadinessProbe": ubx.FieldSpec{
-			WireName: "readiness_probe",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
-		},
-		"ResizePolicy": ubx.FieldSpec{
-			WireName: "resize_policy",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_ResizePolicyFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_ResourcesFields,
-		},
-		"RestartPolicy": ubx.FieldSpec{WireName: "restart_policy"},
-		"RestartPolicyRules": ubx.FieldSpec{
-			WireName: "restart_policy_rules",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_RestartPolicyRulesFields,
-		},
-		"SecurityContext": ubx.FieldSpec{
-			WireName: "security_context",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContextFields,
-		},
-		"StartupProbe": ubx.FieldSpec{
-			WireName: "startup_probe",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
-		},
-		"Stdin": ubx.FieldSpec{WireName: "stdin"},
-		"StdinOnce": ubx.FieldSpec{WireName: "stdin_once"},
-		"TerminationMessagePath": ubx.FieldSpec{WireName: "termination_message_path"},
-		"TerminationMessagePolicy": ubx.FieldSpec{WireName: "termination_message_policy"},
-		"Tty": ubx.FieldSpec{WireName: "tty"},
-		"VolumeDevices": ubx.FieldSpec{
-			WireName: "volume_devices",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_VolumeDevicesFields,
-		},
-		"VolumeMounts": ubx.FieldSpec{
-			WireName: "volume_mounts",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_VolumeMountsFields,
-		},
-		"WorkingDir": ubx.FieldSpec{WireName: "working_dir"},
-	}
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_EnvFields,
+	},
+	"EnvFrom": ubx.FieldSpec{
+		WireName: "env_from",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_EnvFromFields,
+	},
+	"Image":           ubx.FieldSpec{WireName: "image"},
+	"ImagePullPolicy": ubx.FieldSpec{WireName: "image_pull_policy"},
+	"Lifecycle": ubx.FieldSpec{
+		WireName: "lifecycle",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_LifecycleFields,
+	},
+	"LivenessProbe": ubx.FieldSpec{
+		WireName: "liveness_probe",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_PortsFields,
+	},
+	"ReadinessProbe": ubx.FieldSpec{
+		WireName: "readiness_probe",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
+	},
+	"ResizePolicy": ubx.FieldSpec{
+		WireName: "resize_policy",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_ResizePolicyFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_ResourcesFields,
+	},
+	"RestartPolicy": ubx.FieldSpec{WireName: "restart_policy"},
+	"RestartPolicyRules": ubx.FieldSpec{
+		WireName: "restart_policy_rules",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_RestartPolicyRulesFields,
+	},
+	"SecurityContext": ubx.FieldSpec{
+		WireName: "security_context",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContextFields,
+	},
+	"StartupProbe": ubx.FieldSpec{
+		WireName: "startup_probe",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
+	},
+	"Stdin":                    ubx.FieldSpec{WireName: "stdin"},
+	"StdinOnce":                ubx.FieldSpec{WireName: "stdin_once"},
+	"TerminationMessagePath":   ubx.FieldSpec{WireName: "termination_message_path"},
+	"TerminationMessagePolicy": ubx.FieldSpec{WireName: "termination_message_policy"},
+	"Tty":                      ubx.FieldSpec{WireName: "tty"},
+	"VolumeDevices": ubx.FieldSpec{
+		WireName: "volume_devices",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_VolumeDevicesFields,
+	},
+	"VolumeMounts": ubx.FieldSpec{
+		WireName: "volume_mounts",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_VolumeMountsFields,
+	},
+	"WorkingDir": ubx.FieldSpec{WireName: "working_dir"},
+}
 
 var ReplicaSet_Spec_Template_Spec_DnsConfigFields = ubx.FieldMap{
-		"Nameservers": ubx.FieldSpec{WireName: "nameservers"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeadersFields,
-		},
-		"Searches": ubx.FieldSpec{WireName: "searches"},
-	}
+	"Nameservers": ubx.FieldSpec{WireName: "nameservers"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeadersFields,
+	},
+	"Searches": ubx.FieldSpec{WireName: "searches"},
+}
 
 var ReplicaSet_Spec_Template_Spec_EphemeralContainersFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_EnvFields,
-		},
-		"EnvFrom": ubx.FieldSpec{
-			WireName: "env_from",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_EnvFromFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"ImagePullPolicy": ubx.FieldSpec{WireName: "image_pull_policy"},
-		"Lifecycle": ubx.FieldSpec{
-			WireName: "lifecycle",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_LifecycleFields,
-		},
-		"LivenessProbe": ubx.FieldSpec{
-			WireName: "liveness_probe",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_PortsFields,
-		},
-		"ReadinessProbe": ubx.FieldSpec{
-			WireName: "readiness_probe",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
-		},
-		"ResizePolicy": ubx.FieldSpec{
-			WireName: "resize_policy",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_ResizePolicyFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_ResourcesFields,
-		},
-		"RestartPolicy": ubx.FieldSpec{WireName: "restart_policy"},
-		"RestartPolicyRules": ubx.FieldSpec{
-			WireName: "restart_policy_rules",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_RestartPolicyRulesFields,
-		},
-		"SecurityContext": ubx.FieldSpec{
-			WireName: "security_context",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContextFields,
-		},
-		"StartupProbe": ubx.FieldSpec{
-			WireName: "startup_probe",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
-		},
-		"Stdin": ubx.FieldSpec{WireName: "stdin"},
-		"StdinOnce": ubx.FieldSpec{WireName: "stdin_once"},
-		"TargetContainerName": ubx.FieldSpec{WireName: "target_container_name"},
-		"TerminationMessagePath": ubx.FieldSpec{WireName: "termination_message_path"},
-		"TerminationMessagePolicy": ubx.FieldSpec{WireName: "termination_message_policy"},
-		"Tty": ubx.FieldSpec{WireName: "tty"},
-		"VolumeDevices": ubx.FieldSpec{
-			WireName: "volume_devices",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_VolumeDevicesFields,
-		},
-		"VolumeMounts": ubx.FieldSpec{
-			WireName: "volume_mounts",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_VolumeMountsFields,
-		},
-		"WorkingDir": ubx.FieldSpec{WireName: "working_dir"},
-	}
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_EnvFields,
+	},
+	"EnvFrom": ubx.FieldSpec{
+		WireName: "env_from",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_EnvFromFields,
+	},
+	"Image":           ubx.FieldSpec{WireName: "image"},
+	"ImagePullPolicy": ubx.FieldSpec{WireName: "image_pull_policy"},
+	"Lifecycle": ubx.FieldSpec{
+		WireName: "lifecycle",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_LifecycleFields,
+	},
+	"LivenessProbe": ubx.FieldSpec{
+		WireName: "liveness_probe",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_PortsFields,
+	},
+	"ReadinessProbe": ubx.FieldSpec{
+		WireName: "readiness_probe",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
+	},
+	"ResizePolicy": ubx.FieldSpec{
+		WireName: "resize_policy",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_ResizePolicyFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_ResourcesFields,
+	},
+	"RestartPolicy": ubx.FieldSpec{WireName: "restart_policy"},
+	"RestartPolicyRules": ubx.FieldSpec{
+		WireName: "restart_policy_rules",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_RestartPolicyRulesFields,
+	},
+	"SecurityContext": ubx.FieldSpec{
+		WireName: "security_context",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContextFields,
+	},
+	"StartupProbe": ubx.FieldSpec{
+		WireName: "startup_probe",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_LivenessProbeFields,
+	},
+	"Stdin":                    ubx.FieldSpec{WireName: "stdin"},
+	"StdinOnce":                ubx.FieldSpec{WireName: "stdin_once"},
+	"TargetContainerName":      ubx.FieldSpec{WireName: "target_container_name"},
+	"TerminationMessagePath":   ubx.FieldSpec{WireName: "termination_message_path"},
+	"TerminationMessagePolicy": ubx.FieldSpec{WireName: "termination_message_policy"},
+	"Tty":                      ubx.FieldSpec{WireName: "tty"},
+	"VolumeDevices": ubx.FieldSpec{
+		WireName: "volume_devices",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_VolumeDevicesFields,
+	},
+	"VolumeMounts": ubx.FieldSpec{
+		WireName: "volume_mounts",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_VolumeMountsFields,
+	},
+	"WorkingDir": ubx.FieldSpec{WireName: "working_dir"},
+}
 
 var ReplicaSet_Spec_Template_Spec_EvictionRespondersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+}
 
 var ReplicaSet_Spec_Template_Spec_HostAliasesFields = ubx.FieldMap{
-		"Hostnames": ubx.FieldSpec{WireName: "hostnames"},
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-	}
+	"Hostnames": ubx.FieldSpec{WireName: "hostnames"},
+	"Ip":        ubx.FieldSpec{WireName: "ip"},
+}
 
 var ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_ReadinessGatesFields = ubx.FieldMap{
-		"ConditionType": ubx.FieldSpec{WireName: "condition_type"},
-	}
+	"ConditionType": ubx.FieldSpec{WireName: "condition_type"},
+}
 
 var ReplicaSet_Spec_Template_Spec_ResourceClaimsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceClaimName": ubx.FieldSpec{WireName: "resource_claim_name"},
-		"ResourceClaimTemplateName": ubx.FieldSpec{WireName: "resource_claim_template_name"},
-	}
+	"Name":                      ubx.FieldSpec{WireName: "name"},
+	"ResourceClaimName":         ubx.FieldSpec{WireName: "resource_claim_name"},
+	"ResourceClaimTemplateName": ubx.FieldSpec{WireName: "resource_claim_template_name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_SchedulingGroupFields = ubx.FieldMap{
-		"PodGroupName": ubx.FieldSpec{WireName: "pod_group_name"},
-	}
+	"PodGroupName": ubx.FieldSpec{WireName: "pod_group_name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_SecurityContextFields = ubx.FieldMap{
-		"AppArmorProfile": ubx.FieldSpec{
-			WireName: "app_armor_profile",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfileFields,
-		},
-		"FsGroup": ubx.FieldSpec{WireName: "fs_group"},
-		"FsGroupChangePolicy": ubx.FieldSpec{WireName: "fs_group_change_policy"},
-		"RunAsGroup": ubx.FieldSpec{WireName: "run_as_group"},
-		"RunAsNonRoot": ubx.FieldSpec{WireName: "run_as_non_root"},
-		"RunAsUser": ubx.FieldSpec{WireName: "run_as_user"},
-		"SeLinuxChangePolicy": ubx.FieldSpec{WireName: "se_linux_change_policy"},
-		"SeLinuxOptions": ubx.FieldSpec{
-			WireName: "se_linux_options",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_SeLinuxOptionsFields,
-		},
-		"SeccompProfile": ubx.FieldSpec{
-			WireName: "seccomp_profile",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfileFields,
-		},
-		"SupplementalGroups": ubx.FieldSpec{WireName: "supplemental_groups"},
-		"SupplementalGroupsPolicy": ubx.FieldSpec{WireName: "supplemental_groups_policy"},
-		"Sysctls": ubx.FieldSpec{
-			WireName: "sysctls",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeadersFields,
-		},
-		"WindowsOptions": ubx.FieldSpec{
-			WireName: "windows_options",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_WindowsOptionsFields,
-		},
-	}
+	"AppArmorProfile": ubx.FieldSpec{
+		WireName: "app_armor_profile",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfileFields,
+	},
+	"FsGroup":             ubx.FieldSpec{WireName: "fs_group"},
+	"FsGroupChangePolicy": ubx.FieldSpec{WireName: "fs_group_change_policy"},
+	"RunAsGroup":          ubx.FieldSpec{WireName: "run_as_group"},
+	"RunAsNonRoot":        ubx.FieldSpec{WireName: "run_as_non_root"},
+	"RunAsUser":           ubx.FieldSpec{WireName: "run_as_user"},
+	"SeLinuxChangePolicy": ubx.FieldSpec{WireName: "se_linux_change_policy"},
+	"SeLinuxOptions": ubx.FieldSpec{
+		WireName: "se_linux_options",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_SeLinuxOptionsFields,
+	},
+	"SeccompProfile": ubx.FieldSpec{
+		WireName: "seccomp_profile",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_AppArmorProfileFields,
+	},
+	"SupplementalGroups":       ubx.FieldSpec{WireName: "supplemental_groups"},
+	"SupplementalGroupsPolicy": ubx.FieldSpec{WireName: "supplemental_groups_policy"},
+	"Sysctls": ubx.FieldSpec{
+		WireName: "sysctls",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeadersFields,
+	},
+	"WindowsOptions": ubx.FieldSpec{
+		WireName: "windows_options",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_SecurityContext_WindowsOptionsFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_TolerationsFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"TolerationSeconds": ubx.FieldSpec{WireName: "toleration_seconds"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Effect":            ubx.FieldSpec{WireName: "effect"},
+	"Key":               ubx.FieldSpec{WireName: "key"},
+	"Operator":          ubx.FieldSpec{WireName: "operator"},
+	"TolerationSeconds": ubx.FieldSpec{WireName: "toleration_seconds"},
+	"Value":             ubx.FieldSpec{WireName: "value"},
+}
 
 var ReplicaSet_Spec_Template_Spec_TopologySpreadConstraintsFields = ubx.FieldMap{
-		"LabelSelector": ubx.FieldSpec{
-			WireName: "label_selector",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_SelectorFields,
-		},
-		"MatchLabelKeys": ubx.FieldSpec{WireName: "match_label_keys"},
-		"MaxSkew": ubx.FieldSpec{WireName: "max_skew"},
-		"MinDomains": ubx.FieldSpec{WireName: "min_domains"},
-		"NodeAffinityPolicy": ubx.FieldSpec{WireName: "node_affinity_policy"},
-		"NodeTaintsPolicy": ubx.FieldSpec{WireName: "node_taints_policy"},
-		"TopologyKey": ubx.FieldSpec{WireName: "topology_key"},
-		"WhenUnsatisfiable": ubx.FieldSpec{WireName: "when_unsatisfiable"},
-	}
+	"LabelSelector": ubx.FieldSpec{
+		WireName: "label_selector",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_SelectorFields,
+	},
+	"MatchLabelKeys":     ubx.FieldSpec{WireName: "match_label_keys"},
+	"MaxSkew":            ubx.FieldSpec{WireName: "max_skew"},
+	"MinDomains":         ubx.FieldSpec{WireName: "min_domains"},
+	"NodeAffinityPolicy": ubx.FieldSpec{WireName: "node_affinity_policy"},
+	"NodeTaintsPolicy":   ubx.FieldSpec{WireName: "node_taints_policy"},
+	"TopologyKey":        ubx.FieldSpec{WireName: "topology_key"},
+	"WhenUnsatisfiable":  ubx.FieldSpec{WireName: "when_unsatisfiable"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_AwsElasticBlockStoreFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Partition": ubx.FieldSpec{WireName: "partition"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-	}
+	"FsType":    ubx.FieldSpec{WireName: "fs_type"},
+	"Partition": ubx.FieldSpec{WireName: "partition"},
+	"ReadOnly":  ubx.FieldSpec{WireName: "read_only"},
+	"VolumeId":  ubx.FieldSpec{WireName: "volume_id"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_AzureDiskFields = ubx.FieldMap{
-		"CachingMode": ubx.FieldSpec{WireName: "caching_mode"},
-		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
-		"DiskUri": ubx.FieldSpec{WireName: "disk_uri"},
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-	}
+	"CachingMode": ubx.FieldSpec{WireName: "caching_mode"},
+	"DiskName":    ubx.FieldSpec{WireName: "disk_name"},
+	"DiskUri":     ubx.FieldSpec{WireName: "disk_uri"},
+	"FsType":      ubx.FieldSpec{WireName: "fs_type"},
+	"Kind":        ubx.FieldSpec{WireName: "kind"},
+	"ReadOnly":    ubx.FieldSpec{WireName: "read_only"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_AzureFileFields = ubx.FieldMap{
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretName": ubx.FieldSpec{WireName: "secret_name"},
-		"ShareName": ubx.FieldSpec{WireName: "share_name"},
-	}
+	"ReadOnly":   ubx.FieldSpec{WireName: "read_only"},
+	"SecretName": ubx.FieldSpec{WireName: "secret_name"},
+	"ShareName":  ubx.FieldSpec{WireName: "share_name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_CephfsFields = ubx.FieldMap{
-		"Monitors": ubx.FieldSpec{WireName: "monitors"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretFile": ubx.FieldSpec{WireName: "secret_file"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"Monitors":   ubx.FieldSpec{WireName: "monitors"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"ReadOnly":   ubx.FieldSpec{WireName: "read_only"},
+	"SecretFile": ubx.FieldSpec{WireName: "secret_file"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+	"User": ubx.FieldSpec{WireName: "user"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_CinderFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-	}
+	"FsType":   ubx.FieldSpec{WireName: "fs_type"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+	"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_ConfigMap_ItemsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"Key":  ubx.FieldSpec{WireName: "key"},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"User": ubx.FieldSpec{WireName: "user"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_ConfigMapFields = ubx.FieldMap{
-		"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
-		"DefaultUser": ubx.FieldSpec{WireName: "default_user"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_ConfigMap_ItemsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Optional": ubx.FieldSpec{WireName: "optional"},
-	}
+	"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
+	"DefaultUser": ubx.FieldSpec{WireName: "default_user"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_ConfigMap_ItemsFields,
+	},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Optional": ubx.FieldSpec{WireName: "optional"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_CsiFields = ubx.FieldMap{
-		"Driver": ubx.FieldSpec{WireName: "driver"},
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"NodePublishSecretRef": ubx.FieldSpec{
-			WireName: "node_publish_secret_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"VolumeAttributes": ubx.FieldSpec{WireName: "volume_attributes"},
-	}
+	"Driver": ubx.FieldSpec{WireName: "driver"},
+	"FsType": ubx.FieldSpec{WireName: "fs_type"},
+	"NodePublishSecretRef": ubx.FieldSpec{
+		WireName: "node_publish_secret_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+	"ReadOnly":         ubx.FieldSpec{WireName: "read_only"},
+	"VolumeAttributes": ubx.FieldSpec{WireName: "volume_attributes"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_DownwardApi_ItemsFields = ubx.FieldMap{
-		"FieldRef": ubx.FieldSpec{
-			WireName: "field_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_FieldRefFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ResourceFieldRef": ubx.FieldSpec{
-			WireName: "resource_field_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_ResourceFieldRefFields,
-		},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"FieldRef": ubx.FieldSpec{
+		WireName: "field_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_FieldRefFields,
+	},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"ResourceFieldRef": ubx.FieldSpec{
+		WireName: "resource_field_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_Env_ValueFrom_ResourceFieldRefFields,
+	},
+	"User": ubx.FieldSpec{WireName: "user"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_DownwardApiFields = ubx.FieldMap{
-		"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
-		"DefaultUser": ubx.FieldSpec{WireName: "default_user"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_DownwardApi_ItemsFields,
-		},
-	}
+	"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
+	"DefaultUser": ubx.FieldSpec{WireName: "default_user"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_DownwardApi_ItemsFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_EmptyDirFields = ubx.FieldMap{
-		"Medium": ubx.FieldSpec{WireName: "medium"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"SizeLimit": ubx.FieldSpec{WireName: "size_limit"},
-	}
+	"Medium":    ubx.FieldSpec{WireName: "medium"},
+	"Mode":      ubx.FieldSpec{WireName: "mode"},
+	"SizeLimit": ubx.FieldSpec{WireName: "size_limit"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceFields = ubx.FieldMap{
-		"ApiGroup": ubx.FieldSpec{WireName: "api_group"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiGroup": ubx.FieldSpec{WireName: "api_group"},
+	"Kind":     ubx.FieldSpec{WireName: "kind"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceRefFields = ubx.FieldMap{
-		"ApiGroup": ubx.FieldSpec{WireName: "api_group"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"ApiGroup":  ubx.FieldSpec{WireName: "api_group"},
+	"Kind":      ubx.FieldSpec{WireName: "kind"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_ResourcesFields = ubx.FieldMap{
-		"Limits": ubx.FieldSpec{WireName: "limits"},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"Limits":   ubx.FieldSpec{WireName: "limits"},
+	"Requests": ubx.FieldSpec{WireName: "requests"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_SpecFields = ubx.FieldMap{
-		"AccessModes": ubx.FieldSpec{WireName: "access_modes"},
-		"DataSource": ubx.FieldSpec{
-			WireName: "data_source",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceFields,
-		},
-		"DataSourceRef": ubx.FieldSpec{
-			WireName: "data_source_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceRefFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_ResourcesFields,
-		},
-		"Selector": ubx.FieldSpec{
-			WireName: "selector",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_SelectorFields,
-		},
-		"StorageClassName": ubx.FieldSpec{WireName: "storage_class_name"},
-		"VolumeAttributesClassName": ubx.FieldSpec{WireName: "volume_attributes_class_name"},
-		"VolumeMode": ubx.FieldSpec{WireName: "volume_mode"},
-		"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
-	}
+	"AccessModes": ubx.FieldSpec{WireName: "access_modes"},
+	"DataSource": ubx.FieldSpec{
+		WireName: "data_source",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceFields,
+	},
+	"DataSourceRef": ubx.FieldSpec{
+		WireName: "data_source_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceRefFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_ResourcesFields,
+	},
+	"Selector": ubx.FieldSpec{
+		WireName: "selector",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_SelectorFields,
+	},
+	"StorageClassName":          ubx.FieldSpec{WireName: "storage_class_name"},
+	"VolumeAttributesClassName": ubx.FieldSpec{WireName: "volume_attributes_class_name"},
+	"VolumeMode":                ubx.FieldSpec{WireName: "volume_mode"},
+	"VolumeName":                ubx.FieldSpec{WireName: "volume_name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplateFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: ReplicaSet_MetadataFields,
-		},
-		"Spec": ubx.FieldSpec{
-			WireName: "spec",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_SpecFields,
-		},
-	}
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   ReplicaSet_MetadataFields,
+	},
+	"Spec": ubx.FieldSpec{
+		WireName: "spec",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplate_SpecFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_EphemeralFields = ubx.FieldMap{
-		"VolumeClaimTemplate": ubx.FieldSpec{
-			WireName: "volume_claim_template",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplateFields,
-		},
-	}
+	"VolumeClaimTemplate": ubx.FieldSpec{
+		WireName: "volume_claim_template",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Ephemeral_VolumeClaimTemplateFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_FcFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Lun": ubx.FieldSpec{WireName: "lun"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"TargetWwns": ubx.FieldSpec{WireName: "target_wwns"},
-		"Wwids": ubx.FieldSpec{WireName: "wwids"},
-	}
+	"FsType":     ubx.FieldSpec{WireName: "fs_type"},
+	"Lun":        ubx.FieldSpec{WireName: "lun"},
+	"ReadOnly":   ubx.FieldSpec{WireName: "read_only"},
+	"TargetWwns": ubx.FieldSpec{WireName: "target_wwns"},
+	"Wwids":      ubx.FieldSpec{WireName: "wwids"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_FlexVolumeFields = ubx.FieldMap{
-		"Driver": ubx.FieldSpec{WireName: "driver"},
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Options": ubx.FieldSpec{WireName: "options"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-	}
+	"Driver":   ubx.FieldSpec{WireName: "driver"},
+	"FsType":   ubx.FieldSpec{WireName: "fs_type"},
+	"Options":  ubx.FieldSpec{WireName: "options"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_FlockerFields = ubx.FieldMap{
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-		"DatasetUuid": ubx.FieldSpec{WireName: "dataset_uuid"},
-	}
+	"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
+	"DatasetUuid": ubx.FieldSpec{WireName: "dataset_uuid"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_GcePersistentDiskFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Partition": ubx.FieldSpec{WireName: "partition"},
-		"PdName": ubx.FieldSpec{WireName: "pd_name"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-	}
+	"FsType":    ubx.FieldSpec{WireName: "fs_type"},
+	"Partition": ubx.FieldSpec{WireName: "partition"},
+	"PdName":    ubx.FieldSpec{WireName: "pd_name"},
+	"ReadOnly":  ubx.FieldSpec{WireName: "read_only"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_GitRepoFields = ubx.FieldMap{
-		"Directory": ubx.FieldSpec{WireName: "directory"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"Directory":  ubx.FieldSpec{WireName: "directory"},
+	"Repository": ubx.FieldSpec{WireName: "repository"},
+	"Revision":   ubx.FieldSpec{WireName: "revision"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_GlusterfsFields = ubx.FieldMap{
-		"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-	}
+	"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
+	"Path":      ubx.FieldSpec{WireName: "path"},
+	"ReadOnly":  ubx.FieldSpec{WireName: "read_only"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_HostPathFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_ImageFields = ubx.FieldMap{
-		"PullPolicy": ubx.FieldSpec{WireName: "pull_policy"},
-		"Reference": ubx.FieldSpec{WireName: "reference"},
-	}
+	"PullPolicy": ubx.FieldSpec{WireName: "pull_policy"},
+	"Reference":  ubx.FieldSpec{WireName: "reference"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_IscsiFields = ubx.FieldMap{
-		"ChapAuthDiscovery": ubx.FieldSpec{WireName: "chap_auth_discovery"},
-		"ChapAuthSession": ubx.FieldSpec{WireName: "chap_auth_session"},
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"InitiatorName": ubx.FieldSpec{WireName: "initiator_name"},
-		"Iqn": ubx.FieldSpec{WireName: "iqn"},
-		"IscsiInterface": ubx.FieldSpec{WireName: "iscsi_interface"},
-		"Lun": ubx.FieldSpec{WireName: "lun"},
-		"Portals": ubx.FieldSpec{WireName: "portals"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-		"TargetPortal": ubx.FieldSpec{WireName: "target_portal"},
-	}
+	"ChapAuthDiscovery": ubx.FieldSpec{WireName: "chap_auth_discovery"},
+	"ChapAuthSession":   ubx.FieldSpec{WireName: "chap_auth_session"},
+	"FsType":            ubx.FieldSpec{WireName: "fs_type"},
+	"InitiatorName":     ubx.FieldSpec{WireName: "initiator_name"},
+	"Iqn":               ubx.FieldSpec{WireName: "iqn"},
+	"IscsiInterface":    ubx.FieldSpec{WireName: "iscsi_interface"},
+	"Lun":               ubx.FieldSpec{WireName: "lun"},
+	"Portals":           ubx.FieldSpec{WireName: "portals"},
+	"ReadOnly":          ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+	"TargetPortal": ubx.FieldSpec{WireName: "target_portal"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_NfsFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"Server": ubx.FieldSpec{WireName: "server"},
-	}
+	"Path":     ubx.FieldSpec{WireName: "path"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"Server":   ubx.FieldSpec{WireName: "server"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_PersistentVolumeClaimFields = ubx.FieldMap{
-		"ClaimName": ubx.FieldSpec{WireName: "claim_name"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-	}
+	"ClaimName": ubx.FieldSpec{WireName: "claim_name"},
+	"ReadOnly":  ubx.FieldSpec{WireName: "read_only"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_PhotonPersistentDiskFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"PdId": ubx.FieldSpec{WireName: "pd_id"},
-	}
+	"FsType": ubx.FieldSpec{WireName: "fs_type"},
+	"PdId":   ubx.FieldSpec{WireName: "pd_id"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_PortworxVolumeFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-	}
+	"FsType":   ubx.FieldSpec{WireName: "fs_type"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ClusterTrustBundleFields = ubx.FieldMap{
-		"LabelSelector": ubx.FieldSpec{
-			WireName: "label_selector",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_SelectorFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Optional": ubx.FieldSpec{WireName: "optional"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"SignerName": ubx.FieldSpec{WireName: "signer_name"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"LabelSelector": ubx.FieldSpec{
+		WireName: "label_selector",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_SelectorFields,
+	},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Optional":   ubx.FieldSpec{WireName: "optional"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"SignerName": ubx.FieldSpec{WireName: "signer_name"},
+	"User":       ubx.FieldSpec{WireName: "user"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ConfigMapFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_ConfigMap_ItemsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Optional": ubx.FieldSpec{WireName: "optional"},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_ConfigMap_ItemsFields,
+	},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Optional": ubx.FieldSpec{WireName: "optional"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_DownwardApiFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_DownwardApi_ItemsFields,
-		},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_DownwardApi_ItemsFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_PodCertificateFields = ubx.FieldMap{
-		"CertificateChainPath": ubx.FieldSpec{WireName: "certificate_chain_path"},
-		"CredentialBundlePath": ubx.FieldSpec{WireName: "credential_bundle_path"},
-		"KeyPath": ubx.FieldSpec{WireName: "key_path"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-		"MaxExpirationSeconds": ubx.FieldSpec{WireName: "max_expiration_seconds"},
-		"SignerName": ubx.FieldSpec{WireName: "signer_name"},
-		"User": ubx.FieldSpec{WireName: "user"},
-		"UserAnnotations": ubx.FieldSpec{WireName: "user_annotations"},
-	}
+	"CertificateChainPath": ubx.FieldSpec{WireName: "certificate_chain_path"},
+	"CredentialBundlePath": ubx.FieldSpec{WireName: "credential_bundle_path"},
+	"KeyPath":              ubx.FieldSpec{WireName: "key_path"},
+	"KeyType":              ubx.FieldSpec{WireName: "key_type"},
+	"MaxExpirationSeconds": ubx.FieldSpec{WireName: "max_expiration_seconds"},
+	"SignerName":           ubx.FieldSpec{WireName: "signer_name"},
+	"User":                 ubx.FieldSpec{WireName: "user"},
+	"UserAnnotations":      ubx.FieldSpec{WireName: "user_annotations"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ServiceAccountTokenFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ExpirationSeconds": ubx.FieldSpec{WireName: "expiration_seconds"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"Audience":          ubx.FieldSpec{WireName: "audience"},
+	"ExpirationSeconds": ubx.FieldSpec{WireName: "expiration_seconds"},
+	"Path":              ubx.FieldSpec{WireName: "path"},
+	"User":              ubx.FieldSpec{WireName: "user"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_Projected_SourcesFields = ubx.FieldMap{
-		"ClusterTrustBundle": ubx.FieldSpec{
-			WireName: "cluster_trust_bundle",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ClusterTrustBundleFields,
-		},
-		"ConfigMap": ubx.FieldSpec{
-			WireName: "config_map",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ConfigMapFields,
-		},
-		"DownwardApi": ubx.FieldSpec{
-			WireName: "downward_api",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_DownwardApiFields,
-		},
-		"PodCertificate": ubx.FieldSpec{
-			WireName: "pod_certificate",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_PodCertificateFields,
-		},
-		"Secret": ubx.FieldSpec{
-			WireName: "secret",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ConfigMapFields,
-		},
-		"ServiceAccountToken": ubx.FieldSpec{
-			WireName: "service_account_token",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ServiceAccountTokenFields,
-		},
-	}
+	"ClusterTrustBundle": ubx.FieldSpec{
+		WireName: "cluster_trust_bundle",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ClusterTrustBundleFields,
+	},
+	"ConfigMap": ubx.FieldSpec{
+		WireName: "config_map",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ConfigMapFields,
+	},
+	"DownwardApi": ubx.FieldSpec{
+		WireName: "downward_api",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_DownwardApiFields,
+	},
+	"PodCertificate": ubx.FieldSpec{
+		WireName: "pod_certificate",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_PodCertificateFields,
+	},
+	"Secret": ubx.FieldSpec{
+		WireName: "secret",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ConfigMapFields,
+	},
+	"ServiceAccountToken": ubx.FieldSpec{
+		WireName: "service_account_token",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Projected_Sources_ServiceAccountTokenFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_ProjectedFields = ubx.FieldMap{
-		"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
-		"DefaultUser": ubx.FieldSpec{WireName: "default_user"},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_Projected_SourcesFields,
-		},
-	}
+	"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
+	"DefaultUser": ubx.FieldSpec{WireName: "default_user"},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_Projected_SourcesFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_QuobyteFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"Registry": ubx.FieldSpec{WireName: "registry"},
-		"Tenant": ubx.FieldSpec{WireName: "tenant"},
-		"User": ubx.FieldSpec{WireName: "user"},
-		"Volume": ubx.FieldSpec{WireName: "volume"},
-	}
+	"Group":    ubx.FieldSpec{WireName: "group"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"Registry": ubx.FieldSpec{WireName: "registry"},
+	"Tenant":   ubx.FieldSpec{WireName: "tenant"},
+	"User":     ubx.FieldSpec{WireName: "user"},
+	"Volume":   ubx.FieldSpec{WireName: "volume"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_RbdFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"Keyring": ubx.FieldSpec{WireName: "keyring"},
-		"Monitors": ubx.FieldSpec{WireName: "monitors"},
-		"Pool": ubx.FieldSpec{WireName: "pool"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"FsType":   ubx.FieldSpec{WireName: "fs_type"},
+	"Image":    ubx.FieldSpec{WireName: "image"},
+	"Keyring":  ubx.FieldSpec{WireName: "keyring"},
+	"Monitors": ubx.FieldSpec{WireName: "monitors"},
+	"Pool":     ubx.FieldSpec{WireName: "pool"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+	"User": ubx.FieldSpec{WireName: "user"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_ScaleIoFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"Gateway": ubx.FieldSpec{WireName: "gateway"},
-		"ProtectionDomain": ubx.FieldSpec{WireName: "protection_domain"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-		"SslEnabled": ubx.FieldSpec{WireName: "ssl_enabled"},
-		"StorageMode": ubx.FieldSpec{WireName: "storage_mode"},
-		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-		"System": ubx.FieldSpec{WireName: "system"},
-		"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
-	}
+	"FsType":           ubx.FieldSpec{WireName: "fs_type"},
+	"Gateway":          ubx.FieldSpec{WireName: "gateway"},
+	"ProtectionDomain": ubx.FieldSpec{WireName: "protection_domain"},
+	"ReadOnly":         ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+	"SslEnabled":  ubx.FieldSpec{WireName: "ssl_enabled"},
+	"StorageMode": ubx.FieldSpec{WireName: "storage_mode"},
+	"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+	"System":      ubx.FieldSpec{WireName: "system"},
+	"VolumeName":  ubx.FieldSpec{WireName: "volume_name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_SecretFields = ubx.FieldMap{
-		"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
-		"DefaultUser": ubx.FieldSpec{WireName: "default_user"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_ConfigMap_ItemsFields,
-		},
-		"Optional": ubx.FieldSpec{WireName: "optional"},
-		"SecretName": ubx.FieldSpec{WireName: "secret_name"},
-	}
+	"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
+	"DefaultUser": ubx.FieldSpec{WireName: "default_user"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_ConfigMap_ItemsFields,
+	},
+	"Optional":   ubx.FieldSpec{WireName: "optional"},
+	"SecretName": ubx.FieldSpec{WireName: "secret_name"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_StorageosFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-		"VolumeName": ubx.FieldSpec{WireName: "volume_name"},
-		"VolumeNamespace": ubx.FieldSpec{WireName: "volume_namespace"},
-	}
+	"FsType":   ubx.FieldSpec{WireName: "fs_type"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+	"VolumeName":      ubx.FieldSpec{WireName: "volume_name"},
+	"VolumeNamespace": ubx.FieldSpec{WireName: "volume_namespace"},
+}
 
 var ReplicaSet_Spec_Template_Spec_Volumes_VsphereVolumeFields = ubx.FieldMap{
-		"FsType": ubx.FieldSpec{WireName: "fs_type"},
-		"StoragePolicyId": ubx.FieldSpec{WireName: "storage_policy_id"},
-		"StoragePolicyName": ubx.FieldSpec{WireName: "storage_policy_name"},
-		"VolumePath": ubx.FieldSpec{WireName: "volume_path"},
-	}
+	"FsType":            ubx.FieldSpec{WireName: "fs_type"},
+	"StoragePolicyId":   ubx.FieldSpec{WireName: "storage_policy_id"},
+	"StoragePolicyName": ubx.FieldSpec{WireName: "storage_policy_name"},
+	"VolumePath":        ubx.FieldSpec{WireName: "volume_path"},
+}
 
 var ReplicaSet_Spec_Template_Spec_VolumesFields = ubx.FieldMap{
-		"AwsElasticBlockStore": ubx.FieldSpec{
-			WireName: "aws_elastic_block_store",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_AwsElasticBlockStoreFields,
-		},
-		"AzureDisk": ubx.FieldSpec{
-			WireName: "azure_disk",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_AzureDiskFields,
-		},
-		"AzureFile": ubx.FieldSpec{
-			WireName: "azure_file",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_AzureFileFields,
-		},
-		"Cephfs": ubx.FieldSpec{
-			WireName: "cephfs",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_CephfsFields,
-		},
-		"Cinder": ubx.FieldSpec{
-			WireName: "cinder",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_CinderFields,
-		},
-		"ConfigMap": ubx.FieldSpec{
-			WireName: "config_map",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_ConfigMapFields,
-		},
-		"Csi": ubx.FieldSpec{
-			WireName: "csi",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_CsiFields,
-		},
-		"DownwardApi": ubx.FieldSpec{
-			WireName: "downward_api",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_DownwardApiFields,
-		},
-		"EmptyDir": ubx.FieldSpec{
-			WireName: "empty_dir",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_EmptyDirFields,
-		},
-		"Ephemeral": ubx.FieldSpec{
-			WireName: "ephemeral",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_EphemeralFields,
-		},
-		"Fc": ubx.FieldSpec{
-			WireName: "fc",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_FcFields,
-		},
-		"FlexVolume": ubx.FieldSpec{
-			WireName: "flex_volume",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_FlexVolumeFields,
-		},
-		"Flocker": ubx.FieldSpec{
-			WireName: "flocker",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_FlockerFields,
-		},
-		"GcePersistentDisk": ubx.FieldSpec{
-			WireName: "gce_persistent_disk",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_GcePersistentDiskFields,
-		},
-		"GitRepo": ubx.FieldSpec{
-			WireName: "git_repo",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_GitRepoFields,
-		},
-		"Glusterfs": ubx.FieldSpec{
-			WireName: "glusterfs",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_GlusterfsFields,
-		},
-		"HostPath": ubx.FieldSpec{
-			WireName: "host_path",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_HostPathFields,
-		},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_ImageFields,
-		},
-		"Iscsi": ubx.FieldSpec{
-			WireName: "iscsi",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_IscsiFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Nfs": ubx.FieldSpec{
-			WireName: "nfs",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_NfsFields,
-		},
-		"PersistentVolumeClaim": ubx.FieldSpec{
-			WireName: "persistent_volume_claim",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_PersistentVolumeClaimFields,
-		},
-		"PhotonPersistentDisk": ubx.FieldSpec{
-			WireName: "photon_persistent_disk",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_PhotonPersistentDiskFields,
-		},
-		"PortworxVolume": ubx.FieldSpec{
-			WireName: "portworx_volume",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_PortworxVolumeFields,
-		},
-		"Projected": ubx.FieldSpec{
-			WireName: "projected",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_ProjectedFields,
-		},
-		"Quobyte": ubx.FieldSpec{
-			WireName: "quobyte",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_QuobyteFields,
-		},
-		"Rbd": ubx.FieldSpec{
-			WireName: "rbd",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_RbdFields,
-		},
-		"ScaleIo": ubx.FieldSpec{
-			WireName: "scale_io",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_ScaleIoFields,
-		},
-		"Secret": ubx.FieldSpec{
-			WireName: "secret",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_SecretFields,
-		},
-		"Storageos": ubx.FieldSpec{
-			WireName: "storageos",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_StorageosFields,
-		},
-		"VsphereVolume": ubx.FieldSpec{
-			WireName: "vsphere_volume",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Volumes_VsphereVolumeFields,
-		},
-	}
+	"AwsElasticBlockStore": ubx.FieldSpec{
+		WireName: "aws_elastic_block_store",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_AwsElasticBlockStoreFields,
+	},
+	"AzureDisk": ubx.FieldSpec{
+		WireName: "azure_disk",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_AzureDiskFields,
+	},
+	"AzureFile": ubx.FieldSpec{
+		WireName: "azure_file",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_AzureFileFields,
+	},
+	"Cephfs": ubx.FieldSpec{
+		WireName: "cephfs",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_CephfsFields,
+	},
+	"Cinder": ubx.FieldSpec{
+		WireName: "cinder",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_CinderFields,
+	},
+	"ConfigMap": ubx.FieldSpec{
+		WireName: "config_map",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_ConfigMapFields,
+	},
+	"Csi": ubx.FieldSpec{
+		WireName: "csi",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_CsiFields,
+	},
+	"DownwardApi": ubx.FieldSpec{
+		WireName: "downward_api",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_DownwardApiFields,
+	},
+	"EmptyDir": ubx.FieldSpec{
+		WireName: "empty_dir",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_EmptyDirFields,
+	},
+	"Ephemeral": ubx.FieldSpec{
+		WireName: "ephemeral",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_EphemeralFields,
+	},
+	"Fc": ubx.FieldSpec{
+		WireName: "fc",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_FcFields,
+	},
+	"FlexVolume": ubx.FieldSpec{
+		WireName: "flex_volume",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_FlexVolumeFields,
+	},
+	"Flocker": ubx.FieldSpec{
+		WireName: "flocker",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_FlockerFields,
+	},
+	"GcePersistentDisk": ubx.FieldSpec{
+		WireName: "gce_persistent_disk",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_GcePersistentDiskFields,
+	},
+	"GitRepo": ubx.FieldSpec{
+		WireName: "git_repo",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_GitRepoFields,
+	},
+	"Glusterfs": ubx.FieldSpec{
+		WireName: "glusterfs",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_GlusterfsFields,
+	},
+	"HostPath": ubx.FieldSpec{
+		WireName: "host_path",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_HostPathFields,
+	},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_ImageFields,
+	},
+	"Iscsi": ubx.FieldSpec{
+		WireName: "iscsi",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_IscsiFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Nfs": ubx.FieldSpec{
+		WireName: "nfs",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_NfsFields,
+	},
+	"PersistentVolumeClaim": ubx.FieldSpec{
+		WireName: "persistent_volume_claim",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_PersistentVolumeClaimFields,
+	},
+	"PhotonPersistentDisk": ubx.FieldSpec{
+		WireName: "photon_persistent_disk",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_PhotonPersistentDiskFields,
+	},
+	"PortworxVolume": ubx.FieldSpec{
+		WireName: "portworx_volume",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_PortworxVolumeFields,
+	},
+	"Projected": ubx.FieldSpec{
+		WireName: "projected",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_ProjectedFields,
+	},
+	"Quobyte": ubx.FieldSpec{
+		WireName: "quobyte",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_QuobyteFields,
+	},
+	"Rbd": ubx.FieldSpec{
+		WireName: "rbd",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_RbdFields,
+	},
+	"ScaleIo": ubx.FieldSpec{
+		WireName: "scale_io",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_ScaleIoFields,
+	},
+	"Secret": ubx.FieldSpec{
+		WireName: "secret",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_SecretFields,
+	},
+	"Storageos": ubx.FieldSpec{
+		WireName: "storageos",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_StorageosFields,
+	},
+	"VsphereVolume": ubx.FieldSpec{
+		WireName: "vsphere_volume",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Volumes_VsphereVolumeFields,
+	},
+}
 
 var ReplicaSet_Spec_Template_SpecFields = ubx.FieldMap{
-		"ActiveDeadlineSeconds": ubx.FieldSpec{WireName: "active_deadline_seconds"},
-		"Affinity": ubx.FieldSpec{
-			WireName: "affinity",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_AffinityFields,
-		},
-		"AutomountServiceAccountToken": ubx.FieldSpec{WireName: "automount_service_account_token"},
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_ContainersFields,
-		},
-		"DnsConfig": ubx.FieldSpec{
-			WireName: "dns_config",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_DnsConfigFields,
-		},
-		"DnsPolicy": ubx.FieldSpec{WireName: "dns_policy"},
-		"EnableServiceLinks": ubx.FieldSpec{WireName: "enable_service_links"},
-		"EphemeralContainers": ubx.FieldSpec{
-			WireName: "ephemeral_containers",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_EphemeralContainersFields,
-		},
-		"EvictionResponders": ubx.FieldSpec{
-			WireName: "eviction_responders",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_EvictionRespondersFields,
-		},
-		"HostAliases": ubx.FieldSpec{
-			WireName: "host_aliases",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_HostAliasesFields,
-		},
-		"HostIpc": ubx.FieldSpec{WireName: "host_ipc"},
-		"HostNetwork": ubx.FieldSpec{WireName: "host_network"},
-		"HostPid": ubx.FieldSpec{WireName: "host_pid"},
-		"HostUsers": ubx.FieldSpec{WireName: "host_users"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"HostnameOverride": ubx.FieldSpec{WireName: "hostname_override"},
-		"ImagePullSecrets": ubx.FieldSpec{
-			WireName: "image_pull_secrets",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-		"InitContainers": ubx.FieldSpec{
-			WireName: "init_containers",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_ContainersFields,
-		},
-		"NodeName": ubx.FieldSpec{WireName: "node_name"},
-		"NodeSelector": ubx.FieldSpec{WireName: "node_selector"},
-		"Os": ubx.FieldSpec{
-			WireName: "os",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-		"Overhead": ubx.FieldSpec{WireName: "overhead"},
-		"PreemptionPolicy": ubx.FieldSpec{WireName: "preemption_policy"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"PriorityClassName": ubx.FieldSpec{WireName: "priority_class_name"},
-		"ReadinessGates": ubx.FieldSpec{
-			WireName: "readiness_gates",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_ReadinessGatesFields,
-		},
-		"ResourceClaims": ubx.FieldSpec{
-			WireName: "resource_claims",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_ResourceClaimsFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_Containers_ResourcesFields,
-		},
-		"RestartPolicy": ubx.FieldSpec{WireName: "restart_policy"},
-		"RuntimeClassName": ubx.FieldSpec{WireName: "runtime_class_name"},
-		"SchedulerName": ubx.FieldSpec{WireName: "scheduler_name"},
-		"SchedulingGates": ubx.FieldSpec{
-			WireName: "scheduling_gates",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
-		},
-		"SchedulingGroup": ubx.FieldSpec{
-			WireName: "scheduling_group",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_SchedulingGroupFields,
-		},
-		"SecurityContext": ubx.FieldSpec{
-			WireName: "security_context",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_Spec_SecurityContextFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ServiceAccountName": ubx.FieldSpec{WireName: "service_account_name"},
-		"SetHostnameAsFqdn": ubx.FieldSpec{WireName: "set_hostname_as_fqdn"},
-		"ShareProcessNamespace": ubx.FieldSpec{WireName: "share_process_namespace"},
-		"Subdomain": ubx.FieldSpec{WireName: "subdomain"},
-		"TerminationGracePeriodSeconds": ubx.FieldSpec{WireName: "termination_grace_period_seconds"},
-		"Tolerations": ubx.FieldSpec{
-			WireName: "tolerations",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_TolerationsFields,
-		},
-		"TopologySpreadConstraints": ubx.FieldSpec{
-			WireName: "topology_spread_constraints",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_TopologySpreadConstraintsFields,
-		},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: ReplicaSet_Spec_Template_Spec_VolumesFields,
-		},
-	}
+	"ActiveDeadlineSeconds": ubx.FieldSpec{WireName: "active_deadline_seconds"},
+	"Affinity": ubx.FieldSpec{
+		WireName: "affinity",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_AffinityFields,
+	},
+	"AutomountServiceAccountToken": ubx.FieldSpec{WireName: "automount_service_account_token"},
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_ContainersFields,
+	},
+	"DnsConfig": ubx.FieldSpec{
+		WireName: "dns_config",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_DnsConfigFields,
+	},
+	"DnsPolicy":          ubx.FieldSpec{WireName: "dns_policy"},
+	"EnableServiceLinks": ubx.FieldSpec{WireName: "enable_service_links"},
+	"EphemeralContainers": ubx.FieldSpec{
+		WireName: "ephemeral_containers",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_EphemeralContainersFields,
+	},
+	"EvictionResponders": ubx.FieldSpec{
+		WireName: "eviction_responders",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_EvictionRespondersFields,
+	},
+	"HostAliases": ubx.FieldSpec{
+		WireName: "host_aliases",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_HostAliasesFields,
+	},
+	"HostIpc":          ubx.FieldSpec{WireName: "host_ipc"},
+	"HostNetwork":      ubx.FieldSpec{WireName: "host_network"},
+	"HostPid":          ubx.FieldSpec{WireName: "host_pid"},
+	"HostUsers":        ubx.FieldSpec{WireName: "host_users"},
+	"Hostname":         ubx.FieldSpec{WireName: "hostname"},
+	"HostnameOverride": ubx.FieldSpec{WireName: "hostname_override"},
+	"ImagePullSecrets": ubx.FieldSpec{
+		WireName: "image_pull_secrets",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+	"InitContainers": ubx.FieldSpec{
+		WireName: "init_containers",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_ContainersFields,
+	},
+	"NodeName":     ubx.FieldSpec{WireName: "node_name"},
+	"NodeSelector": ubx.FieldSpec{WireName: "node_selector"},
+	"Os": ubx.FieldSpec{
+		WireName: "os",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+	"Overhead":          ubx.FieldSpec{WireName: "overhead"},
+	"PreemptionPolicy":  ubx.FieldSpec{WireName: "preemption_policy"},
+	"Priority":          ubx.FieldSpec{WireName: "priority"},
+	"PriorityClassName": ubx.FieldSpec{WireName: "priority_class_name"},
+	"ReadinessGates": ubx.FieldSpec{
+		WireName: "readiness_gates",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_ReadinessGatesFields,
+	},
+	"ResourceClaims": ubx.FieldSpec{
+		WireName: "resource_claims",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_ResourceClaimsFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_Containers_ResourcesFields,
+	},
+	"RestartPolicy":    ubx.FieldSpec{WireName: "restart_policy"},
+	"RuntimeClassName": ubx.FieldSpec{WireName: "runtime_class_name"},
+	"SchedulerName":    ubx.FieldSpec{WireName: "scheduler_name"},
+	"SchedulingGates": ubx.FieldSpec{
+		WireName: "scheduling_gates",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_ImagePullSecretsFields,
+	},
+	"SchedulingGroup": ubx.FieldSpec{
+		WireName: "scheduling_group",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_SchedulingGroupFields,
+	},
+	"SecurityContext": ubx.FieldSpec{
+		WireName: "security_context",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_Spec_SecurityContextFields,
+	},
+	"ServiceAccount":                ubx.FieldSpec{WireName: "service_account"},
+	"ServiceAccountName":            ubx.FieldSpec{WireName: "service_account_name"},
+	"SetHostnameAsFqdn":             ubx.FieldSpec{WireName: "set_hostname_as_fqdn"},
+	"ShareProcessNamespace":         ubx.FieldSpec{WireName: "share_process_namespace"},
+	"Subdomain":                     ubx.FieldSpec{WireName: "subdomain"},
+	"TerminationGracePeriodSeconds": ubx.FieldSpec{WireName: "termination_grace_period_seconds"},
+	"Tolerations": ubx.FieldSpec{
+		WireName: "tolerations",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_TolerationsFields,
+	},
+	"TopologySpreadConstraints": ubx.FieldSpec{
+		WireName: "topology_spread_constraints",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_TopologySpreadConstraintsFields,
+	},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   ReplicaSet_Spec_Template_Spec_VolumesFields,
+	},
+}
 
 var ReplicaSet_Spec_TemplateFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: ReplicaSet_MetadataFields,
-		},
-		"Spec": ubx.FieldSpec{
-			WireName: "spec",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_Template_SpecFields,
-		},
-	}
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   ReplicaSet_MetadataFields,
+	},
+	"Spec": ubx.FieldSpec{
+		WireName: "spec",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_Template_SpecFields,
+	},
+}
 
 var ReplicaSet_SpecFields = ubx.FieldMap{
-		"MinReadySeconds": ubx.FieldSpec{WireName: "min_ready_seconds"},
-		"Replicas": ubx.FieldSpec{WireName: "replicas"},
-		"Selector": ubx.FieldSpec{
-			WireName: "selector",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_SelectorFields,
-		},
-		"Template": ubx.FieldSpec{
-			WireName: "template",
-			Kind: "object",
-			Fields: ReplicaSet_Spec_TemplateFields,
-		},
-	}
+	"MinReadySeconds": ubx.FieldSpec{WireName: "min_ready_seconds"},
+	"Replicas":        ubx.FieldSpec{WireName: "replicas"},
+	"Selector": ubx.FieldSpec{
+		WireName: "selector",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_SelectorFields,
+	},
+	"Template": ubx.FieldSpec{
+		WireName: "template",
+		Kind:     "object",
+		Fields:   ReplicaSet_Spec_TemplateFields,
+	},
+}
 
 var ReplicaSet_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var ReplicaSet_StatusFields = ubx.FieldMap{
-		"AvailableReplicas": ubx.FieldSpec{WireName: "available_replicas"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: ReplicaSet_Status_ConditionsFields,
-		},
-		"FullyLabeledReplicas": ubx.FieldSpec{WireName: "fully_labeled_replicas"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"ReadyReplicas": ubx.FieldSpec{WireName: "ready_replicas"},
-		"Replicas": ubx.FieldSpec{WireName: "replicas"},
-		"TerminatingReplicas": ubx.FieldSpec{WireName: "terminating_replicas"},
-	}
+	"AvailableReplicas": ubx.FieldSpec{WireName: "available_replicas"},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   ReplicaSet_Status_ConditionsFields,
+	},
+	"FullyLabeledReplicas": ubx.FieldSpec{WireName: "fully_labeled_replicas"},
+	"ObservedGeneration":   ubx.FieldSpec{WireName: "observed_generation"},
+	"ReadyReplicas":        ubx.FieldSpec{WireName: "ready_replicas"},
+	"Replicas":             ubx.FieldSpec{WireName: "replicas"},
+	"TerminatingReplicas":  ubx.FieldSpec{WireName: "terminating_replicas"},
+}
 
 type ReplicaSetConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -2856,23 +2856,23 @@ var ReplicaSet = ubx.ResourceBinding{
 	WireType: "kubernetes_apps_replica_set",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: ReplicaSet_MetadataFields,
+			Kind:     "object",
+			Fields:   ReplicaSet_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: ReplicaSet_SpecFields,
+			Kind:     "object",
+			Fields:   ReplicaSet_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: ReplicaSet_StatusFields,
+			Kind:     "object",
+			Fields:   ReplicaSet_StatusFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

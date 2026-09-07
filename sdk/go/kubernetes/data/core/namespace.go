@@ -4,22 +4,22 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Namespace_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type Namespace_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type Namespace_Metadata struct {
@@ -62,10 +62,10 @@ type Namespace_Spec struct {
 
 type Namespace_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type Namespace_Status struct {
@@ -93,6 +93,5 @@ type NamespaceAttrs struct {
 
 var Namespace = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_namespace",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

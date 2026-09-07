@@ -4,22 +4,22 @@ package autoscaling
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HorizontalPodAutoscaler_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type HorizontalPodAutoscaler_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type HorizontalPodAutoscaler_Metadata struct {
@@ -106,6 +106,5 @@ type HorizontalPodAutoscalerAttrs struct {
 
 var HorizontalPodAutoscaler = ubx.DataSourceBinding{
 	WireType: "kubernetes_autoscaling_horizontal_pod_autoscaler",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

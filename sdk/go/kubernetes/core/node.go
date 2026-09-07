@@ -124,7 +124,7 @@ type Node_Spec struct {
 type Node_Status_Addresses struct {
 	// The actual IP address or hostname for the node, corresponding to the address type (e.g., InternalIP, ExternalIP, Hostname). (AI-inferred)
 	Address any
-	Type any
+	Type    any
 }
 
 type Node_Status_Conditions struct {
@@ -260,248 +260,248 @@ type Node_Status struct {
 }
 
 var Node_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var Node_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var Node_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: Node_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: Node_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   Node_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   Node_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var Node_Spec_ConfigSource_ConfigMapFields = ubx.FieldMap{
-		"KubeletConfigKey": ubx.FieldSpec{WireName: "kubelet_config_key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"KubeletConfigKey": ubx.FieldSpec{WireName: "kubelet_config_key"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Namespace":        ubx.FieldSpec{WireName: "namespace"},
+	"ResourceVersion":  ubx.FieldSpec{WireName: "resource_version"},
+	"Uid":              ubx.FieldSpec{WireName: "uid"},
+}
 
 var Node_Spec_ConfigSourceFields = ubx.FieldMap{
-		"ConfigMap": ubx.FieldSpec{
-			WireName: "config_map",
-			Kind: "object",
-			Fields: Node_Spec_ConfigSource_ConfigMapFields,
-		},
-	}
+	"ConfigMap": ubx.FieldSpec{
+		WireName: "config_map",
+		Kind:     "object",
+		Fields:   Node_Spec_ConfigSource_ConfigMapFields,
+	},
+}
 
 var Node_Spec_PodPreemptionPolicyFields = ubx.FieldMap{
-		"DisableResizePreemption": ubx.FieldSpec{WireName: "disable_resize_preemption"},
-	}
+	"DisableResizePreemption": ubx.FieldSpec{WireName: "disable_resize_preemption"},
+}
 
 var Node_Spec_TaintsFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"TimeAdded": ubx.FieldSpec{WireName: "time_added"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Effect":    ubx.FieldSpec{WireName: "effect"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"TimeAdded": ubx.FieldSpec{WireName: "time_added"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var Node_SpecFields = ubx.FieldMap{
-		"ConfigSource": ubx.FieldSpec{
-			WireName: "config_source",
-			Kind: "object",
-			Fields: Node_Spec_ConfigSourceFields,
-		},
-		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"PodCidr": ubx.FieldSpec{WireName: "pod_cidr"},
-		"PodCidrs": ubx.FieldSpec{WireName: "pod_cidrs"},
-		"PodPreemptionPolicy": ubx.FieldSpec{
-			WireName: "pod_preemption_policy",
-			Kind: "object",
-			Fields: Node_Spec_PodPreemptionPolicyFields,
-		},
-		"ProviderId": ubx.FieldSpec{WireName: "provider_id"},
-		"Taints": ubx.FieldSpec{
-			WireName: "taints",
-			Kind: "list",
-			Fields: Node_Spec_TaintsFields,
-		},
-		"Unschedulable": ubx.FieldSpec{WireName: "unschedulable"},
-	}
+	"ConfigSource": ubx.FieldSpec{
+		WireName: "config_source",
+		Kind:     "object",
+		Fields:   Node_Spec_ConfigSourceFields,
+	},
+	"ExternalId": ubx.FieldSpec{WireName: "external_id"},
+	"PodCidr":    ubx.FieldSpec{WireName: "pod_cidr"},
+	"PodCidrs":   ubx.FieldSpec{WireName: "pod_cidrs"},
+	"PodPreemptionPolicy": ubx.FieldSpec{
+		WireName: "pod_preemption_policy",
+		Kind:     "object",
+		Fields:   Node_Spec_PodPreemptionPolicyFields,
+	},
+	"ProviderId": ubx.FieldSpec{WireName: "provider_id"},
+	"Taints": ubx.FieldSpec{
+		WireName: "taints",
+		Kind:     "list",
+		Fields:   Node_Spec_TaintsFields,
+	},
+	"Unschedulable": ubx.FieldSpec{WireName: "unschedulable"},
+}
 
 var Node_Status_AddressesFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var Node_Status_ConditionsFields = ubx.FieldMap{
-		"LastHeartbeatTime": ubx.FieldSpec{WireName: "last_heartbeat_time"},
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastHeartbeatTime":  ubx.FieldSpec{WireName: "last_heartbeat_time"},
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var Node_Status_ConfigFields = ubx.FieldMap{
-		"Active": ubx.FieldSpec{
-			WireName: "active",
-			Kind: "object",
-			Fields: Node_Spec_ConfigSourceFields,
-		},
-		"Assigned": ubx.FieldSpec{
-			WireName: "assigned",
-			Kind: "object",
-			Fields: Node_Spec_ConfigSourceFields,
-		},
-		"Error": ubx.FieldSpec{WireName: "error"},
-		"LastKnownGood": ubx.FieldSpec{
-			WireName: "last_known_good",
-			Kind: "object",
-			Fields: Node_Spec_ConfigSourceFields,
-		},
-	}
+	"Active": ubx.FieldSpec{
+		WireName: "active",
+		Kind:     "object",
+		Fields:   Node_Spec_ConfigSourceFields,
+	},
+	"Assigned": ubx.FieldSpec{
+		WireName: "assigned",
+		Kind:     "object",
+		Fields:   Node_Spec_ConfigSourceFields,
+	},
+	"Error": ubx.FieldSpec{WireName: "error"},
+	"LastKnownGood": ubx.FieldSpec{
+		WireName: "last_known_good",
+		Kind:     "object",
+		Fields:   Node_Spec_ConfigSourceFields,
+	},
+}
 
 var Node_Status_DaemonEndpoints_KubeletEndpointFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var Node_Status_DaemonEndpointsFields = ubx.FieldMap{
-		"KubeletEndpoint": ubx.FieldSpec{
-			WireName: "kubelet_endpoint",
-			Kind: "object",
-			Fields: Node_Status_DaemonEndpoints_KubeletEndpointFields,
-		},
-	}
+	"KubeletEndpoint": ubx.FieldSpec{
+		WireName: "kubelet_endpoint",
+		Kind:     "object",
+		Fields:   Node_Status_DaemonEndpoints_KubeletEndpointFields,
+	},
+}
 
 var Node_Status_FeaturesFields = ubx.FieldMap{
-		"SupplementalGroupsPolicy": ubx.FieldSpec{WireName: "supplemental_groups_policy"},
-	}
+	"SupplementalGroupsPolicy": ubx.FieldSpec{WireName: "supplemental_groups_policy"},
+}
 
 var Node_Status_ImagesFields = ubx.FieldMap{
-		"Names": ubx.FieldSpec{WireName: "names"},
-		"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
-	}
+	"Names":     ubx.FieldSpec{WireName: "names"},
+	"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
+}
 
 var Node_Status_NodeInfo_SwapFields = ubx.FieldMap{
-		"Capacity": ubx.FieldSpec{WireName: "capacity"},
-	}
+	"Capacity": ubx.FieldSpec{WireName: "capacity"},
+}
 
 var Node_Status_NodeInfoFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"BootId": ubx.FieldSpec{WireName: "boot_id"},
-		"ContainerRuntimeVersion": ubx.FieldSpec{WireName: "container_runtime_version"},
-		"KernelVersion": ubx.FieldSpec{WireName: "kernel_version"},
-		"KubeProxyVersion": ubx.FieldSpec{WireName: "kube_proxy_version"},
-		"KubeletVersion": ubx.FieldSpec{WireName: "kubelet_version"},
-		"MachineId": ubx.FieldSpec{WireName: "machine_id"},
-		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
-		"OsImage": ubx.FieldSpec{WireName: "os_image"},
-		"RunningInUserNamespace": ubx.FieldSpec{WireName: "running_in_user_namespace"},
-		"Swap": ubx.FieldSpec{
-			WireName: "swap",
-			Kind: "object",
-			Fields: Node_Status_NodeInfo_SwapFields,
-		},
-		"SystemUuid": ubx.FieldSpec{WireName: "system_uuid"},
-	}
+	"Architecture":            ubx.FieldSpec{WireName: "architecture"},
+	"BootId":                  ubx.FieldSpec{WireName: "boot_id"},
+	"ContainerRuntimeVersion": ubx.FieldSpec{WireName: "container_runtime_version"},
+	"KernelVersion":           ubx.FieldSpec{WireName: "kernel_version"},
+	"KubeProxyVersion":        ubx.FieldSpec{WireName: "kube_proxy_version"},
+	"KubeletVersion":          ubx.FieldSpec{WireName: "kubelet_version"},
+	"MachineId":               ubx.FieldSpec{WireName: "machine_id"},
+	"OperatingSystem":         ubx.FieldSpec{WireName: "operating_system"},
+	"OsImage":                 ubx.FieldSpec{WireName: "os_image"},
+	"RunningInUserNamespace":  ubx.FieldSpec{WireName: "running_in_user_namespace"},
+	"Swap": ubx.FieldSpec{
+		WireName: "swap",
+		Kind:     "object",
+		Fields:   Node_Status_NodeInfo_SwapFields,
+	},
+	"SystemUuid": ubx.FieldSpec{WireName: "system_uuid"},
+}
 
 var Node_Status_RuntimeHandlers_FeaturesFields = ubx.FieldMap{
-		"RecursiveReadOnlyMounts": ubx.FieldSpec{WireName: "recursive_read_only_mounts"},
-		"UserNamespaces": ubx.FieldSpec{WireName: "user_namespaces"},
-	}
+	"RecursiveReadOnlyMounts": ubx.FieldSpec{WireName: "recursive_read_only_mounts"},
+	"UserNamespaces":          ubx.FieldSpec{WireName: "user_namespaces"},
+}
 
 var Node_Status_RuntimeHandlersFields = ubx.FieldMap{
-		"Features": ubx.FieldSpec{
-			WireName: "features",
-			Kind: "object",
-			Fields: Node_Status_RuntimeHandlers_FeaturesFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Features": ubx.FieldSpec{
+		WireName: "features",
+		Kind:     "object",
+		Fields:   Node_Status_RuntimeHandlers_FeaturesFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Node_Status_VolumesAttachedFields = ubx.FieldMap{
-		"DevicePath": ubx.FieldSpec{WireName: "device_path"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DevicePath": ubx.FieldSpec{WireName: "device_path"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var Node_StatusFields = ubx.FieldMap{
-		"Addresses": ubx.FieldSpec{
-			WireName: "addresses",
-			Kind: "list",
-			Fields: Node_Status_AddressesFields,
-		},
-		"Allocatable": ubx.FieldSpec{WireName: "allocatable"},
-		"Capacity": ubx.FieldSpec{WireName: "capacity"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: Node_Status_ConditionsFields,
-		},
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Node_Status_ConfigFields,
-		},
-		"DaemonEndpoints": ubx.FieldSpec{
-			WireName: "daemon_endpoints",
-			Kind: "object",
-			Fields: Node_Status_DaemonEndpointsFields,
-		},
-		"DeclaredFeatures": ubx.FieldSpec{WireName: "declared_features"},
-		"Features": ubx.FieldSpec{
-			WireName: "features",
-			Kind: "object",
-			Fields: Node_Status_FeaturesFields,
-		},
-		"Images": ubx.FieldSpec{
-			WireName: "images",
-			Kind: "list",
-			Fields: Node_Status_ImagesFields,
-		},
-		"NodeInfo": ubx.FieldSpec{
-			WireName: "node_info",
-			Kind: "object",
-			Fields: Node_Status_NodeInfoFields,
-		},
-		"Phase": ubx.FieldSpec{WireName: "phase"},
-		"RuntimeHandlers": ubx.FieldSpec{
-			WireName: "runtime_handlers",
-			Kind: "list",
-			Fields: Node_Status_RuntimeHandlersFields,
-		},
-		"VolumesAttached": ubx.FieldSpec{
-			WireName: "volumes_attached",
-			Kind: "list",
-			Fields: Node_Status_VolumesAttachedFields,
-		},
-		"VolumesInUse": ubx.FieldSpec{WireName: "volumes_in_use"},
-	}
+	"Addresses": ubx.FieldSpec{
+		WireName: "addresses",
+		Kind:     "list",
+		Fields:   Node_Status_AddressesFields,
+	},
+	"Allocatable": ubx.FieldSpec{WireName: "allocatable"},
+	"Capacity":    ubx.FieldSpec{WireName: "capacity"},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   Node_Status_ConditionsFields,
+	},
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Node_Status_ConfigFields,
+	},
+	"DaemonEndpoints": ubx.FieldSpec{
+		WireName: "daemon_endpoints",
+		Kind:     "object",
+		Fields:   Node_Status_DaemonEndpointsFields,
+	},
+	"DeclaredFeatures": ubx.FieldSpec{WireName: "declared_features"},
+	"Features": ubx.FieldSpec{
+		WireName: "features",
+		Kind:     "object",
+		Fields:   Node_Status_FeaturesFields,
+	},
+	"Images": ubx.FieldSpec{
+		WireName: "images",
+		Kind:     "list",
+		Fields:   Node_Status_ImagesFields,
+	},
+	"NodeInfo": ubx.FieldSpec{
+		WireName: "node_info",
+		Kind:     "object",
+		Fields:   Node_Status_NodeInfoFields,
+	},
+	"Phase": ubx.FieldSpec{WireName: "phase"},
+	"RuntimeHandlers": ubx.FieldSpec{
+		WireName: "runtime_handlers",
+		Kind:     "list",
+		Fields:   Node_Status_RuntimeHandlersFields,
+	},
+	"VolumesAttached": ubx.FieldSpec{
+		WireName: "volumes_attached",
+		Kind:     "list",
+		Fields:   Node_Status_VolumesAttachedFields,
+	},
+	"VolumesInUse": ubx.FieldSpec{WireName: "volumes_in_use"},
+}
 
 type NodeConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -537,21 +537,21 @@ var Node = ubx.ResourceBinding{
 	WireType: "kubernetes_core_node",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: Node_MetadataFields,
+			Kind:     "object",
+			Fields:   Node_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: Node_SpecFields,
+			Kind:     "object",
+			Fields:   Node_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: Node_StatusFields,
+			Kind:     "object",
+			Fields:   Node_StatusFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

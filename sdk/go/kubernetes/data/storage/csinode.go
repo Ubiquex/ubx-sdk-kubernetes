@@ -4,22 +4,22 @@ package storage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Csinode_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type Csinode_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type Csinode_Metadata struct {
@@ -60,9 +60,9 @@ type Csinode_Spec_Drivers_Allocatable struct {
 }
 
 type Csinode_Spec_Drivers struct {
-	Allocatable any
-	Name any
-	NodeId any
+	Allocatable  any
+	Name         any
+	NodeId       any
 	TopologyKeys any
 }
 
@@ -72,17 +72,17 @@ type Csinode_Spec struct {
 }
 
 type Csinode_Status_StorageHealth_HealthConditions struct {
-	AccessMode any
+	AccessMode         any
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	VolumeMode any
+	Message            any
+	Reason             any
+	Status             any
+	VolumeMode         any
 }
 
 type Csinode_Status_StorageHealth struct {
 	HealthConditions any
-	Name any
+	Name             any
 }
 
 type Csinode_Status struct {
@@ -108,6 +108,5 @@ type CsinodeAttrs struct {
 
 var Csinode = ubx.DataSourceBinding{
 	WireType: "kubernetes_storage_csinode",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

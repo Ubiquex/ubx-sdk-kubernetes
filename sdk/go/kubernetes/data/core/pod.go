@@ -4,22 +4,22 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Pod_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type Pod_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type Pod_Metadata struct {
@@ -56,19 +56,19 @@ type Pod_Metadata struct {
 }
 
 type Pod_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference_MatchExpressions struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type Pod_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution_Preference struct {
 	MatchExpressions any
-	MatchFields any
+	MatchFields      any
 }
 
 type Pod_Spec_Affinity_NodeAffinity_PreferredDuringSchedulingIgnoredDuringExecution struct {
 	Preference any
-	Weight any
+	Weight     any
 }
 
 type Pod_Spec_Affinity_NodeAffinity_RequiredDuringSchedulingIgnoredDuringExecution struct {
@@ -85,21 +85,21 @@ type Pod_Spec_Affinity_NodeAffinity struct {
 
 type Pod_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm_LabelSelector struct {
 	MatchExpressions any
-	MatchLabels any
+	MatchLabels      any
 }
 
 type Pod_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution_PodAffinityTerm struct {
-	LabelSelector any
-	MatchLabelKeys any
+	LabelSelector     any
+	MatchLabelKeys    any
 	MismatchLabelKeys any
 	NamespaceSelector any
-	Namespaces any
-	TopologyKey any
+	Namespaces        any
+	TopologyKey       any
 }
 
 type Pod_Spec_Affinity_PodAffinity_PreferredDuringSchedulingIgnoredDuringExecution struct {
 	PodAffinityTerm any
-	Weight any
+	Weight          any
 }
 
 type Pod_Spec_Affinity_PodAffinity struct {
@@ -119,52 +119,52 @@ type Pod_Spec_Affinity struct {
 }
 
 type Pod_Spec_Containers_Env_ValueFrom_ConfigMapKeyRef struct {
-	Key any
-	Name any
+	Key      any
+	Name     any
 	Optional any
 }
 
 type Pod_Spec_Containers_Env_ValueFrom_FieldRef struct {
 	ApiVersion any
-	FieldPath any
+	FieldPath  any
 }
 
 type Pod_Spec_Containers_Env_ValueFrom_FileKeyRef struct {
-	Key any
-	Optional any
-	Path any
+	Key        any
+	Optional   any
+	Path       any
 	VolumeName any
 }
 
 type Pod_Spec_Containers_Env_ValueFrom_ResourceFieldRef struct {
 	ContainerName any
-	Divisor any
-	Resource any
+	Divisor       any
+	Resource      any
 }
 
 type Pod_Spec_Containers_Env_ValueFrom struct {
-	ConfigMapKeyRef any
-	FieldRef any
-	FileKeyRef any
+	ConfigMapKeyRef  any
+	FieldRef         any
+	FileKeyRef       any
 	ResourceFieldRef any
-	SecretKeyRef any
+	SecretKeyRef     any
 }
 
 type Pod_Spec_Containers_Env struct {
-	Name any
-	Value any
+	Name      any
+	Value     any
 	ValueFrom any
 }
 
 type Pod_Spec_Containers_EnvFrom_ConfigMapRef struct {
-	Name any
+	Name     any
 	Optional any
 }
 
 type Pod_Spec_Containers_EnvFrom struct {
 	ConfigMapRef any
-	Prefix any
-	SecretRef any
+	Prefix       any
+	SecretRef    any
 }
 
 type Pod_Spec_Containers_Lifecycle_PostStart_Exec struct {
@@ -172,17 +172,17 @@ type Pod_Spec_Containers_Lifecycle_PostStart_Exec struct {
 }
 
 type Pod_Spec_Containers_Lifecycle_PostStart_HttpGet_HttpHeaders struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Pod_Spec_Containers_Lifecycle_PostStart_HttpGet struct {
-	Host any
+	Host        any
 	HttpHeaders any
-	Path any
-	Port any
-	Protocol any
-	Scheme any
+	Path        any
+	Port        any
+	Protocol    any
+	Scheme      any
 }
 
 type Pod_Spec_Containers_Lifecycle_PostStart_Sleep struct {
@@ -195,152 +195,152 @@ type Pod_Spec_Containers_Lifecycle_PostStart_TcpSocket struct {
 }
 
 type Pod_Spec_Containers_Lifecycle_PostStart struct {
-	Exec any
-	HttpGet any
-	Sleep any
+	Exec      any
+	HttpGet   any
+	Sleep     any
 	TcpSocket any
 }
 
 type Pod_Spec_Containers_Lifecycle struct {
-	PostStart any
-	PreStop any
+	PostStart  any
+	PreStop    any
 	StopSignal any
 }
 
 type Pod_Spec_Containers_LivenessProbe_Grpc struct {
-	Mode any
-	Port any
+	Mode    any
+	Port    any
 	Service any
 }
 
 type Pod_Spec_Containers_LivenessProbe struct {
-	Exec any
-	FailureThreshold any
-	Grpc any
-	HttpGet any
-	InitialDelaySeconds any
-	PeriodSeconds any
-	SuccessThreshold any
-	TcpSocket any
+	Exec                          any
+	FailureThreshold              any
+	Grpc                          any
+	HttpGet                       any
+	InitialDelaySeconds           any
+	PeriodSeconds                 any
+	SuccessThreshold              any
+	TcpSocket                     any
 	TerminationGracePeriodSeconds any
-	TimeoutSeconds any
+	TimeoutSeconds                any
 }
 
 type Pod_Spec_Containers_Ports struct {
 	ContainerPort any
-	HostIp any
-	HostPort any
-	Name any
-	Protocol any
+	HostIp        any
+	HostPort      any
+	Name          any
+	Protocol      any
 }
 
 type Pod_Spec_Containers_ResizePolicy struct {
-	ResourceName any
+	ResourceName  any
 	RestartPolicy any
 }
 
 type Pod_Spec_Containers_Resources_Claims struct {
-	Name any
+	Name    any
 	Request any
 }
 
 type Pod_Spec_Containers_Resources struct {
-	Claims any
-	Limits any
+	Claims   any
+	Limits   any
 	Requests any
 }
 
 type Pod_Spec_Containers_RestartPolicyRules_ExitCodes struct {
 	Operator any
-	Values any
+	Values   any
 }
 
 type Pod_Spec_Containers_RestartPolicyRules struct {
-	Action any
+	Action    any
 	ExitCodes any
 }
 
 type Pod_Spec_Containers_SecurityContext_AppArmorProfile struct {
 	LocalhostProfile any
-	Type any
+	Type             any
 }
 
 type Pod_Spec_Containers_SecurityContext_Capabilities struct {
-	Add any
+	Add  any
 	Drop any
 }
 
 type Pod_Spec_Containers_SecurityContext_SeLinuxOptions struct {
 	Level any
-	Role any
-	Type any
-	User any
+	Role  any
+	Type  any
+	User  any
 }
 
 type Pod_Spec_Containers_SecurityContext_WindowsOptions struct {
-	GmsaCredentialSpec any
+	GmsaCredentialSpec     any
 	GmsaCredentialSpecName any
-	HostProcess any
-	RunAsUserName any
+	HostProcess            any
+	RunAsUserName          any
 }
 
 type Pod_Spec_Containers_SecurityContext struct {
 	AllowPrivilegeEscalation any
-	AppArmorProfile any
-	Capabilities any
-	Privileged any
-	ProcMount any
-	ReadOnlyRootFilesystem any
-	RunAsGroup any
-	RunAsNonRoot any
-	RunAsUser any
-	SeLinuxOptions any
-	SeccompProfile any
-	WindowsOptions any
+	AppArmorProfile          any
+	Capabilities             any
+	Privileged               any
+	ProcMount                any
+	ReadOnlyRootFilesystem   any
+	RunAsGroup               any
+	RunAsNonRoot             any
+	RunAsUser                any
+	SeLinuxOptions           any
+	SeccompProfile           any
+	WindowsOptions           any
 }
 
 type Pod_Spec_Containers_VolumeDevices struct {
 	DevicePath any
-	Name any
+	Name       any
 }
 
 type Pod_Spec_Containers_VolumeMounts struct {
-	BindMountOptions any
-	MountPath any
-	MountPropagation any
-	Name any
-	ReadOnly any
+	BindMountOptions  any
+	MountPath         any
+	MountPropagation  any
+	Name              any
+	ReadOnly          any
 	RecursiveReadOnly any
-	SubPath any
-	SubPathExpr any
+	SubPath           any
+	SubPathExpr       any
 }
 
 type Pod_Spec_Containers struct {
-	Args any
-	Command any
-	Env any
-	EnvFrom any
-	Image any
-	ImagePullPolicy any
-	Lifecycle any
-	LivenessProbe any
-	Name any
-	Ports any
-	ReadinessProbe any
-	ResizePolicy any
-	Resources any
-	RestartPolicy any
-	RestartPolicyRules any
-	SecurityContext any
-	StartupProbe any
-	Stdin any
-	StdinOnce any
-	TerminationMessagePath any
+	Args                     any
+	Command                  any
+	Env                      any
+	EnvFrom                  any
+	Image                    any
+	ImagePullPolicy          any
+	Lifecycle                any
+	LivenessProbe            any
+	Name                     any
+	Ports                    any
+	ReadinessProbe           any
+	ResizePolicy             any
+	Resources                any
+	RestartPolicy            any
+	RestartPolicyRules       any
+	SecurityContext          any
+	StartupProbe             any
+	Stdin                    any
+	StdinOnce                any
+	TerminationMessagePath   any
 	TerminationMessagePolicy any
-	Tty any
-	VolumeDevices any
-	VolumeMounts any
-	WorkingDir any
+	Tty                      any
+	VolumeDevices            any
+	VolumeMounts             any
+	WorkingDir               any
 }
 
 type Pod_Spec_DnsConfig struct {
@@ -353,42 +353,42 @@ type Pod_Spec_DnsConfig struct {
 }
 
 type Pod_Spec_EphemeralContainers struct {
-	Args any
-	Command any
-	Env any
-	EnvFrom any
-	Image any
-	ImagePullPolicy any
-	Lifecycle any
-	LivenessProbe any
-	Name any
-	Ports any
-	ReadinessProbe any
-	ResizePolicy any
-	Resources any
-	RestartPolicy any
-	RestartPolicyRules any
-	SecurityContext any
-	StartupProbe any
-	Stdin any
-	StdinOnce any
-	TargetContainerName any
-	TerminationMessagePath any
+	Args                     any
+	Command                  any
+	Env                      any
+	EnvFrom                  any
+	Image                    any
+	ImagePullPolicy          any
+	Lifecycle                any
+	LivenessProbe            any
+	Name                     any
+	Ports                    any
+	ReadinessProbe           any
+	ResizePolicy             any
+	Resources                any
+	RestartPolicy            any
+	RestartPolicyRules       any
+	SecurityContext          any
+	StartupProbe             any
+	Stdin                    any
+	StdinOnce                any
+	TargetContainerName      any
+	TerminationMessagePath   any
 	TerminationMessagePolicy any
-	Tty any
-	VolumeDevices any
-	VolumeMounts any
-	WorkingDir any
+	Tty                      any
+	VolumeDevices            any
+	VolumeMounts             any
+	WorkingDir               any
 }
 
 type Pod_Spec_EvictionResponders struct {
-	Name any
+	Name     any
 	Priority any
 }
 
 type Pod_Spec_HostAliases struct {
 	Hostnames any
-	Ip any
+	Ip        any
 }
 
 type Pod_Spec_ImagePullSecrets struct {
@@ -400,8 +400,8 @@ type Pod_Spec_ReadinessGates struct {
 }
 
 type Pod_Spec_ResourceClaims struct {
-	Name any
-	ResourceClaimName any
+	Name                      any
+	ResourceClaimName         any
 	ResourceClaimTemplateName any
 }
 
@@ -440,64 +440,64 @@ type Pod_Spec_SecurityContext struct {
 }
 
 type Pod_Spec_Tolerations struct {
-	Effect any
-	Key any
-	Operator any
+	Effect            any
+	Key               any
+	Operator          any
 	TolerationSeconds any
-	Value any
+	Value             any
 }
 
 type Pod_Spec_TopologySpreadConstraints struct {
-	LabelSelector any
-	MatchLabelKeys any
-	MaxSkew any
-	MinDomains any
+	LabelSelector      any
+	MatchLabelKeys     any
+	MaxSkew            any
+	MinDomains         any
 	NodeAffinityPolicy any
-	NodeTaintsPolicy any
-	TopologyKey any
-	WhenUnsatisfiable any
+	NodeTaintsPolicy   any
+	TopologyKey        any
+	WhenUnsatisfiable  any
 }
 
 type Pod_Spec_Volumes_AwsElasticBlockStore struct {
-	FsType any
+	FsType    any
 	Partition any
-	ReadOnly any
-	VolumeId any
+	ReadOnly  any
+	VolumeId  any
 }
 
 type Pod_Spec_Volumes_AzureDisk struct {
 	CachingMode any
-	DiskName any
-	DiskUri any
-	FsType any
-	Kind any
-	ReadOnly any
+	DiskName    any
+	DiskUri     any
+	FsType      any
+	Kind        any
+	ReadOnly    any
 }
 
 type Pod_Spec_Volumes_AzureFile struct {
-	ReadOnly any
+	ReadOnly   any
 	SecretName any
-	ShareName any
+	ShareName  any
 }
 
 type Pod_Spec_Volumes_Cephfs struct {
-	Monitors any
-	Path any
-	ReadOnly any
+	Monitors   any
+	Path       any
+	ReadOnly   any
 	SecretFile any
-	SecretRef any
-	User any
+	SecretRef  any
+	User       any
 }
 
 type Pod_Spec_Volumes_Cinder struct {
-	FsType any
-	ReadOnly any
+	FsType    any
+	ReadOnly  any
 	SecretRef any
-	VolumeId any
+	VolumeId  any
 }
 
 type Pod_Spec_Volumes_ConfigMap_Items struct {
-	Key any
+	Key  any
 	Mode any
 	Path any
 	User any
@@ -506,72 +506,72 @@ type Pod_Spec_Volumes_ConfigMap_Items struct {
 type Pod_Spec_Volumes_ConfigMap struct {
 	DefaultMode any
 	DefaultUser any
-	Items any
-	Name any
-	Optional any
+	Items       any
+	Name        any
+	Optional    any
 }
 
 type Pod_Spec_Volumes_Csi struct {
-	Driver any
-	FsType any
+	Driver               any
+	FsType               any
 	NodePublishSecretRef any
-	ReadOnly any
-	VolumeAttributes any
+	ReadOnly             any
+	VolumeAttributes     any
 }
 
 type Pod_Spec_Volumes_DownwardApi_Items struct {
-	FieldRef any
-	Mode any
-	Path any
+	FieldRef         any
+	Mode             any
+	Path             any
 	ResourceFieldRef any
-	User any
+	User             any
 }
 
 type Pod_Spec_Volumes_DownwardApi struct {
 	DefaultMode any
 	DefaultUser any
-	Items any
+	Items       any
 }
 
 type Pod_Spec_Volumes_EmptyDir struct {
-	Medium any
-	Mode any
+	Medium    any
+	Mode      any
 	SizeLimit any
 }
 
 type Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSource struct {
 	ApiGroup any
-	Kind any
-	Name any
+	Kind     any
+	Name     any
 }
 
 type Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_DataSourceRef struct {
-	ApiGroup any
-	Kind any
-	Name any
+	ApiGroup  any
+	Kind      any
+	Name      any
 	Namespace any
 }
 
 type Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec_Resources struct {
-	Limits any
+	Limits   any
 	Requests any
 }
 
 type Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate_Spec struct {
-	AccessModes any
-	DataSource any
-	DataSourceRef any
-	Resources any
-	Selector any
-	StorageClassName any
+	AccessModes               any
+	DataSource                any
+	DataSourceRef             any
+	Resources                 any
+	Selector                  any
+	StorageClassName          any
 	VolumeAttributesClassName any
-	VolumeMode any
-	VolumeName any
+	VolumeMode                any
+	VolumeName                any
 }
 
 type Pod_Spec_Volumes_Ephemeral_VolumeClaimTemplate struct {
 	Metadata any
-	Spec any
+	Spec     any
 }
 
 type Pod_Spec_Volumes_Ephemeral struct {
@@ -579,18 +579,18 @@ type Pod_Spec_Volumes_Ephemeral struct {
 }
 
 type Pod_Spec_Volumes_Fc struct {
-	FsType any
-	Lun any
-	ReadOnly any
+	FsType     any
+	Lun        any
+	ReadOnly   any
 	TargetWwns any
-	Wwids any
+	Wwids      any
 }
 
 type Pod_Spec_Volumes_FlexVolume struct {
-	Driver any
-	FsType any
-	Options any
-	ReadOnly any
+	Driver    any
+	FsType    any
+	Options   any
+	ReadOnly  any
 	SecretRef any
 }
 
@@ -600,22 +600,22 @@ type Pod_Spec_Volumes_Flocker struct {
 }
 
 type Pod_Spec_Volumes_GcePersistentDisk struct {
-	FsType any
+	FsType    any
 	Partition any
-	PdName any
-	ReadOnly any
+	PdName    any
+	ReadOnly  any
 }
 
 type Pod_Spec_Volumes_GitRepo struct {
-	Directory any
+	Directory  any
 	Repository any
-	Revision any
+	Revision   any
 }
 
 type Pod_Spec_Volumes_Glusterfs struct {
 	Endpoints any
-	Path any
-	ReadOnly any
+	Path      any
+	ReadOnly  any
 }
 
 type Pod_Spec_Volumes_HostPath struct {
@@ -625,57 +625,57 @@ type Pod_Spec_Volumes_HostPath struct {
 
 type Pod_Spec_Volumes_Image struct {
 	PullPolicy any
-	Reference any
+	Reference  any
 }
 
 type Pod_Spec_Volumes_Iscsi struct {
 	ChapAuthDiscovery any
-	ChapAuthSession any
-	FsType any
-	InitiatorName any
-	Iqn any
-	IscsiInterface any
-	Lun any
-	Portals any
-	ReadOnly any
-	SecretRef any
-	TargetPortal any
+	ChapAuthSession   any
+	FsType            any
+	InitiatorName     any
+	Iqn               any
+	IscsiInterface    any
+	Lun               any
+	Portals           any
+	ReadOnly          any
+	SecretRef         any
+	TargetPortal      any
 }
 
 type Pod_Spec_Volumes_Nfs struct {
-	Path any
+	Path     any
 	ReadOnly any
-	Server any
+	Server   any
 }
 
 type Pod_Spec_Volumes_PersistentVolumeClaim struct {
 	ClaimName any
-	ReadOnly any
+	ReadOnly  any
 }
 
 type Pod_Spec_Volumes_PhotonPersistentDisk struct {
 	FsType any
-	PdId any
+	PdId   any
 }
 
 type Pod_Spec_Volumes_PortworxVolume struct {
-	FsType any
+	FsType   any
 	ReadOnly any
 	VolumeId any
 }
 
 type Pod_Spec_Volumes_Projected_Sources_ClusterTrustBundle struct {
 	LabelSelector any
-	Name any
-	Optional any
-	Path any
-	SignerName any
-	User any
+	Name          any
+	Optional      any
+	Path          any
+	SignerName    any
+	User          any
 }
 
 type Pod_Spec_Volumes_Projected_Sources_ConfigMap struct {
-	Items any
-	Name any
+	Items    any
+	Name     any
 	Optional any
 }
 
@@ -686,124 +686,124 @@ type Pod_Spec_Volumes_Projected_Sources_DownwardApi struct {
 type Pod_Spec_Volumes_Projected_Sources_PodCertificate struct {
 	CertificateChainPath any
 	CredentialBundlePath any
-	KeyPath any
-	KeyType any
+	KeyPath              any
+	KeyType              any
 	MaxExpirationSeconds any
-	SignerName any
-	User any
-	UserAnnotations any
+	SignerName           any
+	User                 any
+	UserAnnotations      any
 }
 
 type Pod_Spec_Volumes_Projected_Sources_ServiceAccountToken struct {
-	Audience any
+	Audience          any
 	ExpirationSeconds any
-	Path any
-	User any
+	Path              any
+	User              any
 }
 
 type Pod_Spec_Volumes_Projected_Sources struct {
-	ClusterTrustBundle any
-	ConfigMap any
-	DownwardApi any
-	PodCertificate any
-	Secret any
+	ClusterTrustBundle  any
+	ConfigMap           any
+	DownwardApi         any
+	PodCertificate      any
+	Secret              any
 	ServiceAccountToken any
 }
 
 type Pod_Spec_Volumes_Projected struct {
 	DefaultMode any
 	DefaultUser any
-	Sources any
+	Sources     any
 }
 
 type Pod_Spec_Volumes_Quobyte struct {
-	Group any
+	Group    any
 	ReadOnly any
 	Registry any
-	Tenant any
-	User any
-	Volume any
+	Tenant   any
+	User     any
+	Volume   any
 }
 
 type Pod_Spec_Volumes_Rbd struct {
-	FsType any
-	Image any
-	Keyring any
-	Monitors any
-	Pool any
-	ReadOnly any
+	FsType    any
+	Image     any
+	Keyring   any
+	Monitors  any
+	Pool      any
+	ReadOnly  any
 	SecretRef any
-	User any
+	User      any
 }
 
 type Pod_Spec_Volumes_ScaleIo struct {
-	FsType any
-	Gateway any
+	FsType           any
+	Gateway          any
 	ProtectionDomain any
-	ReadOnly any
-	SecretRef any
-	SslEnabled any
-	StorageMode any
-	StoragePool any
-	System any
-	VolumeName any
+	ReadOnly         any
+	SecretRef        any
+	SslEnabled       any
+	StorageMode      any
+	StoragePool      any
+	System           any
+	VolumeName       any
 }
 
 type Pod_Spec_Volumes_Secret struct {
 	DefaultMode any
 	DefaultUser any
-	Items any
-	Optional any
-	SecretName any
+	Items       any
+	Optional    any
+	SecretName  any
 }
 
 type Pod_Spec_Volumes_Storageos struct {
-	FsType any
-	ReadOnly any
-	SecretRef any
-	VolumeName any
+	FsType          any
+	ReadOnly        any
+	SecretRef       any
+	VolumeName      any
 	VolumeNamespace any
 }
 
 type Pod_Spec_Volumes_VsphereVolume struct {
-	FsType any
-	StoragePolicyId any
+	FsType            any
+	StoragePolicyId   any
 	StoragePolicyName any
-	VolumePath any
+	VolumePath        any
 }
 
 type Pod_Spec_Volumes struct {
-	AwsElasticBlockStore any
-	AzureDisk any
-	AzureFile any
-	Cephfs any
-	Cinder any
-	ConfigMap any
-	Csi any
-	DownwardApi any
-	EmptyDir any
-	Ephemeral any
-	Fc any
-	FlexVolume any
-	Flocker any
-	GcePersistentDisk any
-	GitRepo any
-	Glusterfs any
-	HostPath any
-	Image any
-	Iscsi any
-	Name any
-	Nfs any
+	AwsElasticBlockStore  any
+	AzureDisk             any
+	AzureFile             any
+	Cephfs                any
+	Cinder                any
+	ConfigMap             any
+	Csi                   any
+	DownwardApi           any
+	EmptyDir              any
+	Ephemeral             any
+	Fc                    any
+	FlexVolume            any
+	Flocker               any
+	GcePersistentDisk     any
+	GitRepo               any
+	Glusterfs             any
+	HostPath              any
+	Image                 any
+	Iscsi                 any
+	Name                  any
+	Nfs                   any
 	PersistentVolumeClaim any
-	PhotonPersistentDisk any
-	PortworxVolume any
-	Projected any
-	Quobyte any
-	Rbd any
-	ScaleIo any
-	Secret any
-	Storageos any
-	VsphereVolume any
+	PhotonPersistentDisk  any
+	PortworxVolume        any
+	Projected             any
+	Quobyte               any
+	Rbd                   any
+	ScaleIo               any
+	Secret                any
+	Storageos             any
+	VsphereVolume         any
 }
 
 type Pod_Spec struct {
@@ -896,23 +896,23 @@ type Pod_Spec struct {
 }
 
 type Pod_Status_Conditions struct {
-	LastProbeTime any
+	LastProbeTime      any
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type Pod_Status_ContainerStatuses_AllocatedResourcesStatus_Resources struct {
-	Health any
-	Message any
+	Health     any
+	Message    any
 	ResourceId any
 }
 
 type Pod_Status_ContainerStatuses_AllocatedResourcesStatus struct {
-	Name any
+	Name      any
 	Resources any
 }
 
@@ -922,29 +922,29 @@ type Pod_Status_ContainerStatuses_LastState_Running struct {
 
 type Pod_Status_ContainerStatuses_LastState_Terminated struct {
 	ContainerId any
-	ExitCode any
-	FinishedAt any
-	Message any
-	Reason any
-	Signal any
-	StartedAt any
+	ExitCode    any
+	FinishedAt  any
+	Message     any
+	Reason      any
+	Signal      any
+	StartedAt   any
 }
 
 type Pod_Status_ContainerStatuses_LastState_Waiting struct {
 	Message any
-	Reason any
+	Reason  any
 }
 
 type Pod_Status_ContainerStatuses_LastState struct {
-	Running any
+	Running    any
 	Terminated any
-	Waiting any
+	Waiting    any
 }
 
 type Pod_Status_ContainerStatuses_User_Linux struct {
-	Gid any
+	Gid                any
 	SupplementalGroups any
-	Uid any
+	Uid                any
 }
 
 type Pod_Status_ContainerStatuses_User struct {
@@ -960,35 +960,35 @@ type Pod_Status_ContainerStatuses_VolumeMounts_VolumeStatus struct {
 }
 
 type Pod_Status_ContainerStatuses_VolumeMounts struct {
-	MountPath any
-	Name any
-	ReadOnly any
+	MountPath         any
+	Name              any
+	ReadOnly          any
 	RecursiveReadOnly any
-	VolumeStatus any
+	VolumeStatus      any
 }
 
 type Pod_Status_ContainerStatuses struct {
-	AllocatedResources any
+	AllocatedResources       any
 	AllocatedResourcesStatus any
-	ContainerId any
-	Image any
-	ImageId any
-	LastState any
-	Name any
-	Ready any
-	Resources any
-	RestartCount any
-	Started any
-	State any
-	StopSignal any
-	User any
-	VolumeMounts any
+	ContainerId              any
+	Image                    any
+	ImageId                  any
+	LastState                any
+	Name                     any
+	Ready                    any
+	Resources                any
+	RestartCount             any
+	Started                  any
+	State                    any
+	StopSignal               any
+	User                     any
+	VolumeMounts             any
 }
 
 type Pod_Status_ExtendedResourceClaimStatus_RequestMappings struct {
 	ContainerName any
-	RequestName any
-	ResourceName any
+	RequestName   any
+	ResourceName  any
 }
 
 type Pod_Status_ExtendedResourceClaimStatus struct {
@@ -1003,38 +1003,38 @@ type Pod_Status_HostIps struct {
 }
 
 type Pod_Status_NodeAllocatableResourceClaimStatuses_Mapping struct {
-	Name any
+	Name     any
 	Quantity any
 }
 
 type Pod_Status_NodeAllocatableResourceClaimStatuses_Overhead struct {
-	Name any
+	Name         any
 	PerContainer any
-	PerPod any
+	PerPod       any
 }
 
 type Pod_Status_NodeAllocatableResourceClaimStatuses struct {
-	Containers any
-	Mapping any
-	Overhead any
+	Containers        any
+	Mapping           any
+	Overhead          any
 	ResourceClaimName any
 }
 
 type Pod_Status_ResourceClaimStatuses struct {
-	Name any
+	Name              any
 	ResourceClaimName any
 }
 
 type Pod_Status_VolumeHealth_HealthConditions struct {
 	Message any
-	Reason any
-	Status any
+	Reason  any
+	Status  any
 }
 
 type Pod_Status_VolumeHealth struct {
-	HealthConditions any
+	HealthConditions   any
 	LastTransitionTime any
-	Name any
+	Name               any
 }
 
 type Pod_Status struct {
@@ -1102,6 +1102,5 @@ type PodAttrs struct {
 
 var Pod = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_pod",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

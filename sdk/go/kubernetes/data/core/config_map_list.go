@@ -4,49 +4,49 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigMapList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type ConfigMapList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type ConfigMapList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type ConfigMapList_Items struct {
 	ApiVersion any
 	BinaryData any
-	Data any
-	Immutable any
-	Kind any
-	Metadata any
+	Data       any
+	Immutable  any
+	Kind       any
+	Metadata   any
 }
 
 type ConfigMapList_Metadata_ShardInfo struct {
@@ -83,6 +83,5 @@ type ConfigMapListAttrs struct {
 
 var ConfigMapList = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_config_map_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

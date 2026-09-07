@@ -117,95 +117,95 @@ type Endpoints_Subsets struct {
 }
 
 var Endpoints_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var Endpoints_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var Endpoints_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: Endpoints_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: Endpoints_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   Endpoints_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   Endpoints_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var Endpoints_Subsets_Addresses_TargetRefFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":      ubx.FieldSpec{WireName: "api_version"},
+	"FieldPath":       ubx.FieldSpec{WireName: "field_path"},
+	"Kind":            ubx.FieldSpec{WireName: "kind"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"Namespace":       ubx.FieldSpec{WireName: "namespace"},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var Endpoints_Subsets_AddressesFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"NodeName": ubx.FieldSpec{WireName: "node_name"},
-		"TargetRef": ubx.FieldSpec{
-			WireName: "target_ref",
-			Kind: "object",
-			Fields: Endpoints_Subsets_Addresses_TargetRefFields,
-		},
-	}
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"Ip":       ubx.FieldSpec{WireName: "ip"},
+	"NodeName": ubx.FieldSpec{WireName: "node_name"},
+	"TargetRef": ubx.FieldSpec{
+		WireName: "target_ref",
+		Kind:     "object",
+		Fields:   Endpoints_Subsets_Addresses_TargetRefFields,
+	},
+}
 
 var Endpoints_Subsets_PortsFields = ubx.FieldMap{
-		"AppProtocol": ubx.FieldSpec{WireName: "app_protocol"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"AppProtocol": ubx.FieldSpec{WireName: "app_protocol"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+	"Protocol":    ubx.FieldSpec{WireName: "protocol"},
+}
 
 var Endpoints_SubsetsFields = ubx.FieldMap{
-		"Addresses": ubx.FieldSpec{
-			WireName: "addresses",
-			Kind: "list",
-			Fields: Endpoints_Subsets_AddressesFields,
-		},
-		"NotReadyAddresses": ubx.FieldSpec{
-			WireName: "not_ready_addresses",
-			Kind: "list",
-			Fields: Endpoints_Subsets_AddressesFields,
-		},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: Endpoints_Subsets_PortsFields,
-		},
-	}
+	"Addresses": ubx.FieldSpec{
+		WireName: "addresses",
+		Kind:     "list",
+		Fields:   Endpoints_Subsets_AddressesFields,
+	},
+	"NotReadyAddresses": ubx.FieldSpec{
+		WireName: "not_ready_addresses",
+		Kind:     "list",
+		Fields:   Endpoints_Subsets_AddressesFields,
+	},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   Endpoints_Subsets_PortsFields,
+	},
+}
 
 type EndpointsConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -241,18 +241,18 @@ var Endpoints = ubx.ResourceBinding{
 	WireType: "kubernetes_core_endpoints",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: Endpoints_MetadataFields,
+			Kind:     "object",
+			Fields:   Endpoints_MetadataFields,
 		},
 		"Subsets": ubx.FieldSpec{
 			WireName: "subsets",
-			Kind: "list",
-			Fields: Endpoints_SubsetsFields,
+			Kind:     "list",
+			Fields:   Endpoints_SubsetsFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

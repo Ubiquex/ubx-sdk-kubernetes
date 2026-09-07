@@ -4,29 +4,29 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ComponentConditionList_Conditions struct {
-	Error any
+	Error   any
 	Message any
-	Status any
-	Type any
+	Status  any
+	Type    any
 }
 
 type ComponentConditionList_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type ComponentConditionList_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type ComponentConditionList_Metadata struct {
@@ -78,6 +78,5 @@ type ComponentConditionListAttrs struct {
 
 var ComponentConditionList = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_component_condition_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

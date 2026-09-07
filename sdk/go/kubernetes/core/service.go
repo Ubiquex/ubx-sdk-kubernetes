@@ -184,148 +184,148 @@ type Service_Status struct {
 }
 
 var Service_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var Service_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var Service_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: Service_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: Service_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   Service_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   Service_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var Service_Spec_PortsFields = ubx.FieldMap{
-		"AppProtocol": ubx.FieldSpec{WireName: "app_protocol"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NodePort": ubx.FieldSpec{WireName: "node_port"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"TargetPort": ubx.FieldSpec{WireName: "target_port"},
-	}
+	"AppProtocol": ubx.FieldSpec{WireName: "app_protocol"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"NodePort":    ubx.FieldSpec{WireName: "node_port"},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+	"Protocol":    ubx.FieldSpec{WireName: "protocol"},
+	"TargetPort":  ubx.FieldSpec{WireName: "target_port"},
+}
 
 var Service_Spec_SessionAffinityConfig_ClientIpFields = ubx.FieldMap{
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 var Service_Spec_SessionAffinityConfigFields = ubx.FieldMap{
-		"ClientIp": ubx.FieldSpec{
-			WireName: "client_ip",
-			Kind: "object",
-			Fields: Service_Spec_SessionAffinityConfig_ClientIpFields,
-		},
-	}
+	"ClientIp": ubx.FieldSpec{
+		WireName: "client_ip",
+		Kind:     "object",
+		Fields:   Service_Spec_SessionAffinityConfig_ClientIpFields,
+	},
+}
 
 var Service_SpecFields = ubx.FieldMap{
-		"AllocateLoadBalancerNodePorts": ubx.FieldSpec{WireName: "allocate_load_balancer_node_ports"},
-		"ClusterIp": ubx.FieldSpec{WireName: "cluster_ip"},
-		"ClusterIps": ubx.FieldSpec{WireName: "cluster_ips"},
-		"ExternalIps": ubx.FieldSpec{WireName: "external_ips"},
-		"ExternalName": ubx.FieldSpec{WireName: "external_name"},
-		"ExternalTrafficPolicy": ubx.FieldSpec{WireName: "external_traffic_policy"},
-		"HealthCheckNodePort": ubx.FieldSpec{WireName: "health_check_node_port"},
-		"InternalTrafficPolicy": ubx.FieldSpec{WireName: "internal_traffic_policy"},
-		"IpFamilies": ubx.FieldSpec{WireName: "ip_families"},
-		"IpFamilyPolicy": ubx.FieldSpec{WireName: "ip_family_policy"},
-		"LoadBalancerClass": ubx.FieldSpec{WireName: "load_balancer_class"},
-		"LoadBalancerIp": ubx.FieldSpec{WireName: "load_balancer_ip"},
-		"LoadBalancerSourceRanges": ubx.FieldSpec{WireName: "load_balancer_source_ranges"},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: Service_Spec_PortsFields,
-		},
-		"PublishNotReadyAddresses": ubx.FieldSpec{WireName: "publish_not_ready_addresses"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-		"SessionAffinity": ubx.FieldSpec{WireName: "session_affinity"},
-		"SessionAffinityConfig": ubx.FieldSpec{
-			WireName: "session_affinity_config",
-			Kind: "object",
-			Fields: Service_Spec_SessionAffinityConfigFields,
-		},
-		"TrafficDistribution": ubx.FieldSpec{WireName: "traffic_distribution"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AllocateLoadBalancerNodePorts": ubx.FieldSpec{WireName: "allocate_load_balancer_node_ports"},
+	"ClusterIp":                     ubx.FieldSpec{WireName: "cluster_ip"},
+	"ClusterIps":                    ubx.FieldSpec{WireName: "cluster_ips"},
+	"ExternalIps":                   ubx.FieldSpec{WireName: "external_ips"},
+	"ExternalName":                  ubx.FieldSpec{WireName: "external_name"},
+	"ExternalTrafficPolicy":         ubx.FieldSpec{WireName: "external_traffic_policy"},
+	"HealthCheckNodePort":           ubx.FieldSpec{WireName: "health_check_node_port"},
+	"InternalTrafficPolicy":         ubx.FieldSpec{WireName: "internal_traffic_policy"},
+	"IpFamilies":                    ubx.FieldSpec{WireName: "ip_families"},
+	"IpFamilyPolicy":                ubx.FieldSpec{WireName: "ip_family_policy"},
+	"LoadBalancerClass":             ubx.FieldSpec{WireName: "load_balancer_class"},
+	"LoadBalancerIp":                ubx.FieldSpec{WireName: "load_balancer_ip"},
+	"LoadBalancerSourceRanges":      ubx.FieldSpec{WireName: "load_balancer_source_ranges"},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   Service_Spec_PortsFields,
+	},
+	"PublishNotReadyAddresses": ubx.FieldSpec{WireName: "publish_not_ready_addresses"},
+	"Selector":                 ubx.FieldSpec{WireName: "selector"},
+	"SessionAffinity":          ubx.FieldSpec{WireName: "session_affinity"},
+	"SessionAffinityConfig": ubx.FieldSpec{
+		WireName: "session_affinity_config",
+		Kind:     "object",
+		Fields:   Service_Spec_SessionAffinityConfigFields,
+	},
+	"TrafficDistribution": ubx.FieldSpec{WireName: "traffic_distribution"},
+	"Type":                ubx.FieldSpec{WireName: "type"},
+}
 
 var Service_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var Service_Status_LoadBalancer_Ingress_PortsFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{WireName: "error"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"Error":    ubx.FieldSpec{WireName: "error"},
+	"Port":     ubx.FieldSpec{WireName: "port"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var Service_Status_LoadBalancer_IngressFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"IpMode": ubx.FieldSpec{WireName: "ip_mode"},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: Service_Status_LoadBalancer_Ingress_PortsFields,
-		},
-	}
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"Ip":       ubx.FieldSpec{WireName: "ip"},
+	"IpMode":   ubx.FieldSpec{WireName: "ip_mode"},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   Service_Status_LoadBalancer_Ingress_PortsFields,
+	},
+}
 
 var Service_Status_LoadBalancerFields = ubx.FieldMap{
-		"Ingress": ubx.FieldSpec{
-			WireName: "ingress",
-			Kind: "list",
-			Fields: Service_Status_LoadBalancer_IngressFields,
-		},
-	}
+	"Ingress": ubx.FieldSpec{
+		WireName: "ingress",
+		Kind:     "list",
+		Fields:   Service_Status_LoadBalancer_IngressFields,
+	},
+}
 
 var Service_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: Service_Status_ConditionsFields,
-		},
-		"LoadBalancer": ubx.FieldSpec{
-			WireName: "load_balancer",
-			Kind: "object",
-			Fields: Service_Status_LoadBalancerFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   Service_Status_ConditionsFields,
+	},
+	"LoadBalancer": ubx.FieldSpec{
+		WireName: "load_balancer",
+		Kind:     "object",
+		Fields:   Service_Status_LoadBalancerFields,
+	},
+}
 
 type ServiceConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -365,23 +365,23 @@ var Service = ubx.ResourceBinding{
 	WireType: "kubernetes_core_service",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: Service_MetadataFields,
+			Kind:     "object",
+			Fields:   Service_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: Service_SpecFields,
+			Kind:     "object",
+			Fields:   Service_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: Service_StatusFields,
+			Kind:     "object",
+			Fields:   Service_StatusFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

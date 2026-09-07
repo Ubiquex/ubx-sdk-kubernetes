@@ -4,22 +4,22 @@ package networking
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceCidr_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type ServiceCidr_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type ServiceCidr_Metadata struct {
@@ -62,11 +62,11 @@ type ServiceCidr_Spec struct {
 
 type ServiceCidr_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type ServiceCidr_Status struct {
@@ -92,6 +92,5 @@ type ServiceCidrAttrs struct {
 
 var ServiceCidr = ubx.DataSourceBinding{
 	WireType: "kubernetes_networking_service_cidr",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

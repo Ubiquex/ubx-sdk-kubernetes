@@ -4,8 +4,8 @@ package discovery
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndpointSliceList_Items_Endpoints_Conditions struct {
-	Ready any
-	Serving any
+	Ready       any
+	Serving     any
 	Terminating any
 }
 
@@ -19,77 +19,77 @@ type EndpointSliceList_Items_Endpoints_Hints struct {
 }
 
 type EndpointSliceList_Items_Endpoints_TargetRef struct {
-	ApiVersion any
-	FieldPath any
-	Kind any
-	Name any
-	Namespace any
+	ApiVersion      any
+	FieldPath       any
+	Kind            any
+	Name            any
+	Namespace       any
 	ResourceVersion any
-	Uid any
+	Uid             any
 }
 
 type EndpointSliceList_Items_Endpoints struct {
-	Addresses any
-	Conditions any
+	Addresses          any
+	Conditions         any
 	DeprecatedTopology any
-	Hints any
-	Hostname any
-	NodeName any
-	TargetRef any
-	Zone any
+	Hints              any
+	Hostname           any
+	NodeName           any
+	TargetRef          any
+	Zone               any
 }
 
 type EndpointSliceList_Items_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type EndpointSliceList_Items_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type EndpointSliceList_Items_Metadata struct {
-	Annotations any
-	CreationTimestamp any
+	Annotations                any
+	CreationTimestamp          any
 	DeletionGracePeriodSeconds any
-	DeletionTimestamp any
-	Finalizers any
-	GenerateName any
-	Generation any
-	Labels any
-	ManagedFields any
-	Name any
-	Namespace any
-	OwnerReferences any
-	ResourceVersion any
-	SelfLink any
-	Uid any
+	DeletionTimestamp          any
+	Finalizers                 any
+	GenerateName               any
+	Generation                 any
+	Labels                     any
+	ManagedFields              any
+	Name                       any
+	Namespace                  any
+	OwnerReferences            any
+	ResourceVersion            any
+	SelfLink                   any
+	Uid                        any
 }
 
 type EndpointSliceList_Items_Ports struct {
 	AppProtocol any
-	Name any
-	Port any
-	Protocol any
+	Name        any
+	Port        any
+	Protocol    any
 }
 
 type EndpointSliceList_Items struct {
 	AddressType any
-	ApiVersion any
-	Endpoints any
-	Kind any
-	Metadata any
-	Ports any
+	ApiVersion  any
+	Endpoints   any
+	Kind        any
+	Metadata    any
+	Ports       any
 }
 
 type EndpointSliceList_Metadata_ShardInfo struct {
@@ -126,6 +126,5 @@ type EndpointSliceListAttrs struct {
 
 var EndpointSliceList = ubx.DataSourceBinding{
 	WireType: "kubernetes_discovery_endpoint_slice_list",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

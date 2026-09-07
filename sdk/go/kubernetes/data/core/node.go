@@ -4,22 +4,22 @@ package core
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Node_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type Node_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type Node_Metadata struct {
@@ -79,10 +79,10 @@ type Node_Spec_PodPreemptionPolicy struct {
 }
 
 type Node_Spec_Taints struct {
-	Effect any
-	Key any
+	Effect    any
+	Key       any
 	TimeAdded any
-	Value any
+	Value     any
 }
 
 type Node_Spec struct {
@@ -106,16 +106,16 @@ type Node_Spec struct {
 
 type Node_Status_Addresses struct {
 	Address any
-	Type any
+	Type    any
 }
 
 type Node_Status_Conditions struct {
-	LastHeartbeatTime any
+	LastHeartbeatTime  any
 	LastTransitionTime any
-	Message any
-	Reason any
-	Status any
-	Type any
+	Message            any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type Node_Status_Config struct {
@@ -145,7 +145,7 @@ type Node_Status_Features struct {
 }
 
 type Node_Status_Images struct {
-	Names any
+	Names     any
 	SizeBytes any
 }
 
@@ -183,17 +183,17 @@ type Node_Status_NodeInfo struct {
 
 type Node_Status_RuntimeHandlers_Features struct {
 	RecursiveReadOnlyMounts any
-	UserNamespaces any
+	UserNamespaces          any
 }
 
 type Node_Status_RuntimeHandlers struct {
 	Features any
-	Name any
+	Name     any
 }
 
 type Node_Status_VolumesAttached struct {
 	DevicePath any
-	Name any
+	Name       any
 }
 
 type Node_Status struct {
@@ -245,6 +245,5 @@ type NodeAttrs struct {
 
 var Node = ubx.DataSourceBinding{
 	WireType: "kubernetes_core_node",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

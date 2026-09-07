@@ -102,74 +102,74 @@ type V1HorizontalPodAutoscaler_Status struct {
 }
 
 var V1HorizontalPodAutoscaler_Metadata_ManagedFieldsFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"FieldsType": ubx.FieldSpec{WireName: "fields_type"},
-		"FieldsV1": ubx.FieldSpec{WireName: "fields_v1"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"Subresource": ubx.FieldSpec{WireName: "subresource"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"ApiVersion":  ubx.FieldSpec{WireName: "api_version"},
+	"FieldsType":  ubx.FieldSpec{WireName: "fields_type"},
+	"FieldsV1":    ubx.FieldSpec{WireName: "fields_v1"},
+	"Manager":     ubx.FieldSpec{WireName: "manager"},
+	"Operation":   ubx.FieldSpec{WireName: "operation"},
+	"Subresource": ubx.FieldSpec{WireName: "subresource"},
+	"Time":        ubx.FieldSpec{WireName: "time"},
+}
 
 var V1HorizontalPodAutoscaler_Metadata_OwnerReferencesFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
-		"Controller": ubx.FieldSpec{WireName: "controller"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ApiVersion":         ubx.FieldSpec{WireName: "api_version"},
+	"BlockOwnerDeletion": ubx.FieldSpec{WireName: "block_owner_deletion"},
+	"Controller":         ubx.FieldSpec{WireName: "controller"},
+	"Kind":               ubx.FieldSpec{WireName: "kind"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"Uid":                ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1HorizontalPodAutoscaler_MetadataFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
-		"DeletionTimestamp": ubx.FieldSpec{WireName: "deletion_timestamp"},
-		"Finalizers": ubx.FieldSpec{WireName: "finalizers"},
-		"GenerateName": ubx.FieldSpec{WireName: "generate_name"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedFields": ubx.FieldSpec{
-			WireName: "managed_fields",
-			Kind: "list",
-			Fields: V1HorizontalPodAutoscaler_Metadata_ManagedFieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"OwnerReferences": ubx.FieldSpec{
-			WireName: "owner_references",
-			Kind: "list",
-			Fields: V1HorizontalPodAutoscaler_Metadata_OwnerReferencesFields,
-		},
-		"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":                ubx.FieldSpec{WireName: "annotations"},
+	"CreationTimestamp":          ubx.FieldSpec{WireName: "creation_timestamp"},
+	"DeletionGracePeriodSeconds": ubx.FieldSpec{WireName: "deletion_grace_period_seconds"},
+	"DeletionTimestamp":          ubx.FieldSpec{WireName: "deletion_timestamp"},
+	"Finalizers":                 ubx.FieldSpec{WireName: "finalizers"},
+	"GenerateName":               ubx.FieldSpec{WireName: "generate_name"},
+	"Generation":                 ubx.FieldSpec{WireName: "generation"},
+	"Labels":                     ubx.FieldSpec{WireName: "labels"},
+	"ManagedFields": ubx.FieldSpec{
+		WireName: "managed_fields",
+		Kind:     "list",
+		Fields:   V1HorizontalPodAutoscaler_Metadata_ManagedFieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"OwnerReferences": ubx.FieldSpec{
+		WireName: "owner_references",
+		Kind:     "list",
+		Fields:   V1HorizontalPodAutoscaler_Metadata_OwnerReferencesFields,
+	},
+	"ResourceVersion": ubx.FieldSpec{WireName: "resource_version"},
+	"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+	"Uid":             ubx.FieldSpec{WireName: "uid"},
+}
 
 var V1HorizontalPodAutoscaler_Spec_ScaleTargetRefFields = ubx.FieldMap{
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var V1HorizontalPodAutoscaler_SpecFields = ubx.FieldMap{
-		"MaxReplicas": ubx.FieldSpec{WireName: "max_replicas"},
-		"MinReplicas": ubx.FieldSpec{WireName: "min_replicas"},
-		"ScaleTargetRef": ubx.FieldSpec{
-			WireName: "scale_target_ref",
-			Kind: "object",
-			Fields: V1HorizontalPodAutoscaler_Spec_ScaleTargetRefFields,
-		},
-		"TargetCpuutilizationPercentage": ubx.FieldSpec{WireName: "target_cpuutilization_percentage"},
-	}
+	"MaxReplicas": ubx.FieldSpec{WireName: "max_replicas"},
+	"MinReplicas": ubx.FieldSpec{WireName: "min_replicas"},
+	"ScaleTargetRef": ubx.FieldSpec{
+		WireName: "scale_target_ref",
+		Kind:     "object",
+		Fields:   V1HorizontalPodAutoscaler_Spec_ScaleTargetRefFields,
+	},
+	"TargetCpuutilizationPercentage": ubx.FieldSpec{WireName: "target_cpuutilization_percentage"},
+}
 
 var V1HorizontalPodAutoscaler_StatusFields = ubx.FieldMap{
-		"CurrentCpuutilizationPercentage": ubx.FieldSpec{WireName: "current_cpuutilization_percentage"},
-		"CurrentReplicas": ubx.FieldSpec{WireName: "current_replicas"},
-		"DesiredReplicas": ubx.FieldSpec{WireName: "desired_replicas"},
-		"LastScaleTime": ubx.FieldSpec{WireName: "last_scale_time"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-	}
+	"CurrentCpuutilizationPercentage": ubx.FieldSpec{WireName: "current_cpuutilization_percentage"},
+	"CurrentReplicas":                 ubx.FieldSpec{WireName: "current_replicas"},
+	"DesiredReplicas":                 ubx.FieldSpec{WireName: "desired_replicas"},
+	"LastScaleTime":                   ubx.FieldSpec{WireName: "last_scale_time"},
+	"ObservedGeneration":              ubx.FieldSpec{WireName: "observed_generation"},
+}
 
 type V1HorizontalPodAutoscalerConfig struct {
 	// APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
@@ -209,23 +209,23 @@ var V1HorizontalPodAutoscaler = ubx.ResourceBinding{
 	WireType: "kubernetes_autoscaling_v1_horizontal_pod_autoscaler",
 	Fields: ubx.FieldMap{
 		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":       ubx.FieldSpec{WireName: "kind"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: V1HorizontalPodAutoscaler_MetadataFields,
+			Kind:     "object",
+			Fields:   V1HorizontalPodAutoscaler_MetadataFields,
 		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: V1HorizontalPodAutoscaler_SpecFields,
+			Kind:     "object",
+			Fields:   V1HorizontalPodAutoscaler_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: V1HorizontalPodAutoscaler_StatusFields,
+			Kind:     "object",
+			Fields:   V1HorizontalPodAutoscaler_StatusFields,
 		},
 		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

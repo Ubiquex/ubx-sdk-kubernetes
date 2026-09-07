@@ -4,22 +4,22 @@ package storagemigration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type StorageVersionMigration_Metadata_ManagedFields struct {
-	ApiVersion any
-	FieldsType any
-	FieldsV1 any
-	Manager any
-	Operation any
+	ApiVersion  any
+	FieldsType  any
+	FieldsV1    any
+	Manager     any
+	Operation   any
 	Subresource any
-	Time any
+	Time        any
 }
 
 type StorageVersionMigration_Metadata_OwnerReferences struct {
-	ApiVersion any
+	ApiVersion         any
 	BlockOwnerDeletion any
-	Controller any
-	Kind any
-	Name any
-	Uid any
+	Controller         any
+	Kind               any
+	Name               any
+	Uid                any
 }
 
 type StorageVersionMigration_Metadata struct {
@@ -56,7 +56,7 @@ type StorageVersionMigration_Metadata struct {
 }
 
 type StorageVersionMigration_Spec_Resource struct {
-	Group any
+	Group    any
 	Resource any
 }
 
@@ -67,11 +67,11 @@ type StorageVersionMigration_Spec struct {
 
 type StorageVersionMigration_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
+	Message            any
 	ObservedGeneration any
-	Reason any
-	Status any
-	Type any
+	Reason             any
+	Status             any
+	Type               any
 }
 
 type StorageVersionMigration_Status struct {
@@ -99,6 +99,5 @@ type StorageVersionMigrationAttrs struct {
 
 var StorageVersionMigration = ubx.DataSourceBinding{
 	WireType: "kubernetes_storagemigration_storage_version_migration",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }
